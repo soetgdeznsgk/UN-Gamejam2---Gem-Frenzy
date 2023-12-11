@@ -21,9 +21,9 @@ zoom = Vector2(3, 3)
 [node name="Mapa" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Mapa"]
+position = Vector2(0, -70)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/Area2D"]
-position = Vector2(-1, -76)
 shape = SubResource("RectangleShape2D_pnofo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

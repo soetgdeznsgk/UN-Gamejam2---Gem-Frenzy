@@ -17,7 +17,7 @@ func _physics_process(delta):
 	input_direction = Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
 	-int(Input.is_action_pressed("ui_up")))
 	#print(input_direction)
-	print(SPEED)
+	#print(SPEED)
 	if taladrando:
 		if input_direction==Vector2(0,-1):
 			input_direction=Vector2(0,-1)
@@ -49,4 +49,5 @@ func _on_area_2d_body_entered(body):
 	if body is Player:
 		SPEED=300
 		taladrando=false
+		position.y = $"../Mapa/Area2D".position.y
 	pass # Replace with function body.
