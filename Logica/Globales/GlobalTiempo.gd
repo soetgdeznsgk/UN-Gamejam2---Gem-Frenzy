@@ -5,8 +5,11 @@ extends Node
 var tiempoHoraDia =  8 # horas
 var tiempoMinutoDia = 0
 
-signal tiempoCambio(minuto, hora)
+var diaActual = 0
 
+signal tiempoCambio(minuto, hora)
+signal finalizarDia(dia)
+signal iniciarDia
 # por ahora el tiempo del dia son 10 minutos de la vida real
 
 @onready var tmr_minuto : Timer
@@ -16,7 +19,6 @@ func _ready() -> void:
 	tmr_minuto.wait_time = 1
 	tmr_minuto.timeout.connect(on_tmr_minuto_end)
 	tmr_minuto.process_callback = Timer.TIMER_PROCESS_PHYSICS
-	tmr_minuto.start()
 
 
 # actualiza el reloj
@@ -27,5 +29,12 @@ func on_tmr_minuto_end():
 		tiempoMinutoDia = 0
 	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
 	if tiempoHoraDia == 18:
-		#todo acabar día y pasar al otro dia
-		pass
+		tmr_minuto.stop()
+		finalizarDia.emit(diaActual)
+
+func siguiente_dia():
+	iniciarDia.emit()
+	diaActual += 1
+	tiempoHoraDia = 8
+	tiempoMinutoDia = 0
+	tmr_minuto.start()
