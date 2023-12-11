@@ -9,4 +9,5 @@ func _ready() -> void:
 func _on_btn_comprar_pressed() -> void:
 	# solo puede comprar una vez hasta el maximo
 	GlobalMejoras.activas_mejoras[int(info["Key"])] += 1
+	GlobalRecursos.actualizar_dinero(-int(info["Precio"]))
 	$Btn_comprar.disabled = true
