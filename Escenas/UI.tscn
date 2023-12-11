@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=6 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_fdrdw"]
+[ext_resource type="Texture2D" uid="uid://b23rlmmuwpk64" path="res://Sprites/UI/reloj.png" id="2_ulj72"]
+[ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
+[ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
+[ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -22,3 +26,52 @@ theme_override_constants/separation = 8
 layout_mode = 2
 texture = ExtResource("1_fdrdw")
 expand_mode = 5
+
+[node name="VbReloj" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 644.0
+offset_right = 84.0
+offset_bottom = 720.0
+alignment = 1
+
+[node name="HbReloj" type="HBoxContainer" parent="VbReloj"]
+layout_mode = 2
+
+[node name="TextureReloj" type="TextureRect" parent="VbReloj/HbReloj"]
+layout_mode = 2
+texture = ExtResource("2_ulj72")
+stretch_mode = 2
+
+[node name="Lb_tiempo" type="Label" parent="VbReloj/HbReloj"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "8:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_hwchs")
+
+[node name="VbDinero" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 642.0
+offset_right = 956.0
+offset_bottom = 718.0
+alignment = 1
+
+[node name="HbDinero" type="HBoxContainer" parent="VbDinero"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureDinero" type="TextureRect" parent="VbDinero/HbDinero"]
+layout_mode = 2
+texture = ExtResource("4_h1cjt")
+stretch_mode = 2
+
+[node name="Lb_Dinero" type="Label" parent="VbDinero/HbDinero"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_qljiu")
