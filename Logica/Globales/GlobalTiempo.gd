@@ -37,4 +37,5 @@ func siguiente_dia():
 	diaActual += 1
 	tiempoHoraDia = 8
 	tiempoMinutoDia = 0
+	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
 	tmr_minuto.start()
