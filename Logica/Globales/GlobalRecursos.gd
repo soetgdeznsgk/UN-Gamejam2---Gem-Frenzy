@@ -14,11 +14,13 @@ enum {
 	Cobre,
 	Hierro,
 	Plata,
-	Platino,
 	Oro,
 	Diamante,
 	Esmeralda,
-	Uranio
+	Amatista,
+	Topacio,
+	Rubi,
+	Safiro
 }
 
 func actualizar_mineral(mineral : int, cantidad : int):

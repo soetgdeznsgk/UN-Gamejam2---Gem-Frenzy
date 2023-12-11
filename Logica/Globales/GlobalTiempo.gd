@@ -4,13 +4,12 @@ extends Node
 # El dia de trabajo va de 8 am a 6 pm, 10 horas
 var tiempoHoraDia =  8 # horas
 var tiempoMinutoDia = 0
-
 var diaActual = 0
 
 signal tiempoCambio(minuto, hora)
 signal finalizarDia(dia)
 signal iniciarDia
-# por ahora el tiempo del dia son 10 minutos de la vida real
+# por ahora el tiempo del dia inicia en 3 min de tiempo real pero se puede mejorar el tiempo
 
 @onready var tmr_minuto : Timer
 func _ready() -> void:
@@ -28,7 +27,7 @@ func on_tmr_minuto_end():
 		tiempoHoraDia += 1
 		tiempoMinutoDia = 0
 	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
-	if tiempoHoraDia == 18:
+	if tiempoHoraDia == 11 + GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasTiempo]:
 		tmr_minuto.stop()
 		finalizarDia.emit(diaActual)
 
