@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3gvleky8xb74"
-path="res://.godot/imported/terrenoSolido.png-80fa45c59721794c97d4622af4d273c5.ctex"
+uid="uid://ban86vq6j2l5p"
+path="res://.godot/imported/Minerales.png-40c3dfdb79d8e4f061a50cfaa7c98603.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mapa/terrenoSolido.png"
-dest_files=["res://.godot/imported/terrenoSolido.png-80fa45c59721794c97d4622af4d273c5.ctex"]
+source_file="res://Sprites/Mapa/Minerales.png"
+dest_files=["res://.godot/imported/Minerales.png-40c3dfdb79d8e4f061a50cfaa7c98603.ctex"]
 
 [params]
 

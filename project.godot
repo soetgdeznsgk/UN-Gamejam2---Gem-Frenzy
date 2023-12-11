@@ -25,7 +25,7 @@ GlobalMejoras="*res://Logica/Globales/GlobalMejoras.gd"
 
 window/size/viewport_width=960
 window/size/viewport_height=720
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
 [input]
