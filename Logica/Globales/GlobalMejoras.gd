@@ -14,6 +14,7 @@ enum nombre_mejoras {
 
 var info_mejoras = {
 	nombre_mejoras.Mochila : {
+		"Key" : nombre_mejoras.Mochila,
 		"Nombre" : "Mochila grande",
 		"Precio" : 5,
 		"Maximo" : 3,
@@ -21,6 +22,7 @@ var info_mejoras = {
 		"Descripcion" : "Permite llevar más minerales",
 	},
 	nombre_mejoras.CofreMineral : {
+		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : "Cofre",
 		"Precio" : 2,
 		"Maximo" : 8,
@@ -28,6 +30,7 @@ var info_mejoras = {
 		"Descripcion" : "Permite almacenar más tipos de minerales",
 	},
 	nombre_mejoras.Gato : {
+		"Key" : nombre_mejoras.Gato,
 		"Nombre" : "Gato",
 		"Precio" : 10,
 		"Maximo" : 2,
@@ -35,6 +38,7 @@ var info_mejoras = {
 		"Descripcion" : "Un gato siempre atrae más clientes!",
 	},
 	nombre_mejoras.MejoraDeMejoras : {
+		"Key" : nombre_mejoras.MejoraDeMejoras,
 		"Nombre" : "Muchas mejoras",
 		"Precio" : 10,
 		"Maximo" : 1,
@@ -42,6 +46,7 @@ var info_mejoras = {
 		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
 	},
 	nombre_mejoras.RecompensaMejorada : {
+		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : "Recompensas!",
 		"Precio" : 4,
 		"Maximo" : 3,
@@ -49,6 +54,7 @@ var info_mejoras = {
 		"Descripcion" : "Cobra más por tu trabajo!",
 	},
 	nombre_mejoras.ClientesZen : {
+		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : "Clientes Zen",
 		"Precio" : 3,
 		"Maximo" : 3,
@@ -56,6 +62,7 @@ var info_mejoras = {
 		"Descripcion" : "Gracias a la meditación los clientes esperan más tiempo",
 	},
 	nombre_mejoras.MasTiempo : {
+		"Key" : nombre_mejoras.MasTiempo,
 		"Nombre" : "Mas tiempo",
 		"Precio" : 3,
 		"Maximo" : 7,

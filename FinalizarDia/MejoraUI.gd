@@ -1,11 +1,12 @@
 extends VBoxContainer
 
-var info : Array
+var info : Dictionary
 
 func _ready() -> void:
-	info = GlobalMejoras.obtener_mejora_random_disponible()
-	print(info)
+	$Lb_nombre.text = info["Nombre"]
+	$Lb_precio.text = "Precio: " + str(info["Precio"])
 
 func _on_btn_comprar_pressed() -> void:
 	# solo puede comprar una vez hasta el maximo
-	pass # Replace with function body.
+	GlobalMejoras.activas_mejoras[int(info["Key"])] += 1
+	$Btn_comprar.disabled = true

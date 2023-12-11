@@ -16,6 +16,13 @@ size_flags_vertical = 3
 alignment = 1
 script = ExtResource("1_1mlls")
 
+[node name="Lb_nombre" type="Label" parent="."]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
+text = "Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
