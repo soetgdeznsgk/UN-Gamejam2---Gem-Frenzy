@@ -43,7 +43,7 @@ func _on_timer_timeout():
 # debug
 
 func _to_string():
-	var str : String
+	var stri : String
 	for e in requirements:
-		str += str(e) # añadir un _to_string en cuanto tengamos los materiales
-	return str
+		stri += str(e) # añadir un _to_string en cuanto tengamos los materiales
+	return stri
