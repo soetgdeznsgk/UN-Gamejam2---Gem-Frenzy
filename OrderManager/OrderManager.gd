@@ -9,21 +9,24 @@ var recetas := Array()
 
 var SpritesMaterialesPaths = {
 	GlobalRecursos.Carbon : "res://Sprites/temporales_UI/carbontemp.png",
-	GlobalRecursos.Diamante : "",
+	GlobalRecursos.Hierro : "res://Sprites/temporales_UI/hierrotemp.png",
+	GlobalRecursos.Diamante : "res://Sprites/temporales_UI/diamantetemp.png",
 	GlobalRecursos.Cobre : "",
 	GlobalRecursos.Esmeralda : "",
 	GlobalRecursos.Uranio : "",
-	GlobalRecursos.Platino : "",
 	GlobalRecursos.Plata : "",
-	GlobalRecursos.Oro : ""
+	GlobalRecursos.Oro : ""#,
+	#GlobalRecursos.Amatista: "",
+	#GlobalRecursos.Zafiro: "",
+	#GlobalRecursos.Rubi: "",
+	#GlobalRecursos.Topacio: ""	
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# conectarse con la cascada del UI
-	#recetas.append([1, 2, 3])
-	#recetas.append([4, 5])
-	recetas.append([9])
+	recetas.append([GlobalRecursos.Carbon, GlobalRecursos.Hierro, GlobalRecursos.Diamante])
+	recetas.append([GlobalRecursos.Carbon, GlobalRecursos.Hierro])
+	recetas.append([GlobalRecursos.Carbon])
 	
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)
@@ -41,15 +44,13 @@ func _input(_event):
 	if Input.is_anything_pressed():
 		if currentOrders.size() > 1:
 			entregarOrden(currentOrders[0])
+			
 # Llamadas
 
 func entregarOrden(orden : Order):
 	var i = currentOrders.find(orden)
 	if i != -1:
-		print("se entrega: ", currentOrders[i])
-		currentOrders.pop_at(i)
-		print("queda: ", currentOrders)
-		#DARLE DINERO AL JUGADOR
+		currentOrders.pop_at(i) # toca compararlo desde el entregador de comidas
 		return
 	else:
 		return
@@ -59,7 +60,6 @@ func entregarOrden(orden : Order):
 func _on_timer_timeout() -> void: # añadir 
 	var tempOrder = Order.new(recetas.pick_random())
 	currentOrders.append(tempOrder)
-	print("ordenes actuales: ", currentOrders)
 	new_order.emit(tempOrder)
 	
 

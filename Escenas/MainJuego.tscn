@@ -8,4 +8,6 @@
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("1_maslr")]
 
+[node name="Ordenes" type="Node" parent="."]
+
 [editable path="CanvasLayer/UI"]

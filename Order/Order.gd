@@ -1,10 +1,14 @@
 class_name Order
 extends Node2D
 
+signal out_of_time
+
 var requirements : Array # array de materiales (tamaño 1 a 3)
 var precio : int:
 	get:
 		return precio
+
+@export var Tmr : Timer
 
 enum states {
 	Pasado,	
@@ -13,6 +17,7 @@ enum states {
 	Done
 }
 var currState
+var tmr
 
 func _init(materiales : Array):
 	currState = states.EnVistaPrevia
@@ -25,25 +30,37 @@ func _init(materiales : Array):
 		2: precio = 12
 		3: precio = 20
 		
-	print("se instancia: ", materiales, " precio: ", precio)
+	tmr = Timer.new()
+	add_child(tmr)
+	tmr.timeout.connect(_on_timer_timeout)
+	tmr.one_shot = true
+	tmr.wait_time = 30
+	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
+	tmr.autostart = true
 	
-
 # Llamadas
 
 func Queued() -> void:
 	currState = states.EnCurso
-	$Timer.start(30)
+	
+func get_time_left():
+	return tmr.get_time_left()
+
 
 # Señales
 
 func _on_timer_timeout():
 	currState = states.Pasado
 	precio /= 2
+	out_of_time.emit()
 
 # debug
 
 func _to_string():
 	var stri : String
 	for e in requirements:
-		stri += str(e) # añadir un _to_string en cuanto tengamos los materiales
+		stri += str(e) 
 	return stri
+
+
+

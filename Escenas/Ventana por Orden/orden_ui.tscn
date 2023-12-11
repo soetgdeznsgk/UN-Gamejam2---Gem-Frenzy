@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://doudmff7sjsk7"]
+
+[ext_resource type="Script" path="res://Escenas/Ventana por Orden/orden_ui.gd" id="1_0ye5u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjmml"]
+bg_color = Color(0, 0.627451, 0, 1)
+
+[node name="OrdenUI" type="Control"]
+layout_mode = 3
+anchor_right = 0.543
+anchor_bottom = 0.587
+offset_right = -0.280029
+offset_bottom = 0.359985
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0ye5u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 0
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 111.0
+offset_bottom = 107.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(96, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_yjmml")
+max_value = 30.0
+value = 30.0
