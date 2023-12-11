@@ -9,7 +9,6 @@ func _ready() -> void:
 
 func _on_finalizar_dia(dia : int):
 	infoMejorasDisponibles = GlobalMejoras.obtener_mejora_random_disponible()
-	print(infoMejorasDisponibles)
 	for i in infoMejorasDisponibles:
 		var temp = mejoraUI.instantiate()
 		temp.info = i
