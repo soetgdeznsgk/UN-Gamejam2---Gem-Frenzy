@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=8 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_fdrdw"]
 [ext_resource type="Texture2D" uid="uid://b23rlmmuwpk64" path="res://Sprites/UI/reloj.png" id="2_ulj72"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
+[ext_resource type="Script" path="res://Logica/UI/FPSDebug.gd" id="7_xpxm3"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -114,5 +115,14 @@ offset_bottom = 0.175995
 [node name="Btn_finalizar_dia" type="Button" parent="FinalizarDia/CenterContainer"]
 layout_mode = 2
 text = "FINALIZAR DIA"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 189.0
+offset_right = 128.0
+offset_bottom = 212.0
+text = "FPS"
+script = ExtResource("7_xpxm3")
 
 [connection signal="pressed" from="FinalizarDia/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
