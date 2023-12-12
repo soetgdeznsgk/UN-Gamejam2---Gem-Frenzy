@@ -33,7 +33,7 @@ var info_mejoras = {
 		"Key" : nombre_mejoras.MasTiempo,
 		"Nombre" : "Mas tiempo",
 		"Precio" : 3,
-		"Maximo" : 7,
+		"Maximo" : 4,
 		"Textura" : 'null',
 		"Descripcion" : "Tu tienda esta abierta mas horas",
 	},
