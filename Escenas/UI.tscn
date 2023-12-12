@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://btm0ei5fs0m10"]
 
-[ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_fdrdw"]
+[ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
 [ext_resource type="Texture2D" uid="uid://b23rlmmuwpk64" path="res://Sprites/UI/reloj.png" id="2_ulj72"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
 [ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
@@ -19,16 +19,11 @@ metadata/_edit_lock_ = true
 
 [node name="Ordenes" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 883.0
-offset_top = 1.0
-offset_right = 958.0
-offset_bottom = 720.0
-theme_override_constants/separation = 8
-
-[node name="TextureRect" type="TextureRect" parent="Ordenes"]
-layout_mode = 2
-texture = ExtResource("1_fdrdw")
-expand_mode = 5
+offset_left = 765.0
+offset_right = 928.0
+offset_bottom = 719.0
+theme_override_constants/separation = 90
+script = ExtResource("1_qy5sv")
 
 [node name="VbReloj" type="VBoxContainer" parent="."]
 layout_mode = 0

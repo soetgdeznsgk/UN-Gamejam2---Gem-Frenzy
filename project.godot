@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalRecursos="*res://Logica/Globales/GlobalRecursos.gd"
 GlobalTiempo="*res://Logica/Globales/GlobalTiempo.gd"
 GlobalMejoras="*res://Logica/Globales/GlobalMejoras.gd"
+OrderManager="*res://OrderManager/OrderManager.gd"
 
 [display]
 
