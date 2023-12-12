@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ban86vq6j2l5p"
-path="res://.godot/imported/Minerales.png-40c3dfdb79d8e4f061a50cfaa7c98603.ctex"
+path="res://.godot/imported/Minerales.png-e44d2e28f019c0ed1222aac26dc7dd94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mapa/Minerales.png"
-dest_files=["res://.godot/imported/Minerales.png-40c3dfdb79d8e4f061a50cfaa7c98603.ctex"]
+source_file="res://Sprites/Recursos/Minerales.png"
+dest_files=["res://.godot/imported/Minerales.png-e44d2e28f019c0ed1222aac26dc7dd94.ctex"]
 
 [params]
 

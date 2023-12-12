@@ -27,7 +27,7 @@ func setOrden(orden : Order) -> void:
 	var t = orden.requirements.size()
 	for i in range(t):
 		$VBoxContainer/HBoxContainer.get_child((i + t + 1) % t).frame = orden.requirements[i]
-		
+	$recetaSprite.frame = GlobalRecetas.encontrarReceta(orden.requirements) # revisar
 
 # Señales
 

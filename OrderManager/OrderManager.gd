@@ -2,12 +2,10 @@ extends Node
 
 signal new_order(orden: Order)
 #var materiales := Array() # array de materiales 
-var recetas := Array()
+@onready var recetas := Array()
 @onready var currentOrders := Array()
 
 @onready var tmr := Timer.new()
-var SpritesPath = preload("res://Sprites/Mapa/minerales_sprites.tscn")
-var Sprites : Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,10 +40,15 @@ func entregarOrden(orden : Order):
 		
 
 func llenar_recetas() -> void:
-	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante])
-	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro])
-	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon])
+	recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
+	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro]) # acero
+	recetas.append([GlobalRecursos.mineralesSinFondo.Rubi, GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Esmeralda]) #  earth cri
+	recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Cobre, GlobalRecursos.mineralesSinFondo.Hierro]) # allmetal
+	recetas.append([GlobalRecursos.mineralesSinFondo.Topacio, GlobalRecursos.mineralesSinFondo.Oro, GlobalRecursos.mineralesSinFondo.Rubi]) #fire cri
+	recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Amatista, GlobalRecursos.mineralesSinFondo.Zafiro]) # frost cri
+	
 # Señales
+
 func _on_timer_timeout() -> void: # añadir 
 	var tempOrder = Order.new(recetas.pick_random())
 	currentOrders.append(tempOrder)
