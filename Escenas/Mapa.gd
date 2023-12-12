@@ -116,7 +116,7 @@ func regenerar_mapa():
 				elif porcentaje > 0.85 and porcentaje <= 0.875: 
 					temp.textura = GlobalRecursos.mineralesSinFondo.Topacio
 				elif porcentaje > 0.875 and porcentaje <= 0.9: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Safiro
+					temp.textura = GlobalRecursos.mineralesSinFondo.Zafiro
 				elif porcentaje > 0.9 and porcentaje <= 0.925: 
 					temp.textura = GlobalRecursos.mineralesSinFondo.Amatista
 				elif porcentaje > 0.95 and porcentaje <= 1: 
@@ -141,7 +141,7 @@ func regenerar_mapa():
 				elif porcentaje > 0.85 and porcentaje <= 0.875: 
 					temp.textura = GlobalRecursos.mineralesSinFondo.Topacio
 				elif porcentaje > 0.875 and porcentaje <= 0.9: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Safiro
+					temp.textura = GlobalRecursos.mineralesSinFondo.Zafiro
 				elif porcentaje > 0.9 and porcentaje <= 0.925: 
 					temp.textura = GlobalRecursos.mineralesSinFondo.Amatista
 				elif porcentaje > 0.95 and porcentaje <= 0.975: 
@@ -169,7 +169,7 @@ func regenerar_mapa():
 				elif porcentaje > 0.825 and porcentaje <= 0.85: 
 					temp.textura = GlobalRecursos.mineralesSinFondo.Topacio
 				elif porcentaje > 0.85 and porcentaje <= 0.875: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Safiro
+					temp.textura = GlobalRecursos.mineralesSinFondo.Zafiro
 				elif porcentaje > 0.875 and porcentaje <= 0.9: 
 					temp.textura = GlobalRecursos.mineralesSinFondo.Amatista
 				elif porcentaje > 0.9 and porcentaje <= 0.925: 
