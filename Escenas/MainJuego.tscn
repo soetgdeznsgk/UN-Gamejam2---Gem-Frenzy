@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=14 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="PackedScene" uid="uid://bvaa0r36hif4w" path="res://Logica/Player/player.tscn" id="2_rfotb"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Escenas/Area2DEscalera.gd" id="5_ilj63"]
 [ext_resource type="Texture2D" uid="uid://bdrj1nc7w0eol" path="res://Sprites/Mapa/rope_ladder.png" id="5_mg1cv"]
 [ext_resource type="Texture2D" uid="uid://b2ivbnl772jf" path="res://Sprites/UI/upKey.png" id="6_s8g8y"]
+[ext_resource type="PackedScene" uid="uid://r3b4g86f7l6x" path="res://Escenas/Cofre/cofre.tscn" id="8_aodjd"]
+[ext_resource type="Script" path="res://Escenas/Cofre/CofresManager.gd" id="8_xp74q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(185, 6)
@@ -106,6 +108,13 @@ region_enabled = true
 region_rect = Rect2(-0.0895081, 49.677, 31.5444, 54.3265)
 metadata/_edit_lock_ = true
 
+[node name="CofresManager" type="Node" parent="."]
+script = ExtResource("8_xp74q")
+
+[node name="Cofre" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(189, -52)
+
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]
+[connection signal="surface_entered" from="Gameplay/Player" to="CofresManager" method="_on_player_surface_entered"]
 [connection signal="body_entered" from="Gameplay/Area2DEscalera" to="Gameplay/Area2DEscalera" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DEscalera" to="Gameplay/Area2DEscalera" method="_on_body_exited"]

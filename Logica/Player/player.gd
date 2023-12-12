@@ -1,6 +1,9 @@
 extends CharacterBody2D
 class_name Player
 
+signal surface_entered
+signal mine_entered
+
 @export var CONST_SPEED : float
 @export var CONST_SPEEDUP : float
 
@@ -54,3 +57,4 @@ func _on_area_2d_body_entered(body):
 		SPEED = CONST_SPEED + CONST_SPEEDUP
 		taladrando=false
 		position.y = -20.1
+		surface_entered.emit()

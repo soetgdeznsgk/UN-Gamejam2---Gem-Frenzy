@@ -3,7 +3,9 @@ extends Node
 # Singleton para manejar el dinero y los minerales actuales
 
 # inicia en ceros
-var minerales : Array = [0,0,0,0,0,0,0,0,0]
+var minerales : Array = [0,0,0,0,0,0,0,0,0]:
+	get:
+		return minerales
 var dinero : int = 0
 
 signal cambioDinero(dinero)
@@ -20,7 +22,7 @@ enum mineralesSinFondo{
 	Esmeralda,
 	Topacio,
 	Rubi,
-	Safiro,
+	Zafiro,
 	Diamante,
 }
 
@@ -35,7 +37,7 @@ enum mineralesConFondo{
 	TierraMinada,
 	Topacio,
 	Rubi,
-	Safiro,
+	Zafiro,
 	Diamante,
 	Esmeralda
 }

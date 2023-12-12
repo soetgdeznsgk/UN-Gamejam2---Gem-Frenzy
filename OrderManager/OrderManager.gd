@@ -9,27 +9,9 @@ var recetas := Array()
 var SpritesPath = preload("res://Sprites/Mapa/minerales_sprites.tscn")
 var Sprites : Sprite2D
 
-#var SpritesMaterialesPaths = {
-	#GlobalRecursos.Carbon : 4,
-	#GlobalRecursos.Hierro : 1,
-	#GlobalRecursos.Diamante : 11,
-	#GlobalRecursos.Cobre : ,
-	#GlobalRecursos.Esmeralda : "",
-	#GlobalRecursos.Plata : "",
-	#GlobalRecursos.Oro : "",
-	#GlobalRecursos.Amatista: "",
-	#GlobalRecursos.Zafiro: "",
-	#GlobalRecursos.Rubi: "",
-	#GlobalRecursos.Topacio: ""	
-#}
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante])
-	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro])
-	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon])
-	
-	#Sprites = SpritesPath.instantiate() # pa eliminar
+	llenar_recetas()
 	
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)
@@ -58,7 +40,11 @@ func entregarOrden(orden : Order):
 	else:
 		return
 		
-		
+
+func llenar_recetas() -> void:
+	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante])
+	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro])
+	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon])
 # Señales
 func _on_timer_timeout() -> void: # añadir 
 	var tempOrder = Order.new(recetas.pick_random())
