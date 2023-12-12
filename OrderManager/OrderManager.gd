@@ -6,26 +6,30 @@ var recetas := Array()
 @onready var currentOrders := Array()
 
 @onready var tmr := Timer.new()
+var SpritesPath = preload("res://Sprites/Mapa/minerales_sprites.tscn")
+var Sprites : Sprite2D
 
-var SpritesMaterialesPaths = {
-	GlobalRecursos.Carbon : "res://Sprites/temporales_UI/carbontemp.png",
-	GlobalRecursos.Hierro : "res://Sprites/temporales_UI/hierrotemp.png",
-	GlobalRecursos.Diamante : "res://Sprites/temporales_UI/diamantetemp.png",
-	GlobalRecursos.Cobre : "",
-	GlobalRecursos.Esmeralda : "",
-	GlobalRecursos.Plata : "",
-	GlobalRecursos.Oro : ""#,
+#var SpritesMaterialesPaths = {
+	#GlobalRecursos.Carbon : 4,
+	#GlobalRecursos.Hierro : 1,
+	#GlobalRecursos.Diamante : 11,
+	#GlobalRecursos.Cobre : ,
+	#GlobalRecursos.Esmeralda : "",
+	#GlobalRecursos.Plata : "",
+	#GlobalRecursos.Oro : "",
 	#GlobalRecursos.Amatista: "",
 	#GlobalRecursos.Zafiro: "",
 	#GlobalRecursos.Rubi: "",
 	#GlobalRecursos.Topacio: ""	
-}
+#}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	recetas.append([GlobalRecursos.Carbon, GlobalRecursos.Hierro, GlobalRecursos.Diamante])
 	recetas.append([GlobalRecursos.Carbon, GlobalRecursos.Hierro])
 	recetas.append([GlobalRecursos.Carbon])
+	
+	#Sprites = SpritesPath.instantiate() # pa eliminar
 	
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)

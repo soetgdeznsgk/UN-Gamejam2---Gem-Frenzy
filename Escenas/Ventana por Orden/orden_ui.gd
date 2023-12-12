@@ -22,20 +22,16 @@ func _physics_process(delta):
 func setOrden(orden : Order) -> void:
 	orden_logica = orden
 	add_child(orden)
-	#print("todo gud ata aca")
-	for i in range(orden.requirements.size()):
-		var spritePath = OrderManager.SpritesMaterialesPaths.get(orden.requirements[i])
-		var t := TextureRect.new()
-		
-		t.texture = load(spritePath)
-		t.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		t.stretch_mode = TextureRect.STRETCH_SCALE
-		t.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-		t.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		t.custom_minimum_size = Vector2(Dimension, Dimension)
-		
-		$VBoxContainer/HBoxContainer.add_child(t)
-		
+	orden.out_of_time.connect(orden_out_of_time)
 	
+	var t = orden.requirements.size()
+	for i in range(t):
+		$VBoxContainer/HBoxContainer.get_child((i + t + 1) % t).frame = orden.requirements[i]
+		
+
+# Señales
+
+func orden_out_of_time():
+	queue_free()
 
 	

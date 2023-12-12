@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://doudmff7sjsk7"]
+[gd_scene load_steps=4 format=3 uid="uid://doudmff7sjsk7"]
 
 [ext_resource type="Script" path="res://Escenas/Ventana por Orden/orden_ui.gd" id="1_0ye5u"]
+[ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Mapa/Minerales.png" id="2_7mu4a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjmml"]
 bg_color = Color(0, 0.627451, 0, 1)
@@ -28,10 +29,37 @@ offset_bottom = 107.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 clip_contents = true
-custom_minimum_size = Vector2(96, 48)
+custom_minimum_size = Vector2(120, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="Sprite2D3" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+texture_filter = 1
+position = Vector2(61, 28)
+scale = Vector2(4.835, 4.835)
+texture = ExtResource("2_7mu4a")
+hframes = 7
+vframes = 2
+frame = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+texture_filter = 1
+position = Vector2(20, 28)
+scale = Vector2(4.835, 4.835)
+texture = ExtResource("2_7mu4a")
+hframes = 7
+vframes = 2
+frame = 13
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+texture_filter = 1
+position = Vector2(99, 30)
+scale = Vector2(4.835, 4.835)
+texture = ExtResource("2_7mu4a")
+hframes = 7
+vframes = 2
+frame = 13
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
 layout_mode = 2
