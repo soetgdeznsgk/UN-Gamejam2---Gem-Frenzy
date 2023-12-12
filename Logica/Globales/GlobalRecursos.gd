@@ -3,7 +3,7 @@ extends Node
 # Singleton para manejar el dinero y los minerales actuales
 
 # inicia en ceros
-var minerales : Array = [0,0,0,0,0,0,0,0,0]:
+var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]:
 	get:
 		return minerales
 var dinero : int = 0
