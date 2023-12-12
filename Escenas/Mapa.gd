@@ -15,13 +15,13 @@ func generar_mapa():
 				temp.position = Vector2(i*8,j*8)
 				var porcentaje = randf()
 				
-				if porcentaje < 0.97 and porcentaje >= 0:
+				if porcentaje < 0.985 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.97 and porcentaje < 0.98: 
-					temp.textura = 0
-				elif porcentaje > 0.98 and porcentaje < 0.99: 
-					temp.textura = 1
-				elif porcentaje > 0.99 and porcentaje <= 1: 
-					temp.textura = 2
+				elif porcentaje > 0.985 and porcentaje < 0.995: 
+					temp.textura = GlobalRecursos.mineralesSinFondo.Carbon
+				elif porcentaje > 0.995 and porcentaje < 0.998: 
+					temp.textura = GlobalRecursos.mineralesSinFondo.Hierro
+				elif porcentaje > 0.998 and porcentaje <= 1: 
+					temp.textura = GlobalRecursos.mineralesSinFondo.Plata
 			
 			add_child(temp)
