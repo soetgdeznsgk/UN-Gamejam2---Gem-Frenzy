@@ -11,7 +11,6 @@ var precio : int:
 @export var Tmr : Timer
 
 enum states {
-	Pasado,	
 	EnVistaPrevia,
 	EnCurso,
 	Done
@@ -50,9 +49,8 @@ func get_time_left():
 # Señales
 
 func _on_timer_timeout():
-	currState = states.Pasado
-	precio /= 2
 	out_of_time.emit()
+	queue_free()
 
 # debug
 
