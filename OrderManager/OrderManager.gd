@@ -25,9 +25,9 @@ var Sprites : Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	recetas.append([GlobalRecursos.Carbon, GlobalRecursos.Hierro, GlobalRecursos.Diamante])
-	recetas.append([GlobalRecursos.Carbon, GlobalRecursos.Hierro])
-	recetas.append([GlobalRecursos.Carbon])
+	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante])
+	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro])
+	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon])
 	
 	#Sprites = SpritesPath.instantiate() # pa eliminar
 	

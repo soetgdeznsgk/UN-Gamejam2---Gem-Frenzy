@@ -22,7 +22,6 @@ enum mineralesSinFondo{
 	Rubi,
 	Safiro,
 	Diamante,
-	Esmeralda
 }
 
 enum mineralesConFondo{
