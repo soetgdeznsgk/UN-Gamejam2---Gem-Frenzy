@@ -21,6 +21,7 @@ GlobalRecursos="*res://Logica/Globales/GlobalRecursos.gd"
 GlobalTiempo="*res://Logica/Globales/GlobalTiempo.gd"
 GlobalMejoras="*res://Logica/Globales/GlobalMejoras.gd"
 OrderManager="*res://OrderManager/OrderManager.gd"
+GlobalRecetas="*res://Logica/Globales/GlobalRecetas.gd"
 
 [display]
 

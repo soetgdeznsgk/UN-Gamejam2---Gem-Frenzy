@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://6stci5da37t8"]
-
-[ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Mapa/Minerales.png" id="1_gfauf"]
-
-[node name="MineralesSprites" type="Sprite2D"]
-texture = ExtResource("1_gfauf")
-hframes = 7
-vframes = 2
