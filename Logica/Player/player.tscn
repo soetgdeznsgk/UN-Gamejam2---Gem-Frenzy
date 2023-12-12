@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
-[ext_resource type="Texture2D" uid="uid://xs2dcu82lexr" path="res://Sprites/Player/Player_left.png" id="2_0d6r4"]
+[ext_resource type="Texture2D" uid="uid://bdtp1alv34j0l" path="res://Sprites/Player/Player_right.png" id="2_gjpt1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(16, 16)
@@ -13,4 +13,5 @@ script = ExtResource("1_bfxk7")
 shape = SubResource("RectangleShape2D_fsbbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_0d6r4")
+texture_filter = 1
+texture = ExtResource("2_gjpt1")

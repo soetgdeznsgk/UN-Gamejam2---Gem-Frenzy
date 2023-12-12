@@ -21,10 +21,10 @@ func _physics_process(delta):
 	#print(input_direction)
 	#print(SPEED)
 	if taladrando:
-		if input_direction==Vector2(0,-1):
-			input_direction=Vector2(0,-1)
-			
+		if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
+			input_direction=Vector2(0,-1)		
 			SPEED = CONST_SPEED + CONST_SPEEDUP
+		
 		elif input_direction==Vector2(1,0):
 			SPEED = CONST_SPEED
 			input_direction=Vector2(1,1)
@@ -33,13 +33,17 @@ func _physics_process(delta):
 			SPEED = CONST_SPEED
 			input_direction=Vector2(-1,1)
 			last_move=Vector2(-1,1)
+			
 		else:
-			if last_move != Vector2.ZERO && input_direction!=Vector2(0,1):
+			#para que suba cuando no se oprime
+			if last_move != Vector2.ZERO && input_direction!=Vector2(0,1)&& input_direction!=Vector2(1,-1)&&input_direction!=Vector2(-1,-1):
 				input_direction=last_move+Vector2(0,-2)
+				print("hola no se que hace esto")
 	else:
 		if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
 			input_direction=Vector2(input_direction.x,0)
-	
+			
+			
 	if movement:
 		velocity = input_direction.normalized() * SPEED
 		move_and_slide()
