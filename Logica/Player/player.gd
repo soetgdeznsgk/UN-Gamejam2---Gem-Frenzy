@@ -1,8 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
-var SPEED = 300.0
-var SPEEDUP= 400.0
+@export var CONST_SPEED : float
+@export var CONST_SPEEDUP : float
+
+@onready var SPEED = CONST_SPEED + CONST_SPEEDUP
+@onready var SPEEDUP= CONST_SPEED + CONST_SPEEDUP
 var taladrando= false
 var input_direction = Vector2.ZERO
 var last_move=Vector2.ZERO
@@ -21,13 +24,13 @@ func _physics_process(delta):
 		if input_direction==Vector2(0,-1):
 			input_direction=Vector2(0,-1)
 			
-			SPEED=SPEEDUP
+			SPEED = CONST_SPEED + CONST_SPEEDUP
 		elif input_direction==Vector2(1,0):
-			SPEED=SPEED
+			SPEED = CONST_SPEED
 			input_direction=Vector2(1,1)
 			last_move=Vector2(1,1)
 		elif input_direction==Vector2(-1,0):
-			SPEED=SPEED
+			SPEED = CONST_SPEED
 			input_direction=Vector2(-1,1)
 			last_move=Vector2(-1,1)
 		else:
@@ -44,6 +47,6 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body is Player and taladrando:
-		SPEED=300
+		SPEED = CONST_SPEED + CONST_SPEEDUP
 		taladrando=false
 		position.y = -20.1
