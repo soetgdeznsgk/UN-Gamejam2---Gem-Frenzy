@@ -1,10 +1,10 @@
 extends Area2D
 
-var textura = 6
+var textura = GlobalRecursos.mineralesConFondo.Tierra
 
 func _ready() -> void:
-	$Sprite2D.frame = textura
+	$Sprite2D.frame = GlobalRecursos.mineralesConFondo.Tierra
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		$Sprite2D.frame = 7
+		$Sprite2D.frame = GlobalRecursos.mineralesConFondo.TierraMinada

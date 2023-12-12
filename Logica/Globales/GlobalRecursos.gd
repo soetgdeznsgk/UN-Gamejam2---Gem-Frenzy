@@ -9,18 +9,35 @@ var dinero : int = 0
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 # enum para no perderlos de vista
-enum {
-	Carbon,
-	Cobre,
+
+enum mineralesSinFondo{
 	Hierro,
 	Plata,
 	Oro,
-	Diamante,
-	Esmeralda,
+	Carbon,
+	Cobre,
 	Amatista,
 	Topacio,
 	Rubi,
-	Safiro
+	Safiro,
+	Diamante,
+	Esmeralda
+}
+
+enum mineralesConFondo{
+	Hierro,
+	Plata,
+	Oro,
+	Carbon,
+	Cobre,
+	Amatista,
+	Tierra,
+	TierraMinada,
+	Topacio,
+	Rubi,
+	Safiro,
+	Diamante,
+	Esmeralda
 }
 
 func actualizar_mineral(mineral : int, cantidad : int):
