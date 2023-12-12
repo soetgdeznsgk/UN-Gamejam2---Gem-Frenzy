@@ -7,7 +7,7 @@ var infoMejorasDisponibles : Array
 func _ready() -> void:
 	GlobalTiempo.finalizarDia.connect(_on_finalizar_dia)
 
-func _on_finalizar_dia(dia : int):
+func _on_finalizar_dia():
 	infoMejorasDisponibles = GlobalMejoras.obtener_mejora_random_disponible()
 	for i in infoMejorasDisponibles:
 		var temp = mejoraUI.instantiate()

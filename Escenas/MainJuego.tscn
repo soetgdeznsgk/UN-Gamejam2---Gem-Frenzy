@@ -230,6 +230,8 @@ position = Vector2(348, -61)
 texture = ExtResource("10_xfpbt")
 hframes = 2
 
+[node name="Terrenos" type="Node2D" parent="Gameplay"]
+
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Gameplay/Area2DEscalera" to="Gameplay/Area2DEscalera" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DEscalera" to="Gameplay/Area2DEscalera" method="_on_body_exited"]
