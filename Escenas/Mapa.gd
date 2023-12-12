@@ -15,7 +15,7 @@ func generar_mapa():
 			
 			var porcentaje = randf()
 			if porcentaje < 0.97 and porcentaje >= 0:
-				temp.textura = 11
+				temp.textura = 6
 			elif porcentaje > 0.97 and porcentaje < 0.98: 
 				temp.textura = 0
 			elif porcentaje > 0.98 and porcentaje < 0.99: 

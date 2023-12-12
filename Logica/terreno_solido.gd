@@ -1,6 +1,6 @@
 extends Area2D
 
-var textura = 11
+var textura = 6
 
 func _ready() -> void:
 	$Sprite2D.frame = textura
