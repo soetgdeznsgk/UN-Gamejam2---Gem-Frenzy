@@ -3,14 +3,13 @@ class_name Player
 
 var SPEED = 300.0
 var SPEEDUP= 400.0
-var taladrando= true
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var taladrando= false
 var input_direction = Vector2.ZERO
 var last_move=Vector2.ZERO
+var movement = true
+
 func _physics_process(delta):
-	# Add the gravity.
-	
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
@@ -37,17 +36,14 @@ func _physics_process(delta):
 	else:
 		if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
 			input_direction=Vector2(input_direction.x,0)
-		if Input.is_action_just_pressed("ui_up"):
-			print("soy una accion")
-		
-		
-	velocity = input_direction.normalized() * SPEED
-	move_and_slide()
+	
+	if movement:
+		velocity = input_direction.normalized() * SPEED
+		move_and_slide()
 
 
 func _on_area_2d_body_entered(body):
-	if body is Player:
+	if body is Player and taladrando:
 		SPEED=300
 		taladrando=false
-		position.y = $"../Mapa/Area2D".position.y
-	pass # Replace with function body.
+		position.y = -20.1
