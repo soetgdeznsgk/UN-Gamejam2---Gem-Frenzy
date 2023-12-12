@@ -11,13 +11,15 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_up"):
 			var tween :Tween = get_tree().create_tween()
 			playerRef.movement = false
-			tween.tween_property(playerRef, "position:y", 8, 0.7)
+			tween.tween_property(playerRef, "position:x", position.x, 0.2)
+			tween.tween_property(playerRef, "position:y", 12, 0.7)
 			tween.tween_callback(_on_tween_callback)
 
 func _on_tween_callback():
 	playerRef.taladrando = true
 	playerRef.movement = true
-
+	playerRef.input_direction = Vector2.ZERO
+	playerRef.last_move=Vector2.ZERO
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
