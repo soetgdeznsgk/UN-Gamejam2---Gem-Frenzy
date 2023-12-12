@@ -38,7 +38,7 @@ func _physics_process(delta):
 			#para que suba cuando no se oprime
 			if last_move != Vector2.ZERO && input_direction!=Vector2(0,1)&& input_direction!=Vector2(1,-1)&&input_direction!=Vector2(-1,-1):
 				input_direction=last_move+Vector2(0,-2)
-				print("hola no se que hace esto")
+				#print("hola no se que hace esto")
 	else:
 		if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
 			input_direction=Vector2(input_direction.x,0)
