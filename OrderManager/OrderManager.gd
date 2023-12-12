@@ -13,7 +13,6 @@ var SpritesMaterialesPaths = {
 	GlobalRecursos.Diamante : "res://Sprites/temporales_UI/diamantetemp.png",
 	GlobalRecursos.Cobre : "",
 	GlobalRecursos.Esmeralda : "",
-	GlobalRecursos.Uranio : "",
 	GlobalRecursos.Plata : "",
 	GlobalRecursos.Oro : ""#,
 	#GlobalRecursos.Amatista: "",
