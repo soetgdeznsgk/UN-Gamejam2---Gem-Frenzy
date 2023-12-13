@@ -851,7 +851,7 @@ z_as_relative = false
 texture_filter = 1
 position = Vector2(-7, -13)
 texture = ExtResource("7_3l1ym")
-hframes = 7
+hframes = 6
 vframes = 2
 frame = 11
 
@@ -860,7 +860,7 @@ z_index = 6
 texture_filter = 1
 position = Vector2(9, -13)
 texture = ExtResource("7_3l1ym")
-hframes = 7
+hframes = 6
 vframes = 2
 frame = 11
 
@@ -869,7 +869,7 @@ z_index = 6
 texture_filter = 1
 position = Vector2(1, -13)
 texture = ExtResource("7_3l1ym")
-hframes = 7
+hframes = 6
 vframes = 2
 frame = 11
 

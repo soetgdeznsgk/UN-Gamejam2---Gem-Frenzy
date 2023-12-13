@@ -46,11 +46,11 @@ func regenerar_mapa():
 				if porcentaje < 0.96 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.96 and porcentaje < 0.98: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Carbon
+					temp.textura = GlobalRecursos.mineralesConFondo.Carbon
 				elif porcentaje > 0.98 and porcentaje < 0.99: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Hierro
+					temp.textura = GlobalRecursos.mineralesConFondo.Hierro
 				elif porcentaje > 0.99 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Plata
+					temp.textura = GlobalRecursos.mineralesConFondo.Plata
 				temp.actualizar_textura()
 		Cam.limit_bottom = 100
 		barraBloqueoDias.position.y = 100
@@ -64,7 +64,7 @@ func regenerar_mapa():
 				if porcentaje < 0.975 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.975 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Cobre
+					temp.textura = GlobalRecursos.mineralesConFondo.Cobre
 				temp.actualizar_textura()
 		Cam.limit_bottom = 260
 		barraBloqueoDias.position.y = 260
@@ -78,7 +78,7 @@ func regenerar_mapa():
 				if porcentaje < 0.975 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.975 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Oro
+					temp.textura = GlobalRecursos.mineralesConFondo.Oro
 				temp.actualizar_textura()
 		Cam.limit_bottom =420
 		barraBloqueoDias.position.y = 420
@@ -94,7 +94,7 @@ func regenerar_mapa():
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					temp.textura = GlobalRecursos.mineralesConFondo.Rubi
 				elif porcentaje > 0.995 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Topacio
+					temp.textura = GlobalRecursos.mineralesConFondo.Topacio
 				temp.actualizar_textura()
 		Cam.limit_bottom = 580
 		barraBloqueoDias.position.y = 580
@@ -110,7 +110,7 @@ func regenerar_mapa():
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					temp.textura = GlobalRecursos.mineralesConFondo.Zafiro
 				elif porcentaje > 0.995 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Amatista
+					temp.textura = GlobalRecursos.mineralesConFondo.Amatista
 				temp.actualizar_textura()
 		Cam.limit_bottom = 820
 		barraBloqueoDias.position.y = 820
@@ -127,7 +127,7 @@ func regenerar_mapa():
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					temp.textura = GlobalRecursos.mineralesConFondo.Carbon
 				elif porcentaje > 0.995 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Esmeralda
+					temp.textura = GlobalRecursos.mineralesConFondo.Esmeralda
 				temp.actualizar_textura()
 		Cam.limit_bottom = 1060
 		barraBloqueoDias.position.y = 1060
@@ -143,7 +143,7 @@ func regenerar_mapa():
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					temp.textura = GlobalRecursos.mineralesConFondo.Amatista
 				elif porcentaje > 0.995 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesSinFondo.Diamante
+					temp.textura = GlobalRecursos.mineralesConFondo.Diamante
 				temp.actualizar_textura()
 		Cam.limit_bottom = 1300
 		barraBloqueoDias.position.y = 1300

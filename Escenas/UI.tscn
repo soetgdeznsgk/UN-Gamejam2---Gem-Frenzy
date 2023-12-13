@@ -38,10 +38,6 @@ region = Rect2(40, 4, 8, 8)
 atlas = ExtResource("7_bbwty")
 region = Rect2(49, 4, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(58, 4, 8, 8)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wf2ym"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(4, 13, 8, 8)
@@ -57,6 +53,10 @@ region = Rect2(22, 13, 8, 8)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qif5"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(31, 13, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(58, 4, 8, 8)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -212,18 +212,6 @@ text = ": 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect7" type="TextureRect" parent="GridMinerales"]
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = SubResource("AtlasTexture_udvxe")
-
-[node name="Label7" type="Label" parent="GridMinerales"]
-layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TextureRect8" type="TextureRect" parent="GridMinerales"]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
@@ -267,6 +255,18 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_3qif5")
 
 [node name="Label11" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect7" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_udvxe")
+
+[node name="Label7" type="Label" parent="GridMinerales"]
 layout_mode = 2
 text = ": 0"
 horizontal_alignment = 1

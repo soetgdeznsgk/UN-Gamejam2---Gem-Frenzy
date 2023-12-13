@@ -16,9 +16,9 @@ shape = SubResource("RectangleShape2D_ts6io")
 texture_filter = 1
 texture_repeat = 1
 texture = ExtResource("2_n41ru")
-hframes = 8
-vframes = 2
-frame = 6
+hframes = 6
+vframes = 3
+frame = 11
 region_rect = Rect2(3.63596, 2.91969, 45.293, 14.4832)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

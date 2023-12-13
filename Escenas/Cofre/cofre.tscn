@@ -64,7 +64,7 @@ hframes = 2
 texture_filter = 1
 position = Vector2(0.47288, 4.7106)
 texture = ExtResource("4_211rc")
-hframes = 7
+hframes = 6
 vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
