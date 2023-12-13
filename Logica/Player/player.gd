@@ -56,7 +56,9 @@ func _physics_process(_delta):
 				#print("hola no se que hace esto")
 	else:
 		#movimiento superficie
-		if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
+		if input_direction==Vector2(0,-1):
+			input_direction=Vector2.ZERO
+		if input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
 			input_direction=Vector2(input_direction.x,0)
 			last_move=input_direction
 			
