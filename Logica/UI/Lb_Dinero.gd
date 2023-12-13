@@ -15,6 +15,3 @@ func actualizarDinero(dinero):
 		strDinero = str(dinero)
 	Lb_dinero.text = strDinero 
 	#todo animacion de moneda en la ui girando
-
-func actualizarMinerales(mineral, cantidad):
-	pass

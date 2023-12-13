@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=32 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="PackedScene" uid="uid://bvaa0r36hif4w" path="res://Logica/Player/player.tscn" id="2_rfotb"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" path="res://Escenas/Area2DEscaleraSegundoPiso.gd" id="12_vcjlc"]
 [ext_resource type="Script" path="res://Escenas/Area2DRecepcion.gd" id="13_37ooj"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="14_f6g73"]
+[ext_resource type="Script" path="res://Escenas/Area2DHorno.gd" id="14_weds7"]
+[ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(250, 6)
@@ -149,7 +151,7 @@ size = Vector2(16, 16)
 size = Vector2(700, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ran"]
-size = Vector2(12, 16)
+size = Vector2(8, 16)
 
 [node name="MainJuego" type="Node2D"]
 
@@ -304,7 +306,8 @@ shape = SubResource("RectangleShape2D_hxlur")
 metadata/_edit_lock_ = true
 
 [node name="Area2DHorno" type="Area2D" parent="Gameplay"]
-position = Vector2(365, -21)
+position = Vector2(379, -21)
+script = ExtResource("14_weds7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Area2DHorno"]
 shape = SubResource("RectangleShape2D_d3ran")
@@ -316,9 +319,17 @@ texture = ExtResource("14_f6g73")
 hframes = 2
 metadata/_edit_lock_ = true
 
+[node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Area2DHorno"]
+visible = false
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_s8g8y")
+metadata/_edit_lock_ = true
+
 [node name="Area2DMeterCarbon" type="Area2D" parent="Gameplay"]
-position = Vector2(380, -17)
+position = Vector2(360, -17)
 scale = Vector2(0.6, 0.6)
+script = ExtResource("16_u0pow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Area2DMeterCarbon"]
 shape = SubResource("RectangleShape2D_d3ran")
@@ -328,6 +339,13 @@ metadata/_edit_lock_ = true
 self_modulate = Color(0.533333, 0, 0.00392157, 1)
 texture = ExtResource("14_f6g73")
 hframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Area2DMeterCarbon"]
+visible = false
+position = Vector2(0, -33)
+scale = Vector2(0.833333, 0.833333)
+texture = ExtResource("6_s8g8y")
 metadata/_edit_lock_ = true
 
 [node name="CofresManager" type="Node" parent="."]
@@ -387,3 +405,7 @@ scale = Vector2(1, 1)
 [connection signal="body_exited" from="Gameplay/Area2DEscaleraPrimerPiso" to="Gameplay/Area2DEscaleraPrimerPiso" method="_on_body_exited"]
 [connection signal="body_entered" from="Gameplay/Area2DRecepcion" to="Gameplay/Area2DRecepcion" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DRecepcion" to="Gameplay/Area2DRecepcion" method="_on_body_exited"]
+[connection signal="body_entered" from="Gameplay/Area2DHorno" to="Gameplay/Area2DHorno" method="_on_body_entered"]
+[connection signal="body_exited" from="Gameplay/Area2DHorno" to="Gameplay/Area2DHorno" method="_on_body_exited"]
+[connection signal="body_entered" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_entered"]
+[connection signal="body_exited" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_exited"]
