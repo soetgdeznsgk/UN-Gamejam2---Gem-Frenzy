@@ -85,9 +85,18 @@ func _on_area_2d_body_entered(body):
 		AnimState.travel("Escalera")
 		SPEED = CONST_SPEED
 		taladrando=false
-		position.y = -21.2
-		surface_entered.emit()
-
+		
+		var tween :Tween = get_tree().create_tween()
+		movement = false
+		tween.tween_property(self, "position:x", $"../Area2DCasa".position.x, 0.4)
+		tween.tween_property(self, "position:y", -21.2, 0.7)
+		tween.tween_callback(_on_tween_callback)
+		
+		
+		
+func _on_tween_callback():
+	surface_entered.emit()
+	movement = true
 # Llamadas
 
 func recibirObjeto(objeto : int):	

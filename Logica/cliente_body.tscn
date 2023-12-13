@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://da8vfiq3fv2ud"]
+
+[ext_resource type="Script" path="res://Logica/cliente_body.gd" id="1_8qskh"]
+[ext_resource type="Texture2D" uid="uid://cw5anqvk3pdcv" path="res://Sprites/Mapa/clientes/cliente1 14x19.png" id="2_4xlyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7178"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_6h4n8"]
+resource_name = "caminar"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+
+[sub_resource type="Animation" id="Animation_m4oel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_flr7u"]
+_data = {
+"RESET": SubResource("Animation_m4oel"),
+"caminar": SubResource("Animation_6h4n8")
+}
+
+[node name="ClienteBody" type="CharacterBody2D"]
+script = ExtResource("1_8qskh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o7178")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, -1)
+texture = ExtResource("2_4xlyh")
+hframes = 4
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(16, 0)
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_flr7u")
+}
