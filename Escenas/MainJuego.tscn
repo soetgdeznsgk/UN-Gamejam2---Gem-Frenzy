@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=28 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="PackedScene" uid="uid://bvaa0r36hif4w" path="res://Logica/Player/player.tscn" id="2_rfotb"]
@@ -120,6 +120,9 @@ size = Vector2(15, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5g13"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxlur"]
+size = Vector2(700, 4)
+
 [node name="MainJuego" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -154,18 +157,20 @@ layer_0/tile_data = PackedInt32Array(-1048577, 1, 0, -983041, 1, 0, -917505, 1, 
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="Gameplay" instance=ExtResource("2_rfotb")]
+unique_name_in_owner = true
 z_index = 5
 position = Vector2(366, -21)
 CONST_SPEED = 115.0
 CONST_SPEEDUP = 40.0
 
-[node name="Camera2D" type="Camera2D" parent="Gameplay/Player"]
+[node name="CamPlayer" type="Camera2D" parent="Gameplay/Player"]
+unique_name_in_owner = true
 zoom = Vector2(3, 3)
 process_callback = 0
 limit_left = -8
 limit_top = -140
 limit_right = 640
-limit_bottom = 1284
+limit_bottom = 100
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
@@ -260,6 +265,14 @@ visible = false
 position = Vector2(0, -11.585)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_s8g8y")
+metadata/_edit_lock_ = true
+
+[node name="BLOQUEADIAS" type="StaticBody2D" parent="Gameplay"]
+unique_name_in_owner = true
+position = Vector2(320, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/BLOQUEADIAS"]
+shape = SubResource("RectangleShape2D_hxlur")
 metadata/_edit_lock_ = true
 
 [node name="CofresManager" type="Node" parent="."]

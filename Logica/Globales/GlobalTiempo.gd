@@ -4,7 +4,7 @@ extends Node
 # El dia de trabajo va de 8 am a 6 pm, 10 horas
 var tiempoHoraDia =  8 # horas
 var tiempoMinutoDia = 0
-var diaActual = 0
+var diaActual = 1
 
 signal tiempoCambio(minuto, hora)
 signal finalizarDia()
@@ -32,9 +32,9 @@ func on_tmr_minuto_end():
 		finalizarDia.emit()
 
 func siguiente_dia():
-	iniciarDia.emit()
 	diaActual += 1
 	tiempoHoraDia = 8
 	tiempoMinutoDia = 0
 	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
+	iniciarDia.emit()
 	tmr_minuto.start()

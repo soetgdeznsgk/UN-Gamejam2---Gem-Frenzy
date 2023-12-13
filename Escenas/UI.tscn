@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=9 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
 [ext_resource type="Texture2D" uid="uid://b23rlmmuwpk64" path="res://Sprites/UI/reloj.png" id="2_ulj72"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
+[ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
 [ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
@@ -48,6 +49,14 @@ text = "8:00 AM"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_hwchs")
+
+[node name="Lb_Dias" type="Label" parent="VbReloj"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dia: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_go46m")
 
 [node name="VbDinero" type="VBoxContainer" parent="."]
 layout_mode = 0

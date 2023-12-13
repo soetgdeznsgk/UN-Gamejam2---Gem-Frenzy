@@ -13,7 +13,6 @@ func _process(_delta: float) -> void:
 
 func _on_btn_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://Escenas/MainJuego.tscn")
-	GlobalTiempo.siguiente_dia()
 
 
 func _on_btn_instrucciones_pressed() -> void:
