@@ -3,11 +3,10 @@ extends Node
 # Singleton para manejar el dinero y los minerales actuales
 
 # inicia en ceros
-var minerales_cofre : Array = [0,0,0,0,0,0,0,0,0,0,0]
+var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]
 var dinero : int = 0
-var minerales_pj : Array = [0,0,0,0,0,0,0,0,0,0,0]
 signal cambioDinero(dinero)
-signal cambioMineralPj(mineral, cantidad)
+signal cambioMineral(mineral, cantidad)
 # enum para no perderlos de vista
 
 enum mineralesSinFondo{
@@ -40,13 +39,9 @@ enum mineralesConFondo{
 	Esmeralda
 }
 
-func actualizar_mineral_cofre(mineral : int, cantidad : int):
-	minerales_cofre[mineral] += cantidad
-	#cambioMineral.emit(mineral, minerales_cofre[mineral])
-
-func actualizar_mineral_pj(mineral : int, cantidad : int):
-	minerales_pj[mineral] += cantidad
-	cambioMineralPj.emit(mineral, minerales_pj[mineral])
+func actualizar_mineral(mineral : int, cantidad : int):
+	minerales[mineral] += cantidad
+	cambioMineral.emit(mineral, minerales[mineral])
 
 func actualizar_dinero(cantidad : int):
 	dinero += cantidad

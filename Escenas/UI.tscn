@@ -133,7 +133,7 @@ vertical_alignment = 1
 script = ExtResource("5_qljiu")
 
 [node name="GridMinerales" type="GridContainer" parent="."]
-modulate = Color(1, 1, 1, 0.627451)
+modulate = Color(1, 1, 1, 0.780392)
 layout_mode = 0
 offset_right = 228.0
 offset_bottom = 97.0

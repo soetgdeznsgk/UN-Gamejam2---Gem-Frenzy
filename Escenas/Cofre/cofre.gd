@@ -4,7 +4,7 @@ extends Node2D
 	set(value):
 		material_almacenado = value
 		$Sprite2D/Imagen.frame = material_almacenado
-var cantidad_almacenada := 5
+var cantidad_almacenada := 0
 @onready var popup := $Spr_up_key_ladder
 var isPlayerHere := false
 var playerRef : Player
@@ -25,11 +25,13 @@ func Open() -> void:
 		#print("agarrar")
 		playerRef.recibirObjeto(material_almacenado)
 		cantidad_almacenada -= 1
+		GlobalRecursos.actualizar_mineral(material_almacenado, -1)
 		# +1 al arreglo de items en las manos del jugador
 	elif playerRef.items_en_mano.has(material_almacenado): #si el jugador tiene en sus manos el item del cofre
 		#print("entregar")
 		playerRef.darUnObjeto(material_almacenado)
 		cantidad_almacenada += 1
+		GlobalRecursos.actualizar_mineral(material_almacenado, 1)
 
 # Señales
 
