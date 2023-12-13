@@ -46,7 +46,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7rvs"]
-size = Vector2(120, 126.667)
+size = Vector2(12, 14)
 
 [node name="Cofre" type="Node2D"]
 scale = Vector2(0.15, 0.15)
@@ -55,14 +55,12 @@ script = ExtResource("1_5a08q")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -3.8147e-06)
-scale = Vector2(7.049, 7.733)
 texture = ExtResource("2_vta35")
 hframes = 2
 
 [node name="Imagen" type="Sprite2D" parent="Sprite2D"]
 texture_filter = 1
 position = Vector2(0.47288, 4.7106)
-scale = Vector2(1.06398, 1.17765)
 texture = ExtResource("4_211rc")
 hframes = 7
 vframes = 2
@@ -74,14 +72,14 @@ libraries = {
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -166.667)
-scale = Vector2(9.41667, 10.4808)
+position = Vector2(0, -13.3333)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_bhoaq")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.52588e-05, 13.3333)
 shape = SubResource("RectangleShape2D_w7rvs")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

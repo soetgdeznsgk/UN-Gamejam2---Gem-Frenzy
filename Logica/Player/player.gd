@@ -7,7 +7,7 @@ signal mine_entered
 @export var CONST_SPEED : float
 @export var CONST_SPEEDUP : float
 
-@onready var SPEED = CONST_SPEED + CONST_SPEEDUP
+@onready var SPEED = CONST_SPEED
 @onready var SPEEDUP= CONST_SPEED + CONST_SPEEDUP
 @onready var Anim : AnimationTree = $AnimationTree
 @onready var AnimState : AnimationNodeStateMachinePlayback = Anim.get("parameters/playback")
@@ -17,7 +17,7 @@ var last_move=Vector2.ZERO
 var movement = true
 var items_en_mano := Array()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -83,9 +83,9 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body is Player and taladrando:
 		AnimState.travel("Escalera")
-		SPEED = CONST_SPEED + CONST_SPEEDUP
+		SPEED = CONST_SPEED
 		taladrando=false
-		position.y = -20.1
+		position.y = -21.2
 		surface_entered.emit()
 
 # Llamadas

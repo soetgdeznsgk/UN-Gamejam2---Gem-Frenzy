@@ -6,7 +6,7 @@ var playerRef : Player
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if isPlayerHere:
 		if Input.is_action_just_pressed("ui_up"):
 			var tween :Tween = get_tree().create_tween()

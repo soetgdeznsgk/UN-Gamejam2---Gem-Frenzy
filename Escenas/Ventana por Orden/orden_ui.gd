@@ -10,7 +10,7 @@ func _ready():
 	cambiadorDeColor.bg_color = Color("008000")
 	pb.add_theme_stylebox_override("fill", cambiadorDeColor)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	pb.value = orden_logica.get_time_left()
 	if pb.value == 20:
 		cambiadorDeColor.bg_color = Color("FFFF00")

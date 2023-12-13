@@ -8,7 +8,8 @@ func _ready() -> void:
 	generar_mapa()
 	GlobalTiempo.finalizarDia.connect(regenerar_mapa)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	# ESTO ES SOLO PARA DEBUG NO MAS
 	if Input.is_action_just_pressed("ui_accept"):
 		GlobalTiempo.tiempoHoraDia += 1
 

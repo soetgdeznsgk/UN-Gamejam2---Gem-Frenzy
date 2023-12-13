@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_3l1ym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
-size = Vector2(16, 16)
+size = Vector2(13, 14)
 
 [sub_resource type="Animation" id="Animation_k7hiw"]
 resource_name = "Escaleras"
@@ -832,6 +832,7 @@ states/Escaleras/node = SubResource("AnimationNodeAnimation_8ebur")
 states/Escaleras/position = Vector2(602, 46)
 states/Idle_Superficie/node = SubResource("AnimationNodeBlendSpace1D_8nk1j")
 states/Idle_Superficie/position = Vector2(359, 46)
+states/Start/position = Vector2(201, 100)
 states/Taladrando/node = SubResource("AnimationNodeBlendSpace2D_p7ol4")
 states/Taladrando/position = Vector2(744, 167)
 states/Taladrando_Idle/node = SubResource("AnimationNodeAnimation_c5ehh")
@@ -877,8 +878,10 @@ shape = SubResource("RectangleShape2D_fsbbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_04omg")
+texture = ExtResource("2_m6vgi")
 hframes = 4
+vframes = 2
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")
