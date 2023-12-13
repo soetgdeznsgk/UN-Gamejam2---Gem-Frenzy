@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var material_almacenado : int:
+@export var num_cofre : int
+@export var material_almacenado : int:
 	set(value):
 		material_almacenado = value
 		$Sprite2D/Imagen.frame = material_almacenado
@@ -9,6 +10,10 @@ var cantidad_almacenada := 0
 var isPlayerHere := false
 var playerRef : Player
 @onready var animPlayer = $AnimationPlayer
+var activo = false
+
+func _ready() -> void:
+	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -16,6 +21,12 @@ func _process(_delta):
 		if Input.is_action_just_pressed("ui_up"):
 			Open()
 	
+
+func actualizar():
+	var pt = GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.CofreMineral]*2
+	if num_cofre < 3 + pt:
+		visible = true
+		activo = true
 
 # Llamadas
 

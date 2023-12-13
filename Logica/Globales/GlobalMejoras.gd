@@ -21,11 +21,11 @@ var info_mejoras = {
 		#"Textura" : 'null',
 		#"Descripcion" : "Permite llevar más minerales",
 	#},
-	nombre_mejoras.CofreMineral : {
+	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : "Cofre",
 		"Precio" : 2,
-		"Maximo" : 8,
+		"Maximo" : 4,
 		"Textura" : 'null',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
 	},
@@ -145,7 +145,7 @@ func obtener_mejora_random_disponible():
 			
 			elif len(posibles_mejoras) == 1:
 				selec = 0
-					
+			
 			posibles_mejoras.pop_at(selec)
 			mejoras_seleccionadas.append(info_mejoras[selec])
 		return mejoras_seleccionadas

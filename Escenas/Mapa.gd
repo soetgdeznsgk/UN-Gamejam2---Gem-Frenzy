@@ -69,7 +69,7 @@ func regenerar_mapa():
 		Cam.limit_bottom = 260
 		barraBloqueoDias.position.y = 260
 		
-	
+	# se vende el oro solito
 	if GlobalTiempo.diaActual >= 3:
 		for i in range(0,80):
 			for j in range(20,40):
@@ -115,7 +115,8 @@ func regenerar_mapa():
 		Cam.limit_bottom = 820
 		barraBloqueoDias.position.y = 820
 	
-	# Libera cristal agua
+	# Libera cristal de tierra
+	# Libera RGB cristal
 	if GlobalTiempo.diaActual >= 7:
 		for i in range(0,80):
 			for j in range(90,120):
