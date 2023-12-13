@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=23 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
 [ext_resource type="Texture2D" uid="uid://b23rlmmuwpk64" path="res://Sprites/UI/reloj.png" id="2_ulj72"]
@@ -7,7 +7,56 @@
 [ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
+[ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
+[ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
 [ext_resource type="Script" path="res://Logica/UI/FPSDebug.gd" id="7_xpxm3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xoam7"]
+load_path = "res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qnci"]
+atlas = SubResource("CompressedTexture2D_xoam7")
+region = Rect2(4, 4, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpmjl"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(13, 4, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ed7w"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(22, 4, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t2b6"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(31, 4, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaldj"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(40, 4, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1fxj"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(49, 4, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(58, 4, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf2ym"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(4, 13, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cuot"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(13, 13, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip7uw"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(22, 13, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qif5"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(31, 13, 8, 8)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -82,6 +131,146 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_qljiu")
+
+[node name="GridMinerales" type="GridContainer" parent="."]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 97.0
+columns = 8
+script = ExtResource("7_oym11")
+
+[node name="TextureRect" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_2qnci")
+
+[node name="Label" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_xpmjl")
+
+[node name="Label2" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_5ed7w")
+
+[node name="Label3" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_0t2b6")
+
+[node name="Label4" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_yaldj")
+
+[node name="Label5" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect6" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_x1fxj")
+
+[node name="Label6" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect7" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_udvxe")
+
+[node name="Label7" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect8" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_wf2ym")
+
+[node name="Label8" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect9" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3cuot")
+
+[node name="Label9" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect10" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ip7uw")
+
+[node name="Label10" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect11" type="TextureRect" parent="GridMinerales"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3qif5")
+
+[node name="Label11" type="Label" parent="GridMinerales"]
+layout_mode = 2
+text = ": 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="FinalizarDia" type="ColorRect" parent="."]
 unique_name_in_owner = true

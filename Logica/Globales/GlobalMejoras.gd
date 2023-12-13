@@ -3,7 +3,7 @@ extends Node
 # Este singleton contiene las mejoras activas y las posibles mejoras a ganar
 
 enum nombre_mejoras {
-	Mochila,
+	#Mochila,
 	CofreMineral,
 	Gato,
 	MejoraDeMejoras,
@@ -13,14 +13,14 @@ enum nombre_mejoras {
 }
 
 var info_mejoras = {
-	nombre_mejoras.Mochila : {
-		"Key" : nombre_mejoras.Mochila,
-		"Nombre" : "Mochila grande",
-		"Precio" : 5,
-		"Maximo" : 3,
-		"Textura" : 'null',
-		"Descripcion" : "Permite llevar más minerales",
-	},
+	#nombre_mejoras.Mochila : {
+		#"Key" : nombre_mejoras.Mochila,
+		#"Nombre" : "Mochila grande",
+		#"Precio" : 5,
+		#"Maximo" : 3,
+		#"Textura" : 'null',
+		#"Descripcion" : "Permite llevar más minerales",
+	#},
 	nombre_mejoras.CofreMineral : {
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : "Cofre",
@@ -101,11 +101,11 @@ func obtener_mejora_random_disponible():
 					selec = 1
 				if porcentaje > 0.6 and porcentaje < 0.7:
 					selec = 2
-				if porcentaje > 0.7 and porcentaje < 0.7:
+				if porcentaje > 0.7 and porcentaje < 0.8:
 					selec = 3
-				if porcentaje > 0.8 and porcentaje < 0.7:
+				if porcentaje > 0.8 and porcentaje < 0.9:
 					selec = 4
-				if porcentaje > 0.9 and porcentaje < 0.7:
+				if porcentaje > 0.9 and porcentaje <= 1.0:
 					selec = 5
 			elif len(posibles_mejoras) == 5:
 				if porcentaje < 0.3:
@@ -114,7 +114,7 @@ func obtener_mejora_random_disponible():
 					selec = 1
 				if porcentaje > 0.6 and porcentaje < 0.7:
 					selec = 2
-				if porcentaje > 0.7 and porcentaje < 0.7:
+				if porcentaje > 0.7 and porcentaje < 0.8:
 					selec = 3
 				if porcentaje > 0.8:
 					selec = 4
@@ -138,9 +138,9 @@ func obtener_mejora_random_disponible():
 					selec = 2
 			
 			elif len(posibles_mejoras) == 2:
-				if porcentaje < 0.4:
+				if porcentaje < 0.5:
 					selec = 0
-				if porcentaje > 0.4 and porcentaje < 0.8:
+				if porcentaje > 0.5:
 					selec = 1
 			
 			elif len(posibles_mejoras) == 1:

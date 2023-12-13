@@ -8,7 +8,7 @@ var cantidad_almacenada := 5
 @onready var popup := $Spr_up_key_ladder
 var isPlayerHere := false
 var playerRef : Player
-
+@onready var animPlayer = $AnimationPlayer
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -5,7 +5,6 @@ var strDinero : String
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalRecursos.cambioDinero.connect(actualizarDinero)
-	GlobalRecursos.cambioMineral.connect(actualizarMinerales)
 
 func actualizarDinero(dinero):
 	if dinero < 10:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ban86vq6j2l5p"
-path="res://.godot/imported/Minerales.png-e44d2e28f019c0ed1222aac26dc7dd94.ctex"
+uid="uid://dj3rn7e01llv3"
+path="res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Recursos/Minerales.png"
-dest_files=["res://.godot/imported/Minerales.png-e44d2e28f019c0ed1222aac26dc7dd94.ctex"]
+source_file="res://Sprites/Recursos/MineralesCopia.png"
+dest_files=["res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"]
 
 [params]
 
