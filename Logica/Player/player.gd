@@ -16,6 +16,7 @@ var input_direction = Vector2.ZERO
 var last_move=Vector2.ZERO
 var movement = true
 var items_en_mano := Array()
+var modolento=false
 
 func _physics_process(_delta):
 	
@@ -61,21 +62,23 @@ func _physics_process(_delta):
 		if input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
 			input_direction=Vector2(input_direction.x,0)
 			last_move=input_direction
-			
 			AnimState.travel("Walking_Superficie")
 			Anim.set("parameters/Walking_Superficie/blend_position", input_direction.x)
-			#cuando camina
+		#cuando camina
 		elif input_direction==Vector2(1,0)||input_direction==Vector2(-1,0):
 			last_move=input_direction
 			AnimState.travel("Walking_Superficie")
 			Anim.set("parameters/Walking_Superficie/blend_position", input_direction.x)
 		elif input_direction==Vector2.ZERO:
-			AnimState.travel("Idle_Superficie")	
+			AnimState.travel("Idle_Superficie")
 			Anim.set("parameters/Idle_Superficie/blend_position", last_move.x)
 	if movement:
 		if AnimState.get_current_node()=="Escaleras":
 			AnimState.travel("Taladrando_Idle")	
-		
+		if modolento:
+			SPEED=50
+		else:
+			SPEED=CONST_SPEED
 		velocity = input_direction.normalized() * SPEED
 		move_and_slide()
 	else:
@@ -116,3 +119,15 @@ func darUnObjeto(objeto : int):
 	get_child(2).frame = 11
 	print(items_en_mano)
 	return # sé que no dará -1 por que en los cofres se verifica que el jugador si o sí tiene 1 en el inventario
+
+
+func _on_slime_body_entered(body):
+	if body is Player and taladrando:
+		modolento=true
+	pass # Replace with function body.
+
+
+func _on_slime_body_exited(body):
+	if body is Player and taladrando:
+		modolento=false
+	pass # Replace with function body.
