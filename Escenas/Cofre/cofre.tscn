@@ -1,22 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://r3b4g86f7l6x"]
+[gd_scene load_steps=10 format=3 uid="uid://r3b4g86f7l6x"]
 
 [ext_resource type="Script" path="res://Escenas/Cofre/cofre.gd" id="1_5a08q"]
-[ext_resource type="Texture2D" uid="uid://chlbo2qt3apt7" path="res://Sprites/temporales_UI/cofretemp.png" id="2_wfqby"]
+[ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="2_vta35"]
 [ext_resource type="Texture2D" uid="uid://b2ivbnl772jf" path="res://Sprites/UI/upKey.png" id="3_bhoaq"]
+[ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="4_211rc"]
 
 [sub_resource type="Animation" id="Animation_qs0vi"]
 resource_name = "AbrirCofre"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [Vector2i(1, 0), Vector2i(1, 1), Vector2i(1, 0)]
+"values": [0, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_1frg3"]
@@ -27,14 +28,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(1, 0)]
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ak1nw"]
@@ -45,17 +46,26 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7rvs"]
-size = Vector2(260, 602)
+size = Vector2(120, 126.667)
 
 [node name="Cofre" type="Node2D"]
 scale = Vector2(0.15, 0.15)
 script = ExtResource("1_5a08q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wfqby")
-hframes = 5
+texture_filter = 1
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(7.049, 7.733)
+texture = ExtResource("2_vta35")
+hframes = 2
+
+[node name="Imagen" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(0.47288, 4.7106)
+scale = Vector2(1.06398, 1.17765)
+texture = ExtResource("4_211rc")
+hframes = 7
 vframes = 2
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -64,14 +74,14 @@ libraries = {
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(27, -29)
+position = Vector2(0, -166.667)
 scale = Vector2(9.41667, 10.4808)
 texture = ExtResource("3_bhoaq")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(27, -36)
+position = Vector2(-1.52588e-05, 13.3333)
 shape = SubResource("RectangleShape2D_w7rvs")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

@@ -1,19 +1,13 @@
 extends Node2D
 
-@export var material_almacenado : int
-var cantidad_almacenada := 0:
-	get:
-		return cantidad_almacenada
-	set(val):
-		cantidad_almacenada = val
-		
+@onready var material_almacenado : int:
+	set(value):
+		material_almacenado = value
+		$Sprite2D/Imagen.frame = material_almacenado
+var cantidad_almacenada := 5
 @onready var popup := $Spr_up_key_ladder
 var isPlayerHere := false
-var playerRef
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var playerRef : Player
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,13 +21,15 @@ func _process(delta):
 
 func Open() -> void:
 	$AnimationPlayer.play("AbrirCofre")
-	if true: #si hay espacio en las manos de player
+	if playerRef.items_en_mano.size() < 3 and cantidad_almacenada > 0: #si hay espacio en las manos de player
+		#print("agarrar")
+		playerRef.recibirObjeto(material_almacenado)
 		cantidad_almacenada -= 1
 		# +1 al arreglo de items en las manos del jugador
-	elif true: #si el jugador tiene en sus manos el item del cofre
+	elif playerRef.items_en_mano.has(material_almacenado): #si el jugador tiene en sus manos el item del cofre
+		#print("entregar")
+		playerRef.darUnObjeto(material_almacenado)
 		cantidad_almacenada += 1
-		# -1 al arreglo de items en las manos del jugador
-	return
 
 # Señales
 

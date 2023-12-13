@@ -18,11 +18,6 @@ func _ready():
 	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
 	tmr.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _input(_event):
 	if Input.is_anything_pressed():
 		if currentOrders.size() > 1:

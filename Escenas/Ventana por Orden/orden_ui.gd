@@ -17,7 +17,6 @@ func _physics_process(delta):
 		
 	elif pb.value == 10:
 		cambiadorDeColor.bg_color = Color("FF0000")
-		
 
 func setOrden(orden : Order) -> void:
 	orden_logica = orden

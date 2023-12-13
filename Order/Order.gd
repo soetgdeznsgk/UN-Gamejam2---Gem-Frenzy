@@ -55,7 +55,7 @@ func _on_timer_timeout():
 # debug
 
 func _to_string():
-	var stri : String
+	var stri := ""
 	for e in requirements:
 		stri += str(e) 
 	return stri

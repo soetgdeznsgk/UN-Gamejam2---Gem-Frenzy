@@ -74,3 +74,4 @@ layout_mode = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_yjmml")
 max_value = 30.0
 value = 30.0
+show_percentage = false

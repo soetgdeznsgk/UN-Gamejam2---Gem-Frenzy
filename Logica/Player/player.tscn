@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=49 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bov6b6cxiv20i" path="res://Sprites/Player/pancha_taladro_caminando_20x20_px.png" id="3_2eiir"]
 [ext_resource type="Texture2D" uid="uid://trmgdcomkkku" path="res://Sprites/Player/pancha_taladro_arriba_12x27_px.png" id="4_qt0m4"]
 [ext_resource type="Texture2D" uid="uid://cfymrk6lus6fo" path="res://Sprites/Player/uy quieta 14x24.png" id="6_rluto"]
+[ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_3l1ym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(16, 16)
@@ -843,6 +844,34 @@ graph_offset = Vector2(10, 14.582)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_bfxk7")
 
+[node name="Item 1" type="Sprite2D" parent="."]
+z_index = 6
+z_as_relative = false
+texture_filter = 1
+position = Vector2(-7, -13)
+texture = ExtResource("7_3l1ym")
+hframes = 7
+vframes = 2
+frame = 11
+
+[node name="Item 2" type="Sprite2D" parent="."]
+z_index = 6
+texture_filter = 1
+position = Vector2(9, -13)
+texture = ExtResource("7_3l1ym")
+hframes = 7
+vframes = 2
+frame = 11
+
+[node name="Item 3" type="Sprite2D" parent="."]
+z_index = 6
+texture_filter = 1
+position = Vector2(1, -13)
+texture = ExtResource("7_3l1ym")
+hframes = 7
+vframes = 2
+frame = 11
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fsbbl")
 
@@ -866,3 +895,5 @@ parameters/Walking_Superficie/blend_position = 1.00556
 libraries = {
 "": SubResource("AnimationLibrary_jp3qt")
 }
+
+[node name="Items" type="Node" parent="."]

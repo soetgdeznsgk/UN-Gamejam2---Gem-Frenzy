@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=18 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="PackedScene" uid="uid://bvaa0r36hif4w" path="res://Logica/Player/player.tscn" id="2_rfotb"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://b2ivbnl772jf" path="res://Sprites/UI/upKey.png" id="6_s8g8y"]
 [ext_resource type="PackedScene" uid="uid://r3b4g86f7l6x" path="res://Escenas/Cofre/cofre.tscn" id="8_aodjd"]
 [ext_resource type="Script" path="res://Escenas/Cofre/CofresManager.gd" id="8_xp74q"]
-[ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="10_xfpbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(250, 6)
@@ -163,82 +162,43 @@ region_enabled = true
 region_rect = Rect2(-0.0895081, 49.677, 31.5444, 54.3265)
 metadata/_edit_lock_ = true
 
-[node name="Cofres" type="Node2D" parent="Gameplay"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(374, -61.5)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D2" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(245, -21)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D3" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(269, -21)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D5" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(245, -61)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D6" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(271, -61)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D7" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(296, -61)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D10" type="Sprite2D" parent="Gameplay/Cofres"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(374, -21)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D13" type="Sprite2D" parent="Gameplay/Cofres"]
-self_modulate = Color(0.921569, 0, 0.294118, 1)
-position = Vector2(395, -21)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D4" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(296, -21)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D8" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(323, -21)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D9" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(348, -21)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D11" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(323, -61)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
-[node name="Sprite2D12" type="Sprite2D" parent="Gameplay/Cofres"]
-position = Vector2(348, -61)
-texture = ExtResource("10_xfpbt")
-hframes = 2
-
 [node name="Terrenos" type="Node2D" parent="Gameplay"]
 
 [node name="CofresManager" type="Node" parent="."]
 script = ExtResource("8_xp74q")
 
 [node name="Cofre" parent="CofresManager" instance=ExtResource("8_aodjd")]
-position = Vector2(189, -52)
+position = Vector2(244, -22)
+
+[node name="Cofre2" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(275, -22)
+
+[node name="Cofre3" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(306, -22)
+
+[node name="Cofre4" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(336, -22)
+
+[node name="Cofre5" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(366, -22)
+
+[node name="Cofre6" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(245, -63)
+
+[node name="Cofre7" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(271, -63)
+
+[node name="Cofre8" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(296, -63)
+
+[node name="Cofre9" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(323, -63)
+
+[node name="Cofre10" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(348, -63)
+
+[node name="Cofre11" parent="CofresManager" instance=ExtResource("8_aodjd")]
+position = Vector2(375, -63)
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]
 [connection signal="surface_entered" from="Gameplay/Player" to="CofresManager" method="_on_player_surface_entered"]
