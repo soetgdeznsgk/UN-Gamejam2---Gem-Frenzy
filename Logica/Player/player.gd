@@ -108,7 +108,7 @@ func recibirObjeto(objeto : int):
 	if items_en_mano.size() < 3:
 		items_en_mano.append(objeto)
 		get_child(items_en_mano.size() - 1).frame = objeto # Ésto depende de que item 1, 2 y 3 sean child0, child1 y child2
-	print(items_en_mano)
+	#print(items_en_mano)
 
 func darObjetos() -> Array:
 	var temp = items_en_mano
@@ -129,7 +129,7 @@ func darUnObjeto(objeto : int):
 	
 	for r in range(0, items_en_mano.size()):
 		get_child(r).frame = items_en_mano[r]
-	print(items_en_mano)
+	#print(items_en_mano)
 	return # sé que no dará -1 por que en los cofres se verifica que el jugador si o sí tiene 1 en el inventario
 
 
