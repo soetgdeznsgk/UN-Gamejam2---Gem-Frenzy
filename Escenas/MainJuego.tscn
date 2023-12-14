@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://Escenas/Cofre/CofresManager.gd" id="8_xp74q"]
 [ext_resource type="Texture2D" uid="uid://bcgo0i8bdjnnc" path="res://Sprites/Mapa/scaleras 16x16.png" id="11_m2ljb"]
 [ext_resource type="Script" path="res://Escenas/Area2DEscaleraSegundoPiso.gd" id="12_vcjlc"]
-[ext_resource type="Script" path="res://Escenas/Area2DRecepcion.gd" id="13_37ooj"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="14_f6g73"]
 [ext_resource type="Texture2D" uid="uid://bjel6w2lipr7v" path="res://Sprites/obstaculos/slime.png" id="14_voudg"]
 [ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
