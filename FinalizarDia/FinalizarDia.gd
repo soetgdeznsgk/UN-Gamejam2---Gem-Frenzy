@@ -18,6 +18,6 @@ func _on_finalizar_dia():
 
 func _on_btn_finalizar_dia_pressed() -> void:
 	visible = false
-	GlobalTiempo.siguiente_dia()
 	for child in grid.get_children():
 		child.queue_free()
+	GlobalTiempo.siguiente_dia()

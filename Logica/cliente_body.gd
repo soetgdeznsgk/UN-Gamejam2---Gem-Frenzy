@@ -14,7 +14,7 @@ func _ready() -> void:
 	textura = load(selec)
 	$Sprite2D.texture = textura
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		if esperando:
 			moviendo = false

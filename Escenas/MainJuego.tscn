@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://Escenas/Area2DHorno.gd" id="14_weds7"]
 [ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
+[ext_resource type="Texture2D" uid="uid://xs2dcu82lexr" path="res://Sprites/Player/Player_left.png" id="14_hbyd4"]
+[ext_resource type="Texture2D" uid="uid://bqjqpati2ea0g" path="res://Sprites/Mapa/hornito.png" id="18_5rdiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(85, 7)
@@ -428,7 +430,8 @@ shape = SubResource("RectangleShape2D_hxlur")
 metadata/_edit_lock_ = true
 
 [node name="Area2DHorno" type="Area2D" parent="Gameplay"]
-position = Vector2(379, -21)
+texture_filter = 1
+position = Vector2(378, -19)
 script = ExtResource("14_weds7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Area2DHorno"]
@@ -436,9 +439,7 @@ shape = SubResource("RectangleShape2D_d3ran")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Gameplay/Area2DHorno"]
-self_modulate = Color(0, 0, 0, 1)
-texture = ExtResource("14_f6g73")
-hframes = 2
+texture = ExtResource("18_5rdiv")
 metadata/_edit_lock_ = true
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Area2DHorno"]
