@@ -17,6 +17,12 @@ func _physics_process(_delta):
 		
 	elif pb.value == 10:
 		cambiadorDeColor.bg_color = Color("FF0000")
+		
+
+# Llamadas
+
+func getOrden() -> int:
+	return GlobalRecetas.encontrarReceta(orden_logica.requirements)
 
 func setOrden(orden : Order) -> void:
 	orden_logica = orden
@@ -30,7 +36,10 @@ func setOrden(orden : Order) -> void:
 
 # Señales
 
-func orden_out_of_time():
+func orden_out_of_time(): # ejecutar algun sonido
 	queue_free()
-
+	
+func orden_deliver():
+	OrderManager._on_order_delivered()
+	queue_free()
 	

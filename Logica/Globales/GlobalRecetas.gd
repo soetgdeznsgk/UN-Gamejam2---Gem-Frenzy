@@ -9,18 +9,7 @@ enum {
 	CristalAgua,
 	CristalTierra
 }
-#enum mineralesSinFondo{
-	#Hierro, 0
-	#Plata, 1 
-	#Oro, 2
-	#Carbon, 3
-	#Cobre, 4
-	#Amatista, 5
-	#Esmeralda, 6
-	#Topacio, 7
-	#Rubi, 8
-	#Zafiro, 9 
-	#Diamante, 10
+
 #}
 func encontrarReceta(ingredientes : Array) -> int: # NO TOCAR ESTA PORQUERIA
 	if ingredientes.has(GlobalRecursos.mineralesSinFondo.Hierro) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Carbon): # Acero (hierro + carbon)

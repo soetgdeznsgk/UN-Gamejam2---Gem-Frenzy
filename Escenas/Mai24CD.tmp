@@ -459,6 +459,5 @@ position = Vector2(378, -23)
 [connection signal="body_exited" from="Gameplay/Obstaculos/Slime/Area2D" to="Gameplay/Player" method="_on_slime_body_exited"]
 [connection signal="body_entered" from="Gameplay/Recepcion" to="Gameplay/Recepcion" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Recepcion" to="Gameplay/Recepcion" method="_on_body_exited"]
-[connection signal="order_delivered" from="Gameplay/Recepcion" to="CanvasLayer/UI" method="_on_recepcion_order_delivered"]
 [connection signal="body_entered" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_exited"]

@@ -63,7 +63,7 @@ var info_mejoras = {
 	},
 }
 var disponible_mejoras = [0,0,0,0,0,0,0]
-var activas_mejoras = [0,0,0,0,0,0,0]
+var activas_mejoras = [4,0,0,0,0,0,0]
 
 func _ready() -> void:
 	for i in range(len(nombre_mejoras)):
