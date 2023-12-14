@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=35 format=3 uid="uid://bydcj1ti5fimj"]
-
+[gd_scene load_steps=40 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="PackedScene" uid="uid://bvaa0r36hif4w" path="res://Logica/Player/player.tscn" id="2_rfotb"]
@@ -18,15 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bcgo0i8bdjnnc" path="res://Sprites/Mapa/scaleras 16x16.png" id="11_m2ljb"]
 [ext_resource type="Script" path="res://Escenas/Area2DEscaleraSegundoPiso.gd" id="12_vcjlc"]
 [ext_resource type="Script" path="res://Escenas/Area2DRecepcion.gd" id="13_37ooj"]
-[ext_resource type="Script" path="res://Escenas/Slime.gd" id="13_ny4e5"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="14_f6g73"]
-
+[ext_resource type="Texture2D" uid="uid://bjel6w2lipr7v" path="res://Sprites/obstaculos/slime.png" id="14_voudg"]
 [ext_resource type="Script" path="res://Escenas/Area2DHorno.gd" id="14_weds7"]
 [ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
-
-[ext_resource type="Texture2D" uid="uid://xs2dcu82lexr" path="res://Sprites/Player/Player_left.png" id="14_hbyd4"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(85, 7)
@@ -163,8 +157,48 @@ size = Vector2(20, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gojq5"]
 size = Vector2(15, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hh68"]
-size = Vector2(71, 21)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_na8lm"]
+texture = ExtResource("14_voudg")
+margins = Vector2i(2, 2)
+separation = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/z_index = 6
+1:0/0 = 0
+1:0/0/z_index = 6
+2:0/0 = 0
+2:0/0/z_index = 6
+0:1/0 = 0
+0:1/0/z_index = 6
+1:1/0 = 0
+1:1/0/z_index = 6
+2:1/0 = 0
+2:1/0/z_index = 6
+0:2/0 = 0
+0:2/0/z_index = 6
+1:2/0 = 0
+1:2/0/z_index = 6
+2:2/0 = 0
+2:2/0/z_index = 6
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfja4"]
+texture = ExtResource("14_voudg")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/y_sort_origin = 3
+
+[sub_resource type="TileSet" id="TileSet_rb1bu"]
+sources/0 = SubResource("TileSetAtlasSource_na8lm")
+sources/1 = SubResource("TileSetAtlasSource_yfja4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6svhn"]
+size = Vector2(23.25, 22.2813)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5g13"]
 size = Vector2(16, 16)
@@ -316,22 +350,59 @@ metadata/_edit_lock_ = true
 
 [node name="Obstaculos" type="Node2D" parent="Gameplay"]
 
-[node name="Slime" type="Node2D" parent="Gameplay/Obstaculos"]
-script = ExtResource("13_ny4e5")
+[node name="Area2D Slime 1" type="Area2D" parent="Gameplay/Obstaculos"]
 
-[node name="Area2D" type="Area2D" parent="Gameplay/Obstaculos/Slime"]
-position = Vector2(260, 59)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameplay/Obstaculos/Slime/Area2D"]
-z_index = 6
+[node name="TileMap" type="TileMap" parent="Gameplay/Obstaculos/Area2D Slime 1"]
 texture_filter = 1
-position = Vector2(38, 13.5)
-scale = Vector2(3.8, 1.31579)
-texture = ExtResource("14_hbyd4")
+position = Vector2(257, 51)
+tile_set = SubResource("TileSet_rb1bu")
+format = 2
+layer_0/z_index = 7
+layer_0/tile_data = PackedInt32Array(2, 131072, 0, 1, 65536, 0, 65537, 65536, 1, 65538, 131072, 1, 0, 0, 0, 65536, 0, 1, 131072, 0, 2, 131073, 65536, 2, 131074, 131072, 2)
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Obstaculos/Slime/Area2D"]
-position = Vector2(37.5, 12.5)
-shape = SubResource("RectangleShape2D_5hh68")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Obstaculos/Area2D Slime 1"]
+position = Vector2(279.375, 74.8594)
+shape = SubResource("RectangleShape2D_6svhn")
+metadata/_edit_lock_ = true
+
+[node name="Area2D Slime 2" type="Area2D" parent="Gameplay/Obstaculos"]
+position = Vector2(131, 177)
+
+[node name="TileMap" type="TileMap" parent="Gameplay/Obstaculos/Area2D Slime 2"]
+texture_filter = 1
+tile_set = SubResource("TileSet_rb1bu")
+format = 2
+layer_0/name = "fondo"
+layer_0/z_index = 7
+layer_0/tile_data = PackedInt32Array(2, 131072, 0, 1, 65536, 0, 65537, 65536, 1, 65538, 65536, 0, 0, 0, 0, 65536, 0, 1, 131072, 0, 1, 131073, 65536, 1, 196609, 65536, 1, 262145, 65536, 2, 196608, 0, 1, 196610, 131072, 1, 262146, 131072, 2, 262144, 0, 2, 131074, 65536, 1, 131075, 65536, 1, 65539, 65536, 0, 65540, 131072, 0, 131076, 131072, 1, 196612, 131072, 2, 196611, 65536, 2)
+layer_1/name = "borde"
+layer_1/tile_data = PackedInt32Array(65538, 131072, 1, 196610, 65536, 2)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gameplay/Obstaculos/Area2D Slime 2"]
+position = Vector2(11, 5)
+polygon = PackedVector2Array(2, 8, 2, 63, 22, 63, 22, 45, 55, 45, 55, 24, 23, 24, 23, 8)
+metadata/_edit_lock_ = true
+
+[node name="Area2D Slime 3" type="Area2D" parent="Gameplay/Obstaculos"]
+position = Vector2(355, 250)
+
+[node name="TileMap" type="TileMap" parent="Gameplay/Obstaculos/Area2D Slime 3"]
+texture_filter = 1
+tile_set = SubResource("TileSet_rb1bu")
+format = 2
+layer_0/name = "fondo"
+layer_0/z_index = 7
+layer_0/tile_data = PackedInt32Array(2, 131072, 1, 1, 65536, 1, 65537, 65536, 1, 131073, 65536, 1, 196609, 65536, 1, 65540, 65536, 1, 4, 65536, 1, -65533, 65536, 1, -65534, 65536, 1, 3, 65536, 2, -65532, 65536, 1, -65535, 65536, 1, 131074, 65536, 1, 131075, 65536, 1, 131076, 65536, 1, 196612, 65536, 1, 262145, 65536, 1, 262148, 65536, 1, 131072, 65536, 1, 65536, 65536, 1, 0, 65536, 1, -65536, 65536, 0, -131071, 65536, 0, -131070, 65536, 0, -131069, 65536, 0, -131068, 65536, 0, 65538, 131072, 1, 65539, 65536, 0, -65531, 131072, 1, 5, 131072, 1, 65541, 131072, 1, 131077, 131072, 1, 196613, 131072, 1, 262149, 131072, 1, 262146, 131072, 1, 196610, 131072, 1, 196608, 0, 1, 196607, 0, 1, 131071, 0, 1, 65535, 0, 1, 262144, 0, 1, 327681, 65536, 2, 327684, 65536, 2, 262147, 0, 1, 196611, 0, 1, -131072, 0, 0, -131067, 131072, 0, 262143, 0, 2, -1, 0, 0)
+layer_1/name = "borde"
+layer_1/tile_data = PackedInt32Array(196610, 65536, 2, 196611, 65536, 2, 2, 65536, 2, 65538, 65536, 0, -65536, 0, 1, 65539, 0, 1, 3, 0, 1, 196608, 65536, 2)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gameplay/Obstaculos/Area2D Slime 3"]
+position = Vector2(1.26683, -9.96757)
+scale = Vector2(1.1303, 1.17568)
+polygon = PackedVector2Array(-4.65967, 6.77702, -5.5444, 50.1563, 8.61118, 49.3058, 8.61118, 73.1218, 27.1904, 73.1218, 27.1904, 47.6046, 52.8474, 48.4552, 52.8474, 73.9724, 70.5418, 73.9724, 70.5418, -6.83217, 9.49591, -6.83217, 8.61118, 7.62759)
 
 [node name="Area2DRecepcion" type="Area2D" parent="Gameplay"]
 position = Vector2(202, -20)
@@ -478,8 +549,12 @@ material_almacenado = 8
 [connection signal="body_exited" from="Gameplay/Area2DEscaleraSegundoPiso" to="Gameplay/Area2DEscaleraSegundoPiso" method="_on_body_exited"]
 [connection signal="body_entered" from="Gameplay/Area2DEscaleraPrimerPiso" to="Gameplay/Area2DEscaleraPrimerPiso" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DEscaleraPrimerPiso" to="Gameplay/Area2DEscaleraPrimerPiso" method="_on_body_exited"]
-[connection signal="body_entered" from="Gameplay/Obstaculos/Slime/Area2D" to="Gameplay/Player" method="_on_slime_body_entered"]
-[connection signal="body_exited" from="Gameplay/Obstaculos/Slime/Area2D" to="Gameplay/Player" method="_on_slime_body_exited"]
+[connection signal="body_entered" from="Gameplay/Obstaculos/Area2D Slime 1" to="Gameplay/Player" method="_on_slime_body_entered"]
+[connection signal="body_exited" from="Gameplay/Obstaculos/Area2D Slime 1" to="Gameplay/Player" method="_on_slime_body_exited"]
+[connection signal="body_entered" from="Gameplay/Obstaculos/Area2D Slime 2" to="Gameplay/Player" method="_on_slime_body_entered"]
+[connection signal="body_exited" from="Gameplay/Obstaculos/Area2D Slime 2" to="Gameplay/Player" method="_on_slime_body_exited"]
+[connection signal="body_entered" from="Gameplay/Obstaculos/Area2D Slime 3" to="Gameplay/Player" method="_on_slime_body_entered"]
+[connection signal="body_exited" from="Gameplay/Obstaculos/Area2D Slime 3" to="Gameplay/Player" method="_on_slime_body_exited"]
 [connection signal="body_entered" from="Gameplay/Area2DRecepcion" to="Gameplay/Area2DRecepcion" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DRecepcion" to="Gameplay/Area2DRecepcion" method="_on_body_exited"]
 [connection signal="body_entered" from="Gameplay/Area2DHorno" to="Gameplay/Area2DHorno" method="_on_body_entered"]

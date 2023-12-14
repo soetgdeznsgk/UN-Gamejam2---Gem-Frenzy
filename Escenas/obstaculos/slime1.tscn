@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy6p6hk8pd0uj"]
+
+[ext_resource type="Script" path="res://Escenas/Slime.gd" id="1_4w188"]
+[ext_resource type="PackedScene" uid="uid://cc5mqb3mfu6g6" path="res://Escenas/obstaculos/slime2.tscn" id="2_0vu8v"]
+
+[node name="Slime" type="Node2D"]
+script = ExtResource("1_4w188")
+
+[node name="Area2D" parent="." instance=ExtResource("2_0vu8v")]
