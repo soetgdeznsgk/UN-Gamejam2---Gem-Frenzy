@@ -10,10 +10,9 @@ signal new_order(orden: Order)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	llenar_recetas()
-	
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)
-	tmr.wait_time = 3
+	tmr.wait_time = randi() % (5) + 4
 	tmr.one_shot = false
 	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
 	tmr.start()
@@ -44,9 +43,14 @@ func llenar_recetas() -> void:
 	
 # Señales
 
-func _on_timer_timeout() -> void: # añadir 
+func _on_timer_timeout() -> void: # añadir efecto de sonido de spawn de orden
 	var tempOrder = Order.new(recetas.pick_random())
 	currentOrders.append(tempOrder)
 	new_order.emit(tempOrder)
+	
+func _on_order_delivered() -> void:
+	GlobalRecursos.actualizar_dinero(5) # ÉSTO DEPENDE DE SI LA CANTIDAD DE DINERO POR RECETA ES ESTÁTICA (OJALÁ NO)
+	pass
+	
 	
 

@@ -16,6 +16,7 @@ var input_direction = Vector2.ZERO
 var last_move=Vector2.ZERO
 var movement = true
 var items_en_mano := Array()
+var receta_en_mano = false: set = _set_receta
 var modolento=false
 
 func _ready() -> void:
@@ -107,19 +108,31 @@ func _on_area_2d_body_entered(body):
 func _on_tween_callback():
 	surface_entered.emit()
 	movement = true
+	
+	
+# Setters/Getters
+
+func _set_receta(valor : int) -> int:
+	var temp = $Receta.frame
+	$Receta.frame = valor
+	$Receta.visible = not $Receta.visible
+	receta_en_mano = not receta_en_mano
+	return temp
+
 # Llamadas
 
 func recibirObjeto(objeto : int):	
 	if items_en_mano.size() < 3:
 		items_en_mano.append(objeto)
 		get_child(items_en_mano.size() - 1).frame = objeto # Ésto depende de que item 1, 2 y 3 sean child0, child1 y child2
+		print(items_en_mano)
 
 func darObjetos() -> Array:
-	var temp = items_en_mano
+	var temp = items_en_mano.duplicate()
 	items_en_mano.clear()
-	for itemSprite in range(0, 2): # por
+	for itemSprite in range(0, 3): # por
 		get_child(itemSprite).frame = 11 # Ésto depende de que item 1, 2 y 3 sean child0, child1 y child2
-	
+	print(items_en_mano)
 	return temp
 	
 func darUnObjeto(objeto : int):

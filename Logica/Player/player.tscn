@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=50 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://trmgdcomkkku" path="res://Sprites/Player/pancha_taladro_arriba_12x27_px.png" id="4_qt0m4"]
 [ext_resource type="Texture2D" uid="uid://cfymrk6lus6fo" path="res://Sprites/Player/uy quieta 14x24.png" id="6_rluto"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_3l1ym"]
+[ext_resource type="Texture2D" uid="uid://d4b37i4g7p2yr" path="res://Sprites/Recursos/Recetas.png" id="8_781fh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(13, 14)
@@ -900,3 +901,10 @@ libraries = {
 }
 
 [node name="Items" type="Node" parent="."]
+
+[node name="Receta" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -16)
+texture = ExtResource("8_781fh")
+hframes = 7

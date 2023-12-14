@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=24 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
+[ext_resource type="Script" path="res://Escenas/UI.gd" id="1_xq7xs"]
 [ext_resource type="Texture2D" uid="uid://b23rlmmuwpk64" path="res://Sprites/UI/reloj.png" id="2_ulj72"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
@@ -65,6 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xq7xs")
 metadata/_edit_lock_ = true
 
 [node name="Ordenes" type="VBoxContainer" parent="."]
@@ -318,4 +320,5 @@ offset_bottom = 659.0
 text = "FPS"
 script = ExtResource("7_xpxm3")
 
+[connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
