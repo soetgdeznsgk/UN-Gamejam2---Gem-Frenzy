@@ -5,10 +5,12 @@ extends Control
 @onready var pb = $VBoxContainer/ProgressBar
 var orden_logica : Order
 @onready var cambiadorDeColor = StyleBoxFlat.new()
+#var cliente_asociado : Cliente
 
 func _ready():
 	cambiadorDeColor.bg_color = Color("008000")
 	pb.add_theme_stylebox_override("fill", cambiadorDeColor)
+	pb.max_value = orden_logica.get_time_left() # ésto dará error si se instancia antes que la orden
 	
 func _physics_process(_delta):
 	pb.value = orden_logica.get_time_left()
@@ -25,6 +27,7 @@ func getOrden() -> int:
 	return GlobalRecetas.encontrarReceta(orden_logica.requirements)
 
 func setOrden(orden : Order) -> void:
+	#cliente_asociado = cliente
 	orden_logica = orden
 	add_child(orden)
 	orden.out_of_time.connect(orden_out_of_time)
@@ -37,9 +40,11 @@ func setOrden(orden : Order) -> void:
 # Señales
 
 func orden_out_of_time(): # ejecutar algun sonido
+	orden_logica.queue_free()
 	queue_free()
 	
 func orden_deliver():
-	OrderManager._on_order_delivered()
+	OrderManager._on_order_delivered(orden_logica.precio)
+	orden_logica._on_timer_timeout()
 	queue_free()
 	

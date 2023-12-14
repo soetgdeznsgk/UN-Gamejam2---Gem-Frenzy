@@ -132,7 +132,7 @@ func darObjetos() -> Array:
 	items_en_mano.clear()
 	for itemSprite in range(0, 3): # por
 		get_child(itemSprite).frame = 11 # Ésto depende de que item 1, 2 y 3 sean child0, child1 y child2
-	print(items_en_mano)
+	#print(items_en_mano)
 	return temp
 	
 func darUnObjeto(objeto : int):
