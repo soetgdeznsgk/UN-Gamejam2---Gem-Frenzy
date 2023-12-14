@@ -1,9 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy6p6hk8pd0uj"]
+[gd_scene load_steps=6 format=3 uid="uid://dy6p6hk8pd0uj"]
 
 [ext_resource type="Script" path="res://Escenas/Slime.gd" id="1_4w188"]
-[ext_resource type="PackedScene" uid="uid://cc5mqb3mfu6g6" path="res://Escenas/obstaculos/slime2.tscn" id="2_0vu8v"]
+[ext_resource type="Texture2D" uid="uid://bjel6w2lipr7v" path="res://Sprites/obstaculos/slime.png" id="2_0pulm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_na8lm"]
+texture = ExtResource("2_0pulm")
+margins = Vector2i(2, 2)
+separation = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/z_index = 6
+1:0/0 = 0
+1:0/0/z_index = 6
+2:0/0 = 0
+2:0/0/z_index = 6
+0:1/0 = 0
+0:1/0/z_index = 6
+1:1/0 = 0
+1:1/0/z_index = 6
+2:1/0 = 0
+2:1/0/z_index = 6
+0:2/0 = 0
+0:2/0/z_index = 6
+1:2/0 = 0
+1:2/0/z_index = 6
+2:2/0 = 0
+2:2/0/z_index = 6
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfja4"]
+texture = ExtResource("2_0pulm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/y_sort_origin = 3
+
+[sub_resource type="TileSet" id="TileSet_fihj4"]
+sources/0 = SubResource("TileSetAtlasSource_na8lm")
+sources/1 = SubResource("TileSetAtlasSource_yfja4")
 
 [node name="Slime" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_4w188")
 
-[node name="Area2D" parent="." instance=ExtResource("2_0vu8v")]
+[node name="TileMap" type="TileMap" parent="Area2D"]
+z_index = 6
+texture_filter = 1
+tile_set = SubResource("TileSet_fihj4")
+format = 2
+layer_0/name = "fondo"
+layer_0/z_index = 7
+layer_0/tile_data = PackedInt32Array(2, 131072, 0, 1, 65536, 0, 65537, 65536, 1, 65538, 65536, 0, 0, 0, 0, 65536, 0, 1, 131072, 0, 1, 131073, 65536, 1, 196609, 65536, 1, 262145, 65536, 2, 196608, 0, 1, 196610, 131072, 1, 262146, 131072, 2, 262144, 0, 2, 131074, 65536, 1, 131075, 65536, 1, 65539, 65536, 0, 65540, 131072, 0, 131076, 131072, 1, 196612, 131072, 2, 196611, 65536, 2)
+layer_1/name = "borde"
+layer_1/tile_data = PackedInt32Array(65538, 131072, 1, 196610, 65536, 2)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(13, 13)
+polygon = PackedVector2Array(0, -1, -1, 54, 21, 53, 21, 37, 53, 37, 54, 15, 22, 15, 22, -1)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

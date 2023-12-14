@@ -17,12 +17,7 @@ func _ready():
 	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
 	tmr.start()
 
-func _input(_event):
-	if Input.is_anything_pressed():
-		if currentOrders.size() > 1:
-			entregarOrden(currentOrders[0])
-			
-# Llamadas
+
 
 func entregarOrden(orden : Order):
 	var i = currentOrders.find(orden)

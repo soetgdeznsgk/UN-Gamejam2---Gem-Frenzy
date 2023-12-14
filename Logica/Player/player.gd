@@ -25,11 +25,13 @@ func _ready() -> void:
 
 func iniciar_dia():
 	movement = true
+	taladrando=false
 	var tween = get_tree().create_tween()
-	tween.tween_property(self,"position", Vector2(460,5),0.1)
+	tween.tween_property(self,"position", Vector2(397,-21),0.1)
 
 func finalizar_dia():
 	movement = false
+	surface_entered.emit()
 
 func _physics_process(_delta):
 	input_direction = Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
@@ -148,14 +150,3 @@ func darUnObjeto(objeto : int):
 		get_child(r).frame = items_en_mano[r]
 	return # sé que no dará -1 por que en los cofres se verifica que el jugador si o sí tiene 1 en el inventario
 
-
-func _on_slime_body_entered(body):
-	if body is Player and taladrando:
-		modolento=true
-	pass # Replace with function body.
-
-
-func _on_slime_body_exited(body):
-	if body is Player and taladrando:
-		modolento=false
-	pass # Replace with function body.
