@@ -21,5 +21,3 @@ func _on_btn_finalizar_dia_pressed() -> void:
 	for child in grid.get_children():
 		child.queue_free()
 	GlobalTiempo.siguiente_dia()
-	print(GlobalMejoras.activas_mejoras)
-	print(GlobalMejoras.disponible_mejoras)

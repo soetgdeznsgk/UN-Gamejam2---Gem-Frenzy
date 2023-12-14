@@ -18,15 +18,21 @@ var movement = true
 var items_en_mano := Array()
 var modolento=false
 
+func _ready() -> void:
+	GlobalTiempo.iniciarDia.connect(iniciar_dia)
+	GlobalTiempo.finalizarDia.connect(finalizar_dia)
+
+func iniciar_dia():
+	movement = true
+	var tween = get_tree().create_tween()
+	tween.tween_property(self,"position", Vector2(460,5),0.1)
+
+func finalizar_dia():
+	movement = false
+
 func _physics_process(_delta):
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	
 	input_direction = Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
 	-int(Input.is_action_pressed("ui_up")))
-	#print(input_direction)
-	#print(SPEED)
 	if taladrando:
 		#movimiento taladrando
 		
@@ -54,7 +60,6 @@ func _physics_process(_delta):
 				input_direction=last_move+Vector2(0,-2)
 				AnimState.travel("Taladrando")
 				Anim.set("parameters/Taladrando/blend_position", Vector2(input_direction.x,-input_direction.y))
-				#print("hola no se que hace esto")
 	else:
 		#movimiento superficie
 		if input_direction==Vector2(0,-1):
@@ -108,7 +113,6 @@ func recibirObjeto(objeto : int):
 	if items_en_mano.size() < 3:
 		items_en_mano.append(objeto)
 		get_child(items_en_mano.size() - 1).frame = objeto # Ésto depende de que item 1, 2 y 3 sean child0, child1 y child2
-	#print(items_en_mano)
 
 func darObjetos() -> Array:
 	var temp = items_en_mano
@@ -129,7 +133,6 @@ func darUnObjeto(objeto : int):
 	
 	for r in range(0, items_en_mano.size()):
 		get_child(r).frame = items_en_mano[r]
-	#print(items_en_mano)
 	return # sé que no dará -1 por que en los cofres se verifica que el jugador si o sí tiene 1 en el inventario
 
 

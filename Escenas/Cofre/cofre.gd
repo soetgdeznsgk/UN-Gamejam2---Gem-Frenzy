@@ -34,7 +34,6 @@ func Open() -> void:
 	if visible:
 		$AnimationPlayer.play("AbrirCofre")
 		if playerRef.items_en_mano.size() < 3 and cantidad_almacenada > 0: #si hay espacio en las manos de player
-			#print("agarrar")
 			if playerRef.items_en_mano.find(material_almacenado) == -1:
 				playerRef.recibirObjeto(material_almacenado)
 				cantidad_almacenada -= 1
@@ -42,7 +41,6 @@ func Open() -> void:
 			# +1 al arreglo de items en las manos del jugador
 			elif playerRef.items_en_mano.has(material_almacenado): 
 				#si el jugador tiene en sus manos el item del cofre
-				#print("entregar")
 				playerRef.darUnObjeto(material_almacenado)
 				cantidad_almacenada += 1
 				GlobalRecursos.actualizar_mineral(material_almacenado, 1)
@@ -50,7 +48,6 @@ func Open() -> void:
 		elif playerRef.items_en_mano.size() <= 3:
 			if playerRef.items_en_mano.has(material_almacenado): 
 				#si el jugador tiene en sus manos el item del cofre
-				#print("entregar")
 				playerRef.darUnObjeto(material_almacenado)
 				cantidad_almacenada += 1
 				GlobalRecursos.actualizar_mineral(material_almacenado, 1)

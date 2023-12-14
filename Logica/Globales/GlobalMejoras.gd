@@ -16,7 +16,7 @@ var info_mejoras = {
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : "Cofre",
 		"Precio" : 2,
-		"Maximo" : 4,
+		"Maximo" : 1,
 		"Textura" : 'null',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
 	},
@@ -135,8 +135,9 @@ func obtener_mejora_random_disponible():
 			elif len(posibles_mejoras) == 1:
 				selec = 0
 			
-			posibles_mejoras.pop_at(selec)
-			mejoras_seleccionadas.append(info_mejoras[selec])
+			var mejora = posibles_mejoras.pop_at(selec)
+			if mejora != null:
+				mejoras_seleccionadas.append(info_mejoras[mejora])
 		return mejoras_seleccionadas
 	else:
 		# dice que no hay ninguna
