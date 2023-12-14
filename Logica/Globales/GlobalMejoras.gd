@@ -16,7 +16,7 @@ var info_mejoras = {
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : "Cofre",
 		"Precio" : 2,
-		"Maximo" : 1,
+		"Maximo" : 4,
 		"Textura" : 'null',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
 	},
