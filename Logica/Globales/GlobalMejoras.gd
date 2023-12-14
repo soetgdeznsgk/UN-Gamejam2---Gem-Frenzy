@@ -28,7 +28,7 @@ var info_mejoras = {
 		"Textura" : 'null',
 		"Descripcion" : "Tu tienda esta abierta mas horas",
 	},
-		nombre_mejoras.RecompensaMejorada : {
+		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : "Recompensas!",
 		"Precio" : 4,
@@ -36,7 +36,7 @@ var info_mejoras = {
 		"Textura" : 'null',
 		"Descripcion" : "Cobra más por tu trabajo!",
 	},
-	nombre_mejoras.ClientesZen : {
+	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : "Clientes Zen",
 		"Precio" : 3,
@@ -53,7 +53,7 @@ var info_mejoras = {
 		"Textura" : 'null',
 		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
 	},
-		nombre_mejoras.Gato : {
+		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
 		"Key" : nombre_mejoras.Gato,
 		"Nombre" : "Gato",
 		"Precio" : 10,

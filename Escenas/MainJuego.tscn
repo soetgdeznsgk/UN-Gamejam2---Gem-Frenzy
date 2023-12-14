@@ -354,8 +354,12 @@ texture = ExtResource("6_s8g8y")
 metadata/_edit_lock_ = true
 
 [node name="GeneradorClientes" type="Marker2D" parent="Gameplay"]
-position = Vector2(57, -12)
+position = Vector2(-6, -12)
 script = ExtResource("17_5vow0")
+
+[node name="Timer" type="Timer" parent="Gameplay/GeneradorClientes"]
+wait_time = 5.0
+autostart = true
 
 [node name="CofresManager" type="Node" parent="."]
 script = ExtResource("8_xp74q")
@@ -440,3 +444,4 @@ position = Vector2(378, -23)
 [connection signal="order_delivered" from="Gameplay/Recepcion" to="CanvasLayer/UI" method="_on_recepcion_order_delivered"]
 [connection signal="body_entered" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_exited"]
+[connection signal="timeout" from="Gameplay/GeneradorClientes/Timer" to="Gameplay/GeneradorClientes" method="_on_timer_timeout"]

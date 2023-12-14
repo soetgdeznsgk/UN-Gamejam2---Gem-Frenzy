@@ -6,7 +6,6 @@ var playerRef : Player
 func _process(_delta: float) -> void:
 	if isPlayerHere:
 		if Input.is_action_just_pressed("ui_up"):
-			print("_process detecta")
 			Cocinar()
 
 # Llamadas
