@@ -11,18 +11,25 @@ func _ready():
 
 func entregarOrden(objetivo):
 	for orden in get_children():
-		if orden.getOrden() == objetivo:
-			orden.orden_deliver()
-			return 
+		if orden is OrdenUI:
+			if orden.getOrden() == objetivo:
+				orden.orden_deliver()
+				return 
 			
 func limpiar_ordenes():
 	for orden in get_children():
-		orden.free()
+		if orden is OrdenUI:
+			orden.free()
+		
+func sonido_orden_perdida():
+	$AudioStreamPlayer.play() # no se ejecuta el segundo día
+		
 # Señales
 
 func _on_new_order(orden : Order):
 	var temp = ordenUI.instantiate()
 	temp.setOrden(orden)
+	temp.sonido_orden_out_of_time.connect(sonido_orden_perdida)
 	add_child(temp)
 	
 

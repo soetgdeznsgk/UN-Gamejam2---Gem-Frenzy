@@ -12,6 +12,7 @@ var esperando = true:
 		$Sprite2D.flip_h = true
 		$AnimationPlayer.play("caminar")
 		$CollisionShape2D.set_deferred("disabled", true)
+		$AudioStreamPlayer.play()
 		await get_tree().create_timer(3).timeout
 		queue_free()
 		
@@ -42,6 +43,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		if esperando:
+			$AudioStreamPlayer.stop()
 			moviendo = false
 			$AnimationPlayer.play("RESET")
 			if not haPedido:
