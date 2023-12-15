@@ -15,7 +15,7 @@ signal iniciarDia
 func _ready() -> void:
 	tmr_minuto = Timer.new() 
 	add_child(tmr_minuto)
-	tmr_minuto.wait_time = 0.55
+	tmr_minuto.wait_time = 0.5
 	
 	tmr_minuto.timeout.connect(on_tmr_minuto_end)
 	tmr_minuto.process_callback = Timer.TIMER_PROCESS_PHYSICS
@@ -36,9 +36,9 @@ func siguiente_dia():
 	diaActual += 1
 	
 	if diaActual<=8:
-		tmr_minuto.wait_time = 0.55 + diaActual*0.022
+		tmr_minuto.wait_time = 0.5 + diaActual*0.025
 	else:
-		tmr_minuto.wait_time = 0.8
+		tmr_minuto.wait_time = 0.7
 	tiempoHoraDia = 8
 	tiempoMinutoDia = 0
 	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)

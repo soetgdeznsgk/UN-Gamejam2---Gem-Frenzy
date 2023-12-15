@@ -8,7 +8,7 @@ var playerRef : Player
 
 func _process(_delta: float) -> void:
 	if isPlayerHere:
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("ui_up") and playerRef.movement == true:
 			var tween :Tween = get_tree().create_tween()
 			playerRef.movement = false
 			

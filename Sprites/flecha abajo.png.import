@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cscbgdp2gy50"
-path="res://.godot/imported/Gatotabby.png-aedcf6bf5a88c7b2e7875e726f526c6d.ctex"
+uid="uid://bemqir6127j64"
+path="res://.godot/imported/flecha abajo.png-cc68b1e604ee88e871049e909e8da427.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Gatotabby.png"
-dest_files=["res://.godot/imported/Gatotabby.png-aedcf6bf5a88c7b2e7875e726f526c6d.ctex"]
+source_file="res://Sprites/flecha abajo.png"
+dest_files=["res://.godot/imported/flecha abajo.png-cc68b1e604ee88e871049e909e8da427.ctex"]
 
 [params]
 

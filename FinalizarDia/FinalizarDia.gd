@@ -9,7 +9,7 @@ func _ready() -> void:
 	GlobalRecursos.bancarota.connect(gameover)
 
 func _on_finalizar_dia():
-	if GlobalRecursos.dinero > 0:
+	if GlobalRecursos.dinero >= 0:
 		infoMejorasDisponibles = GlobalMejoras.obtener_mejora_random_disponible()
 		for i in infoMejorasDisponibles:
 			var temp = mejoraUI.instantiate()

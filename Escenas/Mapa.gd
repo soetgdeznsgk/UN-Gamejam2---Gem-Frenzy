@@ -171,4 +171,3 @@ func regenerar_mapa():
 				temp.actualizar_textura()
 		Cam.limit_bottom = 1276
 		barraBloqueoDias.position.y = 1276
-## Quedan libres 30 niveles de profundidad pa saber

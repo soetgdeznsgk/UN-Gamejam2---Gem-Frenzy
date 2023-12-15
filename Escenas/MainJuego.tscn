@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=39 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="Script" path="res://Escenas/MainJuegoAmbientManager.gd" id="1_pncec"]
@@ -19,13 +19,14 @@
 [ext_resource type="Script" path="res://Escenas/Recepcion/Area2DRecepcion.gd" id="13_37ooj"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="14_f6g73"]
 [ext_resource type="Script" path="res://Escenas/Obstaculos.gd" id="14_jik0t"]
+[ext_resource type="Texture2D" uid="uid://xemsjtn0mmoe" path="res://Sprites/flecha arriba.png" id="15_t1uey"]
 [ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
 [ext_resource type="AudioStream" uid="uid://dws3s3hhyndi7" path="res://Musica/「カラクサタウン」.mp3" id="23_ljyy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
-size = Vector2(22, 9)
+size = Vector2(32, 12)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbhtb"]
 texture = ExtResource("3_r1lai")
@@ -247,7 +248,8 @@ metadata/_edit_lock_ = true
 visible = false
 texture_filter = 1
 position = Vector2(0, -24)
-texture = ExtResource("6_s8g8y")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_t1uey")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Gameplay/Area2DEscalera"]
@@ -289,9 +291,9 @@ metadata/_edit_lock_ = true
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Area2DEscaleraSegundoPiso"]
 visible = false
 texture_filter = 1
-position = Vector2(4, -16)
-texture = ExtResource("6_s8g8y")
-flip_v = true
+position = Vector2(5, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_t1uey")
 metadata/_edit_lock_ = true
 
 [node name="Area2DEscaleraPrimerPiso" type="Area2D" parent="Gameplay"]
@@ -307,8 +309,8 @@ metadata/_edit_lock_ = true
 visible = false
 texture_filter = 1
 position = Vector2(0, -16)
-texture = ExtResource("6_s8g8y")
-flip_v = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_t1uey")
 metadata/_edit_lock_ = true
 
 [node name="Terrenos" type="Node2D" parent="Gameplay"]
@@ -916,7 +918,7 @@ material_almacenado = 7
 position = Vector2(362, -61)
 scale = Vector2(1, 1)
 num_cofre = 5
-material_almacenado = 8
+material_almacenado = 6
 
 [node name="Horno" parent="." instance=ExtResource("22_2y5ly")]
 position = Vector2(378, -23)
@@ -927,6 +929,7 @@ volume_db = -15.63
 autoplay = true
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_casa_body_exited"]
 [connection signal="surface_entered" from="Gameplay/Player" to="CofresManager" method="_on_player_surface_entered"]
 [connection signal="body_entered" from="Gameplay/Area2DEscalera" to="Gameplay/Area2DEscalera" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DEscalera" to="Gameplay/Area2DEscalera" method="_on_body_exited"]

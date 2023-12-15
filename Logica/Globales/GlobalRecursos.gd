@@ -4,7 +4,7 @@ extends Node
 
 # inicia en ceros
 var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]
-var dinero : int = 0
+var dinero : int = 90
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -48,13 +48,19 @@ func actualizar_mineral(mineral : int, cantidad : int):
 	cambioMineral.emit(mineral, minerales[mineral])
 
 func actualizar_dinero(cantidad : int):
-	dinero += cantidad
-	cambioDinero.emit(dinero)
-	if dinero < 0:
-		bancarota.emit()
+	if cantidad != 0:
+		dinero += cantidad
+		cambioDinero.emit(dinero)
+		if dinero < 0:
+			bancarota.emit()
 
 func pagueme_la_renta():
 	var valorDia = 2*GlobalTiempo.diaActual
-	if valorDia > 20:
-		valorDia = 20
+	if valorDia > 17:
+		valorDia = 17
 	actualizar_dinero(-3 - valorDia)
+	for i in range(len(minerales)):
+		var oro = int(minerales[i] * 0.1)
+		var mitad = int(minerales[i]/2)
+		actualizar_mineral(i, -mitad)
+		actualizar_dinero(oro)

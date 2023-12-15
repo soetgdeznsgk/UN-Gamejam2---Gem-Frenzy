@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxtmcag0sw1sj"
-path="res://.godot/imported/moneda mejorada 27x27 px espaciado 2 px.png-5eb3e0bd736c4e1471e7bc2920c2e57d.ctex"
+uid="uid://cscbgdp2gy50"
+path="res://.godot/imported/Gatotabby.png-710619306dca9fd15993d6de02916852.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mejoras/moneda mejorada 27x27 px espaciado 2 px.png"
-dest_files=["res://.godot/imported/moneda mejorada 27x27 px espaciado 2 px.png-5eb3e0bd736c4e1471e7bc2920c2e57d.ctex"]
+source_file="res://Sprites/Mapa/Gatotabby.png"
+dest_files=["res://.godot/imported/Gatotabby.png-710619306dca9fd15993d6de02916852.ctex"]
 
 [params]
 

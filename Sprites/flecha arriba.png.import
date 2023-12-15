@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkakvi7h31rvk"
-path="res://.godot/imported/gatomejora.png-83fbb7cc2199e7e08388bdaca40d71ed.ctex"
+uid="uid://xemsjtn0mmoe"
+path="res://.godot/imported/flecha arriba.png-52e1c7f33420f4194413979c4c7b0210.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/gatomejora.png"
-dest_files=["res://.godot/imported/gatomejora.png-83fbb7cc2199e7e08388bdaca40d71ed.ctex"]
+source_file="res://Sprites/flecha arriba.png"
+dest_files=["res://.godot/imported/flecha arriba.png-52e1c7f33420f4194413979c4c7b0210.ctex"]
 
 [params]
 

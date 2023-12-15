@@ -15,7 +15,7 @@ func _on_btn_comprar_pressed() -> void:
 		GlobalMejoras.activas_mejoras[int(info["Key"])] += 1
 		GlobalMejoras.disponible_mejoras[int(info["Key"])] -= 1
 		
-		if GlobalRecursos.dinero - int(info["Precio"]) > 0:
+		if GlobalRecursos.dinero - int(info["Precio"]) >= 0:
 			GlobalRecursos.actualizar_dinero(-int(info["Precio"]))
 			$AudioDineroAlcanza.play(0)
 			$Btn_comprar.disabled = true

@@ -11,7 +11,7 @@ func gameover():
 
 
 func _on_btn_reintentar_pressed() -> void:
-	GlobalRecursos.dinero = 0
+	GlobalRecursos.dinero = 5
 	GlobalRecursos.minerales = [0,0,0,0,0,0,0,0,0,0,0]
 	GlobalMejoras.activas_mejoras = [0,0,0,0,0,0,0]
 	GlobalMejoras._ready()
@@ -19,4 +19,4 @@ func _on_btn_reintentar_pressed() -> void:
 	GlobalTiempo.tiempoHoraDia = 8
 	GlobalTiempo.tiempoMinutoDia = 0
 	
-	get_tree().change_scene_to_file("res://Escenas/game_start.tscn")
+	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")

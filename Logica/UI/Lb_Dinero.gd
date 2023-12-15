@@ -5,6 +5,7 @@ var strDinero : String
 
 func _ready() -> void:
 	GlobalRecursos.cambioDinero.connect(actualizarDinero)
+	Lb_dinero.self_modulate = Color("ffffff")
 
 func actualizarDinero(dinero):
 	if dinero < 10 and dinero >= 0:
@@ -13,5 +14,6 @@ func actualizarDinero(dinero):
 		strDinero = str(dinero)
 	elif dinero < 0:
 		strDinero = str(dinero)
+		Lb_dinero.self_modulate = Color("ff2016")
 	Lb_dinero.text = strDinero 
 	animplayer.play("newmoney")

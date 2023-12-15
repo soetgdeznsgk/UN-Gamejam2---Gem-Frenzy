@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Escenas/Cofre/cofre.gd" id="1_5a08q"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="2_vta35"]
-[ext_resource type="Texture2D" uid="uid://b2ivbnl772jf" path="res://Sprites/UI/upKey.png" id="3_bhoaq"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="4_211rc"]
+[ext_resource type="Texture2D" uid="uid://bemqir6127j64" path="res://Sprites/flecha abajo.png" id="4_e3gbw"]
 [ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="5_6yikg"]
 
 [sub_resource type="Animation" id="Animation_qs0vi"]
@@ -76,8 +76,10 @@ libraries = {
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-position = Vector2(0, -14)
-texture = ExtResource("3_bhoaq")
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_e3gbw")
+flip_v = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 1)

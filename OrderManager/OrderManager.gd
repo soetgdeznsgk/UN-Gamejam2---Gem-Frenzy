@@ -11,6 +11,7 @@ signal new_order(orden: Order)
 func _ready():
 	llenar_recetas()
 	GlobalTiempo.iniciarDia.connect(llenar_recetas)
+	GlobalRecursos.bancarota.connect(gameover)
 	#add_child(tmr) Ésto fué reemplazado por la señal new_customer
 	#tmr.timeout.connect(_on_timer_timeout)
 	#tmr.wait_time = randi() % (5) + 4
@@ -18,7 +19,8 @@ func _ready():
 	#tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
 	#tmr.start()
 
-
+func gameover():
+	recetas.clear()
 
 func entregarOrden(orden : Order):
 	var i = currentOrders.find(orden)

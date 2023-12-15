@@ -18,6 +18,8 @@ var movement = true
 var items_en_mano := Array()
 var receta_en_mano = false: set = _set_receta
 var modolento=false
+var recienSalidoEscalera = false
+
 
 func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(iniciar_dia)
@@ -31,6 +33,8 @@ func iniciar_dia():
 
 func finalizar_dia():
 	movement = false
+	input_direction = Vector2.ZERO
+	last_move=Vector2.ZERO
 	surface_entered.emit()
 
 func _physics_process(_delta):
@@ -39,10 +43,21 @@ func _physics_process(_delta):
 	if taladrando:
 		#movimiento taladrando
 		if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
-			input_direction=Vector2(0,-1)		
+			input_direction=Vector2(0,-1)
 			SPEED = CONST_SPEED + CONST_SPEEDUP
 			AnimState.travel("Taladrando")
 			Anim.set("parameters/Taladrando/blend_position", Vector2(input_direction.x,-input_direction.y))
+			if recienSalidoEscalera:
+				movement = false
+				AnimState.travel("Escalera")
+				SPEED = CONST_SPEED
+				taladrando=false
+				recienSalidoEscalera = false
+				var tween :Tween = get_tree().create_tween()
+				tween.tween_property(self, "position:x", $"../Area2DCasa".position.x, 0.4)
+				tween.tween_property(self, "position:y", -21.2, 0.7)
+				tween.tween_callback(_on_tween_callback)
+				
 		elif input_direction==Vector2(1,0):
 			SPEED = CONST_SPEED
 			input_direction=Vector2(1,1)
@@ -93,24 +108,22 @@ func _physics_process(_delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body is Player and taladrando:
+	if body is Player and taladrando and movement and not recienSalidoEscalera:
 		movement = false
 		AnimState.travel("Escalera")
 		SPEED = CONST_SPEED
 		taladrando=false
-		
+		recienSalidoEscalera = false
 		var tween :Tween = get_tree().create_tween()
-		
 		tween.tween_property(self, "position:x", $"../Area2DCasa".position.x, 0.4)
 		tween.tween_property(self, "position:y", -21.2, 0.7)
 		tween.tween_callback(_on_tween_callback)
-		
-		
-		
+
 func _on_tween_callback():
 	surface_entered.emit()
 	
 	movement = true
+	SPEED = CONST_SPEED
 	
 	
 # Setters/Getters
@@ -149,3 +162,11 @@ func darUnObjeto(objeto : int):
 		get_child(r).frame = items_en_mano[r]
 	return # sé que no dará -1 por que en los cofres se verifica que el jugador si o sí tiene 1 en el inventario
 
+
+
+func _on_area_2d_casa_body_exited(body: Node2D) -> void:
+	$Timer.start()
+
+
+func _on_timer_timeout() -> void:
+	recienSalidoEscalera = false
