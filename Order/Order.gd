@@ -50,10 +50,13 @@ func get_time_left():
 # Señales
 
 func _on_timer_timeout():
+	cliente_asociado.esperando = false
 	out_of_time.emit()
-	cliente_asociado.esperando = false # se ejecuta tremendo set
+	 # se ejecuta tremendo set
 	#queue_free() se hace free desde la orden_ui
 
+func finalizar_orden():
+	cliente_asociado.esperando = false
 # debug
 
 func _to_string():

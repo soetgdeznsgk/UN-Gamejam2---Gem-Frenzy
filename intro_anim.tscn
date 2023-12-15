@@ -11,7 +11,22 @@
 [ext_resource type="Texture2D" uid="uid://cn0f0n7unhr6h" path="res://Sprites/Intro/intropancha_0007.png" id="9_p64ww"]
 [ext_resource type="Texture2D" uid="uid://dmnx82ornpbb" path="res://Sprites/Intro/intropancha_0008.png" id="10_v1gxl"]
 [ext_resource type="Texture2D" uid="uid://deja2cb0vqp0j" path="res://Sprites/Intro/intropancha_0009.png" id="11_tuwb0"]
-[ext_resource type="FontFile" uid="uid://d3grfra5evdny" path="res://Sprites/UI/dogicapixelbold.ttf" id="12_i4f3q"]
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="12_i4f3q"]
+
+[sub_resource type="Animation" id="Animation_wloj0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_yhn24")]
+}
 
 [sub_resource type="Animation" id="Animation_8plgw"]
 resource_name = "intro"
@@ -27,21 +42,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("3_6dlf7"), ExtResource("1_yhn24"), ExtResource("3_6dlf7"), ExtResource("1_yhn24"), ExtResource("3_6dlf7"), ExtResource("1_yhn24"), ExtResource("4_gnqv3"), ExtResource("5_0n4gj"), ExtResource("6_yu6fy"), ExtResource("7_vrrq3"), ExtResource("8_w8j4m"), ExtResource("9_p64ww"), ExtResource("10_v1gxl"), ExtResource("11_tuwb0")]
-}
-
-[sub_resource type="Animation" id="Animation_wloj0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_yhn24")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rtpds"]

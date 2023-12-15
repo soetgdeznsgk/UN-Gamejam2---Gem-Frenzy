@@ -24,7 +24,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_6h4n8"]
 resource_name = "caminar"
-length = 0.8
+length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false

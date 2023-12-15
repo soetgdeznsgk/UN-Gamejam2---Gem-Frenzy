@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://oxc82qrj3ssc"]
 
-[ext_resource type="FontFile" uid="uid://d3grfra5evdny" path="res://Sprites/UI/dogicapixelbold.ttf" id="1_fnrdu"]
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="1_fnrdu"]
 
 [resource]
 default_font = ExtResource("1_fnrdu")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=33 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/mejoras/reloj normal.png" id="4_1gerh"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
 [ext_resource type="AudioStream" uid="uid://c1hjjwipji7up" path="res://Musica/cliente_enojado.wav" id="4_h0j4i"]
-[ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
-[ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/clientes cofre reloj reloj mejorado/reloj normal.png" id="4_nvm1r"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]

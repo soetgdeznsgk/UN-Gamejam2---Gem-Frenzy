@@ -60,6 +60,7 @@ text = "JUGAR"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_v4w4o")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]

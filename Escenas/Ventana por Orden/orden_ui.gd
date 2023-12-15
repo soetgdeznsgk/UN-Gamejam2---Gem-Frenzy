@@ -48,11 +48,13 @@ func free():
 
 func orden_out_of_time():
 	sonido_orden_out_of_time.emit()
+	orden_logica.finalizar_orden()
 	orden_logica.queue_free()
 	queue_free()
 	
+	
 func orden_deliver():
 	OrderManager._on_order_delivered(orden_logica.precio)
-	orden_logica._on_timer_timeout()
+	orden_logica.finalizar_orden()
 	queue_free()
 	
