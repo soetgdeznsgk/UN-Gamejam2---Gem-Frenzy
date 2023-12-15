@@ -10,14 +10,6 @@ signal new_order(orden: Order)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	llenar_recetas()
-	#add_child(tmr) Ésto fué reemplazado por la señal new_customer
-	#tmr.timeout.connect(_on_timer_timeout)
-	#tmr.wait_time = randi() % (5) + 4
-	#tmr.one_shot = false
-	#tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
-	#tmr.start()
-
-
 
 func entregarOrden(orden : Order):
 	var i = currentOrders.find(orden)

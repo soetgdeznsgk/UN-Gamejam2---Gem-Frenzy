@@ -1,4 +1,7 @@
+class_name OrdenUI
 extends Control
+
+signal sonido_orden_out_of_time
 
 @export var Dimension := 32
 
@@ -44,7 +47,7 @@ func free():
 # Señales
 
 func orden_out_of_time():
-	#ejecutar sonido
+	sonido_orden_out_of_time.emit()
 	orden_logica.queue_free()
 	queue_free()
 	
