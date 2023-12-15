@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
-[ext_resource type="AudioStream" uid="uid://dxwisra25rqyt" path="res://Musica/Maple_Meadows_1.wav" id="22_nuu47"]
+[ext_resource type="AudioStream" uid="uid://dws3s3hhyndi7" path="res://Musica/「カラクサタウン」.mp3" id="23_ljyy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(64, 16)
@@ -921,8 +921,8 @@ material_almacenado = 8
 position = Vector2(378, -23)
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_nuu47")
-volume_db = -3.8
+stream = ExtResource("23_ljyy2")
+volume_db = -15.63
 autoplay = true
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]
