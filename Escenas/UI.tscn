@@ -1,16 +1,83 @@
-[gd_scene load_steps=27 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=32 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
 [ext_resource type="Script" path="res://Escenas/UI.gd" id="1_xq7xs"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
+[ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/mejoras/reloj normal.png" id="4_1gerh"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
-[ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
-[ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/clientes cofre reloj reloj mejorado/reloj normal.png" id="4_nvm1r"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
+[ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
+[ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
+atlas = ExtResource("7_q4w3t")
+region = Rect2(2, 2, 27, 27)
+
+[sub_resource type="Animation" id="Animation_615qf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(2, 2, 27, 27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fq5il"]
+resource_name = "newmoney"
+length = 0.850005
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(2, 2, 27, 27), Rect2(31, 2, 27, 27), Rect2(60, 2, 27, 27), Rect2(89, 2, 27, 27), Rect2(118, 2, 27, 27), Rect2(89, 2, 27, 27), Rect2(60, 2, 27, 27), Rect2(31, 2, 27, 27), Rect2(2, 2, 27, 27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yjgmp"]
+_data = {
+"RESET": SubResource("Animation_615qf"),
+"newmoney": SubResource("Animation_fq5il")
+}
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xoam7"]
 load_path = "res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"
@@ -68,7 +135,7 @@ border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
-bg_color = Color(0.74902, 0.121569, 0.0823529, 0.772549)
+bg_color = Color(0.65098, 0.0980392, 0.0627451, 1)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -112,8 +179,9 @@ alignment = 1
 layout_mode = 2
 
 [node name="TextureReloj" type="TextureRect" parent="VbReloj/HbReloj"]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("4_nvm1r")
+texture = ExtResource("4_1gerh")
 stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VbReloj/HbReloj"]
@@ -150,9 +218,17 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="TextureDinero" type="TextureRect" parent="VbDinero/HbDinero"]
+texture_filter = 1
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
-texture = ExtResource("4_h1cjt")
-stretch_mode = 2
+texture = SubResource("AtlasTexture_18s7n")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VbDinero/HbDinero/TextureDinero"]
+libraries = {
+"": SubResource("AnimationLibrary_yjgmp")
+}
 
 [node name="Lb_Dinero" type="Label" parent="VbDinero/HbDinero"]
 unique_name_in_owner = true
@@ -332,20 +408,22 @@ text = "FINALIZAR DIA"
 
 [node name="Gameover" type="PanelContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -335.0
-offset_top = -230.5
-offset_right = 335.0
-offset_bottom = 230.5
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.18
+anchor_right = 0.849
+anchor_bottom = 0.82
+offset_left = -21.08
+offset_top = -0.100006
+offset_right = -0.0400391
+offset_bottom = 0.0999756
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qls4k")
+script = ExtResource("12_1lmnk")
 
 [node name="CenterContainer" type="CenterContainer" parent="Gameover"]
 layout_mode = 2
@@ -370,3 +448,4 @@ text = "REINTENTAR"
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
+[connection signal="pressed" from="Gameover/CenterContainer/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]

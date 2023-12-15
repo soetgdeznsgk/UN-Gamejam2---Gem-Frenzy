@@ -7,6 +7,7 @@ var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]
 var dinero : int = 0
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
+signal bancarota
 # enum para no perderlos de vista
 
 enum mineralesSinFondo{
@@ -50,9 +51,7 @@ func actualizar_dinero(cantidad : int):
 	dinero += cantidad
 	cambioDinero.emit(dinero)
 	if dinero < 0:
-		#todo gameover por bancarota
-		print('geim ouver')
-		pass
+		bancarota.emit()
 
 func pagueme_la_renta():
 	var valorDia = 2*GlobalTiempo.diaActual

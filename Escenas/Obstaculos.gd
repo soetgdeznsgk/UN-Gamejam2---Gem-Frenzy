@@ -36,7 +36,6 @@ func empezardia():
 	var cantidadB
 	var cantidadC
 	var diaactual=GlobalTiempo.diaActual
-	print(diaactual)
 	var Iniciocapas=20
 	
 	if diaactual==3:

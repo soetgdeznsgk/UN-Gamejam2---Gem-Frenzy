@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt4mwxcisyra0"
-path="res://.godot/imported/coin_03.png-61a42860da125260453338d2b66a9259.ctex"
+uid="uid://q25uhow5bfjg"
+path="res://.godot/imported/moneda normal 27x27 px espaciado 2 px.png-fe27576f7e7835c01d89c4c9172ac4a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/coin_03.png"
-dest_files=["res://.godot/imported/coin_03.png-61a42860da125260453338d2b66a9259.ctex"]
+source_file="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png"
+dest_files=["res://.godot/imported/moneda normal 27x27 px espaciado 2 px.png-fe27576f7e7835c01d89c4c9172ac4a4.ctex"]
 
 [params]
 

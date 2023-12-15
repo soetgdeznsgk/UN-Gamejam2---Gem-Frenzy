@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hxike0lhxgsk"
-path="res://.godot/imported/coin_08.png-10c76141a203b962f7a0941cfded37dc.ctex"
+uid="uid://nc0mqsf6b11t"
+path="res://.godot/imported/reloj normal.png-45bdee8b6f9e10ba1904f35d286f897f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/coin_08.png"
-dest_files=["res://.godot/imported/coin_08.png-10c76141a203b962f7a0941cfded37dc.ctex"]
+source_file="res://Sprites/mejoras/reloj normal.png"
+dest_files=["res://.godot/imported/reloj normal.png-45bdee8b6f9e10ba1904f35d286f897f.ctex"]
 
 [params]
 

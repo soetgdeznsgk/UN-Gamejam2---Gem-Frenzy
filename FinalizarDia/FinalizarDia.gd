@@ -6,6 +6,7 @@ var infoMejorasDisponibles : Array
 
 func _ready() -> void:
 	GlobalTiempo.finalizarDia.connect(_on_finalizar_dia)
+	GlobalRecursos.bancarota.connect(gameover)
 
 func _on_finalizar_dia():
 	infoMejorasDisponibles = GlobalMejoras.obtener_mejora_random_disponible()
@@ -21,3 +22,7 @@ func _on_btn_finalizar_dia_pressed() -> void:
 	for child in grid.get_children():
 		child.queue_free()
 	GlobalTiempo.siguiente_dia()
+
+func gameover():
+	await get_tree().create_timer(0.1).timeout
+	visible = false

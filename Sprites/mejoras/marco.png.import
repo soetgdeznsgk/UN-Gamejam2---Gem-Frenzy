@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://svgsd1f17qws"
-path="res://.godot/imported/reloj mejorado.png-9ff42edfbdd7a8f5f8f079879d95ffd4.ctex"
+uid="uid://c8d0a41wntbkw"
+path="res://.godot/imported/marco.png-b680da424a6ee782d327479b00185aea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/clientes cofre reloj reloj mejorado/reloj mejorado.png"
-dest_files=["res://.godot/imported/reloj mejorado.png-9ff42edfbdd7a8f5f8f079879d95ffd4.ctex"]
+source_file="res://Sprites/mejoras/marco.png"
+dest_files=["res://.godot/imported/marco.png-b680da424a6ee782d327479b00185aea.ctex"]
 
 [params]
 

@@ -10,6 +10,7 @@ signal new_order(orden: Order)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	llenar_recetas()
+	GlobalTiempo.iniciarDia.connect(llenar_recetas)
 	#add_child(tmr) Ésto fué reemplazado por la señal new_customer
 	#tmr.timeout.connect(_on_timer_timeout)
 	#tmr.wait_time = randi() % (5) + 4
@@ -29,22 +30,31 @@ func entregarOrden(orden : Order):
 		
 
 func llenar_recetas() -> void:
-	if GlobalTiempo.diaActual >= 1: # hay carbon y hierro
+	if GlobalTiempo.diaActual == 1: # hay carbon y hierro
 		recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro]) # acero
-		if GlobalTiempo.diaActual >= 2: # hay cobre
-			recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Cobre, GlobalRecursos.mineralesSinFondo.Hierro]) # allmetal
-			if GlobalTiempo.diaActual >= 4: # dia 3 añade oro, dia 4 añade topacio y rubi
-				recetas.append([GlobalRecursos.mineralesSinFondo.Topacio, GlobalRecursos.mineralesSinFondo.Oro, GlobalRecursos.mineralesSinFondo.Rubi]) #fire cri
-				if GlobalTiempo.diaActual >= 6: # hay amatista y zafiro
-					recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Amatista, GlobalRecursos.mineralesSinFondo.Zafiro]) # frost cri
-					if GlobalTiempo.diaActual >= 7: # hay esmeralda
-						recetas.append([GlobalRecursos.mineralesSinFondo.Rubi, GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Esmeralda]) #  rgb cri
-						# rgb
-						recetas.append([GlobalRecursos.mineralesSinFondo.Cobre, GlobalRecursos.mineralesSinFondo.Topacio, GlobalRecursos.mineralesSinFondo.Esmeralda])
-						if GlobalTiempo.diaActual >= 8: # hay diamante
-								recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
-
+	if GlobalTiempo.diaActual == 2: # hay cobre
+		recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Cobre, GlobalRecursos.mineralesSinFondo.Hierro]) # allmetal
 	
+	if GlobalTiempo.diaActual == 3: # hay cobre
+		recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Cobre, GlobalRecursos.mineralesSinFondo.Hierro]) # allmetal
+	
+	if GlobalTiempo.diaActual == 4: # dia 3 añade oro, dia 4 añade topacio y rubi
+		recetas.append([GlobalRecursos.mineralesSinFondo.Topacio, GlobalRecursos.mineralesSinFondo.Oro, GlobalRecursos.mineralesSinFondo.Rubi]) #fire cri
+	if GlobalTiempo.diaActual == 5: # dia 3 añade oro, dia 4 añade topacio y rubi
+		recetas.append([GlobalRecursos.mineralesSinFondo.Topacio, GlobalRecursos.mineralesSinFondo.Oro, GlobalRecursos.mineralesSinFondo.Rubi]) #fire cri
+	
+	if GlobalTiempo.diaActual == 6: # hay amatista y zafiro
+		recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Amatista, GlobalRecursos.mineralesSinFondo.Zafiro]) # frost cri
+		recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Amatista, GlobalRecursos.mineralesSinFondo.Zafiro]) # frost cri
+
+	if GlobalTiempo.diaActual == 7: # hay esmeralda
+		recetas.append([GlobalRecursos.mineralesSinFondo.Rubi, GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Esmeralda]) #  rgb cri
+		# rgb
+		recetas.append([GlobalRecursos.mineralesSinFondo.Cobre, GlobalRecursos.mineralesSinFondo.Topacio, GlobalRecursos.mineralesSinFondo.Esmeralda])
+	if GlobalTiempo.diaActual == 8: # hay diamante
+		recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
+	print("la receta ", recetas)
+
 	
 # Señales
 

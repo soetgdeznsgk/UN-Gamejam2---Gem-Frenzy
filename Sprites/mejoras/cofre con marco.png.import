@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc41dwpusc8mh"
-path="res://.godot/imported/coin_05.png-a91aac831fd89c70b67e0f58051768e2.ctex"
+uid="uid://b6gkgvow14x4u"
+path="res://.godot/imported/cofre con marco.png-2071b340ad75c5e38f8f6d5bbdd63423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/coin_05.png"
-dest_files=["res://.godot/imported/coin_05.png-a91aac831fd89c70b67e0f58051768e2.ctex"]
+source_file="res://Sprites/mejoras/cofre con marco.png"
+dest_files=["res://.godot/imported/cofre con marco.png-2071b340ad75c5e38f8f6d5bbdd63423.ctex"]
 
 [params]
 

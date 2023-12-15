@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
-size = Vector2(85, 16)
+size = Vector2(64, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbhtb"]
 texture = ExtResource("3_r1lai")
@@ -181,7 +181,7 @@ script = ExtResource("3_ys0ch")
 metadata/_edit_lock_ = true
 
 [node name="Area2DCasa" type="Area2D" parent="Gameplay"]
-position = Vector2(460, 11)
+position = Vector2(461, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Area2DCasa"]
 z_index = 1
@@ -323,8 +323,8 @@ metadata/_edit_lock_ = true
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Recepcion"]
 visible = false
-position = Vector2(0, -11.585)
-scale = Vector2(0.5, 0.5)
+texture_filter = 1
+position = Vector2(-10.5, -11.6)
 texture = ExtResource("6_s8g8y")
 metadata/_edit_lock_ = true
 
