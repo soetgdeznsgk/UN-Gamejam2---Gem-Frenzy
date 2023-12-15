@@ -1,7 +1,7 @@
 extends Marker2D
 
 var cliente = preload("res://Logica/cliente_body.tscn")
-@export var tiempo_min_entre_clientes := 10
+@export var tiempo_min_entre_clientes = 10 # añadir varianza
 var generandoClientes = true
 
 # Called when the node enters the scene tree for the first time.
