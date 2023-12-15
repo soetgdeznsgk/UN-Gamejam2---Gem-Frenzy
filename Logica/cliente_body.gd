@@ -28,7 +28,8 @@ var posiblesTexturas = ["res://Sprites/Mapa/clientes/cliente1 14x19.png",
 "res://Sprites/Mapa/clientes/02_variacion clientes 14x19.png",
 "res://Sprites/Mapa/clientes/03_variacion clientes 14x19.png",
 "res://Sprites/Mapa/clientes/04_variacion clientes 14x19.png",
-"res://Sprites/Mapa/clientes/05_variacion clientes 14x19.png"]
+"res://Sprites/Mapa/clientes/05_variacion clientes 14x19.png",
+"res://Sprites/Mapa/clientes/cliente zen 14x23 px.png"]
 var textura
 
 func _ready() -> void:

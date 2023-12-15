@@ -28,7 +28,7 @@ func on_tmr_minuto_end():
 		tiempoHoraDia += 1
 		tiempoMinutoDia = 0
 	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
-	if tiempoHoraDia == 11 + GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasTiempo]:
+	if tiempoHoraDia >= 11 + GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasTiempo]:
 		tmr_minuto.stop()
 		finalizarDia.emit()
 
