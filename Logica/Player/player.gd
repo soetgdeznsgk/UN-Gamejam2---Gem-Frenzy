@@ -38,7 +38,6 @@ func _physics_process(_delta):
 	-int(Input.is_action_pressed("ui_up")))
 	if taladrando:
 		#movimiento taladrando
-		
 		if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
 			input_direction=Vector2(0,-1)		
 			SPEED = CONST_SPEED + CONST_SPEEDUP
@@ -95,12 +94,13 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body is Player and taladrando:
+		movement = false
 		AnimState.travel("Escalera")
 		SPEED = CONST_SPEED
 		taladrando=false
 		
 		var tween :Tween = get_tree().create_tween()
-		movement = false
+		
 		tween.tween_property(self, "position:x", $"../Area2DCasa".position.x, 0.4)
 		tween.tween_property(self, "position:y", -21.2, 0.7)
 		tween.tween_callback(_on_tween_callback)
@@ -109,6 +109,7 @@ func _on_area_2d_body_entered(body):
 		
 func _on_tween_callback():
 	surface_entered.emit()
+	
 	movement = true
 	
 	

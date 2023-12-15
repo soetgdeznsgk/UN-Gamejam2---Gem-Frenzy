@@ -40,7 +40,7 @@ func _on_area_entered(area):
 	if area is Slime:
 		#print(area.tocandootroslimequestionmark)
 		#print(finaly+inicioy)
-		var xrandom=randi() % 550+20#de 50 a 640
+		var xrandom=randi() % 600+20#de 50 a 640
 		var yrandom=randi() % finaly+inicioy
 		var modulox=xrandom%16
 		var moduloy=yrandom%16
