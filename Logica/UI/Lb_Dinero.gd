@@ -8,10 +8,8 @@ func _ready() -> void:
 
 func actualizarDinero(dinero):
 	if dinero < 10 and dinero >= 0:
-		strDinero = '00' + str(dinero)
-	elif dinero < 100 and dinero > 10:
 		strDinero = '0' + str(dinero)
-	elif dinero >= 100:
+	elif dinero < 100 and dinero > 10:
 		strDinero = str(dinero)
 	elif dinero < 0:
 		strDinero = str(dinero)

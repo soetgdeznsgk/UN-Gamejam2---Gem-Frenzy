@@ -1,6 +1,5 @@
 extends Node2D
 class_name Genobstaculos
-# @onready var nodoobstaculos = $Obstaculos
 
 var Slimes=PackedStringArray([# Tier A (0 a 2)
 					"res://Escenas/obstaculos/slimes/TierAslime1.tscn",
@@ -48,9 +47,9 @@ func empezardia():
 		
 	#primera capa
 	#Tier A coso
-	for i in range(0,5):
+	for i in range(0,4):
 		var porcentaje = randf()
-		Vectorposicionrandom =posicionrandom(1,50)
+		Vectorposicionrandom =posicionrandom(15,40)
 		var angulo =0
 		if porcentaje>0.66:
 			slime=load(Slimes[0])
@@ -107,9 +106,6 @@ func empezardia():
 		slimenodo2.position=Vectorposicionrandom
 		slimenodo2.rotation=posibles_angulos[angulo]
 
-func _process(delta):
-
-	pass
 func posicionrandom(inicioy,finaly):
 	var xrandom=randi() % 640+50#de 50 a 640
 	var yrandom=randi() % inicioy+finaly  #de 50 a 100
@@ -122,6 +118,3 @@ func posicionrandom(inicioy,finaly):
 		yrandom+=(16-moduloy)
 		
 	return Vector2(xrandom,yrandom)
-	
-	
-	#GlobalTiempo.diaActual

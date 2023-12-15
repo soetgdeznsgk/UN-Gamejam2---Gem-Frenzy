@@ -40,20 +40,20 @@ func regenerar_mapa():
 	## Hacer acero o venderlo solo
 	if GlobalTiempo.diaActual >= 1: 
 		for i in range(0,80):
-			for j in range(0,10): # Las primeras diez capas de profundidad
+			for j in range(0,13): # Las primeras diez capas de profundidad
 				var porcentaje = randf()
 				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.955 and porcentaje >= 0:
+				if porcentaje < 0.945 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.955 and porcentaje < 0.975: 
+				elif porcentaje > 0.945 and porcentaje < 0.975: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Carbon
-				elif porcentaje > 0.975 and porcentaje < 0.985: 
+				elif porcentaje > 0.975 and porcentaje < 0.99: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Hierro
-				elif porcentaje > 0.985 and porcentaje <= 1: 
+				elif porcentaje > 0.99 and porcentaje <= 1: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Plata
 				temp.actualizar_textura()
-		Cam.limit_bottom = 100
-		barraBloqueoDias.position.y = 100
+		Cam.limit_bottom = 104
+		barraBloqueoDias.position.y = 104
 	
 	## Libera all metal
 	if GlobalTiempo.diaActual >= 2:
