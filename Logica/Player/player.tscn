@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=51 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cfymrk6lus6fo" path="res://Sprites/Player/uy quieta 14x24.png" id="6_rluto"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_3l1ym"]
 [ext_resource type="Texture2D" uid="uid://d4b37i4g7p2yr" path="res://Sprites/Recursos/Recetas.png" id="8_781fh"]
+[ext_resource type="AudioStream" uid="uid://dvpk51bv6g6i2" path="res://Musica/PanchaPaso.wav" id="9_mrxpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(13, 14)
@@ -208,6 +209,18 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_7mjxb"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AudioPaso:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_g6qw0"]
 resource_name = "Taladrando_DownLeft"
@@ -662,12 +675,23 @@ tracks/4/keys = {
 "update": 1,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../AudioPaso:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="Animation" id="Animation_0tm5m"]
 resource_name = "Walking_Right"
 length = 0.8
 loop_mode = 1
-step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -719,14 +743,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Sprite2D:rotation")
+tracks/4/path = NodePath("../AudioPaso:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0.0]
+"values": [true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jp3qt"]
@@ -883,7 +907,6 @@ texture_filter = 1
 texture = ExtResource("2_m6vgi")
 hframes = 4
 vframes = 2
-frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")
@@ -909,3 +932,9 @@ texture_filter = 1
 position = Vector2(0, -16)
 texture = ExtResource("8_781fh")
 hframes = 7
+
+[node name="AudioPaso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_mrxpi")
+volume_db = -4.0
+pitch_scale = 1.2
+max_polyphony = 2

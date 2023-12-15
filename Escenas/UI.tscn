@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=36 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/mejoras/reloj normal.png" id="4_1gerh"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
 [ext_resource type="AudioStream" uid="uid://c1hjjwipji7up" path="res://Musica/cliente_enojado.wav" id="4_h0j4i"]
+[ext_resource type="AudioStream" uid="uid://bmj43p0weuvai" path="res://Musica/OrdenCorrecta2.wav" id="5_lmvn8"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
+[ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
+[ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
 atlas = ExtResource("7_q4w3t")
@@ -170,6 +173,12 @@ script = ExtResource("1_qy5sv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ordenes"]
 stream = ExtResource("4_h0j4i")
+pitch_scale = 0.99
+
+[node name="AudioEntregarOrden" type="AudioStreamPlayer" parent="Ordenes"]
+stream = ExtResource("5_lmvn8")
+volume_db = -6.5
+pitch_scale = 0.99
 
 [node name="VbReloj" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -410,6 +419,11 @@ custom_minimum_size = Vector2(260, 64)
 layout_mode = 2
 text = "FINALIZAR DIA"
 
+[node name="AudioFinDiaBien" type="AudioStreamPlayer" parent="FinalizarDia"]
+stream = ExtResource("14_bi36g")
+volume_db = -5.0
+pitch_scale = 1.01
+
 [node name="Gameover" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -449,6 +463,11 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(260, 64)
 layout_mode = 2
 text = "REINTENTAR"
+
+[node name="AudioGameover" type="AudioStreamPlayer" parent="Gameover"]
+stream = ExtResource("15_uh00d")
+volume_db = -11.0
+pitch_scale = 0.99
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]

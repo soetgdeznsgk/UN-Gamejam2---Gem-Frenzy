@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckwirio1rk4yk"]
+[gd_scene load_steps=8 format=3 uid="uid://ckwirio1rk4yk"]
 
 [ext_resource type="Script" path="res://FinalizarDia/MejoraUI.gd" id="1_1mlls"]
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_j405q"]
+[ext_resource type="AudioStream" uid="uid://b2eoylyx4gc5o" path="res://Musica/DineroNoAlcanza.wav" id="3_xceqa"]
+[ext_resource type="AudioStream" uid="uid://xl1i7khruaha" path="res://Musica/Mejora.wav" id="4_dp677"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e85kf"]
 
@@ -62,5 +64,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 12
 text = "COMPRAR"
+
+[node name="AudioDineroNoAlcanza" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xceqa")
+volume_db = -4.0
+pitch_scale = 0.95
+
+[node name="AudioDineroAlcanza" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dp677")
+volume_db = -2.0
+pitch_scale = 1.01
 
 [connection signal="pressed" from="Btn_comprar" to="." method="_on_btn_comprar_pressed"]

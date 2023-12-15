@@ -17,6 +17,11 @@ func Cocinar():
 	#print("receta = ", GlobalRecetas.encontrarReceta(temp))
 	if receta != -1:
 		playerRef.receta_en_mano = receta
+		$AudioStreamPlayer.pitch_scale = 1.01
+		$AudioStreamPlayer.play(0)
+	else:
+		$AudioStreamPlayer.pitch_scale = 0.65
+		$AudioStreamPlayer.play(0)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

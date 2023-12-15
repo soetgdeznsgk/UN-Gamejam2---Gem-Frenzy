@@ -141,7 +141,7 @@ func regenerar_mapa():
 		Cam.limit_bottom = 980
 		barraBloqueoDias.position.y = 980
 	
-	# desbloquea todo 3 recetas de golpe.
+	# desbloquea 3 recetas de golpe.
 	if GlobalTiempo.diaActual >= 8:
 		for i in range(0,80):
 			for j in range(120,150):

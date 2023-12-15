@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0svli45cjmsm"]
+[gd_scene load_steps=6 format=3 uid="uid://c0svli45cjmsm"]
 
 [ext_resource type="Script" path="res://Escenas/Horno/horno.gd" id="1_e16b3"]
 [ext_resource type="Texture2D" uid="uid://bqjqpati2ea0g" path="res://Sprites/Mapa/hornito.png" id="1_yyhpw"]
 [ext_resource type="Texture2D" uid="uid://b2ivbnl772jf" path="res://Sprites/UI/upKey.png" id="3_00rby"]
+[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/Horno.mp3" id="4_kwyb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ck0i"]
 size = Vector2(16, 16)
@@ -25,6 +26,10 @@ texture = ExtResource("3_00rby")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_5ck0i")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kwyb0")
+pitch_scale = 0.6
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

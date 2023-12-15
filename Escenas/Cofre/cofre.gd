@@ -33,6 +33,8 @@ func actualizar():
 func Open() -> void:
 	if visible and not playerRef.receta_en_mano:
 		$AnimationPlayer.play("AbrirCofre")
+		$AudioStreamPlayer.pitch_scale = randf_range(0.988, 1.05)
+		$AudioStreamPlayer.play()
 		if playerRef.items_en_mano.size() < 3 and cantidad_almacenada > 0: #si hay espacio en las manos de player
 			if playerRef.items_en_mano.find(material_almacenado) == -1:
 				playerRef.recibirObjeto(material_almacenado)

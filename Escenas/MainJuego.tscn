@@ -339,6 +339,486 @@ position = Vector2(320, 100)
 shape = SubResource("RectangleShape2D_hxlur")
 metadata/_edit_lock_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-316, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-308, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-300, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-292, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-284, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-276, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-268, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-260, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-252, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-244, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-236, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-228, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-221, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-213, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-205, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-197, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-189, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-181, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-173, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-165, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-157, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-149, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-141, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-133, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-125, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-117, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-109, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-101, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-93, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-85, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D31" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-77, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-69, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D33" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-61, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D34" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-53, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D35" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-45, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D36" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-37, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D37" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-30, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D38" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-22, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D39" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-14, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D40" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-6, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D41" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D42" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(10, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D43" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(18, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D44" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(26, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D45" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(34, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D46" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(42, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D47" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(50, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D48" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(58, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D49" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(66, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D50" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(74, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D51" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(82, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D52" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(90, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D53" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(98, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D54" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(106, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D55" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(114, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D56" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(122, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D57" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(130, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D58" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(138, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D59" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(146, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D60" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(154, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D61" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(161, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D62" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(169, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D63" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(177, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D64" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(185, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D65" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(193, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D66" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(201, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D67" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(209, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D68" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(217, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D69" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(225, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D70" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(233, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D71" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(241, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D72" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(249, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D73" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(257, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D74" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(265, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D75" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(273, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D76" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(281, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D77" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(289, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D78" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(297, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D79" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(305, 0)
+texture = ExtResource("4_tg0lo")
+
+[node name="Sprite2D80" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(313, 0)
+texture = ExtResource("4_tg0lo")
+
 [node name="Area2DMeterCarbon" type="Area2D" parent="Gameplay"]
 visible = false
 position = Vector2(360, -17)
@@ -442,7 +922,7 @@ position = Vector2(378, -23)
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_nuu47")
-volume_db = -2.41
+volume_db = -3.8
 autoplay = true
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]

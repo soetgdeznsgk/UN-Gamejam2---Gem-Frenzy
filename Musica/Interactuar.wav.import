@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dvpk51bv6g6i2"
-path="res://.godot/imported/paso_cliente.wav-0cf767166343948e5f8a41cb326badc3.sample"
+uid="uid://ceeal7vx2pjxt"
+path="res://.godot/imported/Interactuar.wav-b330c5512153a32b940bedfd00bb9e47.sample"
 
 [deps]
 
-source_file="res://Musica/paso_cliente.wav"
-dest_files=["res://.godot/imported/paso_cliente.wav-0cf767166343948e5f8a41cb326badc3.sample"]
+source_file="res://Musica/Interactuar.wav"
+dest_files=["res://.godot/imported/Interactuar.wav-b330c5512153a32b940bedfd00bb9e47.sample"]
 
 [params]
 

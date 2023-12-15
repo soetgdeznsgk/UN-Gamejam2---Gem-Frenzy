@@ -3,9 +3,15 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalTiempo.iniciarDia.connect(reset_music)
+	GlobalRecursos.bancarota.connect(noSound)
+	GlobalTiempo.finalizarDia.connect(noSound)
 	
+	GlobalTiempo.iniciarDia.connect(playSound)
+	$Ambient.play(0)
 # Señales
 
-func reset_music():
+func playSound():
 	$Ambient.play(0)
+
+func noSound():
+	$Ambient.stop()

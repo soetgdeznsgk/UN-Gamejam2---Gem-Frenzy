@@ -17,7 +17,7 @@ var info_mejoras = {
 		"Nombre" : "Cofre",
 		"Precio" : 2,
 		"Maximo" : 4,
-		"Textura" : 'res://Sprites/clientes cofre reloj reloj mejorado/cofre con marco.png',
+		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
 	},
 	nombre_mejoras.MasTiempo : {
@@ -25,7 +25,7 @@ var info_mejoras = {
 		"Nombre" : "Mas tiempo",
 		"Precio" : 3,
 		"Maximo" : 4,
-		"Textura" : 'res://Sprites/clientes cofre reloj reloj mejorado/reloj mejorado.png',
+		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : "Tu tienda esta abierta mas horas",
 	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd

@@ -17,7 +17,8 @@ func _on_btn_comprar_pressed() -> void:
 		
 		if GlobalRecursos.dinero - int(info["Precio"]) > 0:
 			GlobalRecursos.actualizar_dinero(-int(info["Precio"]))
+			$AudioDineroAlcanza.play(0)
 			$Btn_comprar.disabled = true
 		else:
-			#Sonido de erorr por money
-			pass
+			$AudioDineroNoAlcanza.play(0)
+			$Btn_comprar.disabled = true

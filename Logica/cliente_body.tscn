@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Logica/cliente_body.gd" id="1_8qskh"]
 [ext_resource type="Texture2D" uid="uid://dr7ywwyc3d5ad" path="res://Sprites/Mapa/clientes/00_variacion clientes 14x19.png" id="2_lttxv"]
-[ext_resource type="AudioStream" uid="uid://cx7o1yslwvgji" path="res://Musica/Footsteps-in-grass-slow-A-www.fesliyanstudios.com.mp3" id="3_eilxe"]
+[ext_resource type="AudioStream" uid="uid://cl4t8v0e6hjma" path="res://Musica/Minando.mp3" id="3_wbext"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7178"]
 size = Vector2(16, 16)
@@ -21,10 +21,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_6h4n8"]
 resource_name = "caminar"
-length = 1.2
+length = 0.9
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -37,6 +49,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_flr7u"]
@@ -67,6 +91,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_eilxe")
-volume_db = -10.0
+stream = ExtResource("3_wbext")
+volume_db = -4.0
 autoplay = true

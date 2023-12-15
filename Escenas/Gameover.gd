@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func gameover():
 	visible = true
-	# todo emitir sonidito
+	$AudioGameover.play(0)
 
 
 func _on_btn_reintentar_pressed() -> void:

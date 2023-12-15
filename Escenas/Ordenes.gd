@@ -14,6 +14,7 @@ func entregarOrden(objetivo):
 		if orden is OrdenUI:
 			if orden.getOrden() == objetivo:
 				orden.orden_deliver()
+				$AudioEntregarOrden.play(0)
 				return 
 			
 func limpiar_ordenes():

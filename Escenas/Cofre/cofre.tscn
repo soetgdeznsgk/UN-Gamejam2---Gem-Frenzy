@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://r3b4g86f7l6x"]
+[gd_scene load_steps=11 format=3 uid="uid://r3b4g86f7l6x"]
 
 [ext_resource type="Script" path="res://Escenas/Cofre/cofre.gd" id="1_5a08q"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="2_vta35"]
 [ext_resource type="Texture2D" uid="uid://b2ivbnl772jf" path="res://Sprites/UI/upKey.png" id="3_bhoaq"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="4_211rc"]
+[ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="5_6yikg"]
 
 [sub_resource type="Animation" id="Animation_qs0vi"]
 resource_name = "AbrirCofre"
@@ -83,6 +84,10 @@ position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_w7rvs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6yikg")
+volume_db = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
