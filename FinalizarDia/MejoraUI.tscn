@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckwirio1rk4yk"]
+[gd_scene load_steps=6 format=3 uid="uid://ckwirio1rk4yk"]
 
 [ext_resource type="Script" path="res://FinalizarDia/MejoraUI.gd" id="1_1mlls"]
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_j405q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e85kf"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_6oy3h"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_ye2lu"]
+font_size = 10
+
 [node name="VBoxContainerMejora" type="VBoxContainer"]
+custom_minimum_size = Vector2(150, 218)
 anchors_preset = -1
 anchor_right = 0.133
 anchor_bottom = 0.264
@@ -17,28 +24,43 @@ alignment = 1
 script = ExtResource("1_1mlls")
 
 [node name="Lb_nombre" type="Label" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(150, 18)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
 text = "Nombre"
+label_settings = SubResource("LabelSettings_6oy3h")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(150, 128)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("1_j405q")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Lb_precio" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 18)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
 text = "PRECIO: 500"
+label_settings = SubResource("LabelSettings_ye2lu")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="Btn_comprar" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
-text = "COMPRAR 0/3"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "COMPRAR"
 
 [connection signal="pressed" from="Btn_comprar" to="." method="_on_btn_comprar_pressed"]

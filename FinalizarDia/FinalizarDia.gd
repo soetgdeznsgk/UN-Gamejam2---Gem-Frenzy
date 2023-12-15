@@ -1,6 +1,6 @@
-extends ColorRect
+extends PanelContainer
 
-@onready var grid = $GridContainerMejoras
+@onready var grid = $VBoxContainer/HbMejoras
 var mejoraUI = preload("res://FinalizarDia/MejoraUI.tscn")
 var infoMejorasDisponibles : Array
 

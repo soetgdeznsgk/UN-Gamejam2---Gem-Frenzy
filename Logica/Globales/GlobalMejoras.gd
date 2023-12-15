@@ -17,7 +17,7 @@ var info_mejoras = {
 		"Nombre" : "Cofre",
 		"Precio" : 2,
 		"Maximo" : 4,
-		"Textura" : 'null',
+		"Textura" : 'res://Sprites/clientes cofre reloj reloj mejorado/cofre con marco.png',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
 	},
 	nombre_mejoras.MasTiempo : {
@@ -25,7 +25,7 @@ var info_mejoras = {
 		"Nombre" : "Mas tiempo",
 		"Precio" : 3,
 		"Maximo" : 4,
-		"Textura" : 'null',
+		"Textura" : 'res://Sprites/clientes cofre reloj reloj mejorado/reloj mejorado.png',
 		"Descripcion" : "Tu tienda esta abierta mas horas",
 	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
@@ -33,7 +33,7 @@ var info_mejoras = {
 		"Nombre" : "Recompensas!",
 		"Precio" : 4,
 		"Maximo" : 3,
-		"Textura" : 'null',
+		"Textura" : 'res://icon.svg',
 		"Descripcion" : "Cobra más por tu trabajo!",
 	},
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
@@ -41,7 +41,7 @@ var info_mejoras = {
 		"Nombre" : "Clientes Zen",
 		"Precio" : 3,
 		"Maximo" : 3,
-		"Textura" : 'null',
+		"Textura" : 'res://icon.svg',
 		"Descripcion" : "Gracias a la meditación los clientes esperan más tiempo",
 	},
 
@@ -50,7 +50,7 @@ var info_mejoras = {
 		"Nombre" : "Muchas mejoras",
 		"Precio" : 6,
 		"Maximo" : 1,
-		"Textura" : 'null',
+		"Textura" : 'res://icon.svg',
 		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
 	},
 		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
@@ -58,7 +58,7 @@ var info_mejoras = {
 		"Nombre" : "Gato",
 		"Precio" : 6,
 		"Maximo" : 2,
-		"Textura" : 'null',
+		"Textura" : 'res://icon.svg',
 		"Descripcion" : "Un gato siempre atrae más clientes!",
 	},
 }

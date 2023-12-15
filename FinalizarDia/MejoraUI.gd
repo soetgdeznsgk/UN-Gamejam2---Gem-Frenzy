@@ -1,11 +1,13 @@
 extends VBoxContainer
 
 var info : Dictionary
-
+var textura 
 func _ready() -> void:
 	if not info.is_empty():
 		$Lb_nombre.text = info["Nombre"]
 		$Lb_precio.text = "Precio: " + str(info["Precio"])
+		textura = load(info["Textura"])
+		$TextureRect.texture = textura
 
 func _on_btn_comprar_pressed() -> void:
 	if not info.is_empty():

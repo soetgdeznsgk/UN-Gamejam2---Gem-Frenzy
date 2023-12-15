@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://btm0ei5fs0m10"]
 
-[ext_resource type="FontFile" uid="uid://d3grfra5evdny" path="res://Sprites/UI/dogicapixelbold.ttf" id="1_exn24"]
+[ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
 [ext_resource type="Script" path="res://Escenas/UI.gd" id="1_xq7xs"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
@@ -11,10 +11,6 @@
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
-
-[sub_resource type="Theme" id="Theme_5htar"]
-default_font = ExtResource("1_exn24")
-default_font_size = 16
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xoam7"]
 load_path = "res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"
@@ -63,6 +59,14 @@ region = Rect2(31, 13, 8, 8)
 atlas = ExtResource("7_bbwty")
 region = Rect2(58, 4, 8, 8)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_catcj"]
+bg_color = Color(0.439216, 0.439216, 0.439216, 0.772549)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -70,7 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_5htar")
+theme = ExtResource("1_4vip0")
 script = ExtResource("1_xq7xs")
 metadata/_edit_lock_ = true
 
@@ -275,42 +279,42 @@ layout_mode = 2
 text = ":0"
 vertical_alignment = 1
 
-[node name="FinalizarDia" type="ColorRect" parent="."]
+[node name="FinalizarDia" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 0
-offset_left = 196.0
-offset_top = 148.0
-offset_right = 785.0
-offset_bottom = 540.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -230.5
+offset_right = 335.0
+offset_bottom = 230.5
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_catcj")
 script = ExtResource("6_6ps5f")
 
-[node name="GridContainerMejoras" type="GridContainer" parent="FinalizarDia"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.998
-anchor_bottom = 0.997
-offset_right = 0.177979
-offset_bottom = -88.824
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 16
-columns = 3
+[node name="VBoxContainer" type="VBoxContainer" parent="FinalizarDia"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="FinalizarDia"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.002
-anchor_top = 0.781
-anchor_right = 1.0
-anchor_bottom = 0.997
-offset_left = 0.178
-offset_top = -0.152008
-offset_bottom = 0.175995
+[node name="HbMejoras" type="HBoxContainer" parent="FinalizarDia/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
 
-[node name="Btn_finalizar_dia" type="Button" parent="FinalizarDia/CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="FinalizarDia/VBoxContainer"]
+layout_mode = 2
+
+[node name="Btn_finalizar_dia" type="Button" parent="FinalizarDia/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(260, 64)
 layout_mode = 2
 text = "FINALIZAR DIA"
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
-[connection signal="pressed" from="FinalizarDia/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
+[connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
