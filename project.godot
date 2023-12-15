@@ -28,7 +28,12 @@ GlobalRecetas="*res://Logica/Globales/GlobalRecetas.gd"
 window/size/viewport_width=960
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg")
 
 [input]
 

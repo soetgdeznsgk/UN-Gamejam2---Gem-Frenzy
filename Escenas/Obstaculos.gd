@@ -1,6 +1,6 @@
 extends Node2D
 class_name Genobstaculos
-@onready var nodoobstaculos = $Obstaculos
+# @onready var nodoobstaculos = $Obstaculos
 
 var Slimes=PackedStringArray([# Tier A (0 a 2)
 					"res://Escenas/obstaculos/slimes/TierAslime1.tscn",
@@ -125,10 +125,3 @@ func posicionrandom(inicioy,finaly):
 	
 	
 	#GlobalTiempo.diaActual
-	
-	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-

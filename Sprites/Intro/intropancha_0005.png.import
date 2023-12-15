@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqlqiefevlkws"
-path="res://.godot/imported/Obsidiana.png-e4c8d8071e9ef2e99b75d8ae04dc29b4.ctex"
+uid="uid://8kkcvsjqpmmu"
+path="res://.godot/imported/intropancha_0005.png-8ee2badc41a04c00e5f104cff75b670e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mapa/Obsidiana.png"
-dest_files=["res://.godot/imported/Obsidiana.png-e4c8d8071e9ef2e99b75d8ae04dc29b4.ctex"]
+source_file="res://Sprites/Intro/intropancha_0005.png"
+dest_files=["res://.godot/imported/intropancha_0005.png-8ee2badc41a04c00e5f104cff75b670e.ctex"]
 
 [params]
 

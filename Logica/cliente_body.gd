@@ -18,7 +18,17 @@ var esperando = true:
 var haPedido := false
 var moviendo = true
 
-var posiblesTexturas = ["res://Sprites/Mapa/clientes/cliente1 14x19.png","res://Sprites/Mapa/clientes/cliente2 14x19.png"]
+var posiblesTexturas = ["res://Sprites/Mapa/clientes/cliente1 14x19.png",
+"res://Sprites/Mapa/clientes/cliente2 14x19.png",
+"res://Sprites/Mapa/clientes/Clientepelinaranja.png",
+"res://Sprites/Mapa/clientes/Clientepelinegra.png",
+"res://Sprites/Mapa/clientes/Clientepelirosa.png",
+"res://Sprites/Mapa/clientes/00_variacion clientes 14x19.png",
+"res://Sprites/Mapa/clientes/01_variacion clientes 14x19.png",
+"res://Sprites/Mapa/clientes/02_variacion clientes 14x19.png",
+"res://Sprites/Mapa/clientes/03_variacion clientes 14x19.png",
+"res://Sprites/Mapa/clientes/04_variacion clientes 14x19.png",
+"res://Sprites/Mapa/clientes/05_variacion clientes 14x19.png"]
 var textura
 
 func _ready() -> void:
@@ -26,6 +36,7 @@ func _ready() -> void:
 	var selec = posiblesTexturas.pick_random()
 	textura = load(selec)
 	$Sprite2D.texture = textura
+	GlobalTiempo.finalizarDia.connect(fin_dia)
 
 func _physics_process(_delta: float) -> void:
 	if $RayCast2D.is_colliding():
@@ -42,3 +53,6 @@ func _physics_process(_delta: float) -> void:
 	velocity = Vector2 (dir, 0) * SPEED
 	if moviendo:
 		move_and_slide()
+
+func fin_dia():
+	esperando = false

@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Escenas/Mapa.gd" id="3_ys0ch"]
 [ext_resource type="Texture2D" uid="uid://x4yefvsyn1rb" path="res://Sprites/Mapa/cielo.png" id="4_8fm06"]
 [ext_resource type="Texture2D" uid="uid://dc78ydgr4yll5" path="res://Sprites/Mapa/Recepcion.png" id="4_bi4lc"]
-[ext_resource type="Texture2D" uid="uid://c7k5la4syymgk" path="res://Sprites/Mapa/Obsidiana.png" id="4_tg0lo"]
+[ext_resource type="Texture2D" uid="uid://cqlqiefevlkws" path="res://Sprites/Mapa/Obsidiana.png" id="4_tg0lo"]
 [ext_resource type="Texture2D" uid="uid://vyr6pwq5i280" path="res://Sprites/Mapa/tierra y pasto.png" id="5_fch8v"]
 [ext_resource type="Script" path="res://Escenas/Area2DEscalera.gd" id="5_ilj63"]
 [ext_resource type="Texture2D" uid="uid://dsc7vx2gibahv" path="res://Sprites/Mapa/pared casita.png" id="6_m45u8"]

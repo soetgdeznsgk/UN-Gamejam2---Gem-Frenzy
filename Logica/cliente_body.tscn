@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://da8vfiq3fv2ud"]
 
 [ext_resource type="Script" path="res://Logica/cliente_body.gd" id="1_8qskh"]
-[ext_resource type="Texture2D" uid="uid://cw5anqvk3pdcv" path="res://Sprites/Mapa/clientes/cliente1 14x19.png" id="2_4xlyh"]
+[ext_resource type="Texture2D" uid="uid://dr7ywwyc3d5ad" path="res://Sprites/Mapa/clientes/00_variacion clientes 14x19.png" id="2_lttxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7178"]
 size = Vector2(16, 16)
@@ -53,7 +53,7 @@ shape = SubResource("RectangleShape2D_o7178")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-2, -1)
-texture = ExtResource("2_4xlyh")
+texture = ExtResource("2_lttxv")
 hframes = 4
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

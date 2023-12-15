@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqlqiefevlkws"
-path="res://.godot/imported/Obsidiana.png-e4c8d8071e9ef2e99b75d8ae04dc29b4.ctex"
+uid="uid://c8d0a41wntbkw"
+path="res://.godot/imported/marco.png-6ee5a57bb750b5ab0705acd8856ec8d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mapa/Obsidiana.png"
-dest_files=["res://.godot/imported/Obsidiana.png-e4c8d8071e9ef2e99b75d8ae04dc29b4.ctex"]
+source_file="res://Sprites/clientes cofre reloj reloj mejorado/marco.png"
+dest_files=["res://.godot/imported/marco.png-6ee5a57bb750b5ab0705acd8856ec8d2.ctex"]
 
 [params]
 
