@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Recepcion
 
+signal order_delivered(orden)
+
 var isPlayerHere = false
 var playerRef : Player
 @onready var interactSprite = $Spr_up_key_ladder
@@ -10,9 +12,15 @@ var playerRef : Player
 func _process(_delta: float) -> void:
 	if isPlayerHere:
 		if Input.is_action_just_pressed("ui_up"):
-			# Entregar orden
+			Entrega()
 			pass
 			
+
+# Llamadas
+
+func Entrega():
+	if playerRef.receta_en_mano:
+		order_delivered.emit(playerRef._set_receta(false))
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

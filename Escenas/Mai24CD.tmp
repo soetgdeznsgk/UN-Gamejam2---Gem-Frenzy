@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=38 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="PackedScene" uid="uid://bvaa0r36hif4w" path="res://Logica/Player/player.tscn" id="2_rfotb"]
@@ -16,8 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://bcgo0i8bdjnnc" path="res://Sprites/Mapa/scaleras 16x16.png" id="11_m2ljb"]
 [ext_resource type="Script" path="res://Escenas/Area2DEscaleraSegundoPiso.gd" id="12_vcjlc"]
 [ext_resource type="Script" path="res://Escenas/Recepcion/Area2DRecepcion.gd" id="13_37ooj"]
+[ext_resource type="Script" path="res://Escenas/Slime.gd" id="13_ny4e5"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="14_f6g73"]
-[ext_resource type="Script" path="res://Escenas/Obstaculos.gd" id="14_jik0t"]
+[ext_resource type="Texture2D" uid="uid://xs2dcu82lexr" path="res://Sprites/Player/Player_left.png" id="14_hbyd4"]
 [ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
@@ -156,6 +157,9 @@ size = Vector2(20, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gojq5"]
 size = Vector2(15, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hh68"]
+size = Vector2(71, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5g13"]
 size = Vector2(16, 16)
@@ -306,7 +310,23 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Obstaculos" type="Node2D" parent="Gameplay"]
-script = ExtResource("14_jik0t")
+
+[node name="Slime" type="Node2D" parent="Gameplay/Obstaculos"]
+script = ExtResource("13_ny4e5")
+
+[node name="Area2D" type="Area2D" parent="Gameplay/Obstaculos/Slime"]
+position = Vector2(260, 59)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gameplay/Obstaculos/Slime/Area2D"]
+z_index = 6
+texture_filter = 1
+position = Vector2(38, 13.5)
+scale = Vector2(3.8, 1.31579)
+texture = ExtResource("14_hbyd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Obstaculos/Slime/Area2D"]
+position = Vector2(37.5, 12.5)
+shape = SubResource("RectangleShape2D_5hh68")
 
 [node name="Recepcion" type="Area2D" parent="Gameplay"]
 position = Vector2(202, -20)
@@ -354,12 +374,8 @@ texture = ExtResource("6_s8g8y")
 metadata/_edit_lock_ = true
 
 [node name="GeneradorClientes" type="Marker2D" parent="Gameplay"]
-position = Vector2(-6, -12)
+position = Vector2(57, -12)
 script = ExtResource("17_5vow0")
-
-[node name="Timer" type="Timer" parent="Gameplay/GeneradorClientes"]
-wait_time = 5.0
-autostart = true
 
 [node name="CofresManager" type="Node" parent="."]
 script = ExtResource("8_xp74q")
@@ -439,9 +455,9 @@ position = Vector2(378, -23)
 [connection signal="body_exited" from="Gameplay/Area2DEscaleraSegundoPiso" to="Gameplay/Area2DEscaleraSegundoPiso" method="_on_body_exited"]
 [connection signal="body_entered" from="Gameplay/Area2DEscaleraPrimerPiso" to="Gameplay/Area2DEscaleraPrimerPiso" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DEscaleraPrimerPiso" to="Gameplay/Area2DEscaleraPrimerPiso" method="_on_body_exited"]
+[connection signal="body_entered" from="Gameplay/Obstaculos/Slime/Area2D" to="Gameplay/Player" method="_on_slime_body_entered"]
+[connection signal="body_exited" from="Gameplay/Obstaculos/Slime/Area2D" to="Gameplay/Player" method="_on_slime_body_exited"]
 [connection signal="body_entered" from="Gameplay/Recepcion" to="Gameplay/Recepcion" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Recepcion" to="Gameplay/Recepcion" method="_on_body_exited"]
-[connection signal="order_delivered" from="Gameplay/Recepcion" to="CanvasLayer/UI" method="_on_recepcion_order_delivered"]
 [connection signal="body_entered" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DMeterCarbon" to="Gameplay/Area2DMeterCarbon" method="_on_body_exited"]
-[connection signal="timeout" from="Gameplay/GeneradorClientes/Timer" to="Gameplay/GeneradorClientes" method="_on_timer_timeout"]

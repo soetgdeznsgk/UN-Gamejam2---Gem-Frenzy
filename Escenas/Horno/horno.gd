@@ -1,16 +1,22 @@
-extends Area2D
-
+extends Node2D
 var isPlayerHere = false
 var playerRef : Player
 @onready var interactSprite = $Spr_up_key_ladder
 
-
 func _process(_delta: float) -> void:
 	if isPlayerHere:
 		if Input.is_action_just_pressed("ui_up"):
-			# Entregar horno
-			pass
-			
+			Cocinar()
+
+# Llamadas
+
+func Cocinar():
+	var temp = playerRef.darObjetos()
+	#print(temp)
+	var receta := GlobalRecetas.encontrarReceta(temp)
+	#print("receta = ", GlobalRecetas.encontrarReceta(temp))
+	if receta != -1:
+		playerRef.receta_en_mano = receta
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

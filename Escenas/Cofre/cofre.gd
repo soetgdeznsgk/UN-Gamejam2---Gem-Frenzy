@@ -31,7 +31,7 @@ func actualizar():
 # Llamadas
 
 func Open() -> void:
-	if visible:
+	if visible and not playerRef.receta_en_mano:
 		$AnimationPlayer.play("AbrirCofre")
 		if playerRef.items_en_mano.size() < 3 and cantidad_almacenada > 0: #si hay espacio en las manos de player
 			if playerRef.items_en_mano.find(material_almacenado) == -1:

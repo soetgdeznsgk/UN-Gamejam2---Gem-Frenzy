@@ -1,5 +1,7 @@
 extends Area2D
 
+signal order_delivered(orden)
+
 var isPlayerHere = false
 var playerRef : Player
 @onready var interactSprite = $Spr_up_key_ladder
