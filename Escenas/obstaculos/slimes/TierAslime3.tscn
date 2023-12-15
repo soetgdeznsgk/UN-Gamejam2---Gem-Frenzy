@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmp8yn4rqjr8h"]
+
+[ext_resource type="Script" path="res://Escenas/Slime.gd" id="1_4n1iq"]
+[ext_resource type="Texture2D" uid="uid://bjel6w2lipr7v" path="res://Sprites/obstaculos/slime.png" id="2_l7u5u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_na8lm"]
+texture = ExtResource("2_l7u5u")
+margins = Vector2i(2, 2)
+separation = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/z_index = 6
+1:0/0 = 0
+1:0/0/z_index = 6
+2:0/0 = 0
+2:0/0/z_index = 6
+0:1/0 = 0
+0:1/0/z_index = 6
+1:1/0 = 0
+1:1/0/z_index = 6
+2:1/0 = 0
+2:1/0/z_index = 6
+0:2/0 = 0
+0:2/0/z_index = 6
+1:2/0 = 0
+1:2/0/z_index = 6
+2:2/0 = 0
+2:2/0/z_index = 6
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfja4"]
+texture = ExtResource("2_l7u5u")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/y_sort_origin = 3
+
+[sub_resource type="TileSet" id="TileSet_fihj4"]
+sources/0 = SubResource("TileSetAtlasSource_na8lm")
+sources/1 = SubResource("TileSetAtlasSource_yfja4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb0fl"]
+size = Vector2(40, 22)
+
+[node name="Area2D2" type="Area2D"]
+script = ExtResource("1_4n1iq")
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 6
+texture_filter = 1
+position = Vector2(0, -8)
+tile_set = SubResource("TileSet_fihj4")
+format = 2
+layer_0/name = "fondo"
+layer_0/z_index = 7
+layer_0/tile_data = PackedInt32Array(65535, 65536, 1, 0, 65536, 1, 131070, 0, 2, 65537, 131072, 2, 1, 131072, 1, 131071, 65536, 2, 65536, 65536, 2, 65534, 0, 1, -65535, 131072, 0, -1, 65536, 0, -65536, 65536, 0, -2, 0, 0)
+layer_1/name = "borde"
+layer_1/tile_data = PackedInt32Array()
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_nb0fl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
