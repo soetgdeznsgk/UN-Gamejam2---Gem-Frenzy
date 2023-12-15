@@ -43,13 +43,13 @@ func regenerar_mapa():
 			for j in range(0,10): # Las primeras diez capas de profundidad
 				var porcentaje = randf()
 				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.96 and porcentaje >= 0:
+				if porcentaje < 0.955 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.96 and porcentaje < 0.98: 
+				elif porcentaje > 0.955 and porcentaje < 0.975: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Carbon
-				elif porcentaje > 0.98 and porcentaje < 0.99: 
+				elif porcentaje > 0.975 and porcentaje < 0.985: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Hierro
-				elif porcentaje > 0.99 and porcentaje <= 1: 
+				elif porcentaje > 0.985 and porcentaje <= 1: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Plata
 				temp.actualizar_textura()
 		Cam.limit_bottom = 100
@@ -61,13 +61,17 @@ func regenerar_mapa():
 			for j in range(10,20): # Las segundas 10 capas de profundidad
 				var porcentaje = randf()
 				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.975 and porcentaje >= 0:
+				if porcentaje < 0.955 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.975 and porcentaje <= 1: 
+				elif porcentaje > 0.955 and porcentaje <= 0.975: 
+					temp.textura = GlobalRecursos.mineralesConFondo.Plata
+				elif porcentaje > 0.975 and porcentaje <= 0.985: 
+					temp.textura = GlobalRecursos.mineralesConFondo.Hierro
+				elif porcentaje > 0.985 and porcentaje <= 1: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Cobre
 				temp.actualizar_textura()
-		Cam.limit_bottom = 260
-		barraBloqueoDias.position.y = 260
+		Cam.limit_bottom = 180
+		barraBloqueoDias.position.y = 180
 		
 	# se vende el oro solito
 	if GlobalTiempo.diaActual >= 3:
@@ -75,13 +79,15 @@ func regenerar_mapa():
 			for j in range(20,40):
 				var porcentaje = randf()
 				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.975 and porcentaje >= 0:
+				if porcentaje < 0.97 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.975 and porcentaje <= 1: 
+				elif porcentaje > 0.97 and porcentaje <= 0.988: 
+					temp.textura = GlobalRecursos.mineralesConFondo.Cobre
+				elif porcentaje > 0.988 and porcentaje <= 1: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Oro
 				temp.actualizar_textura()
-		Cam.limit_bottom =420
-		barraBloqueoDias.position.y = 420
+		Cam.limit_bottom = 340
+		barraBloqueoDias.position.y = 340
 	
 	# Libera receta Fire cristal
 	if GlobalTiempo.diaActual >= 4:
@@ -91,13 +97,16 @@ func regenerar_mapa():
 				var temp = matrizTerreno[i][j]
 				if porcentaje < 0.975 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.985 and porcentaje < 0.995:
+				elif porcentaje > 0.975 and porcentaje < 0.985:
 					temp.textura = GlobalRecursos.mineralesConFondo.Rubi
-				elif porcentaje > 0.995 and porcentaje <= 1: 
+				elif porcentaje > 0.985 and porcentaje <= 0.995: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Topacio
+				elif porcentaje > 0.995 and porcentaje <= 1: 
+					temp.textura = GlobalRecursos.mineralesConFondo.Oro
+				
 				temp.actualizar_textura()
-		Cam.limit_bottom = 580
-		barraBloqueoDias.position.y = 580
+		Cam.limit_bottom = 500
+		barraBloqueoDias.position.y = 500
 		
 	# Libera receta ice cristal
 	if GlobalTiempo.diaActual >= 6:
@@ -105,15 +114,15 @@ func regenerar_mapa():
 			for j in range(60,90):
 				var porcentaje = randf()
 				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.975 and porcentaje >= 0:
+				if porcentaje < 0.985 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					temp.textura = GlobalRecursos.mineralesConFondo.Zafiro
 				elif porcentaje > 0.995 and porcentaje <= 1: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Amatista
 				temp.actualizar_textura()
-		Cam.limit_bottom = 820
-		barraBloqueoDias.position.y = 820
+		Cam.limit_bottom = 740
+		barraBloqueoDias.position.y = 740
 	
 	# Libera cristal de tierra
 	# Libera RGB cristal
@@ -122,29 +131,44 @@ func regenerar_mapa():
 			for j in range(90,120):
 				var porcentaje = randf()
 				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.975 and porcentaje >= 0:
-					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.985 and porcentaje < 0.995:
-					temp.textura = GlobalRecursos.mineralesConFondo.Carbon
-				elif porcentaje > 0.995 and porcentaje <= 1: 
-					temp.textura = GlobalRecursos.mineralesConFondo.Esmeralda
-				temp.actualizar_textura()
-		Cam.limit_bottom = 1060
-		barraBloqueoDias.position.y = 1060
-	
-	# desbloquea todo 3 recetas de golpe.
-	if GlobalTiempo.diaActual >= 8:
-		for i in range(0,80):
-			for j in range(90,120):
-				var porcentaje = randf()
-				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.975 and porcentaje >= 0:
+				if porcentaje < 0.985 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					temp.textura = GlobalRecursos.mineralesConFondo.Amatista
 				elif porcentaje > 0.995 and porcentaje <= 1: 
+					temp.textura = GlobalRecursos.mineralesConFondo.Esmeralda
+				temp.actualizar_textura()
+		Cam.limit_bottom = 980
+		barraBloqueoDias.position.y = 980
+	
+	# desbloquea todo 3 recetas de golpe.
+	if GlobalTiempo.diaActual >= 8:
+		for i in range(0,80):
+			for j in range(120,150):
+				var porcentaje = randf()
+				var temp = matrizTerreno[i][j]
+				if porcentaje < 0.985 and porcentaje >= 0:
+					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
+				elif porcentaje > 0.985 and porcentaje < 0.995:
+					temp.textura = GlobalRecursos.mineralesConFondo.Esmeralda
+				elif porcentaje > 0.995 and porcentaje <= 1: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Diamante
 				temp.actualizar_textura()
-		Cam.limit_bottom = 1300
-		barraBloqueoDias.position.y = 1300
+		Cam.limit_bottom = 1180
+		barraBloqueoDias.position.y = 1180
+	
+	if GlobalTiempo.diaActual >= 9:
+		for i in range(0,80):
+			for j in range(150,160):
+				var porcentaje = randf()
+				var temp = matrizTerreno[i][j]
+				if porcentaje < 0.98 and porcentaje >= 0:
+					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
+				elif porcentaje > 0.98 and porcentaje < 0.99:
+					temp.textura = GlobalRecursos.mineralesConFondo.Diamante
+				elif porcentaje > 0.99 and porcentaje <= 1: 
+					temp.textura = GlobalRecursos.mineralesConFondo.Esmeralda
+				temp.actualizar_textura()
+		Cam.limit_bottom = 1276
+		barraBloqueoDias.position.y = 1276
 ## Quedan libres 30 niveles de profundidad pa saber

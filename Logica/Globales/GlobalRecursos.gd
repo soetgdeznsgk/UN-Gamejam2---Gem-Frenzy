@@ -55,7 +55,7 @@ func actualizar_dinero(cantidad : int):
 		pass
 
 func pagueme_la_renta():
-	var valorDia = 5*GlobalTiempo.diaActual
-	if valorDia > 50:
-		valorDia = 50
-	actualizar_dinero(-10 - valorDia)
+	var valorDia = 2*GlobalTiempo.diaActual
+	if valorDia > 20:
+		valorDia = 20
+	actualizar_dinero(-3 - valorDia)

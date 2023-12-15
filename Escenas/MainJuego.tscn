@@ -167,6 +167,7 @@ size = Vector2(700, 4)
 size = Vector2(8, 16)
 
 [node name="MainJuego" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [1276.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -203,8 +204,8 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 z_index = 5
 position = Vector2(397, -21)
-CONST_SPEED = 115.0
-CONST_SPEEDUP = 40.0
+CONST_SPEED = 118.0
+CONST_SPEEDUP = 42.0
 
 [node name="CamPlayer" type="Camera2D" parent="Gameplay/Player"]
 unique_name_in_owner = true

@@ -48,7 +48,7 @@ var info_mejoras = {
 	nombre_mejoras.MejoraDeMejoras : {
 		"Key" : nombre_mejoras.MejoraDeMejoras,
 		"Nombre" : "Muchas mejoras",
-		"Precio" : 10,
+		"Precio" : 6,
 		"Maximo" : 1,
 		"Textura" : 'null',
 		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
@@ -56,14 +56,14 @@ var info_mejoras = {
 		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
 		"Key" : nombre_mejoras.Gato,
 		"Nombre" : "Gato",
-		"Precio" : 10,
+		"Precio" : 6,
 		"Maximo" : 2,
 		"Textura" : 'null',
 		"Descripcion" : "Un gato siempre atrae más clientes!",
 	},
 }
 var disponible_mejoras = [0,0,0,0,0,0,0]
-var activas_mejoras = [4,0,0,0,0,0,0]
+var activas_mejoras = [0,0,0,0,0,0,0]
 
 func _ready() -> void:
 	for i in range(len(nombre_mejoras)):
