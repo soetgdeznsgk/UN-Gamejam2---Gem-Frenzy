@@ -37,9 +37,14 @@ func setOrden(orden : Order) -> void:
 		$VBoxContainer/HBoxContainer.get_child((i + t + 1) % t).frame = orden.requirements[i]
 	$recetaSprite.frame = GlobalRecetas.encontrarReceta(orden.requirements) # revisar
 
+func free():
+	orden_logica.queue_free()
+	queue_free()
+	
 # Señales
 
-func orden_out_of_time(): # ejecutar algun sonido
+func orden_out_of_time():
+	#ejecutar sonido
 	orden_logica.queue_free()
 	queue_free()
 	
