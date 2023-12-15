@@ -241,10 +241,9 @@ metadata/_edit_lock_ = true
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Area2DEscalera"]
 visible = false
-position = Vector2(0, -31)
-scale = Vector2(0.5, 0.5)
+texture_filter = 1
+position = Vector2(0, -24)
 texture = ExtResource("6_s8g8y")
-flip_v = true
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Gameplay/Area2DEscalera"]
@@ -285,9 +284,10 @@ metadata/_edit_lock_ = true
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Area2DEscaleraSegundoPiso"]
 visible = false
-position = Vector2(0, -16)
-scale = Vector2(0.5, 0.5)
+texture_filter = 1
+position = Vector2(4, -16)
 texture = ExtResource("6_s8g8y")
+flip_v = true
 metadata/_edit_lock_ = true
 
 [node name="Area2DEscaleraPrimerPiso" type="Area2D" parent="Gameplay"]
@@ -301,9 +301,10 @@ metadata/_edit_lock_ = true
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="Gameplay/Area2DEscaleraPrimerPiso"]
 visible = false
+texture_filter = 1
 position = Vector2(0, -16)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_s8g8y")
+flip_v = true
 metadata/_edit_lock_ = true
 
 [node name="Terrenos" type="Node2D" parent="Gameplay"]
@@ -336,6 +337,7 @@ shape = SubResource("RectangleShape2D_hxlur")
 metadata/_edit_lock_ = true
 
 [node name="Area2DMeterCarbon" type="Area2D" parent="Gameplay"]
+visible = false
 position = Vector2(360, -17)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("16_u0pow")

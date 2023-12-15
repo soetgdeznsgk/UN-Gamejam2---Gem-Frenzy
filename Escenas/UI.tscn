@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=27 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -66,6 +66,20 @@ border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
+bg_color = Color(0.74902, 0.121569, 0.0823529, 0.772549)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrvle"]
+line_spacing = 12.0
+font_size = 36
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -315,6 +329,44 @@ layout_mode = 2
 custom_minimum_size = Vector2(260, 64)
 layout_mode = 2
 text = "FINALIZAR DIA"
+
+[node name="Gameover" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -230.5
+offset_right = 335.0
+offset_bottom = 230.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qls4k")
+
+[node name="CenterContainer" type="CenterContainer" parent="Gameover"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameover/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "!HAS PERDIDO
+POR BANCAROTA!"
+label_settings = SubResource("LabelSettings_yrvle")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Btn_reintentar" type="Button" parent="Gameover/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(260, 64)
+layout_mode = 2
+text = "REINTENTAR"
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
