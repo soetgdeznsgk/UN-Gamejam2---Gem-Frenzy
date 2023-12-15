@@ -5,27 +5,25 @@
 [ext_resource type="Texture2D" uid="uid://b2ivbnl772jf" path="res://Sprites/UI/upKey.png" id="3_00rby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ck0i"]
-size = Vector2(73.3333, 76.6667)
+size = Vector2(16, 16)
 
 [node name="Horno" type="Node2D"]
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_e16b3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(4.705, 4.705)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_yyhpw")
 
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-1.90735e-06, -70.8542)
-scale = Vector2(3.30556, 3.97115)
+texture_filter = 1
+position = Vector2(0, -18)
 texture = ExtResource("3_00rby")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.58946e-06, -1.66667)
 shape = SubResource("RectangleShape2D_5ck0i")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
