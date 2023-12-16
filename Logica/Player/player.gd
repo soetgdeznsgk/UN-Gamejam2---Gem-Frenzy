@@ -38,6 +38,7 @@ func finalizar_dia():
 	surface_entered.emit()
 
 func _physics_process(_delta):
+	print(SPEED)
 	input_direction = Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
 	-int(Input.is_action_pressed("ui_up")))
 	if taladrando:
@@ -79,6 +80,7 @@ func _physics_process(_delta):
 				Anim.set("parameters/Taladrando/blend_position", Vector2(input_direction.x,-input_direction.y))
 	else:
 		#movimiento superficie
+		modolento=false#NO BORREN ESTO POR FAVOR QUE HACE LENTO EL JUEGO 😭
 		if input_direction==Vector2(0,-1):
 			input_direction=Vector2.ZERO
 		if input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
@@ -109,6 +111,7 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body is Player and taladrando and movement and not recienSalidoEscalera:
+		
 		movement = false
 		AnimState.travel("Escalera")
 		SPEED = CONST_SPEED
