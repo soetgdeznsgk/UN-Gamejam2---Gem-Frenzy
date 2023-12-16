@@ -167,8 +167,9 @@ metadata/_edit_lock_ = true
 [node name="Ordenes" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 765.0
+offset_top = 3.0
 offset_right = 928.0
-offset_bottom = 719.0
+offset_bottom = 628.0
 theme_override_constants/separation = 90
 script = ExtResource("1_qy5sv")
 
@@ -187,10 +188,10 @@ pitch_scale = 0.6
 
 [node name="VbReloj" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 644.0
-offset_right = 84.0
-offset_bottom = 720.0
+offset_left = 2.0
+offset_top = 668.0
+offset_right = 177.0
+offset_bottom = 718.0
 alignment = 1
 
 [node name="HbReloj" type="HBoxContainer" parent="VbReloj"]
@@ -225,10 +226,10 @@ script = ExtResource("4_go46m")
 
 [node name="VbDinero" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 849.0
-offset_top = 642.0
-offset_right = 956.0
-offset_bottom = 718.0
+offset_left = 850.0
+offset_top = 669.0
+offset_right = 957.0
+offset_bottom = 717.0
 alignment = 1
 
 [node name="HbDinero" type="HBoxContainer" parent="VbDinero"]
@@ -259,8 +260,10 @@ script = ExtResource("5_qljiu")
 [node name="GridMinerales" type="GridContainer" parent="."]
 modulate = Color(1, 1, 1, 0.780392)
 layout_mode = 0
-offset_right = 228.0
-offset_bottom = 97.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 256.0
+offset_bottom = 116.0
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 8
 columns = 8
