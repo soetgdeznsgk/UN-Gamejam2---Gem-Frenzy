@@ -894,37 +894,37 @@ material_almacenado = 2
 position = Vector2(232, -60)
 scale = Vector2(1, 1)
 num_cofre = 10
-material_almacenado = 10
+material_almacenado = 9
 
 [node name="Cofre7" parent="CofresManager" instance=ExtResource("8_aodjd")]
 position = Vector2(258, -61)
 scale = Vector2(1, 1)
 num_cofre = 9
-material_almacenado = 6
+material_almacenado = 10
 
 [node name="Cofre8" parent="CofresManager" instance=ExtResource("8_aodjd")]
 position = Vector2(284, -61)
 scale = Vector2(1, 1)
 num_cofre = 8
-material_almacenado = 9
+material_almacenado = 5
 
 [node name="Cofre9" parent="CofresManager" instance=ExtResource("8_aodjd")]
 position = Vector2(310, -61)
 scale = Vector2(1, 1)
 num_cofre = 7
-material_almacenado = 5
+material_almacenado = 8
 
 [node name="Cofre10" parent="CofresManager" instance=ExtResource("8_aodjd")]
 position = Vector2(336, -61)
 scale = Vector2(1, 1)
 num_cofre = 6
-material_almacenado = 7
+material_almacenado = 6
 
 [node name="Cofre11" parent="CofresManager" instance=ExtResource("8_aodjd")]
 position = Vector2(362, -61)
 scale = Vector2(1, 1)
 num_cofre = 5
-material_almacenado = 6
+material_almacenado = 7
 
 [node name="Horno" parent="." instance=ExtResource("22_2y5ly")]
 position = Vector2(378, -23)
