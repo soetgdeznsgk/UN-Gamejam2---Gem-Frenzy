@@ -36,13 +36,14 @@ func empezardia():
 	var cantidadB
 	var cantidadC
 	var diaactual=GlobalTiempo.diaActual
-	var Iniciocapas=30
+	var Iniciocapas=35
 	var finalA
 	var finalB
-	var finalC
+	var finalC=250
 	var inicioA
 	var inicioB
-	var inicioC
+	var inicioC=Iniciocapas
+	
 	match diaactual:
 		1:
 			cantidadA=range(0,5)
@@ -53,19 +54,66 @@ func empezardia():
 			finalC=1
 		2:
 			cantidadA=range(0,7)
-			cantidadB=range(0,5)
-			cantidadC=range(0,1)
+			cantidadB=range(0,4)
+			cantidadC=range(0,0)
 			finalA=110
 			finalB=120
-			finalC=120	
+			finalC=100	
+			inicioC=Iniciocapas
+		#dia 3 max 340
 		3:
 			cantidadA=range(0,8)
 			cantidadB=range(0,6)
 			cantidadC=range(0,2)
 			finalA=150
 			finalB=200
-			finalC=280	
-			
+			#
+			finalC=260	
+		4:
+			print("ES EL DIA 4 PAPUS")
+			cantidadA=range(0,12)
+			cantidadB=range(0,8)
+			cantidadC=range(0,4)
+			finalA=300
+			finalB=400
+			inicioC=350
+			finalC=450	
+		5:
+			cantidadA=range(0,12)
+			cantidadB=range(0,8)
+			cantidadC=range(0,4)
+			finalA=400
+			finalB=400
+			inicioC=350
+			finalC=400	
+		6:
+			cantidadA=range(0,16)
+			cantidadB=range(0,10)
+			cantidadC=range(0,6)
+			finalA=700
+			finalB=700
+			finalC=700	
+		7:
+			cantidadA=range(0,20)
+			cantidadB=range(0,12)
+			cantidadC=range(0,8)
+			finalA=900
+			finalB=900
+			finalC=900	
+		8:
+			cantidadA=range(0,24)
+			cantidadB=range(0,14)
+			cantidadC=range(0,10)
+			finalA=1100
+			finalB=1000
+			finalC=1100	
+	if diaactual>8:
+			cantidadA=range(0,27)
+			cantidadB=range(0,16)
+			cantidadC=range(0,10)
+			finalA=1190	
+			finalB=1190	
+			finalC=1190	
 	#primera capa
 	#Tier A coso
 	for i in cantidadA:
@@ -109,26 +157,30 @@ func empezardia():
 		slimenodo2.rotation=posibles_angulos[angulo]
 	for i in cantidadC:
 		var porcentaje = randf()
-		Vectorposicionrandom =posicionrandom(Iniciocapas+40,finalC)
+		Vectorposicionrandom =posicionrandom(Iniciocapas,finalC)
 		var angulo =0
 		if porcentaje>0.66:
 			slime2=load(Slimes[6])
-			angulo=randi() % 3
+			angulo=randi() % 1
 		elif porcentaje>0.33:
 			slime2=load(Slimes[7])
 			angulo=randi() % 3
 		else:
 			slime2=load(Slimes[8])
+			angulo=randi() % 3
 			
 		slimenodo2=slime2.instantiate()
 		add_child(slimenodo2)
-		slimenodo2.set_inicioy(Iniciocapas+40)
+		
+		slimenodo2.set_inicioy(Iniciocapas)
 		slimenodo2.set_finaly(finalC)
+		
 		slimenodo2.position=Vectorposicionrandom
 		slimenodo2.rotation=posibles_angulos[angulo]
+		
 
 func posicionrandom(inicioy,finaly):
-	var xrandom=randi() % 600+50#de 50 a 640
+	var xrandom=randi() % 570#de 50 a 640
 	var yrandom=randi() % inicioy+finaly  #de 50 a 100
 	var modulox=xrandom%16
 	var moduloy=yrandom%16

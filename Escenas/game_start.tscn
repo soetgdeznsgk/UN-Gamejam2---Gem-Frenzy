@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dfg1i1f1kerk1" path="res://Sprites/Menu/logo_menu.png" id="2_tpatr"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
-[ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
 [ext_resource type="Texture2D" uid="uid://bvdeqfqekwuvm" path="res://Sprites/UI/Botonjugar.png" id="4_0fpx3"]
+[ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
 
 [node name="GameStart" type="Control"]
 layout_mode = 3
