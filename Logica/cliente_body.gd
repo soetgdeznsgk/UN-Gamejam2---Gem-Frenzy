@@ -12,7 +12,7 @@ var esperando = true:
 		$Sprite2D.flip_h = true
 		$AnimationPlayer.play("caminar")
 		$CollisionShape2D.set_deferred("disabled", true)
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(5).timeout
 		queue_free()
 		
 var haPedido := false
@@ -46,6 +46,8 @@ func _physics_process(_delta: float) -> void:
 			$AnimationPlayer.play("RESET")
 			if not haPedido:
 				OrderManager._on_new_customer(self)
+				$AudioNuevaOrden.pitch_scale = randf_range(1.10,1.2)
+				$AudioNuevaOrden.play(0)
 				haPedido = true
 	else:
 		moviendo = true

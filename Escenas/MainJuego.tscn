@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=40 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="Script" path="res://Escenas/MainJuegoAmbientManager.gd" id="1_pncec"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://xemsjtn0mmoe" path="res://Sprites/flecha arriba.png" id="15_t1uey"]
 [ext_resource type="Script" path="res://Escenas/Area2DMeterCarbon.gd" id="16_u0pow"]
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
+[ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="18_b88ti"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
 [ext_resource type="AudioStream" uid="uid://dws3s3hhyndi7" path="res://Musica/「カラクサタウン」.mp3" id="23_ljyy2"]
 
@@ -333,6 +334,11 @@ texture_filter = 1
 position = Vector2(-10.5, -11.6)
 texture = ExtResource("6_s8g8y")
 metadata/_edit_lock_ = true
+
+[node name="AudioNotieneNada" type="AudioStreamPlayer" parent="Gameplay/Recepcion"]
+stream = ExtResource("18_b88ti")
+volume_db = 2.0
+pitch_scale = 0.55
 
 [node name="BLOQUEADIAS" type="StaticBody2D" parent="Gameplay"]
 unique_name_in_owner = true
@@ -925,7 +931,7 @@ position = Vector2(378, -23)
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ljyy2")
-volume_db = -15.63
+volume_db = -19.0
 autoplay = true
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]

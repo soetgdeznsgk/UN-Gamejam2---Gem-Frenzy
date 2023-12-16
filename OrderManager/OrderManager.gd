@@ -60,14 +60,15 @@ func llenar_recetas() -> void:
 	
 # Señales
 
-func _on_new_customer(customer : Cliente) -> void: # añadir efecto de sonido de spawn de orden
+func _on_new_customer(customer : Cliente) -> void:
 	var tempOrder = Order.new(recetas.pick_random(), customer)
 	currentOrders.append(tempOrder)
 	new_order.emit(tempOrder)
 	
+	
 func _on_order_delivered(plata : int) -> void:
-	GlobalRecursos.actualizar_dinero(plata + ((plata / 2) * GlobalMejoras.activas_mejoras[2])) # cada nivel de la mejora de dinero agrega 50% más al precio de cada recetas
-	print("precio original = ", plata, " precio tras mejora = ", plata + ((plata / 2) * GlobalMejoras.activas_mejoras[2]))
+	GlobalRecursos.actualizar_dinero(plata + int((plata / 4) * GlobalMejoras.activas_mejoras[2] + GlobalMejoras.activas_mejoras[2] )) # cada nivel de la mejora de dinero agrega 25% más al precio de cada recetas más 1 por mejora
+	print("precio original = ", plata, " precio tras mejora = ", plata + int((plata / 4) * GlobalMejoras.activas_mejoras[2] + GlobalMejoras.activas_mejoras[2] ))
 	
 	
 

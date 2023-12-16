@@ -23,17 +23,17 @@ func _init(materiales : Array, customer : Cliente):
 	
 	for material in materiales:
 		requirements.append(material)
-		precio += material + 1
+		precio += (material + 1) % 5 # Maximo 5 por mineral
 		
 	
-	precio = (precio / 3) + 1
-	print(precio)
+	precio = (precio / 3) + 1 # el promedio de lo anterior maximo 6 oro por receta
+	#print(precio)
 	
 	tmr = Timer.new()
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)
 	tmr.one_shot = true
-	tmr.wait_time = 30 + (GlobalMejoras.activas_mejoras[3] * 5) # Por cada nivel de Zen en las mejoras, se añaden 5 segundos a las recetas
+	tmr.wait_time = 30 + (GlobalMejoras.activas_mejoras[3] * 2.5) # Por cada nivel de Zen en las mejoras, se añaden 2.5 segundos a las recetas
 	print(tmr.wait_time, " = wait time")
 	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
 	tmr.autostart = true
