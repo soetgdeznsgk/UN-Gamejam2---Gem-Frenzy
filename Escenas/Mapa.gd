@@ -10,12 +10,6 @@ func _ready() -> void:
 	GlobalTiempo.tmr_minuto.start()
 	regenerar_mapa()
 
-func _process(_delta: float) -> void:
-	# ESTO ES SOLO PARA DEBUG NO MAS
-	if Input.is_action_just_pressed("ui_accept"):
-		GlobalTiempo.tiempoHoraDia += 1
-		print('avanza hora dbug')
-
 
 func generar_mapa():
 	#crea una matriz y la llena de ceros para usarla despues

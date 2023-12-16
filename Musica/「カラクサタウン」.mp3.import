@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/「カラクサタウン」.mp3-5b4c6ca731c5d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
