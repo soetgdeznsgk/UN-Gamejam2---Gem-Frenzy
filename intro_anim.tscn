@@ -99,7 +99,7 @@ text = "SALTAR"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_4k7ve")
-volume_db = -10.576
+volume_db = -20.0
 autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

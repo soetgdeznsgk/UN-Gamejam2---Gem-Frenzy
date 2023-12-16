@@ -13,14 +13,14 @@ func _process(_delta: float) -> void:
 	if isPlayerHere:
 		if Input.is_action_just_pressed("ui_up"):
 			Entrega()
-			pass
-			
 
 # Llamadas
 
 func Entrega():
 	if playerRef.receta_en_mano:
 		order_delivered.emit(playerRef._set_receta(false))
+	else:
+		$AudioNotieneNada.play()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

@@ -15,7 +15,8 @@ func entregarOrden(objetivo):
 			if orden.getOrden() == objetivo:
 				orden.orden_deliver()
 				$AudioEntregarOrden.play(0)
-				return 
+				return
+	$AudioOrdenIncorrecta.play(0)
 			
 func limpiar_ordenes():
 	for orden in get_children():
