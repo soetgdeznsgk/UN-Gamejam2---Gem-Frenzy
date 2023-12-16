@@ -38,7 +38,6 @@ func finalizar_dia():
 	surface_entered.emit()
 
 func _physics_process(_delta):
-	print(SPEED)
 	input_direction = Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
 	-int(Input.is_action_pressed("ui_up")))
 	if taladrando:

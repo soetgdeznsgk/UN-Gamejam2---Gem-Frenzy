@@ -10,11 +10,11 @@ func _ready() -> void:
 func actualizarDinero(dinero):
 	if dinero < 10 and dinero >= 0:
 		strDinero = '00' + str(dinero)
-	elif dinero < 100 and dinero >= 10:
+	if dinero < 100 and dinero >= 10:
 		strDinero = '0' + str(dinero)
-	elif dinero >  100:
+	if dinero >=  100:
 		strDinero = str(strDinero)
-	elif dinero < 0:
+	if dinero < 0:
 		strDinero = str(dinero)
 		Lb_dinero.self_modulate = Color("ff2016")
 	Lb_dinero.text = strDinero 

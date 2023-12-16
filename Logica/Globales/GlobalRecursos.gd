@@ -44,7 +44,8 @@ func _ready() -> void:
 	GlobalTiempo.finalizarDia.connect(pagueme_la_renta)
 
 func actualizar_mineral(mineral : int, cantidad : int):
-	minerales[mineral] += cantidad
+	print("mineral: ",mineral,"\ncantidad:",cantidad)
+	minerales[mineral] += cantidad #
 	cambioMineral.emit(mineral, minerales[mineral])
 
 func actualizar_dinero(cantidad : int):
@@ -60,7 +61,7 @@ func pagueme_la_renta():
 		valorDia = 5
 	if valorDia > 60:
 		valorDia = 60
-	actualizar_dinero( valorDia + 3 )
+	actualizar_dinero( -valorDia + 3 )
 	for i in range(len(minerales)):
 		var oro = int(minerales[i] * 0.1)
 		var mitad = int(minerales[i]/2)
