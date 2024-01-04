@@ -20,6 +20,9 @@ func _ready() -> void:
 	tmr_minuto.timeout.connect(on_tmr_minuto_end)
 	tmr_minuto.process_callback = Timer.TIMER_PROCESS_PHYSICS
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		tiempoHoraDia += 1
 
 # actualiza el reloj
 func on_tmr_minuto_end():

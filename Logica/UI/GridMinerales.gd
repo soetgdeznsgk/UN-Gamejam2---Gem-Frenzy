@@ -36,4 +36,4 @@ func update_mineralesactuales():
 		8:
 			get_child(18).visible=true
 			get_child(19).visible=true
-	print("hola chat")
+	#print("hola chat")

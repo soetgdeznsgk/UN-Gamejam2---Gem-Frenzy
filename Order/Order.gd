@@ -21,20 +21,24 @@ func _init(materiales : Array, customer : Cliente):
 	cliente_asociado = customer
 	currState = states.EnVistaPrevia
 	
-	for material in materiales:
-		requirements.append(material)
-		precio += (material + 1) % 5 # Maximo 5 por mineral
-		
-	
-	precio = (precio / 3) + 1 # el promedio de lo anterior maximo 6 oro por receta
-	#print(precio)
+	for mat in materiales: # mat va de 0 a 11 segun rareza
+		requirements.append(mat)
+		if mat <= 6:
+			precio += (mat)
+		else:
+			precio += 6
+		# maximo precio por ingrediente es 6
+
+	@warning_ignore("integer_division")
+	precio = int(((precio - 2) / 3) + 1) # el promedio de lo anterior maximo 6 oro por receta
+	print(precio)
 	
 	tmr = Timer.new()
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)
 	tmr.one_shot = true
-	tmr.wait_time = 30 + (GlobalMejoras.activas_mejoras[3] * 2.5) # Por cada nivel de Zen en las mejoras, se añaden 2.5 segundos a las recetas
-	print(tmr.wait_time, " = wait time")
+	tmr.wait_time = 30 + (GlobalMejoras.activas_mejoras[3] * 3.5) # Por cada nivel de Zen en las mejoras, se añaden 3.5 segundos a las recetas
+	#print(tmr.wait_time, " = wait time")
 	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
 	tmr.autostart = true
 	

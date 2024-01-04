@@ -13,7 +13,7 @@ func actualizarDinero(dinero):
 	if dinero < 100 and dinero >= 10:
 		strDinero = '0' + str(dinero)
 	if dinero >=  100:
-		strDinero = str(strDinero)
+		strDinero = str(dinero)
 	if dinero < 0:
 		strDinero = str(dinero)
 		Lb_dinero.self_modulate = Color("ff2016")

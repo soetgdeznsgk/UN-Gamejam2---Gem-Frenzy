@@ -37,9 +37,9 @@ func regenerar_mapa():
 			for j in range(0,13): # Las primeras diez capas de profundidad
 				var porcentaje = randf()
 				var temp = matrizTerreno[i][j]
-				if porcentaje < 0.945 and porcentaje >= 0:
+				if porcentaje < 0.940 and porcentaje >= 0:
 					temp.textura = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.945 and porcentaje < 0.975: 
+				elif porcentaje > 0.940 and porcentaje < 0.975: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Carbon
 				elif porcentaje > 0.975 and porcentaje < 0.99: 
 					temp.textura = GlobalRecursos.mineralesConFondo.Hierro

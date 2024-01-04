@@ -12,9 +12,7 @@ func _process(_delta: float) -> void:
 
 func Cocinar():
 	var temp = playerRef.darObjetos()
-	#print(temp)
 	var receta := GlobalRecetas.encontrarReceta(temp)
-	#print("receta = ", GlobalRecetas.encontrarReceta(temp))
 	if receta != -1:
 		playerRef.receta_en_mano = receta
 		$AudioStreamPlayer.pitch_scale = 1.01

@@ -4,7 +4,7 @@ extends Node
 
 # inicia en ceros
 var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]
-var dinero : int = 5
+var dinero : int = 500
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -44,8 +44,7 @@ func _ready() -> void:
 	GlobalTiempo.finalizarDia.connect(pagueme_la_renta)
 
 func actualizar_mineral(mineral : int, cantidad : int):
-	print("mineral: ",mineral,"\ncantidad:",cantidad)
-	minerales[mineral] += cantidad #
+	minerales[mineral] += cantidad
 	cambioMineral.emit(mineral, minerales[mineral])
 
 func actualizar_dinero(cantidad : int):
@@ -56,14 +55,31 @@ func actualizar_dinero(cantidad : int):
 			bancarota.emit()
 
 func pagueme_la_renta():
-	var valorDia = int(6 * (GlobalTiempo.diaActual + 1))
+	var dia = GlobalTiempo.diaActual 
+	var valorDia = 3*GlobalTiempo.diaActual
+	
+	if dia > 3:
+		valorDia = 4 * GlobalTiempo.diaActual - 2
+	
+	if dia > 6:
+		valorDia = 6 * GlobalTiempo.diaActual - 4
+	
+	if dia > 8:
+		valorDia = 7 * GlobalTiempo.diaActual
+	
 	if GlobalTiempo.diaActual == 1:
-		valorDia = 5
+		valorDia = 3
 	if valorDia > 60:
 		valorDia = 60
-	actualizar_dinero( -valorDia + 3 )
+	
+	print("valor renta: ", valorDia)
+	actualizar_dinero( -valorDia )
+	
+	var reciclar : int = 0
 	for i in range(len(minerales)):
-		var oro = int(minerales[i] * 0.1)
-		var mitad = int(minerales[i]/2)
+		var mitad = int(3*minerales[i]/4)
 		actualizar_mineral(i, -mitad)
-		actualizar_dinero(oro)
+		reciclar += (mitad * (i/2 + 1))
+	
+	var oro = int(reciclar * 0.04)
+	actualizar_dinero(oro)

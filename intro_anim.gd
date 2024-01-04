@@ -6,10 +6,10 @@ func _ready() -> void:
 	$AnimationPlayer.play("intro",-1,0.8,false)
 	
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://Escenas/MainJuego.tscn")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") or Input.is_action_pressed("ui_cancel"):
 		$AnimationPlayer.speed_scale = 3
 	else:

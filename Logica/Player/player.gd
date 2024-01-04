@@ -97,7 +97,7 @@ func _physics_process(_delta):
 			Anim.set("parameters/Idle_Superficie/blend_position", last_move.x)
 	if movement:
 		if AnimState.get_current_node()=="Escaleras":
-			AnimState.travel("Taladrando_Idle")	
+			AnimState.travel("Taladrando_Idle")
 		if modolento:
 			SPEED=50
 		else:
@@ -123,11 +123,14 @@ func _on_area_2d_body_entered(body):
 
 func _on_tween_callback():
 	surface_entered.emit()
-	
 	movement = true
 	SPEED = CONST_SPEED
 	
-	
+func _on_ladder_finish():
+	movement = true
+	input_direction = Vector2.ZERO
+	last_move = Vector2.ZERO
+
 # Setters/Getters
 
 func _set_receta(valor : int) -> int:
@@ -166,7 +169,7 @@ func darUnObjeto(objeto : int):
 
 
 
-func _on_area_2d_casa_body_exited(body: Node2D) -> void:
+func _on_area_2d_casa_body_exited(_body: Node2D) -> void:
 	$Timer.start()
 
 

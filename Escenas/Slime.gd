@@ -52,9 +52,9 @@ func _on_area_entered(area):
 		if isC==false:
 			yrandom=randi_range(inicioy,finaly)
 		else:
-			print("HOLA SOY C JIJI ", iniciocy)
+			#print("HOLA SOY C JIJI ", iniciocy)
 			yrandom=randi_range(iniciocy,finalcy)
-			print("valor yrandom al corregir: ",yrandom)
+			#print("valor yrandom al corregir: ",yrandom)
 		var modulox=xrandom%16
 		var moduloy=yrandom%16
 		
@@ -63,7 +63,7 @@ func _on_area_entered(area):
 			xrandom+=(16-modulox)
 		if moduloy!=0:
 			yrandom+=(16-moduloy)
-		print("modulo XRANDOM: ",xrandom,"\n modulo YRANDOM ",yrandom)
+		#print("modulo XRANDOM: ",xrandom,"\n modulo YRANDOM ",yrandom)
 		area.position=Vector2(xrandom,yrandom)
 	tocandootroslimequestionmark=true
 	pass # Replace with function body.

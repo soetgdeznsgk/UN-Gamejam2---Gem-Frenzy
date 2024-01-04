@@ -15,7 +15,7 @@ var info_mejoras = {
 	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : "Cofre",
-		"Precio" : 6,
+		"Precio" : 5,
 		"Maximo" : 4,
 		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
@@ -23,7 +23,7 @@ var info_mejoras = {
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : "Clientes Zen",
-		"Precio" : 10,
+		"Precio" : 8,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
 		"Descripcion" : "Gracias a la meditación los clientes esperan más tiempo",
@@ -32,32 +32,30 @@ var info_mejoras = {
 		"Key" : nombre_mejoras.MasTiempo,
 		"Nombre" : "Mas tiempo",
 		"Precio" : 12,
-		"Maximo" : 2,
+		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : "Tu tienda esta abierta mas horas",
 	},
-		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
-		"Key" : nombre_mejoras.RecompensaMejorada,
-		"Nombre" : "Cobra mas!",
-		"Precio" : 14,
-		"Maximo" : 2,
-		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
-		"Descripcion" : "Cobra más por tu trabajo!",
-	},
-	
-
-	nombre_mejoras.MejoraDeMejoras : {
+		nombre_mejoras.MejoraDeMejoras : {
 		"Key" : nombre_mejoras.MejoraDeMejoras,
 		"Nombre" : "Muchas mejoras",
-		"Precio" : 16,
+		"Precio" : 15,
 		"Maximo" : 1,
 		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
 		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
 	},
+		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
+		"Key" : nombre_mejoras.RecompensaMejorada,
+		"Nombre" : "Cobra mas!",
+		"Precio" : 15,
+		"Maximo" : 2,
+		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
+		"Descripcion" : "Cobra más por tu trabajo!",
+	},
 		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
 		"Key" : nombre_mejoras.Gato,
 		"Nombre" : "Gato",
-		"Precio" : 20,
+		"Precio" : 18,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/gatomejora.png',
 		"Descripcion" : "Un gato siempre atrae más clientes!",
