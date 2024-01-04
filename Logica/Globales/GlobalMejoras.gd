@@ -4,10 +4,10 @@ extends Node
 
 enum nombre_mejoras {
 	CofreMineral,
+	MejoraDeMejoras,
+	ClientesZen,
 	MasTiempo,
 	RecompensaMejorada,
-	ClientesZen,
-	MejoraDeMejoras,
 	Gato,
 }
 
@@ -19,6 +19,14 @@ var info_mejoras = {
 		"Maximo" : 4,
 		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
+	},
+		nombre_mejoras.MejoraDeMejoras : {
+		"Key" : nombre_mejoras.MejoraDeMejoras,
+		"Nombre" : "Muchas mejoras",
+		"Precio" : 8,
+		"Maximo" : 1,
+		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
+		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
 	},
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
@@ -35,14 +43,6 @@ var info_mejoras = {
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : "Tu tienda esta abierta mas horas",
-	},
-		nombre_mejoras.MejoraDeMejoras : {
-		"Key" : nombre_mejoras.MejoraDeMejoras,
-		"Nombre" : "Muchas mejoras",
-		"Precio" : 15,
-		"Maximo" : 1,
-		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
-		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
 	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,

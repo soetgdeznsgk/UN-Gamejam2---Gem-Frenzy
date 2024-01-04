@@ -58,27 +58,28 @@ func pagueme_la_renta():
 	var dia = GlobalTiempo.diaActual 
 	var valorDia = 3*GlobalTiempo.diaActual
 	
-	if dia > 3:
+	if dia >= 3:
 		valorDia = 4 * GlobalTiempo.diaActual - 2
 	
 	if dia > 6:
-		valorDia = 6 * GlobalTiempo.diaActual - 4
+		valorDia = 5 * GlobalTiempo.diaActual - 6
 	
-	if dia > 9:
-		valorDia = 7 * GlobalTiempo.diaActual - 10
+	if dia >= 9:
+		valorDia = 6 * GlobalTiempo.diaActual - 12
 	
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3
-	if valorDia > 100:
-		valorDia = 100
+	if valorDia > 60:
+		valorDia = 60
 	
-	print("valor renta: ", valorDia)
+	#print("valor renta: ", valorDia)
 	actualizar_dinero( -valorDia )
 	
 	var reciclar : int = 0
 	for i in range(len(minerales)):
 		var mitad = int(3*minerales[i]/4)
 		actualizar_mineral(i, -mitad)
+		@warning_ignore("integer_division")
 		reciclar += (mitad * (i/2 + 1))
 	
 	var oro = int(reciclar * 0.04)

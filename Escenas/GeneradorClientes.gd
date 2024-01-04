@@ -16,7 +16,7 @@ func fin_dia():
 	
 func ini_dia():
 	generandoClientes = true
-	$Timer.start(3)
+	$Timer.start(2)
 
 func generar_cliente():
 	if generandoClientes:
@@ -26,7 +26,7 @@ func generar_cliente():
 
 func _on_timer_timeout():
 	if len(OrderManager.currentOrders) > 0:
-		$Timer.wait_time = randi() % (7) + tiempo_min_entre_clientes - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
+		$Timer.wait_time = randi() % (7) + randi_range(7,tiempo_min_entre_clientes) - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
 	else:
-		$Timer.wait_time = randi() % (5) + tiempo_min_entre_clientes - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
+		$Timer.wait_time = randi() % (5) + randi_range(6,tiempo_min_entre_clientes) - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
 	generar_cliente()

@@ -70,7 +70,7 @@ func empezardia():
 			#
 			finalC=260	
 		4:
-			print("ES EL DIA 4 PAPUS")
+			#print("ES EL DIA 4 PAPUS")
 			cantidadA=range(0,12)
 			cantidadB=range(0,8)
 			cantidadC=range(0,4)

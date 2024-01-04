@@ -12,12 +12,6 @@ func _ready():
 	llenar_recetas()
 	GlobalTiempo.iniciarDia.connect(llenar_recetas)
 	GlobalRecursos.bancarota.connect(gameover)
-	#add_child(tmr) Ésto fué reemplazado por la señal new_customer
-	#tmr.timeout.connect(_on_timer_timeout)
-	#tmr.wait_time = randi() % (5) + 4
-	#tmr.one_shot = false
-	#tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
-	#tmr.start()
 
 func gameover():
 	recetas.clear()
@@ -63,9 +57,6 @@ func llenar_recetas() -> void:
 		recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
 		recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
 	
-	print("la receta ", recetas)
-
-	
 # Señales
 
 func _on_new_customer(customer : Cliente) -> void:
@@ -76,6 +67,5 @@ func _on_new_customer(customer : Cliente) -> void:
 	
 func _on_order_delivered(plata : int) -> void:
 	@warning_ignore("integer_division")
-	GlobalRecursos.actualizar_dinero(int(plata + int((plata / 4) * GlobalMejoras.activas_mejoras[2] + GlobalMejoras.activas_mejoras[2] ))) # cada nivel de la mejora de dinero agrega 25% más al precio de cada recetas más 1 por mejora
-	
+	GlobalRecursos.actualizar_dinero(int(plata + ((plata+1 / 4) * GlobalMejoras.activas_mejoras[2] + 0.5 * GlobalMejoras.activas_mejoras[2]))) # cada nivel de la mejora de dinero agrega 33% más al precio de cada receta + 0.5
 

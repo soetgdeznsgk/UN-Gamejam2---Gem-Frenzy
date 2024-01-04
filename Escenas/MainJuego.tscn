@@ -853,7 +853,7 @@ texture = ExtResource("6_s8g8y")
 metadata/_edit_lock_ = true
 
 [node name="GeneradorClientes" type="Marker2D" parent="Gameplay"]
-position = Vector2(-6, -12)
+position = Vector2(-8, -10)
 script = ExtResource("17_5vow0")
 
 [node name="Timer" type="Timer" parent="Gameplay/GeneradorClientes"]

@@ -31,7 +31,7 @@ func _init(materiales : Array, customer : Cliente):
 
 	@warning_ignore("integer_division")
 	precio = int(((precio - 2) / 3) + 1) # el promedio de lo anterior maximo 6 oro por receta
-	print(precio)
+	#print(precio)
 	
 	tmr = Timer.new()
 	add_child(tmr)
