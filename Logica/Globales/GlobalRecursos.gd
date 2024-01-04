@@ -4,7 +4,7 @@ extends Node
 
 # inicia en ceros
 var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]
-var dinero : int = 500
+var dinero : int = 5
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -64,13 +64,13 @@ func pagueme_la_renta():
 	if dia > 6:
 		valorDia = 6 * GlobalTiempo.diaActual - 4
 	
-	if dia > 8:
-		valorDia = 7 * GlobalTiempo.diaActual
+	if dia > 9:
+		valorDia = 7 * GlobalTiempo.diaActual - 10
 	
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3
-	if valorDia > 60:
-		valorDia = 60
+	if valorDia > 100:
+		valorDia = 100
 	
 	print("valor renta: ", valorDia)
 	actualizar_dinero( -valorDia )
