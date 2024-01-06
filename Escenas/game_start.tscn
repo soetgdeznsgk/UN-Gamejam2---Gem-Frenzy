@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://bqhqrdsnv5ssl" path="res://Sprites/titulo gem frenzy.png" id="2_p55nl"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
-[ext_resource type="Texture2D" uid="uid://bvdeqfqekwuvm" path="res://Sprites/UI/Botonjugar.png" id="4_0fpx3"]
+[ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
 [ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
 
 [node name="GameStart" type="Control"]
@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_ruh65")
 script = ExtResource("1_d1quh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -53,12 +54,10 @@ offset_bottom = -79.84
 layout_mode = 2
 
 [node name="Btn_jugar" type="Button" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 256)
+custom_minimum_size = Vector2(200, 64)
 layout_mode = 2
-icon = ExtResource("4_0fpx3")
-flat = true
-icon_alignment = 1
-expand_icon = true
+theme_override_font_sizes/font_size = 32
+text = "JUGAR"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ued5s")

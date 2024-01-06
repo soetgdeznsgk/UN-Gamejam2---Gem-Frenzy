@@ -5,8 +5,8 @@ var textura
 func _ready() -> void:
 	if not info.is_empty():
 		$Lb_nombre.text = info["Nombre"]
-		$Lb_precio.text = "Precio: " + str(info["Precio"])
-		$Lb_desc.text = str(info["Descripcion"])
+		$Lb_precio.text = tr("Precio") + ": " + str(info["Precio"])
+		%Lb_desc.text = tr(str(info["Descripcion"]))
 		textura = load(info["Textura"])
 		$TextureRect.texture = textura
 

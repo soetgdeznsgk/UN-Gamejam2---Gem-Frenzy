@@ -43,7 +43,7 @@ var info_mejoras = {
 		"Precio" : 12,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
-		"Descripcion" : "Tu tienda esta abierta mas horas",
+		"Descripcion" : "Tu tienda estará abierta mas horas",
 	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,

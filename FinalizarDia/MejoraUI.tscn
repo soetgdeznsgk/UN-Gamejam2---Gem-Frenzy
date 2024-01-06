@@ -1,14 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckwirio1rk4yk"]
+[gd_scene load_steps=10 format=3 uid="uid://ckwirio1rk4yk"]
 
 [ext_resource type="Script" path="res://FinalizarDia/MejoraUI.gd" id="1_1mlls"]
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_j405q"]
 [ext_resource type="AudioStream" uid="uid://b2eoylyx4gc5o" path="res://Musica/DineroNoAlcanza.wav" id="3_xceqa"]
 [ext_resource type="AudioStream" uid="uid://xl1i7khruaha" path="res://Musica/Mejora.wav" id="4_dp677"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e85kf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm2hq"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6oy3h"]
 font_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e85kf"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ye2lu"]
 font_size = 10
@@ -17,14 +32,14 @@ font_size = 10
 font_size = 8
 
 [node name="VBoxContainerMejora" type="VBoxContainer"]
-custom_minimum_size = Vector2(150, 218)
+custom_minimum_size = Vector2(150, 256)
 anchors_preset = -1
-anchor_right = 0.133
-anchor_bottom = 0.264
-offset_right = -127.68
-offset_bottom = -190.08
-size_flags_horizontal = 3
-size_flags_vertical = 3
+anchor_right = 0.156
+anchor_bottom = 0.353
+offset_right = -112.32
+offset_bottom = -254.16
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 script = ExtResource("1_1mlls")
 
@@ -33,7 +48,8 @@ clip_contents = true
 custom_minimum_size = Vector2(150, 18)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hm2hq")
 text = "Nombre"
 label_settings = SubResource("LabelSettings_6oy3h")
 horizontal_alignment = 1
@@ -61,7 +77,8 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Lb_desc" type="Label" parent="."]
-custom_minimum_size = Vector2(150, 18)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 72)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
@@ -70,6 +87,7 @@ label_settings = SubResource("LabelSettings_uj2uy")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+justification_flags = 0
 uppercase = true
 
 [node name="Btn_comprar" type="Button" parent="."]
@@ -77,6 +95,7 @@ custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
 theme_override_font_sizes/font_size = 12
 text = "COMPRAR"
 
