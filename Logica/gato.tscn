@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvl5tdbs4i1ex"]
+
+[ext_resource type="Texture2D" uid="uid://b8unffyvwye8o" path="res://Sprites/Mapa/Cat Sprite Sheet--Elthen.png" id="1_san42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq0ej"]
+size = Vector2(8, 8)
+
+[node name="Gato" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_san42")
+offset = Vector2(0, -12)
+hframes = 8
+vframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yq0ej")

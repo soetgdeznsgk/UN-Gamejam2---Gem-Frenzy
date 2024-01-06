@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckwirio1rk4yk"]
+[gd_scene load_steps=9 format=3 uid="uid://ckwirio1rk4yk"]
 
 [ext_resource type="Script" path="res://FinalizarDia/MejoraUI.gd" id="1_1mlls"]
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_j405q"]
@@ -12,6 +12,9 @@ font_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_ye2lu"]
 font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_uj2uy"]
+font_size = 8
 
 [node name="VBoxContainerMejora" type="VBoxContainer"]
 custom_minimum_size = Vector2(150, 218)
@@ -55,6 +58,18 @@ text = "PRECIO: 500"
 label_settings = SubResource("LabelSettings_ye2lu")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
+
+[node name="Lb_desc" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
+text = "DESC: asdfasdfasdf asdfasdfasdfasdfasdfasdfasdfsad fasdf"
+label_settings = SubResource("LabelSettings_uj2uy")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 uppercase = true
 
 [node name="Btn_comprar" type="Button" parent="."]

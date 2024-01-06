@@ -40,7 +40,7 @@ var info_mejoras = {
 		"Key" : nombre_mejoras.MasTiempo,
 		"Nombre" : "Mas tiempo",
 		"Precio" : 12,
-		"Maximo" : 3,
+		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : "Tu tienda esta abierta mas horas",
 	},

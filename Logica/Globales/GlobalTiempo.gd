@@ -14,14 +14,13 @@ signal iniciarDia
 func _ready() -> void:
 	tmr_minuto = Timer.new() 
 	add_child(tmr_minuto)
-	tmr_minuto.wait_time = 0.45
+	tmr_minuto.wait_time = 0.55
 	tmr_minuto.timeout.connect(on_tmr_minuto_end)
 	tmr_minuto.process_callback = Timer.TIMER_PROCESS_PHYSICS
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		pass
-		#tiempoHoraDia += 1
+		tiempoHoraDia += 1
 
 # actualiza el reloj
 func on_tmr_minuto_end():
@@ -38,7 +37,7 @@ func siguiente_dia():
 	diaActual += 1
 	
 	if diaActual<=10:
-		tmr_minuto.wait_time = 0.45+ diaActual*0.015
+		tmr_minuto.wait_time = 0.45+ diaActual*0.012
 	else:
 		tmr_minuto.wait_time = 0.6
 	tiempoHoraDia = 8

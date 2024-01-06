@@ -31,14 +31,12 @@ func _init(materiales : Array, customer : Cliente):
 
 	@warning_ignore("integer_division")
 	precio = int(((precio - 2) / 3) + 1) # el promedio de lo anterior maximo 6 oro por receta
-	#print(precio)
 	
 	tmr = Timer.new()
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)
 	tmr.one_shot = true
-	tmr.wait_time = 30 + (GlobalMejoras.activas_mejoras[3] * 3.5) # Por cada nivel de Zen en las mejoras, se añaden 3.5 segundos a las recetas
-	#print(tmr.wait_time, " = wait time")
+	tmr.wait_time = 30 + (GlobalMejoras.activas_mejoras[3] * 5) # Por cada nivel de Zen en las mejoras, se añaden 5 segundos a las recetas
 	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS
 	tmr.autostart = true
 	
