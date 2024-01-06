@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=41 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="Script" path="res://Escenas/MainJuegoAmbientManager.gd" id="1_pncec"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="18_b88ti"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
 [ext_resource type="AudioStream" uid="uid://dws3s3hhyndi7" path="res://Musica/「カラクサタウン」.mp3" id="23_ljyy2"]
+[ext_resource type="PackedScene" uid="uid://bvl5tdbs4i1ex" path="res://Logica/gato.tscn" id="26_0x151"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(32, 12)
@@ -213,7 +214,7 @@ unique_name_in_owner = true
 z_index = 5
 position = Vector2(397, -21)
 CONST_SPEED = 118.0
-CONST_SPEEDUP = 42.0
+CONST_SPEEDUP = 46.0
 
 [node name="CamPlayer" type="Camera2D" parent="Gameplay/Player"]
 unique_name_in_owner = true
@@ -255,7 +256,7 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Gameplay/Area2DEscalera"]
 texture_filter = 1
-position = Vector2(0, -8)
+position = Vector2(0, -2)
 texture = ExtResource("11_m2ljb")
 vframes = 3
 region_rect = Rect2(-0.0895081, 49.677, 31.5444, 54.3265)
@@ -263,7 +264,7 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Gameplay/Area2DEscalera"]
 texture_filter = 1
-position = Vector2(0, 8)
+position = Vector2(0, 14)
 texture = ExtResource("11_m2ljb")
 vframes = 3
 frame = 1
@@ -272,7 +273,7 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Gameplay/Area2DEscalera"]
 texture_filter = 1
-position = Vector2(0, 24)
+position = Vector2(0, 30)
 texture = ExtResource("11_m2ljb")
 vframes = 3
 frame = 2
@@ -934,6 +935,16 @@ position = Vector2(378, -23)
 stream = ExtResource("23_ljyy2")
 volume_db = -19.0
 autoplay = true
+
+[node name="Gato" parent="." instance=ExtResource("26_0x151")]
+visible = false
+position = Vector2(362, -16)
+
+[node name="Gato2" parent="." instance=ExtResource("26_0x151")]
+visible = false
+modulate = Color(0.976471, 0.568627, 0, 1)
+position = Vector2(296, -56)
+gatoPower = 1
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_casa_body_exited"]

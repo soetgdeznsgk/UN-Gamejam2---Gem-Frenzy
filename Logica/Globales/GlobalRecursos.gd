@@ -4,7 +4,7 @@ extends Node
 
 # inicia en ceros
 var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]
-var dinero : int = 5
+var dinero : int = 500
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota

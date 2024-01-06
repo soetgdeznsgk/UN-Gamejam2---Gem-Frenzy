@@ -1,6 +1,7 @@
 extends Node
 
 # Este singleton contiene las mejoras activas y las posibles mejoras a ganar
+signal mejora_cambiada
 
 enum nombre_mejoras {
 	CofreMineral,

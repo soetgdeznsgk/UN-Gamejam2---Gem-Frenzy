@@ -1,11 +1,108 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvl5tdbs4i1ex"]
+[gd_scene load_steps=10 format=3 uid="uid://bvl5tdbs4i1ex"]
 
+[ext_resource type="Script" path="res://Logica/gato.gd" id="1_k5uvl"]
 [ext_resource type="Texture2D" uid="uid://b8unffyvwye8o" path="res://Sprites/Mapa/Cat Sprite Sheet--Elthen.png" id="1_san42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq0ej"]
 size = Vector2(8, 8)
 
+[sub_resource type="Animation" id="Animation_086b5"]
+resource_name = "Camina"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37, 38, 39, 40]
+}
+
+[sub_resource type="Animation" id="Animation_g6qaq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rn82v"]
+resource_name = "Sentado"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 8, 9, 10, 11, 0]
+}
+
+[sub_resource type="Animation" id="Animation_cqh27"]
+resource_name = "Lamiendo"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6, 1.8, 2, 2.4, 2.6, 2.8, 3.2, 3.4, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 24, 16, 17, 18, 19, 24, 25, 26, 27, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_sumqg"]
+resource_name = "Acostado"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0pjfe"]
+_data = {
+"Acostado": SubResource("Animation_sumqg"),
+"Camina": SubResource("Animation_086b5"),
+"Lamiendo": SubResource("Animation_cqh27"),
+"RESET": SubResource("Animation_g6qaq"),
+"Sentado": SubResource("Animation_rn82v")
+}
+
 [node name="Gato" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_k5uvl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_san42")
@@ -15,3 +112,13 @@ vframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yq0ej")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0pjfe")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

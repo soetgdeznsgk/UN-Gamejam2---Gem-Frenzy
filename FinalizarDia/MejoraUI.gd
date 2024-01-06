@@ -19,6 +19,7 @@ func _on_btn_comprar_pressed() -> void:
 			# solo puede comprar una vez hasta el maximo
 			GlobalMejoras.activas_mejoras[int(info["Key"])] += 1
 			GlobalMejoras.disponible_mejoras[int(info["Key"])] -= 1
+			GlobalMejoras.mejora_cambiada.emit()
 			
 		else:
 			$AudioDineroNoAlcanza.play(0)
