@@ -904,10 +904,8 @@ shape = SubResource("RectangleShape2D_fsbbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_m6vgi")
+texture = ExtResource("2_04omg")
 hframes = 4
-vframes = 2
-frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")
