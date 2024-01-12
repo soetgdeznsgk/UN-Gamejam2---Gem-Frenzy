@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=39 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -146,11 +146,25 @@ border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_yrvle"]
 line_spacing = 12.0
 font_size = 36
 outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6e4pu"]
+line_spacing = 12.0
+font_size = 22
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1onc"]
+line_spacing = 12.0
+font_size = 18
+outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control"]
@@ -456,46 +470,100 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.173
-anchor_top = 0.18
-anchor_right = 0.849
-anchor_bottom = 0.82
-offset_left = -21.08
-offset_top = -0.100006
-offset_right = -0.0400391
-offset_bottom = 0.0999756
+anchor_left = 0.1
+anchor_top = 0.0638889
+anchor_right = 0.9
+anchor_bottom = 0.9125
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qls4k")
 script = ExtResource("12_1lmnk")
-
-[node name="CenterContainer" type="CenterContainer" parent="Gameover"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/CenterContainer"]
-layout_mode = 2
-theme_override_constants/separation = 32
-alignment = 1
-
-[node name="Label" type="Label" parent="Gameover/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "!HAS CAIDO EN 
-BANCARROTA!"
-label_settings = SubResource("LabelSettings_yrvle")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Btn_reintentar" type="Button" parent="Gameover/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(260, 64)
-layout_mode = 2
-text = "REINTENTAR"
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioGameover" type="AudioStreamPlayer" parent="Gameover"]
 stream = ExtResource("15_uh00d")
 volume_db = -11.0
 pitch_scale = 0.99
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 3.0
+text = "!HAS CAIDO 
+EN BANCARROTA!"
+label_settings = SubResource("LabelSettings_yrvle")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "Top jugadores"
+label_settings = SubResource("LabelSettings_6e4pu")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+theme_override_constants/separation = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+alignment = 1
+
+[node name="Label3" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Nombre"
+label_settings = SubResource("LabelSettings_b1onc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dia final"
+label_settings = SubResource("LabelSettings_b1onc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerTopPlayers" type="VBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Gameover/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="LineEdit" type="LineEdit" parent="Gameover/VBoxContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+placeholder_text = "Escribe tu nombre"
+max_length = 10
+expand_to_text_length = true
+caret_blink = true
+
+[node name="Btn_reintentar" type="Button" parent="Gameover/VBoxContainer"]
+custom_minimum_size = Vector2(260, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+text = "REINTENTAR"
+
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
-[connection signal="pressed" from="Gameover/CenterContainer/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/CenterContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Gameover/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]

@@ -28,7 +28,7 @@ func sonido_orden_perdida():
 		
 # Señales
 
-func _on_new_order(orden : Order):
+func _on_new_order(orden : OrderGem):
 	var temp = ordenUI.instantiate()
 	temp.setOrden(orden)
 	temp.sonido_orden_out_of_time.connect(sonido_orden_perdida)

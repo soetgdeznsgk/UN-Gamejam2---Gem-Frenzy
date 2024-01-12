@@ -6,7 +6,7 @@ signal sonido_orden_out_of_time
 @export var Dimension := 32
 
 @onready var pb = $VBoxContainer/ProgressBar
-var orden_logica : Order
+var orden_logica : OrderGem
 @onready var cambiadorDeColor = StyleBoxFlat.new()
 #var cliente_asociado : Cliente
 
@@ -29,7 +29,7 @@ func _physics_process(_delta):
 func getOrden() -> int:
 	return GlobalRecetas.encontrarReceta(orden_logica.requirements)
 
-func setOrden(orden : Order) -> void:
+func setOrden(orden : OrderGem) -> void:
 	#cliente_asociado = cliente
 	orden_logica = orden
 	add_child(orden)

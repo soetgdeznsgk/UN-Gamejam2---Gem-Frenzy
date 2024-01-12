@@ -1,4 +1,4 @@
-class_name Order
+class_name OrderGem
 extends Node2D
 
 signal out_of_time

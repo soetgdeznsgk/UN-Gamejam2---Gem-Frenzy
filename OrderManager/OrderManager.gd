@@ -1,6 +1,6 @@
 extends Node
 
-signal new_order(orden: Order)
+signal new_order(orden: OrderGem)
 #var materiales := Array() # array de materiales 
 @onready var recetas := Array()
 @onready var currentOrders := Array()
@@ -18,7 +18,7 @@ func gameover():
 	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro]) # acero
 
 
-func entregarOrden(orden : Order):
+func entregarOrden(orden : OrderGem):
 	var i = currentOrders.find(orden)
 	if i != -1:
 		currentOrders.pop_at(i) # toca compararlo desde el entregador de comidas
@@ -60,7 +60,7 @@ func llenar_recetas() -> void:
 # Señales
 
 func _on_new_customer(customer : Cliente) -> void:
-	var tempOrder = Order.new(recetas.pick_random(), customer)
+	var tempOrder = OrderGem.new(recetas.pick_random(), customer)
 	currentOrders.append(tempOrder)
 	new_order.emit(tempOrder)
 	

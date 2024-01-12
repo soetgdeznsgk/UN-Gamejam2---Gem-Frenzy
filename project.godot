@@ -25,6 +25,7 @@ GlobalTiempo="*res://Logica/Globales/GlobalTiempo.gd"
 GlobalMejoras="*res://Logica/Globales/GlobalMejoras.gd"
 OrderManager="*res://OrderManager/OrderManager.gd"
 GlobalRecetas="*res://Logica/Globales/GlobalRecetas.gd"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 [display]
 
@@ -36,7 +37,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg")
+enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg")
 
 [input]
 
