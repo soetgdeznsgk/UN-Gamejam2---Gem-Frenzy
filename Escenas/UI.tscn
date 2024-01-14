@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=40 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -165,6 +165,11 @@ outline_color = Color(0, 0, 0, 1)
 line_spacing = 12.0
 font_size = 18
 outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3nvl1"]
+line_spacing = 12.0
+outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control"]
@@ -543,17 +548,33 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="Gameover/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers"]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.2
+alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="Gameover/VBoxContainer/VBoxContainer/CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_right = 55
+
+[node name="LineEdit" type="LineEdit" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 placeholder_text = "Escribe tu nombre"
+alignment = 1
 max_length = 10
 expand_to_text_length = true
 caret_blink = true
+
+[node name="Label5" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Dia 5"
+label_settings = SubResource("LabelSettings_3nvl1")
+horizontal_alignment = 1
 
 [node name="Btn_reintentar" type="Button" parent="Gameover/VBoxContainer"]
 custom_minimum_size = Vector2(260, 64)
@@ -565,5 +586,5 @@ text = "REINTENTAR"
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
-[connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/CenterContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
+[connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer/MarginContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
