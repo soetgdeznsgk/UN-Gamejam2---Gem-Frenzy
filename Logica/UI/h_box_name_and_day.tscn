@@ -22,17 +22,15 @@ script = ExtResource("1_7vbyt")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-size_flags_stretch_ratio = 0.3
-text = "1."
+text = "x."
 label_settings = SubResource("LabelSettings_rnrd2")
-horizontal_alignment = 3
+horizontal_alignment = 1
 uppercase = true
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-size_flags_stretch_ratio = 0.7
 text = "ASDFGHJKLm"
 label_settings = SubResource("LabelSettings_rnrd2")
 horizontal_alignment = 1
@@ -42,7 +40,6 @@ uppercase = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-size_flags_stretch_ratio = 0.7
 text = "Dia 5"
 label_settings = SubResource("LabelSettings_hq2yq")
 horizontal_alignment = 1

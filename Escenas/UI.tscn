@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=41 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
 [ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
+[ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
 atlas = ExtResource("7_q4w3t")
@@ -140,7 +141,7 @@ border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
-bg_color = Color(0.65098, 0.0980392, 0.0627451, 1)
+bg_color = Color(0, 0, 0, 0.388235)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -531,6 +532,14 @@ alignment = 1
 [node name="Label3" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Posicion"
+label_settings = SubResource("LabelSettings_b1onc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Nombre"
 label_settings = SubResource("LabelSettings_b1onc")
 horizontal_alignment = 1
@@ -539,7 +548,7 @@ vertical_alignment = 1
 [node name="Label4" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Dia final"
+text = "Dia"
 label_settings = SubResource("LabelSettings_b1onc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -548,33 +557,64 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers"]
+[node name="LineEditSelfContainer" type="HBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 55
-theme_override_constants/margin_right = 55
-
-[node name="LineEdit" type="LineEdit" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer/MarginContainer"]
+[node name="LbSelfPos" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "x."
+label_settings = SubResource("LabelSettings_3nvl1")
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/caret_width = 3
 placeholder_text = "Escribe tu nombre"
 alignment = 1
 max_length = 10
 expand_to_text_length = true
 caret_blink = true
+caret_mid_grapheme = true
 
-[node name="Label5" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer"]
+[node name="LbSelfDia" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Dia 5"
 label_settings = SubResource("LabelSettings_3nvl1")
 horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxNameAndDay1" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay2" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay3" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay4" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay5" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Btn_reintentar" type="Button" parent="Gameover/VBoxContainer"]
 custom_minimum_size = Vector2(260, 64)
@@ -586,5 +626,5 @@ text = "REINTENTAR"
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
-[connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/HBoxContainer/MarginContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
+[connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
