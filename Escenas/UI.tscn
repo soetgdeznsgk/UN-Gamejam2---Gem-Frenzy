@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=42 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
 [ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
+[ext_resource type="Texture2D" uid="uid://ctj4obkn3i1bo" path="res://Sprites/UI/Icon_Next.png" id="19_i0nsn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
 atlas = ExtResource("7_q4w3t")
@@ -186,10 +187,10 @@ metadata/_edit_lock_ = true
 
 [node name="Ordenes" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 765.0
-offset_top = 3.0
-offset_right = 928.0
-offset_bottom = 628.0
+offset_left = 728.0
+offset_top = 22.0
+offset_right = 891.0
+offset_bottom = 647.0
 theme_override_constants/separation = 90
 script = ExtResource("1_qy5sv")
 
@@ -624,7 +625,25 @@ size_flags_vertical = 6
 size_flags_stretch_ratio = 2.0
 text = "REINTENTAR"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.811765)
+position = Vector2(939, 25)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_i0nsn")
+
+[node name="Btn_pause" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 927.0
+offset_top = 6.0
+offset_right = 951.0
+offset_bottom = 45.0
+focus_mode = 0
+flat = true
+
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
 [connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="Btn_pause" to="." method="_on_btn_pause_pressed"]

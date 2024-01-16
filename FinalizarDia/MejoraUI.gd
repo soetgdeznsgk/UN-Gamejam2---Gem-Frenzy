@@ -7,10 +7,10 @@ func _ready() -> void:
 	if not info.is_empty():
 		# el precio aumenta en 2 por cada mejora de la misma
 		totalPrecio = info["Precio"] + \
-		GlobalMejoras.activas_mejoras[int(info["Key"])] * 2
+		GlobalMejoras.activas_mejoras[int(info["Key"])] * info["PrecioEscalar"]
 		
 		$Lb_nombre.text = info["Nombre"]
-		$Lb_precio.text = tr("Precio") + ": " + str(info["Precio"])
+		$Lb_precio.text = tr("Precio") + ": " + str(totalPrecio)
 		%Lb_desc.text = tr(str(info["Descripcion"]))
 		textura = load(info["Textura"])
 		$TextureRect.texture = textura

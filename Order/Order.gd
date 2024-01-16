@@ -23,14 +23,14 @@ func _init(materiales : Array, customer : Cliente):
 	
 	for mat in materiales: # mat va de 0 a 11 segun rareza
 		requirements.append(mat)
-		if mat <= 6:
+		if mat <= 8:
 			precio += (mat)
 		else:
-			precio += 6
-		# maximo precio por ingrediente es 6
+			precio += 8
+		# maximo precio por ingrediente es 8
 
 	@warning_ignore("integer_division")
-	precio = int(((precio - 2) / 3) + 1) # el promedio de lo anterior maximo 6 oro por receta
+	precio = int((precio / 6) + 1) # el promedio de lo anterior maximo 6 oro por receta
 	
 	tmr = Timer.new()
 	add_child(tmr)
