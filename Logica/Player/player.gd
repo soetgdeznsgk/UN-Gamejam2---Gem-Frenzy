@@ -24,6 +24,11 @@ var recienSalidoEscalera = false
 func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(iniciar_dia)
 	GlobalTiempo.finalizarDia.connect(finalizar_dia)
+	GlobalRecursos.bancarota.connect(gameover)
+
+func gameover():
+	visible = false
+	position = Vector2(397,-21)
 
 func iniciar_dia():
 	movement = true

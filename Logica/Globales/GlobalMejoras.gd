@@ -16,7 +16,8 @@ var info_mejoras = {
 	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : "Cofre",
-		"Precio" : 5,
+		"Precio" : 3,
+		"PrecioEscalar" : 2,
 		"Maximo" : 4,
 		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
 		"Descripcion" : "Permite almacenar más tipos de minerales",
@@ -24,7 +25,8 @@ var info_mejoras = {
 		nombre_mejoras.MejoraDeMejoras : {
 		"Key" : nombre_mejoras.MejoraDeMejoras,
 		"Nombre" : "Muchas mejoras",
-		"Precio" : 8,
+		"PrecioEscalar" : 1,
+		"Precio" : 5,
 		"Maximo" : 1,
 		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
 		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
@@ -32,7 +34,8 @@ var info_mejoras = {
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : "Clientes Zen",
-		"Precio" : 8,
+		"Precio" : 6,
+		"PrecioEscalar" : 3,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
 		"Descripcion" : "Gracias a la meditación los clientes esperan más tiempo",
@@ -40,23 +43,26 @@ var info_mejoras = {
 	nombre_mejoras.MasTiempo : {
 		"Key" : nombre_mejoras.MasTiempo,
 		"Nombre" : "Mas tiempo",
-		"Precio" : 12,
-		"Maximo" : 2,
+		"Precio" : 6,
+		"PrecioEscalar" : 8,
+		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : "Tu tienda estará abierta mas horas",
 	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : "Cobra mas!",
-		"Precio" : 15,
-		"Maximo" : 2,
+		"Precio" : 7,
+		"PrecioEscalar" : 7,
+		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
 		"Descripcion" : "Cobra más por tu trabajo!",
 	},
 		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
 		"Key" : nombre_mejoras.Gato,
 		"Nombre" : "Gato",
-		"Precio" : 18,
+		"Precio" : 13,
+		"PrecioEscalar" : 13,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/gatomejora.png',
 		"Descripcion" : "Un gato siempre atrae más clientes!",
@@ -77,6 +83,8 @@ func obtener_mejora_random_disponible():
 	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion
 	if disponible_mejoras[0]>0:
 		mejoras_seleccionadas.append(info_mejoras[0])
+	if disponible_mejoras[1]>0:
+		mejoras_seleccionadas.append(info_mejoras[1])
 	
 	for i in range(1, len(nombre_mejoras)):
 		if disponible_mejoras[i] > 0:
