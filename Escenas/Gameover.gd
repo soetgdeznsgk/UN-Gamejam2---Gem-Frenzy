@@ -24,7 +24,6 @@ func call_top_players():
 	query.limit(5)
 
 	if GlobalFirebaseInfo.isAuth:
-		#TODO QUE LA POSICION DEL JUGADOR SE VEA REFLEJADA EN EL TOTAL Y NOSIEMPRE EL 6
 		var document_task : FirestoreTask = GlobalFirebaseInfo.collection.get_doc("map_of_days")
 		var document: FirestoreDocument = await document_task.get_document
 		mapOfDays = document.doc_fields
