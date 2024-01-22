@@ -5,4 +5,4 @@ func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(actualizarDia)
 
 func actualizarDia():
-	text = str(GlobalTiempo.diaActual)
+	text = 'Dia: ' + str(GlobalTiempo.diaActual)

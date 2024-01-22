@@ -5,13 +5,21 @@ var playerRef : Player
 @onready var interactSprite = $Spr_up_key_ladder
 
 @export var isUp = false
+var tween : Tween
+
+func _ready() -> void:
+	GlobalTiempo.finalizarDia.connect(fin_dia)
+
+func fin_dia():
+	if tween:
+		tween.stop()
 
 func _process(_delta: float) -> void:
+	
 	if isPlayerHere:
-		if Input.is_action_just_pressed("ui_up"):
-			var tween :Tween = get_tree().create_tween()
+		if Input.is_action_just_pressed("ui_up") and playerRef.movement == true:
 			playerRef.movement = false
-			
+			tween = get_tree().create_tween()
 			if isUp:
 				tween.tween_property(playerRef, "position:x", 432, 0.2)
 				tween.tween_property(playerRef, "position", Vector2(429,-29), 0.2)
@@ -29,10 +37,7 @@ func _process(_delta: float) -> void:
 			tween.tween_callback(_on_tween_callback)
 
 func _on_tween_callback():
-
-	playerRef.movement = true
-	playerRef.input_direction = Vector2.ZERO
-	playerRef.last_move=Vector2.ZERO
+	playerRef._on_ladder_finish()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

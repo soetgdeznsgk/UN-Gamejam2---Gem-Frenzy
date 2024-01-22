@@ -1,15 +1,88 @@
-[gd_scene load_steps=23 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=37 format=3 uid="uid://btm0ei5fs0m10"]
 
+[ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
-[ext_resource type="Texture2D" uid="uid://b23rlmmuwpk64" path="res://Sprites/UI/reloj.png" id="2_ulj72"]
+[ext_resource type="Script" path="res://Escenas/UI.gd" id="1_xq7xs"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
+[ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/mejoras/reloj normal.png" id="4_1gerh"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
-[ext_resource type="Texture2D" uid="uid://dmj3hvwsah4uk" path="res://Sprites/UI/coin_01.png" id="4_h1cjt"]
+[ext_resource type="AudioStream" uid="uid://c1hjjwipji7up" path="res://Musica/cliente_enojado.wav" id="4_h0j4i"]
+[ext_resource type="AudioStream" uid="uid://bmj43p0weuvai" path="res://Musica/OrdenCorrecta2.wav" id="5_lmvn8"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
+[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/Horno.mp3" id="6_7b88a"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
-[ext_resource type="Script" path="res://Logica/UI/FPSDebug.gd" id="7_xpxm3"]
+[ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
+[ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
+[ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
+[ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
+atlas = ExtResource("7_q4w3t")
+region = Rect2(2, 2, 27, 27)
+
+[sub_resource type="Animation" id="Animation_615qf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(2, 2, 27, 27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fq5il"]
+resource_name = "newmoney"
+length = 0.850005
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(2, 2, 27, 27), Rect2(31, 2, 27, 27), Rect2(60, 2, 27, 27), Rect2(89, 2, 27, 27), Rect2(118, 2, 27, 27), Rect2(89, 2, 27, 27), Rect2(60, 2, 27, 27), Rect2(31, 2, 27, 27), Rect2(2, 2, 27, 27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yjgmp"]
+_data = {
+"RESET": SubResource("Animation_615qf"),
+"newmoney": SubResource("Animation_fq5il")
+}
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xoam7"]
 load_path = "res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"
@@ -38,10 +111,6 @@ region = Rect2(40, 4, 8, 8)
 atlas = ExtResource("7_bbwty")
 region = Rect2(49, 4, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(58, 4, 8, 8)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wf2ym"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(4, 13, 8, 8)
@@ -58,6 +127,32 @@ region = Rect2(22, 13, 8, 8)
 atlas = ExtResource("7_bbwty")
 region = Rect2(31, 13, 8, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(58, 4, 8, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_catcj"]
+bg_color = Color(0.439216, 0.439216, 0.439216, 0.772549)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
+bg_color = Color(0.65098, 0.0980392, 0.0627451, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrvle"]
+line_spacing = 12.0
+font_size = 36
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -65,33 +160,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_4vip0")
+script = ExtResource("1_xq7xs")
 metadata/_edit_lock_ = true
 
 [node name="Ordenes" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 765.0
+offset_top = 3.0
 offset_right = 928.0
-offset_bottom = 719.0
+offset_bottom = 628.0
 theme_override_constants/separation = 90
 script = ExtResource("1_qy5sv")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ordenes"]
+stream = ExtResource("4_h0j4i")
+pitch_scale = 0.99
+
+[node name="AudioEntregarOrden" type="AudioStreamPlayer" parent="Ordenes"]
+stream = ExtResource("5_lmvn8")
+volume_db = -6.5
+pitch_scale = 0.99
+
+[node name="AudioOrdenIncorrecta" type="AudioStreamPlayer" parent="Ordenes"]
+stream = ExtResource("6_7b88a")
+pitch_scale = 0.6
+
 [node name="VbReloj" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
-offset_left = 1.0
-offset_top = 644.0
-offset_right = 84.0
-offset_bottom = 720.0
+offset_left = 12.0
+offset_top = 667.0
+offset_right = 187.0
+offset_bottom = 717.0
 alignment = 1
 
 [node name="HbReloj" type="HBoxContainer" parent="VbReloj"]
 layout_mode = 2
 
-[node name="TextureReloj" type="TextureRect" parent="VbReloj/HbReloj"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VbReloj/HbReloj"]
 layout_mode = 2
-texture = ExtResource("2_ulj72")
-stretch_mode = 2
+alignment = 1
 
-[node name="Lb_tiempo" type="Label" parent="VbReloj/HbReloj"]
+[node name="Lb_tiempo" type="Label" parent="VbReloj/HbReloj/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "8:00 AM"
@@ -99,20 +210,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_hwchs")
 
-[node name="Lb_Dias" type="Label" parent="VbReloj"]
+[node name="Lb_Dias" type="Label" parent="VbReloj/HbReloj/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Dia: 1"
-horizontal_alignment = 1
 vertical_alignment = 1
+justification_flags = 171
+uppercase = true
 script = ExtResource("4_go46m")
 
+[node name="TextureReloj" type="TextureRect" parent="VbReloj/HbReloj"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_1gerh")
+stretch_mode = 2
+
 [node name="VbDinero" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
-offset_left = 849.0
-offset_top = 642.0
+offset_left = 838.0
+offset_top = 668.0
 offset_right = 956.0
-offset_bottom = 718.0
+offset_bottom = 716.0
 alignment = 1
 
 [node name="HbDinero" type="HBoxContainer" parent="VbDinero"]
@@ -120,14 +239,22 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="TextureDinero" type="TextureRect" parent="VbDinero/HbDinero"]
+texture_filter = 1
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
-texture = ExtResource("4_h1cjt")
-stretch_mode = 2
+texture = SubResource("AtlasTexture_18s7n")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VbDinero/HbDinero/TextureDinero"]
+libraries = {
+"": SubResource("AnimationLibrary_yjgmp")
+}
 
 [node name="Lb_Dinero" type="Label" parent="VbDinero/HbDinero"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "005"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_qljiu")
@@ -135,8 +262,12 @@ script = ExtResource("5_qljiu")
 [node name="GridMinerales" type="GridContainer" parent="."]
 modulate = Color(1, 1, 1, 0.780392)
 layout_mode = 0
-offset_right = 228.0
-offset_bottom = 97.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 256.0
+offset_bottom = 116.0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 8
 columns = 8
 script = ExtResource("7_oym11")
 
@@ -148,8 +279,7 @@ texture = SubResource("AtlasTexture_2qnci")
 
 [node name="Label" type="Label" parent="GridMinerales"]
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="GridMinerales"]
@@ -160,20 +290,20 @@ texture = SubResource("AtlasTexture_xpmjl")
 
 [node name="Label2" type="Label" parent="GridMinerales"]
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect3" type="TextureRect" parent="GridMinerales"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_5ed7w")
 
 [node name="Label3" type="Label" parent="GridMinerales"]
+visible = false
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect4" type="TextureRect" parent="GridMinerales"]
@@ -184,138 +314,188 @@ texture = SubResource("AtlasTexture_0t2b6")
 
 [node name="Label4" type="Label" parent="GridMinerales"]
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect5" type="TextureRect" parent="GridMinerales"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_yaldj")
 
 [node name="Label5" type="Label" parent="GridMinerales"]
+visible = false
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect6" type="TextureRect" parent="GridMinerales"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_x1fxj")
 
 [node name="Label6" type="Label" parent="GridMinerales"]
+visible = false
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect7" type="TextureRect" parent="GridMinerales"]
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = SubResource("AtlasTexture_udvxe")
-
-[node name="Label7" type="Label" parent="GridMinerales"]
-layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect8" type="TextureRect" parent="GridMinerales"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_wf2ym")
 
 [node name="Label8" type="Label" parent="GridMinerales"]
+visible = false
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect9" type="TextureRect" parent="GridMinerales"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_3cuot")
 
 [node name="Label9" type="Label" parent="GridMinerales"]
+visible = false
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect10" type="TextureRect" parent="GridMinerales"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_ip7uw")
 
 [node name="Label10" type="Label" parent="GridMinerales"]
+visible = false
 layout_mode = 2
-text = ": 0"
-horizontal_alignment = 1
+text = ":0"
 vertical_alignment = 1
 
 [node name="TextureRect11" type="TextureRect" parent="GridMinerales"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_3qif5")
 
 [node name="Label11" type="Label" parent="GridMinerales"]
+visible = false
 layout_mode = 2
-text = ": 0"
+text = ":0"
+vertical_alignment = 1
+
+[node name="TextureRect7" type="TextureRect" parent="GridMinerales"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_udvxe")
+
+[node name="Label7" type="Label" parent="GridMinerales"]
+visible = false
+layout_mode = 2
+text = ":0"
+vertical_alignment = 1
+
+[node name="FinalizarDia" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.151
+anchor_top = 0.18
+anchor_right = 0.849
+anchor_bottom = 0.82
+offset_left = 0.0399933
+offset_top = -0.100006
+offset_right = -0.0400391
+offset_bottom = 0.0999756
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_catcj")
+script = ExtResource("6_6ps5f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FinalizarDia"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="HbMejoras" type="HBoxContainer" parent="FinalizarDia/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="FinalizarDia/VBoxContainer"]
+layout_mode = 2
+
+[node name="Btn_finalizar_dia" type="Button" parent="FinalizarDia/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "FINALIZAR DIA"
+
+[node name="AudioFinDiaBien" type="AudioStreamPlayer" parent="FinalizarDia"]
+stream = ExtResource("14_bi36g")
+volume_db = -5.0
+pitch_scale = 1.01
+
+[node name="Gameover" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.173
+anchor_top = 0.18
+anchor_right = 0.849
+anchor_bottom = 0.82
+offset_left = -21.08
+offset_top = -0.100006
+offset_right = -0.0400391
+offset_bottom = 0.0999756
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qls4k")
+script = ExtResource("12_1lmnk")
+
+[node name="CenterContainer" type="CenterContainer" parent="Gameover"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameover/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "!HAS CAIDO EN 
+BANCARROTA!"
+label_settings = SubResource("LabelSettings_yrvle")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FinalizarDia" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 196.0
-offset_top = 148.0
-offset_right = 785.0
-offset_bottom = 540.0
-mouse_filter = 2
-script = ExtResource("6_6ps5f")
-
-[node name="GridContainerMejoras" type="GridContainer" parent="FinalizarDia"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.998
-anchor_bottom = 0.997
-offset_right = 0.177979
-offset_bottom = -88.824
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 16
-columns = 3
-
-[node name="CenterContainer" type="CenterContainer" parent="FinalizarDia"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.002
-anchor_top = 0.781
-anchor_right = 1.0
-anchor_bottom = 0.997
-offset_left = 0.178
-offset_top = -0.152008
-offset_bottom = 0.175995
-
-[node name="Btn_finalizar_dia" type="Button" parent="FinalizarDia/CenterContainer"]
+[node name="Btn_reintentar" type="Button" parent="Gameover/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(260, 64)
 layout_mode = 2
-text = "FINALIZAR DIA"
+text = "REINTENTAR"
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 636.0
-offset_right = 46.0
-offset_bottom = 659.0
-text = "FPS"
-script = ExtResource("7_xpxm3")
+[node name="AudioGameover" type="AudioStreamPlayer" parent="Gameover"]
+stream = ExtResource("15_uh00d")
+volume_db = -11.0
+pitch_scale = 0.99
 
-[connection signal="pressed" from="FinalizarDia/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
+[connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
+[connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
+[connection signal="pressed" from="Gameover/CenterContainer/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]

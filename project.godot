@@ -13,6 +13,9 @@ config_version=5
 config/name="Un-gamejam 2"
 run/main_scene="res://Escenas/game_start.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -27,8 +30,13 @@ GlobalRecetas="*res://Logica/Globales/GlobalRecetas.gd"
 
 window/size/viewport_width=960
 window/size/viewport_height=720
-window/stretch/mode="viewport"
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg")
 
 [input]
 
@@ -64,3 +72,9 @@ ui_down={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
 ]
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
