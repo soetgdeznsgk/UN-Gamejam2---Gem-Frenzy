@@ -1,0 +1,309 @@
+[gd_scene load_steps=18 format=3 uid="uid://cgjgcfv42vp3u"]
+
+[ext_resource type="Script" path="res://Escenas/tutorial.gd" id="1_151xy"]
+[ext_resource type="Texture2D" uid="uid://dsunx5u8lw85s" path="res://Sprites/flechatuto_arriba.png" id="1_ki1j8"]
+[ext_resource type="Texture2D" uid="uid://drri0e1ban0w6" path="res://Sprites/flechatuto.png" id="2_darmo"]
+[ext_resource type="Texture2D" uid="uid://bddixrpvfvrdx" path="res://Sprites/flechatuto_izquierdal.png" id="3_ol0b8"]
+[ext_resource type="Texture2D" uid="uid://6bgdj62hj24m" path="res://Sprites/fondo ui.png" id="4_tcss4"]
+[ext_resource type="Texture2D" uid="uid://bm28a88bygytl" path="res://Sprites/Player/pancha_caminando.png" id="5_1nk44"]
+[ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="6_e3w21"]
+[ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_f4hkv"]
+[ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="8_03dbu"]
+[ext_resource type="Texture2D" uid="uid://bqjqpati2ea0g" path="res://Sprites/Mapa/hornito.png" id="9_02203"]
+[ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="9_x6jwh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nm1fq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlika"]
+texture = ExtResource("4_tcss4")
+separation = Vector2i(20, 20)
+texture_region_size = Vector2i(100, 100)
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dbxlv"]
+tile_size = Vector2i(100, 100)
+sources/1 = SubResource("TileSetAtlasSource_qlika")
+
+[sub_resource type="Animation" id="Animation_ks45y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Panchasprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(62, 56)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../flechita izquierda:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../flechita derecha:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Panchasprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../flechita arriba:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Cofrepro:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ai741"]
+resource_name = "pancha_receta"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Panchasprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 0, 1, 2, 3, 0, 1, 2, 3, 0, 4, 5, 6, 7, 4, 5, 6, 7, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Panchasprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 2.2, 3, 4.6, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(62, 56), Vector2(62, 56), Vector2(262, 56), Vector2(262, 56), Vector2(62, 56), Vector2(62, 56)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../flechita derecha:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.6, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../flechita izquierda:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Cofrepro:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../flechita arriba:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Panchasprite/mineral2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qho3r"]
+_data = {
+"RESET": SubResource("Animation_ks45y"),
+"pancha_receta": SubResource("Animation_ai741")
+}
+
+[node name="Tutorial" type="Control" node_paths=PackedStringArray("APtutorial")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 109.0
+offset_top = 94.0
+offset_right = 357.0
+offset_bottom = 316.0
+script = ExtResource("1_151xy")
+APtutorial = NodePath("AnimationPlayer")
+
+[node name="Pancha Gif" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.677
+anchor_top = 0.167
+anchor_right = 0.677
+anchor_bottom = 0.167
+offset_left = 93.104
+offset_top = 286.926
+offset_right = 345.104
+offset_bottom = 499.926
+theme_override_styles/panel = SubResource("StyleBoxTexture_nm1fq")
+
+[node name="flechita arriba" type="Sprite2D" parent="Pancha Gif"]
+position = Vector2(128.158, 160.162)
+rotation = 1.5708
+scale = Vector2(3.742, 4.437)
+texture = ExtResource("1_ki1j8")
+hframes = 2
+
+[node name="flechita derecha" type="Sprite2D" parent="Pancha Gif"]
+position = Vector2(206.158, 184.162)
+scale = Vector2(3.74167, 3.74167)
+texture = ExtResource("2_darmo")
+hframes = 2
+
+[node name="flechita izquierda" type="Sprite2D" parent="Pancha Gif"]
+position = Vector2(46.1584, 184.162)
+scale = Vector2(3.74167, 3.74167)
+texture = ExtResource("3_ol0b8")
+hframes = 2
+
+[node name="TileMap fondo" type="TileMap" parent="Pancha Gif"]
+z_index = -1
+position = Vector2(-69, -145)
+tile_set = SubResource("TileSet_dbxlv")
+format = 2
+layer_0/tile_data = PackedInt32Array(131071, 1, 0, 65536, 65537, 0, 65537, 65537, 0, 196607, 1, 1, 131072, 65537, 1, 131073, 65537, 1, 131074, 65537, 1, 65538, 65537, 0, 65539, 65537, 0, 131075, 65537, 1, 196612, 131073, 2, 262143, 1, 2, 65540, 131073, 0, 131076, 131073, 1, 196608, 65537, 2, 196609, 65537, 2, 196610, 65537, 2, 196611, 65537, 2)
+
+[node name="Panchasprite" type="Sprite2D" parent="Pancha Gif"]
+position = Vector2(62, 56)
+scale = Vector2(3.86111, 3.86111)
+texture = ExtResource("5_1nk44")
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="mineral2" type="Sprite2D" parent="Pancha Gif/Panchasprite"]
+position = Vector2(0.517984, -13.4676)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("7_f4hkv")
+hframes = 6
+vframes = 2
+
+[node name="Cofrepro" type="Sprite2D" parent="Pancha Gif"]
+position = Vector2(-24, 59)
+scale = Vector2(3.86111, 3.86111)
+texture = ExtResource("6_e3w21")
+hframes = 2
+
+[node name="mineral" type="Sprite2D" parent="Pancha Gif/Cofrepro"]
+position = Vector2(0.518, 4.71799)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("7_f4hkv")
+hframes = 6
+vframes = 2
+
+[node name="hornopro" type="Sprite2D" parent="Pancha Gif"]
+position = Vector2(334, 65)
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("9_02203")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Pancha Gif/TileMap fondo")
+libraries = {
+"": SubResource("AnimationLibrary_qho3r")
+}
+
+[node name="Objetivo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 467.0
+offset_top = -16.0
+offset_right = 613.0
+offset_bottom = -1.0
+text = "OBJETIVO"
+
+[node name="Objetivotexto" type="Label" parent="Objetivo"]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 159.0
+offset_bottom = 80.0
+theme = ExtResource("8_03dbu")
+theme_override_fonts/font = ExtResource("9_x6jwh")
+text = "Agarra hierro y carbon"

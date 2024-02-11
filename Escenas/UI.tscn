@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=43 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -16,8 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
-[ext_resource type="Texture2D" uid="uid://bm28a88bygytl" path="res://Sprites/Player/pancha_caminando.png" id="14_nw5ea"]
-[ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="14_vgcfi"]
+[ext_resource type="PackedScene" uid="uid://cgjgcfv42vp3u" path="res://Escenas/tutorial.tscn" id="14_uh3r7"]
 [ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
 [ext_resource type="Texture2D" uid="uid://ctj4obkn3i1bo" path="res://Sprites/UI/Icon_Next.png" id="19_i0nsn"]
@@ -134,8 +133,6 @@ region = Rect2(31, 13, 8, 8)
 [sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(58, 4, 8, 8)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nm1fq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_catcj"]
 bg_color = Color(0.439216, 0.439216, 0.439216, 0.772549)
@@ -433,50 +430,10 @@ layout_mode = 2
 text = ":0"
 vertical_alignment = 1
 
-[node name="Tutorial" type="Control" parent="."]
-layout_mode = 2
-anchors_preset = 0
-offset_left = 109.0
-offset_top = 94.0
-offset_right = 357.0
-offset_bottom = 316.0
-
-[node name="Pancha Gif" type="PanelContainer" parent="Tutorial"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.677
-anchor_top = 0.167
-anchor_right = 0.677
-anchor_bottom = 0.167
-offset_left = -136.896
-offset_top = -61.074
-offset_right = 60.104
-offset_bottom = 94.926
-theme_override_styles/panel = SubResource("StyleBoxTexture_nm1fq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Tutorial/Pancha Gif"]
-position = Vector2(62, 56)
-scale = Vector2(3.86111, 3.86111)
-texture = ExtResource("14_nw5ea")
-hframes = 4
-vframes = 2
-
-[node name="Objetivo" type="Label" parent="Tutorial"]
-layout_mode = 0
-offset_left = 257.0
-offset_top = -22.0
-offset_right = 403.0
-offset_bottom = -7.0
-text = "OBJETIVO"
-
-[node name="Objetivotexto" type="Label" parent="Tutorial/Objetivo"]
-layout_mode = 0
-offset_top = 25.0
-offset_right = 159.0
-offset_bottom = 80.0
-theme = ExtResource("1_4vip0")
-theme_override_fonts/font = ExtResource("14_vgcfi")
-text = "Agarra hierro y carbon"
+[node name="Tutorial" parent="." instance=ExtResource("14_uh3r7")]
+visible = true
+offset_left = 112.0
+offset_top = 136.0
 
 [node name="FinalizarDia" type="PanelContainer" parent="."]
 unique_name_in_owner = true

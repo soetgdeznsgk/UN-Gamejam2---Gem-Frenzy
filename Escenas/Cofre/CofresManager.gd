@@ -2,6 +2,7 @@ extends Node
 
 func _ready():
 	GlobalTiempo.iniciarDia.connect(actualizar_cofres)
+	#GlobalTuto.actualizarrecursostutorial.connect(actualizar_cofres)
 	for i in range(get_child_count()):
 		#get_child(i).material_almacenado = i
 		get_child(i).actualizar()

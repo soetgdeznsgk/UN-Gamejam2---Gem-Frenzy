@@ -27,6 +27,7 @@ OrderManager="*res://OrderManager/OrderManager.gd"
 GlobalRecetas="*res://Logica/Globales/GlobalRecetas.gd"
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 GlobalFirebaseInfo="*res://Logica/Globales/GlobalFirebaseInfo.gd"
+GlobalTuto="*res://Logica/Globales/GlobalTuto.gd"
 
 [display]
 

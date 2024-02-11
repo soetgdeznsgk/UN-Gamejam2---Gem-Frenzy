@@ -23,7 +23,8 @@ func generar_cliente():
 		var temp = cliente.instantiate()
 		temp.position = position
 		get_parent().add_child.call_deferred(temp)
-
+	if GlobalTuto.tutorial:
+		$Timer.stop()
 func _on_timer_timeout():
 	if len(OrderManager.currentOrders) > 0:
 		$Timer.wait_time = randi() % (7) + randi_range(7,tiempo_min_entre_clientes) - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
