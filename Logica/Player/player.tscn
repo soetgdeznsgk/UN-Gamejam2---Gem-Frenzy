@@ -904,6 +904,7 @@ shape = SubResource("RectangleShape2D_fsbbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+rotation = 0.785398
 texture = ExtResource("3_2eiir")
 hframes = 4
 vframes = 2

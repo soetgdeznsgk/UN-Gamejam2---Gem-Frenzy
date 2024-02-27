@@ -431,7 +431,6 @@ text = ":0"
 vertical_alignment = 1
 
 [node name="Tutorial" parent="." instance=ExtResource("14_uh3r7")]
-visible = true
 offset_left = 112.0
 offset_top = 136.0
 
