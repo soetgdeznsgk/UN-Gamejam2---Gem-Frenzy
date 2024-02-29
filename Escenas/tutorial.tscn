@@ -846,6 +846,17 @@ tracks/17/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../..")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_wug5j"]
 resource_name = "pancha_taladrando"
@@ -1143,10 +1154,10 @@ tracks/3/path = NodePath("../Cofres/Cofreh:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [0]
+"values": []
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1239,10 +1250,10 @@ tracks/11/path = NodePath("../Cofres/CofreC:frame")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 1.4, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [0, 1, 0]
+"values": []
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -1251,10 +1262,10 @@ tracks/12/path = NodePath("../Panchasprite:texture")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [ExtResource("5_1nk44")]
+"values": []
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -1315,6 +1326,29 @@ tracks/17/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../Panchasprite:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(262, 56)]
+}
+tracks/19/type = "method"
+tracks/19/imported = false
+tracks/19/enabled = false
+tracks/19/path = NodePath("../..")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qho3r"]
@@ -1439,7 +1473,7 @@ hframes = 6
 vframes = 2
 
 [node name="Panchasprite" type="Sprite2D" parent="Pancha Gif"]
-position = Vector2(62, 56)
+position = Vector2(262, 56)
 scale = Vector2(3.86111, 3.86111)
 texture = ExtResource("5_1nk44")
 hframes = 4
