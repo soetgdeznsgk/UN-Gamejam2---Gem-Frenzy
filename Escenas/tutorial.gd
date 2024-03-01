@@ -13,7 +13,8 @@ func _ready():
 
 func animar_taladrando():
 	APtutorial.play("pancha_taladrando")
-	
+func animar_entrega():
+	APtutorial.play("pancha_entrega")
 func set_last_state(transicion:String):
 	var lastPosition=$"Pancha Gif/Panchasprite".position
 	var lastFrame=$"Pancha Gif/Panchasprite".frame
