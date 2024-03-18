@@ -85,11 +85,13 @@ func llenar_recetas() -> void:
 
 func _on_new_customer(customer : Cliente) -> void:
 	var tempOrder = OrderGem.new(recetas.pick_random(), customer)
+
 	currentOrders.append(tempOrder)
 	new_order.emit(tempOrder)
 	
 	
 func _on_order_delivered(plata : int) -> void:
 	@warning_ignore("integer_division")
-	GlobalRecursos.actualizar_dinero(int(plata + ((plata / 4) * GlobalMejoras.activas_mejoras[2] + 1 * GlobalMejoras.activas_mejoras[2]))) # cada nivel de la mejora de dinero agrega 25% más al precio de cada receta +1
+	GlobalRecursos.actualizar_dinero(int(plata + ((plata / 4) * GlobalMejoras.activas_mejoras[2] + 1 * GlobalMejoras.activas_mejoras[2])))
+	#if GlobalTuto.tutorial and GlobalTuto # cada nivel de la mejora de dinero agrega 25% más al precio de cada receta +1
 

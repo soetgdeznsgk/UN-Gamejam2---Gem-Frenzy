@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=47 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -18,8 +18,10 @@
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
 [ext_resource type="PackedScene" uid="uid://cgjgcfv42vp3u" path="res://Escenas/tutorial.tscn" id="14_uh3r7"]
 [ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
+[ext_resource type="Texture2D" uid="uid://qaf22q1pwdp3" path="res://Sprites/Menu/finish_1.png" id="16_y6f0v"]
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
 [ext_resource type="Texture2D" uid="uid://ctj4obkn3i1bo" path="res://Sprites/UI/Icon_Next.png" id="19_i0nsn"]
+[ext_resource type="Texture2D" uid="uid://w3om1b0fedkn" path="res://Sprites/Menu/retry_1.png" id="21_m32au"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
 atlas = ExtResource("7_q4w3t")
@@ -142,6 +144,9 @@ border_width_right = 8
 border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nv8xj"]
+texture = ExtResource("16_y6f0v")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
 bg_color = Color(0, 0, 0, 0.388235)
 border_width_left = 8
@@ -174,6 +179,9 @@ outline_color = Color(0, 0, 0, 1)
 line_spacing = 12.0
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2g8v"]
+texture = ExtResource("21_m32au")
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -470,7 +478,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "FINALIZAR DIA"
+theme_override_styles/normal = SubResource("StyleBoxTexture_nv8xj")
 
 [node name="AudioFinDiaBien" type="AudioStreamPlayer" parent="FinalizarDia"]
 stream = ExtResource("14_bi36g")
@@ -628,7 +636,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 2.0
-text = "REINTENTAR"
+theme_override_styles/normal = SubResource("StyleBoxTexture_w2g8v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 process_mode = 3

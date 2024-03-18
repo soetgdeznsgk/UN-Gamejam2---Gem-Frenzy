@@ -17,6 +17,9 @@ func Cocinar():
 		playerRef.receta_en_mano = receta
 		$AudioStreamPlayer.pitch_scale = 1.01
 		$AudioStreamPlayer.play(0)
+		if GlobalTuto.tutorial and GlobalTuto.FlagRecetaOrden:
+			GlobalTuto.recetaToOrden.emit()
+			
 	else:
 		$AudioStreamPlayer.pitch_scale = 0.65
 		$AudioStreamPlayer.play(0)
