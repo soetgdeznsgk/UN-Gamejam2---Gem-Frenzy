@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cgjgcfv42vp3u"]
+[gd_scene load_steps=37 format=3 uid="uid://cgjgcfv42vp3u"]
 
 [ext_resource type="Script" path="res://Escenas/tutorial.gd" id="1_151xy"]
 [ext_resource type="Texture2D" uid="uid://dsunx5u8lw85s" path="res://Sprites/flechatuto_arriba.png" id="1_ki1j8"]
@@ -12,9 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_f4hkv"]
 [ext_resource type="Texture2D" uid="uid://bcgo0i8bdjnnc" path="res://Sprites/Mapa/scaleras 16x16.png" id="7_ix3pd"]
 [ext_resource type="Script" path="res://Escenas/GEMAS.gd" id="7_n1ktx"]
-[ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="8_03dbu"]
+[ext_resource type="Shader" path="res://Escenas/cortarpancha.gdshader" id="8_bfapb"]
 [ext_resource type="Texture2D" uid="uid://bqjqpati2ea0g" path="res://Sprites/Mapa/hornito.png" id="9_02203"]
-[ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="9_x6jwh"]
 [ext_resource type="Texture2D" uid="uid://d4b37i4g7p2yr" path="res://Sprites/Recursos/Recetas.png" id="10_6u6h7"]
 [ext_resource type="Texture2D" uid="uid://dc78ydgr4yll5" path="res://Sprites/Mapa/Recepcion.png" id="11_giahr"]
 [ext_resource type="Texture2D" uid="uid://ywnr3vrm6gnx" path="res://Sprites/Mapa/clientes/Clientepelinaranja.png" id="12_5f7lk"]
@@ -73,19 +72,22 @@ separation = Vector2i(0, 2)
 [sub_resource type="TileSet" id="TileSet_flvu7"]
 sources/0 = SubResource("TileSetAtlasSource_fpwxn")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fama5"]
+shader = ExtResource("8_bfapb")
+
 [sub_resource type="Animation" id="Animation_ks45y"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Panchasprite:position")
+tracks/0/path = NodePath("../Control/Panchasprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector2(62, 56)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -114,7 +116,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Panchasprite:frame")
+tracks/3/path = NodePath("../Control/Panchasprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -186,7 +188,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Panchasprite:vframes")
+tracks/9/path = NodePath("../Control/Panchasprite:vframes")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -198,7 +200,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Panchasprite:rotation")
+tracks/10/path = NodePath("../Control/Panchasprite:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -210,7 +212,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../Panchasprite:hframes")
+tracks/11/path = NodePath("../Control/Panchasprite:hframes")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -246,7 +248,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../Panchasprite:texture")
+tracks/14/path = NodePath("../Control/Panchasprite:texture")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -258,7 +260,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../Panchasprite:region_rect")
+tracks/15/path = NodePath("../Control/Panchasprite:region_rect")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -267,238 +269,53 @@ tracks/15/keys = {
 "update": 0,
 "values": [Rect2(0, 0, 66, 10)]
 }
-
-[sub_resource type="Animation" id="Animation_4wqyn"]
-resource_name = "entrega_to_taladrando"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Panchasprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Panchasprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-9, 71)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../flechitas/flechita derecha:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../flechitas/flechita izquierda:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../flechitas/flechita arriba:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Panchasprite/hierropancha:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Panchasprite/Receta:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Pancha entrega:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Panchasprite/carbonpancha:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Cofres:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Panchasprite:texture")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("5_1nk44"), ExtResource("6_v5ykq")]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../hornopro:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../flechitas:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(54, 114)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("..:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(250, 320), Vector2(250, 800), Vector2(175, -570), Vector2(175, -90)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath(".:scale")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1.3, 1.3)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("..:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../GEMAS:visible")
+tracks/16/path = NodePath("../Control:clip_contents")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [false]
 }
-tracks/17/type = "method"
+tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../..")
+tracks/17/path = NodePath("../Control:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"animar_taladrando"
-}]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../TileMap tierrita:visible")
+tracks/18/path = NodePath("../Control/Sprite2D:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../Control/TileMap tierrita2:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ss8df"]
@@ -508,7 +325,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Panchasprite:frame")
+tracks/0/path = NodePath("../Control/Panchasprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -520,7 +337,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Panchasprite:position")
+tracks/1/path = NodePath("../Control/Panchasprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -568,7 +385,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Panchasprite/hierropancha:visible")
+tracks/5/path = NodePath("../Control/Panchasprite/hierropancha:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -580,7 +397,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Panchasprite/Receta:visible")
+tracks/6/path = NodePath("../Control/Panchasprite/Receta:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -604,7 +421,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Panchasprite/carbonpancha:visible")
+tracks/8/path = NodePath("../Control/Panchasprite/carbonpancha:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -628,7 +445,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Panchasprite:texture")
+tracks/10/path = NodePath("../Control/Panchasprite:texture")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -685,6 +502,359 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../Control/TileMap tierrita2:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Control/Sprite2D:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../Control:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4o3yv"]
+resource_name = "pancha_escalera"
+length = 5.0
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Control/Panchasprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5, 5.0001, 5.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 0, 1, 2, 3, 0, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 3, 2, 7, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Control/Panchasprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 2.2, 2.6, 4, 4.2, 4.4, 5, 5.2, 5.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(62, 56), Vector2(62, 56), Vector2(335, 56), Vector2(335, 56), Vector2(335, 300), Vector2(198.5, 92.25), Vector2(62, -24.5), Vector2(62, 52), Vector2(62, 56), Vector2(62, 56)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../flechitas/flechita derecha:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.6, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../flechitas/flechita izquierda:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../flechitas/flechita arriba:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Control/Panchasprite/hierropancha:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Pancha entrega:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Control/Panchasprite/carbonpancha:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Control/Panchasprite/Receta:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Cofres:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Control/Panchasprite:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_1nk44"), ExtResource("19_fmy6q")]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../hornopro:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../flechitas:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("..:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(250, 320)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath(".:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../..")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Cofres/CofreC:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../Control/Panchasprite:vframes")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = false
+tracks/18/path = NodePath("../Control/Panchasprite:region_enabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 3.8, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = false
+tracks/19/path = NodePath("../Control/Panchasprite:region_rect")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 3.6, 3.8, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 66, 11.8192), Rect2(0, 0, 66, 11.8192), Rect2(0, 0, 66, 17.136), Rect2(0, 0, 66, 10.42)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Control/Panchasprite:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Control:clip_contents")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Control:size")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(409, 249)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../Control:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 3.98322),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -20), Vector2(0, -20)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../Control/TileMap tierrita2:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../Control/Sprite2D:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ai741"]
 resource_name = "pancha_receta"
@@ -694,7 +864,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Panchasprite:frame")
+tracks/0/path = NodePath("../Control/Panchasprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -706,7 +876,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Panchasprite:position")
+tracks/1/path = NodePath("../Control/Panchasprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -766,7 +936,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Panchasprite/hierropancha:visible")
+tracks/6/path = NodePath("../Control/Panchasprite/hierropancha:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -802,7 +972,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Panchasprite/carbonpancha:visible")
+tracks/9/path = NodePath("../Control/Panchasprite/carbonpancha:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -814,7 +984,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Panchasprite/Receta:visible")
+tracks/10/path = NodePath("../Control/Panchasprite/Receta:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -850,7 +1020,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../Panchasprite:texture")
+tracks/13/path = NodePath("../Control/Panchasprite:texture")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -938,7 +1108,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Panchasprite:frame")
+tracks/0/path = NodePath("../Control/Panchasprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -950,7 +1120,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Panchasprite:position")
+tracks/1/path = NodePath("../Control/Panchasprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -998,7 +1168,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Panchasprite/hierropancha:visible")
+tracks/5/path = NodePath("../Control/Panchasprite/hierropancha:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1010,7 +1180,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Panchasprite/Receta:visible")
+tracks/6/path = NodePath("../Control/Panchasprite/Receta:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1034,7 +1204,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Panchasprite/carbonpancha:visible")
+tracks/8/path = NodePath("../Control/Panchasprite/carbonpancha:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1058,7 +1228,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Panchasprite:texture")
+tracks/10/path = NodePath("../Control/Panchasprite:texture")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1094,7 +1264,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../Panchasprite:vframes")
+tracks/13/path = NodePath("../Control/Panchasprite:vframes")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -1106,7 +1276,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../Panchasprite:rotation")
+tracks/14/path = NodePath("../Control/Panchasprite:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -1118,7 +1288,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../Panchasprite:hframes")
+tracks/15/path = NodePath("../Control/Panchasprite:hframes")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -1180,13 +1350,27 @@ tracks/18/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/19/type = "method"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../..")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(11),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_endtaladrando"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ng46v"]
 resource_name = "receta_to_entrega"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Panchasprite:frame")
+tracks/0/path = NodePath("../Control/Panchasprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1246,7 +1430,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Panchasprite/hierropancha:visible")
+tracks/5/path = NodePath("../Control/Panchasprite/hierropancha:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1282,7 +1466,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Panchasprite/carbonpancha:visible")
+tracks/8/path = NodePath("../Control/Panchasprite/carbonpancha:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1294,7 +1478,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Panchasprite/Receta:visible")
+tracks/9/path = NodePath("../Control/Panchasprite/Receta:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1330,7 +1514,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../Panchasprite:texture")
+tracks/12/path = NodePath("../Control/Panchasprite:texture")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -1402,7 +1586,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../Panchasprite:position")
+tracks/18/path = NodePath("../Control/Panchasprite:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -1438,82 +1622,79 @@ tracks/20/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_4o3yv"]
-resource_name = "pancha_escalera"
-length = 5.0
-loop_mode = 1
-step = 0.2
+[sub_resource type="Animation" id="Animation_nvjsm"]
+resource_name = "entrega_to_escalera"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Panchasprite:frame")
+tracks/0/path = NodePath("../Control/Panchasprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 5, 5.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 0, 1, 2, 3, 0, 1, 2, 3, 0, 0, 1, 2, 3, 0, 1, 2, 3, 7, 4]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Panchasprite:position")
+tracks/1/path = NodePath("../flechitas/flechita derecha:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 2.2, 2.6, 3.8, 4, 4.2, 5.2, 5.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(62, 56), Vector2(62, 56), Vector2(335, 56), Vector2(335, 56), Vector2(335, 196), Vector2(335, 210), Vector2(335, 260), Vector2(62, 56), Vector2(62, 56)]
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../flechitas/flechita derecha:frame")
+tracks/2/path = NodePath("../flechitas/flechita izquierda:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.6, 1.4, 2, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 0, 1, 0]
+"values": [0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../flechitas/flechita izquierda:frame")
+tracks/3/path = NodePath("../flechitas/flechita arriba:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3.6, 4.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 0]
+"values": [0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../flechitas/flechita arriba:frame")
+tracks/4/path = NodePath("../Control/Panchasprite/hierropancha:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.4, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1, 0, 1, 0]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Panchasprite/hierropancha:visible")
+tracks/5/path = NodePath("../Cofres/Cofreh:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2, 3.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true, false]
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1522,15 +1703,15 @@ tracks/6/path = NodePath("../Pancha entrega:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Panchasprite/carbonpancha:visible")
+tracks/7/path = NodePath("../Control/Panchasprite/carbonpancha:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1542,11 +1723,11 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Panchasprite/Receta:visible")
+tracks/8/path = NodePath("../Control/Panchasprite/Receta:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -1558,22 +1739,22 @@ tracks/9/path = NodePath("../Cofres:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Panchasprite:texture")
+tracks/10/path = NodePath("../Control/Panchasprite:texture")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 2.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_1nk44"), ExtResource("19_fmy6q")]
+"values": [ExtResource("5_1nk44")]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -1582,10 +1763,10 @@ tracks/11/path = NodePath("../hornopro:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -1606,10 +1787,10 @@ tracks/13/path = NodePath("..:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(250, 320)]
+"values": [Vector2(250, 320), Vector2(-600, 320), Vector2(1000, 320), Vector2(250, 320)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -1623,70 +1804,403 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-tracks/15/type = "method"
+tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../..")
+tracks/15/path = NodePath("..:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../Cofres/CofreC:visible")
+tracks/16/path = NodePath("../Control/Panchasprite:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.6),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(62, 56)]
 }
-tracks/17/type = "value"
+tracks/17/type = "method"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../Panchasprite:vframes")
+tracks/17/path = NodePath("../..")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 2.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 1]
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animar_escalera"
+}]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../Panchasprite:region_enabled")
+tracks/18/path = NodePath("../Cofres/CofreC:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 3.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [false]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("../Panchasprite:region_rect")
+tracks/19/path = NodePath("../Control:clip_contents")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(3.8, 4),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Control:size")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 66, 17), Rect2(0, 0, 66, 10)]
+"values": [Vector2(409, 249), Vector2(409, 249)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Control:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.6, 3.98322),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, -20)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Control/TileMap tierrita2:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../Control/Sprite2D:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_4wqyn"]
+resource_name = "escalera_to_taladrando"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Control/Panchasprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Control/Panchasprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(62, 56), Vector2(62, 56), Vector2(-9, 71)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Control/Panchasprite/hierropancha:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Control/Panchasprite/Receta:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Pancha entrega:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Control/Panchasprite/carbonpancha:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Cofres:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../hornopro:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../flechitas:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(54, 114)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("..:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(250, 320), Vector2(250, 800), Vector2(175, -570), Vector2(175, -90)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1.3, 1.3)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("..:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../GEMAS:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animar_taladrando"
+}]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../TileMap tierrita:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../Control:clip_contents")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Control:size")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(409, 249), Vector2(409, 249)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../Control:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.6, 3.98322),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -20), Vector2(0, 0), Vector2(0, -20)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../Control/TileMap tierrita2:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../Control/Sprite2D:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Control/Panchasprite:texture")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 4.6, 5.4, 10.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_1nk44"), ExtResource("5_1nk44"), ExtResource("14_4thhl"), ExtResource("15_738bs"), ExtResource("6_v5ykq"), ExtResource("15_738bs")]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Control/Panchasprite:vframes")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 4.6, 5.4, 10.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 2, 1, 1, 2, 1]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Control/Panchasprite:hframes")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 4, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qho3r"]
 _data = {
 "RESET": SubResource("Animation_ks45y"),
-"entrega_to_taladrando": SubResource("Animation_4wqyn"),
+"entrega_to_escalera": SubResource("Animation_nvjsm"),
+"escalera_to_taladrando": SubResource("Animation_4wqyn"),
 "pancha_entrega": SubResource("Animation_ss8df"),
 "pancha_escalera": SubResource("Animation_4o3yv"),
 "pancha_receta": SubResource("Animation_ai741"),
@@ -1699,8 +2213,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 109.0
 offset_top = 94.0
-offset_right = 357.0
-offset_bottom = 316.0
+offset_right = 682.0
+offset_bottom = 447.0
 script = ExtResource("1_151xy")
 APtutorial = NodePath("AnimationPlayer")
 
@@ -1743,13 +2257,6 @@ scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_hjldc")
 format = 2
 layer_0/tile_data = PackedInt32Array(327693, 327680, 1, 327677, 327680, 1, 131074, 327680, 1, 196618, 327680, 1, 393225, 327680, 1, 131079, 327680, 1, 196605, 327680, 1, 262141, 327680, 1, 327678, 327680, 1, 262142, 327680, 1, 196606, 327680, 1, 196607, 327680, 1, 131072, 327680, 1, 131073, 327680, 1, 131075, 327680, 1, 131076, 327680, 1, 131077, 327680, 1, 131078, 327680, 1, 131080, 327680, 1, 131081, 327680, 1, 131082, 327680, 1, 131083, 327680, 1, 131084, 327680, 1, 196620, 327680, 1, 262157, 327680, 1, 327692, 327680, 1, 262156, 327680, 1, 262155, 327680, 1, 196619, 327680, 1, 196617, 327680, 1, 196616, 327680, 1, 196615, 327680, 1, 196608, 327680, 1, 262143, 327680, 1, 196609, 327680, 1, 196610, 327680, 1, 196611, 327680, 1, 196612, 327680, 1, 196613, 327680, 1, 196614, 327680, 1, 262150, 327680, 1, 262149, 327680, 1, 262148, 327680, 1, 262147, 327680, 1, 262146, 327680, 1, 262145, 327680, 1, 262144, 327680, 1, 327679, 327680, 1, 393213, 327680, 1, 393214, 327680, 1, 393215, 327680, 1, 327680, 327680, 1, 327681, 327680, 1, 327682, 327680, 1, 327683, 327680, 1, 327684, 327680, 1, 327685, 327680, 1, 327686, 327680, 1, 327687, 327680, 1, 262151, 327680, 1, 262152, 327680, 1, 262153, 327680, 1, 327689, 327680, 1, 327688, 327680, 1, 327690, 327680, 1, 262154, 327680, 1, 327691, 327680, 1, 393227, 327680, 1, 393226, 327680, 1, 393228, 327680, 1, 393224, 327680, 1, 393223, 327680, 1, 393222, 327680, 1, 393221, 327680, 1, 393220, 327680, 1, 393219, 327680, 1, 393218, 327680, 1, 393217, 327680, 1, 393216, 327680, 1, 458751, 327680, 1, 458750, 327680, 1, 458753, 327680, 1, 458754, 327680, 1, 458755, 327680, 1, 458756, 327680, 1, 458757, 327680, 1, 458762, 327680, 1, 458763, 327680, 1, 458761, 327680, 1, 458760, 327680, 1, 458759, 327680, 1, 458758, 327680, 1, 524286, 327680, 1, 524287, 327680, 1, 458752, 327680, 1, 196621, 327680, 1, 262140, 327680, 1, 327676, 327680, 1, 393212, 327680, 1, 458748, 327680, 1, 458749, 327680, 1, 524285, 327680, 1, 458764, 327680, 1, 393229, 327680, 1, 458765, 327680, 1, 131085, 327680, 1, 196622, 327680, 1, 262158, 327680, 1, 327694, 327680, 1, 393230, 327680, 1)
-
-[node name="TileMap tierrita2" type="TileMap" parent="Pancha Gif"]
-position = Vector2(48, -30)
-scale = Vector2(4, 4)
-tile_set = SubResource("TileSet_flvu7")
-format = 2
-layer_0/tile_data = PackedInt32Array(65540, 0, 0, 131076, 0, 1, 196612, 0, 2)
 
 [node name="GEMAS" type="Node2D" parent="Pancha Gif"]
 visible = false
@@ -1812,17 +2319,39 @@ texture = ExtResource("7_f4hkv")
 hframes = 6
 vframes = 2
 
-[node name="Panchasprite" type="Sprite2D" parent="Pancha Gif"]
-position = Vector2(213.036, 168.862)
+[node name="Control" type="Control" parent="Pancha Gif"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 409.0
+offset_bottom = 249.0
+
+[node name="TileMap tierrita2" type="TileMap" parent="Pancha Gif/Control"]
+visible = false
+position = Vector2(48, -10)
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_flvu7")
+format = 2
+layer_0/tile_data = PackedInt32Array(65540, 0, 0, 131076, 0, 1, 196612, 0, 1, 262148, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pancha Gif/Control"]
+visible = false
+position = Vector2(62, 34)
+scale = Vector2(3.861, 3.861)
+texture = ExtResource("7_ix3pd")
+vframes = 3
+frame = 2
+
+[node name="Panchasprite" type="Sprite2D" parent="Pancha Gif/Control"]
+material = SubResource("ShaderMaterial_fama5")
+position = Vector2(62, 56)
 scale = Vector2(3.86111, 3.86111)
 texture = ExtResource("5_1nk44")
 hframes = 4
 vframes = 2
-frame = 3
-region_enabled = true
+frame = 6
 region_rect = Rect2(0, 0, 66, 10)
 
-[node name="hierropancha" type="Sprite2D" parent="Pancha Gif/Panchasprite"]
+[node name="hierropancha" type="Sprite2D" parent="Pancha Gif/Control/Panchasprite"]
 visible = false
 position = Vector2(5.69784, -13.9856)
 scale = Vector2(1.02, 1.02)
@@ -1830,7 +2359,7 @@ texture = ExtResource("7_f4hkv")
 hframes = 6
 vframes = 2
 
-[node name="carbonpancha" type="Sprite2D" parent="Pancha Gif/Panchasprite"]
+[node name="carbonpancha" type="Sprite2D" parent="Pancha Gif/Control/Panchasprite"]
 visible = false
 position = Vector2(-4.40288, -13.7266)
 scale = Vector2(1.02, 1.02)
@@ -1839,7 +2368,7 @@ hframes = 6
 vframes = 2
 frame = 3
 
-[node name="Receta" type="Sprite2D" parent="Pancha Gif/Panchasprite"]
+[node name="Receta" type="Sprite2D" parent="Pancha Gif/Control/Panchasprite"]
 visible = false
 position = Vector2(0.0386353, -14.5036)
 scale = Vector2(0.999712, 0.999712)
@@ -1848,7 +2377,6 @@ hframes = 7
 frame = 2
 
 [node name="Cofres" type="Node2D" parent="Pancha Gif"]
-visible = false
 
 [node name="Cofreh" type="Sprite2D" parent="Pancha Gif/Cofres"]
 z_index = -1
@@ -1880,7 +2408,6 @@ vframes = 2
 frame = 3
 
 [node name="hornopro" type="Sprite2D" parent="Pancha Gif"]
-visible = false
 position = Vector2(334, 65)
 scale = Vector2(3.86, 3.86)
 texture = ExtResource("9_02203")
@@ -1909,17 +2436,9 @@ libraries = {
 
 [node name="Objetivo" type="Label" parent="."]
 layout_mode = 0
-offset_left = 403.0
-offset_top = -150.0
-offset_right = 549.0
-offset_bottom = -127.0
-text = "OBJETIVO"
-
-[node name="Objetivotexto" type="Label" parent="Objetivo"]
-layout_mode = 0
-offset_top = 25.0
-offset_right = 159.0
-offset_bottom = 80.0
-theme = ExtResource("8_03dbu")
-theme_override_fonts/font = ExtResource("9_x6jwh")
-text = "Agarra hierro y carbon"
+offset_left = 274.0
+offset_top = -129.0
+offset_right = 401.0
+offset_bottom = -91.0
+theme_override_font_sizes/font_size = 25
+text = "Tutorial"

@@ -103,14 +103,24 @@ func _physics_process(_delta):
 	if movement:
 		if AnimState.get_current_node()=="Escaleras":
 			AnimState.travel("Taladrando_Idle")
+			if GlobalTuto.tutorial && GlobalTuto.FlagEscaleraTaladrando:
+				GlobalTuto.escalerasToTaladrando.emit()
+				movement=false
+				GlobalTuto.FlagEscaleraTaladrando=false
+				await GlobalTuto.endTaladrando
+				movement=true
+				
+				
 		if modolento:
 			SPEED=50
 		else:
 			SPEED=CONST_SPEED
 		velocity = input_direction.normalized() * SPEED
 		move_and_slide()
+		
 	else:
 		AnimState.travel("Escaleras")
+			
 
 
 func _on_area_2d_body_entered(body):
@@ -127,11 +137,14 @@ func _on_area_2d_body_entered(body):
 		tween.tween_callback(_on_tween_callback)
 
 func _on_tween_callback():
-	surface_entered.emit()
-	movement = true
-	SPEED = CONST_SPEED
 	
+	surface_entered.emit()
+	movement = true	
+	SPEED = CONST_SPEED
+#esto es de subir al seugndo piso, lmao	
 func _on_ladder_finish():
+	#print("escalera finalizada?")
+
 	movement = true
 	input_direction = Vector2.ZERO
 	last_move = Vector2.ZERO

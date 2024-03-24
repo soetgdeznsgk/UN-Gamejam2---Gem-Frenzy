@@ -9,7 +9,8 @@ var tween : Tween
 
 func _ready() -> void:
 	GlobalTiempo.finalizarDia.connect(fin_dia)
-
+	if GlobalTuto.tutorial:
+		monitoring=false
 func fin_dia():
 	if tween:
 		tween.stop()
