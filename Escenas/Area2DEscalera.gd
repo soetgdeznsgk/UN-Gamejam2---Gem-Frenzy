@@ -23,6 +23,12 @@ func _process(_delta: float) -> void:
 	if isPlayerHere:
 		if Input.is_action_just_pressed("ui_up") and playerRef.movement == true:
 			tween = get_tree().create_tween()
+			# Esto "pausa" el tween
+			if GlobalTuto.tutorial:
+				#if coso
+				#tween.set_speed_scale(0.01)
+				#else
+				pass
 			playerRef.movement = false
 			tween.tween_property(playerRef, "position:x", position.x, 0.2)
 			tween.tween_property(playerRef, "position:y", 12, 0.55)
