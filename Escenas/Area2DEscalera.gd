@@ -26,7 +26,9 @@ func _process(_delta: float) -> void:
 			# Esto "pausa" el tween
 			if GlobalTuto.tutorial:
 				#if coso
-				#tween.set_speed_scale(0.01)
+				GlobalTuto.escalerasToTaladrando.emit()
+				tween.set_speed_scale(0.07)
+				
 				#else
 				pass
 			playerRef.movement = false
@@ -40,6 +42,8 @@ func _on_tween_callback():
 	playerRef.input_direction = Vector2.ZERO
 	playerRef.last_move=Vector2.ZERO
 	playerRef.recienSalidoEscalera = true
+	if GlobalTuto.tutorial:
+		playerRef.recienSalidoEscalera = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

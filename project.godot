@@ -33,7 +33,8 @@ GlobalTuto="*res://Logica/Globales/GlobalTuto.gd"
 
 window/size/viewport_width=960
 window/size/viewport_height=720
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
 
 [editor_plugins]
