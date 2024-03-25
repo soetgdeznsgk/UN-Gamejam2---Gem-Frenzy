@@ -88,6 +88,5 @@ func _on_botonterminar_pressed():
 	#GlobalTiempo.diaActual=1
 	GlobalTiempo.tiempoHoraDia =  8 # horas
 	GlobalTiempo.tiempoMinutoDia = 0
-	
 	get_tree().change_scene_to_file("res://Escenas/MainJuego.tscn")
 	pass # Replace with function body.
