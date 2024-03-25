@@ -1,6 +1,7 @@
 extends Control
 @export var APtutorial:AnimationPlayer
 var Taladrandoreproducido=false
+var countertaladrando=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if GlobalTuto.tutorial:
@@ -25,6 +26,7 @@ func _on_receta_to_orden():
 func _on_orden_to_escalera():
 	set_last_state("entrega_to_escalera")
 	APtutorial.play("entrega_to_escalera")
+	GlobalTuto.entregaTuto.emit()
 	GlobalTuto.FlagOrdenEscalera=false
 func set_last_state(transicion:String):
 	var lastPosition=$"Pancha Gif/Control/Panchasprite".position
@@ -67,9 +69,25 @@ func emit_endtaladrando():
 		GlobalTuto.endTaladrando.emit()
 		Taladrandoreproducido=true
 		GlobalTuto.FlagendTaladrando=false
+		
+	countertaladrando+=1
+	if countertaladrando==2:
+		$"Botonterminar".visible=true
+		$"AudioTutorial".play()
+		
 func animar_taladrando():
 	APtutorial.play("pancha_taladrando")
 func animar_entrega():
 	APtutorial.play("pancha_entrega")
 func animar_escalera():
 	APtutorial.play("pancha_escalera")
+
+
+func _on_botonterminar_pressed():
+	GlobalTuto.tutorial=false
+	#GlobalTiempo.diaActual=1
+	GlobalTiempo.tiempoHoraDia =  8 # horas
+	GlobalTiempo.tiempoMinutoDia = 0
+	
+	get_tree().change_scene_to_file("res://Escenas/MainJuego.tscn")
+	pass # Replace with function body.

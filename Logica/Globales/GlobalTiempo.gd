@@ -12,6 +12,8 @@ signal iniciarDia
 
 @onready var tmr_minuto : Timer
 func _ready() -> void:
+	if GlobalTuto.tutorial:
+		tiempoHoraDia= -9999
 	tmr_minuto = Timer.new() 
 	add_child(tmr_minuto)
 	tmr_minuto.wait_time = 0.55

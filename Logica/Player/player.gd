@@ -107,7 +107,9 @@ func _physics_process(_delta):
 				GlobalTuto.escalerasToTaladrando.emit()
 				movement=false
 				GlobalTuto.FlagEscaleraTaladrando=false
+				recienSalidoEscalera = false
 				await GlobalTuto.endTaladrando
+				
 				movement=true
 				
 				

@@ -27,7 +27,9 @@ func actualizar():
 	if num_cofre < 3 + pt:
 		visible = true
 		activo = true
-
+	if GlobalTuto.tutorial and num_cofre==2:
+		visible=false
+		activo=false
 # Llamadas
 
 func Open() -> void:

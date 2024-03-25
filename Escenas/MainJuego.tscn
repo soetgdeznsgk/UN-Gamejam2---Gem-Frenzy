@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=42 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="Script" path="res://Escenas/MainJuegoAmbientManager.gd" id="1_pncec"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://x4yefvsyn1rb" path="res://Sprites/Mapa/cielo.png" id="4_8fm06"]
 [ext_resource type="Texture2D" uid="uid://dc78ydgr4yll5" path="res://Sprites/Mapa/Recepcion.png" id="4_bi4lc"]
 [ext_resource type="Texture2D" uid="uid://cqlqiefevlkws" path="res://Sprites/Mapa/Obsidiana.png" id="4_tg0lo"]
+[ext_resource type="Script" path="res://Escenas/Area2DCasa.gd" id="4_x7c0v"]
 [ext_resource type="Texture2D" uid="uid://vyr6pwq5i280" path="res://Sprites/Mapa/tierra y pasto.png" id="5_fch8v"]
 [ext_resource type="Script" path="res://Escenas/Area2DEscalera.gd" id="5_ilj63"]
 [ext_resource type="Texture2D" uid="uid://dsc7vx2gibahv" path="res://Sprites/Mapa/pared casita.png" id="6_m45u8"]
@@ -188,6 +189,7 @@ metadata/_edit_lock_ = true
 
 [node name="Area2DCasa" type="Area2D" parent="Gameplay"]
 position = Vector2(461, 10)
+script = ExtResource("4_x7c0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/Area2DCasa"]
 z_index = 1

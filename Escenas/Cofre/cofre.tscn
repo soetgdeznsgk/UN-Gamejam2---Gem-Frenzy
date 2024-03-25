@@ -63,7 +63,7 @@ hframes = 2
 
 [node name="Imagen" type="Sprite2D" parent="Sprite2D"]
 texture_filter = 1
-position = Vector2(0.47288, 4.7106)
+position = Vector2(0.5, 4.75)
 texture = ExtResource("4_211rc")
 hframes = 6
 vframes = 2

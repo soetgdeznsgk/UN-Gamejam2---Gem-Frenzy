@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://clelhxjmf0n48"]
+
+[ext_resource type="Texture2D" uid="uid://w20o216cewiy" path="res://Sprites/Menu/buy_1.png" id="1_v06bb"]
+[ext_resource type="Texture2D" uid="uid://cgd7ylupi63bt" path="res://Sprites/Menu/buy_2.png" id="2_ybsji"]
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="3_vvyge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ob6ln"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_id52f"]
+texture = ExtResource("1_v06bb")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yka0k"]
+texture = ExtResource("1_v06bb")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2kxuo"]
+texture = ExtResource("2_ybsji")
+texture_margin_top = 10.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+default_font = ExtResource("3_vvyge")
+default_font_size = 12
+Button/colors/font_color = Color(0.278431, 0.14902, 0.0235294, 1)
+Button/colors/font_hover_color = Color(0.278431, 0.14902, 0.0235294, 1)
+Button/colors/font_pressed_color = Color(0.192157, 0.105882, 0.0117647, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_ob6ln")
+Button/styles/hover = SubResource("StyleBoxTexture_id52f")
+Button/styles/normal = SubResource("StyleBoxTexture_yka0k")
+Button/styles/pressed = SubResource("StyleBoxTexture_2kxuo")

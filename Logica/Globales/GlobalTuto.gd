@@ -10,6 +10,8 @@ var FlagEscaleraTaladrando=true
 
 var FlagendTaladrando=true
 signal endTaladrando
+
+signal entregaTuto
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

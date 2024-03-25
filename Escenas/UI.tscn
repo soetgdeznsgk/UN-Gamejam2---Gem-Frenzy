@@ -14,11 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
+[ext_resource type="Script" path="res://Escenas/VbReloj.gd" id="7_s2ivm"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
 [ext_resource type="PackedScene" uid="uid://cgjgcfv42vp3u" path="res://Escenas/tutorial.tscn" id="14_uh3r7"]
 [ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
-[ext_resource type="Texture2D" uid="uid://qaf22q1pwdp3" path="res://Sprites/Menu/finish_1.png" id="16_y6f0v"]
+[ext_resource type="Theme" uid="uid://bkstf8pjc8cra" path="res://Sprites/Menu/botonmorao.tres" id="17_1my18"]
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
 [ext_resource type="Texture2D" uid="uid://ctj4obkn3i1bo" path="res://Sprites/UI/Icon_Next.png" id="19_i0nsn"]
 [ext_resource type="Texture2D" uid="uid://w3om1b0fedkn" path="res://Sprites/Menu/retry_1.png" id="21_m32au"]
@@ -144,9 +145,6 @@ border_width_right = 8
 border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nv8xj"]
-texture = ExtResource("16_y6f0v")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
 bg_color = Color(0, 0, 0, 0.388235)
 border_width_left = 8
@@ -196,7 +194,7 @@ metadata/_edit_lock_ = true
 
 [node name="Ordenes" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 728.0
+offset_left = 715.0
 offset_top = 22.0
 offset_right = 891.0
 offset_bottom = 647.0
@@ -218,12 +216,17 @@ pitch_scale = 0.6
 
 [node name="VbReloj" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0.843137)
-layout_mode = 0
-offset_left = 12.0
-offset_top = 667.0
-offset_right = 187.0
-offset_bottom = 717.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -70.0
+offset_right = 177.0
+offset_bottom = -20.0
+grow_vertical = 0
 alignment = 1
+script = ExtResource("7_s2ivm")
 
 [node name="HbReloj" type="HBoxContainer" parent="VbReloj"]
 layout_mode = 2
@@ -258,10 +261,10 @@ stretch_mode = 2
 [node name="VbDinero" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
-offset_left = 838.0
-offset_top = 668.0
-offset_right = 956.0
-offset_bottom = 716.0
+offset_left = 820.0
+offset_top = 650.0
+offset_right = 938.0
+offset_bottom = 698.0
 alignment = 1
 
 [node name="HbDinero" type="HBoxContainer" parent="VbDinero"]
@@ -292,10 +295,10 @@ script = ExtResource("5_qljiu")
 [node name="GridMinerales" type="GridContainer" parent="."]
 modulate = Color(1, 1, 1, 0.780392)
 layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 256.0
-offset_bottom = 116.0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 272.0
+offset_bottom = 127.0
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 8
 columns = 8
@@ -477,8 +480,9 @@ layout_mode = 2
 [node name="Btn_finalizar_dia" type="Button" parent="FinalizarDia/VBoxContainer/CenterContainer"]
 custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxTexture_nv8xj")
+theme = ExtResource("17_1my18")
+theme_override_font_sizes/font_size = 25
+text = "Finalizar Dia"
 
 [node name="AudioFinDiaBien" type="AudioStreamPlayer" parent="FinalizarDia"]
 stream = ExtResource("14_bi36g")
@@ -638,22 +642,22 @@ size_flags_vertical = 6
 size_flags_stretch_ratio = 2.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_w2g8v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-process_mode = 3
-modulate = Color(1, 1, 1, 0.811765)
-position = Vector2(939, 25)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("19_i0nsn")
-
 [node name="Btn_pause" type="Button" parent="."]
 process_mode = 3
 layout_mode = 0
-offset_left = 927.0
-offset_top = 6.0
+offset_left = 901.0
+offset_top = 14.0
 offset_right = 951.0
-offset_bottom = 45.0
+offset_bottom = 77.0
 focus_mode = 0
 flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Btn_pause"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.811765)
+position = Vector2(21.95, 26.8)
+scale = Vector2(0.39703, 0.284783)
+texture = ExtResource("19_i0nsn")
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
