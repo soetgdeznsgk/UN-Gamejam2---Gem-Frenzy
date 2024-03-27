@@ -176,12 +176,14 @@ size = Vector2(700, 4)
 size = Vector2(8, 16)
 
 [node name="MainJuego" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_pncec")
 metadata/_edit_horizontal_guides_ = [1276.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("1_maslr")]
+texture_filter = 1
 
 [node name="Gameplay" type="Node2D" parent="."]
 script = ExtResource("3_ys0ch")

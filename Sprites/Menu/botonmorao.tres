@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bkstf8pjc8cra"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cgape0strpjef"]
 
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="1_vyldk"]
 [ext_resource type="Texture2D" uid="uid://qaf22q1pwdp3" path="res://Sprites/Menu/finish_1.png" id="2_80w8l"]

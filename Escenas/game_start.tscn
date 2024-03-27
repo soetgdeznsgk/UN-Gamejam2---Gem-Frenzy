@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
 [ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
-[ext_resource type="Theme" uid="uid://clelhxjmf0n48" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
+[ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
 [ext_resource type="Texture2D" uid="uid://dpw07nqavv2a5" path="res://Sprites/UI/Icon_SoundOff.png" id="6_fsfk8"]
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="7_kg6s8"]
 
@@ -13,12 +13,15 @@
 Label/colors/font_outline_color = Color(0.254902, 0.133333, 0.12549, 1)
 
 [node name="GameStart" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("4_ruh65")
 script = ExtResource("1_d1quh")
 
