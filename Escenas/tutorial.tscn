@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cfymrk6lus6fo" path="res://Sprites/Player/uy quieta 14x24.png" id="14_4thhl"]
 [ext_resource type="Texture2D" uid="uid://trmgdcomkkku" path="res://Sprites/Player/pancha_taladro_arriba_12x27_px.png" id="15_738bs"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="19_fmy6q"]
-[ext_resource type="Theme" uid="uid://clelhxjmf0n48" path="res://Sprites/Menu/botonamarillo.tres" id="21_kcmpl"]
+[ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="21_kcmpl"]
 [ext_resource type="AudioStream" uid="uid://bomduf3rvl8ka" path="res://Musica/Retro_Water_Drop_01.wav" id="22_6d7ax"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlika"]
