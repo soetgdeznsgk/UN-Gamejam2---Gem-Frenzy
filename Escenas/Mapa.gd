@@ -5,10 +5,10 @@ var matrizTerreno = []
 @onready var barraBloqueoDias = %BLOQUEADIAS
 @onready var Cam = %CamPlayer
 func _ready() -> void:
-	generar_mapa()
+	#generar_mapa()
 	GlobalTiempo.iniciarDia.connect(regenerar_mapa)
 	GlobalTiempo.tmr_minuto.start()
-	regenerar_mapa()
+	#regenerar_mapa()
 
 
 func generar_mapa():
