@@ -4,7 +4,8 @@ TUTORIAL_FINISHED,¡TUTORIAL FINALIZADO!,TUTORIAL COMPLETE!
 INFLATION,inflacion.png,inflation.png
 PANCHA_MISSION,"Ahora estas listo para 
 ayudar a pancha a enfrentar
- la inflacion",Now you are ready to help pancha face inflation
+ la inflacion","Now you are ready to help 
+pancha face inflation"
 DAY,Dia,Day
 RENT,Renta,Rent
 SKIP,SALTAR,SKIP
@@ -18,3 +19,15 @@ RANK,Posicion,Rank
 TOP_PLAYER_NAME,Nombre,Name
 YOUR_NAME,Escribe tu nombre,Write your name
 RETRY,Reintentar,Retry
+CHEST,Cofre,Chest
+CHEST_DESC,Permite almacenar más tipos de minerales,Allows you to store more kinds of minerals
+MANY_UPGRADES,Muchas Mejoras,Many Upgrades
+MANY_UPGRADES_DESC,¿No son suficientes mejoras? Agrega una más al finalizar el dia,Aren't these upgrades enough? Add one more at the end of the day
+ZEN_CLIENTS,Clientes Zen,Zen Clients
+ZEN_CLIENTS_DESC,Gracias a la meditación los clientes esperan más tiempo,Thanks to medtiation clients wait longer
+MORE_TIME,Mas tiempo,More Time
+MORE_TIME_DESC,Tu tienda estará abierta mas horas,Your shop will be open more hours
+MORE_PROFITS,Mas Ganancias,More profits
+MORE_PROFITS_DESC,¡Cobra más por tu trabajo!,Charge more for your work!
+CATO,Gato,Cat
+CATO_DESC,¡Un gato siempre atrae más clientes!,A cat always attracts more customers!

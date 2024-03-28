@@ -15,57 +15,57 @@ enum nombre_mejoras {
 var info_mejoras = {
 	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
 		"Key" : nombre_mejoras.CofreMineral,
-		"Nombre" : "Cofre",
+		"Nombre" : tr("CHEST"),
 		"Precio" : 3,
 		"PrecioEscalar" : 2,
 		"Maximo" : 4,
 		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
-		"Descripcion" : "Permite almacenar más tipos de minerales",
+		"Descripcion" : tr("CHEST_DESC"),
 	},
 		nombre_mejoras.MejoraDeMejoras : {
 		"Key" : nombre_mejoras.MejoraDeMejoras,
-		"Nombre" : "Muchas mejoras",
+		"Nombre" : tr("MANY_UPGRADES"),
 		"PrecioEscalar" : 1,
 		"Precio" : 5,
 		"Maximo" : 1,
 		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
-		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
+		"Descripcion" : tr("MANY_UPGRADES_DESC"),
 	},
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
-		"Nombre" : "Clientes Zen",
+		"Nombre" : tr("ZEN_CLIENTS"),
 		"Precio" : 6,
 		"PrecioEscalar" : 3,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
-		"Descripcion" : "Gracias a la meditación los clientes esperan más tiempo",
+		"Descripcion" : tr("ZEN_CLIENTS_DESC"),
 	},
 	nombre_mejoras.MasTiempo : {
 		"Key" : nombre_mejoras.MasTiempo,
-		"Nombre" : "Mas tiempo",
+		"Nombre" : tr("MORE_TIME"),
 		"Precio" : 6,
 		"PrecioEscalar" : 8,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
-		"Descripcion" : "Tu tienda estará abierta mas horas",
+		"Descripcion" : tr("MORE_TIME_DESC"),
 	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,
-		"Nombre" : "Cobra mas!",
+		"Nombre" : tr("MORE_PROFITS"),
 		"Precio" : 7,
 		"PrecioEscalar" : 7,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
-		"Descripcion" : "Cobra más por tu trabajo!",
+		"Descripcion" : tr("MORE_PROFITS_DESC"),
 	},
 		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
 		"Key" : nombre_mejoras.Gato,
-		"Nombre" : "Gato",
+		"Nombre" : tr("CATO"),
 		"Precio" : 13,
 		"PrecioEscalar" : 13,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/gatomejora.png',
-		"Descripcion" : "Un gato siempre atrae más clientes!",
+		"Descripcion" : tr("CATO_DESC"),
 	},
 }
 var disponible_mejoras = [0,0,0,0,0,0,0]
@@ -83,6 +83,7 @@ func obtener_mejora_random_disponible():
 	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion
 	if disponible_mejoras[0]>0:
 		mejoras_seleccionadas.append(info_mejoras[0])
+		print(info_mejoras[0])
 	if disponible_mejoras[1]>0:
 		mejoras_seleccionadas.append(info_mejoras[1])
 	
@@ -156,3 +157,61 @@ func obtener_mejora_random_disponible():
 		# dice que no hay ninguna
 		return []
 		
+func actualizar_traducciones():
+	info_mejoras = {
+	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
+		"Key" : nombre_mejoras.CofreMineral,
+		"Nombre" : tr("CHEST"),
+		"Precio" : 3,
+		"PrecioEscalar" : 2,
+		"Maximo" : 4,
+		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
+		"Descripcion" : tr("CHEST_DESC"),
+	},
+		nombre_mejoras.MejoraDeMejoras : {
+		"Key" : nombre_mejoras.MejoraDeMejoras,
+		"Nombre" : tr("MANY_UPGRADES"),
+		"PrecioEscalar" : 1,
+		"Precio" : 5,
+		"Maximo" : 1,
+		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
+		"Descripcion" : tr("MANY_UPGRADES_DESC"),
+	},
+	nombre_mejoras.ClientesZen : { # implementada en Order.gd
+		"Key" : nombre_mejoras.ClientesZen,
+		"Nombre" : tr("ZEN_CLIENTS"),
+		"Precio" : 6,
+		"PrecioEscalar" : 3,
+		"Maximo" : 2,
+		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
+		"Descripcion" : tr("ZEN_CLIENTS_DESC"),
+	},
+	nombre_mejoras.MasTiempo : {
+		"Key" : nombre_mejoras.MasTiempo,
+		"Nombre" : tr("MORE_TIME"),
+		"Precio" : 6,
+		"PrecioEscalar" : 8,
+		"Maximo" : 3,
+		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
+		"Descripcion" : tr("MORE_TIME_DESC"),
+	},
+		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
+		"Key" : nombre_mejoras.RecompensaMejorada,
+		"Nombre" : tr("MORE_PROFITS"),
+		"Precio" : 7,
+		"PrecioEscalar" : 7,
+		"Maximo" : 3,
+		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
+		"Descripcion" : tr("MORE_PROFITS_DESC"),
+	},
+		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
+		"Key" : nombre_mejoras.Gato,
+		"Nombre" : tr("CATO"),
+		"Precio" : 13,
+		"PrecioEscalar" : 13,
+		"Maximo" : 2,
+		"Textura" : 'res://Sprites/mejoras/gatomejora.png',
+		"Descripcion" : tr("CATO_DESC"),
+	},
+
+}
