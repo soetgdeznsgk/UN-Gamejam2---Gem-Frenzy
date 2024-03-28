@@ -10,7 +10,7 @@ func _ready() -> void:
 		GlobalMejoras.activas_mejoras[int(info["Key"])] * info["PrecioEscalar"]
 		
 		$Lb_nombre.text = info["Nombre"]
-		$Lb_precio.text = tr("Precio") + ": " + str(totalPrecio)
+		$"HBoxContainer/Lb_precio".text = str(totalPrecio)
 		%Lb_desc.text = tr(str(info["Descripcion"]))
 		textura = load(info["Textura"])
 		$TextureRect.texture = textura

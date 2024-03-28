@@ -7,4 +7,4 @@ var day : int
 func set_text() -> void:
 	$Label.text =  str(number) +"."
 	$Label3.text =str(playerName)
-	$Label4.text = tr("DIA") + " " + str(day)
+	$Label4.text = tr("DAY") + " " + str(day)

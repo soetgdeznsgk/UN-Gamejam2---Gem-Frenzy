@@ -9,6 +9,7 @@ func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(regenerar_mapa)
 	GlobalTiempo.tmr_minuto.start()
 	regenerar_mapa()
+	GlobalRecursos.actualizar_renta()
 
 
 func generar_mapa():

@@ -66,7 +66,7 @@ func call_top_players():
 		print("No sesion iniciada, error al recolectar el puntaje")
 
 func gameover():
-	%LbSelfDia.text = tr("Dia") + " " + str(GlobalTiempo.diaActual)
+	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
 	$AudioGameover.play(0)
 	visible = true
 

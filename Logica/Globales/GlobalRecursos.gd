@@ -8,6 +8,8 @@ var dinero : int = 5
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
+var valorDia
+signal rentadia
 # enum para no perderlos de vista
 
 enum mineralesSinFondo{
@@ -41,7 +43,9 @@ enum mineralesConFondo{
 }
 
 func _ready() -> void:
+	GlobalTiempo.iniciarDia.connect(actualizar_renta)
 	GlobalTiempo.finalizarDia.connect(pagueme_la_renta)
+
 
 func actualizar_mineral(mineral : int, cantidad : int):
 	minerales[mineral] += cantidad
@@ -53,10 +57,9 @@ func actualizar_dinero(cantidad : int):
 		cambioDinero.emit(dinero)
 		if dinero < 0:
 			bancarota.emit()
-
-func pagueme_la_renta():
+func actualizar_renta():
 	var dia = GlobalTiempo.diaActual 
-	var valorDia = 3*GlobalTiempo.diaActual
+	valorDia = 3*GlobalTiempo.diaActual
 	
 	if dia >= 3 and dia < 5:
 		valorDia = 3 * GlobalTiempo.diaActual + 2
@@ -74,8 +77,10 @@ func pagueme_la_renta():
 		valorDia = 3
 	if valorDia > 70:
 		valorDia = 70
-	
+	rentadia.emit()
 	print("valor renta: ", valorDia)
+func pagueme_la_renta():
+
 	# TODO hacer q esto se vea mejor  ymas intuitivo en la ui. una animacion oalgo
 	var reciclar : int = 0
 	for i in range(len(minerales)):

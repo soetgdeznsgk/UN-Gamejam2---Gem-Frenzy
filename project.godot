@@ -75,6 +75,10 @@ ui_down={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localizacion/Traduccion gem frenzy - Hoja 1.en.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.es.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

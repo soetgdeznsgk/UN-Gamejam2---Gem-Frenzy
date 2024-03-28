@@ -4,6 +4,9 @@ var textureSnd1 = load("res://Sprites/UI/Icon_SoundOff.png")
 var textureSnd2 = load("res://Sprites/UI/Icon_SoundOn.png")
 var situto=load("res://Sprites/UI/yes.png")
 var notuto=load("res://Sprites/UI/no.png")
+func _ready():
+	#TEST
+	TranslationServer.set_locale("en")
 func _on_btn_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://intro_anim.tscn")
 

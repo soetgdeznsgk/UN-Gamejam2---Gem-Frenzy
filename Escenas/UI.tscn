@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=52 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -15,14 +15,23 @@
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
 [ext_resource type="Script" path="res://Escenas/VbReloj.gd" id="7_s2ivm"]
+[ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="8_qhue7"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
+[ext_resource type="Script" path="res://Escenas/Renta.gd" id="12_m1oro"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
 [ext_resource type="PackedScene" uid="uid://cgjgcfv42vp3u" path="res://Escenas/tutorial.tscn" id="14_uh3r7"]
 [ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
+[ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="16_cal8s"]
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="17_1my18"]
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
 [ext_resource type="Texture2D" uid="uid://ctj4obkn3i1bo" path="res://Sprites/UI/Icon_Next.png" id="19_i0nsn"]
-[ext_resource type="Texture2D" uid="uid://w3om1b0fedkn" path="res://Sprites/Menu/retry_1.png" id="21_m32au"]
+[ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="20_v1ys7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
+font_size = 15
+font_color = Color(1, 0.168627, 0.168627, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.376471)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
 atlas = ExtResource("7_q4w3t")
@@ -137,27 +146,19 @@ region = Rect2(31, 13, 8, 8)
 atlas = ExtResource("7_bbwty")
 region = Rect2(58, 4, 8, 8)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_catcj"]
-bg_color = Color(0.439216, 0.439216, 0.439216, 0.772549)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="Theme" id="Theme_cya63"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
-bg_color = Color(0, 0, 0, 0.388235)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qqux"]
+texture = ExtResource("20_v1ys7")
+expand_margin_left = 50.0
+expand_margin_top = 70.0
+expand_margin_right = 50.0
+expand_margin_bottom = 70.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_yrvle"]
 line_spacing = 12.0
 font_size = 36
+font_color = Color(0.968627, 0.00784314, 0.00784314, 1)
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
@@ -178,8 +179,20 @@ line_spacing = 12.0
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2g8v"]
-texture = ExtResource("21_m32au")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s01y6"]
+bg_color = Color(0.764706, 0.713726, 0.396078, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ldqa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.643137, 0.380392, 0.239216, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -197,8 +210,8 @@ metadata/_edit_lock_ = true
 [node name="Ordenes" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 715.0
-offset_top = 22.0
-offset_right = 891.0
+offset_top = 83.0
+offset_right = 932.0
 offset_bottom = 647.0
 theme_override_constants/separation = 90
 script = ExtResource("1_qy5sv")
@@ -240,6 +253,7 @@ alignment = 1
 [node name="Lb_tiempo" type="Label" parent="VbReloj/HbReloj/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("8_qhue7")
 text = "8:00 AM"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -248,6 +262,7 @@ script = ExtResource("3_hwchs")
 [node name="Lb_Dias" type="Label" parent="VbReloj/HbReloj/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("8_qhue7")
 text = "Dia: 1"
 vertical_alignment = 1
 justification_flags = 171
@@ -260,6 +275,16 @@ layout_mode = 2
 texture = ExtResource("4_1gerh")
 stretch_mode = 2
 
+[node name="Renta" type="Label" parent="."]
+layout_mode = 2
+offset_left = 816.0
+offset_top = 625.0
+offset_right = 948.0
+offset_bottom = 639.0
+text = "Renta: "
+label_settings = SubResource("LabelSettings_g6ud2")
+script = ExtResource("12_m1oro")
+
 [node name="VbDinero" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
@@ -271,6 +296,7 @@ alignment = 1
 
 [node name="HbDinero" type="HBoxContainer" parent="VbDinero"]
 layout_mode = 2
+theme = ExtResource("8_qhue7")
 theme_override_constants/separation = 8
 
 [node name="TextureDinero" type="TextureRect" parent="VbDinero/HbDinero"]
@@ -301,6 +327,7 @@ offset_left = 20.0
 offset_top = 15.0
 offset_right = 272.0
 offset_bottom = 127.0
+theme = ExtResource("8_qhue7")
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 8
 columns = 8
@@ -456,18 +483,19 @@ anchor_left = 0.151
 anchor_top = 0.18
 anchor_right = 0.849
 anchor_bottom = 0.82
-offset_left = 0.0399933
-offset_top = -0.100006
-offset_right = -0.0400391
-offset_bottom = 0.0999756
+offset_left = -13.96
+offset_top = -45.6
+offset_right = 43.96
+offset_bottom = 11.6
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_catcj")
+theme = ExtResource("16_cal8s")
 script = ExtResource("6_6ps5f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FinalizarDia"]
 layout_mode = 2
+theme = SubResource("Theme_cya63")
 theme_override_constants/separation = 32
 alignment = 1
 
@@ -484,7 +512,7 @@ custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
 theme = ExtResource("17_1my18")
 theme_override_font_sizes/font_size = 25
-text = "Finalizar Dia"
+text = "NEXT_DAY"
 
 [node name="AudioFinDiaBien" type="AudioStreamPlayer" parent="FinalizarDia"]
 stream = ExtResource("14_bi36g")
@@ -497,13 +525,14 @@ visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
-anchor_top = 0.0638889
-anchor_right = 0.9
-anchor_bottom = 0.9125
+anchor_top = 0.136111
+anchor_right = 0.920833
+anchor_bottom = 0.838889
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qls4k")
+theme = ExtResource("16_cal8s")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5qqux")
 script = ExtResource("12_1lmnk")
 metadata/_edit_use_anchors_ = true
 
@@ -521,8 +550,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 3.0
-text = "!HAS CAIDO 
-EN BANCARROTA!"
+text = "BANKRUPTCY"
 label_settings = SubResource("LabelSettings_yrvle")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -531,7 +559,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
-text = "Top jugadores"
+text = "TOP_PLAYERS"
 label_settings = SubResource("LabelSettings_6e4pu")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -552,7 +580,7 @@ alignment = 1
 [node name="Label3" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Posicion"
+text = "RANK"
 label_settings = SubResource("LabelSettings_b1onc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -560,7 +588,7 @@ vertical_alignment = 1
 [node name="Label5" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Nombre"
+text = "TOP_PLAYER_NAME"
 label_settings = SubResource("LabelSettings_b1onc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -568,7 +596,7 @@ vertical_alignment = 1
 [node name="Label4" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Dia"
+text = "DAY"
 label_settings = SubResource("LabelSettings_b1onc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -599,7 +627,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/caret_width = 3
-placeholder_text = "Escribe tu nombre"
+theme_override_styles/normal = SubResource("StyleBoxFlat_s01y6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2ldqa")
+placeholder_text = "YOUR_NAME"
 alignment = 1
 max_length = 10
 expand_to_text_length = true
@@ -642,7 +672,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 2.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_w2g8v")
+theme = ExtResource("17_1my18")
+theme_override_font_sizes/font_size = 20
+text = "RETRY"
 
 [node name="Btn_pause" type="Button" parent="."]
 process_mode = 3

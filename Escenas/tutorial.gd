@@ -10,7 +10,7 @@ func _ready():
 		GlobalTuto.escalerasToTaladrando.connect(_on_escalera_to_taladrando)
 		GlobalRecursos.actualizar_mineral(0,5)
 		GlobalRecursos.actualizar_mineral(3,5)
-		#print("señal emitida")
+
 		self.visible=true
 		APtutorial.play("pancha_receta")
 	pass # Replace with function body.
@@ -45,8 +45,8 @@ func set_last_state(transicion:String):
 			var Cvisible=$"Pancha Gif/Control/Panchasprite/carbonpancha".visible
 			APtutorial.get_animation("receta_to_entrega").track_insert_key(8,0,Cvisible)
 		"entrega_to_escalera":
-			APtutorial.get_animation("entrega_to_escalera").track_insert_key(18,0,lastPosition)
-			APtutorial.get_animation("entrega_to_escalera").track_insert_key(18,0.5,lastPosition)
+			APtutorial.get_animation("entrega_to_escalera").track_insert_key(16,0,lastPosition)
+			APtutorial.get_animation("entrega_to_escalera").track_insert_key(16,0.5,lastPosition)
 			APtutorial.get_animation("entrega_to_escalera").track_insert_key(0,0,lastFrame)
 			APtutorial.get_animation("entrega_to_escalera").track_insert_key(0,0.5,lastFrame)
 		"escalera_to_taladrando":
@@ -70,9 +70,11 @@ func emit_endtaladrando():
 		Taladrandoreproducido=true
 		GlobalTuto.FlagendTaladrando=false
 		
-	countertaladrando+=1
-	if countertaladrando==2:
-		$"Botonterminar".visible=true
+	if GlobalRecursos.minerales[3]>20:
+		GlobalTuto.pausarpancha.emit()
+		$"Pancha Gif".visible=false
+		$"Tutorialfinalizao/Pancha finalizao".play("default")
+		$"Tutorialfinalizao".visible=true
 		$"AudioTutorial".play()
 		
 func animar_taladrando():
@@ -88,5 +90,6 @@ func _on_botonterminar_pressed():
 	#GlobalTiempo.diaActual=1
 	GlobalTiempo.tiempoHoraDia =  8 # horas
 	GlobalTiempo.tiempoMinutoDia = 0
+	GlobalMejoras.activas_mejoras[5]=0
 	get_tree().change_scene_to_file("res://Escenas/MainJuego.tscn")
 	pass # Replace with function body.

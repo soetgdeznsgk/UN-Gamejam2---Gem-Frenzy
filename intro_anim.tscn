@@ -72,7 +72,7 @@ offset_right = 945.0
 offset_bottom = 706.0
 theme = ExtResource("12_b4bac")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 0.921569)
-text = "SALTAR"
+text = "SKIP"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_4k7ve")

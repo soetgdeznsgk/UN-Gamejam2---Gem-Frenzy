@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b62vvxqrne4cq"]
+
+[ext_resource type="Texture2D" uid="uid://6bgdj62hj24m" path="res://Sprites/fondo ui.png" id="1_x8kdy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlika"]
+texture = ExtResource("1_x8kdy")
+separation = Vector2i(20, 20)
+texture_region_size = Vector2i(100, 100)
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+
+[resource]
+tile_size = Vector2i(100, 100)
+sources/1 = SubResource("TileSetAtlasSource_qlika")

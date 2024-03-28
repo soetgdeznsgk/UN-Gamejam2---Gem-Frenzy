@@ -5,6 +5,7 @@ var paused = false
 func _ready():
 	if GlobalTuto.tutorial:
 		GlobalTiempo.tiempoHoraDia= -9999
+		$Renta.visible=false
 func _on_recepcion_order_delivered(orden):
 	delegar_orden.emit(orden)
 

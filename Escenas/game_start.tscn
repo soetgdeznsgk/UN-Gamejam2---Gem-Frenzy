@@ -1,16 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=11 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
-[ext_resource type="Texture2D" uid="uid://bqhqrdsnv5ssl" path="res://Sprites/titulo gem frenzy.png" id="2_p55nl"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
+[ext_resource type="Texture2D" uid="uid://bbbosknu7tms7" path="res://Sprites/Menu/gem frenzy logo 4k remaster 1 link hd 710x360.png" id="3_sgxu4"]
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
 [ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
 [ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
 [ext_resource type="Texture2D" uid="uid://dpw07nqavv2a5" path="res://Sprites/UI/Icon_SoundOff.png" id="6_fsfk8"]
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="7_kg6s8"]
-
-[sub_resource type="Theme" id="Theme_uhrti"]
-Label/colors/font_outline_color = Color(0.254902, 0.133333, 0.12549, 1)
+[ext_resource type="Texture2D" uid="uid://w20o216cewiy" path="res://Sprites/Menu/buy_1.png" id="8_kncop"]
+[ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_fv52p"]
 
 [node name="GameStart" type="Control"]
 texture_filter = 1
@@ -30,11 +29,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -355.0
-offset_right = 355.0
-offset_bottom = 360.0
+offset_left = -280.0
+offset_top = 25.0
+offset_right = 1140.0
+offset_bottom = 745.0
 grow_horizontal = 2
-texture = ExtResource("2_p55nl")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_sgxu4")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 z_index = -1
@@ -69,7 +70,7 @@ custom_minimum_size = Vector2(200, 64)
 layout_mode = 2
 theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 32
-text = "JUGAR"
+text = "PLAY"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ued5s")
@@ -88,28 +89,35 @@ offset_right = 959.0
 offset_bottom = 110.0
 flat = true
 
+[node name="botontuto" type="Sprite2D" parent="."]
+position = Vector2(858.6, 134.6)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_kncop")
+
 [node name="tutorial" type="Sprite2D" parent="."]
-position = Vector2(917, 255)
+texture_filter = 1
+position = Vector2(925, 131.4)
 scale = Vector2(2, 2)
 texture = ExtResource("7_kg6s8")
 
 [node name="Tutorial" type="Label" parent="."]
 layout_mode = 0
-offset_left = 747.0
-offset_top = 246.0
-offset_right = 892.0
-offset_bottom = 276.0
-theme = SubResource("Theme_uhrti")
+offset_left = 776.6
+offset_top = 122.1
+offset_right = 921.6
+offset_bottom = 152.1
+theme = ExtResource("9_fv52p")
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = "Tutorial"
 
 [node name="Btn_toggle_Tutorial" type="Button" parent="."]
 layout_mode = 0
-offset_left = 745.0
-offset_top = 240.0
-offset_right = 933.0
-offset_bottom = 268.0
+offset_left = 765.0
+offset_top = 112.0
+offset_right = 949.0
+offset_bottom = 150.0
+theme = ExtResource("5_lnpde")
 flat = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]

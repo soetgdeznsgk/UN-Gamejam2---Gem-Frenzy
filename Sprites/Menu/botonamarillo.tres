@@ -1,8 +1,16 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cnu3j8gs2xq6a"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cnu3j8gs2xq6a"]
 
 [ext_resource type="Texture2D" uid="uid://w20o216cewiy" path="res://Sprites/Menu/buy_1.png" id="1_v06bb"]
 [ext_resource type="Texture2D" uid="uid://cgd7ylupi63bt" path="res://Sprites/Menu/buy_2.png" id="2_ybsji"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="3_vvyge"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4fvqt"]
+texture = ExtResource("2_ybsji")
+texture_margin_top = 10.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ob6ln"]
 
@@ -30,10 +38,11 @@ expand_margin_bottom = 5.0
 
 [resource]
 default_font = ExtResource("3_vvyge")
-default_font_size = 12
+default_font_size = 15
 Button/colors/font_color = Color(0.278431, 0.14902, 0.0235294, 1)
 Button/colors/font_hover_color = Color(0.278431, 0.14902, 0.0235294, 1)
 Button/colors/font_pressed_color = Color(0.192157, 0.105882, 0.0117647, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_4fvqt")
 Button/styles/focus = SubResource("StyleBoxEmpty_ob6ln")
 Button/styles/hover = SubResource("StyleBoxTexture_id52f")
 Button/styles/normal = SubResource("StyleBoxTexture_yka0k")

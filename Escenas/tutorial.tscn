@@ -1,11 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://cgjgcfv42vp3u"]
+[gd_scene load_steps=48 format=3 uid="uid://cgjgcfv42vp3u"]
 
 [ext_resource type="Script" path="res://Escenas/tutorial.gd" id="1_151xy"]
 [ext_resource type="Texture2D" uid="uid://dsunx5u8lw85s" path="res://Sprites/flechatuto_arriba.png" id="1_ki1j8"]
 [ext_resource type="Texture2D" uid="uid://drri0e1ban0w6" path="res://Sprites/flechatuto.png" id="2_darmo"]
 [ext_resource type="Texture2D" uid="uid://bddixrpvfvrdx" path="res://Sprites/flechatuto_izquierdal.png" id="3_ol0b8"]
-[ext_resource type="Texture2D" uid="uid://6bgdj62hj24m" path="res://Sprites/fondo ui.png" id="4_tcss4"]
 [ext_resource type="Texture2D" uid="uid://bm28a88bygytl" path="res://Sprites/Player/pancha_caminando.png" id="5_1nk44"]
+[ext_resource type="TileSet" uid="uid://b62vvxqrne4cq" path="res://Sprites/UI/tilesettuto.tres" id="5_6hcqj"]
 [ext_resource type="Texture2D" uid="uid://th22ntwolepk" path="res://Sprites/Mapa/minerales con fondo.png" id="6_c6pv2"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="6_e3w21"]
 [ext_resource type="Texture2D" uid="uid://bov6b6cxiv20i" path="res://Sprites/Player/pancha_taladro_caminando_20x20_px.png" id="6_v5ykq"]
@@ -20,26 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://cfymrk6lus6fo" path="res://Sprites/Player/uy quieta 14x24.png" id="14_4thhl"]
 [ext_resource type="Texture2D" uid="uid://trmgdcomkkku" path="res://Sprites/Player/pancha_taladro_arriba_12x27_px.png" id="15_738bs"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="19_fmy6q"]
-[ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="21_kcmpl"]
+[ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="21_fs5gd"]
 [ext_resource type="AudioStream" uid="uid://bomduf3rvl8ka" path="res://Musica/Retro_Water_Drop_01.wav" id="22_6d7ax"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlika"]
-texture = ExtResource("4_tcss4")
-separation = Vector2i(20, 20)
-texture_region_size = Vector2i(100, 100)
-1:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-2:1/0 = 0
-1:0/0 = 0
-0:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_dbxlv"]
-tile_size = Vector2i(100, 100)
-sources/1 = SubResource("TileSetAtlasSource_qlika")
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="22_rvoqq"]
+[ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="23_r654d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c8h"]
 texture = ExtResource("6_c6pv2")
@@ -125,7 +109,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [6]
+"values": [0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -319,6 +303,42 @@ tracks/19/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Cofres:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Cofres/CofreC:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Cofres/Cofreh:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nvjsm"]
 resource_name = "entrega_to_escalera"
@@ -440,7 +460,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, false]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -1447,7 +1467,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 0.8, 1, 1.2, 1.4, 2, 2.2, 2.4, 2.6, 2.8, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5, 5.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [4, 0, 1, 2, 3, 2, 0, 1, 2, 3, 0, 4, 5, 6, 7, 4, 5, 6, 7, 4]
+"values": [0, 0, 1, 2, 3, 2, 0, 1, 2, 3, 0, 4, 5, 6, 7, 4, 5, 6, 7, 4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2222,6 +2242,69 @@ _data = {
 "receta_to_entrega": SubResource("Animation_ng46v")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tae6y"]
+bg_color = Color(0.596078, 0.34902, 0.215686, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.329412, 0.207843, 0.172549, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjvop"]
+font = ExtResource("22_rvoqq")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_wpvvh"]
+font = ExtResource("23_r654d")
+font_size = 30
+font_color = Color(0.643137, 0.380392, 0.239216, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odl3g"]
+atlas = ExtResource("6_v5ykq")
+region = Rect2(0, 0, 22, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46fno"]
+atlas = ExtResource("6_v5ykq")
+region = Rect2(22, 0, 22, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsmre"]
+atlas = ExtResource("6_v5ykq")
+region = Rect2(44, 0, 22, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1idt"]
+atlas = ExtResource("6_v5ykq")
+region = Rect2(66, 0, 22, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18ij3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odl3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46fno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsmre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1idt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bmp1x"]
+font = ExtResource("23_r654d")
+font_size = 30
+outline_size = 10
+outline_color = Color(0.329412, 0.207843, 0.172549, 1)
+
 [node name="Tutorial" type="Control" node_paths=PackedStringArray("APtutorial")]
 visible = false
 layout_mode = 3
@@ -2260,7 +2343,7 @@ hframes = 2
 [node name="TileMap fondo" type="TileMap" parent="Pancha Gif"]
 z_index = -1
 position = Vector2(-69, -145)
-tile_set = SubResource("TileSet_dbxlv")
+tile_set = ExtResource("5_6hcqj")
 format = 2
 layer_0/tile_data = PackedInt32Array(131071, 1, 0, 65536, 65537, 0, 65537, 65537, 0, 196607, 1, 1, 131072, 65537, 1, 131073, 65537, 1, 131074, 65537, 1, 65538, 65537, 0, 65539, 65537, 0, 131075, 65537, 1, 196612, 131073, 2, 262143, 1, 2, 65540, 131073, 0, 131076, 131073, 1, 196608, 65537, 2, 196609, 65537, 2, 196610, 65537, 2, 196611, 65537, 2)
 
@@ -2363,7 +2446,6 @@ scale = Vector2(3.86111, 3.86111)
 texture = ExtResource("5_1nk44")
 hframes = 4
 vframes = 2
-frame = 6
 region_rect = Rect2(0, 0, 66, 10)
 
 [node name="hierropancha" type="Sprite2D" parent="Pancha Gif/Control/Panchasprite"]
@@ -2392,7 +2474,6 @@ hframes = 7
 frame = 2
 
 [node name="Cofres" type="Node2D" parent="Pancha Gif"]
-visible = false
 
 [node name="Cofreh" type="Sprite2D" parent="Pancha Gif/Cofres"]
 z_index = -1
@@ -2424,7 +2505,6 @@ vframes = 2
 frame = 3
 
 [node name="hornopro" type="Sprite2D" parent="Pancha Gif"]
-visible = false
 position = Vector2(334, 65)
 scale = Vector2(3.86, 3.86)
 texture = ExtResource("9_02203")
@@ -2460,17 +2540,63 @@ offset_bottom = -91.0
 theme_override_font_sizes/font_size = 25
 text = "Tutorial"
 
-[node name="Botonterminar" type="Button" parent="."]
+[node name="Tutorialfinalizao" type="Node2D" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 18.0
-offset_top = 179.0
-offset_right = 210.0
-offset_bottom = 217.0
-theme = ExtResource("21_kcmpl")
-text = "Terminar tutorial"
+position = Vector2(315, -209)
+
+[node name="TutofinalizaoBG" type="TileMap" parent="Tutorialfinalizao"]
+position = Vector2(-274, 129)
+tile_set = ExtResource("5_6hcqj")
+collision_visibility_mode = 2
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 65537, 0, 2, 65537, 0, 3, 65537, 0, 4, 65537, 0, 5, 65537, 0, 6, 131073, 0, 65537, 65537, 1, 65538, 65537, 1, 131074, 65537, 1, 131073, 65537, 1, 196610, 65537, 1, 196609, 65537, 1, 262146, 65537, 1, 262147, 65537, 1, 262148, 65537, 1, 196612, 65537, 1, 196613, 65537, 1, 131077, 65537, 1, 65541, 65537, 1, 65540, 65537, 1, 65539, 65537, 1, 196611, 65537, 1, 131076, 65537, 1, 131075, 65537, 1, 262149, 65537, 1, 65542, 131073, 1, 131078, 131073, 1, 196614, 131073, 1, 262150, 131073, 1, 327686, 131073, 2, 327685, 65537, 2, 327684, 65537, 2, 327683, 65537, 2, 327682, 65537, 2, 327681, 65537, 2, 327680, 1, 2, 262144, 1, 1, 196608, 1, 1, 131072, 1, 1, 65536, 1, 1, 262145, 65537, 1)
+
+[node name="Botonterminar" type="Button" parent="Tutorialfinalizao"]
+custom_minimum_size = Vector2(50, 50)
+offset_left = -40.0
+offset_top = 605.0
+offset_right = 183.0
+offset_bottom = 655.0
+theme = ExtResource("21_fs5gd")
+theme_override_font_sizes/font_size = 25
+text = "PLAY"
+
+[node name="Label" type="Label" parent="Tutorialfinalizao"]
+offset_left = -199.0
+offset_top = 221.0
+offset_right = 350.0
+offset_bottom = 252.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tae6y")
+text = "TUTORIAL_FINISHED"
+label_settings = SubResource("LabelSettings_mjvop")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorialfinalizao"]
+offset_left = -166.0
+offset_top = 451.0
+offset_right = 307.0
+offset_bottom = 567.0
+text = "PANCHA_MISSION"
+label_settings = SubResource("LabelSettings_wpvvh")
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Pancha finalizao" type="AnimatedSprite2D" parent="Tutorialfinalizao"]
+position = Vector2(7.99999, 357)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_18ij3")
+frame_progress = 0.732309
+
+[node name="Label3" type="Label" parent="Tutorialfinalizao"]
+offset_left = 61.0
+offset_top = 363.0
+offset_right = 194.0
+offset_bottom = 405.0
+text = "INFLATION"
+label_settings = SubResource("LabelSettings_bmp1x")
+horizontal_alignment = 1
 
 [node name="AudioTutorial" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_6d7ax")
 
-[connection signal="pressed" from="Botonterminar" to="." method="_on_botonterminar_pressed"]
+[connection signal="pressed" from="Tutorialfinalizao/Botonterminar" to="." method="_on_botonterminar_pressed"]
