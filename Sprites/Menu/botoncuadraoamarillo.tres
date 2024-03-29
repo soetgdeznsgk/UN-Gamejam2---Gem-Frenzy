@@ -1,0 +1,33 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://pnhutxwsymll"]
+
+[ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="1_61rg6"]
+[ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="2_mggyp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1golx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ead3k"]
+content_margin_left = 19.0
+content_margin_top = 8.0
+content_margin_right = 19.0
+content_margin_bottom = 19.0
+texture = ExtResource("1_61rg6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hlxw"]
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+texture = ExtResource("1_61rg6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04hec"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 5.0
+texture = ExtResource("2_mggyp")
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
+Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
+Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
+Button/styles/pressed = SubResource("StyleBoxTexture_04hec")

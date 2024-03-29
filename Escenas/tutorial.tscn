@@ -2538,7 +2538,7 @@ offset_top = -129.0
 offset_right = 401.0
 offset_bottom = -91.0
 theme_override_font_sizes/font_size = 25
-text = "Tutorial"
+text = "TUTORIAL"
 
 [node name="Tutorialfinalizao" type="Node2D" parent="."]
 visible = false
@@ -2579,6 +2579,7 @@ offset_bottom = 567.0
 text = "PANCHA_MISSION"
 label_settings = SubResource("LabelSettings_wpvvh")
 horizontal_alignment = 1
+autowrap_mode = 2
 clip_text = true
 
 [node name="Pancha finalizao" type="AnimatedSprite2D" parent="Tutorialfinalizao"]

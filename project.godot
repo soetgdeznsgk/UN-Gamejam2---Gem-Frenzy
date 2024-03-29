@@ -77,7 +77,7 @@ ui_down={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localizacion/Traduccion gem frenzy - Hoja 1.en.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.es.translation")
+locale/translations=PackedStringArray("res://localizacion/Traduccion gem frenzy - Hoja 1.en.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.es.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.jp.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.zh.translation")
 
 [rendering]
 

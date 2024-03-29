@@ -88,8 +88,12 @@ func animar_escalera():
 func _on_botonterminar_pressed():
 	GlobalTuto.tutorial=false
 	#GlobalTiempo.diaActual=1
-	GlobalTiempo.tiempoHoraDia =  8 # horas
+	GlobalRecursos.dinero = 5
+	GlobalRecursos.minerales = [0,0,0,0,0,0,0,0,0,0,0]
+	GlobalMejoras.activas_mejoras = [0,0,0,0,0,0,0]
+	GlobalMejoras._ready()
+	GlobalTiempo.diaActual = 1
+	GlobalTiempo.tiempoHoraDia = 8
 	GlobalTiempo.tiempoMinutoDia = 0
-	GlobalMejoras.activas_mejoras[5]=0
 	get_tree().change_scene_to_file("res://Escenas/MainJuego.tscn")
 	pass # Replace with function body.

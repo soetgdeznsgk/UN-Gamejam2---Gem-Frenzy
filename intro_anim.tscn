@@ -66,8 +66,8 @@ libraries = {
 }
 
 [node name="Button" type="Button" parent="."]
-offset_left = 874.0
-offset_top = 680.0
+offset_left = 868.0
+offset_top = 679.0
 offset_right = 945.0
 offset_bottom = 706.0
 theme = ExtResource("12_b4bac")

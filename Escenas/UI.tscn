@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=58 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -26,6 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
 [ext_resource type="Texture2D" uid="uid://ctj4obkn3i1bo" path="res://Sprites/UI/Icon_Next.png" id="19_i0nsn"]
 [ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="20_v1ys7"]
+[ext_resource type="Theme" uid="uid://pnhutxwsymll" path="res://Sprites/Menu/botoncuadraoamarillo.tres" id="26_46bwo"]
+[ext_resource type="Script" path="res://Escenas/pausa.gd" id="26_mis2i"]
+[ext_resource type="Texture2D" uid="uid://j200rhck5hbf" path="res://Sprites/UI/casita.png" id="28_crjft"]
+[ext_resource type="Texture2D" uid="uid://b23cd5xtolx3k" path="res://Sprites/UI/Icon_SoundOn.png" id="28_jiou3"]
+[ext_resource type="Texture2D" uid="uid://dwie0v2x8teph" path="res://Sprites/UI/plei.png" id="30_axupe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
 font_size = 15
@@ -193,6 +198,8 @@ border_width_bottom = 1
 border_color = Color(0.643137, 0.380392, 0.239216, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_mqkdm"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -676,6 +683,69 @@ theme = ExtResource("17_1my18")
 theme_override_font_sizes/font_size = 20
 text = "RETRY"
 
+[node name="Pausa" type="PanelContainer" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 163.0
+offset_top = 112.0
+offset_right = 821.0
+offset_bottom = 561.0
+theme = ExtResource("16_cal8s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pausa"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Pausa/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label" type="Label" parent="Pausa/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Pausa/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = SubResource("Theme_mqkdm")
+theme_override_constants/margin_top = 120
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pausa/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+script = ExtResource("26_mis2i")
+
+[node name="Btn_toggle_sound" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("28_jiou3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_HOME" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("28_crjft")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_BACK" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("30_axupe")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Btn_pause" type="Button" parent="."]
 process_mode = 3
 layout_mode = 0
@@ -697,4 +767,7 @@ texture = ExtResource("19_i0nsn")
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
 [connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_BACK" to="." method="_on_btn_back_pressed"]
 [connection signal="pressed" from="Btn_pause" to="." method="_on_btn_pause_pressed"]
