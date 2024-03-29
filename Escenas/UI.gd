@@ -14,10 +14,12 @@ func _on_btn_pause_pressed() -> void:
 	paused = !paused
 	get_tree().paused = paused
 	$Pausa.visible=true
+	$Btn_pause.disabled=true
 
 
 func _on_btn_back_pressed():
 	paused = !paused
 	get_tree().paused = paused
 	$Pausa.visible=false
+	$Btn_pause.disabled=false
 	pass # Replace with function body.
