@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=32 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -10,6 +10,88 @@
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="7_kg6s8"]
 [ext_resource type="Texture2D" uid="uid://w20o216cewiy" path="res://Sprites/Menu/buy_1.png" id="8_kncop"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_fv52p"]
+[ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="11_hyuxc"]
+[ext_resource type="Texture2D" uid="uid://nnn27xm74sud" path="res://Sprites/Menu/language icon.png" id="12_2disx"]
+[ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="12_3d5lx"]
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="12_agm7l"]
+[ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
+[ext_resource type="Texture2D" uid="uid://cjuw1xw3wvts2" path="res://Sprites/Menu/RETRY_1_SQUARE.png" id="13_sei61"]
+[ext_resource type="Texture2D" uid="uid://ff5eprqul6n7" path="res://Sprites/Menu/RETRY_2_SQUARE.png" id="14_1jolr"]
+[ext_resource type="Texture2D" uid="uid://b8t70j3iopgqn" path="res://Sprites/Menu/credits icon.png" id="14_74d1c"]
+[ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3mqr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgoiw"]
+texture = ExtResource("13_sei61")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbrr"]
+texture = ExtResource("13_sei61")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnmog"]
+texture = ExtResource("14_1jolr")
+texture_margin_top = 10.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_s2ne5"]
+default_font = ExtResource("12_agm7l")
+default_font_size = 12
+Button/colors/font_color = Color(0.0235294, 0.0588235, 0.278431, 1)
+Button/colors/font_hover_color = Color(0.0235294, 0.0588235, 0.278431, 1)
+Button/colors/font_pressed_color = Color(0.0117647, 0.0313726, 0.192157, 1)
+Button/fonts/font = ExtResource("12_agm7l")
+Button/styles/focus = SubResource("StyleBoxEmpty_d3mqr")
+Button/styles/hover = SubResource("StyleBoxTexture_wgoiw")
+Button/styles/normal = SubResource("StyleBoxTexture_phbrr")
+Button/styles/pressed = SubResource("StyleBoxTexture_fnmog")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1golx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ead3k"]
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 13.0
+texture = ExtResource("12_3d5lx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hlxw"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+texture = ExtResource("12_3d5lx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04hec"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 3.0
+texture = ExtResource("13_6fifa")
+
+[sub_resource type="Theme" id="Theme_54y6a"]
+Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
+Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
+Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
+Button/styles/pressed = SubResource("StyleBoxTexture_04hec")
+
+[sub_resource type="Theme" id="Theme_vk4em"]
+Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
+Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
+Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
+Button/styles/pressed = SubResource("StyleBoxTexture_04hec")
 
 [node name="GameStart" type="Control"]
 texture_filter = 1
@@ -87,6 +169,7 @@ layout_mode = 0
 offset_left = 845.0
 offset_right = 959.0
 offset_bottom = 110.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekfl3")
 flat = true
 
 [node name="botontuto" type="Sprite2D" parent="."]
@@ -112,6 +195,91 @@ theme_override_font_sizes/font_size = 18
 text = "TUTORIAL"
 horizontal_alignment = 1
 
+[node name="Lenguaje" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 175.0
+offset_top = 114.0
+offset_right = 791.0
+offset_bottom = 611.0
+theme = ExtResource("11_hyuxc")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lenguaje"]
+layout_mode = 0
+offset_right = 649.0
+offset_bottom = 487.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Lenguaje/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lenguaje/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 40
+
+[node name="Label" type="Label" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("9_fv52p")
+theme_override_font_sizes/font_size = 40
+text = "LANGUAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="en" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_lnpde")
+theme_override_font_sizes/font_size = 25
+text = "English"
+
+[node name="es" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_lnpde")
+theme_override_font_sizes/font_size = 25
+text = "Español"
+
+[node name="zh" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_lnpde")
+theme_override_font_sizes/font_size = 25
+text = "中国語（簡体字"
+
+[node name="jp" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_lnpde")
+theme_override_font_sizes/font_size = 30
+text = "日本語"
+
+[node name="Control" type="Control" parent="Lenguaje"]
+anchors_preset = 0
+offset_right = 15.0
+offset_bottom = 20.0
+
+[node name="btn_close_language" type="Button" parent="Lenguaje/Control"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 47.0
+theme = SubResource("Theme_s2ne5")
+icon = ExtResource("15_bln3m")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Btn_toggle_Tutorial" type="Button" parent="."]
 layout_mode = 0
 offset_left = 765.0
@@ -121,6 +289,32 @@ offset_bottom = 150.0
 theme = ExtResource("5_lnpde")
 flat = true
 
+[node name="Btn_language" type="Button" parent="."]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 96.0
+offset_bottom = 98.0
+theme = SubResource("Theme_54y6a")
+icon = ExtResource("12_2disx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_credits" type="Button" parent="."]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 630.0
+offset_right = 91.0
+offset_bottom = 705.0
+theme = SubResource("Theme_vk4em")
+icon = ExtResource("14_74d1c")
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_pressed"]
+[connection signal="pressed" from="Lenguaje/Control/btn_close_language" to="." method="_on_btn_close_language_pressed"]
 [connection signal="pressed" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_pressed"]
+[connection signal="pressed" from="Btn_language" to="." method="_on_btn_language_toggle_pressed"]

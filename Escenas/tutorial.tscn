@@ -2306,7 +2306,6 @@ outline_size = 10
 outline_color = Color(0.329412, 0.207843, 0.172549, 1)
 
 [node name="Tutorial" type="Control" node_paths=PackedStringArray("APtutorial")]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 109.0
@@ -2510,7 +2509,6 @@ scale = Vector2(3.86, 3.86)
 texture = ExtResource("9_02203")
 
 [node name="Pancha entrega" type="Node2D" parent="Pancha Gif"]
-visible = false
 
 [node name="Recepcionyipee" type="Sprite2D" parent="Pancha Gif/Pancha entrega"]
 position = Vector2(-22, 38)

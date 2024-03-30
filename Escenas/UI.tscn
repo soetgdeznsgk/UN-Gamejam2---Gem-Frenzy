@@ -202,6 +202,7 @@ expand_margin_bottom = 5.0
 [sub_resource type="Theme" id="Theme_mqkdm"]
 
 [node name="UI" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

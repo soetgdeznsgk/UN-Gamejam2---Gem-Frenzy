@@ -6,9 +6,13 @@ var situto=load("res://Sprites/UI/yes.png")
 var notuto=load("res://Sprites/UI/no.png")
 func _ready():
 	#TEST
+	var nodo_Btn=$Lenguaje/PanelContainer/MarginContainer/VBoxContainer
+	for i in range(1,nodo_Btn.get_child_count()):
+		var boton=nodo_Btn.get_child(i)
+		boton.pressed.connect(_on_button_language_pressed.bind(boton.name))
 	print("estoy en el menu")
-	TranslationServer.set_locale("en")
-	GlobalMejoras.actualizar_traducciones()
+	#TranslationServer.set_locale("es")
+	#GlobalMejoras.actualizar_traducciones()
 	update_sound_texture()
 	update_tuto_texture()
 	
@@ -40,3 +44,23 @@ func update_tuto_texture():
 		
 	else:
 		$tutorial.texture=notuto
+
+
+# Replace with function body.
+
+
+func _on_button_language_pressed(language):
+	TranslationServer.set_locale(language)
+	GlobalMejoras.actualizar_traducciones()
+	print(language)
+	pass # Replace with function body.
+
+
+func _on_btn_language_toggle_pressed():
+	$Lenguaje.visible=true
+	pass # Replace with function body.
+
+
+func _on_btn_close_language_pressed():
+	$Lenguaje.visible=false
+	pass # Replace with function body.

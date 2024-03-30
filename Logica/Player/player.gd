@@ -106,15 +106,6 @@ func _physics_process(_delta):
 	if movement:
 		if AnimState.get_current_node()=="Escaleras":
 			AnimState.travel("Taladrando_Idle")
-			#if GlobalTuto.tutorial && GlobalTuto.FlagEscaleraTaladrando:
-			#	GlobalTuto.escalerasToTaladrando.emit()
-			#	movement=false
-			#	GlobalTuto.FlagEscaleraTaladrando=false
-			#	recienSalidoEscalera = false
-			#	await GlobalTuto.endTaladrando
-				
-			#	movement=true
-				
 				
 		if modolento:
 			SPEED=50
