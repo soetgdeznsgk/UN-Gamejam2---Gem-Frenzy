@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=59 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="20_v1ys7"]
 [ext_resource type="Theme" uid="uid://pnhutxwsymll" path="res://Sprites/Menu/botoncuadraoamarillo.tres" id="26_46bwo"]
 [ext_resource type="Script" path="res://Escenas/pausa.gd" id="26_mis2i"]
+[ext_resource type="Script" path="res://Escenas/factura.gd" id="26_url12"]
 [ext_resource type="Texture2D" uid="uid://j200rhck5hbf" path="res://Sprites/UI/casita.png" id="28_crjft"]
 [ext_resource type="Texture2D" uid="uid://b23cd5xtolx3k" path="res://Sprites/UI/Icon_SoundOn.png" id="28_jiou3"]
 [ext_resource type="Texture2D" uid="uid://dwie0v2x8teph" path="res://Sprites/UI/plei.png" id="30_axupe"]
@@ -202,7 +203,6 @@ expand_margin_bottom = 5.0
 [sub_resource type="Theme" id="Theme_mqkdm"]
 
 [node name="UI" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -287,7 +287,7 @@ stretch_mode = 2
 layout_mode = 2
 offset_left = 816.0
 offset_top = 625.0
-offset_right = 948.0
+offset_right = 950.0
 offset_bottom = 639.0
 text = "Renta: "
 label_settings = SubResource("LabelSettings_g6ud2")
@@ -684,6 +684,61 @@ theme = ExtResource("17_1my18")
 theme_override_font_sizes/font_size = 20
 text = "RETRY"
 
+[node name="factura" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 163.0
+offset_top = 112.0
+offset_right = 203.0
+offset_bottom = 152.0
+script = ExtResource("26_url12")
+
+[node name="PanelContainer" type="PanelContainer" parent="factura"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -23.0
+offset_right = 720.0
+offset_bottom = 492.0
+theme = ExtResource("16_cal8s")
+
+[node name="Label" type="Label" parent="factura"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 12.0
+text = "DIA TERMINADO YIPEE"
+
+[node name="cosas pagadas" type="VBoxContainer" parent="factura"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 102.0
+offset_right = 594.0
+offset_bottom = 336.0
+
+[node name="Label" type="Label" parent="factura/cosas pagadas"]
+layout_mode = 2
+text = "fdsaf
+dfs
+dfsa
+f
+"
+
+[node name="preciocosaspagadas" type="VBoxContainer" parent="factura"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 147.0
+offset_right = 482.0
+offset_bottom = 235.0
+
+[node name="Button" type="Button" parent="factura"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 407.0
+offset_right = 448.0
+offset_bottom = 475.0
+text = "firmar factura"
+
 [node name="Pausa" type="PanelContainer" parent="."]
 process_mode = 3
 visible = false
@@ -768,6 +823,7 @@ texture = ExtResource("19_i0nsn")
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
 [connection signal="text_changed" from="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer/LineEdit" to="Gameover" method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="factura/Button" to="factura" method="_on_btn_factura_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_BACK" to="." method="_on_btn_back_pressed"]

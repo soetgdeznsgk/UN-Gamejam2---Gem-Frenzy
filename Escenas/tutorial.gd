@@ -91,6 +91,7 @@ func _on_botonterminar_pressed():
 	GlobalRecursos.dinero = 5
 	GlobalRecursos.minerales = [0,0,0,0,0,0,0,0,0,0,0]
 	GlobalMejoras.activas_mejoras = [0,0,0,0,0,0,0]
+	GlobalRecursos.reiniciar_factura()
 	GlobalMejoras._ready()
 	GlobalTiempo.diaActual = 1
 	GlobalTiempo.tiempoHoraDia = 8

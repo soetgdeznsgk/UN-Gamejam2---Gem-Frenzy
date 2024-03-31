@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=33 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -14,32 +14,33 @@
 [ext_resource type="Texture2D" uid="uid://nnn27xm74sud" path="res://Sprites/Menu/language icon.png" id="12_2disx"]
 [ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="12_3d5lx"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="12_agm7l"]
+[ext_resource type="Texture2D" uid="uid://w3om1b0fedkn" path="res://Sprites/Menu/retry_1.png" id="13_3e6fl"]
 [ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
-[ext_resource type="Texture2D" uid="uid://cjuw1xw3wvts2" path="res://Sprites/Menu/RETRY_1_SQUARE.png" id="13_sei61"]
-[ext_resource type="Texture2D" uid="uid://ff5eprqul6n7" path="res://Sprites/Menu/RETRY_2_SQUARE.png" id="14_1jolr"]
 [ext_resource type="Texture2D" uid="uid://b8t70j3iopgqn" path="res://Sprites/Menu/credits icon.png" id="14_74d1c"]
+[ext_resource type="Texture2D" uid="uid://qaf22q1pwdp3" path="res://Sprites/Menu/finish_1.png" id="14_yeq0e"]
 [ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
+[ext_resource type="Texture2D" uid="uid://cnpxnjhwey8kn" path="res://Sprites/Menu/finish_2.png" id="15_kahum"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3mqr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgoiw"]
-texture = ExtResource("13_sei61")
+texture = ExtResource("13_3e6fl")
 expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbrr"]
-texture = ExtResource("13_sei61")
+texture = ExtResource("14_yeq0e")
 expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnmog"]
-texture = ExtResource("14_1jolr")
+texture = ExtResource("15_kahum")
 texture_margin_top = 10.0
 expand_margin_left = 5.0
 expand_margin_top = 5.0
@@ -271,10 +272,10 @@ offset_bottom = 20.0
 
 [node name="btn_close_language" type="Button" parent="Lenguaje/Control"]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 13.0
-offset_right = 63.0
-offset_bottom = 47.0
+offset_left = 577.0
+offset_top = 16.0
+offset_right = 611.0
+offset_bottom = 50.0
 theme = SubResource("Theme_s2ne5")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1

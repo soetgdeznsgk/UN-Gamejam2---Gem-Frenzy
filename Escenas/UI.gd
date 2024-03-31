@@ -23,3 +23,6 @@ func _on_btn_back_pressed():
 	$Pausa.visible=false
 	$Btn_pause.disabled=false
 	pass # Replace with function body.
+
+
+# Replace with function body.

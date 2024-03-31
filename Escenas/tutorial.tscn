@@ -2306,6 +2306,7 @@ outline_size = 10
 outline_color = Color(0.329412, 0.207843, 0.172549, 1)
 
 [node name="Tutorial" type="Control" node_paths=PackedStringArray("APtutorial")]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 109.0
@@ -2465,7 +2466,6 @@ vframes = 2
 frame = 3
 
 [node name="Receta" type="Sprite2D" parent="Pancha Gif/Control/Panchasprite"]
-visible = false
 position = Vector2(0.0386353, -14.5036)
 scale = Vector2(0.999712, 0.999712)
 texture = ExtResource("10_6u6h7")

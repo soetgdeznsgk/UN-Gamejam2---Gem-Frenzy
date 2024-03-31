@@ -92,7 +92,11 @@ func _on_new_customer(customer : Cliente) -> void:
 	
 func _on_order_delivered(plata : int) -> void:
 	@warning_ignore("integer_division")
-	GlobalRecursos.actualizar_dinero(int(plata + ((plata / 4) * GlobalMejoras.activas_mejoras[2] + 1 * GlobalMejoras.activas_mejoras[2])))
+	var dineroordenbase=plata
+	var dinerobono=((plata / 4) * GlobalMejoras.activas_mejoras[2] + 1 * GlobalMejoras.activas_mejoras[2])
+	GlobalRecursos.Gananciadia+=dineroordenbase
+	GlobalRecursos.Gananciabono+=dinerobono
+	GlobalRecursos.actualizar_dinero(plata+dinerobono)
 	if GlobalTuto.tutorial and GlobalTuto.FlagOrdenEscalera:
 		GlobalTuto.ordenToEscaleras.emit()
 		 # cada nivel de la mejora de dinero agrega 25% más al precio de cada receta +1

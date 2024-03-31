@@ -11,8 +11,8 @@ func _ready():
 		var boton=nodo_Btn.get_child(i)
 		boton.pressed.connect(_on_button_language_pressed.bind(boton.name))
 	print("estoy en el menu")
-	#TranslationServer.set_locale("es")
-	#GlobalMejoras.actualizar_traducciones()
+	TranslationServer.set_locale("en")
+	GlobalMejoras.actualizar_traducciones()
 	update_sound_texture()
 	update_tuto_texture()
 	

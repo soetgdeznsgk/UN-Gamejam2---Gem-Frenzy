@@ -10,6 +10,10 @@ signal cambioMineral(mineral, cantidad)
 signal bancarota
 var valorDia
 signal rentadia
+
+var Gananciadia
+var Gananciabono
+var GananciaReciclaje
 # enum para no perderlos de vista
 
 enum mineralesSinFondo{
@@ -57,7 +61,12 @@ func actualizar_dinero(cantidad : int):
 		cambioDinero.emit(dinero)
 		if dinero < 0:
 			bancarota.emit()
+func reiniciar_factura():
+	Gananciadia=0
+	Gananciabono=0
+	GananciaReciclaje=0
 func actualizar_renta():
+	reiniciar_factura()
 	var dia = GlobalTiempo.diaActual 
 	valorDia = 3*GlobalTiempo.diaActual
 	
@@ -80,7 +89,8 @@ func actualizar_renta():
 	rentadia.emit()
 	print("valor renta: ", valorDia)
 func pagueme_la_renta():
-
+	print("PAGANDO RENTA")
+	
 	# TODO hacer q esto se vea mejor  ymas intuitivo en la ui. una animacion oalgo
 	var reciclar : int = 0
 	for i in range(len(minerales)):
@@ -89,8 +99,9 @@ func pagueme_la_renta():
 		@warning_ignore("integer_division")
 		reciclar += (mitad * (i/2 + 1))
 	
-	var oro = int(reciclar * 0.04)
-	actualizar_dinero(oro)
+	var totalreciclado = int(reciclar * 0.04)
+	GlobalRecursos.GananciaReciclaje=totalreciclado
+	actualizar_dinero(totalreciclado)
 	# luego de obtener oro por minerales de sobra, se cobra la renta
 	actualizar_dinero( -valorDia )
 	

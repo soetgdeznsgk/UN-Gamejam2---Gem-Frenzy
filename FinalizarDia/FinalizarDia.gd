@@ -17,6 +17,12 @@ func _on_finalizar_dia():
 			grid.add_child(temp)
 		$AudioFinDiaBien.play()
 		%FinalizarDia.visible = true
+	%FinalizarDia.visible =false
+	%factura.visible=true
+	%"factura/cosas pagadas/Label".text="factura--- \nGanancia dia:                              \t"+str(GlobalRecursos.Gananciadia)\
+	+"\nGanancia bono:                            \t"+str(GlobalRecursos.Gananciabono)+"\nGanancia Reciclaje de minerales:\t"+str(GlobalRecursos.GananciaReciclaje)+"\nRenta:                                   \t-"\
+	+str(GlobalRecursos.valorDia)
+	print("factura--- \n",GlobalRecursos.Gananciadia,"\n",GlobalRecursos.Gananciabono,"\n",GlobalRecursos.GananciaReciclaje,"\n -",GlobalRecursos.valorDia)
 
 func _on_btn_finalizar_dia_pressed() -> void:
 	visible = false

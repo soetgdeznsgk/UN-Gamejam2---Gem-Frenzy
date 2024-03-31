@@ -1,13 +1,14 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cgape0strpjef"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cgape0strpjef"]
 
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="1_vyldk"]
 [ext_resource type="Texture2D" uid="uid://qaf22q1pwdp3" path="res://Sprites/Menu/finish_1.png" id="2_80w8l"]
+[ext_resource type="Texture2D" uid="uid://w3om1b0fedkn" path="res://Sprites/Menu/retry_1.png" id="2_uw5kj"]
 [ext_resource type="Texture2D" uid="uid://cnpxnjhwey8kn" path="res://Sprites/Menu/finish_2.png" id="3_wurcw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3mqr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgoiw"]
-texture = ExtResource("2_80w8l")
+texture = ExtResource("2_uw5kj")
 expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
