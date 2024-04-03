@@ -199,7 +199,7 @@ func actualizar_traducciones():
 		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : tr("MORE_PROFITS"),
 		"Precio" : 7,
-		"PrecioEscalar" : 10,
+		"PrecioEscalar" : 8,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
 		"Descripcion" : tr("MORE_PROFITS_DESC"),
