@@ -1,14 +1,17 @@
 extends Marker2D
 
 var cliente = preload("res://Logica/cliente_body.tscn")
-@export var tiempo_min_entre_clientes = 12 # añadir varianza
+@export var tiempo_max_entre_clientes = 12 # añadir varianza
 var generandoClientes = true
-
+var tiempo_min_entre_clientes = 5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	generar_cliente()
 	GlobalTiempo.finalizarDia.connect(fin_dia)
 	GlobalTiempo.iniciarDia.connect(ini_dia)
+	if GlobalTiempo.diaActual == 1:
+		tiempo_max_entre_clientes = 7
+		tiempo_min_entre_clientes = 5
 
 func fin_dia():
 	generandoClientes = false
@@ -17,6 +20,13 @@ func fin_dia():
 func ini_dia():
 	generandoClientes = true
 	$Timer.start(2)
+	if GlobalTiempo.diaActual != 1:
+		tiempo_max_entre_clientes = 7 + int(GlobalTiempo.diaActual/2)
+		tiempo_min_entre_clientes = 5 + int(GlobalTiempo.diaActual/2)
+	if tiempo_max_entre_clientes >= 11:
+		tiempo_max_entre_clientes = 11
+	if tiempo_min_entre_clientes >= 9:
+		tiempo_min_entre_clientes = 9
 
 func generar_cliente():
 	if generandoClientes:
@@ -26,8 +36,5 @@ func generar_cliente():
 	if GlobalTuto.tutorial:
 		$Timer.stop()
 func _on_timer_timeout():
-	if len(OrderManager.currentOrders) > 0:
-		$Timer.wait_time = randi() % (7) + randi_range(7,tiempo_min_entre_clientes) - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
-	else:
-		$Timer.wait_time = randi() % (4) + randi_range(6,tiempo_min_entre_clientes) - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
+	$Timer.wait_time = randi_range(tiempo_min_entre_clientes,tiempo_max_entre_clientes) + randi_range(tiempo_min_entre_clientes,tiempo_max_entre_clientes) - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
 	generar_cliente()

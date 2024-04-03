@@ -75,16 +75,22 @@ func _on_btn_reintentar_pressed() -> void:
 	if GlobalFirebaseInfo.isAuth:
 		var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
 		# El nombre del ID en vacio permite que sea autogenerado
+		@warning_ignore("unused_variable")
 		var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
 		("", {'day': GlobalTiempo.diaActual, 'name': nameN})
+		
+		#print('firebase retorna', add_task)
 		
 		var cantidadActualDelDia = 1
 		if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
 			cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
 			cantidadActualDelDia += 1
 		# Actualiza la cantidad de nombres en ese dia
+		@warning_ignore("unused_variable")
 		var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
 		("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
+		
+		#print('firebase retorna', update_map)
 		
 	GlobalRecursos.dinero = 5
 	GlobalRecursos.minerales = [0,0,0,0,0,0,0,0,0,0,0]
@@ -95,7 +101,3 @@ func _on_btn_reintentar_pressed() -> void:
 	GlobalTiempo.tiempoMinutoDia = 0
 	
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
-
-
-func _on_line_edit_text_changed(new_text: String) -> void:
-	pass # Replace with function body.

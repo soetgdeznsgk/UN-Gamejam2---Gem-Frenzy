@@ -16,7 +16,7 @@ var info_mejoras = {
 	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : tr("CHEST"),
-		"Precio" : 3,
+		"Precio" : 2,
 		"PrecioEscalar" : 2,
 		"Maximo" : 4,
 		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',

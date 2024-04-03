@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	tmr_minuto = Timer.new() 
 	add_child(tmr_minuto)
-	tmr_minuto.wait_time = 0.55
+	tmr_minuto.wait_time = 0.48
 	tmr_minuto.timeout.connect(on_tmr_minuto_end)
 	tmr_minuto.process_callback = Timer.TIMER_PROCESS_PHYSICS
 

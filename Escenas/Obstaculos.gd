@@ -40,8 +40,11 @@ func empezardia():
 	var finalA
 	var finalB
 	var finalC=250
+	@warning_ignore("unused_variable")
 	var inicioA
+	@warning_ignore("unused_variable")
 	var inicioB
+	@warning_ignore("unused_variable")
 	var inicioC=Iniciocapas
 	
 	match diaactual:

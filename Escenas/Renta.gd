@@ -8,6 +8,3 @@ func _ready():
 
 func update_rentaUI():
 	text= tr("RENT")+" "+ str(GlobalRecursos.valorDia)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

@@ -91,8 +91,8 @@ func _on_new_customer(customer : Cliente) -> void:
 	
 	
 func _on_order_delivered(plata : int) -> void:
-	@warning_ignore("integer_division")
 	var dineroordenbase=plata
+	@warning_ignore("integer_division")
 	var dinerobono=((plata / 4) * GlobalMejoras.activas_mejoras[2] + 1 * GlobalMejoras.activas_mejoras[2])
 	GlobalRecursos.Gananciadia+=dineroordenbase
 	GlobalRecursos.Gananciabono+=dinerobono

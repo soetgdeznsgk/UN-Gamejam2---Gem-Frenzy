@@ -12,10 +12,6 @@ func _ready():
 		$Btn_toggle_sound.icon= textureSndOn
 		sound=true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_btn_toggle_sound_pressed():
 	if sound:
 		AudioServer.set_bus_volume_db(0,-72)

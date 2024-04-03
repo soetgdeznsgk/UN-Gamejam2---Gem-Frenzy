@@ -21,7 +21,8 @@ func fin_dia():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if isPlayerHere:
-		if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down") and playerRef.movement == true:
+		if (Input.is_action_just_pressed("ui_up") or \
+		Input.is_action_just_pressed("ui_down")) and playerRef.movement == true:
 			tween = get_tree().create_tween()
 			# Esto "pausa" el tween
 			if GlobalTuto.tutorial:
