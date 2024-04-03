@@ -36,7 +36,7 @@ func _init(materiales : Array, customer : Cliente):
 		GlobalRecetas.CristalAgua:
 			precio = 8
 		GlobalRecetas.CristalTierra:
-			precio = 10
+			precio = 6
 	
 	tmr = Timer.new()
 	add_child(tmr)

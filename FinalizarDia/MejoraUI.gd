@@ -5,7 +5,7 @@ var textura
 var totalPrecio
 func _ready() -> void:
 	if not info.is_empty():
-		# el precio aumenta en 2 por cada mejora de la misma
+		# el precio aumenta algun escalar si ya se ha comprado antes
 		totalPrecio = info["Precio"] + \
 		GlobalMejoras.activas_mejoras[int(info["Key"])] * info["PrecioEscalar"]
 		

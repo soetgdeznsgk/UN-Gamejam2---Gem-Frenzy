@@ -80,18 +80,14 @@ func actualizar_renta():
 		valorDia = int(4.5 * GlobalTiempo.diaActual) - 3
 	
 	if dia >= 9:
-		valorDia = 6 * GlobalTiempo.diaActual - 2
+		valorDia = 5 * GlobalTiempo.diaActual - 2
 	
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3
-	if valorDia > 70:
-		valorDia = 70
-	rentadia.emit()
-	print("valor renta: ", valorDia)
-func pagueme_la_renta():
-	print("PAGANDO RENTA")
 	
-	# TODO hacer q esto se vea mejor  ymas intuitivo en la ui. una animacion oalgo
+	rentadia.emit()
+func pagueme_la_renta():
+	
 	var reciclar : int = 0
 	for i in range(len(minerales)):
 		var mitad = int(3*minerales[i]/4)
@@ -99,7 +95,7 @@ func pagueme_la_renta():
 		@warning_ignore("integer_division")
 		reciclar += (mitad * (i/2 + 1))
 	
-	var totalreciclado = int(reciclar * 0.04)
+	var totalreciclado = int(reciclar * 0.05)
 	GlobalRecursos.GananciaReciclaje=totalreciclado
 	actualizar_dinero(totalreciclado)
 	# luego de obtener oro por minerales de sobra, se cobra la renta
