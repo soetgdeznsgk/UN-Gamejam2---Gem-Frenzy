@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=52 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_3l1ym"]
 [ext_resource type="Texture2D" uid="uid://d4b37i4g7p2yr" path="res://Sprites/Recursos/Recetas.png" id="8_781fh"]
 [ext_resource type="AudioStream" uid="uid://dvpk51bv6g6i2" path="res://Musica/PanchaPaso.wav" id="9_mrxpi"]
+[ext_resource type="AudioStream" uid="uid://b11viv355bjc1" path="res://Musica/RecogerMineral.wav" id="10_ahv72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(13, 14)
@@ -1004,4 +1005,17 @@ process_callback = 0
 wait_time = 0.3
 one_shot = true
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fsbbl")
+
+[node name="AudioMinado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ahv72")
+volume_db = -6.3
+pitch_scale = 1.05
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

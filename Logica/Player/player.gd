@@ -11,6 +11,7 @@ signal mine_entered
 @onready var SPEEDUP= CONST_SPEED + CONST_SPEEDUP
 @onready var Anim : AnimationTree = $AnimationTree
 @onready var AnimState : AnimationNodeStateMachinePlayback = Anim.get("parameters/playback")
+@onready var audioMinado = $AudioMinado
 var taladrando= false
 var input_direction = Vector2.ZERO
 var last_move=Vector2.ZERO
@@ -38,15 +39,16 @@ func iniciar_dia():
 	diaFinalizado = false
 	movement = true
 	taladrando=false
-	var tween = get_tree().create_tween()
-	tween.tween_property(self,"position", Vector2(397,-21),0.1)
 
 func finalizar_dia():
 	movement = false
 	diaFinalizado = true
 	input_direction = Vector2.ZERO
 	last_move=Vector2.ZERO
+	var tween = get_tree().create_tween()
+	tween.tween_property(self,"position", Vector2(397,-21),0.25)
 	surface_entered.emit()
+	
 
 func _physics_process(_delta):
 	if !diaFinalizado:
@@ -196,3 +198,20 @@ func _on_area_2d_casa_body_exited(_body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	recienSalidoEscalera = false
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: TileMap, _body_shape_index: int, _local_shape_index: int) -> void:
+	var layer = body.get_layer_for_body_rid(body_rid)
+	var cords = body.get_coords_for_body_rid(body_rid)
+	var atlasSourceId = body.get_cell_source_id(layer,cords)
+	var atlasCords = body.get_cell_atlas_coords(layer,cords) # Devuelve el x,y del tile y con eso puedo ver cosas
+	var actualFrame = atlasCords.x + atlasCords.y * 6 # Devuelve el frame para que tenga sentido con las globales
+	
+	if actualFrame < GlobalRecursos.mineralesConFondo.Tierra:
+		GlobalRecursos.actualizar_mineral(actualFrame, 1)
+		audioMinado.play(0) #sonido de minado
+		# Actualizar frame del tile a minado
+		body.set_cell(layer,cords,atlasSourceId,Vector2(0,2))
+	elif actualFrame != GlobalRecursos.mineralesConFondo.TierraMinada:
+		# Actualizar frame del tile a minado
+		body.set_cell(layer,cords,atlasSourceId,Vector2(0,2))

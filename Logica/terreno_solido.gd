@@ -10,8 +10,6 @@ func _on_body_entered(body: Node2D) -> void:
 		if $Sprite2D.frame < GlobalRecursos.mineralesConFondo.Tierra:
 			GlobalRecursos.actualizar_mineral($Sprite2D.frame, 1)
 			$AudioStreamPlayer.play(0)
-		
-		
 		$Sprite2D.frame = GlobalRecursos.mineralesConFondo.TierraMinada
 		
 
