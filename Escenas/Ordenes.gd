@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 var ordenUI = preload("res://Escenas/Ventana por Orden/orden_ui.tscn")
-#var dirSprites = "res://Sprites/temporales_UI"
+
 
 func _ready():
 	OrderManager.new_order.connect(_on_new_order)

@@ -1,9 +1,10 @@
 extends Control
 var sound = true
-var textureSnd1 = load("res://Sprites/UI/Icon_SoundOff.png")
-var textureSnd2 = load("res://Sprites/UI/Icon_SoundOn.png")
-var situto=load("res://Sprites/UI/yes.png")
-var notuto=load("res://Sprites/UI/no.png")
+var textureSnd1 = preload("res://Sprites/UI/Icon_SoundOff.png")
+var textureSnd2 = preload("res://Sprites/UI/Icon_SoundOn.png")
+var situto = preload("res://Sprites/UI/yes.png")
+var notuto = preload("res://Sprites/UI/no.png")
+
 func _ready():
 	#TEST
 	var nodo_Btn=$Lenguaje/PanelContainer/MarginContainer/VBoxContainer
