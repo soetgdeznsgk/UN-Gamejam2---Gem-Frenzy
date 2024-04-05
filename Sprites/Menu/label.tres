@@ -1,5 +1,9 @@
-[gd_resource type="Theme" format=3 uid="uid://bftiuvq8fblb7"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bftiuvq8fblb7"]
+
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="1_kqarn"]
 
 [resource]
+default_font = ExtResource("1_kqarn")
+default_font_size = 16
 Label/colors/font_outline_color = Color(0.254902, 0.133333, 0.12549, 1)
 Label/constants/outline_size = 10

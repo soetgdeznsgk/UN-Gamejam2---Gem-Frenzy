@@ -79,7 +79,8 @@ texture_region_size = Vector2i(26, 24)
 
 [sub_resource type="TileSet" id="TileSet_o7ih6"]
 tile_size = Vector2i(8, 8)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
 sources/3 = SubResource("TileSetAtlasSource_gbhtb")
 sources/5 = SubResource("TileSetAtlasSource_lhame")
 sources/6 = SubResource("TileSetAtlasSource_ogm73")
@@ -418,487 +419,488 @@ unique_name_in_owner = true
 position = Vector2(320, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/BLOQUEADIAS"]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_hxlur")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-316, 0)
+position = Vector2(-316, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-308, 0)
+position = Vector2(-308, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-300, 0)
+position = Vector2(-300, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-292, 0)
+position = Vector2(-292, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-284, 0)
+position = Vector2(-284, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-276, 0)
+position = Vector2(-276, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-268, 0)
+position = Vector2(-268, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-260, 0)
+position = Vector2(-260, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-252, 0)
+position = Vector2(-252, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-244, 0)
+position = Vector2(-244, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-236, 0)
+position = Vector2(-236, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-228, 0)
+position = Vector2(-228, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D13" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-221, 0)
+position = Vector2(-221, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D14" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-213, 0)
+position = Vector2(-213, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D15" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-205, 0)
+position = Vector2(-205, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D16" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-197, 0)
+position = Vector2(-197, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D17" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-189, 0)
+position = Vector2(-189, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D18" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-181, 0)
+position = Vector2(-181, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D19" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-173, 0)
+position = Vector2(-173, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D20" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-165, 0)
+position = Vector2(-165, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D21" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-157, 0)
+position = Vector2(-157, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D22" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-149, 0)
+position = Vector2(-149, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D23" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-141, 0)
+position = Vector2(-141, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D24" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-133, 0)
+position = Vector2(-133, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D25" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-125, 0)
+position = Vector2(-125, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D26" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-117, 0)
+position = Vector2(-117, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D27" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-109, 0)
+position = Vector2(-109, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D28" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-101, 0)
+position = Vector2(-101, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D29" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-93, 0)
+position = Vector2(-93, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D30" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-85, 0)
+position = Vector2(-85, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D31" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-77, 0)
+position = Vector2(-77, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D32" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-69, 0)
+position = Vector2(-69, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D33" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-61, 0)
+position = Vector2(-61, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D34" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-53, 0)
+position = Vector2(-53, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D35" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-45, 0)
+position = Vector2(-45, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D36" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-37, 0)
+position = Vector2(-37, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D37" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-30, 0)
+position = Vector2(-30, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D38" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-22, 0)
+position = Vector2(-22, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D39" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-14, 0)
+position = Vector2(-14, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D40" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-6, 0)
+position = Vector2(-6, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D41" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(2, 0)
+position = Vector2(2, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D42" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(10, 0)
+position = Vector2(10, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D43" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(18, 0)
+position = Vector2(18, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D44" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(26, 0)
+position = Vector2(26, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D45" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(34, 0)
+position = Vector2(34, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D46" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(42, 0)
+position = Vector2(42, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D47" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(50, 0)
+position = Vector2(50, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D48" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(58, 0)
+position = Vector2(58, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D49" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(66, 0)
+position = Vector2(66, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D50" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(74, 0)
+position = Vector2(74, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D51" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(82, 0)
+position = Vector2(82, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D52" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(90, 0)
+position = Vector2(90, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D53" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(98, 0)
+position = Vector2(98, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D54" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(106, 0)
+position = Vector2(106, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D55" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(114, 0)
+position = Vector2(114, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D56" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(122, 0)
+position = Vector2(122, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D57" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(130, 0)
+position = Vector2(130, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D58" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(138, 0)
+position = Vector2(138, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D59" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(146, 0)
+position = Vector2(146, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D60" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(154, 0)
+position = Vector2(154, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D61" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(161, 0)
+position = Vector2(161, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D62" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(169, 0)
+position = Vector2(169, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D63" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(177, 0)
+position = Vector2(177, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D64" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(185, 0)
+position = Vector2(185, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D65" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(193, 0)
+position = Vector2(193, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D66" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(201, 0)
+position = Vector2(201, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D67" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(209, 0)
+position = Vector2(209, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D68" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(217, 0)
+position = Vector2(217, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D69" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(225, 0)
+position = Vector2(225, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D70" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(233, 0)
+position = Vector2(233, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D71" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(241, 0)
+position = Vector2(241, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D72" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(249, 0)
+position = Vector2(249, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D73" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(257, 0)
+position = Vector2(257, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D74" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(265, 0)
+position = Vector2(265, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D75" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(273, 0)
+position = Vector2(273, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D76" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(281, 0)
+position = Vector2(281, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D77" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(289, 0)
+position = Vector2(289, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D78" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(297, 0)
+position = Vector2(297, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D79" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(305, 0)
+position = Vector2(305, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Sprite2D80" type="Sprite2D" parent="Gameplay/BLOQUEADIAS"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(313, 0)
+position = Vector2(313, -4)
 texture = ExtResource("4_tg0lo")
 
 [node name="Area2DMeterCarbon" type="Area2D" parent="Gameplay"]
@@ -1009,16 +1011,18 @@ autoplay = true
 
 [node name="Gato" parent="." instance=ExtResource("26_0x151")]
 visible = false
+z_index = 1
 position = Vector2(362, -16)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 4
+collision_mask = 4
 
 [node name="Gato2" parent="." instance=ExtResource("26_0x151")]
 visible = false
 modulate = Color(0.976471, 0.568627, 0, 1)
+z_index = 1
 position = Vector2(296, -56)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 4
+collision_mask = 4
 gatoPower = 1
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]

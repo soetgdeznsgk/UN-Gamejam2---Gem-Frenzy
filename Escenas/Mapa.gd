@@ -37,7 +37,7 @@ func regenerar_mapa():
 	## Libera all metal
 	if GlobalTiempo.diaActual >= 2:
 		for i in range(0,79):
-			for j in range(10,20): # Las segundas 10 capas de profundidad
+			for j in range(10,21): # Las segundas 10 capas de profundidad
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.955 and porcentaje >= 0:
@@ -59,7 +59,7 @@ func regenerar_mapa():
 	# se vende el oro solito
 	if GlobalTiempo.diaActual >= 3:
 		for i in range(0,79):
-			for j in range(20,40):
+			for j in range(20,41):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.97 and porcentaje >= 0:
@@ -79,7 +79,7 @@ func regenerar_mapa():
 	# Libera receta Fire cristal
 	if GlobalTiempo.diaActual >= 4:
 		for i in range(0,79):
-			for j in range(40,60):
+			for j in range(40,61):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.975 and porcentaje >= 0:
@@ -102,7 +102,7 @@ func regenerar_mapa():
 	# Libera receta ice cristal
 	if GlobalTiempo.diaActual >= 6:
 		for i in range(0,79):
-			for j in range(60,90):
+			for j in range(60,91):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.985 and porcentaje >= 0:
@@ -123,7 +123,7 @@ func regenerar_mapa():
 	# Libera RGB cristal
 	if GlobalTiempo.diaActual >= 7:
 		for i in range(0,79):
-			for j in range(90,120):
+			for j in range(90,121):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.985 and porcentaje >= 0:
@@ -143,7 +143,7 @@ func regenerar_mapa():
 	# desbloquea 3 recetas de golpe.
 	if GlobalTiempo.diaActual >= 8:
 		for i in range(0,79):
-			for j in range(120,150):
+			for j in range(120,151):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.985 and porcentaje >= 0:
@@ -162,7 +162,7 @@ func regenerar_mapa():
 	
 	if GlobalTiempo.diaActual >= 9:
 		for i in range(0,79):
-			for j in range(150,160):
+			for j in range(150,161):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.98 and porcentaje >= 0:

@@ -51,7 +51,6 @@ func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(actualizar_renta)
 	GlobalTiempo.finalizarDia.connect(pagueme_la_renta)
 
-
 func actualizar_mineral(mineral : int, cantidad : int):
 	minerales[mineral] += cantidad
 	cambioMineral.emit(mineral, minerales[mineral])
@@ -62,10 +61,12 @@ func actualizar_dinero(cantidad : int):
 		cambioDinero.emit(dinero)
 		if dinero < 0:
 			bancarota.emit()
+
 func reiniciar_factura():
 	Gananciadia=0
 	Gananciabono=0
 	GananciaReciclaje=0
+
 func actualizar_renta():
 	Ahorro=dinero
 	reiniciar_factura()
@@ -82,14 +83,17 @@ func actualizar_renta():
 		valorDia = int(4.5 * GlobalTiempo.diaActual) - 3
 	
 	if dia >= 9:
-		valorDia = 5 * GlobalTiempo.diaActual - 2
+		valorDia = int(5.3 * GlobalTiempo.diaActual) - 2
+	
+	if valorDia >= 80:
+		valorDia = 80
 	
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3
 	
 	rentadia.emit()
+
 func pagueme_la_renta():
-	
 	var reciclar : int = 0
 	for i in range(len(minerales)):
 		var mitad = int(3*minerales[i]/4)
@@ -97,7 +101,7 @@ func pagueme_la_renta():
 		@warning_ignore("integer_division")
 		reciclar += (mitad * (i/2 + 1))
 	
-	var totalreciclado = int(reciclar * 0.05)
+	var totalreciclado = int(reciclar * 0.0375)
 	GlobalRecursos.GananciaReciclaje=totalreciclado
 	actualizar_dinero(totalreciclado)
 	# luego de obtener oro por minerales de sobra, se cobra la renta

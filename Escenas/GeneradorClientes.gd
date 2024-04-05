@@ -23,10 +23,10 @@ func ini_dia():
 	if GlobalTiempo.diaActual != 1:
 		tiempo_max_entre_clientes = 7 + int(GlobalTiempo.diaActual/2)
 		tiempo_min_entre_clientes = 5 + int(GlobalTiempo.diaActual/2)
-	if tiempo_max_entre_clientes >= 11:
-		tiempo_max_entre_clientes = 11
-	if tiempo_min_entre_clientes >= 9:
-		tiempo_min_entre_clientes = 9
+	if tiempo_max_entre_clientes >= 13:
+		tiempo_max_entre_clientes = 13
+	if tiempo_min_entre_clientes >= 10:
+		tiempo_min_entre_clientes = 10
 
 func generar_cliente():
 	if generandoClientes:
@@ -35,6 +35,7 @@ func generar_cliente():
 		get_parent().add_child.call_deferred(temp)
 	if GlobalTuto.tutorial:
 		$Timer.stop()
+
 func _on_timer_timeout():
 	$Timer.wait_time = randi_range(tiempo_min_entre_clientes,tiempo_max_entre_clientes) + randi_range(tiempo_min_entre_clientes,tiempo_max_entre_clientes) - (GlobalMejoras.activas_mejoras[5] * 2) # cada nivel del gato disminuye 2 segundos el tiempo de aparecido de clientes
 	generar_cliente()
