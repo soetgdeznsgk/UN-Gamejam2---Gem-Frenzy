@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=69 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -35,6 +35,8 @@
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="28_niiiv"]
 [ext_resource type="LabelSettings" uid="uid://dx2r5fphaavpb" path="res://Sprites/UI/labelconfigfactura/label_cafe.tres" id="29_odmc8"]
 [ext_resource type="Texture2D" uid="uid://dwie0v2x8teph" path="res://Sprites/UI/plei.png" id="30_axupe"]
+[ext_resource type="Texture2D" uid="uid://cu1blftepsip2" path="res://Sprites/UI/broke.png" id="30_h7dm3"]
+[ext_resource type="AudioStream" uid="uid://dm1cyji87hgsg" path="res://Musica/sello.mp3" id="31_tekkc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
 font_color = Color(1, 0.168627, 0.168627, 1)
@@ -211,6 +213,92 @@ expand_margin_bottom = 20.0
 default_font = ExtResource("28_niiiv")
 default_font_size = 12
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ulpgl")
+
+[sub_resource type="Animation" id="Animation_uafkg"]
+resource_name = "sello epico"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Streamsello:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signaturepancha:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("signaturepancha:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pasar_de_pagina"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_g65gi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("signaturepancha:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oykhg"]
+_data = {
+"RESET": SubResource("Animation_g65gi"),
+"sello epico": SubResource("Animation_uafkg")
+}
 
 [sub_resource type="Theme" id="Theme_mqkdm"]
 
@@ -848,8 +936,9 @@ theme = SubResource("Theme_emm5b")
 
 [node name="Titulofactura" type="Label" parent="factura"]
 layout_mode = 0
+offset_left = 30.0
 offset_top = 17.0
-offset_right = 651.0
+offset_right = 617.0
 offset_bottom = 44.0
 theme = ExtResource("8_qhue7")
 theme_override_font_sizes/font_size = 30
@@ -959,6 +1048,23 @@ text = "
   111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
+
+[node name="signaturepancha" type="Sprite2D" parent="factura"]
+visible = false
+position = Vector2(455, 318)
+rotation = -0.174533
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("30_h7dm3")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="factura"]
+libraries = {
+"": SubResource("AnimationLibrary_oykhg")
+}
+
+[node name="Streamsello" type="AudioStreamPlayer" parent="factura"]
+stream = ExtResource("31_tekkc")
 
 [node name="Pausa" type="PanelContainer" parent="."]
 process_mode = 3
