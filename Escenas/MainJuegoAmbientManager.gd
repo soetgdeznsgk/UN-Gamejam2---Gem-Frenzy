@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	if GlobalTuto.tutorial:
 			#gato bonito
-		GlobalMejoras.activas_mejoras[5]=1
+		GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]=1
 		GlobalMejoras.mejora_cambiada.emit()
 		#print("señal gato")
 	GlobalRecursos.bancarota.connect(noSound)

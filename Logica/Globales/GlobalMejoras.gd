@@ -9,6 +9,7 @@ enum nombre_mejoras {
 	ClientesZen,
 	MasTiempo,
 	RecompensaMejorada,
+	#PanchaSpeedUp,
 	Gato,
 }
 
@@ -68,12 +69,20 @@ var info_mejoras = {
 		"Descripcion" : tr("CATO_DESC"),
 	},
 }
-var disponible_mejoras = [0,0,0,0,0,0,0]
-var activas_mejoras = [0,0,0,0,0,0,0]
+var disponible_mejoras = []
+var activas_mejoras = []
+
+func reiniciar_mejoras() -> void:
+	for i in range(0,nombre_mejoras.size()):
+		disponible_mejoras[i] = 0
+		activas_mejoras[i] = info_mejoras[i]["Maximo"]
 
 func _ready() -> void:
-	for i in range(len(nombre_mejoras)):
-		disponible_mejoras[i] = info_mejoras[i]["Maximo"]
+	disponible_mejoras = []
+	activas_mejoras = []
+	for i in range(0,nombre_mejoras.size()):
+		disponible_mejoras.append(info_mejoras[i]["Maximo"])
+		activas_mejoras.append(0)
 
 func obtener_mejora_random_disponible():
 	#verifica en las disponibles y devuelve alguna al azar
@@ -81,11 +90,11 @@ func obtener_mejora_random_disponible():
 	var mejoras_seleccionadas : Array = []
 	
 	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion
-	if disponible_mejoras[0]>0:
+	if disponible_mejoras[nombre_mejoras.CofreMineral]>0:
 		mejoras_seleccionadas.append(info_mejoras[0])
-		print(info_mejoras[0])
-	if disponible_mejoras[1]>0:
-		mejoras_seleccionadas.append(info_mejoras[1])
+		print(info_mejoras[nombre_mejoras.CofreMineral])
+	if disponible_mejoras[nombre_mejoras.MejoraDeMejoras]>0:
+		mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.MejoraDeMejoras])
 	
 	for i in range(1, len(nombre_mejoras)):
 		if disponible_mejoras[i] > 0:

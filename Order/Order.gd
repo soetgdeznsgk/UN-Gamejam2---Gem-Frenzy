@@ -42,7 +42,7 @@ func _init(materiales : Array, customer : Cliente):
 	add_child(tmr)
 	tmr.timeout.connect(_on_timer_timeout)
 	tmr.one_shot = true
-	tmr.wait_time = 24 + (GlobalMejoras.activas_mejoras[3] * 8) # Por cada nivel de Zen en las mejoras, se añaden 5 segundos a las recetas
+	tmr.wait_time = 24 + (GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.ClientesZen] * 8) # Por cada nivel de Zen en las mejoras, se añaden 5 segundos a las recetas
 	if GlobalTuto.tutorial:
 		tmr.wait_time=1900
 	tmr.process_callback = Timer.TIMER_PROCESS_PHYSICS

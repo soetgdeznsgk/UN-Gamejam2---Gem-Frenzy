@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 
 func nuevo_gato():
-	var gatos = GlobalMejoras.activas_mejoras[5]
+	var gatos = GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]
 	if gatoPower < gatos:
 		visible = true
 		currentStatus = status.Sentado

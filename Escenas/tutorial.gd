@@ -89,8 +89,8 @@ func _on_botonterminar_pressed():
 	GlobalTuto.tutorial=false
 	#GlobalTiempo.diaActual=1
 	GlobalRecursos.dinero = 5
-	GlobalRecursos.minerales = [0,0,0,0,0,0,0,0,0,0,0]
-	GlobalMejoras.activas_mejoras = [0,0,0,0,0,0,0]
+	GlobalRecursos.reiniciar_minerales()
+	GlobalMejoras.reiniciar_mejoras()
 	GlobalRecursos.reiniciar_factura()
 	GlobalMejoras._ready()
 	GlobalTiempo.diaActual = 1

@@ -3,8 +3,9 @@ extends Node
 # Singleton para manejar el dinero y los minerales actuales
 
 # inicia en ceros
-var minerales : Array = [0,0,0,0,0,0,0,0,0,0,0]
-var dinero : int = 5
+var cantidadTiposMinerales = 11
+var minerales : Array = []
+var dinero : int = 500
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -48,8 +49,14 @@ enum mineralesConFondo{
 }
 
 func _ready() -> void:
+	reiniciar_minerales()
 	GlobalTiempo.iniciarDia.connect(actualizar_renta)
 	GlobalTiempo.finalizarDia.connect(pagueme_la_renta)
+
+func reiniciar_minerales():
+	minerales = []
+	for i in range(0,cantidadTiposMinerales):
+		minerales.append(0)
 
 func actualizar_mineral(mineral : int, cantidad : int):
 	minerales[mineral] += cantidad

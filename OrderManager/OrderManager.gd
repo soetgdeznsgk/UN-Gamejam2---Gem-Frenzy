@@ -94,7 +94,8 @@ func _on_order_delivered(plata : int) -> void:
 	var dineroordenbase=plata
 	@warning_ignore("integer_division")
 	# cada nivel de la mejora de dinero agrega 25% más al precio de cada receta +1
-	var dinerobono=((plata / 4) * GlobalMejoras.activas_mejoras[2]) + (1 * GlobalMejoras.activas_mejoras[2])
+	var dinerobono=((plata / 4) * GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.RecompensaMejorada])\
+	 + (1 * GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.RecompensaMejorada])
 	GlobalRecursos.Gananciadia+=dineroordenbase
 	GlobalRecursos.Gananciabono+=dinerobono
 	GlobalRecursos.actualizar_dinero(plata+dinerobono)

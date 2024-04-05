@@ -27,15 +27,11 @@ func _on_btn_toggle_sound_pressed():
 func _on_btn_home_pressed():
 	get_tree().paused = false
 	GlobalRecursos.dinero = 5
-	GlobalRecursos.minerales = [0,0,0,0,0,0,0,0,0,0,0]
-	GlobalMejoras.activas_mejoras = [0,0,0,0,0,0,0]
+	GlobalRecursos.reiniciar_minerales()
+	GlobalMejoras.reiniciar_mejoras()
 	GlobalMejoras._ready()
 	GlobalTiempo.diaActual = 1
 	GlobalTiempo.tiempoHoraDia = 8
 	GlobalTiempo.tiempoMinutoDia = 0
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
-	pass # Replace with function body.
-
-
-
-	pass # Replace with function body.
+	

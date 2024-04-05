@@ -93,8 +93,8 @@ func _on_btn_reintentar_pressed() -> void:
 		#print('firebase retorna', update_map)
 		
 	GlobalRecursos.dinero = 5
-	GlobalRecursos.minerales = [0,0,0,0,0,0,0,0,0,0,0]
-	GlobalMejoras.activas_mejoras = [0,0,0,0,0,0,0]
+	GlobalRecursos.reiniciar_minerales()
+	GlobalMejoras.reiniciar_mejoras()
 	GlobalMejoras._ready()
 	GlobalTiempo.diaActual = 1
 	GlobalTiempo.tiempoHoraDia = 8
