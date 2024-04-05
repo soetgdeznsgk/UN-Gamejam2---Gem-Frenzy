@@ -288,8 +288,9 @@ layer_0/name = "Terrain"
 unique_name_in_owner = true
 z_index = 5
 position = Vector2(397, -21)
-CONST_SPEED = 118.0
-CONST_SPEEDUP = 46.0
+CONST_SPEED = 120.0
+CONST_SPEEDUP = 30.0
+CONST_SPEEDUP_MEJORADO = 10.0
 
 [node name="CamPlayer" type="Camera2D" parent="Gameplay/Player"]
 unique_name_in_owner = true

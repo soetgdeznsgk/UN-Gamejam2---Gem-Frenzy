@@ -14,7 +14,7 @@ func _ready():
 		boton.pressed.connect(_on_button_language_pressed.bind(boton.name))
 	print("estoy en el menu")
 	TranslationServer.set_locale(GlobalSettings.language)
-	GlobalMejoras.actualizar_traducciones()
+	GlobalMejoras.llenar_mejoras()
 	update_sound_texture()
 	update_tuto_texture()
 	
@@ -59,7 +59,7 @@ func update_tuto_texture():
 func _on_button_language_pressed(language):
 	GlobalSettings.language=language
 	TranslationServer.set_locale(language)
-	GlobalMejoras.actualizar_traducciones()
+	GlobalMejoras.llenar_mejoras()
 	print(language)
 	pass # Replace with function body.
 

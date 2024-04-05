@@ -8,12 +8,15 @@ enum nombre_mejoras {
 	MejoraDeMejoras,
 	ClientesZen,
 	MasTiempo,
+	PanchaSpeedUp,
 	RecompensaMejorada,
-	#PanchaSpeedUp,
 	Gato,
 }
 
-var info_mejoras = {
+var info_mejoras = {}
+
+func llenar_mejoras() -> void:
+	info_mejoras = {
 	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
 		"Key" : nombre_mejoras.CofreMineral,
 		"Nombre" : tr("CHEST"),
@@ -50,6 +53,15 @@ var info_mejoras = {
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : tr("MORE_TIME_DESC"),
 	},
+	nombre_mejoras.PanchaSpeedUp : { # implementada en pancha speed
+		"Key" : nombre_mejoras.PanchaSpeedUp,
+		"Nombre" : tr("SPEED_UP"),
+		"Precio" : 10,
+		"PrecioEscalar" : 10,
+		"Maximo" : 2,
+		"Textura" : 'res://Sprites/mejoras/pancha_speed.png',
+		"Descripcion" : tr("SPEED_UP_DESC"),
+	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : tr("MORE_PROFITS"),
@@ -69,6 +81,7 @@ var info_mejoras = {
 		"Descripcion" : tr("CATO_DESC"),
 	},
 }
+
 var disponible_mejoras = []
 var activas_mejoras = []
 
@@ -78,6 +91,7 @@ func reiniciar_mejoras() -> void:
 		activas_mejoras[i] = info_mejoras[i]["Maximo"]
 
 func _ready() -> void:
+	llenar_mejoras()
 	disponible_mejoras = []
 	activas_mejoras = []
 	for i in range(0,nombre_mejoras.size()):
@@ -165,62 +179,3 @@ func obtener_mejora_random_disponible():
 	else:
 		# dice que no hay ninguna
 		return []
-		
-func actualizar_traducciones():
-	info_mejoras = {
-	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
-		"Key" : nombre_mejoras.CofreMineral,
-		"Nombre" : tr("CHEST"),
-		"Precio" : 3,
-		"PrecioEscalar" : 2,
-		"Maximo" : 4,
-		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
-		"Descripcion" : tr("CHEST_DESC"),
-	},
-		nombre_mejoras.MejoraDeMejoras : {
-		"Key" : nombre_mejoras.MejoraDeMejoras,
-		"Nombre" : tr("MANY_UPGRADES"),
-		"PrecioEscalar" : 1,
-		"Precio" : 5,
-		"Maximo" : 1,
-		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
-		"Descripcion" : tr("MANY_UPGRADES_DESC"),
-	},
-	nombre_mejoras.ClientesZen : { # implementada en Order.gd
-		"Key" : nombre_mejoras.ClientesZen,
-		"Nombre" : tr("ZEN_CLIENTS"),
-		"Precio" : 6,
-		"PrecioEscalar" : 3,
-		"Maximo" : 2,
-		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
-		"Descripcion" : tr("ZEN_CLIENTS_DESC"),
-	},
-	nombre_mejoras.MasTiempo : {
-		"Key" : nombre_mejoras.MasTiempo,
-		"Nombre" : tr("MORE_TIME"),
-		"Precio" : 6,
-		"PrecioEscalar" : 8,
-		"Maximo" : 3,
-		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
-		"Descripcion" : tr("MORE_TIME_DESC"),
-	},
-		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
-		"Key" : nombre_mejoras.RecompensaMejorada,
-		"Nombre" : tr("MORE_PROFITS"),
-		"Precio" : 7,
-		"PrecioEscalar" : 8,
-		"Maximo" : 3,
-		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
-		"Descripcion" : tr("MORE_PROFITS_DESC"),
-	},
-		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
-		"Key" : nombre_mejoras.Gato,
-		"Nombre" : tr("CATO"),
-		"Precio" : 13,
-		"PrecioEscalar" : 13,
-		"Maximo" : 2,
-		"Textura" : 'res://Sprites/mejoras/gatomejora.png',
-		"Descripcion" : tr("CATO_DESC"),
-	},
-
-}

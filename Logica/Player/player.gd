@@ -6,7 +6,7 @@ signal mine_entered
 
 @export var CONST_SPEED : float
 @export var CONST_SPEEDUP : float
-
+@export var CONST_SPEEDUP_MEJORADO : float
 @onready var SPEED = CONST_SPEED
 @onready var SPEEDUP= CONST_SPEED + CONST_SPEEDUP
 @onready var Anim : AnimationTree = $AnimationTree
@@ -29,8 +29,10 @@ func _ready() -> void:
 	GlobalTiempo.finalizarDia.connect(finalizar_dia)
 	GlobalRecursos.bancarota.connect(gameover)
 	GlobalTuto.pausarpancha.connect(pausarPancha)
+
 func pausarPancha():
 	movement=false
+
 func gameover():
 	visible = false
 	position = Vector2(397,-21)
@@ -55,13 +57,13 @@ func _physics_process(_delta):
 	if !diaFinalizado:
 		input_direction = Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
 		-int(Input.is_action_pressed("ui_up")))
+		var mejora_speed = GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.PanchaSpeedUp]
 		if taladrando:
-			#movimiento taladrando
+			#movimiento taladrandO
 			if input_direction==Vector2(0,-1)||input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
 				if recienSalidoEscalera and input_direction == Vector2(0,-1):
 					movement = false
 					AnimState.travel("Escalera")
-					SPEED = CONST_SPEED
 					taladrando=false
 					recienSalidoEscalera = false
 					var tween :Tween = get_tree().create_tween()
@@ -71,27 +73,34 @@ func _physics_process(_delta):
 				
 				input_direction=Vector2(0,-1) # para q taladre hacia
 				# arriba incluso si le da otros botones al mismo tiempo
-				SPEED = CONST_SPEED + CONST_SPEEDUP
+				SPEED = CONST_SPEED + CONST_SPEEDUP + \
+				(CONST_SPEEDUP_MEJORADO * mejora_speed * 1.35) - (int(modolento) * 70)
+				
 				AnimState.travel("Taladrando")
 				Anim.set("parameters/Taladrando/blend_position", Vector2(input_direction.x,-input_direction.y))
 				
-					
+			# Movimiento taladrando derecha
 			elif input_direction==Vector2(1,0):
-				SPEED = CONST_SPEED
+				SPEED = CONST_SPEED + (CONST_SPEEDUP_MEJORADO * mejora_speed) - (int(modolento) * 70)
 				input_direction=Vector2(1,1)
 				last_move=Vector2(1,1)
 				AnimState.travel("Taladrando")
 				Anim.set("parameters/Taladrando/blend_position", Vector2(input_direction.x,-input_direction.y))
+			
+			# Movimiento taladrando izquierda
 			elif input_direction==Vector2(-1,0):
-				SPEED = CONST_SPEED
+				SPEED = CONST_SPEED + (CONST_SPEEDUP_MEJORADO * mejora_speed) - (int(modolento) * 70)
 				input_direction=Vector2(-1,1)
 				last_move=Vector2(-1,1)
 				AnimState.travel("Taladrando")
 				Anim.set("parameters/Taladrando/blend_position", Vector2(input_direction.x,-input_direction.y))
-				
+			
+			# Movimiento taldrando en diagonal hacia arriba
 			else:
 				#para que suba cuando no se oprime
-				if last_move != Vector2.ZERO && input_direction!=Vector2(0,1)&& input_direction!=Vector2(1,-1)&&input_direction!=Vector2(-1,-1):
+				if last_move != Vector2.ZERO && input_direction!=Vector2(0,1)&&\
+				input_direction!=Vector2(1,-1)&&input_direction!=Vector2(-1,-1):
+					SPEED = CONST_SPEED + (CONST_SPEEDUP_MEJORADO * mejora_speed) - (int(modolento) * 70)
 					input_direction=last_move+Vector2(0,-2)
 					AnimState.travel("Taladrando")
 					Anim.set("parameters/Taladrando/blend_position", Vector2(input_direction.x,-input_direction.y))
@@ -101,40 +110,36 @@ func _physics_process(_delta):
 			if input_direction==Vector2(0,-1):
 				input_direction=Vector2.ZERO
 			if input_direction==Vector2(1,-1)||input_direction==Vector2(-1,-1):
+				SPEED = CONST_SPEED + (CONST_SPEEDUP_MEJORADO * mejora_speed)
 				input_direction=Vector2(input_direction.x,0)
 				last_move=input_direction
 				AnimState.travel("Walking_Superficie")
 				Anim.set("parameters/Walking_Superficie/blend_position", input_direction.x)
 			#cuando camina
 			elif input_direction==Vector2(1,0)||input_direction==Vector2(-1,0):
+				SPEED = CONST_SPEED + (CONST_SPEEDUP_MEJORADO * mejora_speed) - (int(modolento) * 70)
 				last_move=input_direction
 				AnimState.travel("Walking_Superficie")
 				Anim.set("parameters/Walking_Superficie/blend_position", input_direction.x)
 			elif input_direction==Vector2.ZERO:
 				AnimState.travel("Idle_Superficie")
 				Anim.set("parameters/Idle_Superficie/blend_position", last_move.x)
+		
 		if movement:
 			if AnimState.get_current_node()=="Escaleras":
 				AnimState.travel("Taladrando_Idle")
-					
-			if modolento:
-				SPEED=50
-			else:
-				SPEED=CONST_SPEED
 			velocity = input_direction.normalized() * SPEED
 			move_and_slide()
-			
 		else:
 			AnimState.travel("Escaleras")
 			
 
 
 func _on_area_2d_body_entered(body):
+	# cuando vuelve a la casa
 	if body is Player and taladrando and movement and not recienSalidoEscalera:
-		
 		movement = false
 		AnimState.travel("Escalera")
-		SPEED = CONST_SPEED
 		taladrando=false
 		recienSalidoEscalera = false
 		var tween :Tween = get_tree().create_tween()
@@ -143,20 +148,18 @@ func _on_area_2d_body_entered(body):
 		tween.tween_callback(_on_tween_callback)
 
 func _on_tween_callback():
-	
 	surface_entered.emit()
 	movement = true
 	SPEED = CONST_SPEED
+
 #esto es de subir al seugndo piso, lmao	
 func _on_ladder_finish():
 	#print("escalera finalizada?")
-
 	movement = true
 	input_direction = Vector2.ZERO
 	last_move = Vector2.ZERO
 
-# Setters/Getters
-
+# Setters/Getter
 func _set_receta(valor : int) -> int:
 	var temp = $Receta.frame
 	$Receta.frame = valor
