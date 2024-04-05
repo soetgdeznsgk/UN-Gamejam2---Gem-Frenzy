@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=64 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -29,12 +29,14 @@
 [ext_resource type="Theme" uid="uid://pnhutxwsymll" path="res://Sprites/Menu/botoncuadraoamarillo.tres" id="26_46bwo"]
 [ext_resource type="Script" path="res://Escenas/pausa.gd" id="26_mis2i"]
 [ext_resource type="Script" path="res://Escenas/factura.gd" id="26_url12"]
+[ext_resource type="Texture2D" uid="uid://brjs7retygf0i" path="res://Sprites/Menu/fondopapel.png" id="27_u538p"]
 [ext_resource type="Texture2D" uid="uid://j200rhck5hbf" path="res://Sprites/UI/casita.png" id="28_crjft"]
 [ext_resource type="Texture2D" uid="uid://b23cd5xtolx3k" path="res://Sprites/UI/Icon_SoundOn.png" id="28_jiou3"]
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="28_niiiv"]
+[ext_resource type="LabelSettings" uid="uid://dx2r5fphaavpb" path="res://Sprites/UI/labelconfigfactura/label_cafe.tres" id="29_odmc8"]
 [ext_resource type="Texture2D" uid="uid://dwie0v2x8teph" path="res://Sprites/UI/plei.png" id="30_axupe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
-font_size = 15
 font_color = Color(1, 0.168627, 0.168627, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 0.376471)
@@ -164,7 +166,7 @@ expand_margin_bottom = 70.0
 [sub_resource type="LabelSettings" id="LabelSettings_yrvle"]
 line_spacing = 12.0
 font_size = 36
-font_color = Color(0.95, 0.19, 0.19, 1)
+font_color = Color(0.94902, 0.188235, 0.188235, 1)
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
@@ -199,6 +201,16 @@ border_width_bottom = 1
 border_color = Color(0.643137, 0.380392, 0.239216, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulpgl"]
+texture = ExtResource("27_u538p")
+expand_margin_top = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_emm5b"]
+default_font = ExtResource("28_niiiv")
+default_font_size = 12
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ulpgl")
 
 [sub_resource type="Theme" id="Theme_mqkdm"]
 
@@ -686,7 +698,6 @@ text = "RETRY"
 
 [node name="factura" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 anchors_preset = 0
 offset_left = 163.0
@@ -697,47 +708,125 @@ script = ExtResource("26_url12")
 
 [node name="PanelContainer" type="PanelContainer" parent="factura"]
 layout_mode = 0
-offset_left = -67.0
-offset_top = -23.0
-offset_right = 720.0
-offset_bottom = 492.0
-theme = ExtResource("16_cal8s")
+offset_left = 17.0
+offset_top = -14.0
+offset_right = 629.0
+offset_bottom = 496.0
+theme = SubResource("Theme_emm5b")
 
-[node name="Label" type="Label" parent="factura"]
+[node name="Titulofactura" type="Label" parent="factura"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 12.0
+offset_top = 17.0
+offset_right = 651.0
+offset_bottom = 44.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
 text = "DIA TERMINADO YIPEE"
-
-[node name="cosas pagadas" type="VBoxContainer" parent="factura"]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 102.0
-offset_right = 594.0
-offset_bottom = 336.0
-
-[node name="Label" type="Label" parent="factura/cosas pagadas"]
-layout_mode = 2
-text = "fdsaf
-dfs
-dfsa
-f
-"
-
-[node name="preciocosaspagadas" type="VBoxContainer" parent="factura"]
-layout_mode = 0
-offset_left = 396.0
-offset_top = 147.0
-offset_right = 482.0
-offset_bottom = 235.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="factura"]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 407.0
-offset_right = 448.0
-offset_bottom = 475.0
-text = "firmar factura"
+offset_left = 176.0
+offset_top = 399.0
+offset_right = 468.0
+offset_bottom = 467.0
+theme = ExtResource("17_1my18")
+theme_override_font_sizes/font_size = 20
+text = "Firmar factura"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="factura"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 94.0
+offset_right = 574.0
+offset_bottom = 367.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="cosas pagadas" type="VBoxContainer" parent="factura/HBoxContainer"]
+modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="factura/HBoxContainer/cosas pagadas"]
+texture_filter = 1
+layout_mode = 2
+text = "Ahorros
+
+Ganancia dia
+
+Ganancia bono
+
+Ganancia Reciclaje de minerales"
+label_settings = ExtResource("29_odmc8")
+
+[node name="renta" type="Label" parent="factura/HBoxContainer/cosas pagadas"]
+layout_mode = 2
+text = "
+Renta"
+label_settings = ExtResource("29_odmc8")
+
+[node name="Total" type="Label" parent="factura/HBoxContainer/cosas pagadas"]
+layout_mode = 2
+text = "
+
+
+
+Total"
+label_settings = ExtResource("29_odmc8")
+
+[node name="preciocosaspagadas" type="VBoxContainer" parent="factura/HBoxContainer"]
+layout_mode = 2
+
+[node name="AhorroNumerito" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 2
+text = "  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="GananciadiaNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 2
+text = " 
+  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="GananciabonoNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 2
+text = " 
+  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="GananciaReciclajeNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 2
+text = " 
+  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="RentaNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+modulate = Color(0.847059, 0.129412, 0.0941176, 1)
+layout_mode = 2
+text = "
+-111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="Totalnum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 2
+text = "
+
+
+
+  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
 
 [node name="Pausa" type="PanelContainer" parent="."]
 process_mode = 3

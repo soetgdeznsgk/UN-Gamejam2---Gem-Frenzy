@@ -11,6 +11,7 @@ signal bancarota
 var valorDia
 signal rentadia
 
+var Ahorro
 var Gananciadia
 var Gananciabono
 var GananciaReciclaje
@@ -66,6 +67,7 @@ func reiniciar_factura():
 	Gananciabono=0
 	GananciaReciclaje=0
 func actualizar_renta():
+	Ahorro=dinero
 	reiniciar_factura()
 	var dia = GlobalTiempo.diaActual 
 	valorDia = 3*GlobalTiempo.diaActual
