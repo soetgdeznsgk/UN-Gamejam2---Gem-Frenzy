@@ -917,7 +917,6 @@ text = "RETRY"
 
 [node name="factura" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 anchors_preset = 0
 offset_left = 163.0
@@ -942,7 +941,7 @@ offset_right = 617.0
 offset_bottom = 44.0
 theme = ExtResource("8_qhue7")
 theme_override_font_sizes/font_size = 30
-text = "DIA TERMINADO YIPEE"
+text = "DAY_FINISHED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -954,7 +953,7 @@ offset_right = 468.0
 offset_bottom = 467.0
 theme = ExtResource("17_1my18")
 theme_override_font_sizes/font_size = 20
-text = "Firmar factura"
+text = "SIGN_BILL"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="factura"]
 layout_mode = 0
@@ -966,92 +965,122 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="cosas pagadas" type="VBoxContainer" parent="factura/HBoxContainer"]
-modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxahorro" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="factura/HBoxContainer/cosas pagadas"]
+[node name="Ahorro" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-text = "Ahorros
-
-Ganancia dia
-
-Ganancia bono
-
-Ganancia Reciclaje de minerales"
+text = "SAVINGS"
 label_settings = ExtResource("29_odmc8")
 
-[node name="renta" type="Label" parent="factura/HBoxContainer/cosas pagadas"]
-layout_mode = 2
-text = "
-Renta"
-label_settings = ExtResource("29_odmc8")
-
-[node name="Total" type="Label" parent="factura/HBoxContainer/cosas pagadas"]
-layout_mode = 2
-text = "
-
-
-
-Total"
-label_settings = ExtResource("29_odmc8")
-
-[node name="preciocosaspagadas" type="VBoxContainer" parent="factura/HBoxContainer"]
-layout_mode = 2
-
-[node name="AhorroNumerito" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+[node name="AhorroNumerito" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
-[node name="GananciadiaNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+[node name="HBoxGanancia" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+layout_mode = 2
+
+[node name="Ganancia dia" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "DAY_PROFITS"
+label_settings = ExtResource("29_odmc8")
+
+[node name="GananciadiaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 layout_mode = 2
-text = " 
-  111"
+text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
-[node name="GananciabonoNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+[node name="HBoxBono" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+layout_mode = 2
+
+[node name="Ganancia bono" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "BONUS_PROFITS"
+label_settings = ExtResource("29_odmc8")
+
+[node name="GananciabonoNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 layout_mode = 2
-text = " 
-  111"
+text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
-[node name="GananciaReciclajeNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+[node name="HBoxReciclaje" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+layout_mode = 2
+
+[node name="ganancia recilaje" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "RECYCLE_PROFITS"
+label_settings = ExtResource("29_odmc8")
+
+[node name="GananciaReciclajeNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 layout_mode = 2
-text = " 
-  111"
+text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
-[node name="RentaNum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+[node name="HBoxRent" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+layout_mode = 2
+
+[node name="renta" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "RENT"
+label_settings = ExtResource("29_odmc8")
+
+[node name="RentaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
 modulate = Color(0.847059, 0.129412, 0.0941176, 1)
 layout_mode = 2
-text = "
--111"
+text = "-111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
-[node name="Totalnum" type="Label" parent="factura/HBoxContainer/preciocosaspagadas"]
+[node name="MarginContainer" type="MarginContainer" parent="factura/HBoxContainer/cosas pagadas"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="HBoxTotal" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas/MarginContainer"]
+layout_mode = 2
+
+[node name="Total" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "TOTAL"
+label_settings = ExtResource("29_odmc8")
+
+[node name="Totalnum" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
 modulate = Color(0.584314, 0.341176, 0.211765, 1)
 layout_mode = 2
-text = "
-
-
-
-  111"
+text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="signaturepancha" type="Sprite2D" parent="factura"]
 visible = false
-position = Vector2(455, 318)
+position = Vector2(416, 318)
 rotation = -0.174533
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("30_h7dm3")

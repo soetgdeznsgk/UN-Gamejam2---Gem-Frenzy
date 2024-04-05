@@ -19,16 +19,16 @@ func _on_finalizar_dia():
 		%FinalizarDia.visible = true
 	%FinalizarDia.visible =false
 	%factura.visible=true
-	%factura/HBoxContainer/preciocosaspagadas/AhorroNumerito.text="  "+str(GlobalRecursos.Ahorro)
-	%factura/HBoxContainer/preciocosaspagadas/GananciadiaNum.text="\n  "+str(GlobalRecursos.Gananciadia)
-	%factura/HBoxContainer/preciocosaspagadas/GananciabonoNum.text="\n  "+str(GlobalRecursos.Gananciabono)
-	%factura/HBoxContainer/preciocosaspagadas/GananciaReciclajeNum.text="\n  "+str(GlobalRecursos.GananciaReciclaje)
-	%factura/HBoxContainer/preciocosaspagadas/RentaNum.text="\n -"+str(GlobalRecursos.valorDia)
+	%"factura/HBoxContainer/cosas pagadas/HBoxahorro/AhorroNumerito".text="  "+str(GlobalRecursos.Ahorro)
+	%"factura/HBoxContainer/cosas pagadas/HBoxGanancia/GananciadiaNum".text="  "+str(GlobalRecursos.Gananciadia)
+	%"factura/HBoxContainer/cosas pagadas/HBoxBono/GananciabonoNum".text="  "+str(GlobalRecursos.Gananciabono)
+	%"factura/HBoxContainer/cosas pagadas/HBoxReciclaje/GananciaReciclajeNum".text="  "+str(GlobalRecursos.GananciaReciclaje)
+	%"factura/HBoxContainer/cosas pagadas/HBoxRent/RentaNum".text=" -"+str(GlobalRecursos.valorDia)
 	var sumatotal=GlobalRecursos.Ahorro+GlobalRecursos.Gananciadia+GlobalRecursos.Gananciabono+GlobalRecursos.GananciaReciclaje-GlobalRecursos.valorDia
-	%factura/HBoxContainer/preciocosaspagadas/Totalnum.text="\n\n\n\n  "+str(sumatotal)
+	%"factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal/Totalnum".text="  "+str(sumatotal)
 	if sumatotal<0:
 		%Gameover.visible=false
-		%factura/HBoxContainer/preciocosaspagadas/Totalnum.modulate=Color("#d82118")
+		%"factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
 	
 	#+"\nGanancia bono:                            \t"+str(GlobalRecursos.Gananciabono)+"\nGanancia Reciclaje de minerales:\t"+str(GlobalRecursos.GananciaReciclaje)+"\nRenta:                                   \t-"\
 	#+str(GlobalRecursos.valorDia)
