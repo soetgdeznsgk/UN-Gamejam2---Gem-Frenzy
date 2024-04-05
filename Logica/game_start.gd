@@ -7,12 +7,13 @@ var notuto = preload("res://Sprites/UI/no.png")
 
 func _ready():
 	#TEST
+	
 	var nodo_Btn=$Lenguaje/PanelContainer/MarginContainer/VBoxContainer
 	for i in range(1,nodo_Btn.get_child_count()):
 		var boton=nodo_Btn.get_child(i)
 		boton.pressed.connect(_on_button_language_pressed.bind(boton.name))
 	print("estoy en el menu")
-	TranslationServer.set_locale("en")
+	TranslationServer.set_locale(GlobalSettings.language)
 	GlobalMejoras.actualizar_traducciones()
 	update_sound_texture()
 	update_tuto_texture()
@@ -21,16 +22,21 @@ func _on_btn_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://intro_anim.tscn")
 
 func _on_btn_toggle_sound_pressed() -> void:
-	sound = !sound
+	print(GlobalSettings.sound)
 	update_sound_texture()
 
 func update_sound_texture():
-	if sound:
+	if GlobalSettings.sound:
 		AudioServer.set_bus_volume_db(0,0)
 		$Sprite2D.texture = textureSnd2
+		GlobalSettings.sound=false
+		
 	else:
 		AudioServer.set_bus_volume_db(0,-72)
 		$Sprite2D.texture = textureSnd1	
+		
+		GlobalSettings.sound=true
+		
 func _on_btn_toggle_tutorial_pressed():
 	if GlobalTuto.tutorial:
 		GlobalTuto.tutorial=false
@@ -51,6 +57,7 @@ func update_tuto_texture():
 
 
 func _on_button_language_pressed(language):
+	GlobalSettings.language=language
 	TranslationServer.set_locale(language)
 	GlobalMejoras.actualizar_traducciones()
 	print(language)
@@ -59,9 +66,11 @@ func _on_button_language_pressed(language):
 
 func _on_btn_language_toggle_pressed():
 	$Lenguaje.visible=true
+	$Btn_toggle_Tutorial.disabled=true
 	pass # Replace with function body.
 
 
 func _on_btn_close_language_pressed():
 	$Lenguaje.visible=false
+	$Btn_toggle_Tutorial.disabled=false
 	pass # Replace with function body.
