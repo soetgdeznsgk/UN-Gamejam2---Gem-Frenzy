@@ -19,17 +19,17 @@ func update_mineralesactuales():
 		3:
 			$HBoxContainer3.visible = true
 		4:
+			$HBoxContainer7.visible = true
 			$HBoxContainer8.visible = true
-			$HBoxContainer9.visible = true	
 		6:
 			#azul
-			$HBoxContainer10.visible = true
+			$HBoxContainer9.visible = true
 			#morado
 			$HBoxContainer6.visible = true
 		7:
 			#verde
-			$HBoxContainer7.visible = true
+			$HBoxContainer11.visible = true
 			
 		8:
 			#diamante
-			$HBoxContainer11.visible = true
+			$HBoxContainer10.visible = true

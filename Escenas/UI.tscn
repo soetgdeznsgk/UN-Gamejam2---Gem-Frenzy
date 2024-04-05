@@ -107,6 +107,10 @@ _data = {
 "newmoney": SubResource("Animation_fq5il")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t2b6"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(31, 4, 8, 8)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xoam7"]
 load_path = "res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"
 
@@ -118,17 +122,25 @@ region = Rect2(4, 4, 8, 8)
 atlas = ExtResource("7_bbwty")
 region = Rect2(13, 4, 8, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaldj"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(40, 4, 8, 8)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ed7w"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(22, 4, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0t2b6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cuot"]
 atlas = ExtResource("7_bbwty")
-region = Rect2(31, 4, 8, 8)
+region = Rect2(13, 13, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yaldj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf2ym"]
 atlas = ExtResource("7_bbwty")
-region = Rect2(40, 4, 8, 8)
+region = Rect2(4, 13, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip7uw"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(22, 13, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1fxj"]
 atlas = ExtResource("7_bbwty")
@@ -137,18 +149,6 @@ region = Rect2(49, 4, 8, 8)
 [sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(58, 4, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wf2ym"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(4, 13, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3cuot"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(13, 13, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ip7uw"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(22, 13, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qif5"]
 atlas = ExtResource("7_bbwty")
@@ -352,6 +352,30 @@ theme = ExtResource("8_qhue7")
 columns = 6
 script = ExtResource("7_oym11")
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="GridMinerales"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect4" type="TextureRect" parent="GridMinerales/HBoxContainer4"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_0t2b6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label4" type="Label" parent="GridMinerales/HBoxContainer4"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = ":0"
+vertical_alignment = 1
+
 [node name="HBoxContainer1" type="HBoxContainer" parent="GridMinerales"]
 layout_mode = 2
 theme_override_constants/separation = 0
@@ -397,6 +421,31 @@ size_flags_vertical = 0
 text = ":0"
 vertical_alignment = 1
 
+[node name="HBoxContainer5" type="HBoxContainer" parent="GridMinerales"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect5" type="TextureRect" parent="GridMinerales/HBoxContainer5"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_yaldj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label5" type="Label" parent="GridMinerales/HBoxContainer5"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = ":0"
+vertical_alignment = 1
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="GridMinerales"]
 visible = false
 layout_mode = 2
@@ -422,23 +471,24 @@ size_flags_vertical = 0
 text = ":0"
 vertical_alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="GridMinerales"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="GridMinerales"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="TextureRect4" type="TextureRect" parent="GridMinerales/HBoxContainer4"]
+[node name="TextureRect8" type="TextureRect" parent="GridMinerales/HBoxContainer8"]
 texture_filter = 1
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = SubResource("AtlasTexture_0t2b6")
+texture = SubResource("AtlasTexture_3cuot")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label4" type="Label" parent="GridMinerales/HBoxContainer4"]
+[node name="Label8" type="Label" parent="GridMinerales/HBoxContainer8"]
 custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -446,24 +496,49 @@ size_flags_vertical = 0
 text = ":0"
 vertical_alignment = 1
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="GridMinerales"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="GridMinerales"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="TextureRect5" type="TextureRect" parent="GridMinerales/HBoxContainer5"]
+[node name="TextureRect7" type="TextureRect" parent="GridMinerales/HBoxContainer7"]
 texture_filter = 1
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = SubResource("AtlasTexture_yaldj")
+texture = SubResource("AtlasTexture_wf2ym")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label5" type="Label" parent="GridMinerales/HBoxContainer5"]
+[node name="Label7" type="Label" parent="GridMinerales/HBoxContainer7"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = ":0"
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="GridMinerales"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect9" type="TextureRect" parent="GridMinerales/HBoxContainer9"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_ip7uw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label9" type="Label" parent="GridMinerales/HBoxContainer9"]
 custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -496,14 +571,14 @@ size_flags_vertical = 0
 text = ":0"
 vertical_alignment = 1
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="GridMinerales"]
+[node name="HBoxContainer11" type="HBoxContainer" parent="GridMinerales"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="TextureRect7" type="TextureRect" parent="GridMinerales/HBoxContainer7"]
+[node name="TextureRect11" type="TextureRect" parent="GridMinerales/HBoxContainer11"]
 texture_filter = 1
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
@@ -513,57 +588,7 @@ texture = SubResource("AtlasTexture_udvxe")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label7" type="Label" parent="GridMinerales/HBoxContainer7"]
-custom_minimum_size = Vector2(44, 28)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = ":0"
-vertical_alignment = 1
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="GridMinerales"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-
-[node name="TextureRect8" type="TextureRect" parent="GridMinerales/HBoxContainer8"]
-texture_filter = 1
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = SubResource("AtlasTexture_wf2ym")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label8" type="Label" parent="GridMinerales/HBoxContainer8"]
-custom_minimum_size = Vector2(44, 28)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = ":0"
-vertical_alignment = 1
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="GridMinerales"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-
-[node name="TextureRect9" type="TextureRect" parent="GridMinerales/HBoxContainer9"]
-texture_filter = 1
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = SubResource("AtlasTexture_3cuot")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label9" type="Label" parent="GridMinerales/HBoxContainer9"]
+[node name="Label11" type="Label" parent="GridMinerales/HBoxContainer11"]
 custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -584,36 +609,11 @@ custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = SubResource("AtlasTexture_ip7uw")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label10" type="Label" parent="GridMinerales/HBoxContainer10"]
-custom_minimum_size = Vector2(44, 28)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = ":0"
-vertical_alignment = 1
-
-[node name="HBoxContainer11" type="HBoxContainer" parent="GridMinerales"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-
-[node name="TextureRect11" type="TextureRect" parent="GridMinerales/HBoxContainer11"]
-texture_filter = 1
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
 texture = SubResource("AtlasTexture_3qif5")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label11" type="Label" parent="GridMinerales/HBoxContainer11"]
+[node name="Label10" type="Label" parent="GridMinerales/HBoxContainer10"]
 custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0

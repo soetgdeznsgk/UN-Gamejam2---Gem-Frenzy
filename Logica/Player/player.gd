@@ -43,6 +43,7 @@ func iniciar_dia():
 func finalizar_dia():
 	movement = false
 	diaFinalizado = true
+	AnimState.travel("Idle_Superficie")
 	input_direction = Vector2.ZERO
 	last_move=Vector2.ZERO
 	var tween = get_tree().create_tween()
