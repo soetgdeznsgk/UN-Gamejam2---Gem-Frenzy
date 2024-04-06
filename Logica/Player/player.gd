@@ -4,6 +4,9 @@ class_name Player
 signal surface_entered
 signal mine_entered
 
+var particleMining : PackedScene = load("res://Particulas/minningParticle.tscn")
+var canParticle = true
+var canSound = true
 @export var CONST_SPEED : float
 @export var CONST_SPEEDUP : float
 @export var CONST_SPEEDUP_MEJORADO : float
@@ -12,6 +15,7 @@ signal mine_entered
 @onready var Anim : AnimationTree = $AnimationTree
 @onready var AnimState : AnimationNodeStateMachinePlayback = Anim.get("parameters/playback")
 @onready var audioMinado = $AudioMinado
+@onready var audioMinarTierra = $AudioMinarTierra
 var taladrando= false
 var input_direction = Vector2.ZERO
 var last_move=Vector2.ZERO
@@ -211,11 +215,33 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: TileMap, _body_shape_in
 	var atlasCords = body.get_cell_atlas_coords(layer,cords) # Devuelve el x,y del tile y con eso puedo ver cosas
 	var actualFrame = atlasCords.x + atlasCords.y * 6 # Devuelve el frame para que tenga sentido con las globales
 	
-	if actualFrame < GlobalRecursos.mineralesConFondo.Tierra:
-		GlobalRecursos.actualizar_mineral(actualFrame, 1)
-		audioMinado.play(0) #sonido de minado
+	
+	if actualFrame != GlobalRecursos.mineralesConFondo.TierraMinada:
+		if canParticle:
+			var particle : CPUParticles2D = particleMining.instantiate()
+			particle.global_position = $MarkerParticle.global_position
+			particle.emitting = true
+			get_parent().call_deferred("add_child",particle)
+			canParticle = false
+			
+		
+			
+		if actualFrame < GlobalRecursos.mineralesConFondo.Tierra:
+			GlobalRecursos.actualizar_mineral(actualFrame, 1)
+			audioMinado.play(0) #sonido de minado
+		else:
+			if canSound:
+				audioMinarTierra.pitch_scale = randf_range(0.9,1.1)
+				audioMinarTierra.play()
+				canSound = false
+		
 		# Actualizar frame del tile a minado
 		body.set_cell(layer,cords,atlasSourceId,Vector2(0,2))
-	elif actualFrame != GlobalRecursos.mineralesConFondo.TierraMinada:
-		# Actualizar frame del tile a minado
-		body.set_cell(layer,cords,atlasSourceId,Vector2(0,2))
+
+
+func _on_tmr_particle_timeout() -> void:
+	canParticle = true
+
+
+func _on_tmr_sonido_tierra_timeout() -> void:
+	canSound = true
