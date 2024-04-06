@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=33 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
 [ext_resource type="Texture2D" uid="uid://ff5eprqul6n7" path="res://Sprites/Menu/RETRY_2_SQUARE.png" id="14_pojyy"]
 [ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
+[ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="16_ec5un"]
 [ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
 [ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
 
@@ -160,15 +161,15 @@ autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(903, 52)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_ewkdi")
 
 [node name="Btn_toggle_sound" type="Button" parent="."]
 layout_mode = 0
 offset_left = 855.0
 offset_top = 14.0
-offset_right = 944.0
-offset_bottom = 88.0
+offset_right = 953.0
+offset_bottom = 90.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ekfl3")
 flat = true
 
@@ -445,6 +446,16 @@ theme_override_font_sizes/font_size = 16
 text = "RATE_US"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Control2" type="Control" parent="Credits"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Credits/Control2"]
+position = Vector2(544, 379)
+scale = Vector2(5, 5)
+texture = ExtResource("16_ec5un")
 
 [node name="Btn_toggle_Tutorial" type="Button" parent="."]
 layout_mode = 0

@@ -22,18 +22,25 @@ func _on_btn_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://intro_anim.tscn")
 
 func _on_btn_toggle_sound_pressed() -> void:
-	print(GlobalSettings.sound)
-	update_sound_texture()
-
+	#print(GlobalSettings.sound)
+	toggle_sound_texture()
 func update_sound_texture():
 	if GlobalSettings.sound:
 		AudioServer.set_bus_volume_db(0,0)
 		$Sprite2D.texture = textureSnd2
+	else:
+		AudioServer.set_bus_volume_db(0,-72)
+		$Sprite2D.texture = textureSnd1
+func toggle_sound_texture():
+	if GlobalSettings.sound:
+		AudioServer.set_bus_volume_db(0,-72)
+		$Sprite2D.texture = textureSnd1	
+
 		GlobalSettings.sound=false
 		
 	else:
-		AudioServer.set_bus_volume_db(0,-72)
-		$Sprite2D.texture = textureSnd1	
+		AudioServer.set_bus_volume_db(0,0)
+		$Sprite2D.texture = textureSnd2
 		
 		GlobalSettings.sound=true
 		
@@ -60,7 +67,7 @@ func _on_button_language_pressed(language):
 	GlobalSettings.language=language
 	TranslationServer.set_locale(language)
 	GlobalMejoras.llenar_mejoras()
-	print(language)
+	#print(language)
 	pass # Replace with function body.
 
 
@@ -83,6 +90,7 @@ func _on_btn_credits_pressed():
 	pass # Replace with function body.
 func _on_btn_close_credits_pressed():
 	$Credits.visible=false
+	$Btn_toggle_Tutorial.visible=true
 	pass # Replace with function body.
 
 

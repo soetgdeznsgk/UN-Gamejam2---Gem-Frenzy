@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
 [ext_resource type="Script" path="res://Escenas/UI.gd" id="1_xq7xs"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
-[ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/mejoras/reloj normal.png" id="4_1gerh"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
 [ext_resource type="AudioStream" uid="uid://c1hjjwipji7up" path="res://Musica/cliente_enojado.wav" id="4_h0j4i"]
 [ext_resource type="AudioStream" uid="uid://bmj43p0weuvai" path="res://Musica/OrdenCorrecta2.wav" id="5_lmvn8"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
 [ext_resource type="Script" path="res://Escenas/VbReloj.gd" id="7_s2ivm"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="8_qhue7"]
+[ext_resource type="Texture2D" uid="uid://cd07y1wjjjd6i" path="res://Sprites/UI/reloj loading 245 x 216.png" id="11_5es48"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
 [ext_resource type="Script" path="res://Escenas/Renta.gd" id="12_m1oro"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
@@ -246,34 +246,22 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("signaturepancha:frame")
+tracks/1/path = NodePath("signaturepancha:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("signaturepancha:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -365,10 +353,19 @@ justification_flags = 171
 uppercase = true
 script = ExtResource("4_go46m")
 
-[node name="TextureReloj" type="TextureRect" parent="VbReloj/HbReloj"]
+[node name="Control" type="Control" parent="VbReloj"]
+layout_mode = 2
+
+[node name="TextureReloj" type="TextureRect" parent="VbReloj/Control"]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("4_1gerh")
+offset_left = 118.0
+offset_top = -49.0
+offset_right = 360.0
+offset_bottom = 154.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_5es48")
+expand_mode = 1
 stretch_mode = 2
 
 [node name="Renta" type="Label" parent="."]
@@ -1074,7 +1071,6 @@ rotation = -0.174533
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("30_h7dm3")
 hframes = 2
-metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="factura"]
 libraries = {
@@ -1150,17 +1146,18 @@ expand_icon = true
 [node name="Btn_pause" type="Button" parent="."]
 process_mode = 3
 layout_mode = 0
-offset_left = 900.0
-offset_top = 9.0
-offset_right = 949.0
-offset_bottom = 64.0
+offset_left = 881.0
+offset_top = 16.0
+offset_right = 939.0
+offset_bottom = 94.0
 focus_mode = 0
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Btn_pause"]
 process_mode = 3
 modulate = Color(1, 1, 1, 0.811765)
-position = Vector2(23.95, 27.8)
+position = Vector2(28, 38)
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("37_0c7ga")
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
