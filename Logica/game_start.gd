@@ -1,7 +1,7 @@
 extends Control
 var sound = true
-var textureSnd1 = preload("res://Sprites/UI/Icon_SoundOff.png")
-var textureSnd2 = preload("res://Sprites/UI/Icon_SoundOn.png")
+var textureSnd1 = preload("res://Sprites/UI/sound_mute.png")
+var textureSnd2 = preload("res://Sprites/UI/sound_on.png")
 var situto = preload("res://Sprites/UI/yes.png")
 var notuto = preload("res://Sprites/UI/no.png")
 
@@ -66,11 +66,24 @@ func _on_button_language_pressed(language):
 
 func _on_btn_language_toggle_pressed():
 	$Lenguaje.visible=true
-	$Btn_toggle_Tutorial.disabled=true
+	$Btn_toggle_Tutorial.visible=false
 	pass # Replace with function body.
 
 
 func _on_btn_close_language_pressed():
 	$Lenguaje.visible=false
-	$Btn_toggle_Tutorial.disabled=false
+	$Btn_toggle_Tutorial.visible=true
+	pass 
+	# Replace with function body.
+
+
+func _on_btn_credits_pressed():
+	$Credits.visible=true
+	$Btn_toggle_Tutorial.visible=false
 	pass # Replace with function body.
+func _on_btn_close_credits_pressed():
+	$Credits.visible=false
+	pass # Replace with function body.
+
+
+

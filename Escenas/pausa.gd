@@ -1,6 +1,6 @@
 extends HBoxContainer
-var textureSndOff = load("res://Sprites/UI/Icon_SoundOff.png")
-var textureSndOn = load("res://Sprites/UI/Icon_SoundOn.png")
+var textureSndOff = load("res://Sprites/UI/sound_mute.png")
+var textureSndOn = load("res://Sprites/UI/sound_on.png")
 var sound:bool
 # Called when the node enters the scene tree for the first time.
 func _ready():

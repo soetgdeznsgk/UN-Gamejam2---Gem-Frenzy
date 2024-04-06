@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=32 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -6,46 +6,44 @@
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
 [ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
 [ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
-[ext_resource type="Texture2D" uid="uid://dpw07nqavv2a5" path="res://Sprites/UI/Icon_SoundOff.png" id="6_fsfk8"]
+[ext_resource type="Texture2D" uid="uid://n2xx1oqnyhr" path="res://Sprites/UI/sound_mute.png" id="7_ewkdi"]
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="7_kg6s8"]
 [ext_resource type="Texture2D" uid="uid://w20o216cewiy" path="res://Sprites/Menu/buy_1.png" id="8_kncop"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_fv52p"]
 [ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="11_hyuxc"]
-[ext_resource type="Texture2D" uid="uid://nnn27xm74sud" path="res://Sprites/Menu/language icon.png" id="12_2disx"]
 [ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="12_3d5lx"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="12_agm7l"]
-[ext_resource type="Texture2D" uid="uid://w3om1b0fedkn" path="res://Sprites/Menu/retry_1.png" id="13_3e6fl"]
+[ext_resource type="Texture2D" uid="uid://cjuw1xw3wvts2" path="res://Sprites/Menu/RETRY_1_SQUARE.png" id="13_4of3c"]
 [ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
-[ext_resource type="Texture2D" uid="uid://b8t70j3iopgqn" path="res://Sprites/Menu/credits icon.png" id="14_74d1c"]
-[ext_resource type="Texture2D" uid="uid://qaf22q1pwdp3" path="res://Sprites/Menu/finish_1.png" id="14_yeq0e"]
+[ext_resource type="Texture2D" uid="uid://ff5eprqul6n7" path="res://Sprites/Menu/RETRY_2_SQUARE.png" id="14_pojyy"]
 [ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
-[ext_resource type="Texture2D" uid="uid://cnpxnjhwey8kn" path="res://Sprites/Menu/finish_2.png" id="15_kahum"]
+[ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
+[ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3mqr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgoiw"]
-texture = ExtResource("13_3e6fl")
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("13_4of3c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbrr"]
-texture = ExtResource("14_yeq0e")
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("13_4of3c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnmog"]
-texture = ExtResource("15_kahum")
-texture_margin_top = 10.0
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+texture = ExtResource("14_pojyy")
 
 [sub_resource type="Theme" id="Theme_s2ne5"]
 default_font = ExtResource("12_agm7l")
@@ -161,15 +159,16 @@ volume_db = -12.0
 autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(907, 52)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("6_fsfk8")
+position = Vector2(903, 52)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_ewkdi")
 
 [node name="Btn_toggle_sound" type="Button" parent="."]
 layout_mode = 0
-offset_left = 845.0
-offset_right = 959.0
-offset_bottom = 110.0
+offset_left = 855.0
+offset_top = 14.0
+offset_right = 944.0
+offset_bottom = 88.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ekfl3")
 flat = true
 
@@ -274,12 +273,177 @@ offset_bottom = 20.0
 layout_mode = 0
 offset_left = 577.0
 offset_top = 16.0
-offset_right = 611.0
-offset_bottom = 50.0
+offset_right = 619.0
+offset_bottom = 59.0
 theme = SubResource("Theme_s2ne5")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Credits" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 175.0
+offset_top = 114.0
+offset_right = 791.0
+offset_bottom = 611.0
+theme = ExtResource("11_hyuxc")
+
+[node name="PanelContainer" type="PanelContainer" parent="Credits"]
+layout_mode = 0
+offset_right = 649.0
+offset_bottom = 487.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 114.0
+offset_right = 643.0
+offset_bottom = 222.0
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer/HBoxContainer"]
+self_modulate = Color(0.34902, 0.160784, 0.0588235, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "PROGRAMMERS"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/HBoxContainer"]
+modulate = Color(0.34902, 0.160784, 0.0588235, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "ARTISTS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="programmer0" type="Label" parent="Credits/VBoxContainer/HBoxContainer2"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Matseuu"
+horizontal_alignment = 1
+
+[node name="artist1" type="Label" parent="Credits/VBoxContainer/HBoxContainer2"]
+modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Raccoyaki"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="programmer0" type="Label" parent="Credits/VBoxContainer/HBoxContainer3"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Pabten"
+horizontal_alignment = 1
+
+[node name="artist1" type="Label" parent="Credits/VBoxContainer/HBoxContainer3"]
+modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Yukki"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="programmer0" type="Label" parent="Credits/VBoxContainer/HBoxContainer4"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Gugulplex"
+horizontal_alignment = 1
+
+[node name="artist1" type="Label" parent="Credits/VBoxContainer/HBoxContainer4"]
+modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "DarkyBLG"
+horizontal_alignment = 1
+
+[node name="ControlTITLE" type="Control" parent="Credits"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CREDITSTITLE" type="Label" parent="Credits/ControlTITLE"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+offset_left = 60.0
+offset_top = 5.0
+offset_right = 596.0
+offset_bottom = 75.0
+theme = ExtResource("9_fv52p")
+theme_override_font_sizes/font_size = 40
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Credits"]
+anchors_preset = 0
+offset_right = 15.0
+offset_bottom = 20.0
+
+[node name="btn_close_credits" type="Button" parent="Credits/Control"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 16.0
+offset_right = 619.0
+offset_bottom = 59.0
+theme = SubResource("Theme_s2ne5")
+icon = ExtResource("15_bln3m")
+icon_alignment = 1
+expand_icon = true
+
+[node name="controlrateus" type="Control" parent="Credits"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="likeourgame" type="Label" parent="Credits/controlrateus"]
+self_modulate = Color(0.34902, 0.160784, 0.0588235, 1)
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 0
+offset_left = 34.0
+offset_top = 317.0
+offset_right = 472.0
+offset_bottom = 342.0
+theme_override_font_sizes/font_size = 20
+text = "LIKE_GAME?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelRATEUS" type="Label" parent="Credits/controlrateus"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 0
+offset_left = 51.0
+offset_top = 349.0
+offset_right = 475.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 16
+text = "RATE_US"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Btn_toggle_Tutorial" type="Button" parent="."]
 layout_mode = 0
@@ -298,7 +462,7 @@ offset_top = 23.0
 offset_right = 96.0
 offset_bottom = 98.0
 theme = SubResource("Theme_54y6a")
-icon = ExtResource("12_2disx")
+icon = ExtResource("19_d4jep")
 icon_alignment = 1
 expand_icon = true
 
@@ -310,12 +474,14 @@ offset_top = 630.0
 offset_right = 91.0
 offset_bottom = 705.0
 theme = SubResource("Theme_vk4em")
-icon = ExtResource("14_74d1c")
+icon = ExtResource("20_3cvn6")
 icon_alignment = 1
 expand_icon = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_pressed"]
 [connection signal="pressed" from="Lenguaje/Control/btn_close_language" to="." method="_on_btn_close_language_pressed"]
+[connection signal="pressed" from="Credits/Control/btn_close_credits" to="." method="_on_btn_close_credits_pressed"]
 [connection signal="pressed" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_pressed"]
 [connection signal="pressed" from="Btn_language" to="." method="_on_btn_language_toggle_pressed"]
+[connection signal="pressed" from="Btn_credits" to="." method="_on_btn_credits_pressed"]

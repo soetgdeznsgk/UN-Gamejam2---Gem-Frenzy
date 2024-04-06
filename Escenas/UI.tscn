@@ -24,19 +24,19 @@
 [ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="16_cal8s"]
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="17_1my18"]
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
-[ext_resource type="Texture2D" uid="uid://ctj4obkn3i1bo" path="res://Sprites/UI/Icon_Next.png" id="19_i0nsn"]
 [ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="20_v1ys7"]
 [ext_resource type="Theme" uid="uid://pnhutxwsymll" path="res://Sprites/Menu/botoncuadraoamarillo.tres" id="26_46bwo"]
 [ext_resource type="Script" path="res://Escenas/pausa.gd" id="26_mis2i"]
 [ext_resource type="Script" path="res://Escenas/factura.gd" id="26_url12"]
 [ext_resource type="Texture2D" uid="uid://brjs7retygf0i" path="res://Sprites/Menu/fondopapel.png" id="27_u538p"]
-[ext_resource type="Texture2D" uid="uid://j200rhck5hbf" path="res://Sprites/UI/casita.png" id="28_crjft"]
-[ext_resource type="Texture2D" uid="uid://b23cd5xtolx3k" path="res://Sprites/UI/Icon_SoundOn.png" id="28_jiou3"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="28_niiiv"]
 [ext_resource type="LabelSettings" uid="uid://dx2r5fphaavpb" path="res://Sprites/UI/labelconfigfactura/label_cafe.tres" id="29_odmc8"]
-[ext_resource type="Texture2D" uid="uid://dwie0v2x8teph" path="res://Sprites/UI/plei.png" id="30_axupe"]
 [ext_resource type="Texture2D" uid="uid://cu1blftepsip2" path="res://Sprites/UI/broke.png" id="30_h7dm3"]
 [ext_resource type="AudioStream" uid="uid://dm1cyji87hgsg" path="res://Musica/sello.mp3" id="31_tekkc"]
+[ext_resource type="Texture2D" uid="uid://cntxeq0ujga3b" path="res://Sprites/UI/sound_on.png" id="34_jvi5v"]
+[ext_resource type="Texture2D" uid="uid://ddaledbay8yx3" path="res://Sprites/UI/home.png" id="35_rr8cu"]
+[ext_resource type="Texture2D" uid="uid://3vbla4sy0yl8" path="res://Sprites/UI/play.png" id="36_juslv"]
+[ext_resource type="Texture2D" uid="uid://ci2rmo3tre1n2" path="res://Sprites/UI/pause.png" id="37_0c7ga"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
 font_color = Color(1, 0.168627, 0.168627, 1)
@@ -219,22 +219,10 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("signaturepancha:frame")
+tracks/0/path = NodePath("signaturepancha:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("signaturepancha:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1086,7 +1074,7 @@ rotation = -0.174533
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("30_h7dm3")
 hframes = 2
-frame = 1
+metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="factura"]
 libraries = {
@@ -1139,7 +1127,7 @@ script = ExtResource("26_mis2i")
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
-icon = ExtResource("28_jiou3")
+icon = ExtResource("34_jvi5v")
 icon_alignment = 1
 expand_icon = true
 
@@ -1147,7 +1135,7 @@ expand_icon = true
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
-icon = ExtResource("28_crjft")
+icon = ExtResource("35_rr8cu")
 icon_alignment = 1
 expand_icon = true
 
@@ -1155,26 +1143,25 @@ expand_icon = true
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
-icon = ExtResource("30_axupe")
+icon = ExtResource("36_juslv")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_pause" type="Button" parent="."]
 process_mode = 3
 layout_mode = 0
-offset_left = 901.0
-offset_top = 14.0
-offset_right = 951.0
-offset_bottom = 77.0
+offset_left = 900.0
+offset_top = 9.0
+offset_right = 949.0
+offset_bottom = 64.0
 focus_mode = 0
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Btn_pause"]
 process_mode = 3
 modulate = Color(1, 1, 1, 0.811765)
-position = Vector2(21.95, 26.8)
-scale = Vector2(0.39703, 0.284783)
-texture = ExtResource("19_i0nsn")
+position = Vector2(23.95, 27.8)
+texture = ExtResource("37_0c7ga")
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
