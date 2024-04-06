@@ -281,6 +281,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Credits" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 175.0
 offset_top = 114.0
