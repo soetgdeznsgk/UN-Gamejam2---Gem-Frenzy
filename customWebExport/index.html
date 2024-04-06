@@ -161,6 +161,7 @@
         const INDETERMINATE_STATUS_STEP_MS = 100;
         let statusDiv = document.getElementById("status");
         let logoDiv  = document.getElementById("logo");
+        let containerDiv = document.getElementById("container")
         let statusProgress = document.getElementById("status-progressbar");
         let statusProgressInner = document.getElementById(
           "status-progressbar-inner"
@@ -240,6 +241,7 @@
               setStatusMode("hidden");
               statusDiv.style.display = "none";
               logoDiv.style.display = "none";
+              containerDiv.style.display = "none";
               initializing = false;
             }, displayFailureNotice);
         }
