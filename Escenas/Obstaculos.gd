@@ -31,21 +31,19 @@ func terminaciondeldia():
 		child.queue_free()
 		
 func empezardia():
-	
+	#cantidadA= cantidad de slimes tierA que van a spawnear
 	var cantidadA
 	var cantidadB
 	var cantidadC
 	var diaactual=GlobalTiempo.diaActual
 	var Iniciocapas=45
+	#finalA -> en que coordenada de y dejan de spawnear slimes tierA 
 	var finalA
 	var finalB
 	var finalC=250
+	#inicioC -> en que coordenada de y empiezan a spawnear slimes tierC
 	var inicioC
-	@warning_ignore("unused_variable")
-	var inicioA
-	@warning_ignore("unused_variable")
 	var inicioB
-	@warning_ignore("unused_variable")
 	
 	match diaactual:
 		1:
