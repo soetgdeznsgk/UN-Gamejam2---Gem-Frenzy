@@ -88,8 +88,8 @@ func empezardia():
 			cantidadB=range(0,8)
 			cantidadC=range(0,4)
 			finalA=425
-			inicioB=300
-			finalB=400
+			inicioB=200
+			finalB=380
 			inicioC=400
 			finalC=450	
 		6:
@@ -97,8 +97,8 @@ func empezardia():
 			cantidadB=range(0,10)
 			cantidadC=range(0,6)
 			finalA=700
-			inicioB=400
-			finalB=600
+			inicioB=300
+			finalB=500
 			inicioC=600
 			finalC=700	
 		7:
