@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 				pass
 			playerRef.movement = false
 			tween.tween_property(playerRef, "position:x", position.x, 0.2)
-			tween.tween_property(playerRef, "position:y", 12, 0.55)
+			tween.tween_property(playerRef, "position:y", 14, 0.55)
 			tween.tween_callback(_on_tween_callback)
 
 func _on_tween_callback():

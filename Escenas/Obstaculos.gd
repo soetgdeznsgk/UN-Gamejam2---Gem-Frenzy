@@ -36,7 +36,7 @@ func empezardia():
 	var cantidadB
 	var cantidadC
 	var diaactual=GlobalTiempo.diaActual
-	var Iniciocapas=45
+	var Iniciocapas=55
 	#finalA -> en que coordenada de y dejan de spawnear slimes tierA 
 	var finalA
 	var finalB
@@ -47,16 +47,16 @@ func empezardia():
 	
 	match diaactual:
 		1:
-			cantidadA=range(0,5)
-			cantidadB=range(0,3)
+			cantidadA=range(0,6)
+			cantidadB=range(0,2)
 			cantidadC=range(0,0)
-			finalA=50
+			finalA=75
 			inicioB=Iniciocapas
-			finalB=50
+			finalB=75
 			finalC=1
 		2:
-			cantidadA=range(0,10)
-			cantidadB=range(0,6)
+			cantidadA=range(0,9)
+			cantidadB=range(0,4)
 			cantidadC=range(0,0)
 			finalA=100
 			inicioB=120
@@ -65,9 +65,9 @@ func empezardia():
 			#inicioC=Iniciocapas
 		#dia 3 max 340
 		3:
-			cantidadA=range(0,13)
-			cantidadB=range(0,8)
-			cantidadC=range(0,3)
+			cantidadA=range(0,12)
+			cantidadB=range(0,6)
+			cantidadC=range(0,2)
 			finalA=260
 			inicioB=150
 			finalB=200
@@ -75,7 +75,7 @@ func empezardia():
 			finalC=300	
 		4:
 			#print("ES EL DIA 4 PAPUS")
-			cantidadA=range(0,18)
+			cantidadA=range(0,16)
 			cantidadB=range(0,8)
 			cantidadC=range(0,4)
 			finalA=425

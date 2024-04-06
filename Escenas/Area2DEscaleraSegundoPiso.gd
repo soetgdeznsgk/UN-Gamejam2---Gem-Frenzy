@@ -27,14 +27,14 @@ func _process(_delta: float) -> void:
 				tween.tween_property(playerRef, "position", Vector2(421,-37), 0.15)
 				tween.tween_property(playerRef, "position", Vector2(413,-45), 0.15)
 				tween.tween_property(playerRef, "position", Vector2(405,-53), 0.15)
-				tween.tween_property(playerRef, "position", Vector2(388,-61), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(388,-57), 0.15)
 			else:
-				tween.tween_property(playerRef, "position", Vector2(388,-61), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(388,-57), 0.15)
 				tween.tween_property(playerRef, "position", Vector2(405,-53), 0.15)
 				tween.tween_property(playerRef, "position", Vector2(413,-45), 0.15)
 				tween.tween_property(playerRef, "position", Vector2(421,-37), 0.15)
 				tween.tween_property(playerRef, "position", Vector2(429,-29), 0.15)
-				tween.tween_property(playerRef, "position", Vector2(432,-21), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(432,-17), 0.15)
 			tween.tween_callback(_on_tween_callback)
 
 func _on_tween_callback():

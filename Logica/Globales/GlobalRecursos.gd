@@ -5,7 +5,7 @@ extends Node
 # inicia en ceros
 var cantidadTiposMinerales = 11
 var minerales : Array = []
-var dinero : int = 500
+var dinero : int = 5
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -78,10 +78,10 @@ func actualizar_renta():
 	Ahorro=dinero
 	reiniciar_factura()
 	var dia = GlobalTiempo.diaActual 
-	valorDia = 3*GlobalTiempo.diaActual
+	valorDia = 2*GlobalTiempo.diaActual
 	
 	if dia >= 3 and dia < 5:
-		valorDia = 3 * GlobalTiempo.diaActual + 2
+		valorDia = 3 * GlobalTiempo.diaActual
 	
 	if dia >= 5 and dia <=6:
 		valorDia = int(3.5 * GlobalTiempo.diaActual)

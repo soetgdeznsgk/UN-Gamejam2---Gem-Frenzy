@@ -15,12 +15,12 @@ func regenerar_mapa():
 	# Hacer acero o venderlo solo
 	if GlobalTiempo.diaActual >= 1: 
 		for i in range(0,79):
-			for j in range(0,13): # Las primeras diez capas de profundidad
+			for j in range(0,11): # Las primeras diez capas de profundidad
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.940 and porcentaje >= 0:
 					frame = GlobalRecursos.mineralesConFondo.Tierra
-				elif porcentaje > 0.940 and porcentaje < 0.975: 
+				elif porcentaje > 0.935 and porcentaje < 0.975: 
 					frame = GlobalRecursos.mineralesConFondo.Carbon
 				elif porcentaje > 0.975 and porcentaje < 0.99: 
 					frame = GlobalRecursos.mineralesConFondo.Hierro
@@ -59,7 +59,7 @@ func regenerar_mapa():
 	# se vende el oro solito
 	if GlobalTiempo.diaActual >= 3:
 		for i in range(0,79):
-			for j in range(20,41):
+			for j in range(20,31):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.97 and porcentaje >= 0:
@@ -73,13 +73,13 @@ func regenerar_mapa():
 				var atlasCordsX = frame % 6
 				var atlasCords = Vector2(atlasCordsX, atlasCordsY)
 				terreno.set_cell(0,Vector2(i,j),1,atlasCords)
-		Cam.limit_bottom = 340
-		barraBloqueoDias.position.y = 340
+		Cam.limit_bottom = 264
+		barraBloqueoDias.position.y = 264
 	
 	# Libera receta Fire cristal
 	if GlobalTiempo.diaActual >= 4:
 		for i in range(0,79):
-			for j in range(40,61):
+			for j in range(30,51):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.975 and porcentaje >= 0:
@@ -96,13 +96,13 @@ func regenerar_mapa():
 				var atlasCordsX = frame % 6
 				var atlasCords = Vector2(atlasCordsX, atlasCordsY)
 				terreno.set_cell(0,Vector2(i,j),1,atlasCords)
-		Cam.limit_bottom = 500
-		barraBloqueoDias.position.y = 500
+		Cam.limit_bottom = 424
+		barraBloqueoDias.position.y = 424
 		
 	# Libera receta ice cristal
 	if GlobalTiempo.diaActual >= 6:
 		for i in range(0,79):
-			for j in range(60,91):
+			for j in range(50,81):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.985 and porcentaje >= 0:
@@ -116,14 +116,14 @@ func regenerar_mapa():
 				var atlasCordsX = frame % 6
 				var atlasCords = Vector2(atlasCordsX, atlasCordsY)
 				terreno.set_cell(0,Vector2(i,j),1,atlasCords)
-		Cam.limit_bottom = 740
-		barraBloqueoDias.position.y = 740
+		Cam.limit_bottom = 664
+		barraBloqueoDias.position.y = 664
 	
 	# Libera cristal de tierra
 	# Libera RGB cristal
 	if GlobalTiempo.diaActual >= 7:
 		for i in range(0,79):
-			for j in range(90,121):
+			for j in range(80,111):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.985 and porcentaje >= 0:
@@ -137,13 +137,13 @@ func regenerar_mapa():
 				var atlasCordsX = frame % 6
 				var atlasCords = Vector2(atlasCordsX, atlasCordsY)
 				terreno.set_cell(0,Vector2(i,j),1,atlasCords)
-		Cam.limit_bottom = 980
-		barraBloqueoDias.position.y = 980
+		Cam.limit_bottom = 904
+		barraBloqueoDias.position.y = 904
 	
 	# desbloquea 3 recetas de golpe.
 	if GlobalTiempo.diaActual >= 8:
 		for i in range(0,79):
-			for j in range(120,151):
+			for j in range(110,141):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.985 and porcentaje >= 0:
@@ -157,12 +157,12 @@ func regenerar_mapa():
 				var atlasCordsX = frame % 6
 				var atlasCords = Vector2(atlasCordsX, atlasCordsY)
 				terreno.set_cell(0,Vector2(i,j),1,atlasCords)
-		Cam.limit_bottom = 1180
-		barraBloqueoDias.position.y = 1180
+		Cam.limit_bottom = 1144
+		barraBloqueoDias.position.y = 1144
 	
 	if GlobalTiempo.diaActual >= 9:
 		for i in range(0,79):
-			for j in range(150,161):
+			for j in range(140,171):
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.98 and porcentaje >= 0:
