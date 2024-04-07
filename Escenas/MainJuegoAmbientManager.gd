@@ -13,6 +13,7 @@ func _ready():
 	
 	GlobalTiempo.iniciarDia.connect(playSound)
 	$Ambient.play(0)
+	print(OS.get_name()," ", OS.get_locale_language())
 # Señales
 
 func playSound():

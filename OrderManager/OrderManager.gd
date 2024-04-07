@@ -11,9 +11,9 @@ signal new_order(orden: OrderGem)
 func _ready():
 	llenar_recetas()
 	GlobalTiempo.iniciarDia.connect(llenar_recetas)
-	GlobalRecursos.bancarota.connect(gameover)
+	GlobalRecursos.bancarota.connect(reiniciar_recetas)
 
-func gameover():
+func reiniciar_recetas():
 	recetas.clear()
 	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro]) # acero
 
