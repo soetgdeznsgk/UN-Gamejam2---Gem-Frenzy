@@ -99,5 +99,6 @@ func _on_btn_reintentar_pressed() -> void:
 	GlobalTiempo.diaActual = 1
 	GlobalTiempo.tiempoHoraDia = 8
 	GlobalTiempo.tiempoMinutoDia = 0
+	OrderManager.reiniciar_recetas()
 	
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
