@@ -91,9 +91,10 @@ func actualizar_renta():
 	
 	if dia >= 9:
 		valorDia = int(5.3 * GlobalTiempo.diaActual) - 2
-	
-	if valorDia >= 80:
-		valorDia = 80
+	if dia >= 11:
+		valorDia = int(6 * GlobalTiempo.diaActual) - 2
+	if dia >= 14:
+		valorDia = int( 7* GlobalTiempo.diaActual) - 2
 	
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3
