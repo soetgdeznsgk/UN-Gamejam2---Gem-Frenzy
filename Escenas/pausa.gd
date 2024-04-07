@@ -13,9 +13,11 @@ func _on_btn_toggle_sound_pressed():
 	if GlobalSettings.sound:
 		AudioServer.set_bus_volume_db(0,-72)
 		$Btn_toggle_sound.icon=  textureSndOff
+		GlobalSettings.sound=false
 	else:
 		AudioServer.set_bus_volume_db(0,0)
-		$Btn_toggle_sound.icon=  textureSndOn# Replace with function body.
+		$Btn_toggle_sound.icon=  textureSndOn
+		GlobalSettings.sound=true# Replace with function body.
 	pass # Replace with function body.
 
 
