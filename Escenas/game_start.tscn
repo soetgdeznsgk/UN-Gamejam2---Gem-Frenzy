@@ -180,19 +180,18 @@ texture = ExtResource("8_kncop")
 
 [node name="tutorial" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(925, 131.4)
+position = Vector2(924, 129)
 scale = Vector2(2, 2)
 texture = ExtResource("7_kg6s8")
 
 [node name="Tutorial" type="Label" parent="."]
 layout_mode = 0
-offset_left = 776.6
-offset_top = 122.1
-offset_right = 921.6
-offset_bottom = 152.1
+offset_left = 771.0
+offset_top = 124.0
+offset_right = 916.0
+offset_bottom = 154.0
 theme = ExtResource("9_fv52p")
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 18
 text = "TUTORIAL"
 horizontal_alignment = 1
 

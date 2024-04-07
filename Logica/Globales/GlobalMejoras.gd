@@ -47,8 +47,8 @@ func llenar_mejoras() -> void:
 	nombre_mejoras.MasTiempo : {
 		"Key" : nombre_mejoras.MasTiempo,
 		"Nombre" : tr("MORE_TIME"),
-		"Precio" : 6,
-		"PrecioEscalar" : 8,
+		"Precio" : 5,
+		"PrecioEscalar" : 12,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : tr("MORE_TIME_DESC"),
@@ -57,7 +57,7 @@ func llenar_mejoras() -> void:
 		"Key" : nombre_mejoras.PanchaSpeedUp,
 		"Nombre" : tr("SPEED_UP"),
 		"Precio" : 10,
-		"PrecioEscalar" : 10,
+		"PrecioEscalar" : 14,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/pancha_speed.png',
 		"Descripcion" : tr("SPEED_UP_DESC"),
@@ -66,7 +66,7 @@ func llenar_mejoras() -> void:
 		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : tr("MORE_PROFITS"),
 		"Precio" : 7,
-		"PrecioEscalar" : 8,
+		"PrecioEscalar" : 11,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
 		"Descripcion" : tr("MORE_PROFITS_DESC"),
@@ -105,16 +105,16 @@ func obtener_mejora_random_disponible():
 	
 	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion
 	if disponible_mejoras[nombre_mejoras.CofreMineral]>0:
-		mejoras_seleccionadas.append(info_mejoras[0])
-		print(info_mejoras[nombre_mejoras.CofreMineral])
+		mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.CofreMineral])
+	# lo mismo con mejora de mejoras
 	if disponible_mejoras[nombre_mejoras.MejoraDeMejoras]>0:
 		mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.MejoraDeMejoras])
-	
+	# Añade a la pool mejoras disponibles
 	for i in range(1, len(nombre_mejoras)):
 		if disponible_mejoras[i] > 0:
 			posibles_mejoras.append(i)
+	# Elije las mejoras de la pool
 	if len(posibles_mejoras) > 0:
-		# selecciona algunas entre las que hay
 		# selecciona 2 + mejora de mejoras
 		for i in range(len(mejoras_seleccionadas), 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
 			var selec : int

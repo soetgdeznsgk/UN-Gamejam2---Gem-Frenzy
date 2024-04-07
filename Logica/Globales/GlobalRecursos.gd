@@ -3,9 +3,9 @@ extends Node
 # Singleton para manejar el dinero y los minerales actuales
 
 # inicia en ceros
-var cantidadTiposMinerales = 11
+const cantidadTiposMinerales = 11
 var minerales : Array = []
-var dinero : int = 500
+var dinero : int = 5
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota

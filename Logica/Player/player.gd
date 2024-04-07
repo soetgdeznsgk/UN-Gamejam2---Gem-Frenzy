@@ -59,6 +59,12 @@ func finalizar_dia():
 	tween.tween_property(self,"position", Vector2(397,-17),0.25)
 	surface_entered.emit()
 	
+	# Reinicia lo que pancha tiene en las manos al acabar el dia
+	darObjetos()
+	if $Receta.visible:
+		receta_en_mano = false
+	
+	
 
 func _physics_process(_delta):
 	if !diaFinalizado:
@@ -75,7 +81,7 @@ func _physics_process(_delta):
 					recienSalidoEscalera = false
 					var tween :Tween = get_tree().create_tween()
 					tween.tween_property(self, "position:x", $"../Area2DCasa".position.x, 0.4)
-					tween.tween_property(self, "position:y", -21.2, 0.7)
+					tween.tween_property(self, "position:y", -17, 0.7)
 					tween.tween_callback(_on_tween_callback)
 				
 				input_direction=Vector2(0,-1) # para q taladre hacia
