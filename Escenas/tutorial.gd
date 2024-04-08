@@ -76,6 +76,7 @@ func emit_endtaladrando():
 		$"Tutorialfinalizao/Pancha finalizao".play("default")
 		$"Tutorialfinalizao".visible=true
 		$"AudioTutorial".play()
+		$"AnimationPlayer".stop()
 		
 func animar_taladrando():
 	APtutorial.play("pancha_taladrando")

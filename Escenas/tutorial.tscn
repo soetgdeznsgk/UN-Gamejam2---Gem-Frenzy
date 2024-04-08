@@ -21,9 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://trmgdcomkkku" path="res://Sprites/Player/pancha_taladro_arriba_12x27_px.png" id="15_738bs"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="19_fmy6q"]
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="21_fs5gd"]
-[ext_resource type="AudioStream" uid="uid://bomduf3rvl8ka" path="res://Musica/Retro_Water_Drop_01.wav" id="22_6d7ax"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="22_rvoqq"]
 [ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="23_r654d"]
+[ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="24_7wm1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c8h"]
 texture = ExtResource("6_c6pv2")
@@ -2466,6 +2466,7 @@ vframes = 2
 frame = 3
 
 [node name="Receta" type="Sprite2D" parent="Pancha Gif/Control/Panchasprite"]
+visible = false
 position = Vector2(0.0386353, -14.5036)
 scale = Vector2(0.999712, 0.999712)
 texture = ExtResource("10_6u6h7")
@@ -2504,11 +2505,13 @@ vframes = 2
 frame = 3
 
 [node name="hornopro" type="Sprite2D" parent="Pancha Gif"]
+visible = false
 position = Vector2(334, 65)
 scale = Vector2(3.86, 3.86)
 texture = ExtResource("9_02203")
 
 [node name="Pancha entrega" type="Node2D" parent="Pancha Gif"]
+visible = false
 
 [node name="Recepcionyipee" type="Sprite2D" parent="Pancha Gif/Pancha entrega"]
 position = Vector2(-22, 38)
@@ -2596,6 +2599,6 @@ label_settings = SubResource("LabelSettings_bmp1x")
 horizontal_alignment = 1
 
 [node name="AudioTutorial" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_6d7ax")
+stream = ExtResource("24_7wm1t")
 
 [connection signal="pressed" from="Tutorialfinalizao/Botonterminar" to="." method="_on_botonterminar_pressed"]
