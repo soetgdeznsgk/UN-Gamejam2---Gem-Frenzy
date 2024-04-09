@@ -360,13 +360,12 @@ layout_mode = 2
 [node name="TextureReloj" type="TextureRect" parent="VbReloj/Control"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 118.0
-offset_top = -49.0
-offset_right = 360.0
-offset_bottom = 154.0
-scale = Vector2(0.25, 0.25)
+offset_left = 114.0
+offset_top = -48.0
+offset_right = 515.0
+offset_bottom = 300.0
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("11_5es48")
-expand_mode = 1
 stretch_mode = 2
 
 [node name="Renta" type="Label" parent="."]
