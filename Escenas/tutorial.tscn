@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cgjgcfv42vp3u"]
+[gd_scene load_steps=49 format=3 uid="uid://cgjgcfv42vp3u"]
 
 [ext_resource type="Script" path="res://Escenas/tutorial.gd" id="1_151xy"]
 [ext_resource type="Texture2D" uid="uid://dsunx5u8lw85s" path="res://Sprites/flechatuto_arriba.png" id="1_ki1j8"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://trmgdcomkkku" path="res://Sprites/Player/pancha_taladro_arriba_12x27_px.png" id="15_738bs"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="19_fmy6q"]
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="21_fs5gd"]
+[ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="21_nqomv"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="22_rvoqq"]
 [ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="23_r654d"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="24_7wm1t"]
@@ -2534,12 +2535,15 @@ libraries = {
 
 [node name="Objetivo" type="Label" parent="."]
 layout_mode = 0
-offset_left = 274.0
-offset_top = -129.0
-offset_right = 401.0
-offset_bottom = -91.0
+offset_left = 205.0
+offset_top = -130.0
+offset_right = 647.0
+offset_bottom = -95.0
+theme = ExtResource("21_nqomv")
 theme_override_font_sizes/font_size = 25
-text = "TUTORIAL"
+text = "Collect 20 Carbon"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Tutorialfinalizao" type="Node2D" parent="."]
 visible = false

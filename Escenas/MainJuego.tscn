@@ -385,6 +385,7 @@ texture = ExtResource("15_t1uey")
 metadata/_edit_lock_ = true
 
 [node name="Obstaculos" type="Node2D" parent="Gameplay"]
+modulate = Color(1, 1, 1, 0.882353)
 position = Vector2(0, 4)
 script = ExtResource("14_jik0t")
 

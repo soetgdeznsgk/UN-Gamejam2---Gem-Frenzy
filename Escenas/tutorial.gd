@@ -69,6 +69,7 @@ func emit_endtaladrando():
 		GlobalTuto.endTaladrando.emit()
 		Taladrandoreproducido=true
 		GlobalTuto.FlagendTaladrando=false
+		$Objetivo.text=tr("MISSION_TEXT")
 		
 	if GlobalRecursos.minerales[3]>20:
 		GlobalTuto.pausarpancha.emit()
