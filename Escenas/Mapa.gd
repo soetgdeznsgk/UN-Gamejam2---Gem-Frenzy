@@ -53,8 +53,8 @@ func regenerar_mapa():
 				var atlasCordsX = frame % 6
 				var atlasCords = Vector2(atlasCordsX, atlasCordsY)
 				terreno.set_cell(0,Vector2(i,j),1,atlasCords)
-		Cam.limit_bottom = 180
-		barraBloqueoDias.position.y = 180
+		Cam.limit_bottom = 184
+		barraBloqueoDias.position.y = 184
 		
 	# se vende el oro solito
 	if GlobalTiempo.diaActual >= 3:

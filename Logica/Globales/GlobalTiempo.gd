@@ -19,9 +19,14 @@ func _ready() -> void:
 	tmr_minuto.timeout.connect(on_tmr_minuto_end)
 	tmr_minuto.process_callback = Timer.TIMER_PROCESS_PHYSICS
 
+func start_time():
+	tiempoHoraDia = 8
+	tiempoMinutoDia = 0
+	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
+	tmr_minuto.start()
+
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		#pass
+	if Input.is_action_just_pressed("ui_text_delete"):
 		tiempoHoraDia += 1
 
 # actualiza el reloj
@@ -42,8 +47,5 @@ func siguiente_dia():
 		tmr_minuto.wait_time = 0.45+ diaActual*0.012
 	else:
 		tmr_minuto.wait_time = 0.6
-	tiempoHoraDia = 8
-	tiempoMinutoDia = 0
-	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
+	start_time()
 	iniciarDia.emit()
-	tmr_minuto.start()

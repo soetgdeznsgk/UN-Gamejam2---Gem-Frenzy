@@ -150,7 +150,6 @@ func empezardia():
 		slimenodo.position=Vectorposicionrandom
 		slimenodo.rotation=posibles_angulos[angulo]
 		var tocandoslime=slimenodo.get_overlapping_areas()
-		print("slimeagain: ",tocandoslime)
 		#while tocandoslime==true:
 		#	slimenodo.position=posicionrandom(Iniciocapas,finalA)
 	#capa 2
@@ -195,7 +194,7 @@ func empezardia():
 		
 		slimenodo2.position=Vectorposicionrandom
 		slimenodo2.rotation=posibles_angulos[angulo]
-	print("terminó el spawn papus")
+	#print("terminó el spawn papus")
 
 func posicionrandom(inicioy,finaly):
 	var xrandom=randi() % 570#de 50 a 640

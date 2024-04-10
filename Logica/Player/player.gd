@@ -167,7 +167,6 @@ func _on_tween_callback():
 
 #esto es de subir al seugndo piso, lmao	
 func _on_ladder_finish():
-	#print("escalera finalizada?")
 	movement = true
 	input_direction = Vector2.ZERO
 	last_move = Vector2.ZERO

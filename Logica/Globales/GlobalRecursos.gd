@@ -87,14 +87,14 @@ func actualizar_renta():
 		valorDia = int(3.5 * GlobalTiempo.diaActual)
 	
 	if dia >= 7 and dia <9:
-		valorDia = int(4.5 * GlobalTiempo.diaActual) - 3
+		valorDia = int(4.85 * GlobalTiempo.diaActual) - 3
 	
 	if dia >= 9:
-		valorDia = int(5.3 * GlobalTiempo.diaActual) - 2
+		valorDia = int(5.5 * GlobalTiempo.diaActual) - 2
 	if dia >= 11:
-		valorDia = int(6 * GlobalTiempo.diaActual) - 2
+		valorDia = int(6.5 * GlobalTiempo.diaActual) - 2
 	if dia >= 14:
-		valorDia = int( 7* GlobalTiempo.diaActual) - 2
+		valorDia = int(7.3* GlobalTiempo.diaActual) - 2
 	
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3
@@ -103,13 +103,25 @@ func actualizar_renta():
 
 func pagueme_la_renta():
 	var reciclar : int = 0
-	for i in range(len(minerales)):
-		var mitad = int(3*minerales[i]/4)
-		actualizar_mineral(i, -mitad)
-		@warning_ignore("integer_division")
-		reciclar += (mitad * (i/2 + 1))
+	var totalreciclado: int = 0
+	if GlobalTiempo.diaActual < 2:
+		for i in range(len(minerales)):
+			var mitad = int(3*minerales[i]/4)
+			actualizar_mineral(i, -mitad)
+			@warning_ignore("integer_division")
+			reciclar += (mitad * (i/2))
+		
+		totalreciclado = int(reciclar * 0.035)
 	
-	var totalreciclado = int(reciclar * 0.0375)
+	if GlobalTiempo.diaActual >= 3:
+		for i in range(len(minerales)):
+			var mitad = int(3*minerales[i]/4)
+			actualizar_mineral(i, -mitad)
+			@warning_ignore("integer_division")
+			reciclar += (mitad * (i+1/2))
+		
+		totalreciclado = int(reciclar * 0.036)
+	
 	GlobalRecursos.GananciaReciclaje=totalreciclado
 	actualizar_dinero(totalreciclado)
 	# luego de obtener oro por minerales de sobra, se cobra la renta

@@ -101,4 +101,39 @@ func _on_btn_reintentar_pressed() -> void:
 	GlobalTiempo.tiempoMinutoDia = 0
 	OrderManager.reiniciar_recetas()
 	
+	get_tree().call_deferred("change_scene_to_file","res://Escenas/MainJuego.tscn")
+
+
+func _on_btn_home_pressed() -> void:
+		# Crear nuevo doc con el dia
+	if GlobalFirebaseInfo.isAuth:
+		var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
+		# El nombre del ID en vacio permite que sea autogenerado
+		@warning_ignore("unused_variable")
+		var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
+		("", {'day': GlobalTiempo.diaActual, 'name': nameN})
+		
+		#print('firebase retorna', add_task)
+		
+		var cantidadActualDelDia = 1
+		if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
+			cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
+			cantidadActualDelDia += 1
+		# Actualiza la cantidad de nombres en ese dia
+		@warning_ignore("unused_variable")
+		var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
+		("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
+		
+		#print('firebase retorna', update_map)
+		
+	GlobalRecursos.dinero = 5
+	GlobalRecursos.reiniciar_minerales()
+	GlobalMejoras.reiniciar_mejoras()
+	GlobalMejoras._ready()
+	GlobalTiempo.diaActual = 1
+	GlobalTiempo.tiempoHoraDia = 8
+	GlobalTiempo.tiempoMinutoDia = 0
+	OrderManager.reiniciar_recetas()
+	
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
+

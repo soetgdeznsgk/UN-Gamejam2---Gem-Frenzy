@@ -12,7 +12,7 @@ enum {
 
 #}
 func encontrarReceta(ingredientes : Array) -> int: # NO TOCAR ESTA PORQUERIA
-	if ingredientes.has(GlobalRecursos.mineralesSinFondo.Hierro) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Carbon): # Acero (hierro + carbon)
+	if ingredientes.has(GlobalRecursos.mineralesSinFondo.Hierro) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Carbon) and ingredientes.size() == 2: # Acero (hierro + carbon)
 		return Acero
 	if ingredientes.has(GlobalRecursos.mineralesSinFondo.Rubi) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Zafiro) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Esmeralda): 
 	# RGD Crystal (Rubi + Zafiro + Esmeralda)
@@ -32,6 +32,5 @@ func encontrarReceta(ingredientes : Array) -> int: # NO TOCAR ESTA PORQUERIA
 	if ingredientes.has(GlobalRecursos.mineralesSinFondo.Cobre) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Topacio) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Esmeralda): 
 		# Earth crystal (cobre + topacio + esmeralda)
 		return CristalTierra
-	#print("algo salio mal con el array: ", ingredientes)
 	return -1 # ésto es ejecutado si la receta no existe, será llamada por el horno
 	

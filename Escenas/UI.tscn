@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=76 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -27,7 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="20_v1ys7"]
 [ext_resource type="Theme" uid="uid://pnhutxwsymll" path="res://Sprites/Menu/botoncuadraoamarillo.tres" id="26_46bwo"]
 [ext_resource type="Script" path="res://Escenas/pausa.gd" id="26_mis2i"]
+[ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="26_n0smv"]
 [ext_resource type="Script" path="res://Escenas/factura.gd" id="26_url12"]
+[ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="27_efaeh"]
 [ext_resource type="Texture2D" uid="uid://brjs7retygf0i" path="res://Sprites/Menu/fondopapel.png" id="27_u538p"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="28_niiiv"]
 [ext_resource type="LabelSettings" uid="uid://dx2r5fphaavpb" path="res://Sprites/UI/labelconfigfactura/label_cafe.tres" id="29_odmc8"]
@@ -203,6 +205,35 @@ border_width_bottom = 1
 border_color = Color(0.643137, 0.380392, 0.239216, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1golx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ead3k"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 15.0
+texture = ExtResource("26_n0smv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hlxw"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 22.0
+texture = ExtResource("26_n0smv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04hec"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+texture = ExtResource("27_efaeh")
+
+[sub_resource type="Theme" id="Theme_dnrqd"]
+Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
+Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
+Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
+Button/styles/pressed = SubResource("StyleBoxTexture_04hec")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulpgl"]
 texture = ExtResource("27_u538p")
@@ -890,7 +921,12 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Btn_reintentar" type="Button" parent="Gameover/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Btn_reintentar" type="Button" parent="Gameover/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(260, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -899,6 +935,14 @@ size_flags_stretch_ratio = 2.0
 theme = ExtResource("17_1my18")
 theme_override_font_sizes/font_size = 20
 text = "RETRY"
+
+[node name="Btn_HOME" type="Button" parent="Gameover/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = SubResource("Theme_dnrqd")
+icon = ExtResource("35_rr8cu")
+icon_alignment = 1
+expand_icon = true
 
 [node name="factura" type="Control" parent="."]
 unique_name_in_owner = true
@@ -1162,7 +1206,8 @@ texture = ExtResource("37_0c7ga")
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
-[connection signal="pressed" from="Gameover/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_HOME" to="Gameover" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="factura/Button" to="factura" method="_on_btn_factura_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
