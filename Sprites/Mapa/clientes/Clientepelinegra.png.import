@@ -3,20 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3yig0xto7pb0"
-path="res://.godot/imported/Clientepelinegra.png-8bb6c613cc1a16a522aa114136ac3d93.ctex"
+path.bptc="res://.godot/imported/Clientepelinegra.png-8bb6c613cc1a16a522aa114136ac3d93.bptc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Sprites/Mapa/clientes/Clientepelinegra.png"
-dest_files=["res://.godot/imported/Clientepelinegra.png-8bb6c613cc1a16a522aa114136ac3d93.ctex"]
+dest_files=["res://.godot/imported/Clientepelinegra.png-8bb6c613cc1a16a522aa114136ac3d93.bptc.ctex"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
@@ -25,7 +26,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

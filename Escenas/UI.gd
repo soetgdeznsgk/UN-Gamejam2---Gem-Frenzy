@@ -13,21 +13,18 @@ func _on_recepcion_order_delivered(orden):
 	delegar_orden.emit(orden)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		paused = !paused
-		get_tree().paused = paused
-		$Pausa.visible = paused
-		$Btn_pause.disabled = paused
+		toggle_paused()
 
 func _on_btn_pause_pressed() -> void:
-	paused = !paused
-	get_tree().paused = paused
-	$Pausa.visible=true
-	$Btn_pause.disabled=true
+	toggle_paused()
 
 func _on_btn_back_pressed():
+	toggle_paused()
+
+func toggle_paused():
 	paused = !paused
 	get_tree().paused = paused
-	$Pausa.visible=false
-	$Btn_pause.disabled=false
+	$Pausa.visible = paused
+	$Btn_pause.disabled = paused

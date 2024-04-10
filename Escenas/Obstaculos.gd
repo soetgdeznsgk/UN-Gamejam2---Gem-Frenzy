@@ -149,6 +149,7 @@ func empezardia():
 		slimenodo.set_finaly(finalA)
 		slimenodo.position=Vectorposicionrandom
 		slimenodo.rotation=posibles_angulos[angulo]
+		@warning_ignore("unused_variable")
 		var tocandoslime=slimenodo.get_overlapping_areas()
 		#while tocandoslime==true:
 		#	slimenodo.position=posicionrandom(Iniciocapas,finalA)

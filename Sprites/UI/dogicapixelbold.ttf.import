@@ -20,12 +20,11 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
-hinting=1
+hinting=2
 subpixel_positioning=1
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Object(FontVariation,"resource_local_to_scene":false,"resource_name":"","fallbacks":Array[Font]([]),"base_font":Resource("res://Sprites/UI/Unifontexmono-DYWdE.ttf"),"variation_opentype":{},"variation_face_index":0,"variation_embolden":0.0,"variation_transform":Transform2D(1.35, 0, 0, 1.35, 0, 0),"opentype_features":{},"spacing_glyph":2,"spacing_space":2,"spacing_top":0,"spacing_bottom":0,"script":null)
-]
+fallbacks=[Resource("res://localizacion/ChineseFallback.tres")]
 Compress=null
 compress=true
 preload=[{

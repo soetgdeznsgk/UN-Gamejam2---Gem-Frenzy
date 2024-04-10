@@ -3,20 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpc02ve1fblbx"
-path="res://.godot/imported/intropancha_0004.png-05336d6c6a8a4db7167828872db1543c.ctex"
+path.bptc="res://.godot/imported/intropancha_0004.png-05336d6c6a8a4db7167828872db1543c.bptc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Sprites/Intro/intropancha_0004.png"
-dest_files=["res://.godot/imported/intropancha_0004.png-05336d6c6a8a4db7167828872db1543c.ctex"]
+dest_files=["res://.godot/imported/intropancha_0004.png-05336d6c6a8a4db7167828872db1543c.bptc.ctex"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
@@ -25,7 +26,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

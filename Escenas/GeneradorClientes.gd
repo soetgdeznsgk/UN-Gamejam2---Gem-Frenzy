@@ -21,7 +21,9 @@ func ini_dia():
 	generandoClientes = true
 	$Timer.start(2)
 	if GlobalTiempo.diaActual != 1:
+		@warning_ignore("integer_division")
 		tiempo_max_entre_clientes = 7 + int(GlobalTiempo.diaActual/2)
+		@warning_ignore("integer_division")
 		tiempo_min_entre_clientes = 5 + int(GlobalTiempo.diaActual/2)
 	if tiempo_max_entre_clientes >= 13:
 		tiempo_max_entre_clientes = 13

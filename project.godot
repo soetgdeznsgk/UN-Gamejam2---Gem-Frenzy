@@ -10,14 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Un-gamejam 2"
+config/name="Gem-Frenzy"
+config/description="Gem Frenzy is an Arcade, Roguelike game, inspired by Overcooked and Dig Dug where you have to dig to find precious gems and sell them.
+Help Pancha to become rich or suffer the consecuences of late capitalism"
+config/version="1.0.0"
 run/main_scene="res://Escenas/game_start.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Sprites/UI/reloj loading 245 x 216.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://Sprites/Menu/pancha corazon 19 x 24.png"
 
 [autoload]
 
@@ -80,6 +83,7 @@ ui_down={
 [internationalization]
 
 locale/translations=PackedStringArray("res://localizacion/Traduccion gem frenzy - Hoja 1.en.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.es.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.jp.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.zh.translation")
+locale/locale_filter_mode=0
 
 [rendering]
 

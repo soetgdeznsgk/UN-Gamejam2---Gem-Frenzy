@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=43 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="Script" path="res://Escenas/MainJuegoAmbientManager.gd" id="1_pncec"]
@@ -23,8 +23,10 @@
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
 [ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="18_b88ti"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
-[ext_resource type="AudioStream" uid="uid://dws3s3hhyndi7" path="res://Musica/「カラクサタウン」.mp3" id="23_ljyy2"]
+[ext_resource type="AudioStream" uid="uid://dws3s3hhyndi7" path="res://Musica/CaminarMusic.mp3" id="23_ljyy2"]
 [ext_resource type="PackedScene" uid="uid://bvl5tdbs4i1ex" path="res://Logica/gato.tscn" id="26_0x151"]
+[ext_resource type="Texture2D" uid="uid://ddjm1xe5iajus" path="res://Sprites/Mapa/gatito sprites 2.png" id="26_s0nvp"]
+[ext_resource type="Texture2D" uid="uid://ds1h02qxfdd56" path="res://Sprites/Mapa/gatito sprites 1.png" id="27_5k2uw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnofo"]
 size = Vector2(32, 12)
@@ -989,6 +991,9 @@ position = Vector2(362, -12)
 collision_layer = 4
 collision_mask = 4
 
+[node name="Sprite2D" parent="Gato" index="0"]
+texture = ExtResource("26_s0nvp")
+
 [node name="Gato2" parent="." instance=ExtResource("26_0x151")]
 visible = false
 modulate = Color(0.976471, 0.568627, 0, 1)
@@ -997,6 +1002,9 @@ position = Vector2(296, -52)
 collision_layer = 4
 collision_mask = 4
 gatoPower = 1
+
+[node name="Sprite2D" parent="Gato2" index="0"]
+texture = ExtResource("27_5k2uw")
 
 [connection signal="body_entered" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gameplay/Area2DCasa" to="Gameplay/Player" method="_on_area_2d_casa_body_exited"]
@@ -1011,3 +1019,6 @@ gatoPower = 1
 [connection signal="body_exited" from="Gameplay/Recepcion" to="Gameplay/Recepcion" method="_on_body_exited"]
 [connection signal="order_delivered" from="Gameplay/Recepcion" to="CanvasLayer/UI" method="_on_recepcion_order_delivered"]
 [connection signal="timeout" from="Gameplay/GeneradorClientes/Timer" to="Gameplay/GeneradorClientes" method="_on_timer_timeout"]
+
+[editable path="Gato"]
+[editable path="Gato2"]
