@@ -68,24 +68,24 @@ func _on_button_language_pressed(language):
 func _on_btn_language_toggle_pressed():
 	$Lenguaje.visible=true
 	$Btn_toggle_Tutorial.visible=false
-	$Btn_credits.visible=false
+	$Btn_credits.disabled=true
 
 func _on_btn_close_language_pressed():
 	$Lenguaje.visible=false
 	$Btn_toggle_Tutorial.visible=true
-	$Btn_credits.visible=true
+	$Btn_credits.disabled=false
 
 
 func _on_btn_credits_pressed():
 	$Credits.visible=true
 	$Btn_toggle_Tutorial.visible=false
-	$Btn_language.visible=false
+	$Btn_language.disabled=true
 
 
 func _on_btn_close_credits_pressed():
 	$Credits.visible=false
 	$Btn_toggle_Tutorial.visible=true
-	$Btn_language.visible=true
+	$Btn_language.disabled=false
 
 
 

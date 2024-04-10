@@ -2536,7 +2536,7 @@ offset_right = 647.0
 offset_bottom = -95.0
 theme = ExtResource("21_nqomv")
 theme_override_font_sizes/font_size = 25
-text = "Collect 20 Carbon"
+text = "TUTORIAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 

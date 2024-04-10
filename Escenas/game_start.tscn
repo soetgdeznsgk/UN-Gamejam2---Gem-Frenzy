@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=37 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -60,6 +60,13 @@ Button/styles/hover = SubResource("StyleBoxTexture_wgoiw")
 Button/styles/normal = SubResource("StyleBoxTexture_phbrr")
 Button/styles/pressed = SubResource("StyleBoxTexture_fnmog")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ots8e"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 3.0
+texture = ExtResource("13_6fifa")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1golx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ead3k"]
@@ -84,12 +91,21 @@ content_margin_bottom = 3.0
 texture = ExtResource("13_6fifa")
 
 [sub_resource type="Theme" id="Theme_54y6a"]
+Button/styles/disabled = SubResource("StyleBoxTexture_ots8e")
 Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
 Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
 Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
 Button/styles/pressed = SubResource("StyleBoxTexture_04hec")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xekiu"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 3.0
+texture = ExtResource("13_6fifa")
+
 [sub_resource type="Theme" id="Theme_vk4em"]
+Button/styles/disabled = SubResource("StyleBoxTexture_xekiu")
 Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
 Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
 Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
@@ -420,8 +436,10 @@ expand_icon = true
 
 [node name="controlrateus" type="Control" parent="Credits"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -3.0
+offset_top = -43.0
+offset_right = 39.0
+offset_bottom = -16.0
 
 [node name="likeourgame" type="Label" parent="Credits/controlrateus"]
 self_modulate = Color(0.34902, 0.160784, 0.0588235, 1)
@@ -439,23 +457,37 @@ vertical_alignment = 1
 [node name="LabelRATEUS" type="Label" parent="Credits/controlrateus"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 layout_mode = 0
-offset_left = 51.0
-offset_top = 349.0
-offset_right = 475.0
-offset_bottom = 448.0
+offset_left = 45.0
+offset_top = 346.0
+offset_right = 463.0
+offset_bottom = 443.0
 theme_override_font_sizes/font_size = 16
 text = "RATE_US"
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="LabelSocialmedia" type="Label" parent="Credits/controlrateus"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+layout_mode = 0
+offset_left = 45.0
+offset_top = 432.0
+offset_right = 463.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 16
+text = "SOCIAL_MEDIA"
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Control2" type="Control" parent="Credits"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = 36.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Credits/Control2"]
-position = Vector2(544, 379)
-scale = Vector2(5, 5)
+position = Vector2(532, 354)
+scale = Vector2(5.81579, 5.81579)
 texture = ExtResource("16_ec5un")
 
 [node name="Btn_toggle_Tutorial" type="Button" parent="."]

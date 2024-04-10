@@ -40,7 +40,9 @@ PAUSED,PAUSADO,PAUSED,暂停,ポーズ
 CREDITS_DEVELOPED_BY,Desarrollado por,Developed By,游戏开发由  ,開発
 LANGUAGE,Lenguaje,Language,语言,言語
 LIKE_GAME?,¿Te gusta nuestro juego?,Do you like our game?,你喜欢我们的游戏吗？,私たちのゲームはお好きですか？
-RATE_US,"Si deseas apoyarnos puedes donar, calificar o comentarnos que te parecio.","If you want to support us you can donate, rate or comment what do you think",如果您想支持我们，您可以捐赠、评价或告诉我们您的想法。,私たちをサポートしたい場合は、寄付、評価、コメントをしてください。
+RATE_US,"Si deseas apoyarnos puedes donar, calificar o comentarnos que te parecio. 
+Recuerda seguirnos en nuestras redes sociales","If you want to support us you can donate, rate or comment what do you think",如果您想支持我们，您可以捐赠、评价或告诉我们您的想法。,私たちをサポートしたい場合は、寄付、評価、コメントをしてください。
+SOCIAL_MEDIA,Si te gusta comer gemas siguenos: @theyippiesdev,If you like to eat gems follow us: @theyippiesdev,如果你喜欢吃宝石，请关注我们:  @theyippiesdev,貴重な宝石を食べるのが好きなら、私たちをフォローしてください: @theyippiesdev
 DAY_FINISHED,DIA COMPLETADO,DAY COMPLETED,一天结束,一日が終わりました
 SAVINGS,Ahorros,Savings,储蓄,貯蓄
 DAY_PROFITS,Ganancia dia,Day profit,当天的利润,その日の利益
@@ -52,3 +54,4 @@ SIGN_BILL,Firmar factura,Sign Bill,签署发票,請求書に署名する
 CREDITS,CREDITOS,CREDITS,制作人员,クレジット
 PROGRAMMERS,PROGAMADORES,PROGRAMMERS,程序员,プログラマー
 ARTISTS,ARTISTAS,ARTISTS,艺术家,アーティスト
+MISSION_TEXT,Recoge 20 de Carbon,Collect 20 Coal,收集 20 块煤炭,石炭を 20 個集めます
