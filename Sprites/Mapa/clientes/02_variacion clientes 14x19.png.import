@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://env7mptfq1v0"
-path.bptc="res://.godot/imported/02_variacion clientes 14x19.png-413863455b73599afb05211fb748c57f.bptc.ctex"
+path="res://.godot/imported/02_variacion clientes 14x19.png-413863455b73599afb05211fb748c57f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/Mapa/clientes/02_variacion clientes 14x19.png"
-dest_files=["res://.godot/imported/02_variacion clientes 14x19.png-413863455b73599afb05211fb748c57f.bptc.ctex"]
+dest_files=["res://.godot/imported/02_variacion clientes 14x19.png-413863455b73599afb05211fb748c57f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

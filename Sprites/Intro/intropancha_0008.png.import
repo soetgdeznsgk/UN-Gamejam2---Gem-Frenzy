@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmnx82ornpbb"
-path.bptc="res://.godot/imported/intropancha_0008.png-14e73112dc1dee8d8243d3d4c9d19a96.bptc.ctex"
+path="res://.godot/imported/intropancha_0008.png-14e73112dc1dee8d8243d3d4c9d19a96.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/Intro/intropancha_0008.png"
-dest_files=["res://.godot/imported/intropancha_0008.png-14e73112dc1dee8d8243d3d4c9d19a96.bptc.ctex"]
+dest_files=["res://.godot/imported/intropancha_0008.png-14e73112dc1dee8d8243d3d4c9d19a96.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

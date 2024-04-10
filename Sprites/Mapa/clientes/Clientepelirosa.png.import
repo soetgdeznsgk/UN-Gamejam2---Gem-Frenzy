@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8f4qceorvegc"
-path.bptc="res://.godot/imported/Clientepelirosa.png-e4109e77412d91598ffba98bb3bff6aa.bptc.ctex"
+path="res://.godot/imported/Clientepelirosa.png-e4109e77412d91598ffba98bb3bff6aa.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/Mapa/clientes/Clientepelirosa.png"
-dest_files=["res://.godot/imported/Clientepelirosa.png-e4109e77412d91598ffba98bb3bff6aa.bptc.ctex"]
+dest_files=["res://.godot/imported/Clientepelirosa.png-e4109e77412d91598ffba98bb3bff6aa.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

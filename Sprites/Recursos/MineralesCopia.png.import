@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
