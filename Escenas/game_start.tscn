@@ -460,7 +460,7 @@ layout_mode = 0
 offset_left = 45.0
 offset_top = 346.0
 offset_right = 463.0
-offset_bottom = 443.0
+offset_bottom = 456.0
 theme_override_font_sizes/font_size = 16
 text = "RATE_US"
 vertical_alignment = 1
@@ -470,9 +470,9 @@ autowrap_mode = 2
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 layout_mode = 0
 offset_left = 45.0
-offset_top = 432.0
+offset_top = 448.0
 offset_right = 463.0
-offset_bottom = 529.0
+offset_bottom = 532.0
 theme_override_font_sizes/font_size = 16
 text = "SOCIAL_MEDIA"
 vertical_alignment = 1
@@ -486,7 +486,7 @@ offset_right = 41.0
 offset_bottom = 36.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Credits/Control2"]
-position = Vector2(532, 354)
+position = Vector2(550, 384)
 scale = Vector2(5.81579, 5.81579)
 texture = ExtResource("16_ec5un")
 
