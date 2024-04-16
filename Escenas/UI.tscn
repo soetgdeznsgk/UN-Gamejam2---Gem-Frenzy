@@ -595,6 +595,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -616,6 +617,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -640,6 +642,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -665,6 +668,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -690,6 +694,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -715,6 +720,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -740,6 +746,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -765,6 +772,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -790,6 +798,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -815,6 +824,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -840,6 +850,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
 text = ":0"
 vertical_alignment = 1
 

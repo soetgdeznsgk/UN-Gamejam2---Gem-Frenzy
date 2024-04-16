@@ -7,7 +7,12 @@ func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(update_mineralesactuales)
 
 func actualizar_mineral_ui(mineral, cantidad):
-	get_node("HBoxContainer"+str(mineral+1)+"/Label"+str(mineral+1)).text = ":" + str(cantidad)
+	var node :Label = get_node("HBoxContainer"+str(mineral+1)+"/Label"+str(mineral+1))
+	node.text = ":" + str(cantidad)
+	if cantidad == 0:
+		node.set("theme_override_colors/font_outline_color", Color("#cf2929") )
+	else:
+		node.set("theme_override_colors/font_outline_color", Color("#000000") )
 
 #hace que la ui muestre los minerales que se pueden recolectar, dependiendo del dia
 func update_mineralesactuales():
