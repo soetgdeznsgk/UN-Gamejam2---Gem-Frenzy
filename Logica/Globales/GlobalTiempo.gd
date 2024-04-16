@@ -3,7 +3,7 @@ extends Node
 # El dia de trabajo va de 8 am a 11
 var tiempoHoraDia =  8 # horas
 var tiempoMinutoDia = 0
-var diaActual = 1
+var diaActual = 7
 var tiempoJuegoTotal = 0
 signal tiempoCambio(minuto, hora)
 signal finalizarDia
