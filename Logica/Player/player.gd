@@ -152,7 +152,7 @@ func _on_area_2d_body_entered(body):
 	# cuando vuelve a la casa
 	if body is Player and taladrando and movement and not recienSalidoEscalera:
 		movement = false
-		AnimState.travel("Escalera")
+		AnimState.travel("Escaleras")
 		taladrando=false
 		recienSalidoEscalera = false
 		var tween :Tween = get_tree().create_tween()

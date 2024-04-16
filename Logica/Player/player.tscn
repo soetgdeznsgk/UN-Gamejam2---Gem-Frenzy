@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=54 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -14,6 +14,107 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(13, 14)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ebur"]
+animation = &"Escaleras"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ng4li"]
+animation = &"Idle_Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7vs1t"]
+animation = &"Idle_Left"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_8nk1j"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ng4li")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_7vs1t")
+blend_point_1/pos = -1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7dd6p"]
+animation = &"Taladrando_UpLeft"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nn815"]
+animation = &"Taladrando_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n8xqp"]
+animation = &"Taladrando_UpRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o1rsl"]
+animation = &"Taladrando_DownRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l3hki"]
+animation = &"Taladrando_DownLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_p7ol4"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7dd6p")
+blend_point_0/pos = Vector2(-1, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_nn815")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_n8xqp")
+blend_point_2/pos = Vector2(1, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_o1rsl")
+blend_point_3/pos = Vector2(1, -0.9)
+blend_point_4/node = SubResource("AnimationNodeAnimation_l3hki")
+blend_point_4/pos = Vector2(-1, -1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5ehh"]
+animation = &"Taladrando_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sisw8"]
+animation = &"Walking_Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_knogw"]
+animation = &"Walking_Left"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ali5s"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_sisw8")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_knogw")
+blend_point_1/pos = -1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_12nhj"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_asixt"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_brntw"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4symb"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ab508"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8873p"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_igr0w"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pjn1q"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_13oef"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kxrso"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wfjy4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vv211"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k8mig"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_14vni"]
+states/End/position = Vector2(985, 143)
+states/Escaleras/node = SubResource("AnimationNodeAnimation_8ebur")
+states/Escaleras/position = Vector2(604, 46)
+states/Idle_Superficie/node = SubResource("AnimationNodeBlendSpace1D_8nk1j")
+states/Idle_Superficie/position = Vector2(359, 46)
+states/Taladrando/node = SubResource("AnimationNodeBlendSpace2D_p7ol4")
+states/Taladrando/position = Vector2(744, 167)
+states/Taladrando_Idle/node = SubResource("AnimationNodeAnimation_c5ehh")
+states/Taladrando_Idle/position = Vector2(803, 46)
+states/Walking_Superficie/node = SubResource("AnimationNodeBlendSpace1D_ali5s")
+states/Walking_Superficie/position = Vector2(377, 176)
+transitions = ["Start", "Idle_Superficie", SubResource("AnimationNodeStateMachineTransition_12nhj"), "Idle_Superficie", "Walking_Superficie", SubResource("AnimationNodeStateMachineTransition_asixt"), "Walking_Superficie", "Idle_Superficie", SubResource("AnimationNodeStateMachineTransition_brntw"), "Idle_Superficie", "Escaleras", SubResource("AnimationNodeStateMachineTransition_4symb"), "Walking_Superficie", "Escaleras", SubResource("AnimationNodeStateMachineTransition_ab508"), "Escaleras", "Taladrando_Idle", SubResource("AnimationNodeStateMachineTransition_8873p"), "Taladrando", "Escaleras", SubResource("AnimationNodeStateMachineTransition_igr0w"), "Escaleras", "Taladrando", SubResource("AnimationNodeStateMachineTransition_pjn1q"), "Taladrando_Idle", "Taladrando", SubResource("AnimationNodeStateMachineTransition_13oef"), "Taladrando", "Taladrando_Idle", SubResource("AnimationNodeStateMachineTransition_kxrso"), "Escaleras", "Idle_Superficie", SubResource("AnimationNodeStateMachineTransition_wfjy4"), "Escaleras", "Walking_Superficie", SubResource("AnimationNodeStateMachineTransition_vv211"), "Taladrando_Idle", "End", SubResource("AnimationNodeStateMachineTransition_k8mig")]
+graph_offset = Vector2(10, 14.582)
 
 [sub_resource type="Animation" id="Animation_k7hiw"]
 resource_name = "Escaleras"
@@ -878,7 +979,7 @@ tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath("../AudioPaso:playing")
-tracks/4/interp = 1
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0.1, 0.5),
@@ -902,105 +1003,6 @@ _data = {
 "Walking_Left": SubResource("Animation_bwtfv"),
 "Walking_Right": SubResource("Animation_0tm5m")
 }
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ebur"]
-animation = &"Escaleras"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ng4li"]
-animation = &"Idle_Right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7vs1t"]
-animation = &"Idle_Left"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_8nk1j"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_ng4li")
-blend_point_0/pos = 1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_7vs1t")
-blend_point_1/pos = -1.0
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7dd6p"]
-animation = &"Taladrando_UpLeft"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nn815"]
-animation = &"Taladrando_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n8xqp"]
-animation = &"Taladrando_UpRight"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o1rsl"]
-animation = &"Taladrando_DownRight"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l3hki"]
-animation = &"Taladrando_DownLeft"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_p7ol4"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_7dd6p")
-blend_point_0/pos = Vector2(-1, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_nn815")
-blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_n8xqp")
-blend_point_2/pos = Vector2(1, 1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_o1rsl")
-blend_point_3/pos = Vector2(1, -0.9)
-blend_point_4/node = SubResource("AnimationNodeAnimation_l3hki")
-blend_point_4/pos = Vector2(-1, -1)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5ehh"]
-animation = &"Taladrando_Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sisw8"]
-animation = &"Walking_Right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_knogw"]
-animation = &"Walking_Left"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ali5s"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_sisw8")
-blend_point_0/pos = 1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_knogw")
-blend_point_1/pos = -1.0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_12nhj"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_asixt"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_brntw"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4symb"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ab508"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8873p"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_igr0w"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pjn1q"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_13oef"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kxrso"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wfjy4"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vv211"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_14vni"]
-states/Escaleras/node = SubResource("AnimationNodeAnimation_8ebur")
-states/Escaleras/position = Vector2(602, 46)
-states/Idle_Superficie/node = SubResource("AnimationNodeBlendSpace1D_8nk1j")
-states/Idle_Superficie/position = Vector2(359, 46)
-states/Start/position = Vector2(201, 100)
-states/Taladrando/node = SubResource("AnimationNodeBlendSpace2D_p7ol4")
-states/Taladrando/position = Vector2(744, 167)
-states/Taladrando_Idle/node = SubResource("AnimationNodeAnimation_c5ehh")
-states/Taladrando_Idle/position = Vector2(803, 46)
-states/Walking_Superficie/node = SubResource("AnimationNodeBlendSpace1D_ali5s")
-states/Walking_Superficie/position = Vector2(377, 176)
-transitions = ["Start", "Idle_Superficie", SubResource("AnimationNodeStateMachineTransition_12nhj"), "Idle_Superficie", "Walking_Superficie", SubResource("AnimationNodeStateMachineTransition_asixt"), "Walking_Superficie", "Idle_Superficie", SubResource("AnimationNodeStateMachineTransition_brntw"), "Idle_Superficie", "Escaleras", SubResource("AnimationNodeStateMachineTransition_4symb"), "Walking_Superficie", "Escaleras", SubResource("AnimationNodeStateMachineTransition_ab508"), "Escaleras", "Taladrando_Idle", SubResource("AnimationNodeStateMachineTransition_8873p"), "Taladrando", "Escaleras", SubResource("AnimationNodeStateMachineTransition_igr0w"), "Escaleras", "Taladrando", SubResource("AnimationNodeStateMachineTransition_pjn1q"), "Taladrando_Idle", "Taladrando", SubResource("AnimationNodeStateMachineTransition_13oef"), "Taladrando", "Taladrando_Idle", SubResource("AnimationNodeStateMachineTransition_kxrso"), "Escaleras", "Idle_Superficie", SubResource("AnimationNodeStateMachineTransition_wfjy4"), "Escaleras", "Walking_Superficie", SubResource("AnimationNodeStateMachineTransition_vv211")]
-graph_offset = Vector2(10, 14.582)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_bfxk7")
@@ -1041,17 +1043,17 @@ texture_filter = 1
 texture = ExtResource("2_m6vgi")
 hframes = 4
 vframes = 2
+frame = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+deterministic = false
 root_node = NodePath(".")
-libraries = {
-"": SubResource("AnimationLibrary_jp3qt")
-}
+callback_mode_discrete = 0
 tree_root = SubResource("AnimationNodeStateMachine_14vni")
 anim_player = NodePath("AnimationPlayer")
-parameters/Idle_Superficie/blend_position = -0.992586
+parameters/Idle_Superficie/blend_position = 0.649329
 parameters/Taladrando/blend_position = Vector2(0, 0)
-parameters/Walking_Superficie/blend_position = 1.00556
+parameters/Walking_Superficie/blend_position = -0.521812
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
 libraries = {
@@ -1071,7 +1073,6 @@ hframes = 7
 stream = ExtResource("9_mrxpi")
 volume_db = -4.0
 pitch_scale = 1.2
-max_polyphony = 2
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
