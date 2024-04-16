@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://r3b4g86f7l6x"]
+[gd_scene load_steps=13 format=3 uid="uid://r3b4g86f7l6x"]
 
 [ext_resource type="Script" path="res://Escenas/Cofre/cofre.gd" id="1_5a08q"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="2_vta35"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="4_211rc"]
+[ext_resource type="Texture2D" uid="uid://5d2d31nd7c1d" path="res://Sprites/UI/no.png" id="4_b3l1u"]
 [ext_resource type="Texture2D" uid="uid://bemqir6127j64" path="res://Sprites/flecha abajo.png" id="4_e3gbw"]
 [ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="5_6yikg"]
 
@@ -40,11 +41,63 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spr_up_key_ladder:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_e3gbw")]
+}
+
+[sub_resource type="Animation" id="Animation_dpopl"]
+resource_name = "NoHay"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spr_up_key_ladder:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_b3l1u"), ExtResource("4_e3gbw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spr_up_key_ladder:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0.2, -16), Vector2(0, -16)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ak1nw"]
 _data = {
 "AbrirCofre": SubResource("Animation_qs0vi"),
 "CerrarCofre": SubResource("Animation_1frg3"),
+"NoHay": SubResource("Animation_dpopl"),
 "RESET": SubResource("Animation_1sr1x")
 }
 

@@ -57,9 +57,16 @@ func Open() -> void:
 				GlobalRecursos.actualizar_mineral(material_almacenado, 1)
 				$AudioStreamPlayer.pitch_scale = randf_range(1,1.05)
 				$AudioStreamPlayer.play()
+		# cuando no tiene nada
 		if cantidad_almacenada == 0:
+			$AnimationPlayer.play("NoHay")
+			if GlobalTuto.tutorial:
+				cantidad_almacenada+=5
+				
 			$AudioStreamPlayer.pitch_scale = 0.67
 			$AudioStreamPlayer.play()
+
+				
 
 # Señales
 
