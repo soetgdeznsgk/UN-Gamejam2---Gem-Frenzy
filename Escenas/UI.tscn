@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=78 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://brjs7retygf0i" path="res://Sprites/Menu/fondopapel.png" id="27_u538p"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="28_niiiv"]
 [ext_resource type="LabelSettings" uid="uid://dx2r5fphaavpb" path="res://Sprites/UI/labelconfigfactura/label_cafe.tres" id="29_odmc8"]
+[ext_resource type="Material" uid="uid://du7mm6ceqgl75" path="res://Escenas/burning.tres" id="30_esm6q"]
 [ext_resource type="Texture2D" uid="uid://cu1blftepsip2" path="res://Sprites/UI/broke.png" id="30_h7dm3"]
 [ext_resource type="AudioStream" uid="uid://dm1cyji87hgsg" path="res://Musica/sello.mp3" id="31_tekkc"]
 [ext_resource type="Texture2D" uid="uid://cntxeq0ujga3b" path="res://Sprites/UI/sound_on.png" id="34_jvi5v"]
@@ -259,6 +260,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signaturepancha:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_uafkg"]
 resource_name = "sello epico"
@@ -301,11 +326,102 @@ tracks/2/keys = {
 "method": &"pasar_de_pagina"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_2ku1s"]
+resource_name = "sello_perder"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Streamsello:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pasar_de_pagina"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oykhg"]
 _data = {
 "RESET": SubResource("Animation_g65gi"),
-"sello epico": SubResource("Animation_uafkg")
+"sello epico": SubResource("Animation_uafkg"),
+"sello_perder": SubResource("Animation_2ku1s")
 }
 
 [sub_resource type="Theme" id="Theme_mqkdm"]
@@ -949,15 +1065,17 @@ expand_icon = true
 [node name="factura" type="Control" parent="."]
 unique_name_in_owner = true
 visible = false
+material = ExtResource("30_esm6q")
 layout_mode = 2
 anchors_preset = 0
 offset_left = 163.0
 offset_top = 112.0
-offset_right = 203.0
-offset_bottom = 152.0
+offset_right = 796.0
+offset_bottom = 647.0
 script = ExtResource("26_url12")
 
 [node name="PanelContainer" type="PanelContainer" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 17.0
 offset_top = -14.0
@@ -966,6 +1084,7 @@ offset_bottom = 496.0
 theme = SubResource("Theme_emm5b")
 
 [node name="Titulofactura" type="Label" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 30.0
 offset_top = 17.0
@@ -978,6 +1097,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 176.0
 offset_top = 399.0
@@ -988,6 +1108,7 @@ theme_override_font_sizes/font_size = 20
 text = "SIGN_BILL"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 55.0
 offset_top = 94.0
@@ -997,15 +1118,18 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="cosas pagadas" type="VBoxContainer" parent="factura/HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="HBoxahorro" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Ahorro" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "SAVINGS"
@@ -1013,17 +1137,20 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="AhorroNumerito" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxGanancia" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Ganancia dia" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "DAY_PROFITS"
@@ -1031,17 +1158,20 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="GananciadiaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxBono" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Ganancia bono" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "BONUS_PROFITS"
@@ -1049,17 +1179,20 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="GananciabonoNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxReciclaje" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="ganancia recilaje" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "RECYCLE_PROFITS"
@@ -1067,16 +1200,19 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="GananciaReciclajeNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxRent" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="renta" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "RENT"
@@ -1084,20 +1220,24 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="RentaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
 modulate = Color(0.847059, 0.129412, 0.0941176, 1)
+use_parent_material = true
 layout_mode = 2
 text = "-111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 theme_override_constants/margin_top = 50
 
 [node name="HBoxTotal" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas/MarginContainer"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Total" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "TOTAL"
@@ -1105,6 +1245,7 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="Totalnum" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
 modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
@@ -1112,11 +1253,13 @@ horizontal_alignment = 2
 
 [node name="signaturepancha" type="Sprite2D" parent="factura"]
 visible = false
+use_parent_material = true
 position = Vector2(416, 318)
 rotation = -0.174533
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("30_h7dm3")
 hframes = 2
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="factura"]
 libraries = {

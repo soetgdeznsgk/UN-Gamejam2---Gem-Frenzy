@@ -8,7 +8,6 @@ var topScene : PackedScene = load("res://Logica/UI/h_box_name_and_day.tscn")
 var mapOfDays : Dictionary
 
 func _ready() -> void:
-	GlobalTiempo.iniciarDia.connect(call_top_players)
 	GlobalRecursos.bancarota.connect(gameover)
 
 func call_top_players():
@@ -24,7 +23,6 @@ func call_top_players():
 	query.limit(5)
 
 	if GlobalFirebaseInfo.isAuth:
-		#TODO QUE LA POSICION DEL JUGADOR SE VEA REFLEJADA EN EL TOTAL Y NOSIEMPRE EL 6
 		var document_task : FirestoreTask = GlobalFirebaseInfo.collection.get_doc("map_of_days")
 		var document: FirestoreDocument = await document_task.get_document
 		mapOfDays = document.doc_fields
@@ -66,31 +64,45 @@ func call_top_players():
 		print("No sesion iniciada, error al recolectar el puntaje")
 
 func gameover():
+	call_top_players()
 	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
 	$AudioGameover.play(0)
 	visible = true
 
 func _on_btn_reintentar_pressed() -> void:
+	upload_to_db()
+	get_tree().call_deferred("change_scene_to_file","res://Escenas/MainJuego.tscn")
+
+func _on_btn_home_pressed() -> void:
+	upload_to_db()
+	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
+
+func upload_to_db():
 	# Crear nuevo doc con el dia
 	if GlobalFirebaseInfo.isAuth:
 		var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
 		# El nombre del ID en vacio permite que sea autogenerado
 		@warning_ignore("unused_variable")
+		# Se agrega el nombre y dia para la tabla de top players
+		# Edit: Se agrega tambien metadatos para nosotros hacer analisis de datos
 		var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
-		("", {'day': GlobalTiempo.diaActual, 'name': nameN})
+		("", {'day': GlobalTiempo.diaActual, 'name': nameN,
+		 'utc-date': Time.get_date_string_from_system(true),
+		'money' : GlobalRecursos.dinero,
+		'upgrades' : str(GlobalMejoras.activas_mejoras),
+		'total_game_time' : GlobalTiempo.tiempoJuegoTotal
+		})
 		
-		#print('firebase retorna', add_task)
-		
+		#hace el get del mapa de dias para actualizar el mapa de dias
 		var cantidadActualDelDia = 1
 		if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
 			cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
 			cantidadActualDelDia += 1
+			
 		# Actualiza la cantidad de nombres en ese dia
 		@warning_ignore("unused_variable")
 		var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
 		("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
-		
-		#print('firebase retorna', update_map)
 		
 	GlobalRecursos.dinero = 5
 	GlobalRecursos.reiniciar_minerales()
@@ -101,39 +113,3 @@ func _on_btn_reintentar_pressed() -> void:
 	GlobalTiempo.tiempoMinutoDia = 0
 	OrderManager.reiniciar_recetas()
 	
-	get_tree().call_deferred("change_scene_to_file","res://Escenas/MainJuego.tscn")
-
-
-func _on_btn_home_pressed() -> void:
-		# Crear nuevo doc con el dia
-	if GlobalFirebaseInfo.isAuth:
-		var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
-		# El nombre del ID en vacio permite que sea autogenerado
-		@warning_ignore("unused_variable")
-		var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
-		("", {'day': GlobalTiempo.diaActual, 'name': nameN})
-		
-		#print('firebase retorna', add_task)
-		
-		var cantidadActualDelDia = 1
-		if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
-			cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
-			cantidadActualDelDia += 1
-		# Actualiza la cantidad de nombres en ese dia
-		@warning_ignore("unused_variable")
-		var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
-		("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
-		
-		#print('firebase retorna', update_map)
-		
-	GlobalRecursos.dinero = 5
-	GlobalRecursos.reiniciar_minerales()
-	GlobalMejoras.reiniciar_mejoras()
-	GlobalMejoras._ready()
-	GlobalTiempo.diaActual = 1
-	GlobalTiempo.tiempoHoraDia = 8
-	GlobalTiempo.tiempoMinutoDia = 0
-	OrderManager.reiniciar_recetas()
-	
-	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
-
