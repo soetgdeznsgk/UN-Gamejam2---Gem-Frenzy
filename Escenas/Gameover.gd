@@ -112,4 +112,5 @@ func upload_to_db():
 	GlobalTiempo.tiempoHoraDia = 8
 	GlobalTiempo.tiempoMinutoDia = 0
 	OrderManager.reiniciar_recetas()
+	%factura/AnimationPlayer.play("RESET")
 	
