@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://doudmff7sjsk7"]
+[gd_scene load_steps=8 format=3 uid="uid://doudmff7sjsk7"]
 
 [ext_resource type="Script" path="res://Escenas/Ventana por Orden/orden_ui.gd" id="1_0ye5u"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="2_gkmif"]
 [ext_resource type="Texture2D" uid="uid://d4b37i4g7p2yr" path="res://Sprites/Recursos/Recetas.png" id="2_hhtl7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjmml"]
-bg_color = Color(0, 0.627451, 0, 1)
+[ext_resource type="Texture2D" uid="uid://cfvky3y62uvt0" path="res://Sprites/UI/barra mas bonita debajo.png" id="4_7eyie"]
+[ext_resource type="Texture2D" uid="uid://bvdeqfqekwuvm" path="res://Sprites/UI/Botonjugar.png" id="4_gtbk5"]
+[ext_resource type="Texture2D" uid="uid://chg8l2ql7xfgu" path="res://Sprites/UI/barra mas bonita encima.png" id="4_i1h10"]
+[ext_resource type="Texture2D" uid="uid://bx3ii5k72tmrx" path="res://Sprites/UI/barra mas bonita.png" id="4_lasru"]
 
 [node name="OrdenUI" type="Control"]
 layout_mode = 3
 anchor_right = 0.543
 anchor_bottom = 0.587
-offset_right = -0.280029
+offset_left = -4.0
+offset_right = -4.28003
 offset_bottom = 0.359985
 grow_horizontal = 0
 grow_vertical = 0
@@ -26,17 +28,29 @@ scale = Vector2(5.25, 4.9175)
 texture = ExtResource("2_hhtl7")
 hframes = 7
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 53.0
+offset_right = 131.0
+offset_bottom = 79.0
+max_value = 30.0
+step = 0.01
+value = 30.0
+texture_under = ExtResource("4_7eyie")
+texture_over = ExtResource("4_i1h10")
+texture_progress = ExtResource("4_lasru")
+texture_progress_offset = Vector2(6, 0)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-clip_contents = true
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 0
-offset_left = -2.0
-offset_top = 1.0
-offset_right = 111.0
-offset_bottom = 107.0
+offset_left = 5.0
+offset_right = 125.0
+offset_bottom = 106.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-clip_contents = true
 custom_minimum_size = Vector2(120, 48)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -69,10 +83,11 @@ hframes = 6
 vframes = 2
 frame = 11
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="barrabonita" type="Sprite2D" parent="VBoxContainer"]
+visible = false
+position = Vector2(-3, 65)
+scale = Vector2(3.34722, 2.71154)
+texture = ExtResource("4_gtbk5")
+
+[node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_styles/fill = SubResource("StyleBoxFlat_yjmml")
-max_value = 30.0
-value = 30.0
-show_percentage = false

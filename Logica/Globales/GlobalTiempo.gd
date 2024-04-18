@@ -9,7 +9,9 @@ signal tiempoCambio(minuto, hora)
 signal finalizarDia
 signal iniciarDia
 # por ahora el tiempo del dia inicia en 3 min de tiempo real pero se puede mejorar el tiempo
-
+signal casifinalizardia
+signal quedamediahora
+signal quedandiezminutos
 @onready var tmr_minuto : Timer
 @onready var tmr_segundos_totales : Timer
 
@@ -42,11 +44,21 @@ func _process(_delta: float) -> void:
 # actualiza el reloj
 func on_tmr_minuto_end():
 	tiempoMinutoDia += 1
+	var horacierre =11 + (GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasTiempo])
 	if tiempoMinutoDia == 60:
 		tiempoHoraDia += 1
 		tiempoMinutoDia = 0
 	tiempoCambio.emit(tiempoMinutoDia, tiempoHoraDia)
-	if tiempoHoraDia >= 11 + (GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasTiempo]):
+	if tiempoHoraDia== horacierre-1: 
+		if tiempoMinutoDia==0:
+			casifinalizardia.emit()
+		elif tiempoMinutoDia==30:
+			quedamediahora.emit()
+			print("queda media hora papu")
+		elif tiempoMinutoDia==50:
+			quedandiezminutos.emit()
+			print("quedan 10 minutos papu y sant esta viendo hooola sant")
+	if tiempoHoraDia >= horacierre:
 		tmr_minuto.stop()
 		finalizarDia.emit()
 

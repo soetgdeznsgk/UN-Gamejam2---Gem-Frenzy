@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=86 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="8_qhue7"]
 [ext_resource type="Texture2D" uid="uid://cd07y1wjjjd6i" path="res://Sprites/UI/reloj loading 245 x 216.png" id="11_5es48"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
+[ext_resource type="Texture2D" uid="uid://dle6v6vq7xy4e" path="res://Sprites/UI/ALERT.png" id="12_4y7g8"]
 [ext_resource type="Script" path="res://Escenas/Renta.gd" id="12_m1oro"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
 [ext_resource type="PackedScene" uid="uid://cgjgcfv42vp3u" path="res://Escenas/tutorial.tscn" id="14_uh3r7"]
@@ -40,6 +41,147 @@
 [ext_resource type="Texture2D" uid="uid://ddaledbay8yx3" path="res://Sprites/UI/home.png" id="35_rr8cu"]
 [ext_resource type="Texture2D" uid="uid://3vbla4sy0yl8" path="res://Sprites/UI/play.png" id="36_juslv"]
 [ext_resource type="Texture2D" uid="uid://ci2rmo3tre1n2" path="res://Sprites/UI/pause.png" id="37_0c7ga"]
+[ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
+
+[sub_resource type="Animation" id="Animation_r4qms"]
+resource_name = "1_hour_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"anim_1_hour_flash"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_t2e1j"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_itscs"]
+resource_name = "1_hour_left_flashing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_65ml2"]
+resource_name = "half_hour_left_flashing"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_bmoov"]
+resource_name = "ten_minutes_left_flashing"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.5, 2.5), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05qlp"]
+_data = {
+"1_hour_left": SubResource("Animation_r4qms"),
+"1_hour_left_flashing": SubResource("Animation_itscs"),
+"RESET": SubResource("Animation_t2e1j"),
+"half_hour_left_flashing": SubResource("Animation_65ml2"),
+"ten_minutes_left_flashing": SubResource("Animation_bmoov")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
 font_color = Color(1, 0.168627, 0.168627, 1)
@@ -506,6 +648,7 @@ script = ExtResource("4_go46m")
 layout_mode = 2
 
 [node name="TextureReloj" type="TextureRect" parent="VbReloj/Control"]
+modulate = Color(1, 1, 1, 0.843137)
 texture_filter = 1
 layout_mode = 2
 offset_left = 115.0
@@ -516,6 +659,22 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_5es48")
 expand_mode = 1
 stretch_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VbReloj/Control"]
+visible = false
+modulate = Color(1, 0.43, 0.43, 1)
+position = Vector2(136, -46)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("12_4y7g8")
+
+[node name="SonidoAlerta" type="AudioStreamPlayer" parent="VbReloj/Control"]
+stream = ExtResource("41_f0gvx")
+volume_db = -6.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VbReloj/Control"]
+libraries = {
+"": SubResource("AnimationLibrary_05qlp")
+}
 
 [node name="Renta" type="Label" parent="."]
 layout_mode = 2
@@ -595,7 +754,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -617,7 +776,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -642,7 +801,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -668,7 +827,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -694,7 +853,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -720,7 +879,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -746,7 +905,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -772,7 +931,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -798,7 +957,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -824,7 +983,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -850,7 +1009,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0.811765, 0.160784, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -1359,6 +1518,24 @@ modulate = Color(1, 1, 1, 0.811765)
 position = Vector2(28, 38)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("37_0c7ga")
+
+[node name="alertaFinalizarDia" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="alertaFinalizarDia"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 80.0
+offset_right = 886.0
+offset_bottom = 226.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
+text = "Queda una hora papu"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
