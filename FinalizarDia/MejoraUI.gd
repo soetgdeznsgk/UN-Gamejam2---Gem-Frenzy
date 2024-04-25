@@ -22,6 +22,9 @@ func _on_btn_comprar_pressed() -> void:
 			$AudioDineroAlcanza.play(0)
 			$Btn_comprar.disabled = true
 			# solo puede comprar una vez hasta el maximo
+			if $Lb_nombre.text ==tr("CONTRACT"):
+				GlobalMejoras.mejora_final_comprada=true
+				
 			GlobalMejoras.activas_mejoras[int(info["Key"])] += 1
 			GlobalMejoras.disponible_mejoras[int(info["Key"])] -= 1
 			GlobalMejoras.mejora_cambiada.emit()

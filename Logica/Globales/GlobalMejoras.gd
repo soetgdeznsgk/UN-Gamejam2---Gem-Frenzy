@@ -2,7 +2,7 @@ extends Node
 
 # Este singleton contiene las mejoras activas y las posibles mejoras a ganar
 signal mejora_cambiada
-
+var mejora_final_comprada
 enum nombre_mejoras {
 	CofreMineral,
 	MejoraDeMejoras,
@@ -12,6 +12,16 @@ enum nombre_mejoras {
 	RecompensaMejorada,
 	Gato,
 }
+var mejora_final = {
+	"ContratoFinal": { # que aumente de a 2 por mejora
+		"Key" : "ContratoFinal",
+		"Nombre" : tr("CONTRACT"),
+		"Precio" : 2,
+		"PrecioEscalar" : 2,
+		"Maximo" : 1,
+		"Textura" : 'res://Sprites/mejoras/contrato.png',
+		"Descripcion" : tr("CONTRACT_DESC"),
+	}}
 
 var info_mejoras = {}
 
@@ -177,5 +187,7 @@ func obtener_mejora_random_disponible():
 				mejoras_seleccionadas.append(info_mejoras[mejora])
 		return mejoras_seleccionadas
 	else:
+		var listafinal=[]
+		listafinal.append(mejora_final["ContratoFinal"])
 		# dice que no hay ninguna
-		return []
+		return listafinal

@@ -1,6 +1,6 @@
 key,es,en,zh,jp
 PLAY,Jugar,Play,开始,プレイ
-TUTORIAL_FINISHED,¡TUTORIAL FINALIZADO!,TUTORIAL COMPLETE!,完整教程！,チュートリアル終了！
+TUTORIAL_FINISHED,¡TUTORIAL FINALIZADO!,TUTORIAL COMPLETED!,完整教程！,チュートリアル終了！
 INFLATION,inflacion.png,inflation.png,通货膨胀.png,インフレーション 
 PANCHA_MISSION,"Ahora estas listo para 
 ayudar a pancha a enfrentar
@@ -35,6 +35,8 @@ CATO,Gato,Cat,猫,猫
 CATO_DESC,¡Un gato siempre atrae más clientes!,A cat always attracts more customers!,一只猫总是能吸引更多的顾客！,猫はいつももっと多くの顧客を引き付けます！
 SPEED_UP,Mas rapido,SPEED UP,速度更快,速度を上げる
 SPEED_UP_DESC,Pancha tomó café colombiano,Pancha drank Colombian coffee,Pancha 喝哥伦比亚咖啡,パンチャはコロンビアコーヒーを飲みました
+CONTRACT,Escrituras de la tienda,Shop Ownership,,
+CONTRACT_DESC,Cumple el sueño de Pancha (El juego acabará),Fullfill Pancha's Dream (the game will end),,
 TUTORIAL,Tutorial,Tutorial,教程,チュートリアル
 PAUSED,PAUSADO,PAUSED,暂停,ポーズ
 CREDITS_DEVELOPED_BY,Desarrollado por,Developed By,游戏开发由  ,開発

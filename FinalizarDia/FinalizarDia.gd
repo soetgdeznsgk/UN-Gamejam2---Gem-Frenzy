@@ -35,11 +35,28 @@ func _on_finalizar_dia():
 	#print("factura--- \n",GlobalRecursos.Gananciadia,"\n",GlobalRecursos.Gananciabono,"\n",GlobalRecursos.GananciaReciclaje,"\n -",GlobalRecursos.valorDia)
 
 func _on_btn_finalizar_dia_pressed() -> void:
-	visible = false
-	for child in grid.get_children():
-		child.queue_free()
-	GlobalTiempo.siguiente_dia()
-
+	
+	GlobalMejoras.mejora_final_comprada=true
+	if GlobalMejoras.mejora_final_comprada:
+		%Gameover.call_top_players()
+		%Gameover/VBoxContainer/Label.text=tr("CONGRATS")
+		%Gameover/VBoxContainer/Label.label_settings.font_color=Color("#2d78e0")
+		%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
+		%Gameover/VBoxContainer/HBoxContainer/Btn_HOME.visible=false
+		%AP_PANCHALOADING.play("pancha_loading")
+		
+		%Panchacorazon.visible=true
+		await get_tree().create_timer(3).timeout
+		visible = false
+		%Panchacorazon.visible=false
+		%Gameover.visible=true	
+	
+	else:
+		for child in grid.get_children():
+			child.queue_free()
+		GlobalTiempo.siguiente_dia()
+		visible = false
+	
 func gameover():
 	await get_tree().create_timer(0.1).timeout
 	visible = false
