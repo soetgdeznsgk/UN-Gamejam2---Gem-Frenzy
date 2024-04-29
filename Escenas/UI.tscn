@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=97 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -46,6 +46,8 @@
 [ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="38_wojpx"]
 [ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
+[ext_resource type="Texture2D" uid="uid://nflyrw3fnfcb" path="res://Sprites/UI/TSBFlechaNormal.png" id="47_3gm1j"]
+[ext_resource type="Texture2D" uid="uid://b8r5icb25mgxs" path="res://Sprites/UI/TSBFlechaPressed.png" id="48_tcim5"]
 
 [sub_resource type="Animation" id="Animation_r4qms"]
 resource_name = "1_hour_left"
@@ -540,6 +542,9 @@ _data = {
 "RESET": SubResource("Animation_md6q5"),
 "pancha_loading": SubResource("Animation_lfuvp")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbvy3"]
+size = Vector2(32, 32)
 
 [node name="UI" type="Control"]
 process_mode = 1
@@ -1413,8 +1418,6 @@ stream = ExtResource("31_tekkc")
 
 [node name="ADVERTENCIAFINAL" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
-material = ExtResource("30_esm6q")
 layout_mode = 2
 anchors_preset = 0
 offset_left = 190.0
@@ -1424,7 +1427,6 @@ offset_bottom = 494.0
 script = ExtResource("38_enfp6")
 
 [node name="PanelContainer" type="PanelContainer" parent="ADVERTENCIAFINAL"]
-use_parent_material = true
 layout_mode = 0
 offset_left = 13.0
 offset_top = -14.0
@@ -1434,7 +1436,6 @@ theme = SubResource("Theme_emm5b")
 theme_override_styles/panel = SubResource("StyleBoxTexture_ph4q5")
 
 [node name="Tituloadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
-use_parent_material = true
 layout_mode = 0
 offset_left = 17.0
 offset_top = 23.0
@@ -1457,7 +1458,6 @@ alignment = 1
 
 [node name="si" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
 modulate = Color(0.4, 0.980392, 0.392157, 1)
-use_parent_material = true
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 theme = ExtResource("38_wojpx")
@@ -1466,7 +1466,6 @@ text = "Yes"
 
 [node name="no" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
 modulate = Color(1, 0.411765, 0.411765, 1)
-use_parent_material = true
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 theme = ExtResource("38_wojpx")
@@ -1476,7 +1475,6 @@ text = "No"
 [node name="Descadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
-use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 offset_left = 52.0
@@ -1602,6 +1600,37 @@ visible = false
 position = Vector2(761, 518)
 scale = Vector2(5, 5)
 texture = ExtResource("43_sdv33")
+
+[node name="TSBDerecha" type="TouchScreenButton" parent="."]
+position = Vector2(816, 488)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("47_3gm1j")
+texture_pressed = ExtResource("48_tcim5")
+shape = SubResource("RectangleShape2D_lbvy3")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="TSBIzquierda" type="TouchScreenButton" parent="."]
+position = Vector2(144, 488)
+scale = Vector2(-5, 5)
+texture_normal = ExtResource("47_3gm1j")
+texture_pressed = ExtResource("48_tcim5")
+shape = SubResource("RectangleShape2D_lbvy3")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="TSBArriba" type="TouchScreenButton" parent="."]
+position = Vector2(48, 392)
+rotation = 4.71239
+scale = Vector2(5, 5)
+texture_normal = ExtResource("47_3gm1j")
+texture_pressed = ExtResource("48_tcim5")
+shape = SubResource("RectangleShape2D_lbvy3")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
