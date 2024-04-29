@@ -1418,6 +1418,7 @@ stream = ExtResource("31_tekkc")
 
 [node name="ADVERTENCIAFINAL" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 anchors_preset = 0
 offset_left = 190.0
