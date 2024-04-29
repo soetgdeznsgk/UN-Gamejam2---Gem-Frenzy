@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://12h553thtaor"]
+
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="1_pklas"]
+[ext_resource type="Texture2D" uid="uid://cjuw1xw3wvts2" path="res://Sprites/Menu/RETRY_1_SQUARE.png" id="2_utjut"]
+[ext_resource type="Texture2D" uid="uid://ff5eprqul6n7" path="res://Sprites/Menu/RETRY_2_SQUARE.png" id="3_xbslb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3mqr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgoiw"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("2_utjut")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbrr"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("2_utjut")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnmog"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+texture = ExtResource("3_xbslb")
+
+[resource]
+default_font = ExtResource("1_pklas")
+default_font_size = 12
+Button/colors/font_color = Color(0.0235294, 0.0588235, 0.278431, 1)
+Button/colors/font_hover_color = Color(0.0235294, 0.0588235, 0.278431, 1)
+Button/colors/font_pressed_color = Color(0.0117647, 0.0313726, 0.192157, 1)
+Button/fonts/font = ExtResource("1_pklas")
+Button/styles/focus = SubResource("StyleBoxEmpty_d3mqr")
+Button/styles/hover = SubResource("StyleBoxTexture_wgoiw")
+Button/styles/normal = SubResource("StyleBoxTexture_phbrr")
+Button/styles/pressed = SubResource("StyleBoxTexture_fnmog")

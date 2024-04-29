@@ -9,9 +9,7 @@ var mapOfDays : Dictionary
 
 func _ready() -> void:
 	GlobalRecursos.bancarota.connect(gameover)
-
-		
-		
+	
 func call_top_players():
 	for hbox in listHboxNames:
 		hbox.visible = false

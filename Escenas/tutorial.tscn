@@ -2586,11 +2586,13 @@ vframes = 2
 frame = 3
 
 [node name="hornopro" type="Sprite2D" parent="Pancha Gif"]
+visible = false
 position = Vector2(334, 65)
 scale = Vector2(3.86, 3.86)
 texture = ExtResource("9_02203")
 
 [node name="Pancha entrega" type="Node2D" parent="Pancha Gif"]
+visible = false
 
 [node name="Recepcionyipee" type="Sprite2D" parent="Pancha Gif/Pancha entrega"]
 position = Vector2(-22, 38)

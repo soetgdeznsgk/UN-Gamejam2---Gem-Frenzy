@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=94 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -37,10 +37,13 @@
 [ext_resource type="Material" uid="uid://du7mm6ceqgl75" path="res://Escenas/burning.tres" id="30_esm6q"]
 [ext_resource type="Texture2D" uid="uid://cu1blftepsip2" path="res://Sprites/UI/broke.png" id="30_h7dm3"]
 [ext_resource type="AudioStream" uid="uid://dm1cyji87hgsg" path="res://Musica/sello.mp3" id="31_tekkc"]
+[ext_resource type="Texture2D" uid="uid://j7lay3et4sh5" path="res://Sprites/fondoavisoavisen.png" id="33_ryhf1"]
 [ext_resource type="Texture2D" uid="uid://cntxeq0ujga3b" path="res://Sprites/UI/sound_on.png" id="34_jvi5v"]
 [ext_resource type="Texture2D" uid="uid://ddaledbay8yx3" path="res://Sprites/UI/home.png" id="35_rr8cu"]
 [ext_resource type="Texture2D" uid="uid://3vbla4sy0yl8" path="res://Sprites/UI/play.png" id="36_juslv"]
 [ext_resource type="Texture2D" uid="uid://ci2rmo3tre1n2" path="res://Sprites/UI/pause.png" id="37_0c7ga"]
+[ext_resource type="Script" path="res://Escenas/ADVERTENCIAFINAL.gd" id="38_enfp6"]
+[ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="38_wojpx"]
 [ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
 
@@ -394,34 +397,10 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("signaturepancha:visible")
+tracks/0/path = NodePath(".:material:shader_parameter/dissolve_value")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("signaturepancha:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -443,25 +422,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -469,25 +436,13 @@ tracks/2/keys = {
 "method": &"pasar_de_pagina"
 }]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("signaturepancha:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:material:shader_parameter/dissolve_value")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -509,25 +464,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(1.6),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -535,25 +478,13 @@ tracks/2/keys = {
 "method": &"pasar_de_pagina"
 }]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("signaturepancha:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:material:shader_parameter/dissolve_value")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
@@ -567,7 +498,25 @@ _data = {
 "sello_perder": SubResource("Animation_2ku1s")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ph4q5"]
+texture = ExtResource("33_ryhf1")
+
 [sub_resource type="Theme" id="Theme_mqkdm"]
+
+[sub_resource type="Animation" id="Animation_md6q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Gameover/../Panchacorazon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_lfuvp"]
 resource_name = "pancha_loading"
@@ -584,21 +533,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 2, 0.5),
 "update": 0,
 "values": [Vector2(5, 5), Vector2(5.5, 5.5), Vector2(5, 5)]
-}
-
-[sub_resource type="Animation" id="Animation_md6q5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%Gameover/../Panchacorazon:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, 5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ld8u0"]
@@ -1477,6 +1411,86 @@ libraries = {
 [node name="Streamsello" type="AudioStreamPlayer" parent="factura"]
 stream = ExtResource("31_tekkc")
 
+[node name="ADVERTENCIAFINAL" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("30_esm6q")
+layout_mode = 2
+anchors_preset = 0
+offset_left = 190.0
+offset_top = 166.0
+offset_right = 788.0
+offset_bottom = 494.0
+script = ExtResource("38_enfp6")
+
+[node name="PanelContainer" type="PanelContainer" parent="ADVERTENCIAFINAL"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = -14.0
+offset_right = 596.0
+offset_bottom = 322.0
+theme = SubResource("Theme_emm5b")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ph4q5")
+
+[node name="Tituloadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = 593.0
+offset_bottom = 70.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
+text = "WARNING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ADVERTENCIAFINAL"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 201.0
+offset_right = 593.0
+offset_bottom = 277.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="si" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
+modulate = Color(0.4, 0.980392, 0.392157, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme = ExtResource("38_wojpx")
+theme_override_font_sizes/font_size = 20
+text = "Yes"
+
+[node name="no" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
+modulate = Color(1, 0.411765, 0.411765, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme = ExtResource("38_wojpx")
+theme_override_font_sizes/font_size = 20
+text = "No"
+
+[node name="Descadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_left = 52.0
+offset_top = 86.0
+offset_right = 554.0
+offset_bottom = 180.0
+text = "Buying this upgrade will end the game. 
+
+Are you sure?"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Pausa" type="PanelContainer" parent="."]
 process_mode = 3
 visible = false
@@ -1594,6 +1608,8 @@ texture = ExtResource("43_sdv33")
 [connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_HOME" to="Gameover" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="factura/Button" to="factura" method="_on_btn_factura_pressed"]
+[connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/si" to="ADVERTENCIAFINAL" method="_on_si_pressed"]
+[connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/no" to="ADVERTENCIAFINAL" method="_on_no_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_BACK" to="." method="_on_btn_back_pressed"]

@@ -24,6 +24,16 @@ func _on_btn_comprar_pressed() -> void:
 			# solo puede comprar una vez hasta el maximo
 			if $Lb_nombre.text ==tr("CONTRACT"):
 				GlobalMejoras.mejora_final_comprada=true
+				#.visible=false
+				#print(get_parent().name)
+
+				#%Gameover/VBoxContainer/HBoxContainer/Btn_HOME.visible=false
+				#%AP_PANCHALOADING.play("pancha_loading")
+				get_parent().get_parent().get_parent().get_parent().get_node("ADVERTENCIAFINAL").visible=true
+				
+				
+				#%Panchacorazon.visible=false
+				#%Gameover.visible=true	
 				
 			GlobalMejoras.activas_mejoras[int(info["Key"])] += 1
 			GlobalMejoras.disponible_mejoras[int(info["Key"])] -= 1

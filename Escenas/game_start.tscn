@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=30 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -12,10 +12,8 @@
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_fv52p"]
 [ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="11_hyuxc"]
 [ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="12_3d5lx"]
-[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="12_agm7l"]
-[ext_resource type="Texture2D" uid="uid://cjuw1xw3wvts2" path="res://Sprites/Menu/RETRY_1_SQUARE.png" id="13_4of3c"]
+[ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="12_vylb7"]
 [ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
-[ext_resource type="Texture2D" uid="uid://ff5eprqul6n7" path="res://Sprites/Menu/RETRY_2_SQUARE.png" id="14_pojyy"]
 [ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="16_ec5un"]
 [ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
@@ -24,41 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://c82r2kyo8p1lc" path="res://Sprites/Menu/Twitter.png" id="22_onlig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3mqr"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgoiw"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-texture = ExtResource("13_4of3c")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbrr"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-texture = ExtResource("13_4of3c")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnmog"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 5.0
-texture = ExtResource("14_pojyy")
-
-[sub_resource type="Theme" id="Theme_s2ne5"]
-default_font = ExtResource("12_agm7l")
-default_font_size = 12
-Button/colors/font_color = Color(0.0235294, 0.0588235, 0.278431, 1)
-Button/colors/font_hover_color = Color(0.0235294, 0.0588235, 0.278431, 1)
-Button/colors/font_pressed_color = Color(0.0117647, 0.0313726, 0.192157, 1)
-Button/fonts/font = ExtResource("12_agm7l")
-Button/styles/focus = SubResource("StyleBoxEmpty_d3mqr")
-Button/styles/hover = SubResource("StyleBoxTexture_wgoiw")
-Button/styles/normal = SubResource("StyleBoxTexture_phbrr")
-Button/styles/pressed = SubResource("StyleBoxTexture_fnmog")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ots8e"]
 content_margin_left = 15.0
@@ -293,7 +256,7 @@ offset_left = 577.0
 offset_top = 16.0
 offset_right = 619.0
 offset_bottom = 59.0
-theme = SubResource("Theme_s2ne5")
+theme = ExtResource("12_vylb7")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1
 expand_icon = true
@@ -429,7 +392,7 @@ offset_left = 577.0
 offset_top = 16.0
 offset_right = 619.0
 offset_bottom = 59.0
-theme = SubResource("Theme_s2ne5")
+theme = ExtResource("12_vylb7")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1
 expand_icon = true

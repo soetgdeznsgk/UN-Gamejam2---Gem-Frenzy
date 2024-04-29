@@ -16,8 +16,8 @@ var mejora_final = {
 	"ContratoFinal": { # que aumente de a 2 por mejora
 		"Key" : "ContratoFinal",
 		"Nombre" : tr("CONTRACT"),
-		"Precio" : 2,
-		"PrecioEscalar" : 2,
+		"Precio" : 10,
+		"PrecioEscalar" : 0,
 		"Maximo" : 1,
 		"Textura" : 'res://Sprites/mejoras/contrato.png',
 		"Descripcion" : tr("CONTRACT_DESC"),
