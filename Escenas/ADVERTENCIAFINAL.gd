@@ -7,8 +7,13 @@ func _on_no_pressed():
 
 func _on_si_pressed():
 	%Gameover.winner()
+	$HBoxContainer/si.visible = false
+	$HBoxContainer/no.visible = false
+	%AP_PANCHALOADING.play("pancha_loading")
+	$Descadvertencia.visible = false
+	$Tituloadvertencia.text = tr("LOADING")
 	await get_tree().create_timer(1.5).timeout
-	# TODO hacer algo durante ese segundo y medio
+	%AP_PANCHALOADING.play("RESET")
 	visible = false
 	%Gameover.visible=true
 
