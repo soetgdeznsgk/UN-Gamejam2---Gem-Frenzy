@@ -406,6 +406,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("signaturepancha:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_uafkg"]
 resource_name = "sello epico"
@@ -448,6 +472,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("signaturepancha:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_2ku1s"]
 resource_name = "sello_perder"
@@ -489,6 +537,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("signaturepancha:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oykhg"]
@@ -1401,7 +1473,6 @@ rotation = -0.174533
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("30_h7dm3")
 hframes = 2
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="factura"]
 libraries = {
@@ -1607,6 +1678,7 @@ texture = ExtResource("43_sdv33")
 [connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_HOME" to="Gameover" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="factura/Button" to="factura" method="_on_btn_factura_pressed"]
+[connection signal="visibility_changed" from="ADVERTENCIAFINAL" to="ADVERTENCIAFINAL" method="_on_visibility_changed"]
 [connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/si" to="ADVERTENCIAFINAL" method="_on_si_pressed"]
 [connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/no" to="ADVERTENCIAFINAL" method="_on_no_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]

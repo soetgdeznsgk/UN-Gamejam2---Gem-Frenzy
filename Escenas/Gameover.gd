@@ -4,7 +4,7 @@ var topScene : PackedScene = load("res://Logica/UI/h_box_name_and_day.tscn")
 @onready var lineEditContaier = %LineEditSelfContainer
 @onready var lineEdit = %LineEditSelfContainer
 @onready var listHboxNames = [%HBoxNameAndDay1,%HBoxNameAndDay2,%HBoxNameAndDay3,%HBoxNameAndDay4,%HBoxNameAndDay5]
-
+var isWinner = false
 var mapOfDays : Dictionary
 
 func _ready() -> void:
@@ -70,40 +70,53 @@ func gameover():
 	visible = true
 
 func _on_btn_reintentar_pressed() -> void:
-	upload_to_db()
-	get_tree().call_deferred("change_scene_to_file","res://Escenas/MainJuego.tscn")
+	if !isWinner:
+		upload_to_db()
+		get_tree().call_deferred("change_scene_to_file","res://Escenas/MainJuego.tscn")
+	else:
+		get_tree().call_deferred("change_scene_to_file","res://outro_anim.tscn")
+
 
 func _on_btn_home_pressed() -> void:
 	upload_to_db()
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
 
+func winner():
+	isWinner = true
+	call_top_players()
+	%Gameover/VBoxContainer/Label.text=tr("CONGRATS")
+	%Gameover/VBoxContainer/Label.label_settings.font_color=Color("#13E65F")
+	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
+	$VBoxContainer/HBoxContainer/Btn_HOME.visible = false
+	$VBoxContainer/HBoxContainer/Btn_reintentar.text = tr("ENDGAME")
+
 func upload_to_db():
 	# Crear nuevo doc con el dia
-	if GlobalFirebaseInfo.isAuth:
-		var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
-		# El nombre del ID en vacio permite que sea autogenerado
-		@warning_ignore("unused_variable")
-		# Se agrega el nombre y dia para la tabla de top players
-		# Edit: Se agrega tambien metadatos para nosotros hacer analisis de datos
-		var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
-		("", {'day': GlobalTiempo.diaActual, 'name': nameN,
-		 'utc-date': Time.get_date_string_from_system(true),
-		'money' : GlobalRecursos.dinero,
-		'upgrades' : str(GlobalMejoras.activas_mejoras),
-		'total_game_time' : GlobalTiempo.tiempoJuegoTotal
-		})
-		
-		#hace el get del mapa de dias para actualizar el mapa de dias
-		var cantidadActualDelDia = 1
-		if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
-			cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
-			cantidadActualDelDia += 1
-			
-		# Actualiza la cantidad de nombres en ese dia
-		@warning_ignore("unused_variable")
-		var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
-		("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
-		
+	#if GlobalFirebaseInfo.isAuth:
+		#var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
+		## El nombre del ID en vacio permite que sea autogenerado
+		#@warning_ignore("unused_variable")
+		## Se agrega el nombre y dia para la tabla de top players
+		## Edit: Se agrega tambien metadatos para nosotros hacer analisis de datos
+		#var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
+		#("", {'day': GlobalTiempo.diaActual, 'name': nameN,
+		 #'utc-date': Time.get_date_string_from_system(true),
+		#'money' : GlobalRecursos.dinero,
+		#'upgrades' : str(GlobalMejoras.activas_mejoras),
+		#'total_game_time' : GlobalTiempo.tiempoJuegoTotal
+		#})
+		#
+		##hace el get del mapa de dias para actualizar el mapa de dias
+		#var cantidadActualDelDia = 1
+		#if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
+			#cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
+			#cantidadActualDelDia += 1
+			#
+		## Actualiza la cantidad de nombres en ese dia
+		#@warning_ignore("unused_variable")
+		#var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
+		#("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
+		#
 	GlobalRecursos.dinero = 5
 	GlobalRecursos.reiniciar_minerales()
 	GlobalMejoras.reiniciar_mejoras()

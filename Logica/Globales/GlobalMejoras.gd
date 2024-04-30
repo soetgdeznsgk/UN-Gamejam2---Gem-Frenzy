@@ -13,7 +13,7 @@ enum nombre_mejoras {
 	Gato,
 }
 var mejora_final = {
-	"ContratoFinal": { # que aumente de a 2 por mejora
+	"ContratoFinal": {
 		"Key" : "ContratoFinal",
 		"Nombre" : tr("CONTRACT"),
 		"Precio" : 10,
@@ -95,10 +95,16 @@ func llenar_mejoras() -> void:
 var disponible_mejoras = []
 var activas_mejoras = []
 
-func reiniciar_mejoras() -> void:
+# TEST para noestar comprando mejoras
+func test_final():
 	for i in range(0,nombre_mejoras.size()):
 		disponible_mejoras[i] = 0
 		activas_mejoras[i] = info_mejoras[i]["Maximo"]
+
+func reiniciar_mejoras() -> void:
+	for i in range(0,nombre_mejoras.size()):
+		disponible_mejoras[i] = info_mejoras[i]["Maximo"]
+		activas_mejoras[i] = 0
 
 func _ready() -> void:
 	llenar_mejoras()
@@ -107,6 +113,7 @@ func _ready() -> void:
 	for i in range(0,nombre_mejoras.size()):
 		disponible_mejoras.append(info_mejoras[i]["Maximo"])
 		activas_mejoras.append(0)
+	test_final()
 
 func obtener_mejora_random_disponible():
 	#verifica en las disponibles y devuelve alguna al azar
