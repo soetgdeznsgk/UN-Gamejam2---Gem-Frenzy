@@ -6,6 +6,7 @@ func _on_btn_factura_pressed():
 		$AnimationPlayer.play("sello_perder")
 		gameover=true
 	else:
+		print("sello epico")
 		$AnimationPlayer.play("sello epico")
 
 func pasar_de_pagina():
