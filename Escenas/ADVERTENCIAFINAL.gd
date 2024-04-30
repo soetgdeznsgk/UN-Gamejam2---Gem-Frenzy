@@ -1,4 +1,8 @@
 extends Control
+@onready var outro = %OutroAnim
+
+func _ready() -> void:
+	outro.endOutro.connect(outro_end)
 
 func _on_no_pressed():
 	visible=false
@@ -6,16 +10,16 @@ func _on_no_pressed():
 	GlobalRecursos.dinero+=10
 
 func _on_si_pressed():
-	%Gameover.winner()
-	$HBoxContainer/si.visible = false
-	$HBoxContainer/no.visible = false
-	%AP_PANCHALOADING.play("pancha_loading")
-	$Descadvertencia.visible = false
-	$Tituloadvertencia.text = tr("LOADING")
-	await get_tree().create_timer(1.5).timeout
-	%AP_PANCHALOADING.play("RESET")
+	#outro
+	GlobalTiempo.winner.emit()
+	outro.visible = true
+
+func outro_end():
 	visible = false
 	%Gameover.visible=true
+	%Gameover.z_as_relative = false
+	%Gameover.z_index = 1000
+	
 
 
 func _on_visibility_changed():

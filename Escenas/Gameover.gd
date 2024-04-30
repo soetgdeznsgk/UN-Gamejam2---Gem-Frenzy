@@ -4,11 +4,11 @@ var topScene : PackedScene = load("res://Logica/UI/h_box_name_and_day.tscn")
 @onready var lineEditContaier = %LineEditSelfContainer
 @onready var lineEdit = %LineEditSelfContainer
 @onready var listHboxNames = [%HBoxNameAndDay1,%HBoxNameAndDay2,%HBoxNameAndDay3,%HBoxNameAndDay4,%HBoxNameAndDay5]
-var isWinner = false
 var mapOfDays : Dictionary
 
 func _ready() -> void:
 	GlobalRecursos.bancarota.connect(gameover)
+	GlobalTiempo.winner.connect(winner)
 	
 func call_top_players():
 	for hbox in listHboxNames:
@@ -70,11 +70,8 @@ func gameover():
 	visible = true
 
 func _on_btn_reintentar_pressed() -> void:
-	if !isWinner:
-		upload_to_db()
-		get_tree().call_deferred("change_scene_to_file","res://Escenas/MainJuego.tscn")
-	else:
-		get_tree().call_deferred("change_scene_to_file","res://outro_anim.tscn")
+	upload_to_db()
+	get_tree().call_deferred("change_scene_to_file","res://Escenas/MainJuego.tscn")
 
 
 func _on_btn_home_pressed() -> void:
@@ -82,13 +79,11 @@ func _on_btn_home_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
 
 func winner():
-	isWinner = true
 	call_top_players()
 	%Gameover/VBoxContainer/Label.text=tr("CONGRATS")
 	%Gameover/VBoxContainer/Label.label_settings.font_color=Color("#13E65F")
 	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
-	$VBoxContainer/HBoxContainer/Btn_HOME.visible = false
-	$VBoxContainer/HBoxContainer/Btn_reintentar.text = tr("ENDGAME")
+	$VBoxContainer/HBoxContainer/Btn_reintentar.visible = false
 
 func upload_to_db():
 	# Crear nuevo doc con el dia

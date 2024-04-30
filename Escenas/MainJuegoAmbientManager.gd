@@ -3,7 +3,7 @@ var nueva_cancion=preload("res://Musica/Theme_Happy.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	GlobalTiempo.winner.connect(winner)
 	if GlobalTuto.tutorial:
 		
 		$Ambient.stream=nueva_cancion
@@ -29,4 +29,8 @@ func playSound():
 	$Ambient.play(0)
 
 func noSound():
+	$Ambient.stop()
+
+func winner():
+	# si gana pausa la cancion actual
 	$Ambient.stop()

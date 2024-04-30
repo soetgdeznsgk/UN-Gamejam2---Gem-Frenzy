@@ -1,15 +1,12 @@
 extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+signal endOutro
 
 func _on_button_pressed():
-	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
+	# Skip animacion, pone todo al final de la animación y quita el botón
+	$Button.visible = false
+	endOutro.emit()
+
+func _on_visibility_changed() -> void:
+	if visible:
+		#llamar animaciones y cosas
+		pass
