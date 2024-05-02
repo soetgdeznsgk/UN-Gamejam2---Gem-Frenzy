@@ -13,7 +13,7 @@ func _on_si_pressed():
 	#outro
 	GlobalTiempo.winner.emit()
 	outro.visible = true
-
+	visible=false
 func outro_end():
 	visible = false
 	%Gameover.visible=true

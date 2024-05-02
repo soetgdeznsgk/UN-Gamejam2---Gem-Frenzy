@@ -1,44 +1,261 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6dpi8j3mv3yn"]
+[gd_scene load_steps=14 format=3 uid="uid://c6dpi8j3mv3yn"]
 
 [ext_resource type="Script" path="res://outro_anim.gd" id="1_ae6bm"]
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="1_ih5w8"]
-[ext_resource type="Texture2D" uid="uid://cdi0n8gy6ycov" path="res://Sprites/Intro/intropancha_0000.png" id="2_6fudc"]
-[ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="4_u40io"]
-
-[sub_resource type="Animation" id="Animation_12hki"]
-resource_name = "creditos"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 304]
-}
+[ext_resource type="Texture2D" uid="uid://8dwk6ioh2x41" path="res://Sprites/Outro/fondo outro.png" id="2_8iyy3"]
+[ext_resource type="Texture2D" uid="uid://cwmlv2apu8hey" path="res://Sprites/Outro/pancha feli.png" id="3_j7un4"]
+[ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="4_l5war"]
+[ext_resource type="Texture2D" uid="uid://dohtqmysx8toq" path="res://Sprites/Outro/atardecerpancha.png" id="5_7248l"]
+[ext_resource type="Texture2D" uid="uid://d0ea17fu5xum4" path="res://Sprites/mejoras/contrato.png" id="5_xtjgc"]
+[ext_resource type="AudioStream" uid="uid://d1yqk362rcm7k" path="res://Musica/2014_07__Clement_Panchout__Partycles_OST__Cheerful_Title_Screen.wav" id="7_0hrew"]
+[ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_pr30s"]
 
 [sub_resource type="Animation" id="Animation_ynyeu"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/path = NodePath("contratoicono:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.2, 4.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contratoicono:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(494, 232)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pancha feli:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("contratoicono:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("contrato:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("atardecer:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Creditos textos/Developed_by:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_12hki"]
+resource_name = "creditos"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Creditos textos/Developed_by:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cypxb"]
+resource_name = "elfinaldepancha"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contratoicono:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4.2, 4.2), Vector2(30, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contratoicono:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(494, 232), Vector2(494, 352)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pancha feli:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("contratoicono:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("contrato:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.2, 4.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("atardecer:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(6.2, 7.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_credits_anim"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_puj7k"]
 _data = {
 "RESET": SubResource("Animation_ynyeu"),
-"creditos": SubResource("Animation_12hki")
+"creditos": SubResource("Animation_12hki"),
+"elfinaldepancha": SubResource("Animation_cypxb")
 }
 
 [node name="OutroAnim" type="Node2D"]
@@ -51,107 +268,128 @@ libraries = {
 "": SubResource("AnimationLibrary_puj7k")
 }
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(480, 356)
-scale = Vector2(3, 2.96667)
-texture = ExtResource("2_6fudc")
+[node name="fondo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("2_8iyy3")
+
+[node name="pancha feli" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("3_j7un4")
+
+[node name="contrato" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("4_l5war")
+
+[node name="atardecer" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("5_7248l")
+
+[node name="contratoicono" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(494, 232)
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("5_xtjgc")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 848.0
 offset_top = 656.0
 offset_right = 928.0
 offset_bottom = 696.0
 theme = ExtResource("1_ih5w8")
-text = "Skip :c"
+text = "Skip"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0hrew")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_right = 960.0
-offset_bottom = 712.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("4_u40io")
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
+[node name="contract sfx maybe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0hrew")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
+[node name="Creditos textos" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("9_pr30s")
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+[node name="Developed_by" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 25.0
+offset_right = 395.0
+offset_bottom = 135.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "Desarrollado por: 
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+The Yippies Dev"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+[node name="Programmers" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 388.0
+offset_bottom = 80.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "Programadores: 
+"
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+[node name="sebastian, pepe y yo" type="Label" parent="Creditos textos/Programmers"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 75.0
+offset_right = 197.0
+offset_bottom = 167.0
+text = "Matseuu
 
-[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+Pabten
 
-[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+Gugulplex"
+horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+[node name="Artistas" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 311.0
+offset_bottom = 79.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "Artistas: 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+[node name="racco yuca y daniel" type="Label" parent="Creditos textos/Artistas"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 75.0
+offset_right = 267.0
+offset_bottom = 170.0
+text = "Raccoyaki (Fan #1)
 
-[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+Yukki01
 
-[node name="Label10" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
-
-[node name="Label11" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
-
-[node name="Label12" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
-
-[node name="Label13" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
-
-[node name="Label14" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
-
-[node name="Label15" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "asdffff"
+DarkyBLG"
+horizontal_alignment = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

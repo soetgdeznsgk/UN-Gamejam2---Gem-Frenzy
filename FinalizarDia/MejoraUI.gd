@@ -24,6 +24,7 @@ func _on_btn_comprar_pressed() -> void:
 			# solo puede comprar una vez hasta el maximo
 			if $Lb_nombre.text ==tr("CONTRACT"):
 				GlobalMejoras.mejora_final_comprada=true
+				$TextureRect.modulate=Color("#ffffff00")
 				#.visible=false
 				#print(get_parent().name)
 
