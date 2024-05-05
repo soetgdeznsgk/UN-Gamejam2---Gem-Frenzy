@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://betnloqn6jeoe"
+path="res://.godot/imported/Gem Frenzy_SFX_Steps.mp3-e4e06286d6368b7fb08dcc9805f7dbb6.mp3str"
+
+[deps]
+
+source_file="res://Musica/SFX_luisa/Gem Frenzy_SFX_Steps.mp3"
+dest_files=["res://.godot/imported/Gem Frenzy_SFX_Steps.mp3-e4e06286d6368b7fb08dcc9805f7dbb6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

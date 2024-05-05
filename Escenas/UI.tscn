@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=96 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
 [ext_resource type="AudioStream" uid="uid://c1hjjwipji7up" path="res://Musica/cliente_enojado.wav" id="4_h0j4i"]
-[ext_resource type="AudioStream" uid="uid://bmj43p0weuvai" path="res://Musica/OrdenCorrecta2.wav" id="5_lmvn8"]
+[ext_resource type="AudioStream" uid="uid://bo73yf6sssusa" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_timbre.mp3" id="5_3fp6n"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
 [ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/Horno.mp3" id="6_7b88a"]
@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
 [ext_resource type="PackedScene" uid="uid://c6dpi8j3mv3yn" path="res://outro_anim.tscn" id="47_0jhqx"]
+[ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="48_huglt"]
 
 [sub_resource type="Animation" id="Animation_r4qms"]
 resource_name = "1_hour_left"
@@ -666,7 +667,7 @@ stream = ExtResource("4_h0j4i")
 pitch_scale = 0.99
 
 [node name="AudioEntregarOrden" type="AudioStreamPlayer" parent="Ordenes"]
-stream = ExtResource("5_lmvn8")
+stream = ExtResource("5_3fp6n")
 volume_db = -6.5
 pitch_scale = 0.99
 
@@ -1701,6 +1702,10 @@ texture = ExtResource("43_sdv33")
 [node name="OutroAnim" parent="." instance=ExtResource("47_0jhqx")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Sonido boton" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("48_huglt")
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]

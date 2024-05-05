@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=31 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
 [ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
 [ext_resource type="Texture2D" uid="uid://cwbb74jtgysns" path="res://Sprites/Menu/Instagram.png" id="21_bea0t"]
+[ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="21_gj7xj"]
 [ext_resource type="Texture2D" uid="uid://c82r2kyo8p1lc" path="res://Sprites/Menu/Twitter.png" id="22_onlig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
@@ -511,6 +512,10 @@ uri = "https://twitter.com/TheYippiesdev"
 position = Vector2(31.25, 29.25)
 scale = Vector2(2.77083, 2.77083)
 texture = ExtResource("22_onlig")
+
+[node name="SonidoBoton" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("21_gj7xj")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_pressed"]

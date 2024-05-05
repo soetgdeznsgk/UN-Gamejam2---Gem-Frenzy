@@ -23,6 +23,7 @@ func _on_btn_toggle_sound_pressed():
 
 func _on_btn_home_pressed():
 	get_tree().paused = false
+	%"Sonido boton".play()
 	GlobalRecursos.dinero = 5
 	GlobalRecursos.reiniciar_minerales()
 	GlobalMejoras.reiniciar_mejoras()

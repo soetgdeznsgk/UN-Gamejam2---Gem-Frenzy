@@ -43,6 +43,7 @@ func toggle_sound_texture():
 		GlobalSettings.sound=true
 
 func _on_btn_toggle_tutorial_pressed():
+	$SonidoBoton.play()
 	if GlobalTuto.tutorial:
 		GlobalTuto.tutorial=false
 		$tutorial.texture=notuto
@@ -60,29 +61,34 @@ func update_tuto_texture():
 
 
 func _on_button_language_pressed(language):
+	$SonidoBoton.play()
 	GlobalSettings.language=language
 	TranslationServer.set_locale(language)
 	GlobalMejoras.llenar_mejoras()
 
 
 func _on_btn_language_toggle_pressed():
+	$SonidoBoton.play()
 	$Lenguaje.visible=true
 	$Btn_toggle_Tutorial.visible=false
 	$Btn_credits.disabled=true
 
 func _on_btn_close_language_pressed():
+	$SonidoBoton.play()
 	$Lenguaje.visible=false
 	$Btn_toggle_Tutorial.visible=true
 	$Btn_credits.disabled=false
 
 
 func _on_btn_credits_pressed():
+	$SonidoBoton.play()
 	$Credits.visible=true
 	$Btn_toggle_Tutorial.visible=false
 	$Btn_language.disabled=true
 
 
 func _on_btn_close_credits_pressed():
+	$SonidoBoton.play()
 	$Credits.visible=false
 	$Btn_toggle_Tutorial.visible=true
 	$Btn_language.disabled=false

@@ -362,6 +362,7 @@ Pabten
 
 Gugulplex"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Artistas" type="Label" parent="Creditos textos"]
 modulate = Color(1, 1, 1, 0)
@@ -390,6 +391,52 @@ Yukki01
 
 DarkyBLG"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musica por" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 319.0
+offset_bottom = 69.0
+theme = ExtResource("9_pr30s")
+text = "Original Music by:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="lucas manzano" type="Label" parent="Creditos textos/musica por"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 282.0
+offset_bottom = 68.0
+text = "lucasarizamanzano"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sfx" type="Label" parent="Creditos textos/musica por"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 96.0
+offset_right = 284.0
+offset_bottom = 131.0
+text = "SFX by:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Luisa zarama" type="Label" parent="Creditos textos/musica por"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 96.0
+offset_right = 284.0
+offset_bottom = 191.0
+text = "Luisa Zarama"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

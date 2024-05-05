@@ -27,12 +27,9 @@ func _on_btn_comprar_pressed() -> void:
 				$TextureRect.modulate=Color("#ffffff00")
 				#.visible=false
 				#print(get_parent().name)
-
 				#%Gameover/VBoxContainer/HBoxContainer/Btn_HOME.visible=false
 				#%AP_PANCHALOADING.play("pancha_loading")
 				get_parent().get_parent().get_parent().get_parent().get_node("ADVERTENCIAFINAL").visible=true
-				
-				
 				#%Panchacorazon.visible=false
 				#%Gameover.visible=true	
 				

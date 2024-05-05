@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu31qd1oyd8t2"
+path="res://.godot/imported/Gem Frenzy_SFX_recoleccion.mp3-5f63c47528922d222374714188647675.mp3str"
+
+[deps]
+
+source_file="res://Musica/SFX_luisa/Gem Frenzy_SFX_recoleccion.mp3"
+dest_files=["res://.godot/imported/Gem Frenzy_SFX_recoleccion.mp3-5f63c47528922d222374714188647675.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

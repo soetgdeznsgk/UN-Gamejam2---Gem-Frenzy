@@ -8,6 +8,7 @@ func _on_no_pressed():
 	visible=false
 	GlobalRecursos.cambioDinero.emit(GlobalRecursos.dinero+10)
 	GlobalRecursos.dinero+=10
+	%FinalizarDia/VBoxContainer/HbMejoras/VBoxContainerMejora/TextureRect.modulate= Color("#ffffff")
 
 func _on_si_pressed():
 	#outro
