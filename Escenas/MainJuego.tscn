@@ -23,7 +23,7 @@
 [ext_resource type="Script" path="res://Escenas/GeneradorClientes.gd" id="17_5vow0"]
 [ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="18_b88ti"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
-[ext_resource type="AudioStream" uid="uid://xovw1gat70oh" path="res://Musica/Theme_Happy.wav" id="24_g3a11"]
+[ext_resource type="AudioStream" uid="uid://b1ysxme6esflv" path="res://Musica/Music_LuisManzano/GF_musx_jugable1_V1.wav" id="24_bggh4"]
 [ext_resource type="PackedScene" uid="uid://bvl5tdbs4i1ex" path="res://Logica/gato.tscn" id="26_0x151"]
 [ext_resource type="Texture2D" uid="uid://ds1h02qxfdd56" path="res://Sprites/Mapa/gatito sprites 1.png" id="27_5k2uw"]
 
@@ -237,7 +237,6 @@ size = Vector2(700, 4)
 
 [node name="MainJuego" type="Node2D"]
 texture_filter = 1
-position = Vector2(50, 0)
 script = ExtResource("1_pncec")
 metadata/_edit_horizontal_guides_ = [1276.0]
 
@@ -979,7 +978,7 @@ material_almacenado = 7
 position = Vector2(378, -19)
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_g3a11")
+stream = ExtResource("24_bggh4")
 volume_db = -6.521
 autoplay = true
 

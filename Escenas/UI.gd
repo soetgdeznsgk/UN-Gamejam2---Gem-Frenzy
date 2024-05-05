@@ -27,11 +27,12 @@ func _on_btn_pause_pressed() -> void:
 	toggle_paused()
 
 func _on_btn_back_pressed():
-	%"Sonido boton".play()
+	#%"Sonido boton".play()
 	toggle_paused()
 func invisible_flash():
 	$VbReloj/Control/Sprite2D.visible=false
 func toggle_paused():
+	$SonidoPausa.play()
 	paused = !paused
 	get_tree().paused = paused
 	$Pausa.visible = paused

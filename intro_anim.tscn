@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dmnx82ornpbb" path="res://Sprites/Intro/intropancha_0008.png" id="10_v1gxl"]
 [ext_resource type="Texture2D" uid="uid://deja2cb0vqp0j" path="res://Sprites/Intro/intropancha_0009.png" id="11_tuwb0"]
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="12_b4bac"]
-[ext_resource type="AudioStream" uid="uid://hhghflu5wklt" path="res://Musica/Amber_Forest.mp3" id="13_4k7ve"]
+[ext_resource type="AudioStream" uid="uid://dm0wuaecymg10" path="res://Musica/Music_LuisManzano/GF_musx_cinematica_V2.mp3" id="13_nlg2j"]
 
 [sub_resource type="Animation" id="Animation_wloj0"]
 length = 0.001
@@ -75,7 +75,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 0.921569)
 text = "SKIP"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_4k7ve")
+stream = ExtResource("13_nlg2j")
 volume_db = -20.0
 autoplay = true
 

@@ -63,8 +63,8 @@ func Open() -> void:
 			if GlobalTuto.tutorial:
 				cantidad_almacenada+=5
 				
-			$AudioStreamPlayer.pitch_scale = 0.67
-			$AudioStreamPlayer.play()
+			$SP_nohay.pitch_scale = 0.67
+			$SP_nohay.play()
 
 				
 

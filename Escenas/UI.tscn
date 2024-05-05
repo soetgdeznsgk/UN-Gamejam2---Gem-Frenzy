@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=97 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
 [ext_resource type="PackedScene" uid="uid://c6dpi8j3mv3yn" path="res://outro_anim.tscn" id="47_0jhqx"]
 [ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="48_huglt"]
+[ext_resource type="AudioStream" uid="uid://di04wxp4twrf7" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Pause.mp3" id="49_4pl3n"]
 
 [sub_resource type="Animation" id="Animation_r4qms"]
 resource_name = "1_hour_left"
@@ -1706,6 +1707,10 @@ visible = false
 [node name="Sonido boton" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("48_huglt")
+
+[node name="SonidoPausa" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("49_4pl3n")
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]

@@ -16,7 +16,8 @@ func _ready():
 	update_tuto_texture()
 	
 func _on_btn_jugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://intro_anim.tscn")
+	$BotonPlay.play()
+	
 
 func _on_btn_toggle_sound_pressed() -> void:
 	toggle_sound_texture()
@@ -92,7 +93,7 @@ func _on_btn_close_credits_pressed():
 	$Credits.visible=false
 	$Btn_toggle_Tutorial.visible=true
 	$Btn_language.disabled=false
-
-
-
-
+	
+func _on_boton_play_finished():
+	get_tree().change_scene_to_file("res://intro_anim.tscn")
+	pass # Replace with function body.

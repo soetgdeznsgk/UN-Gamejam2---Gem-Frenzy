@@ -1,11 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=32 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
 [ext_resource type="Texture2D" uid="uid://bbbosknu7tms7" path="res://Sprites/Menu/gem frenzy logo 4k remaster 1 link hd 710x360.png" id="3_sgxu4"]
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
-[ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
 [ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
+[ext_resource type="AudioStream" uid="uid://crifdm1sgs0ty" path="res://Musica/Music_LuisManzano/GF_musx_inicio_V2.wav" id="6_jq6r8"]
 [ext_resource type="Texture2D" uid="uid://n2xx1oqnyhr" path="res://Sprites/UI/sound_mute.png" id="7_ewkdi"]
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="7_kg6s8"]
 [ext_resource type="Texture2D" uid="uid://w20o216cewiy" path="res://Sprites/Menu/buy_1.png" id="8_kncop"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
 [ext_resource type="Texture2D" uid="uid://cwbb74jtgysns" path="res://Sprites/Menu/Instagram.png" id="21_bea0t"]
 [ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="21_gj7xj"]
+[ext_resource type="AudioStream" uid="uid://bcbhctv37dc4a" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Play.mp3" id="22_83hll"]
 [ext_resource type="Texture2D" uid="uid://c82r2kyo8p1lc" path="res://Sprites/Menu/Twitter.png" id="22_onlig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
@@ -137,7 +138,7 @@ theme_override_font_sizes/font_size = 32
 text = "PLAY"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ued5s")
+stream = ExtResource("6_jq6r8")
 volume_db = -12.0
 autoplay = true
 
@@ -517,6 +518,9 @@ texture = ExtResource("22_onlig")
 unique_name_in_owner = true
 stream = ExtResource("21_gj7xj")
 
+[node name="BotonPlay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_83hll")
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_pressed"]
 [connection signal="pressed" from="Lenguaje/Control/btn_close_language" to="." method="_on_btn_close_language_pressed"]
@@ -524,3 +528,4 @@ stream = ExtResource("21_gj7xj")
 [connection signal="pressed" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_pressed"]
 [connection signal="pressed" from="Btn_language" to="." method="_on_btn_language_toggle_pressed"]
 [connection signal="pressed" from="Btn_credits" to="." method="_on_btn_credits_pressed"]
+[connection signal="finished" from="BotonPlay" to="." method="_on_boton_play_finished"]

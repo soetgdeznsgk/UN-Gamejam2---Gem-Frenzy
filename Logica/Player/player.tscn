@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=54 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://betnloqn6jeoe" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Steps.mp3" id="9_jykrp"]
 [ext_resource type="AudioStream" uid="uid://bu31qd1oyd8t2" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_recoleccion.mp3" id="10_2wnk6"]
 [ext_resource type="AudioStream" uid="uid://cr7hj07wg22ix" path="res://Musica/minning.mp3" id="11_v4ntw"]
+[ext_resource type="AudioStream" uid="uid://c3g4nx73lelaj" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Ladder.mp3" id="12_ertaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(13, 14)
@@ -78,6 +79,26 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0.0]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_stair_audio"
+}, {
+"args": [],
+"method": &"play_stair_audio"
+}, {
+"args": [],
+"method": &"play_stair_audio"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_mutr0"]
@@ -1106,6 +1127,9 @@ volume_db = -12.0
 process_callback = 0
 wait_time = 0.3
 autostart = true
+
+[node name="AudioEscalera" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ertaj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

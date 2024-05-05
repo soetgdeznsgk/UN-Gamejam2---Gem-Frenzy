@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://r3b4g86f7l6x"]
+[gd_scene load_steps=14 format=3 uid="uid://r3b4g86f7l6x"]
 
 [ext_resource type="Script" path="res://Escenas/Cofre/cofre.gd" id="1_5a08q"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="2_vta35"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="4_211rc"]
 [ext_resource type="Texture2D" uid="uid://5d2d31nd7c1d" path="res://Sprites/UI/no.png" id="4_b3l1u"]
 [ext_resource type="Texture2D" uid="uid://bemqir6127j64" path="res://Sprites/flecha abajo.png" id="4_e3gbw"]
+[ext_resource type="AudioStream" uid="uid://lu31miyriip5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Carbon .mp3" id="6_eug0x"]
 [ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="6_yb67y"]
 
 [sub_resource type="Animation" id="Animation_qs0vi"]
@@ -141,7 +142,7 @@ libraries = {
 [node name="Spr_up_key_ladder" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-position = Vector2(0, -16)
+position = Vector2(0.2, -16)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_e3gbw")
 flip_v = true
@@ -153,8 +154,11 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_w7rvs")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_yb67y")
+stream = ExtResource("6_eug0x")
 volume_db = 2.0
+
+[node name="SP_nohay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yb67y")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
