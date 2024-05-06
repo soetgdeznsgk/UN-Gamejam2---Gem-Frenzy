@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bo73yf6sssusa" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_timbre.mp3" id="5_3fp6n"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
-[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/Horno.mp3" id="6_7b88a"]
+[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/OrdenIncorrecta.mp3" id="6_r0lc3"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
@@ -680,10 +680,9 @@ pitch_scale = 0.99
 [node name="AudioEntregarOrden" type="AudioStreamPlayer" parent="Ordenes"]
 stream = ExtResource("5_3fp6n")
 volume_db = -6.5
-pitch_scale = 0.99
 
 [node name="AudioOrdenIncorrecta" type="AudioStreamPlayer" parent="Ordenes"]
-stream = ExtResource("6_7b88a")
+stream = ExtResource("6_r0lc3")
 pitch_scale = 0.6
 
 [node name="VbReloj" type="VBoxContainer" parent="."]

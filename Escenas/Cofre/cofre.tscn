@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5d2d31nd7c1d" path="res://Sprites/UI/no.png" id="4_b3l1u"]
 [ext_resource type="Texture2D" uid="uid://bemqir6127j64" path="res://Sprites/flecha abajo.png" id="4_e3gbw"]
 [ext_resource type="AudioStream" uid="uid://lu31miyriip5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Carbon .mp3" id="6_eug0x"]
-[ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre.mp3" id="6_yb67y"]
+[ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre_No_Hay.mp3" id="6_yb67y"]
 
 [sub_resource type="Animation" id="Animation_qs0vi"]
 resource_name = "AbrirCofre"
@@ -155,10 +155,11 @@ shape = SubResource("RectangleShape2D_w7rvs")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_eug0x")
-volume_db = 2.0
+volume_db = 3.5
 
 [node name="SP_nohay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_yb67y")
+pitch_scale = 0.67
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

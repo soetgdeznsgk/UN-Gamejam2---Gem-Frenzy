@@ -14,6 +14,7 @@ func entregarOrden(objetivo):
 		if orden is OrdenUI:
 			if orden.getOrden() == objetivo:
 				orden.orden_deliver()
+				$AudioEntregarOrden.pitch_scale = snapped(randf_range(0.85,1.25),0.1)
 				$AudioEntregarOrden.play(0)
 				return
 	$AudioOrdenIncorrecta.play(0)
