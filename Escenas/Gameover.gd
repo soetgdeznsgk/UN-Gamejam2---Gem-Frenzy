@@ -87,31 +87,31 @@ func winner():
 
 func upload_to_db():
 	# Crear nuevo doc con el dia
-	#if GlobalFirebaseInfo.isAuth:
-		#var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
-		## El nombre del ID en vacio permite que sea autogenerado
-		#@warning_ignore("unused_variable")
-		## Se agrega el nombre y dia para la tabla de top players
-		## Edit: Se agrega tambien metadatos para nosotros hacer analisis de datos
-		#var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
-		#("", {'day': GlobalTiempo.diaActual, 'name': nameN,
-		 #'utc-date': Time.get_date_string_from_system(true),
-		#'money' : GlobalRecursos.dinero,
-		#'upgrades' : str(GlobalMejoras.activas_mejoras),
-		#'total_game_time' : GlobalTiempo.tiempoJuegoTotal
-		#})
-		#
-		##hace el get del mapa de dias para actualizar el mapa de dias
-		#var cantidadActualDelDia = 1
-		#if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
-			#cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
-			#cantidadActualDelDia += 1
-			#
-		## Actualiza la cantidad de nombres en ese dia
-		#@warning_ignore("unused_variable")
-		#var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
-		#("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
-		#
+	if GlobalFirebaseInfo.isAuth:
+		var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  
+		# El nombre del ID en vacio permite que sea autogenerado
+		@warning_ignore("unused_variable")
+		# Se agrega el nombre y dia para la tabla de top players
+		# Edit: Se agrega tambien metadatos para nosotros hacer analisis de datos
+		var add_task: FirestoreTask = GlobalFirebaseInfo.collection.add\
+		("", {'day': GlobalTiempo.diaActual, 'name': nameN,
+		 'utc-date': Time.get_date_string_from_system(true),
+		'money' : GlobalRecursos.dinero,
+		'upgrades' : str(GlobalMejoras.activas_mejoras),
+		'total_game_time' : GlobalTiempo.tiempoJuegoTotal
+		})
+		
+		#hace el get del mapa de dias para actualizar el mapa de dias
+		var cantidadActualDelDia = 1
+		if mapOfDays.has("day"+str(GlobalTiempo.diaActual)):
+			cantidadActualDelDia = mapOfDays["day"+str(GlobalTiempo.diaActual)]
+			cantidadActualDelDia += 1
+			
+		# Actualiza la cantidad de nombres en ese dia
+		@warning_ignore("unused_variable")
+		var update_map : FirestoreTask = GlobalFirebaseInfo.collection.update\
+		("map_of_days", {"day" +str(GlobalTiempo.diaActual) : cantidadActualDelDia})
+		
 	GlobalRecursos.dinero = 5
 	GlobalRecursos.reiniciar_minerales()
 	GlobalMejoras.reiniciar_mejoras()

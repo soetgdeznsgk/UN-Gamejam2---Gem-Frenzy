@@ -25,21 +25,21 @@ func _on_btn_toggle_sound_pressed() -> void:
 func update_sound_texture():
 	if GlobalSettings.sound:
 		AudioServer.set_bus_volume_db(0,0)
-		$Sprite2D.texture = textureSnd2
+		$Btn_toggle_sound/Sprite2D.texture = textureSnd2
 	else:
 		AudioServer.set_bus_volume_db(0,-72)
-		$Sprite2D.texture = textureSnd1
+		$Btn_toggle_sound/Sprite2D.texture = textureSnd1
 
 func toggle_sound_texture():
 	if GlobalSettings.sound:
 		AudioServer.set_bus_volume_db(0,-72)
-		$Sprite2D.texture = textureSnd1	
+		$Btn_toggle_sound/Sprite2D.texture = textureSnd1	
 
 		GlobalSettings.sound=false
 		
 	else:
 		AudioServer.set_bus_volume_db(0,0)
-		$Sprite2D.texture = textureSnd2
+		$Btn_toggle_sound/Sprite2D.texture = textureSnd2
 		
 		GlobalSettings.sound=true
 
@@ -47,18 +47,18 @@ func _on_btn_toggle_tutorial_pressed():
 	$SonidoBoton.play()
 	if GlobalTuto.tutorial:
 		GlobalTuto.tutorial=false
-		$tutorial.texture=notuto
+		$Btn_toggle_Tutorial.icon=notuto
 	else:
 		GlobalTuto.tutorial=true
-		$tutorial.texture=situto
+		$Btn_toggle_Tutorial.icon=situto
 
 
 func update_tuto_texture():
 	if GlobalTuto.tutorial:
-		$tutorial.texture=situto
+		$Btn_toggle_Tutorial.icon=situto
 		
 	else:
-		$tutorial.texture=notuto
+		$Btn_toggle_Tutorial.icon=notuto
 
 
 func _on_button_language_pressed(language):
@@ -97,26 +97,61 @@ func _on_btn_close_credits_pressed():
 	
 func _on_boton_play_finished():
 	get_tree().change_scene_to_file("res://intro_anim.tscn")
-	pass # Replace with function body.
 
 
 func _on_instagram_mouse_entered():
 	$Instagram.scale=Vector2(1.1,1.1)
 	$Instagram.position=Vector2(867,637)
-	pass # Replace with function body.
+
+
 func _on_instagram_mouse_exited():
 	$Instagram.scale=Vector2(1,1)
 	$Instagram.position=Vector2(871,641)
-	pass # Replace with function body.
 
 
 func _on_twitter_mouse_entered():
 	$Twitter.scale=Vector2(1.1,1.1)
 	$Twitter.position=Vector2(782,633)
-	pass # Replace with function body.
 
 
 func _on_twitter_mouse_exited():
 	$Twitter.scale=Vector2(1,1)
 	$Twitter.position=Vector2(788,639)
-	pass # Replace with function body.
+
+
+func _on_btn_jugar_mouse_entered() -> void:
+	$CenterContainer.scale=Vector2(1.15,1.15)
+
+func _on_btn_jugar_mouse_exited() -> void:
+	$CenterContainer.scale=Vector2(1,1)
+
+
+func _on_btn_toggle_tutorial_mouse_entered() -> void:
+	$Btn_toggle_Tutorial.scale = Vector2(1.085,1.085)
+
+
+func _on_btn_toggle_tutorial_mouse_exited() -> void:
+	$Btn_toggle_Tutorial.scale = Vector2(1,1)
+
+
+func _on_btn_language_mouse_entered() -> void:
+	$Btn_language.scale = Vector2(1.06,1.06)
+
+
+func _on_btn_language_mouse_exited() -> void:
+	$Btn_language.scale = Vector2(1,1)
+
+
+func _on_btn_credits_mouse_entered() -> void:
+	$Btn_credits.scale = Vector2(1.06,1.06)
+
+
+func _on_btn_credits_mouse_exited() -> void:
+	$Btn_credits.scale = Vector2(1,1)
+
+func _on_btn_toggle_sound_mouse_entered() -> void:
+	$Btn_toggle_sound.scale = Vector2(1.1,1.1)
+	
+func _on_btn_toggle_sound_mouse_exited() -> void:
+	$Btn_toggle_sound.scale = Vector2(1,1)
+
