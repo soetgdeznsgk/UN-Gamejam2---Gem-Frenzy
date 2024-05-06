@@ -59,7 +59,7 @@ func set_last_state(transicion:String):
 		
 		#"entrega_to_taladrando":
 			
-	print(lastPosition)
+	#print(lastPosition)
 	#print(APtutorial.get_animation("receta_to_entrega").track_get_key_value(3,-1))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

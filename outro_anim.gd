@@ -23,13 +23,13 @@ func tween_fade_in(texto:Label,delay):
 	var tween = get_tree().create_tween()
 	tween.tween_property(texto, "modulate", Color("#ffffff"), 1)
 	tween.tween_callback(tween_fade_out.bind(texto)).set_delay(delay)
-	print(texto.text)
+	#print(texto.text)
 func tween_fade_out(texto:Label):
 	var tween = get_tree().create_tween()
 	tween.tween_property(texto, "modulate", Color("#ffffff00"), 1)
 	tween.tween_callback(emit_endTexto).set_delay(0.5)
 	#tween.tween_property($Sprite, "scale", Vector2(), 1)
 	
-	print(texto.text)
+	#print(texto.text)
 func emit_endTexto():
 	endTexto.emit()

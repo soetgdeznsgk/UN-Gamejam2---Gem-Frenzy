@@ -232,14 +232,14 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: TileMap, _body_shape_in
 			get_parent().call_deferred("add_child",particle)
 			canParticle = false
 			
-		
 			
 		if actualFrame < GlobalRecursos.mineralesConFondo.Tierra:
 			GlobalRecursos.actualizar_mineral(actualFrame, 1)
+			audioMinado.pitch_scale = randf_range(0.9,1.1)
 			audioMinado.play(0) #sonido de minado
 		else:
 			if canSound:
-				audioMinarTierra.pitch_scale = randf_range(0.9,1.1)
+				audioMinarTierra.pitch_scale = randf_range(0.8,1.2)
 				audioMinarTierra.play()
 				canSound = false
 		

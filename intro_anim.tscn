@@ -78,7 +78,7 @@ text = "SKIP"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_nlg2j")
-volume_db = -20.0
+volume_db = -8.0
 autoplay = true
 
 [node name="bordenegro1" type="TextureRect" parent="."]

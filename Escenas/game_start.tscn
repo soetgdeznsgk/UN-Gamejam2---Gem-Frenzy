@@ -142,7 +142,7 @@ text = "PLAY"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_jq6r8")
-volume_db = -12.0
+volume_db = -8.0
 autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -526,6 +526,7 @@ stream = ExtResource("22_83hll")
 
 [node name="bordenegro1" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 0
 offset_left = -160.0
 offset_bottom = 720.0
 texture = ExtResource("23_agblx")
@@ -533,6 +534,7 @@ expand_mode = 1
 
 [node name="bordenegro2" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 0
 offset_left = 960.0
 offset_right = 1120.0
 offset_bottom = 720.0

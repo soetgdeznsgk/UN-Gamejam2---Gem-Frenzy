@@ -18,7 +18,7 @@ size = Vector2(13, 14)
 
 [sub_resource type="Animation" id="Animation_k7hiw"]
 resource_name = "Escaleras"
-length = 0.8
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -63,7 +63,7 @@ tracks/3/path = NodePath("../Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -87,12 +87,9 @@ tracks/5/path = NodePath("..")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": [],
-"method": &"play_stair_audio"
-}, {
 "args": [],
 "method": &"play_stair_audio"
 }, {
@@ -1090,8 +1087,6 @@ hframes = 7
 
 [node name="AudioPaso" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_jykrp")
-volume_db = -4.0
-pitch_scale = 1.2
 max_polyphony = 2
 
 [node name="Timer" type="Timer" parent="."]
@@ -1108,8 +1103,6 @@ shape = SubResource("RectangleShape2D_fsbbl")
 
 [node name="AudioMinado" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2wnk6")
-volume_db = -2.0
-pitch_scale = 1.05
 
 [node name="MarkerParticle" type="Marker2D" parent="."]
 position = Vector2(-4, 7)

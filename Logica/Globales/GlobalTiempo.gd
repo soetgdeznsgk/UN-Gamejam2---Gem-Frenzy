@@ -55,10 +55,10 @@ func on_tmr_minuto_end():
 			casifinalizardia.emit()
 		elif tiempoMinutoDia==30:
 			quedamediahora.emit()
-			print("queda media hora papu")
+			#print("queda media hora papu")
 		elif tiempoMinutoDia==50:
 			quedandiezminutos.emit()
-			print("quedan 10 minutos papu y sant esta viendo hooola sant")
+			#print("quedan 10 minutos papu y sant esta viendo hooola sant")
 	if tiempoHoraDia >= horacierre:
 		tmr_minuto.stop()
 		finalizarDia.emit()

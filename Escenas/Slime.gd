@@ -22,7 +22,7 @@ func set_inicioCy(NUEVOVALORFUNCIONAPLS1,NUEVOVALORFUNCIONAPLS2):
 
 func _on_area_entered(area):
 #hacer coso de cambio de posicion aca jija
-	print("slime veces movido: ",movido," tocandoslimebooleano: ",TocandoSlime)
+	#print("slime veces movido: ",movido," tocandoslimebooleano: ",TocandoSlime)
 	if area is Slime:
 		TocandoSlime=true	
 		if movido<=15:

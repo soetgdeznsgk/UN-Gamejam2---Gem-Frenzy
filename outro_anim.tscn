@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="4_l5war"]
 [ext_resource type="Texture2D" uid="uid://dohtqmysx8toq" path="res://Sprites/Outro/atardecerpancha.png" id="5_7248l"]
 [ext_resource type="Texture2D" uid="uid://d0ea17fu5xum4" path="res://Sprites/mejoras/contrato.png" id="5_xtjgc"]
-[ext_resource type="AudioStream" uid="uid://d1yqk362rcm7k" path="res://Musica/2014_07__Clement_Panchout__Partycles_OST__Cheerful_Title_Screen.wav" id="7_0hrew"]
+[ext_resource type="AudioStream" uid="uid://d1yqk362rcm7k" path="res://Musica/bg final.wav" id="7_0hrew"]
 [ext_resource type="AudioStream" uid="uid://gwdnf5g7drkg" path="res://Musica/Music_LuisManzano/GF_musx_cinematic_final_V1.mp3" id="8_6565c"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_pr30s"]
 

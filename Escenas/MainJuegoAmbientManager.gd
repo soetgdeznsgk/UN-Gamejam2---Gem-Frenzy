@@ -1,13 +1,20 @@
 extends Node2D
-var nueva_cancion=preload("res://Musica/Theme_Happy.wav")
+#  Array de musica para precargar la musica
+var lista_musica= [
+	preload("res://Musica/Music_LuisManzano/GF_musx_jugable1_V1.wav"),
+	preload("res://Musica/Music_LuisManzano/GF_musx_jugable2_V1.wav")
+]
 
-# Called when the node enters the scene tree for the first time.
+# Array de musica desbloqueada
+var lista_musica_unlock = []
+# Array de musica bloqueada
+var lista_musica_to_unlock = []
+
 func _ready():
 	GlobalTiempo.winner.connect(winner)
 	if GlobalTuto.tutorial:
-		
-		$Ambient.stream=nueva_cancion
-		$Ambient.volume_db=-6.521
+		$Ambient.stream=lista_musica[0]
+		$Ambient.volume_db=-6.5
 		$Ambient.play()
 		#gato bonito
 		GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]=1
@@ -18,14 +25,13 @@ func _ready():
 	GlobalTiempo.finalizarDia.connect(noSound)
 	GlobalTiempo.iniciarDia.connect(playSound)
 	if GlobalTiempo.diaActual>6:
-		$Ambient.stream=nueva_cancion
-		$Ambient.volume_db=-6.521
+		$Ambient.stream=lista_musica[1]
+		$Ambient.volume_db=-6.5
 		$Ambient.play()
 
 # Señales
 
 func playSound():
-
 	$Ambient.play(0)
 
 func noSound():

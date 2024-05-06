@@ -982,7 +982,7 @@ position = Vector2(378, -19)
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_bggh4")
-volume_db = -6.521
+volume_db = -6.5
 autoplay = true
 
 [node name="Gato" parent="." instance=ExtResource("26_0x151")]
