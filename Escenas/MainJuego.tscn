@@ -980,6 +980,9 @@ material_almacenado = 7
 [node name="Horno" parent="." instance=ExtResource("22_2y5ly")]
 position = Vector2(378, -19)
 
+[node name="Rockola" type="Sprite2D" parent="."]
+position = Vector2(378, -19)
+
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_bggh4")
 volume_db = -6.5

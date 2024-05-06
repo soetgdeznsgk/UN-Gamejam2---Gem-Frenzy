@@ -28,7 +28,7 @@ func play_credits_anim():
 	await get_tree().create_timer(2).timeout
 	var tweenfinal = get_tree().create_tween()
 	tweenfinal.tween_property(self, "modulate", Color("#000000"), 3)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(3.2).timeout
 	$finalizardiabien.play()
 	endOutro.emit()
 	#$AnimationPlayer.play("creditos")

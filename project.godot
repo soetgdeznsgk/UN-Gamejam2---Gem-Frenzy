@@ -84,6 +84,10 @@ ui_down={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [internationalization]
 
 locale/translations=PackedStringArray("res://localizacion/Traduccion gem frenzy - Hoja 1.en.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.es.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.jp.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.zh.translation")

@@ -491,7 +491,7 @@ icon = ExtResource("20_3cvn6")
 icon_alignment = 1
 expand_icon = true
 
-[node name="LinkButton" type="LinkButton" parent="."]
+[node name="Instagram" type="LinkButton" parent="."]
 layout_mode = 0
 offset_left = 871.0
 offset_top = 641.0
@@ -499,12 +499,12 @@ offset_right = 933.0
 offset_bottom = 701.0
 uri = "https://www.instagram.com/theyippiesdev/"
 
-[node name="Sprite2D" type="Sprite2D" parent="LinkButton"]
+[node name="Sprite2D" type="Sprite2D" parent="Instagram"]
 position = Vector2(31.25, 29.25)
 scale = Vector2(2.77083, 2.77083)
 texture = ExtResource("21_bea0t")
 
-[node name="LinkButton2" type="LinkButton" parent="."]
+[node name="Twitter" type="LinkButton" parent="."]
 layout_mode = 0
 offset_left = 788.0
 offset_top = 639.0
@@ -512,7 +512,7 @@ offset_right = 850.0
 offset_bottom = 699.0
 uri = "https://twitter.com/TheYippiesdev"
 
-[node name="Sprite2D" type="Sprite2D" parent="LinkButton2"]
+[node name="Sprite2D" type="Sprite2D" parent="Twitter"]
 position = Vector2(31.25, 29.25)
 scale = Vector2(2.77083, 2.77083)
 texture = ExtResource("22_onlig")
@@ -548,4 +548,8 @@ expand_mode = 1
 [connection signal="pressed" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_pressed"]
 [connection signal="pressed" from="Btn_language" to="." method="_on_btn_language_toggle_pressed"]
 [connection signal="pressed" from="Btn_credits" to="." method="_on_btn_credits_pressed"]
+[connection signal="mouse_entered" from="Instagram" to="." method="_on_instagram_mouse_entered"]
+[connection signal="mouse_exited" from="Instagram" to="." method="_on_instagram_mouse_exited"]
+[connection signal="mouse_entered" from="Twitter" to="." method="_on_twitter_mouse_entered"]
+[connection signal="mouse_exited" from="Twitter" to="." method="_on_twitter_mouse_exited"]
 [connection signal="finished" from="BotonPlay" to="." method="_on_boton_play_finished"]

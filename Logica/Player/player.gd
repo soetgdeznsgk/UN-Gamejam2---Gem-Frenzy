@@ -28,6 +28,8 @@ var diaFinalizado = false
 
 
 func _ready() -> void:
+	if GlobalTuto.tutorial:
+		$AudioEscalera.volume_db=-80
 	movement=true
 	GlobalTiempo.iniciarDia.connect(iniciar_dia)
 	GlobalTiempo.finalizarDia.connect(finalizar_dia)

@@ -319,7 +319,7 @@ offset_top = 656.0
 offset_right = 928.0
 offset_bottom = 696.0
 theme = ExtResource("1_ih5w8")
-text = "Skip"
+text = "SKIP"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6565c")
@@ -343,7 +343,7 @@ offset_right = 395.0
 offset_bottom = 87.0
 theme = ExtResource("9_pr30s")
 theme_override_font_sizes/font_size = 20
-text = "Desarrollado por: "
+text = "DEVELOPED_BY"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -366,12 +366,12 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 31.0
 offset_top = 25.0
-offset_right = 388.0
-offset_bottom = 80.0
+offset_right = 289.0
+offset_bottom = 76.0
 theme = ExtResource("9_pr30s")
 theme_override_font_sizes/font_size = 20
-text = "Programadores: 
-"
+text = "PROGRAMMERS"
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -398,8 +398,7 @@ offset_right = 311.0
 offset_bottom = 79.0
 theme = ExtResource("9_pr30s")
 theme_override_font_sizes/font_size = 20
-text = "Artistas: 
-"
+text = "ARTISTS"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -426,8 +425,7 @@ offset_top = 25.0
 offset_right = 319.0
 offset_bottom = 69.0
 theme = ExtResource("9_pr30s")
-text = "MUSIC
-"
+text = "MUSIC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -448,8 +446,7 @@ offset_left = 10.0
 offset_top = 96.0
 offset_right = 284.0
 offset_bottom = 131.0
-text = "SFX
-"
+text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -472,7 +469,7 @@ offset_right = 311.0
 offset_bottom = 85.0
 theme = ExtResource("9_pr30s")
 theme_override_font_sizes/font_size = 20
-text = "Agradecimientos Especiales"
+text = "SUPPORT"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -491,7 +488,9 @@ Tibu
 
 Carlox
 
-Dio"
+Dio
+
+solo_ookami"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -518,13 +517,13 @@ vertical_alignment = 1
 [node name="Assets" type="Label" parent="Creditos textos"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 259.0
+offset_left = 107.0
 offset_top = 25.0
-offset_right = 539.0
+offset_right = 387.0
 offset_bottom = 85.0
 theme = ExtResource("9_pr30s")
 theme_override_font_sizes/font_size = 20
-text = "Recursos"
+text = "ASSETS"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -558,7 +557,8 @@ text = "Minecraft Font - Craftron Gaming
 
 Unifontex Font by stgiga
 
-[8 bit sound effects library] - LIttle Robot Sound Factory"
+[8 bit sound effects library] -
+ LIttle Robot Sound Factory"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -586,7 +586,7 @@ offset_right = 858.0
 offset_bottom = 92.0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 50
-text = "GRACIAS POR JUGAR"
+text = "THANKS_FOR_PLAYING"
 horizontal_alignment = 1
 vertical_alignment = 1
 

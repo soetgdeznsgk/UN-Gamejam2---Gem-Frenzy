@@ -35,8 +35,8 @@ CATO,Gato,Cat,猫,猫
 CATO_DESC,¡Un gato siempre atrae más clientes!,A cat always attracts more customers!,一只猫总是能吸引更多的顾客！,猫はいつももっと多くの顧客を引き付けます！
 SPEED_UP,Mas rapido,SPEED UP,速度更快,速度を上げる
 SPEED_UP_DESC,Pancha tomó café colombiano,Pancha drank Colombian coffee,Pancha 喝哥伦比亚咖啡,パンチャはコロンビアコーヒーを飲みました
-CONTRACT,Escrituras de la tienda,Shop Ownership,,
-CONTRACT_DESC,Cumple el sueño de Pancha (El juego acabará),Fullfill Pancha's Dream (the game will end),,
+CONTRACT,Escrituras de la tienda,Shop Ownership,店铺所有权,ショップの所有権
+CONTRACT_DESC,Cumple el sueño de Pancha (El juego acabará),Fullfill Pancha's Dream (the game will end),实现Pancha的梦想（游戏即将结束）,パンチャの夢を叶える (ゲームは終了します)
 TUTORIAL,Tutorial,Tutorial,教程,チュートリアル
 PAUSED,PAUSADO,PAUSED,暂停,ポーズ
 CREDITS_DEVELOPED_BY,Desarrollado por,Developed By,游戏开发由  ,開発
@@ -60,3 +60,24 @@ CREDITS,CREDITOS,CREDITS,制作人员,クレジット
 PROGRAMMERS,PROGAMADORES,PROGRAMMERS,程序员,プログラマー
 ARTISTS,ARTISTAS,ARTISTS,艺术家,アーティスト
 MISSION_TEXT,Recoge 20 de Carbon,Collect 20 Coal,收集 20 块煤炭,石炭を 20 個集めます
+CONGRATS,¡FELICIDADES!,CONGRATULATIONS!,恭喜！,おめでとう！
+WARNING,¡ADVERTENCIA!,WARNING!,警告性的！,警告
+WARNING_DESC,"Comprar esta mejora finalizara el juego 
+
+¿Estas seguro?","Buying this upgrade will end the game. 
+
+Are you sure?","购买此升级将结束游戏。
+
+你确定吗？","このアップグレードを購入するとゲームが終了します。
+
+よろしいですか？"
+YES,SI,YES,是的,はい
+NO,NO,NO,不,ノー
+DEVELOPED_BY,Desarrollado por,Developed by,由开发,によって開発されました
+PROGRAMMERS,Programadores,Programmers,程序员,プログラマー
+ARTISTS,Artistas,Artists,艺术家,アーティスト
+MUSIC,Musica,Music,音乐,ミュージック
+SFX,SFX,SFX,音效,効果音
+SUPPORT,Agradecimientos Especiales:,Special Thanks,特别感谢,スペシャルサンクス
+ASSETS,Recursos,Assets,资产,資産
+THANKS_FOR_PLAYING,Gracias por jugar,Thanks for Playing,感谢您玩,遊んでくれてありがとう

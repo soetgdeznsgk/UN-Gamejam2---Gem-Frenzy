@@ -22,7 +22,17 @@ var mejora_final = {
 		"Textura" : 'res://Sprites/mejoras/contrato.png',
 		"Descripcion" : tr("CONTRACT_DESC"),
 	}}
-
+func llenar_mejora_final():
+	mejora_final = {
+	"ContratoFinal": {
+		"Key" : "ContratoFinal",
+		"Nombre" : tr("CONTRACT"),
+		"Precio" : 10,
+		"PrecioEscalar" : 0,
+		"Maximo" : 1,
+		"Textura" : 'res://Sprites/mejoras/contrato.png',
+		"Descripcion" : tr("CONTRACT_DESC"),
+	}}
 var info_mejoras = {}
 
 func llenar_mejoras() -> void:
@@ -113,7 +123,7 @@ func _ready() -> void:
 	for i in range(0,nombre_mejoras.size()):
 		disponible_mejoras.append(info_mejoras[i]["Maximo"])
 		activas_mejoras.append(0)
-	test_final()
+	#test_final()
 
 func obtener_mejora_random_disponible():
 	#verifica en las disponibles y devuelve alguna al azar
@@ -195,6 +205,8 @@ func obtener_mejora_random_disponible():
 		return mejoras_seleccionadas
 	else:
 		var listafinal=[]
+		
 		listafinal.append(mejora_final["ContratoFinal"])
+		
 		# dice que no hay ninguna
 		return listafinal

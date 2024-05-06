@@ -23,7 +23,10 @@ func _on_btn_toggle_sound_pressed():
 
 func _on_btn_home_pressed():
 	get_tree().paused = false
-	%"Sonido boton".play()
+	var sonido= %"Sonido boton"
+	sonido.play()
+	
+	
 	GlobalRecursos.dinero = 5
 	GlobalRecursos.reiniciar_minerales()
 	GlobalMejoras.reiniciar_mejoras()
@@ -32,5 +35,6 @@ func _on_btn_home_pressed():
 	GlobalTiempo.tiempoHoraDia = 8
 	GlobalTiempo.tiempoMinutoDia = 0
 	OrderManager.reiniciar_recetas()
+	#await get_tree().create_timer(0.005).timeout
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
 	

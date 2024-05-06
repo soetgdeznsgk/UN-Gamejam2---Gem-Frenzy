@@ -66,6 +66,7 @@ func _on_button_language_pressed(language):
 	GlobalSettings.language=language
 	TranslationServer.set_locale(language)
 	GlobalMejoras.llenar_mejoras()
+	GlobalMejoras.llenar_mejora_final()
 
 
 func _on_btn_language_toggle_pressed():
@@ -96,4 +97,26 @@ func _on_btn_close_credits_pressed():
 	
 func _on_boton_play_finished():
 	get_tree().change_scene_to_file("res://intro_anim.tscn")
+	pass # Replace with function body.
+
+
+func _on_instagram_mouse_entered():
+	$Instagram.scale=Vector2(1.1,1.1)
+	$Instagram.position=Vector2(867,637)
+	pass # Replace with function body.
+func _on_instagram_mouse_exited():
+	$Instagram.scale=Vector2(1,1)
+	$Instagram.position=Vector2(871,641)
+	pass # Replace with function body.
+
+
+func _on_twitter_mouse_entered():
+	$Twitter.scale=Vector2(1.1,1.1)
+	$Twitter.position=Vector2(782,633)
+	pass # Replace with function body.
+
+
+func _on_twitter_mouse_exited():
+	$Twitter.scale=Vector2(1,1)
+	$Twitter.position=Vector2(788,639)
 	pass # Replace with function body.
