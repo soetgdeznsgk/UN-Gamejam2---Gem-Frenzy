@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="4_l5war"]
 [ext_resource type="Texture2D" uid="uid://dohtqmysx8toq" path="res://Sprites/Outro/atardecerpancha.png" id="5_7248l"]
 [ext_resource type="Texture2D" uid="uid://d0ea17fu5xum4" path="res://Sprites/mejoras/contrato.png" id="5_xtjgc"]
-[ext_resource type="AudioStream" uid="uid://d1yqk362rcm7k" path="res://Musica/bg final.wav" id="7_0hrew"]
 [ext_resource type="AudioStream" uid="uid://gwdnf5g7drkg" path="res://Musica/Music_LuisManzano/GF_musx_cinematic_final_V1.mp3" id="8_6565c"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_pr30s"]
+[ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="9_q48xj"]
 
 [sub_resource type="Animation" id="Animation_ynyeu"]
 length = 0.001
@@ -246,10 +246,22 @@ tracks/8/path = NodePath("Button:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(8.5),
+"times": PackedFloat32Array(8),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Button:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(9.1, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_puj7k"]
@@ -262,7 +274,6 @@ _data = {
 [node name="OutroAnim" type="Node2D"]
 z_index = 999
 z_as_relative = false
-position = Vector2(160, 0)
 script = ExtResource("1_ae6bm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -302,6 +313,7 @@ texture = ExtResource("5_xtjgc")
 
 [node name="Button" type="Button" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = 848.0
 offset_top = 656.0
 offset_right = 928.0
@@ -312,8 +324,8 @@ text = "Skip"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6565c")
 
-[node name="contract sfx maybe" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_0hrew")
+[node name="finalizardiabien" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_q48xj")
 
 [node name="Creditos textos" type="Control" parent="."]
 layout_mode = 3
@@ -414,7 +426,7 @@ offset_top = 25.0
 offset_right = 319.0
 offset_bottom = 69.0
 theme = ExtResource("9_pr30s")
-text = "Original Music by:
+text = "MUSIC
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -436,7 +448,7 @@ offset_left = 10.0
 offset_top = 96.0
 offset_right = 284.0
 offset_bottom = 131.0
-text = "SFX by:
+text = "SFX
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -448,6 +460,133 @@ offset_top = 96.0
 offset_right = 284.0
 offset_bottom = 191.0
 text = "Luisa Zarama"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Apoyo1" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 311.0
+offset_bottom = 85.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "Agradecimientos Especiales"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="dane papu zeke tibu y carlos" type="Label" parent="Creditos textos/Apoyo1"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 75.0
+offset_right = 267.0
+offset_bottom = 170.0
+text = "Extranous_em
+
+ZekeWatson
+
+Tibu
+
+Carlox
+
+Dio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TheMasterc santo fcp y nick" type="Label" parent="Creditos textos/Apoyo1"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 75.0
+offset_right = 267.0
+offset_bottom = 191.0
+text = "TheMasterC
+
+SantBL
+
+FCPXAV
+
+Nick
+
+Yuli"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assets" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 259.0
+offset_top = 25.0
+offset_right = 539.0
+offset_bottom = 85.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "Recursos"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="social gato y fonts" type="Label" parent="Creditos textos/Assets"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 60.0
+offset_right = 344.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 15
+text = "Social media icons - reffpixels
+
+Cat sprite - Elthen
+
+Dogica Font - Roberto Mocci
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="social gato y fonts2" type="Label" parent="Creditos textos/Assets"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -223.0
+offset_top = 60.0
+offset_right = 526.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 15
+text = "Minecraft Font - Craftron Gaming
+
+Unifontex Font by stgiga
+
+[8 bit sound effects library] - LIttle Robot Sound Factory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="social gato y fonts3" type="Label" parent="Creditos textos/Assets"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -241.0
+offset_top = 60.0
+offset_right = 508.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 15
+text = "[200 free sfx] - kronbits
+
+[Impact Sounds] - Kenney"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks to you" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 76.0
+offset_top = 48.0
+offset_right = 858.0
+offset_bottom = 92.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 50
+text = "GRACIAS POR JUGAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
