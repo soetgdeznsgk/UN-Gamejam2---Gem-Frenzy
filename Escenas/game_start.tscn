@@ -167,9 +167,12 @@ offset_bottom = 611.0
 theme = ExtResource("11_hyuxc")
 
 [node name="PanelContainer" type="PanelContainer" parent="Lenguaje"]
-layout_mode = 0
-offset_right = 649.0
-offset_bottom = 487.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.054
+anchor_bottom = 0.98
+offset_right = -0.264038
+offset_bottom = -0.0599976
 
 [node name="MarginContainer" type="MarginContainer" parent="Lenguaje/PanelContainer"]
 layout_mode = 2
@@ -194,7 +197,7 @@ text = "LANGUAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="en" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="en" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -202,7 +205,7 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 25
 text = "English"
 
-[node name="es" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="es" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -210,7 +213,7 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 25
 text = "Español"
 
-[node name="zh" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="zh" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -218,7 +221,7 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 25
 text = "中国語（簡体字"
 
-[node name="jp" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="jp" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -226,17 +229,13 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 30
 text = "日本語"
 
-[node name="Control" type="Control" parent="Lenguaje"]
-anchors_preset = 0
-offset_right = 15.0
-offset_bottom = 20.0
-
-[node name="btn_close_language" type="Button" parent="Lenguaje/Control"]
+[node name="btn_close_language" type="Button" parent="Lenguaje" groups=["buttonHover"]]
 layout_mode = 0
 offset_left = 577.0
 offset_top = 16.0
 offset_right = 619.0
 offset_bottom = 59.0
+pivot_offset = Vector2(21, 21)
 theme = ExtResource("12_vylb7")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1
@@ -362,12 +361,7 @@ text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="Credits"]
-anchors_preset = 0
-offset_right = 15.0
-offset_bottom = 20.0
-
-[node name="btn_close_credits" type="Button" parent="Credits/Control"]
+[node name="btn_close_credits" type="Button" parent="Credits" groups=["buttonHover"]]
 layout_mode = 0
 offset_left = 577.0
 offset_top = 16.0
@@ -424,10 +418,8 @@ autowrap_mode = 2
 
 [node name="Control2" type="Control" parent="Credits"]
 anchors_preset = 0
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 41.0
-offset_bottom = 36.0
+offset_right = 305.0
+offset_bottom = 461.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Credits/Control2"]
 position = Vector2(550, 384)
@@ -530,8 +522,8 @@ expand_mode = 1
 [connection signal="mouse_entered" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_mouse_entered"]
 [connection signal="mouse_exited" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_mouse_exited"]
 [connection signal="pressed" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_pressed"]
-[connection signal="pressed" from="Lenguaje/Control/btn_close_language" to="." method="_on_btn_close_language_pressed"]
-[connection signal="pressed" from="Credits/Control/btn_close_credits" to="." method="_on_btn_close_credits_pressed"]
+[connection signal="pressed" from="Lenguaje/btn_close_language" to="." method="_on_btn_close_language_pressed"]
+[connection signal="pressed" from="Credits/btn_close_credits" to="." method="_on_btn_close_credits_pressed"]
 [connection signal="mouse_entered" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_mouse_entered"]
 [connection signal="mouse_exited" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_mouse_exited"]
 [connection signal="pressed" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_pressed"]
