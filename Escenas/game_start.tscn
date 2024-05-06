@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=33 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="21_gj7xj"]
 [ext_resource type="AudioStream" uid="uid://bcbhctv37dc4a" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Play.mp3" id="22_83hll"]
 [ext_resource type="Texture2D" uid="uid://c82r2kyo8p1lc" path="res://Sprites/Menu/Twitter.png" id="22_onlig"]
+[ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="23_agblx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
 
@@ -522,6 +523,21 @@ stream = ExtResource("21_gj7xj")
 
 [node name="BotonPlay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_83hll")
+
+[node name="bordenegro1" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -160.0
+offset_bottom = 720.0
+texture = ExtResource("23_agblx")
+expand_mode = 1
+
+[node name="bordenegro2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 960.0
+offset_right = 1120.0
+offset_bottom = 720.0
+texture = ExtResource("23_agblx")
+expand_mode = 1
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_pressed"]
