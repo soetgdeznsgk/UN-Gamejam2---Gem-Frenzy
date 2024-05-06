@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=99 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -46,9 +46,11 @@
 [ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="38_wojpx"]
 [ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
+[ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="46_j4b7w"]
 [ext_resource type="PackedScene" uid="uid://c6dpi8j3mv3yn" path="res://outro_anim.tscn" id="47_0jhqx"]
 [ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="48_huglt"]
 [ext_resource type="AudioStream" uid="uid://di04wxp4twrf7" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Pause.mp3" id="49_4pl3n"]
+[ext_resource type="Texture2D" uid="uid://nflyrw3fnfcb" path="res://Sprites/UI/TSBFlechaNormal.png" id="51_bpxai"]
 
 [sub_resource type="Animation" id="Animation_r4qms"]
 resource_name = "1_hour_left"
@@ -646,6 +648,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -320.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -1711,6 +1714,40 @@ stream = ExtResource("48_huglt")
 [node name="SonidoPausa" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("49_4pl3n")
+
+[node name="celular" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bordenegro1" type="TextureRect" parent="celular"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -160.0
+offset_bottom = 720.0
+texture = ExtResource("46_j4b7w")
+expand_mode = 1
+
+[node name="bordenegro2" type="TextureRect" parent="celular"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 960.0
+offset_right = 1120.0
+offset_bottom = 720.0
+texture = ExtResource("46_j4b7w")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="celular"]
+position = Vector2(1041, 526)
+scale = Vector2(5, 5)
+texture = ExtResource("51_bpxai")
+
+[node name="Sprite2D2" type="Sprite2D" parent="celular"]
+position = Vector2(-78, 518)
+rotation = 3.14159
+scale = Vector2(5, 5)
+texture = ExtResource("51_bpxai")
 
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]

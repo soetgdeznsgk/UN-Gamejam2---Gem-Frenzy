@@ -227,7 +227,7 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: TileMap, _body_shape_in
 	if actualFrame != GlobalRecursos.mineralesConFondo.TierraMinada:
 		if canParticle:
 			var particle : CPUParticles2D = particleMining.instantiate()
-			particle.global_position = $MarkerParticle.global_position-Vector2(50,0)
+			particle.global_position = $MarkerParticle.global_position-Vector2(160,0)
 			particle.emitting = true
 			get_parent().call_deferred("add_child",particle)
 			canParticle = false

@@ -53,6 +53,7 @@ _data = {
 
 [node name="IntroAnim" type="Node2D"]
 texture_filter = 1
+position = Vector2(160, 0)
 script = ExtResource("1_qxreq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -237,6 +237,7 @@ size = Vector2(700, 4)
 
 [node name="MainJuego" type="Node2D"]
 texture_filter = 1
+position = Vector2(160, 0)
 script = ExtResource("1_pncec")
 metadata/_edit_horizontal_guides_ = [1276.0]
 
@@ -244,6 +245,8 @@ metadata/_edit_horizontal_guides_ = [1276.0]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("1_maslr")]
 texture_filter = 1
+offset_left = 160.0
+offset_right = -160.0
 
 [node name="Gameplay" type="Node2D" parent="."]
 script = ExtResource("3_ys0ch")
@@ -290,9 +293,9 @@ CONST_SPEEDUP_MEJORADO = 10.0
 unique_name_in_owner = true
 zoom = Vector2(3, 3)
 process_callback = 0
-limit_left = -8
+limit_left = 99
 limit_top = -140
-limit_right = 640
+limit_right = 853
 limit_bottom = 100
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0

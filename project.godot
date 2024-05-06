@@ -40,7 +40,7 @@ file_logging/enable_file_logging=true
 
 [display]
 
-window/size/viewport_width=960
+window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/mode=3
 window/subwindows/embed_subwindows=false
