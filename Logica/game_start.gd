@@ -4,7 +4,6 @@ var textureSnd1 = preload("res://Sprites/UI/sound_mute.png")
 var textureSnd2 = preload("res://Sprites/UI/sound_on.png")
 var situto = preload("res://Sprites/UI/yes.png")
 var notuto = preload("res://Sprites/UI/no.png")
-
 func _ready():
 	var nodo_Btn=$Lenguaje/PanelContainer/MarginContainer/VBoxContainer
 	for i in range(1,nodo_Btn.get_child_count()):
@@ -152,3 +151,13 @@ func _on_btn_toggle_sound_mouse_entered() -> void:
 func _on_btn_toggle_sound_mouse_exited() -> void:
 	$Btn_toggle_sound.scale = Vector2(1,1)
 
+
+
+func _on_btn_fullscreen_pressed():
+	if GlobalSettings.fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		GlobalSettings.fullscreen=false
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)	
+		GlobalSettings.fullscreen=true
+	pass # Replace with function body.

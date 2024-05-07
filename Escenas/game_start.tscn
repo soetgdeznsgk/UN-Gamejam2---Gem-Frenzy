@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=33 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
 [ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="16_ec5un"]
+[ext_resource type="Texture2D" uid="uid://cp5w44xd5lb2x" path="res://Sprites/UI/FULLSCREEN.png" id="18_dytax"]
 [ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
 [ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
 [ext_resource type="Texture2D" uid="uid://cwbb74jtgysns" path="res://Sprites/Menu/Instagram.png" id="21_bea0t"]
@@ -466,6 +467,19 @@ icon = ExtResource("20_3cvn6")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Btn_fullscreen" type="Button" parent="."]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 116.0
+offset_right = 96.0
+offset_bottom = 191.0
+pivot_offset = Vector2(37, 37)
+theme = SubResource("Theme_vk4em")
+icon = ExtResource("18_dytax")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Instagram" type="LinkButton" parent="."]
 layout_mode = 0
 offset_left = 871.0
@@ -533,6 +547,9 @@ expand_mode = 1
 [connection signal="mouse_entered" from="Btn_credits" to="." method="_on_btn_credits_mouse_entered"]
 [connection signal="mouse_exited" from="Btn_credits" to="." method="_on_btn_credits_mouse_exited"]
 [connection signal="pressed" from="Btn_credits" to="." method="_on_btn_credits_pressed"]
+[connection signal="mouse_entered" from="Btn_fullscreen" to="." method="_on_btn_credits_mouse_entered"]
+[connection signal="mouse_exited" from="Btn_fullscreen" to="." method="_on_btn_credits_mouse_exited"]
+[connection signal="pressed" from="Btn_fullscreen" to="." method="_on_btn_fullscreen_pressed"]
 [connection signal="mouse_entered" from="Instagram" to="." method="_on_instagram_mouse_entered"]
 [connection signal="mouse_exited" from="Instagram" to="." method="_on_instagram_mouse_exited"]
 [connection signal="mouse_entered" from="Twitter" to="." method="_on_twitter_mouse_entered"]
