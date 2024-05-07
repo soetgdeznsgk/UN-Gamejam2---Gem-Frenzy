@@ -123,7 +123,7 @@ func _ready() -> void:
 	for i in range(0,nombre_mejoras.size()):
 		disponible_mejoras.append(info_mejoras[i]["Maximo"])
 		activas_mejoras.append(0)
-	test_final()
+	#test_final()
 
 func obtener_mejora_random_disponible():
 	#verifica en las disponibles y devuelve alguna al azar
