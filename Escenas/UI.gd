@@ -30,6 +30,7 @@ func _on_btn_back_pressed():
 	#%"Sonido boton".play()
 	toggle_paused()
 func invisible_flash():
+	$FinalizarDia.visible=false
 	$VbReloj/Control/Sprite2D.visible=false
 func toggle_paused():
 	$SonidoPausa.play()

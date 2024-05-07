@@ -202,6 +202,8 @@ func obtener_mejora_random_disponible():
 			var mejora = posibles_mejoras.pop_at(selec)
 			if mejora != null:
 				mejoras_seleccionadas.append(info_mejoras[mejora])
+		if GlobalTiempo.diaActual>=9 and mejoras_seleccionadas.size()<=2:		
+			mejoras_seleccionadas.append(mejora_final["ContratoFinal"])
 		return mejoras_seleccionadas
 	else:
 		var listafinal=[]

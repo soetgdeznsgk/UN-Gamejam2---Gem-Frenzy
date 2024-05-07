@@ -35,7 +35,8 @@ CATO,Gato,Cat,猫,猫
 CATO_DESC,¡Un gato siempre atrae más clientes!,A cat always attracts more customers!,一只猫总是能吸引更多的顾客！,猫はいつももっと多くの顧客を引き付けます！
 SPEED_UP,Mas rapido,SPEED UP,速度更快,速度を上げる
 SPEED_UP_DESC,Pancha tomó café colombiano,Pancha drank Colombian coffee,Pancha 喝哥伦比亚咖啡,パンチャはコロンビアコーヒーを飲みました
-CONTRACT,Escrituras de la tienda,Shop Ownership,店铺所有权,ショップの所有権
+CONTRACT,"Escrituras 
+de la tienda",Shop Ownership,店铺所有权,ショップの所有権
 CONTRACT_DESC,Cumple el sueño de Pancha (El juego acabará),Fullfill Pancha's Dream (the game will end),实现Pancha的梦想（游戏即将结束）,パンチャの夢を叶える (ゲームは終了します)
 TUTORIAL,Tutorial,Tutorial,教程,チュートリアル
 PAUSED,PAUSADO,PAUSED,暂停,ポーズ

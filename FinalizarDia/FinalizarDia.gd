@@ -12,6 +12,7 @@ func _ready() -> void:
 func _on_finalizar_dia():
 	if GlobalRecursos.dinero >= 0:
 		infoMejorasDisponibles = GlobalMejoras.obtener_mejora_random_disponible()
+		#if GlobalTiempo=
 		for i in infoMejorasDisponibles:
 			var temp = mejoraUI.instantiate()
 			temp.info = i
