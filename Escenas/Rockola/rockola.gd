@@ -5,10 +5,10 @@ var lista_musica_unlocked = []
 var currentsong
 var isPlayerHere
 var lista_musica_to_unlock = [
-	preload("res://Musica/Music_LuisManzano/GF_musx_jugable1_V1_largo.wav"),
-	preload("res://Musica/Music_LuisManzano/GF_musx_jugable2_V1_largo.wav"),
-	preload("res://Musica/Music_LuisManzano/GF_musx_jugable3_V1_largo.wav"),
-	preload("res://Musica/Music_LuisManzano/GF_musx_jugable4_V1_larga.wav")
+	preload("res://Musica/Music_LuisManzano/GF_musx_jugable1_V1_largo.ogg"),
+	preload("res://Musica/Music_LuisManzano/GF_musx_jugable2_V1_largo.ogg"),
+	preload("res://Musica/Music_LuisManzano/GF_musx_jugable3_V1_largo.ogg"),
+	preload("res://Musica/Music_LuisManzano/GF_musx_jugable4_V1_larga.ogg")
 ]
 
 # Called when the node enters the scene tree for the first time.

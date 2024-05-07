@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bbbosknu7tms7" path="res://Sprites/Menu/gem frenzy logo 4k remaster 1 link hd 710x360.png" id="3_sgxu4"]
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
 [ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
-[ext_resource type="AudioStream" uid="uid://crifdm1sgs0ty" path="res://Musica/Music_LuisManzano/GF_musx_inicio_V2.wav" id="6_jq6r8"]
+[ext_resource type="AudioStream" uid="uid://ciqvu1ck2qpl0" path="res://Musica/Music_LuisManzano/GF_musx_inicio_V2.ogg" id="6_4oy6f"]
 [ext_resource type="Texture2D" uid="uid://n2xx1oqnyhr" path="res://Sprites/UI/sound_mute.png" id="7_ewkdi"]
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="7_kg6s8"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_fv52p"]
@@ -139,7 +139,7 @@ theme_override_font_sizes/font_size = 32
 text = "PLAY"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_jq6r8")
+stream = ExtResource("6_4oy6f")
 volume_db = -8.0
 autoplay = true
 

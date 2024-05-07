@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bydcj1ti5fimj"]
+[gd_scene load_steps=42 format=3 uid="uid://bydcj1ti5fimj"]
 
 [ext_resource type="PackedScene" uid="uid://btm0ei5fs0m10" path="res://Escenas/UI.tscn" id="1_maslr"]
 [ext_resource type="Script" path="res://Escenas/MainJuegoAmbientManager.gd" id="1_pncec"]
@@ -24,7 +24,6 @@
 [ext_resource type="AudioStream" uid="uid://75t2xpnw4pud" path="res://Musica/Cofre_No_Hay.mp3" id="18_b88ti"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="22_2y5ly"]
 [ext_resource type="PackedScene" uid="uid://c5p5mk2cw6bb0" path="res://Escenas/Rockola/rockola.tscn" id="23_8lc8l"]
-[ext_resource type="AudioStream" uid="uid://b1ysxme6esflv" path="res://Musica/Music_LuisManzano/GF_musx_jugable1_V1.wav" id="24_bggh4"]
 [ext_resource type="PackedScene" uid="uid://bvl5tdbs4i1ex" path="res://Logica/gato.tscn" id="26_0x151"]
 [ext_resource type="Texture2D" uid="uid://ds1h02qxfdd56" path="res://Sprites/Mapa/gatito sprites 1.png" id="27_5k2uw"]
 
@@ -981,10 +980,6 @@ position = Vector2(378, -19)
 
 [node name="Rockola" parent="." instance=ExtResource("23_8lc8l")]
 position = Vector2(498, -24.7)
-
-[node name="Ambient" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_bggh4")
-volume_db = -6.5
 
 [node name="Gato" parent="." instance=ExtResource("26_0x151")]
 visible = false
