@@ -3,6 +3,7 @@ var textureSndOff = load("res://Sprites/UI/sound_mute.png")
 var textureSndOn = load("res://Sprites/UI/sound_on.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	#var valoraudio=AudioServer.get_bus_volume_db(0)
 	if GlobalSettings.sound:
 		$Btn_toggle_sound.icon=textureSndOn
@@ -14,10 +15,12 @@ func _on_btn_toggle_sound_pressed():
 		AudioServer.set_bus_volume_db(0,-72)
 		$Btn_toggle_sound.icon=  textureSndOff
 		GlobalSettings.sound=false
+		GlobalSettings.sound_changed.emit()
 	else:
 		AudioServer.set_bus_volume_db(0,0)
 		$Btn_toggle_sound.icon=  textureSndOn
-		GlobalSettings.sound=true# Replace with function body.
+		GlobalSettings.sound=true
+		GlobalSettings.sound_changed.emit()# Replace with function body.
 	pass # Replace with function body.
 
 

@@ -1,7 +1,7 @@
 extends Node
 var sound:bool
 var language:String
-
+signal sound_changed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	language= OS.get_locale_language()
