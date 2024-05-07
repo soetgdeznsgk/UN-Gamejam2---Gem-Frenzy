@@ -78,4 +78,4 @@ func tween_fade_out(texto:Label):
 func emit_endTexto():
 	endTexto.emit()
 func play_atardecer():
-	$AnimationPlayer.play("atardecer_animacion")
+	$AnimationPlayer.play("atardecer_animacion",-1,0.8)
