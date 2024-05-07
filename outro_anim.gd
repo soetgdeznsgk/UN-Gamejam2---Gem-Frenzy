@@ -77,3 +77,5 @@ func tween_fade_out(texto:Label):
 	#print(texto.text)
 func emit_endTexto():
 	endTexto.emit()
+func play_atardecer():
+	$AnimationPlayer.play("atardecer_animacion")

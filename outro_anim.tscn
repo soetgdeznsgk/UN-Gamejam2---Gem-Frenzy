@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6dpi8j3mv3yn"]
+[gd_scene load_steps=19 format=3 uid="uid://c6dpi8j3mv3yn"]
 
 [ext_resource type="Script" path="res://outro_anim.gd" id="1_ae6bm"]
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="1_ih5w8"]
 [ext_resource type="Texture2D" uid="uid://8dwk6ioh2x41" path="res://Sprites/Outro/fondo outro.png" id="2_8iyy3"]
+[ext_resource type="Texture2D" uid="uid://cgujr0j232hdw" path="res://Sprites/Outro/animacion_atardecer/01.png" id="3_ay6qn"]
 [ext_resource type="Texture2D" uid="uid://cwmlv2apu8hey" path="res://Sprites/Outro/pancha feli.png" id="3_j7un4"]
+[ext_resource type="Texture2D" uid="uid://b0vjwogsfkmgd" path="res://Sprites/Outro/animacion_atardecer/02.png" id="4_bbrqj"]
 [ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="4_l5war"]
+[ext_resource type="Texture2D" uid="uid://w3ghgg3lkd4o" path="res://Sprites/Outro/animacion_atardecer/03.png" id="5_7veyu"]
 [ext_resource type="Texture2D" uid="uid://dohtqmysx8toq" path="res://Sprites/Outro/atardecerpancha.png" id="5_7248l"]
 [ext_resource type="Texture2D" uid="uid://d0ea17fu5xum4" path="res://Sprites/mejoras/contrato.png" id="5_xtjgc"]
 [ext_resource type="AudioStream" uid="uid://gwdnf5g7drkg" path="res://Musica/Music_LuisManzano/GF_musx_cinematic_final_V1.mp3" id="8_6565c"]
@@ -121,6 +124,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("atardecer:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_7248l")]
+}
 
 [sub_resource type="Animation" id="Animation_12hki"]
 resource_name = "creditos"
@@ -140,7 +155,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_cypxb"]
 resource_name = "elfinaldepancha"
-length = 10.0
+length = 10.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -232,11 +247,14 @@ tracks/7/path = NodePath(".")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(8),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(8, 10.1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"play_credits_anim"
+}, {
+"args": [],
+"method": &"play_atardecer"
 }]
 }
 tracks/8/type = "value"
@@ -258,15 +276,45 @@ tracks/9/path = NodePath("Button:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(9.1, 10),
+"times": PackedFloat32Array(8.8, 9.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("atardecer:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(7.4, 7.7, 8, 8.3, 8.6, 8.9, 9.2, 9.5, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu")]
+}
+
+[sub_resource type="Animation" id="Animation_b43ds"]
+resource_name = "atardecer_animacion"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("atardecer:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_puj7k"]
 _data = {
 "RESET": SubResource("Animation_ynyeu"),
+"atardecer_animacion": SubResource("Animation_b43ds"),
 "creditos": SubResource("Animation_12hki"),
 "elfinaldepancha": SubResource("Animation_cypxb")
 }
@@ -313,7 +361,6 @@ texture = ExtResource("5_xtjgc")
 
 [node name="Button" type="Button" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 offset_left = 848.0
 offset_top = 656.0
 offset_right = 928.0
