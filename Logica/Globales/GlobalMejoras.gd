@@ -57,9 +57,9 @@ func llenar_mejoras() -> void:
 		"Descripcion" : tr("MANY_UPGRADES_DESC"),
 	},
 	nombre_mejoras.MasReciclaje : {
-		"Key" : nombre_mejoras.MejoraDeMejoras,
+		"Key" : nombre_mejoras.MasReciclaje,
 		"Nombre" : tr("RECYCLE"),
-		"PrecioEscalar" : 1,
+		"PrecioEscalar" : 4,
 		"Precio" : 6,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/RECYCLE.png',
@@ -141,28 +141,28 @@ func obtener_mejora_random_disponible():
 	var mejoras_seleccionadas : Array = []
 	
 	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion
-	if disponible_mejoras[nombre_mejoras.CofreMineral]>0:
-		mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.CofreMineral])
+	#if disponible_mejoras[nombre_mejoras.CofreMineral]>0:
+		#mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.CofreMineral])
 	# lo mismo con mejora de mejoras
-	if disponible_mejoras[nombre_mejoras.MejoraDeMejoras]>0:
-		mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.MejoraDeMejoras])
+	#if disponible_mejoras[nombre_mejoras.MejoraDeMejoras]>0:
+		#mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.MejoraDeMejoras])
 	# Añade a la pool mejoras disponibles
-	for i in range(1, len(nombre_mejoras)):
+	for i in range(0, len(nombre_mejoras)):
 		if disponible_mejoras[i] > 0:
 			posibles_mejoras.append(i)
 	# Elije las mejoras de la pool
 	if len(posibles_mejoras) > 0:
 		# selecciona 2 + mejora de mejoras
-		for i in range(len(mejoras_seleccionadas), 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
+		for i in range(0, 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
 			var selec : int
 			var porcentaje = randf()
 			
-			if len(posibles_mejoras) == 6:
-				if porcentaje < 0.65:
+			if len(posibles_mejoras) >= 6:
+				if porcentaje < 0.5:
 					selec = 0
-				if porcentaje > 0.65 and porcentaje < 0.85:
+				if porcentaje > 0.5 and porcentaje < 0.75:
 					selec = 1
-				if porcentaje > 0.85 and porcentaje < 0.9:
+				if porcentaje > 0.75 and porcentaje < 0.9:
 					selec = 2
 				if porcentaje > 0.9 and porcentaje < 0.95:
 					selec = 3

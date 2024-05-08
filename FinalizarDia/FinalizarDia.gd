@@ -32,9 +32,6 @@ func _on_finalizar_dia():
 		%Gameover.visible=false
 		%"factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
 	
-	#+"\nGanancia bono:                            \t"+str(GlobalRecursos.Gananciabono)+"\nGanancia Reciclaje de minerales:\t"+str(GlobalRecursos.GananciaReciclaje)+"\nRenta:                                   \t-"\
-	#+str(GlobalRecursos.valorDia)
-	#print("factura--- \n",GlobalRecursos.Gananciadia,"\n",GlobalRecursos.Gananciabono,"\n",GlobalRecursos.GananciaReciclaje,"\n -",GlobalRecursos.valorDia)
 
 func _on_btn_finalizar_dia_pressed() -> void:
 
