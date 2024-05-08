@@ -5,6 +5,7 @@ var textureSnd2 = preload("res://Sprites/UI/sound_on.png")
 var situto = preload("res://Sprites/UI/yes.png")
 var notuto = preload("res://Sprites/UI/no.png")
 func _ready():
+	$AnimationPlayer.play("aparece_logo")
 	var nodo_Btn=$Lenguaje/PanelContainer/MarginContainer/VBoxContainer
 	for i in range(1,nodo_Btn.get_child_count()):
 		var boton=nodo_Btn.get_child(i)
@@ -13,7 +14,6 @@ func _ready():
 	GlobalMejoras.llenar_mejoras()
 	update_sound_texture()
 	update_tuto_texture()
-	
 	var buttonsHover = get_tree().get_nodes_in_group("buttonHover")
 	for i : Control in buttonsHover:
 		i.pivot_offset = i.size/2
@@ -160,4 +160,10 @@ func _on_btn_fullscreen_pressed():
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)	
 		GlobalSettings.fullscreen=true
+	pass # Replace with function body.
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name=="aparece_logo":
+		$AnimationPlayer.play("Logo_se_mueve")
 	pass # Replace with function body.
