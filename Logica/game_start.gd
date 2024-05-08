@@ -28,6 +28,7 @@ func mouse_exited_btn_hover(btn):
 
 
 func _on_btn_jugar_pressed() -> void:
+	GlobalMejoras.reiniciar_mejoras()
 	$BotonPlay.play()
 	
 

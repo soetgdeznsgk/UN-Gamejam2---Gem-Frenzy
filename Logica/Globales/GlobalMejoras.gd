@@ -6,6 +6,7 @@ var mejora_final_comprada
 enum nombre_mejoras {
 	CofreMineral,
 	MejoraDeMejoras,
+	MasReciclaje,
 	ClientesZen,
 	MasTiempo,
 	PanchaSpeedUp,
@@ -54,6 +55,15 @@ func llenar_mejoras() -> void:
 		"Maximo" : 1,
 		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
 		"Descripcion" : tr("MANY_UPGRADES_DESC"),
+	},
+	nombre_mejoras.MasReciclaje : {
+		"Key" : nombre_mejoras.MejoraDeMejoras,
+		"Nombre" : tr("RECYCLE"),
+		"PrecioEscalar" : 1,
+		"Precio" : 6,
+		"Maximo" : 2,
+		"Textura" : 'res://Sprites/mejoras/RECYCLE.png',
+		"Descripcion" : tr("RECYCLE_DESC"),
 	},
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,

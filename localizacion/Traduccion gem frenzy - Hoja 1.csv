@@ -22,7 +22,7 @@ TOP_PLAYER_NAME,Nombre,Name,姓名,名前
 YOUR_NAME,Escribe tu nombre,Write your name,写你的名字,お名前を書いてください。
 RETRY,Reintentar,Retry,再玩一次,再プレイ
 CHEST,Cofre,Chest,箱子,箱
-CHEST_DESC,Permite almacenar más tipos de minerales,Allows you to store more kinds of minerals,允许您存储更多类型的矿物质。,より多くの種類のミネラルを保管できるようになります。
+CHEST_DESC,Permite almacenar minerales mas valiosos y crear nuevas recetas,Allows you to store more valuable minerals and create new recipes,允许您储存更多有价值的矿物质并创造新的配方,より貴重なミネラルを保管し、新しいレシピを作成できるようになります
 MANY_UPGRADES,Muchas Mejoras,Many Upgrades,许多升级,さらなる改善
 MANY_UPGRADES_DESC,¿No son suficientes mejoras? Agrega una más al finalizar el dia,Aren't these upgrades enough? Add one more at the end of the day,这些升级还不够吗？ 在一天结束时再添加一个,改善は足りませんか？日が終わるともう一つ追加されます！
 ZEN_CLIENTS,Clientes Zen,Zen Clients,禅宗客户,禅の顧客
@@ -35,6 +35,8 @@ CATO,Gato,Cat,猫,猫
 CATO_DESC,¡Un gato siempre atrae más clientes!,A cat always attracts more customers!,一只猫总是能吸引更多的顾客！,猫はいつももっと多くの顧客を引き付けます！
 SPEED_UP,Mas rapido,SPEED UP,速度更快,速度を上げる
 SPEED_UP_DESC,Pancha tomó café colombiano,Pancha drank Colombian coffee,Pancha 喝哥伦比亚咖啡,パンチャはコロンビアコーヒーを飲みました
+RECYCLE,Ganancia por reciclaje,Recycle Profit,,
+RECYCLE_DESC,Al final del dia gana mas por minerales no usados,At the end of the day you earn more for unused minerals,,
 CONTRACT,"Escrituras 
 de la tienda",Shop Ownership,店铺所有权,ショップの所有権
 CONTRACT_DESC,Cumple el sueño de Pancha (El juego acabará),Fullfill Pancha's Dream (the game will end),实现Pancha的梦想（游戏即将结束）,パンチャの夢を叶える (ゲームは終了します)
