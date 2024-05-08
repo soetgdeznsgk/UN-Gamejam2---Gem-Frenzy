@@ -7,33 +7,36 @@ func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(update_mineralesactuales)
 
 func actualizar_mineral_ui(mineral, cantidad):
-	get_child(mineral*2 + 1).text = ": " + str(cantidad)
+	var node :Label = get_node("HBoxContainer"+str(mineral+1)+"/Label"+str(mineral+1))
+	#var hboxmineral=get_node("HBoxContainer"+str(mineral+1))
+	node.text = ":" + str(cantidad)
+	if cantidad == 0:
+		node.set("theme_override_colors/font_outline_color", Color("#A21011"))
+		
+	else:
+		node.set("theme_override_colors/font_outline_color", Color("#412220") )
+
 #hace que la ui muestre los minerales que se pueden recolectar, dependiendo del dia
 func update_mineralesactuales():
 	match GlobalTiempo.diaActual:
 		#hace visible el cobre
 		2:
-			get_child(8).visible=true
-			get_child(9).visible=true
+			$HBoxContainer5.visible = true
+		#oro
 		3:
-			get_child(4).visible=true
-			get_child(5).visible=true
+			$HBoxContainer3.visible = true
 		4:
-			get_child(12).visible=true
-			get_child(13).visible=true
-			get_child(14).visible=true
-			get_child(15).visible=true
+			$HBoxContainer7.visible = true
+			$HBoxContainer8.visible = true
 		6:
-			get_child(10).visible=true
-			get_child(11).visible=true
-			#zafiro
-			get_child(16).visible=true
-			get_child(17).visible=true
+			#azul
+			$HBoxContainer9.visible = true
+			#morado
+			$HBoxContainer6.visible = true
 		7:
-			get_child(20).visible=true
-			get_child(21).visible=true
+			#verde
+			$HBoxContainer11.visible = true
 			
 		8:
-			get_child(18).visible=true
-			get_child(19).visible=true
-	#print("hola chat")
+			#diamante
+			$HBoxContainer10.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=54 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -8,14 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://cfymrk6lus6fo" path="res://Sprites/Player/uy quieta 14x24.png" id="6_rluto"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="7_3l1ym"]
 [ext_resource type="Texture2D" uid="uid://d4b37i4g7p2yr" path="res://Sprites/Recursos/Recetas.png" id="8_781fh"]
-[ext_resource type="AudioStream" uid="uid://dvpk51bv6g6i2" path="res://Musica/PanchaPaso.wav" id="9_mrxpi"]
+[ext_resource type="AudioStream" uid="uid://betnloqn6jeoe" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Steps.mp3" id="9_jykrp"]
+[ext_resource type="AudioStream" uid="uid://bu31qd1oyd8t2" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_recoleccion.mp3" id="10_2wnk6"]
+[ext_resource type="AudioStream" uid="uid://cr7hj07wg22ix" path="res://Musica/minning.mp3" id="11_v4ntw"]
+[ext_resource type="AudioStream" uid="uid://c3g4nx73lelaj" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Ladder.mp3" id="12_ertaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsbbl"]
 size = Vector2(13, 14)
 
 [sub_resource type="Animation" id="Animation_k7hiw"]
 resource_name = "Escaleras"
-length = 0.8
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -60,7 +63,7 @@ tracks/3/path = NodePath("../Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -76,6 +79,23 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0.0]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_stair_audio"
+}, {
+"args": [],
+"method": &"play_stair_audio"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_mutr0"]
@@ -221,6 +241,78 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_m6vgi")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sprite2D:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sprite2D:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprite2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../MarkerParticle:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-4, 7)]
+}
 
 [sub_resource type="Animation" id="Animation_g6qw0"]
 resource_name = "Taladrando_DownLeft"
@@ -286,6 +378,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [-0.785398]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../MarkerParticle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-4, 7)]
+}
 
 [sub_resource type="Animation" id="Animation_0t0qg"]
 resource_name = "Taladrando_DownRight"
@@ -350,6 +454,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0.785398]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../MarkerParticle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(4, 10)]
 }
 
 [sub_resource type="Animation" id="Animation_1xcua"]
@@ -480,6 +596,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [0.785398]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../MarkerParticle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-8, -4)]
+}
 
 [sub_resource type="Animation" id="Animation_v5m8c"]
 resource_name = "Taladrando_UpRight"
@@ -545,6 +673,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [-0.785398]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../MarkerParticle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(10, -5)]
+}
 
 [sub_resource type="Animation" id="Animation_4abp5"]
 resource_name = "Taladrando_up"
@@ -595,7 +735,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [0.0]
 }
 tracks/4/type = "value"
@@ -609,6 +749,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../MarkerParticle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -12)]
 }
 
 [sub_resource type="Animation" id="Animation_bwtfv"]
@@ -907,7 +1059,6 @@ texture_filter = 1
 texture = ExtResource("2_m6vgi")
 hframes = 4
 vframes = 2
-frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")
@@ -935,9 +1086,7 @@ texture = ExtResource("8_781fh")
 hframes = 7
 
 [node name="AudioPaso" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_mrxpi")
-volume_db = -4.0
-pitch_scale = 1.2
+stream = ExtResource("9_jykrp")
 max_polyphony = 2
 
 [node name="Timer" type="Timer" parent="."]
@@ -945,4 +1094,37 @@ process_callback = 0
 wait_time = 0.3
 one_shot = true
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fsbbl")
+
+[node name="AudioMinado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_2wnk6")
+
+[node name="MarkerParticle" type="Marker2D" parent="."]
+position = Vector2(-4, 7)
+gizmo_extents = 2.0
+
+[node name="Tmr_particle" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="AudioMinarTierra" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_v4ntw")
+volume_db = -12.0
+
+[node name="Tmr_sonido_tierra" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.3
+autostart = true
+
+[node name="AudioEscalera" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ertaj")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="timeout" from="Tmr_particle" to="." method="_on_tmr_particle_timeout"]
+[connection signal="timeout" from="Tmr_sonido_tierra" to="." method="_on_tmr_sonido_tierra_timeout"]

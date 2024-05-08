@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 var ordenUI = preload("res://Escenas/Ventana por Orden/orden_ui.tscn")
-#var dirSprites = "res://Sprites/temporales_UI"
+
 
 func _ready():
 	OrderManager.new_order.connect(_on_new_order)
@@ -14,6 +14,7 @@ func entregarOrden(objetivo):
 		if orden is OrdenUI:
 			if orden.getOrden() == objetivo:
 				orden.orden_deliver()
+				$AudioEntregarOrden.pitch_scale = snapped(randf_range(0.85,1.25),0.1)
 				$AudioEntregarOrden.play(0)
 				return
 	$AudioOrdenIncorrecta.play(0)
@@ -28,7 +29,7 @@ func sonido_orden_perdida():
 		
 # Señales
 
-func _on_new_order(orden : Order):
+func _on_new_order(orden : OrderGem):
 	var temp = ordenUI.instantiate()
 	temp.setOrden(orden)
 	temp.sonido_orden_out_of_time.connect(sonido_orden_perdida)

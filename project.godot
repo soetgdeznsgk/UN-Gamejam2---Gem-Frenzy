@@ -10,13 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Un-gamejam 2"
+config/name="Gem-Frenzy"
+config/description="Gem Frenzy is an Arcade, Roguelike game, inspired by Overcooked and Dig Dug where you have to dig to find precious gems and sell them.
+Help Pancha to become rich or suffer the consecuences of late capitalism"
+config/version="1.0.0"
 run/main_scene="res://Escenas/game_start.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-boot_splash/show_image=false
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://Sprites/UI/reloj loading 245 x 216.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://Sprites/Menu/pancha corazon 19 x 24.png"
 
 [autoload]
 
@@ -25,18 +29,25 @@ GlobalTiempo="*res://Logica/Globales/GlobalTiempo.gd"
 GlobalMejoras="*res://Logica/Globales/GlobalMejoras.gd"
 OrderManager="*res://OrderManager/OrderManager.gd"
 GlobalRecetas="*res://Logica/Globales/GlobalRecetas.gd"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+GlobalFirebaseInfo="*res://Logica/Globales/GlobalFirebaseInfo.gd"
+GlobalTuto="*res://Logica/Globales/GlobalTuto.gd"
+GlobalSettings="*res://Logica/Globales/GlobalSettings.gd"
+
+[debug]
+
+file_logging/enable_file_logging=true
 
 [display]
 
-window/size/viewport_width=960
+window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/resizable=false
-window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
+window/subwindows/embed_subwindows=false
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg")
+enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg")
 
 [input]
 
@@ -73,8 +84,17 @@ ui_down={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localizacion/Traduccion gem frenzy - Hoja 1.en.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.es.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.jp.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.zh.translation")
+locale/locale_filter_mode=0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+textures/default_filters/anisotropic_filtering_level=0
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+environment/screen_space_reflection/roughness_quality=0

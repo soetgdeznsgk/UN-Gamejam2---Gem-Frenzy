@@ -18,16 +18,16 @@ func _ready() -> void:
 	
 
 func nuevo_gato():
-	var gatos = GlobalMejoras.activas_mejoras[5]
+	var gatos = GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]
 	if gatoPower < gatos:
 		visible = true
 		currentStatus = status.Sentado
 		anim.play("Sentado")
 		$Timer.start(2)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if currentStatus == status.Camina:
-		var coll = move_and_collide(Vector2(dir*0.45,0))
+		var _coll = move_and_collide(Vector2(dir*0.45,0))
 
 func check_status():
 	prevStatus = currentStatus

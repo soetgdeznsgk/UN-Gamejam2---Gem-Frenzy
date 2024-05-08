@@ -1,43 +1,51 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckwirio1rk4yk"]
+[gd_scene load_steps=14 format=3 uid="uid://ckwirio1rk4yk"]
 
 [ext_resource type="Script" path="res://FinalizarDia/MejoraUI.gd" id="1_1mlls"]
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_j405q"]
+[ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="3_2ofig"]
+[ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="3_qlxb5"]
+[ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="3_t57np"]
 [ext_resource type="AudioStream" uid="uid://b2eoylyx4gc5o" path="res://Musica/DineroNoAlcanza.wav" id="3_xceqa"]
 [ext_resource type="AudioStream" uid="uid://xl1i7khruaha" path="res://Musica/Mejora.wav" id="4_dp677"]
+[ext_resource type="LabelSettings" uid="uid://6nn4rwayajhh" path="res://Sprites/UI/labelcafeconfig.tres" id="5_j5po7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm2hq"]
 content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
+bg_color = Color(0.643137, 0.380392, 0.239216, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
+border_color = Color(0.329412, 0.207843, 0.172549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6oy3h"]
-font_size = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e85kf"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
+font_size = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_ye2lu"]
-font_size = 10
+font_size = 20
+font_color = Color(0.643137, 0.380392, 0.239216, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_uj2uy"]
-font_size = 8
+[sub_resource type="FontVariation" id="FontVariation_6wqjs"]
+base_font = ExtResource("3_t57np")
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e85kf"]
+content_margin_left = 0.0
+content_margin_top = 8.0
+content_margin_right = 0.0
+content_margin_bottom = 8.0
+bg_color = Color(0.913725, 0.878431, 0.65098, 1)
 
 [node name="VBoxContainerMejora" type="VBoxContainer"]
 custom_minimum_size = Vector2(150, 256)
 anchors_preset = -1
 anchor_right = 0.156
 anchor_bottom = 0.353
-offset_right = -112.32
-offset_bottom = -254.16
+offset_right = 56.24
+offset_bottom = 87.84
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
@@ -65,12 +73,27 @@ texture = ExtResource("1_j405q")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Lb_precio" type="Label" parent="."]
-custom_minimum_size = Vector2(150, 18)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
-text = "PRECIO: 500"
+size_flags_vertical = 4
+
+[node name="Label" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Monedita" type="Sprite2D" parent="HBoxContainer/Label"]
+position = Vector2(65, 1)
+texture = ExtResource("3_2ofig")
+hframes = 5
+
+[node name="Lb_precio" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "500"
 label_settings = SubResource("LabelSettings_ye2lu")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -78,12 +101,13 @@ uppercase = true
 
 [node name="Lb_desc" type="Label" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 72)
+custom_minimum_size = Vector2(220, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontVariation_6wqjs")
 theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
 text = "DESC: asdfasdfasdf asdfasdfasdfasdfasdfasdfasdfsad fasdf"
-label_settings = SubResource("LabelSettings_uj2uy")
+label_settings = ExtResource("5_j5po7")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -96,8 +120,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
-theme_override_font_sizes/font_size = 12
-text = "COMPRAR"
+theme = ExtResource("3_qlxb5")
+text = "BUY"
 
 [node name="AudioDineroNoAlcanza" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xceqa")

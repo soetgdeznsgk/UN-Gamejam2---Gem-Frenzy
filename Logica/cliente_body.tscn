@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Logica/cliente_body.gd" id="1_8qskh"]
 [ext_resource type="Texture2D" uid="uid://dr7ywwyc3d5ad" path="res://Sprites/Mapa/clientes/00_variacion clientes 14x19.png" id="2_lttxv"]
-[ext_resource type="AudioStream" uid="uid://cl4t8v0e6hjma" path="res://Musica/Minando.mp3" id="3_wbext"]
-[ext_resource type="AudioStream" uid="uid://bomduf3rvl8ka" path="res://Musica/Retro_Water_Drop_01.wav" id="4_p1u17"]
+[ext_resource type="AudioStream" uid="uid://cl4t8v0e6hjma" path="res://Musica/PasosCliente.mp3" id="3_wbext"]
+[ext_resource type="AudioStream" uid="uid://bomduf3rvl8ka" path="res://Musica/Nueva_Orden.wav" id="4_1m48d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7178"]
 size = Vector2(16, 16)
@@ -97,6 +97,6 @@ volume_db = -5.0
 autoplay = true
 
 [node name="AudioNuevaOrden" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_p1u17")
+stream = ExtResource("4_1m48d")
 volume_db = -5.0
 pitch_scale = 1.15

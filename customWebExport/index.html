@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gem Frenzy</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="title" content="Gem Frenzy" />
+    <meta
+      name="description"
+      content="Roguelite about collecting and selling jewels"
+    />
+    <meta name="keywords" content="godot, game, roguelite, roguelike" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English, Spanish, Chinese, Japanese" />
+    <meta name="author" content="The Yippies Dev" />
+	
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        touch-action: none;
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+        overflow: hidden;
+        text-align: center;
+        font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff;
+        background-color: #202225;
+      }
+	  .text-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	  }
+      #canvas {
+        display: block;
+        margin: 0;
+        color: white;
+      }
+      #canvas:focus {
+        outline: none;
+      }
+      #container{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+      }
+      #status {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        visibility: visible;
+      }
+      #logo {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin-top: 10%;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+      }
+
+      #status-progressbar {
+        width: 200px;
+        background-color: #5865f2;
+        border-radius: 6px;
+        padding: 2px;
+        visibility: visible;
+      }
+
+      #status-progressbar-inner {
+        background-color: #ffffff;
+        width: 2%;
+        height: 4px;
+        border-radius: 3px;
+        transition: width 0.5s ease-in-out;
+      }
+
+      #status-spinner {
+        border: 3px solid #f6f6f6;
+        border-top: 3px solid #5865f2;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        animation: spin 2s linear infinite;
+        visibility: visible;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #status-notice {
+        color: #df4759;
+        background-color: #f6f6f6;
+        font-weight: bold;
+        padding: 8px;
+        border-radius: 4px;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="canvas">
+      HTML5 canvas appears to be unsupported in the current browser.<br />
+      Please try updating or use a different browser.
+    </canvas>
+    <div id="container">
+      <div id = "logo">
+        <img src="loading.gif" alt="Loading logo" width="367px" height=" 324px" style="margin-left: 64px;">
+      </div>
+      <div id="status">
+        <div class="text-container" style="margin-bottom: 18px; visibility: visible">
+      <h1>Burying Gold...</h1>
+      </div>
+        <!-- Indeterminate progress -->
+        <div id="status-spinner" style="display: none"></div>
+        <!-- Determinate progress -->
+        <div id="status-progressbar" style="display: block;">
+          <div id="status-progressbar-inner"></div>
+        </div>
+        <!--- Notice -->
+        <p id="status-notice" style="display: none">This is a message</p>
+      </div>
+    </div>
+    
+    
+    <script src="$GODOT_URL"></script>
+    <script type="text/javascript">
+      let engine = new Engine($GODOT_CONFIG);
+      (function () {
+        const INDETERMINATE_STATUS_STEP_MS = 100;
+        let statusDiv = document.getElementById("status");
+        let logoDiv  = document.getElementById("logo");
+        let containerDiv = document.getElementById("container")
+        let statusProgress = document.getElementById("status-progressbar");
+        let statusProgressInner = document.getElementById(
+          "status-progressbar-inner"
+        );
+        let statusIndeterminate = document.getElementById("status-spinner");
+        let statusNotice = document.getElementById("status-notice");
+
+        let initializing = true;
+        let statusMode = "hidden";
+
+        function setStatusNotice(text) {
+          while (statusNotice.lastChild) {
+            statusNotice.removeChild(statusNotice.lastChild);
+          }
+          let lines = text.split("\n");
+          lines.forEach((line) => {
+            statusNotice.appendChild(document.createTextNode(line));
+            statusNotice.appendChild(document.createElement("br"));
+          });
+        }
+
+        function setStatusMode(mode) {
+          if (statusMode === mode || !initializing) return;
+          [statusProgress, statusIndeterminate, statusNotice].forEach(
+            (elem) => {
+              elem.style.display = "none";
+            }
+          );
+          switch (mode) {
+            case "progress":
+              statusProgress.style.display = "block";
+              break;
+            case "indeterminate":
+              statusIndeterminate.style.display = "block";
+              break;
+            case "notice":
+              statusNotice.style.display = "block";
+              break;
+            case "hidden":
+              break;
+            default:
+              throw new Error("Invalid status mode");
+          }
+          statusMode = mode;
+        }
+
+        function displayFailureNotice(err) {
+          let msg = err.message || err;
+          console.error(msg);
+          setStatusNotice(msg);
+          setStatusMode("notice");
+          initializing = false;
+        }
+        if (!Engine.isWebGLAvailable()) {
+          displayFailureNotice("WebGL not available");
+        } else {
+          setStatusMode("indeterminate");
+          engine
+            .startGame({
+              onProgress: function (current, total) {
+                if (total > 0) {
+                  statusProgressInner.style.width =
+                    (current / total) * 100 + "%";
+                  setStatusMode("progress");
+                  if (current === total) {
+                    // wait for progress bar animation
+                    setTimeout(() => {
+                      setStatusMode("indeterminate");
+                    }, 500);
+                  }
+                } else {
+                  setStatusMode("indeterminate");
+                }
+              },
+            })
+            .then(() => {
+              setStatusMode("hidden");
+              statusDiv.style.display = "none";
+              logoDiv.style.display = "none";
+              containerDiv.style.display = "none";
+              initializing = false;
+            }, displayFailureNotice);
+        }
+      })();
+    </script>
+  </body>
+</html>

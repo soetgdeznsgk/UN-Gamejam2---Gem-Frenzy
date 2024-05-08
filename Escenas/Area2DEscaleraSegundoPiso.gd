@@ -9,7 +9,8 @@ var tween : Tween
 
 func _ready() -> void:
 	GlobalTiempo.finalizarDia.connect(fin_dia)
-
+	if GlobalTuto.tutorial:
+		monitoring=false
 func fin_dia():
 	if tween:
 		tween.stop()
@@ -22,18 +23,18 @@ func _process(_delta: float) -> void:
 			tween = get_tree().create_tween()
 			if isUp:
 				tween.tween_property(playerRef, "position:x", 432, 0.2)
-				tween.tween_property(playerRef, "position", Vector2(429,-29), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(421,-37), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(413,-45), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(405,-53), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(388,-61), 0.2)
+				tween.tween_property(playerRef, "position", Vector2(429,-29), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(421,-37), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(413,-45), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(405,-53), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(388,-57), 0.15)
 			else:
-				tween.tween_property(playerRef, "position", Vector2(388,-61), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(405,-53), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(413,-45), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(421,-37), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(429,-29), 0.2)
-				tween.tween_property(playerRef, "position", Vector2(432,-21), 0.2)
+				tween.tween_property(playerRef, "position", Vector2(388,-57), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(405,-53), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(413,-45), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(421,-37), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(429,-29), 0.15)
+				tween.tween_property(playerRef, "position", Vector2(432,-17), 0.15)
 			tween.tween_callback(_on_tween_callback)
 
 func _on_tween_callback():

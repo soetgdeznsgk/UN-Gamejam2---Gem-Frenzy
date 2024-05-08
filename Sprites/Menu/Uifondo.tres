@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cmi06nsvnqse7"]
+
+[ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="1_s6ybl"]
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="2_63l75"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulpgl"]
+texture = ExtResource("1_s6ybl")
+texture_margin_top = 10.0
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 50.0
+expand_margin_bottom = 70.0
+
+[resource]
+default_font = ExtResource("2_63l75")
+default_font_size = 12
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ulpgl")

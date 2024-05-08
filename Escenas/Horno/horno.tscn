@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Escenas/Horno/horno.gd" id="1_e16b3"]
 [ext_resource type="Texture2D" uid="uid://bqjqpati2ea0g" path="res://Sprites/Mapa/hornito.png" id="1_yyhpw"]
 [ext_resource type="Texture2D" uid="uid://xemsjtn0mmoe" path="res://Sprites/flecha arriba.png" id="3_bvap7"]
-[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/Horno.mp3" id="4_kwyb0"]
+[ext_resource type="AudioStream" uid="uid://bkqjfs6ij6btk" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Carbon en chimenea.mp3" id="4_e7fgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ck0i"]
 size = Vector2(16, 16)
@@ -29,7 +29,7 @@ texture = ExtResource("3_bvap7")
 shape = SubResource("RectangleShape2D_5ck0i")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_kwyb0")
+stream = ExtResource("4_e7fgx")
 pitch_scale = 0.6
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

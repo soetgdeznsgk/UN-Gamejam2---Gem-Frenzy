@@ -1,22 +1,202 @@
-[gd_scene load_steps=37 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=102 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
 [ext_resource type="Script" path="res://Escenas/UI.gd" id="1_xq7xs"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
-[ext_resource type="Texture2D" uid="uid://nc0mqsf6b11t" path="res://Sprites/mejoras/reloj normal.png" id="4_1gerh"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
 [ext_resource type="AudioStream" uid="uid://c1hjjwipji7up" path="res://Musica/cliente_enojado.wav" id="4_h0j4i"]
-[ext_resource type="AudioStream" uid="uid://bmj43p0weuvai" path="res://Musica/OrdenCorrecta2.wav" id="5_lmvn8"]
+[ext_resource type="AudioStream" uid="uid://bo73yf6sssusa" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_timbre.mp3" id="5_3fp6n"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
-[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/Horno.mp3" id="6_7b88a"]
+[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/OrdenIncorrecta.mp3" id="6_r0lc3"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
+[ext_resource type="Script" path="res://Escenas/VbReloj.gd" id="7_s2ivm"]
+[ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="8_qhue7"]
+[ext_resource type="Texture2D" uid="uid://cd07y1wjjjd6i" path="res://Sprites/UI/reloj loading 245 x 216.png" id="11_5es48"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
+[ext_resource type="Texture2D" uid="uid://dle6v6vq7xy4e" path="res://Sprites/UI/ALERT.png" id="12_4y7g8"]
+[ext_resource type="Script" path="res://Escenas/Renta.gd" id="12_m1oro"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
+[ext_resource type="PackedScene" uid="uid://cgjgcfv42vp3u" path="res://Escenas/tutorial.tscn" id="14_uh3r7"]
 [ext_resource type="AudioStream" uid="uid://b8swctfsbqhwi" path="res://Musica/Perder.wav" id="15_uh00d"]
+[ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="16_cal8s"]
+[ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="17_1my18"]
+[ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
+[ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="20_v1ys7"]
+[ext_resource type="Theme" uid="uid://pnhutxwsymll" path="res://Sprites/Menu/botoncuadraoamarillo.tres" id="26_46bwo"]
+[ext_resource type="Script" path="res://Escenas/pausa.gd" id="26_mis2i"]
+[ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="26_n0smv"]
+[ext_resource type="Script" path="res://Escenas/factura.gd" id="26_url12"]
+[ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="27_efaeh"]
+[ext_resource type="Texture2D" uid="uid://brjs7retygf0i" path="res://Sprites/Menu/fondopapel.png" id="27_u538p"]
+[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="28_niiiv"]
+[ext_resource type="LabelSettings" uid="uid://dx2r5fphaavpb" path="res://Sprites/UI/labelconfigfactura/label_cafe.tres" id="29_odmc8"]
+[ext_resource type="Material" uid="uid://du7mm6ceqgl75" path="res://Escenas/burning.tres" id="30_esm6q"]
+[ext_resource type="Texture2D" uid="uid://cu1blftepsip2" path="res://Sprites/UI/broke.png" id="30_h7dm3"]
+[ext_resource type="AudioStream" uid="uid://dm1cyji87hgsg" path="res://Musica/sello.mp3" id="31_tekkc"]
+[ext_resource type="Texture2D" uid="uid://j7lay3et4sh5" path="res://Sprites/fondoavisoavisen.png" id="33_ryhf1"]
+[ext_resource type="Texture2D" uid="uid://cntxeq0ujga3b" path="res://Sprites/UI/sound_on.png" id="34_jvi5v"]
+[ext_resource type="Texture2D" uid="uid://ddaledbay8yx3" path="res://Sprites/UI/home.png" id="35_rr8cu"]
+[ext_resource type="Texture2D" uid="uid://3vbla4sy0yl8" path="res://Sprites/UI/play.png" id="36_juslv"]
+[ext_resource type="Texture2D" uid="uid://ci2rmo3tre1n2" path="res://Sprites/UI/pause.png" id="37_0c7ga"]
+[ext_resource type="Script" path="res://Escenas/ADVERTENCIAFINAL.gd" id="38_enfp6"]
+[ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="38_wojpx"]
+[ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
+[ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
+[ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="46_j4b7w"]
+[ext_resource type="PackedScene" uid="uid://c6dpi8j3mv3yn" path="res://outro_anim.tscn" id="47_0jhqx"]
+[ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="48_huglt"]
+[ext_resource type="AudioStream" uid="uid://di04wxp4twrf7" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Pause.mp3" id="49_4pl3n"]
+[ext_resource type="Texture2D" uid="uid://nflyrw3fnfcb" path="res://Sprites/UI/TSBFlechaNormal.png" id="51_bpxai"]
+[ext_resource type="Texture2D" uid="uid://b8r5icb25mgxs" path="res://Sprites/UI/TSBFlechaPressed.png" id="52_vcqjp"]
+
+[sub_resource type="Animation" id="Animation_r4qms"]
+resource_name = "1_hour_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"anim_1_hour_flash"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_itscs"]
+resource_name = "1_hour_left_flashing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_t2e1j"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_65ml2"]
+resource_name = "half_hour_left_flashing"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_bmoov"]
+resource_name = "ten_minutes_left_flashing"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.5, 2.5), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05qlp"]
+_data = {
+"1_hour_left": SubResource("Animation_r4qms"),
+"1_hour_left_flashing": SubResource("Animation_itscs"),
+"RESET": SubResource("Animation_t2e1j"),
+"half_hour_left_flashing": SubResource("Animation_65ml2"),
+"ten_minutes_left_flashing": SubResource("Animation_bmoov")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
+font_color = Color(1, 0.168627, 0.168627, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.376471)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18s7n"]
 atlas = ExtResource("7_q4w3t")
@@ -84,6 +264,10 @@ _data = {
 "newmoney": SubResource("Animation_fq5il")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t2b6"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(31, 4, 8, 8)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xoam7"]
 load_path = "res://.godot/imported/MineralesCopia.png-04f67ba30884ec0463e8c250e9928851.ctex"
 
@@ -95,81 +279,397 @@ region = Rect2(4, 4, 8, 8)
 atlas = ExtResource("7_bbwty")
 region = Rect2(13, 4, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ed7w"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(22, 4, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0t2b6"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(31, 4, 8, 8)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yaldj"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(40, 4, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1fxj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ed7w"]
 atlas = ExtResource("7_bbwty")
-region = Rect2(49, 4, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wf2ym"]
-atlas = ExtResource("7_bbwty")
-region = Rect2(4, 13, 8, 8)
+region = Rect2(22, 4, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cuot"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(13, 13, 8, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf2ym"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(4, 13, 8, 8)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ip7uw"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(22, 13, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3qif5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1fxj"]
 atlas = ExtResource("7_bbwty")
-region = Rect2(31, 13, 8, 8)
+region = Rect2(49, 4, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udvxe"]
 atlas = ExtResource("7_bbwty")
 region = Rect2(58, 4, 8, 8)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_catcj"]
-bg_color = Color(0.439216, 0.439216, 0.439216, 0.772549)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qif5"]
+atlas = ExtResource("7_bbwty")
+region = Rect2(31, 13, 8, 8)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qls4k"]
-bg_color = Color(0.65098, 0.0980392, 0.0627451, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="Theme" id="Theme_cya63"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qqux"]
+texture = ExtResource("20_v1ys7")
+expand_margin_left = 50.0
+expand_margin_top = 70.0
+expand_margin_right = 50.0
+expand_margin_bottom = 70.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_yrvle"]
 line_spacing = 12.0
 font_size = 36
+font_color = Color(0.94902, 0.188235, 0.188235, 1)
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_6e4pu"]
+line_spacing = 12.0
+font_size = 22
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1onc"]
+line_spacing = 12.0
+font_size = 18
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3nvl1"]
+line_spacing = 12.0
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s01y6"]
+bg_color = Color(0.764706, 0.713726, 0.396078, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ldqa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.643137, 0.380392, 0.239216, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1golx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ead3k"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 15.0
+texture = ExtResource("26_n0smv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hlxw"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 22.0
+texture = ExtResource("26_n0smv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04hec"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+texture = ExtResource("27_efaeh")
+
+[sub_resource type="Theme" id="Theme_dnrqd"]
+Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
+Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
+Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
+Button/styles/pressed = SubResource("StyleBoxTexture_04hec")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulpgl"]
+texture = ExtResource("27_u538p")
+expand_margin_top = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_emm5b"]
+default_font = ExtResource("28_niiiv")
+default_font_size = 12
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ulpgl")
+
+[sub_resource type="Animation" id="Animation_g65gi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("signaturepancha:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_uafkg"]
+resource_name = "sello epico"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Streamsello:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pasar_de_pagina"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("signaturepancha:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2ku1s"]
+resource_name = "sello_perder"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Streamsello:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pasar_de_pagina"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("signaturepancha:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oykhg"]
+_data = {
+"RESET": SubResource("Animation_g65gi"),
+"sello epico": SubResource("Animation_uafkg"),
+"sello_perder": SubResource("Animation_2ku1s")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ph4q5"]
+texture = ExtResource("33_ryhf1")
+
+[sub_resource type="Theme" id="Theme_mqkdm"]
+
+[sub_resource type="Animation" id="Animation_md6q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Gameover/../Panchacorazon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Panchacorazon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lfuvp"]
+resource_name = "pancha_loading"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Gameover/../Panchacorazon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 2, 0.5),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(5.5, 5.5), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Panchacorazon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ld8u0"]
+_data = {
+"RESET": SubResource("Animation_md6q5"),
+"pancha_loading": SubResource("Animation_lfuvp")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bftsd"]
+size = Vector2(32, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0spdu"]
+size = Vector2(32, 44)
+
 [node name="UI" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -320.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_4vip0")
 script = ExtResource("1_xq7xs")
 metadata/_edit_lock_ = true
 
 [node name="Ordenes" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 765.0
-offset_top = 3.0
-offset_right = 928.0
-offset_bottom = 628.0
+offset_left = 715.0
+offset_top = 83.0
+offset_right = 932.0
+offset_bottom = 647.0
 theme_override_constants/separation = 90
 script = ExtResource("1_qy5sv")
 
@@ -178,22 +678,26 @@ stream = ExtResource("4_h0j4i")
 pitch_scale = 0.99
 
 [node name="AudioEntregarOrden" type="AudioStreamPlayer" parent="Ordenes"]
-stream = ExtResource("5_lmvn8")
+stream = ExtResource("5_3fp6n")
 volume_db = -6.5
-pitch_scale = 0.99
 
 [node name="AudioOrdenIncorrecta" type="AudioStreamPlayer" parent="Ordenes"]
-stream = ExtResource("6_7b88a")
+stream = ExtResource("6_r0lc3")
 pitch_scale = 0.6
 
 [node name="VbReloj" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0.843137)
-layout_mode = 0
-offset_left = 12.0
-offset_top = 667.0
-offset_right = 187.0
-offset_bottom = 717.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -70.0
+offset_right = 177.0
+offset_bottom = -20.0
+grow_vertical = 0
 alignment = 1
+script = ExtResource("7_s2ivm")
 
 [node name="HbReloj" type="HBoxContainer" parent="VbReloj"]
 layout_mode = 2
@@ -205,6 +709,7 @@ alignment = 1
 [node name="Lb_tiempo" type="Label" parent="VbReloj/HbReloj/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("8_qhue7")
 text = "8:00 AM"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -213,29 +718,66 @@ script = ExtResource("3_hwchs")
 [node name="Lb_Dias" type="Label" parent="VbReloj/HbReloj/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("8_qhue7")
 text = "Dia: 1"
 vertical_alignment = 1
 justification_flags = 171
 uppercase = true
 script = ExtResource("4_go46m")
 
-[node name="TextureReloj" type="TextureRect" parent="VbReloj/HbReloj"]
+[node name="Control" type="Control" parent="VbReloj"]
+layout_mode = 2
+
+[node name="TextureReloj" type="TextureRect" parent="VbReloj/Control"]
+modulate = Color(1, 1, 1, 0.843137)
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("4_1gerh")
+offset_left = 115.0
+offset_top = -59.0
+offset_right = 357.0
+offset_bottom = 144.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_5es48")
+expand_mode = 1
 stretch_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VbReloj/Control"]
+modulate = Color(1, 0.43, 0.43, 1)
+position = Vector2(136, -46)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("12_4y7g8")
+
+[node name="SonidoAlerta" type="AudioStreamPlayer" parent="VbReloj/Control"]
+stream = ExtResource("41_f0gvx")
+volume_db = -6.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VbReloj/Control"]
+libraries = {
+"": SubResource("AnimationLibrary_05qlp")
+}
+
+[node name="Renta" type="Label" parent="."]
+layout_mode = 2
+offset_left = 816.0
+offset_top = 625.0
+offset_right = 950.0
+offset_bottom = 639.0
+text = "Renta: "
+label_settings = SubResource("LabelSettings_g6ud2")
+script = ExtResource("12_m1oro")
 
 [node name="VbDinero" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
-offset_left = 838.0
-offset_top = 668.0
-offset_right = 956.0
-offset_bottom = 716.0
+offset_left = 820.0
+offset_top = 650.0
+offset_right = 938.0
+offset_bottom = 698.0
 alignment = 1
 
 [node name="HbDinero" type="HBoxContainer" parent="VbDinero"]
 layout_mode = 2
+theme = ExtResource("8_qhue7")
 theme_override_constants/separation = 8
 
 [node name="TextureDinero" type="TextureRect" parent="VbDinero/HbDinero"]
@@ -260,153 +802,300 @@ vertical_alignment = 1
 script = ExtResource("5_qljiu")
 
 [node name="GridMinerales" type="GridContainer" parent="."]
-modulate = Color(1, 1, 1, 0.780392)
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
 layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 256.0
-offset_bottom = 116.0
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 8
-columns = 8
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 472.0
+offset_bottom = 95.0
+theme = ExtResource("8_qhue7")
+columns = 6
 script = ExtResource("7_oym11")
 
-[node name="TextureRect" type="TextureRect" parent="GridMinerales"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="GridMinerales"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect4" type="TextureRect" parent="GridMinerales/HBoxContainer4"]
 texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
-texture = SubResource("AtlasTexture_2qnci")
-
-[node name="Label" type="Label" parent="GridMinerales"]
-layout_mode = 2
-text = ":0"
-vertical_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="GridMinerales"]
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = SubResource("AtlasTexture_xpmjl")
-
-[node name="Label2" type="Label" parent="GridMinerales"]
-layout_mode = 2
-text = ":0"
-vertical_alignment = 1
-
-[node name="TextureRect3" type="TextureRect" parent="GridMinerales"]
-visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = SubResource("AtlasTexture_5ed7w")
-
-[node name="Label3" type="Label" parent="GridMinerales"]
-visible = false
-layout_mode = 2
-text = ":0"
-vertical_alignment = 1
-
-[node name="TextureRect4" type="TextureRect" parent="GridMinerales"]
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = SubResource("AtlasTexture_0t2b6")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label4" type="Label" parent="GridMinerales"]
+[node name="Label4" type="Label" parent="GridMinerales/HBoxContainer4"]
+custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
-[node name="TextureRect5" type="TextureRect" parent="GridMinerales"]
-visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
+[node name="HBoxContainer1" type="HBoxContainer" parent="GridMinerales"]
 layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="GridMinerales/HBoxContainer1"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_2qnci")
+stretch_mode = 5
+
+[node name="Label1" type="Label" parent="GridMinerales/HBoxContainer1"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
+text = ":0"
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GridMinerales"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="GridMinerales/HBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_xpmjl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="GridMinerales/HBoxContainer2"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
+text = ":0"
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="GridMinerales"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect5" type="TextureRect" parent="GridMinerales/HBoxContainer5"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = SubResource("AtlasTexture_yaldj")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label5" type="Label" parent="GridMinerales"]
-visible = false
+[node name="Label5" type="Label" parent="GridMinerales/HBoxContainer5"]
+custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
-[node name="TextureRect6" type="TextureRect" parent="GridMinerales"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="GridMinerales"]
 visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = SubResource("AtlasTexture_x1fxj")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
 
-[node name="Label6" type="Label" parent="GridMinerales"]
-visible = false
+[node name="TextureRect3" type="TextureRect" parent="GridMinerales/HBoxContainer3"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_5ed7w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="GridMinerales/HBoxContainer3"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
-[node name="TextureRect8" type="TextureRect" parent="GridMinerales"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="GridMinerales"]
 visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = SubResource("AtlasTexture_wf2ym")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
 
-[node name="Label8" type="Label" parent="GridMinerales"]
-visible = false
-layout_mode = 2
-text = ":0"
-vertical_alignment = 1
-
-[node name="TextureRect9" type="TextureRect" parent="GridMinerales"]
-visible = false
+[node name="TextureRect8" type="TextureRect" parent="GridMinerales/HBoxContainer8"]
 texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = SubResource("AtlasTexture_3cuot")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label9" type="Label" parent="GridMinerales"]
-visible = false
+[node name="Label8" type="Label" parent="GridMinerales/HBoxContainer8"]
+custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
-[node name="TextureRect10" type="TextureRect" parent="GridMinerales"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="GridMinerales"]
 visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect7" type="TextureRect" parent="GridMinerales/HBoxContainer7"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_wf2ym")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label7" type="Label" parent="GridMinerales/HBoxContainer7"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
+text = ":0"
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="GridMinerales"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect9" type="TextureRect" parent="GridMinerales/HBoxContainer9"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = SubResource("AtlasTexture_ip7uw")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label10" type="Label" parent="GridMinerales"]
-visible = false
+[node name="Label9" type="Label" parent="GridMinerales/HBoxContainer9"]
+custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
-[node name="TextureRect11" type="TextureRect" parent="GridMinerales"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="GridMinerales"]
 visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = SubResource("AtlasTexture_3qif5")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
 
-[node name="Label11" type="Label" parent="GridMinerales"]
-visible = false
+[node name="TextureRect6" type="TextureRect" parent="GridMinerales/HBoxContainer6"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_x1fxj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label6" type="Label" parent="GridMinerales/HBoxContainer6"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
-[node name="TextureRect7" type="TextureRect" parent="GridMinerales"]
+[node name="HBoxContainer11" type="HBoxContainer" parent="GridMinerales"]
 visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect11" type="TextureRect" parent="GridMinerales/HBoxContainer11"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = SubResource("AtlasTexture_udvxe")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label7" type="Label" parent="GridMinerales"]
-visible = false
+[node name="Label11" type="Label" parent="GridMinerales/HBoxContainer11"]
+custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="GridMinerales"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TextureRect10" type="TextureRect" parent="GridMinerales/HBoxContainer10"]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_3qif5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label10" type="Label" parent="GridMinerales/HBoxContainer10"]
+custom_minimum_size = Vector2(44, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
+text = ":0"
+vertical_alignment = 1
+
+[node name="Tutorial" parent="." instance=ExtResource("14_uh3r7")]
+offset_left = 112.0
+offset_top = 136.0
 
 [node name="FinalizarDia" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -417,18 +1106,19 @@ anchor_left = 0.151
 anchor_top = 0.18
 anchor_right = 0.849
 anchor_bottom = 0.82
-offset_left = 0.0399933
-offset_top = -0.100006
-offset_right = -0.0400391
-offset_bottom = 0.0999756
+offset_left = -13.96
+offset_top = -45.6
+offset_right = 43.96
+offset_bottom = 11.6
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_catcj")
+theme = ExtResource("16_cal8s")
 script = ExtResource("6_6ps5f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FinalizarDia"]
 layout_mode = 2
+theme = SubResource("Theme_cya63")
 theme_override_constants/separation = 32
 alignment = 1
 
@@ -443,8 +1133,9 @@ layout_mode = 2
 [node name="Btn_finalizar_dia" type="Button" parent="FinalizarDia/VBoxContainer/CenterContainer"]
 custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "FINALIZAR DIA"
+theme = ExtResource("17_1my18")
+theme_override_font_sizes/font_size = 25
+text = "NEXT_DAY"
 
 [node name="AudioFinDiaBien" type="AudioStreamPlayer" parent="FinalizarDia"]
 stream = ExtResource("14_bi36g")
@@ -456,46 +1147,654 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.173
-anchor_top = 0.18
-anchor_right = 0.849
-anchor_bottom = 0.82
-offset_left = -21.08
-offset_top = -0.100006
-offset_right = -0.0400391
-offset_bottom = 0.0999756
+anchor_left = 0.1
+anchor_top = 0.136111
+anchor_right = 0.920833
+anchor_bottom = 0.838889
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qls4k")
+theme = ExtResource("16_cal8s")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5qqux")
 script = ExtResource("12_1lmnk")
-
-[node name="CenterContainer" type="CenterContainer" parent="Gameover"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/CenterContainer"]
-layout_mode = 2
-theme_override_constants/separation = 32
-alignment = 1
-
-[node name="Label" type="Label" parent="Gameover/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "!HAS CAIDO EN 
-BANCARROTA!"
-label_settings = SubResource("LabelSettings_yrvle")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Btn_reintentar" type="Button" parent="Gameover/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(260, 64)
-layout_mode = 2
-text = "REINTENTAR"
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioGameover" type="AudioStreamPlayer" parent="Gameover"]
 stream = ExtResource("15_uh00d")
 volume_db = -11.0
 pitch_scale = 0.99
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 3.0
+text = "BANKRUPTCY"
+label_settings = SubResource("LabelSettings_yrvle")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "TOP_PLAYERS"
+label_settings = SubResource("LabelSettings_6e4pu")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+theme_override_constants/separation = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+alignment = 1
+
+[node name="Label3" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RANK"
+label_settings = SubResource("LabelSettings_b1onc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TOP_PLAYER_NAME"
+label_settings = SubResource("LabelSettings_b1onc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DAY"
+label_settings = SubResource("LabelSettings_b1onc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerTopPlayers" type="VBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LineEditSelfContainer" type="HBoxContainer" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+
+[node name="LbSelfPos" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "x."
+label_settings = SubResource("LabelSettings_3nvl1")
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/caret_width = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s01y6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2ldqa")
+placeholder_text = "YOUR_NAME"
+alignment = 1
+max_length = 10
+expand_to_text_length = true
+caret_blink = true
+caret_mid_grapheme = true
+
+[node name="LbSelfDia" type="Label" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers/LineEditSelfContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Dia 5"
+label_settings = SubResource("LabelSettings_3nvl1")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxNameAndDay1" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay2" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay3" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay4" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxNameAndDay5" parent="Gameover/VBoxContainer/VBoxContainer/VBoxContainerTopPlayers" instance=ExtResource("18_pqh3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameover/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Btn_reintentar" type="Button" parent="Gameover/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(260, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("17_1my18")
+theme_override_font_sizes/font_size = 20
+text = "RETRY"
+
+[node name="Btn_HOME" type="Button" parent="Gameover/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = SubResource("Theme_dnrqd")
+icon = ExtResource("35_rr8cu")
+icon_alignment = 1
+expand_icon = true
+
+[node name="factura" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("30_esm6q")
+layout_mode = 2
+anchors_preset = 0
+offset_left = 163.0
+offset_top = 112.0
+offset_right = 796.0
+offset_bottom = 647.0
+script = ExtResource("26_url12")
+
+[node name="PanelContainer" type="PanelContainer" parent="factura"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = -14.0
+offset_right = 629.0
+offset_bottom = 496.0
+theme = SubResource("Theme_emm5b")
+
+[node name="Titulofactura" type="Label" parent="factura"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 30.0
+offset_top = 17.0
+offset_right = 617.0
+offset_bottom = 44.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
+text = "DAY_FINISHED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="factura"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 176.0
+offset_top = 399.0
+offset_right = 468.0
+offset_bottom = 467.0
+theme = ExtResource("17_1my18")
+theme_override_font_sizes/font_size = 20
+text = "SIGN_BILL"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="factura"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 55.0
+offset_top = 94.0
+offset_right = 574.0
+offset_bottom = 367.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="cosas pagadas" type="VBoxContainer" parent="factura/HBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxahorro" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
+layout_mode = 2
+
+[node name="Ahorro" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "SAVINGS"
+label_settings = ExtResource("29_odmc8")
+
+[node name="AhorroNumerito" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
+layout_mode = 2
+text = "  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="HBoxGanancia" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
+layout_mode = 2
+
+[node name="Ganancia dia" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "DAY_PROFITS"
+label_settings = ExtResource("29_odmc8")
+
+[node name="GananciadiaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
+layout_mode = 2
+text = "  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="HBoxBono" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
+layout_mode = 2
+
+[node name="Ganancia bono" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "BONUS_PROFITS"
+label_settings = ExtResource("29_odmc8")
+
+[node name="GananciabonoNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
+layout_mode = 2
+text = "  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="HBoxReciclaje" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
+layout_mode = 2
+
+[node name="ganancia recilaje" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "RECYCLE_PROFITS"
+label_settings = ExtResource("29_odmc8")
+
+[node name="GananciaReciclajeNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
+layout_mode = 2
+text = "  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="HBoxRent" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
+layout_mode = 2
+
+[node name="renta" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "RENT"
+label_settings = ExtResource("29_odmc8")
+
+[node name="RentaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
+modulate = Color(0.847059, 0.129412, 0.0941176, 1)
+use_parent_material = true
+layout_mode = 2
+text = "-111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="HBoxTotal" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas/MarginContainer"]
+use_parent_material = true
+layout_mode = 2
+
+[node name="Total" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "TOTAL"
+label_settings = ExtResource("29_odmc8")
+
+[node name="Totalnum" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
+modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
+layout_mode = 2
+text = "  111"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 2
+
+[node name="signaturepancha" type="Sprite2D" parent="factura"]
+visible = false
+use_parent_material = true
+position = Vector2(416, 318)
+rotation = -0.174533
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("30_h7dm3")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="factura"]
+libraries = {
+"": SubResource("AnimationLibrary_oykhg")
+}
+
+[node name="Streamsello" type="AudioStreamPlayer" parent="factura"]
+stream = ExtResource("31_tekkc")
+
+[node name="ADVERTENCIAFINAL" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 191.0
+offset_top = 149.0
+offset_right = 794.0
+offset_bottom = 617.0
+script = ExtResource("38_enfp6")
+
+[node name="PanelContainer" type="PanelContainer" parent="ADVERTENCIAFINAL"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = -14.0
+offset_right = 596.0
+offset_bottom = 322.0
+theme = SubResource("Theme_emm5b")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ph4q5")
+
+[node name="Tituloadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = 593.0
+offset_bottom = 70.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
+text = "WARNING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ADVERTENCIAFINAL"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 201.0
+offset_right = 593.0
+offset_bottom = 277.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="si" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
+modulate = Color(0.4, 0.980392, 0.392157, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme = ExtResource("38_wojpx")
+theme_override_font_sizes/font_size = 20
+text = "Yes"
+
+[node name="no" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
+modulate = Color(1, 0.411765, 0.411765, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme = ExtResource("38_wojpx")
+theme_override_font_sizes/font_size = 20
+text = "No"
+
+[node name="Descadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_left = 52.0
+offset_top = 86.0
+offset_right = 554.0
+offset_bottom = 180.0
+text = "WARNING_DESC"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Pausa" type="PanelContainer" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 163.0
+offset_top = 112.0
+offset_right = 821.0
+offset_bottom = 561.0
+theme = ExtResource("16_cal8s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pausa"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Pausa/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label" type="Label" parent="Pausa/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Pausa/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = SubResource("Theme_mqkdm")
+theme_override_constants/margin_top = 120
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pausa/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+script = ExtResource("26_mis2i")
+
+[node name="Btn_toggle_sound" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("34_jvi5v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_HOME" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("35_rr8cu")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_BACK" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("36_juslv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_pause" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 881.0
+offset_top = 16.0
+offset_right = 939.0
+offset_bottom = 94.0
+focus_mode = 0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Btn_pause"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.811765)
+position = Vector2(28, 38)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("37_0c7ga")
+
+[node name="alertaFinalizarDia" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="alertaFinalizarDia"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 80.0
+offset_right = 886.0
+offset_bottom = 226.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
+text = "Queda una hora papu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AP_PANCHALOADING" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Gameover")
+libraries = {
+"": SubResource("AnimationLibrary_ld8u0")
+}
+
+[node name="Panchacorazon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(488, 312)
+scale = Vector2(5, 5)
+texture = ExtResource("43_sdv33")
+
+[node name="OutroAnim" parent="." instance=ExtResource("47_0jhqx")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Sonido boton" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("48_huglt")
+
+[node name="SonidoPausa" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("49_4pl3n")
+
+[node name="celular" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bordenegro1" type="TextureRect" parent="celular"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -160.0
+offset_bottom = 720.0
+texture = ExtResource("46_j4b7w")
+expand_mode = 1
+
+[node name="bordenegro2" type="TextureRect" parent="celular"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 960.0
+offset_right = 1120.0
+offset_bottom = 720.0
+texture = ExtResource("46_j4b7w")
+expand_mode = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="celular"]
+position = Vector2(992, 480)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_bftsd")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="celular"]
+self_modulate = Color(1, 1, 1, 0.945098)
+position = Vector2(1000, 376)
+rotation = 4.71239
+scale = Vector2(5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_bftsd")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="celular"]
+self_modulate = Color(1, 1, 1, 0.945098)
+position = Vector2(-120, 376)
+rotation = 4.71239
+scale = Vector2(5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_bftsd")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="celular"]
+position = Vector2(-24, 480)
+scale = Vector2(-5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_0spdu")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
-[connection signal="pressed" from="Gameover/CenterContainer/VBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_HOME" to="Gameover" method="_on_btn_home_pressed"]
+[connection signal="pressed" from="factura/Button" to="factura" method="_on_btn_factura_pressed"]
+[connection signal="visibility_changed" from="ADVERTENCIAFINAL" to="ADVERTENCIAFINAL" method="_on_visibility_changed"]
+[connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/si" to="ADVERTENCIAFINAL" method="_on_si_pressed"]
+[connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/no" to="ADVERTENCIAFINAL" method="_on_no_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_BACK" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="Btn_pause" to="." method="_on_btn_pause_pressed"]

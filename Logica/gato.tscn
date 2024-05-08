@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bvl5tdbs4i1ex"]
 
 [ext_resource type="Script" path="res://Logica/gato.gd" id="1_k5uvl"]
-[ext_resource type="Texture2D" uid="uid://b8unffyvwye8o" path="res://Sprites/Mapa/Cat Sprite Sheet--Elthen.png" id="1_san42"]
+[ext_resource type="Texture2D" uid="uid://ddjm1xe5iajus" path="res://Sprites/Mapa/gatito sprites 2.png" id="1_san42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq0ej"]
 size = Vector2(8, 8)

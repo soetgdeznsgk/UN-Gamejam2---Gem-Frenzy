@@ -2,72 +2,128 @@ extends Node
 
 # Este singleton contiene las mejoras activas y las posibles mejoras a ganar
 signal mejora_cambiada
-
+var mejora_final_comprada
 enum nombre_mejoras {
 	CofreMineral,
 	MejoraDeMejoras,
 	ClientesZen,
 	MasTiempo,
+	PanchaSpeedUp,
 	RecompensaMejorada,
 	Gato,
 }
+var mejora_final = {
+	"ContratoFinal": {
+		"Key" : "ContratoFinal",
+		"Nombre" : tr("CONTRACT"),
+		"Precio" : 10,
+		"PrecioEscalar" : 0,
+		"Maximo" : 1,
+		"Textura" : 'res://Sprites/mejoras/contrato.png',
+		"Descripcion" : tr("CONTRACT_DESC"),
+	}}
+func llenar_mejora_final():
+	mejora_final = {
+	"ContratoFinal": {
+		"Key" : "ContratoFinal",
+		"Nombre" : tr("CONTRACT"),
+		"Precio" : 10,
+		"PrecioEscalar" : 0,
+		"Maximo" : 1,
+		"Textura" : 'res://Sprites/mejoras/contrato.png',
+		"Descripcion" : tr("CONTRACT_DESC"),
+	}}
+var info_mejoras = {}
 
-var info_mejoras = {
+func llenar_mejoras() -> void:
+	info_mejoras = {
 	nombre_mejoras.CofreMineral : { # que aumente de a 2 por mejora
 		"Key" : nombre_mejoras.CofreMineral,
-		"Nombre" : "Cofre",
-		"Precio" : 5,
+		"Nombre" : tr("CHEST"),
+		"Precio" : 2,
+		"PrecioEscalar" : 2,
 		"Maximo" : 4,
 		"Textura" : 'res://Sprites/mejoras/cofre con marco.png',
-		"Descripcion" : "Permite almacenar más tipos de minerales",
+		"Descripcion" : tr("CHEST_DESC"),
 	},
 		nombre_mejoras.MejoraDeMejoras : {
 		"Key" : nombre_mejoras.MejoraDeMejoras,
-		"Nombre" : "Muchas mejoras",
-		"Precio" : 8,
+		"Nombre" : tr("MANY_UPGRADES"),
+		"PrecioEscalar" : 1,
+		"Precio" : 5,
 		"Maximo" : 1,
 		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
-		"Descripcion" : "No son suficientes mejoras? Agrega una más al finalizar el dia",
+		"Descripcion" : tr("MANY_UPGRADES_DESC"),
 	},
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
-		"Nombre" : "Clientes Zen",
-		"Precio" : 8,
+		"Nombre" : tr("ZEN_CLIENTS"),
+		"Precio" : 6,
+		"PrecioEscalar" : 3,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
-		"Descripcion" : "Gracias a la meditación los clientes esperan más tiempo",
+		"Descripcion" : tr("ZEN_CLIENTS_DESC"),
 	},
 	nombre_mejoras.MasTiempo : {
 		"Key" : nombre_mejoras.MasTiempo,
-		"Nombre" : "Mas tiempo",
-		"Precio" : 12,
-		"Maximo" : 2,
+		"Nombre" : tr("MORE_TIME"),
+		"Precio" : 5,
+		"PrecioEscalar" : 12,
+		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
-		"Descripcion" : "Tu tienda estará abierta mas horas",
+		"Descripcion" : tr("MORE_TIME_DESC"),
+	},
+	nombre_mejoras.PanchaSpeedUp : { # implementada en pancha speed
+		"Key" : nombre_mejoras.PanchaSpeedUp,
+		"Nombre" : tr("SPEED_UP"),
+		"Precio" : 10,
+		"PrecioEscalar" : 14,
+		"Maximo" : 2,
+		"Textura" : 'res://Sprites/mejoras/pancha_speed.png',
+		"Descripcion" : tr("SPEED_UP_DESC"),
 	},
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,
-		"Nombre" : "Cobra mas!",
-		"Precio" : 15,
-		"Maximo" : 2,
+		"Nombre" : tr("MORE_PROFITS"),
+		"Precio" : 7,
+		"PrecioEscalar" : 11,
+		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
-		"Descripcion" : "Cobra más por tu trabajo!",
+		"Descripcion" : tr("MORE_PROFITS_DESC"),
 	},
 		nombre_mejoras.Gato : { # implementada en GeneradorClientes.gd
 		"Key" : nombre_mejoras.Gato,
-		"Nombre" : "Gato",
-		"Precio" : 18,
+		"Nombre" : tr("CATO"),
+		"Precio" : 13,
+		"PrecioEscalar" : 13,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/gatomejora.png',
-		"Descripcion" : "Un gato siempre atrae más clientes!",
+		"Descripcion" : tr("CATO_DESC"),
 	},
 }
-var disponible_mejoras = [0,0,0,0,0,0,0]
-var activas_mejoras = [0,0,0,0,0,0,0]
+
+var disponible_mejoras = []
+var activas_mejoras = []
+
+# TEST para noestar comprando mejoras
+func test_final():
+	for i in range(0,nombre_mejoras.size()):
+		disponible_mejoras[i] = 0
+		activas_mejoras[i] = info_mejoras[i]["Maximo"]
+
+func reiniciar_mejoras() -> void:
+	for i in range(0,nombre_mejoras.size()):
+		disponible_mejoras[i] = info_mejoras[i]["Maximo"]
+		activas_mejoras[i] = 0
 
 func _ready() -> void:
-	for i in range(len(nombre_mejoras)):
-		disponible_mejoras[i] = info_mejoras[i]["Maximo"]
+	llenar_mejoras()
+	disponible_mejoras = []
+	activas_mejoras = []
+	for i in range(0,nombre_mejoras.size()):
+		disponible_mejoras.append(info_mejoras[i]["Maximo"])
+		activas_mejoras.append(0)
+	#test_final()
 
 func obtener_mejora_random_disponible():
 	#verifica en las disponibles y devuelve alguna al azar
@@ -75,14 +131,17 @@ func obtener_mejora_random_disponible():
 	var mejoras_seleccionadas : Array = []
 	
 	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion
-	if disponible_mejoras[0]>0:
-		mejoras_seleccionadas.append(info_mejoras[0])
-	
+	if disponible_mejoras[nombre_mejoras.CofreMineral]>0:
+		mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.CofreMineral])
+	# lo mismo con mejora de mejoras
+	if disponible_mejoras[nombre_mejoras.MejoraDeMejoras]>0:
+		mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.MejoraDeMejoras])
+	# Añade a la pool mejoras disponibles
 	for i in range(1, len(nombre_mejoras)):
 		if disponible_mejoras[i] > 0:
 			posibles_mejoras.append(i)
+	# Elije las mejoras de la pool
 	if len(posibles_mejoras) > 0:
-		# selecciona algunas entre las que hay
 		# selecciona 2 + mejora de mejoras
 		for i in range(len(mejoras_seleccionadas), 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
 			var selec : int
@@ -143,8 +202,13 @@ func obtener_mejora_random_disponible():
 			var mejora = posibles_mejoras.pop_at(selec)
 			if mejora != null:
 				mejoras_seleccionadas.append(info_mejoras[mejora])
+		if GlobalTiempo.diaActual>=9 and mejoras_seleccionadas.size()<=2:		
+			mejoras_seleccionadas.append(mejora_final["ContratoFinal"])
 		return mejoras_seleccionadas
 	else:
-		# dice que no hay ninguna
-		return []
+		var listafinal=[]
 		
+		listafinal.append(mejora_final["ContratoFinal"])
+		
+		# dice que no hay ninguna
+		return listafinal

@@ -1,17 +1,10 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalRecursos.bancarota.connect(noSound)
-	GlobalTiempo.finalizarDia.connect(noSound)
-	
-	GlobalTiempo.iniciarDia.connect(playSound)
-	$Ambient.play(0)
-# Señales
-
-func playSound():
-	$Ambient.play(0)
-
-func noSound():
-	$Ambient.stop()
+	print("READY MAIN GAME")
+	if GlobalTuto.tutorial:
+		#gato bonito
+		GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]=1
+		GlobalMejoras.mejora_cambiada.emit()
+	else:
+		GlobalTiempo.start_time()
