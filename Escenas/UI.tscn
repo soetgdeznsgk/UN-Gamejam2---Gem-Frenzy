@@ -344,11 +344,6 @@ line_spacing = 12.0
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s01y6"]
-bg_color = Color(0.764706, 0.713726, 0.396078, 1)
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ldqa"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 1
@@ -356,6 +351,11 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.643137, 0.380392, 0.239216, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s01y6"]
+bg_color = Color(0.764706, 0.713726, 0.396078, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
@@ -1093,9 +1093,10 @@ theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667,
 text = ":0"
 vertical_alignment = 1
 
-[node name="Tutorial" parent="." instance=ExtResource("14_uh3r7")]
+[node name="Tutorial" parent="." node_paths=PackedStringArray("APtutorial") instance=ExtResource("14_uh3r7")]
 offset_left = 112.0
 offset_top = 136.0
+APtutorial = NodePath("AnimationPlayer")
 
 [node name="FinalizarDia" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -1250,8 +1251,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/caret_width = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_s01y6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_2ldqa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s01y6")
 placeholder_text = "YOUR_NAME"
 alignment = 1
 max_length = 10
