@@ -24,14 +24,11 @@ func _ready():
 	GlobalTiempo.finalizarDia.connect(stop_song)
 	GlobalTiempo.iniciarDia.connect(verify_unlock)
 	GlobalTiempo.quedamediahora.connect(media_hora)
-	GlobalTiempo.quedandiezminutos.connect(diez_min)
-	
+
 
 func media_hora():
-	$MusicadeFondo.pitch_scale=1.1
+	$MusicadeFondo.pitch_scale=1.03
 
-func diez_min():
-	$MusicadeFondo.pitch_scale = 1.2
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_up") && isPlayerHere:

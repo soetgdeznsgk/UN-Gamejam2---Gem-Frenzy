@@ -91,7 +91,7 @@ func actualizar_renta():
 	
 	if dia >= 9:
 		#funcion= 1.5 (x-2)^(2)
-		valorDia = int(1.5*pow(GlobalTiempo.diaActual-2,2))
+		valorDia = int(1.35*pow(GlobalTiempo.diaActual-2,2))
 		
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3

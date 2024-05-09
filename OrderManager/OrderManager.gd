@@ -79,10 +79,14 @@ func llenar_recetas() -> void:
 			recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
 			recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
 			numRecetasPuestas+=1
+			recetas.pop_at(0) # Quita la receta de hierro
 	if GlobalTiempo.diaActual >= 9: # hay diamante
 		if GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.CofreMineral] >=2 and numRecetasPuestas<9:
 			recetas.append([GlobalRecursos.mineralesSinFondo.Topacio, GlobalRecursos.mineralesSinFondo.Oro, GlobalRecursos.mineralesSinFondo.Rubi]) #fire cri
 			numRecetasPuestas+=1
+			recetas.pop_at(0) # quita receta cobre
+			recetas.pop_at(0) # quita cobre
+			
 		if GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.CofreMineral] >=3 and numRecetasPuestas<10:	
 			recetas.append([GlobalRecursos.mineralesSinFondo.Plata, GlobalRecursos.mineralesSinFondo.Amatista, GlobalRecursos.mineralesSinFondo.Zafiro]) # frost cri
 			numRecetasPuestas+=1
