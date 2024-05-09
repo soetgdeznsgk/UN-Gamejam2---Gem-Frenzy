@@ -59,7 +59,7 @@ func llenar_mejoras() -> void:
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : tr("ZEN_CLIENTS"),
-		"Precio" : 8,
+		"Precio" : 6,
 		"PrecioEscalar" : 3,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
@@ -87,7 +87,7 @@ func llenar_mejoras() -> void:
 	nombre_mejoras.MasReciclaje : {
 		"Key" : nombre_mejoras.MasReciclaje,
 		"Nombre" : tr("RECYCLE"),
-		"PrecioEscalar" : 10,
+		"PrecioEscalar" : 14,
 		"Precio" : 6,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/RECYCLE.png',
@@ -159,7 +159,7 @@ func obtener_mejora_random_disponible():
 			for mejora in posibles_mejoras:
 				var precioActual = info_mejoras[mejora]["Precio"] +\
 				 (info_mejoras[mejora]["PrecioEscalar"] * activas_mejoras[mejora])
-				if randf() >=0.6:
+				if randf() >=0.4:
 					if precioActual < minPrecio:
 						minPrecio = precioActual
 						mejoraSeleccionada = mejora
