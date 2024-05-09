@@ -116,9 +116,9 @@ func pagueme_la_renta():
 			actualizar_mineral(i, -mitad)
 			@warning_ignore("integer_division")
 			reciclar += (mitad * (i+1/2))
-		
-		totalreciclado = int(reciclar * 0.036)+(((GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasReciclaje])*0.10)*reciclar)
-	
+		var totalbonusreciclaje=(((GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasReciclaje])*0.015)*reciclar)
+		totalreciclado = int(reciclar * 0.025)+int(totalbonusreciclaje)
+		print("bonus reciclaje: ",totalbonusreciclaje)
 	GlobalRecursos.GananciaReciclaje=totalreciclado
 	actualizar_dinero(totalreciclado)
 	# luego de obtener oro por minerales de sobra, se cobra la renta

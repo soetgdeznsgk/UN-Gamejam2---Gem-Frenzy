@@ -56,15 +56,6 @@ func llenar_mejoras() -> void:
 		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
 		"Descripcion" : tr("MANY_UPGRADES_DESC"),
 	},
-	nombre_mejoras.MasReciclaje : {
-		"Key" : nombre_mejoras.MasReciclaje,
-		"Nombre" : tr("RECYCLE"),
-		"PrecioEscalar" : 4,
-		"Precio" : 6,
-		"Maximo" : 2,
-		"Textura" : 'res://Sprites/mejoras/RECYCLE.png',
-		"Descripcion" : tr("RECYCLE_DESC"),
-	},
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : tr("ZEN_CLIENTS"),
@@ -82,6 +73,15 @@ func llenar_mejoras() -> void:
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
 		"Descripcion" : tr("MORE_TIME_DESC"),
+	},
+	nombre_mejoras.MasReciclaje : {
+		"Key" : nombre_mejoras.MasReciclaje,
+		"Nombre" : tr("RECYCLE"),
+		"PrecioEscalar" : 12,
+		"Precio" : 6,
+		"Maximo" : 2,
+		"Textura" : 'res://Sprites/mejoras/RECYCLE.png',
+		"Descripcion" : tr("RECYCLE_DESC"),
 	},
 	nombre_mejoras.PanchaSpeedUp : { # implementada en pancha speed
 		"Key" : nombre_mejoras.PanchaSpeedUp,
