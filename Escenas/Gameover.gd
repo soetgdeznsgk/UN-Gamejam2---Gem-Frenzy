@@ -98,7 +98,8 @@ func upload_to_db():
 		 'utc-date': Time.get_date_string_from_system(true),
 		'money' : GlobalRecursos.dinero,
 		'upgrades' : str(GlobalMejoras.activas_mejoras),
-		'total_game_time' : GlobalTiempo.tiempoJuegoTotal
+		'total_game_time' : GlobalTiempo.tiempoJuegoTotal,
+		'build-version' : 'rng-update'
 		})
 		
 		#hace el get del mapa de dias para actualizar el mapa de dias
