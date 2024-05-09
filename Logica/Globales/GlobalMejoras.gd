@@ -56,19 +56,10 @@ func llenar_mejoras() -> void:
 		"Textura" : 'res://Sprites/mejoras/mejora de mejoras.png',
 		"Descripcion" : tr("MANY_UPGRADES_DESC"),
 	},
-	nombre_mejoras.MasReciclaje : {
-		"Key" : nombre_mejoras.MasReciclaje,
-		"Nombre" : tr("RECYCLE"),
-		"PrecioEscalar" : 4,
-		"Precio" : 6,
-		"Maximo" : 2,
-		"Textura" : 'res://Sprites/mejoras/RECYCLE.png',
-		"Descripcion" : tr("RECYCLE_DESC"),
-	},
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : tr("ZEN_CLIENTS"),
-		"Precio" : 6,
+		"Precio" : 8,
 		"PrecioEscalar" : 3,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
@@ -77,7 +68,7 @@ func llenar_mejoras() -> void:
 	nombre_mejoras.MasTiempo : {
 		"Key" : nombre_mejoras.MasTiempo,
 		"Nombre" : tr("MORE_TIME"),
-		"Precio" : 5,
+		"Precio" : 7,
 		"PrecioEscalar" : 12,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/reloj mejorado.png',
@@ -87,7 +78,7 @@ func llenar_mejoras() -> void:
 	nombre_mejoras.PanchaSpeedUp : { # implementada en pancha speed
 		"Key" : nombre_mejoras.PanchaSpeedUp,
 		"Nombre" : tr("SPEED_UP"),
-		"Precio" : 10,
+		"Precio" : 12,
 		"PrecioEscalar" : 14,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/pancha_speed.png',
@@ -105,7 +96,7 @@ func llenar_mejoras() -> void:
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : tr("MORE_PROFITS"),
-		"Precio" : 7,
+		"Precio" : 11,
 		"PrecioEscalar" : 11,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
@@ -150,12 +141,10 @@ func obtener_mejora_random_disponible():
 	var posibles_mejoras : Array = []
 	var mejoras_seleccionadas : Array = []
 	
-	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion
-	#if disponible_mejoras[nombre_mejoras.CofreMineral]>0:
-		#mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.CofreMineral])
-	# lo mismo con mejora de mejoras
-	#if disponible_mejoras[nombre_mejoras.MejoraDeMejoras]>0:
-		#mejoras_seleccionadas.append(info_mejoras[nombre_mejoras.MejoraDeMejoras])
+	#si no se ha terminado de mejorar los cofres, se fuerza su aparicion en un 50%
+	#if disponible_mejoras[nombre_mejoras.CofreMineral]>0 and randf() >= 0.5:
+		#mejoras_seleccionadas.append(nombre_mejoras.CofreMineral)
+
 	# Añade a la pool mejoras disponibles
 	for i in range(0, len(nombre_mejoras)):
 		if disponible_mejoras[i] > 0:
@@ -163,66 +152,25 @@ func obtener_mejora_random_disponible():
 	# Elije las mejoras de la pool
 	if len(posibles_mejoras) > 0:
 		# selecciona 2 + mejora de mejoras
-		for i in range(0, 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
-			var selec : int
-			var porcentaje = randf()
+		for i in range(mejoras_seleccionadas.size(), 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
+			# Busqueda de menor precio
+			var minPrecio = 1000
+			var mejoraSeleccionada
+			for mejora in posibles_mejoras:
+				var precioActual = info_mejoras[mejora]["Precio"] +\
+				 (info_mejoras[mejora]["PrecioEscalar"] * activas_mejoras[mejora])
+				if randf() >=0.6:
+					if precioActual < minPrecio:
+						minPrecio = precioActual
+						mejoraSeleccionada = mejora
 			
-			if len(posibles_mejoras) >= 6:
-				if porcentaje < 0.5:
-					selec = 0
-				if porcentaje > 0.5 and porcentaje < 0.75:
-					selec = 1
-				if porcentaje > 0.75 and porcentaje < 0.9:
-					selec = 2
-				if porcentaje > 0.9 and porcentaje < 0.95:
-					selec = 3
-				if porcentaje > 0.95 and porcentaje < 0.99:
-					selec = 4
-				if porcentaje > 0.99 and porcentaje <= 1.0:
-					selec = 5
-			elif len(posibles_mejoras) == 5:
-				if porcentaje < 0.65:
-					selec = 0
-				if porcentaje > 0.65 and porcentaje < 0.85:
-					selec = 1
-				if porcentaje > 0.85 and porcentaje < 0.9:
-					selec = 2
-				if porcentaje > 0.9 and porcentaje < 0.95:
-					selec = 3
-				if porcentaje > 0.95:
-					selec = 4
-				
-			elif len(posibles_mejoras) == 4:
-				if porcentaje < 0.65:
-					selec = 0
-				if porcentaje > 0.65 and porcentaje < 0.9:
-					selec = 1
-				if porcentaje > 0.9 and porcentaje < 0.95:
-					selec = 2
-				if porcentaje > 0.95:
-					selec = 3
+			posibles_mejoras.pop_at(posibles_mejoras.find(mejoraSeleccionada))
 			
-			elif len(posibles_mejoras) == 3:
-				if porcentaje < 0.4:
-					selec = 0
-				if porcentaje > 0.4 and porcentaje < 0.8:
-					selec = 1
-				if porcentaje > 0.8:
-					selec = 2
-			
-			elif len(posibles_mejoras) == 2:
-				if porcentaje < 0.5:
-					selec = 0
-				if porcentaje > 0.5:
-					selec = 1
-			
-			elif len(posibles_mejoras) == 1:
-				selec = 0
-			
-			var mejora = posibles_mejoras.pop_at(selec)
-			if mejora != null:
-				mejoras_seleccionadas.append(info_mejoras[mejora])
-		if GlobalTiempo.diaActual>=9 and mejoras_seleccionadas.size()<=2:		
+			if mejoraSeleccionada != null:
+				mejoras_seleccionadas.append(info_mejoras[mejoraSeleccionada])
+		
+		# Forzar contrato
+		if GlobalTiempo.diaActual>=9 and mejoras_seleccionadas.size()<=2:
 			mejoras_seleccionadas.append(mejora_final["ContratoFinal"])
 		return mejoras_seleccionadas
 	else:

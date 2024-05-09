@@ -9,11 +9,13 @@ signal new_order(orden: OrderGem)
 @onready var numRecetasPuestas:int=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	numRecetasPuestas = 0
 	llenar_recetas()
 	GlobalTiempo.iniciarDia.connect(llenar_recetas)
 	GlobalRecursos.bancarota.connect(reiniciar_recetas)
 
 func reiniciar_recetas():
+	numRecetasPuestas = 0
 	recetas.clear()
 	recetas.append([GlobalRecursos.mineralesSinFondo.Carbon, GlobalRecursos.mineralesSinFondo.Hierro]) # acero
 

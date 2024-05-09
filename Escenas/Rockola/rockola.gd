@@ -23,11 +23,16 @@ func _ready():
 	GlobalRecursos.bancarota.connect(stop_song)
 	GlobalTiempo.finalizarDia.connect(stop_song)
 	GlobalTiempo.iniciarDia.connect(verify_unlock)
+	GlobalTiempo.quedamediahora.connect(media_hora)
+	GlobalTiempo.quedandiezminutos.connect(diez_min)
 	
 
+func media_hora():
+	$MusicadeFondo.pitch_scale=1.1
 
-	pass # Replace with function body.
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func diez_min():
+	$MusicadeFondo.pitch_scale = 1.2
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_up") && isPlayerHere:
 		next_song()
@@ -38,6 +43,7 @@ func change_animation():
 	else:
 		$AnimationPlayer.play("RESET")
 func verify_unlock():
+	$MusicadeFondo.pitch_scale=1
 	change_animation()
 	if GlobalTiempo.diaActual==3:
 		#arreglo temporal para que se muestre la funcionalidad
