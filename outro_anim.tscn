@@ -1,0 +1,656 @@
+[gd_scene load_steps=19 format=3 uid="uid://c6dpi8j3mv3yn"]
+
+[ext_resource type="Script" path="res://outro_anim.gd" id="1_ae6bm"]
+[ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="1_ih5w8"]
+[ext_resource type="Texture2D" uid="uid://8dwk6ioh2x41" path="res://Sprites/Outro/fondo outro.png" id="2_8iyy3"]
+[ext_resource type="Texture2D" uid="uid://cgujr0j232hdw" path="res://Sprites/Outro/animacion_atardecer/01.png" id="3_ay6qn"]
+[ext_resource type="Texture2D" uid="uid://cwmlv2apu8hey" path="res://Sprites/Outro/pancha feli.png" id="3_j7un4"]
+[ext_resource type="Texture2D" uid="uid://b0vjwogsfkmgd" path="res://Sprites/Outro/animacion_atardecer/02.png" id="4_bbrqj"]
+[ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="4_l5war"]
+[ext_resource type="Texture2D" uid="uid://w3ghgg3lkd4o" path="res://Sprites/Outro/animacion_atardecer/03.png" id="5_7veyu"]
+[ext_resource type="Texture2D" uid="uid://dohtqmysx8toq" path="res://Sprites/Outro/atardecerpancha.png" id="5_7248l"]
+[ext_resource type="Texture2D" uid="uid://d0ea17fu5xum4" path="res://Sprites/mejoras/contrato.png" id="5_xtjgc"]
+[ext_resource type="AudioStream" uid="uid://gwdnf5g7drkg" path="res://Musica/Music_LuisManzano/GF_musx_cinematic_final_V1.mp3" id="8_6565c"]
+[ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_pr30s"]
+[ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="9_q48xj"]
+
+[sub_resource type="Animation" id="Animation_ynyeu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contratoicono:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.2, 4.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contratoicono:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(494, 232)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pancha feli:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("contratoicono:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("contrato:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("atardecer:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Creditos textos/Developed_by:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("atardecer:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_7248l")]
+}
+
+[sub_resource type="Animation" id="Animation_b43ds"]
+resource_name = "atardecer_animacion"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("atardecer:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("3_ay6qn")]
+}
+
+[sub_resource type="Animation" id="Animation_12hki"]
+resource_name = "creditos"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Creditos textos/Developed_by:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cypxb"]
+resource_name = "elfinaldepancha"
+length = 10.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contratoicono:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4.2, 4.2), Vector2(30, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contratoicono:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(494, 232), Vector2(494, 352)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pancha feli:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("contratoicono:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("contrato:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.2, 4.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("atardecer:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(6.2, 7.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8, 10.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_credits_anim"
+}, {
+"args": [],
+"method": &"play_atardecer"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Button:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(8.8, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("atardecer:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(7.4, 7.7, 8, 8.3, 8.6, 8.9, 9.2, 9.5, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_puj7k"]
+_data = {
+"RESET": SubResource("Animation_ynyeu"),
+"atardecer_animacion": SubResource("Animation_b43ds"),
+"creditos": SubResource("Animation_12hki"),
+"elfinaldepancha": SubResource("Animation_cypxb")
+}
+
+[node name="OutroAnim" type="Node2D"]
+z_index = 999
+z_as_relative = false
+script = ExtResource("1_ae6bm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_puj7k")
+}
+
+[node name="fondo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("2_8iyy3")
+
+[node name="pancha feli" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("3_j7un4")
+
+[node name="contrato" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("4_l5war")
+
+[node name="atardecer" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("5_7248l")
+
+[node name="contratoicono" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(494, 232)
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("5_xtjgc")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 848.0
+offset_top = 656.0
+offset_right = 928.0
+offset_bottom = 696.0
+theme = ExtResource("1_ih5w8")
+text = "SKIP"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_6565c")
+
+[node name="finalizardiabien" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_q48xj")
+
+[node name="Creditos textos" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("9_pr30s")
+
+[node name="Developed_by" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 25.0
+offset_right = 395.0
+offset_bottom = 87.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "DEVELOPED_BY"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="theyippiesdev" type="Label" parent="Creditos textos/Developed_by"]
+layout_mode = 0
+offset_right = 393.0
+offset_bottom = 110.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "
+
+The Yippies Dev"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Programmers" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 289.0
+offset_bottom = 76.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "PROGRAMMERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="sebastian, pepe y yo" type="Label" parent="Creditos textos/Programmers"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 75.0
+offset_right = 197.0
+offset_bottom = 167.0
+text = "Matseuu
+
+Pabten
+
+Gugulplex"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Artistas" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 311.0
+offset_bottom = 79.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "ARTISTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="racco yuca y daniel" type="Label" parent="Creditos textos/Artistas"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 75.0
+offset_right = 267.0
+offset_bottom = 170.0
+text = "Raccoyaki (Fan #1)
+
+Yukki01
+
+DarkyBLG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musica por" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 319.0
+offset_bottom = 69.0
+theme = ExtResource("9_pr30s")
+text = "MUSIC"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="lucas manzano" type="Label" parent="Creditos textos/musica por"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 282.0
+offset_bottom = 68.0
+text = "lucasarizamanzano"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sfx" type="Label" parent="Creditos textos/musica por"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 96.0
+offset_right = 284.0
+offset_bottom = 131.0
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Luisa zarama" type="Label" parent="Creditos textos/musica por"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 96.0
+offset_right = 284.0
+offset_bottom = 191.0
+text = "Luisa Zarama"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Apoyo1" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 311.0
+offset_bottom = 85.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "SUPPORT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="dane papu zeke tibu y carlos" type="Label" parent="Creditos textos/Apoyo1"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 75.0
+offset_right = 267.0
+offset_bottom = 170.0
+text = "Extranous_em
+
+ZekeWatson
+
+Tibu
+
+Carlox
+
+Dio
+
+solo_ookami"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TheMasterc santo fcp y nick" type="Label" parent="Creditos textos/Apoyo1"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 75.0
+offset_right = 267.0
+offset_bottom = 191.0
+text = "TheMasterC
+
+SantBL
+
+FCPXAV
+
+Nick
+
+Yuli"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assets" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 107.0
+offset_top = 25.0
+offset_right = 387.0
+offset_bottom = 85.0
+theme = ExtResource("9_pr30s")
+theme_override_font_sizes/font_size = 20
+text = "ASSETS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="social gato y fonts" type="Label" parent="Creditos textos/Assets"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 60.0
+offset_right = 344.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 15
+text = "Social media icons - reffpixels
+
+Cat sprite - Elthen
+
+Dogica Font - Roberto Mocci
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="social gato y fonts2" type="Label" parent="Creditos textos/Assets"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -223.0
+offset_top = 60.0
+offset_right = 526.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 15
+text = "Minecraft Font - Craftron Gaming
+
+Unifontex Font by stgiga
+
+[8 bit sound effects library] -
+ LIttle Robot Sound Factory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="social gato y fonts3" type="Label" parent="Creditos textos/Assets"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -241.0
+offset_top = 60.0
+offset_right = 508.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 15
+text = "[200 free sfx] - kronbits
+
+[Impact Sounds] - Kenney"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks to you" type="Label" parent="Creditos textos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 76.0
+offset_top = 48.0
+offset_right = 858.0
+offset_bottom = 92.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 50
+text = "THANKS_FOR_PLAYING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bordenegro1" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -160.0
+offset_bottom = 720.0
+texture = ExtResource("4_l5war")
+expand_mode = 1
+
+[node name="bordenegro2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 960.0
+offset_right = 1120.0
+offset_bottom = 720.0
+texture = ExtResource("4_l5war")
+expand_mode = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=102 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -6,10 +6,10 @@
 [ext_resource type="Script" path="res://Logica/UI/Lb_tiempo.gd" id="3_hwchs"]
 [ext_resource type="Script" path="res://Escenas/Lb_Dias.gd" id="4_go46m"]
 [ext_resource type="AudioStream" uid="uid://c1hjjwipji7up" path="res://Musica/cliente_enojado.wav" id="4_h0j4i"]
-[ext_resource type="AudioStream" uid="uid://bmj43p0weuvai" path="res://Musica/OrdenCorrecta2.wav" id="5_lmvn8"]
+[ext_resource type="AudioStream" uid="uid://bo73yf6sssusa" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_timbre.mp3" id="5_3fp6n"]
 [ext_resource type="Script" path="res://Logica/UI/Lb_Dinero.gd" id="5_qljiu"]
 [ext_resource type="Script" path="res://FinalizarDia/FinalizarDia.gd" id="6_6ps5f"]
-[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/Horno.mp3" id="6_7b88a"]
+[ext_resource type="AudioStream" uid="uid://dreskpl5ovjky" path="res://Musica/OrdenIncorrecta.mp3" id="6_r0lc3"]
 [ext_resource type="Texture2D" uid="uid://dj3rn7e01llv3" path="res://Sprites/Recursos/MineralesCopia.png" id="7_bbwty"]
 [ext_resource type="Script" path="res://Logica/UI/GridMinerales.gd" id="7_oym11"]
 [ext_resource type="Texture2D" uid="uid://q25uhow5bfjg" path="res://Sprites/UI/moneda normal 27x27 px espaciado 2 px.png" id="7_q4w3t"]
@@ -17,6 +17,7 @@
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="8_qhue7"]
 [ext_resource type="Texture2D" uid="uid://cd07y1wjjjd6i" path="res://Sprites/UI/reloj loading 245 x 216.png" id="11_5es48"]
 [ext_resource type="Script" path="res://Escenas/Gameover.gd" id="12_1lmnk"]
+[ext_resource type="Texture2D" uid="uid://dle6v6vq7xy4e" path="res://Sprites/UI/ALERT.png" id="12_4y7g8"]
 [ext_resource type="Script" path="res://Escenas/Renta.gd" id="12_m1oro"]
 [ext_resource type="AudioStream" uid="uid://cbw1ing6stfqh" path="res://Musica/Finalizar el dia bien.wav" id="14_bi36g"]
 [ext_resource type="PackedScene" uid="uid://cgjgcfv42vp3u" path="res://Escenas/tutorial.tscn" id="14_uh3r7"]
@@ -33,12 +34,164 @@
 [ext_resource type="Texture2D" uid="uid://brjs7retygf0i" path="res://Sprites/Menu/fondopapel.png" id="27_u538p"]
 [ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="28_niiiv"]
 [ext_resource type="LabelSettings" uid="uid://dx2r5fphaavpb" path="res://Sprites/UI/labelconfigfactura/label_cafe.tres" id="29_odmc8"]
+[ext_resource type="Material" uid="uid://du7mm6ceqgl75" path="res://Escenas/burning.tres" id="30_esm6q"]
 [ext_resource type="Texture2D" uid="uid://cu1blftepsip2" path="res://Sprites/UI/broke.png" id="30_h7dm3"]
 [ext_resource type="AudioStream" uid="uid://dm1cyji87hgsg" path="res://Musica/sello.mp3" id="31_tekkc"]
+[ext_resource type="Texture2D" uid="uid://j7lay3et4sh5" path="res://Sprites/fondoavisoavisen.png" id="33_ryhf1"]
 [ext_resource type="Texture2D" uid="uid://cntxeq0ujga3b" path="res://Sprites/UI/sound_on.png" id="34_jvi5v"]
 [ext_resource type="Texture2D" uid="uid://ddaledbay8yx3" path="res://Sprites/UI/home.png" id="35_rr8cu"]
 [ext_resource type="Texture2D" uid="uid://3vbla4sy0yl8" path="res://Sprites/UI/play.png" id="36_juslv"]
 [ext_resource type="Texture2D" uid="uid://ci2rmo3tre1n2" path="res://Sprites/UI/pause.png" id="37_0c7ga"]
+[ext_resource type="Script" path="res://Escenas/ADVERTENCIAFINAL.gd" id="38_enfp6"]
+[ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="38_wojpx"]
+[ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
+[ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
+[ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="46_j4b7w"]
+[ext_resource type="PackedScene" uid="uid://c6dpi8j3mv3yn" path="res://outro_anim.tscn" id="47_0jhqx"]
+[ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="48_huglt"]
+[ext_resource type="AudioStream" uid="uid://di04wxp4twrf7" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Pause.mp3" id="49_4pl3n"]
+[ext_resource type="Texture2D" uid="uid://nflyrw3fnfcb" path="res://Sprites/UI/TSBFlechaNormal.png" id="51_bpxai"]
+[ext_resource type="Texture2D" uid="uid://b8r5icb25mgxs" path="res://Sprites/UI/TSBFlechaPressed.png" id="52_vcqjp"]
+
+[sub_resource type="Animation" id="Animation_r4qms"]
+resource_name = "1_hour_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"anim_1_hour_flash"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_itscs"]
+resource_name = "1_hour_left_flashing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_t2e1j"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_65ml2"]
+resource_name = "half_hour_left_flashing"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.2, 2.2), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_bmoov"]
+resource_name = "ten_minutes_left_flashing"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.43, 0.43, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(2.5, 2.5), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05qlp"]
+_data = {
+"1_hour_left": SubResource("Animation_r4qms"),
+"1_hour_left_flashing": SubResource("Animation_itscs"),
+"RESET": SubResource("Animation_t2e1j"),
+"half_hour_left_flashing": SubResource("Animation_65ml2"),
+"ten_minutes_left_flashing": SubResource("Animation_bmoov")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6ud2"]
 font_color = Color(1, 0.168627, 0.168627, 1)
@@ -250,14 +403,38 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("signaturepancha:visible")
+tracks/0/path = NodePath(".:material:shader_parameter/dissolve_value")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("signaturepancha:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_uafkg"]
@@ -275,25 +452,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("signaturepancha:visible")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -301,14 +466,188 @@ tracks/2/keys = {
 "method": &"pasar_de_pagina"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("signaturepancha:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2ku1s"]
+resource_name = "sello_perder"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Streamsello:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pasar_de_pagina"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("signaturepancha:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("signaturepancha:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oykhg"]
 _data = {
 "RESET": SubResource("Animation_g65gi"),
-"sello epico": SubResource("Animation_uafkg")
+"sello epico": SubResource("Animation_uafkg"),
+"sello_perder": SubResource("Animation_2ku1s")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ph4q5"]
+texture = ExtResource("33_ryhf1")
+
 [sub_resource type="Theme" id="Theme_mqkdm"]
+
+[sub_resource type="Animation" id="Animation_md6q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Gameover/../Panchacorazon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Panchacorazon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lfuvp"]
+resource_name = "pancha_loading"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Gameover/../Panchacorazon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 2, 0.5),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(5.5, 5.5), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Panchacorazon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ld8u0"]
+_data = {
+"RESET": SubResource("Animation_md6q5"),
+"pancha_loading": SubResource("Animation_lfuvp")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bftsd"]
+size = Vector2(32, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0spdu"]
+size = Vector2(32, 44)
 
 [node name="UI" type="Control"]
 process_mode = 1
@@ -316,6 +655,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -320.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -338,12 +678,11 @@ stream = ExtResource("4_h0j4i")
 pitch_scale = 0.99
 
 [node name="AudioEntregarOrden" type="AudioStreamPlayer" parent="Ordenes"]
-stream = ExtResource("5_lmvn8")
+stream = ExtResource("5_3fp6n")
 volume_db = -6.5
-pitch_scale = 0.99
 
 [node name="AudioOrdenIncorrecta" type="AudioStreamPlayer" parent="Ordenes"]
-stream = ExtResource("6_7b88a")
+stream = ExtResource("6_r0lc3")
 pitch_scale = 0.6
 
 [node name="VbReloj" type="VBoxContainer" parent="."]
@@ -390,6 +729,7 @@ script = ExtResource("4_go46m")
 layout_mode = 2
 
 [node name="TextureReloj" type="TextureRect" parent="VbReloj/Control"]
+modulate = Color(1, 1, 1, 0.843137)
 texture_filter = 1
 layout_mode = 2
 offset_left = 115.0
@@ -400,6 +740,21 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_5es48")
 expand_mode = 1
 stretch_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VbReloj/Control"]
+modulate = Color(1, 0.43, 0.43, 1)
+position = Vector2(136, -46)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("12_4y7g8")
+
+[node name="SonidoAlerta" type="AudioStreamPlayer" parent="VbReloj/Control"]
+stream = ExtResource("41_f0gvx")
+volume_db = -6.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VbReloj/Control"]
+libraries = {
+"": SubResource("AnimationLibrary_05qlp")
+}
 
 [node name="Renta" type="Label" parent="."]
 layout_mode = 2
@@ -479,6 +834,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -500,6 +856,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -524,6 +881,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -549,6 +907,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -574,6 +933,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -599,6 +959,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -624,6 +985,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -649,6 +1011,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -674,6 +1037,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -699,6 +1063,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -724,6 +1089,7 @@ custom_minimum_size = Vector2(44, 28)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.635294, 0.0627451, 0.0666667, 1)
 text = ":0"
 vertical_alignment = 1
 
@@ -949,15 +1315,17 @@ expand_icon = true
 [node name="factura" type="Control" parent="."]
 unique_name_in_owner = true
 visible = false
+material = ExtResource("30_esm6q")
 layout_mode = 2
 anchors_preset = 0
 offset_left = 163.0
 offset_top = 112.0
-offset_right = 203.0
-offset_bottom = 152.0
+offset_right = 796.0
+offset_bottom = 647.0
 script = ExtResource("26_url12")
 
 [node name="PanelContainer" type="PanelContainer" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 17.0
 offset_top = -14.0
@@ -966,6 +1334,7 @@ offset_bottom = 496.0
 theme = SubResource("Theme_emm5b")
 
 [node name="Titulofactura" type="Label" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 30.0
 offset_top = 17.0
@@ -978,6 +1347,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 176.0
 offset_top = 399.0
@@ -988,6 +1358,7 @@ theme_override_font_sizes/font_size = 20
 text = "SIGN_BILL"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="factura"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 55.0
 offset_top = 94.0
@@ -997,15 +1368,18 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="cosas pagadas" type="VBoxContainer" parent="factura/HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="HBoxahorro" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Ahorro" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "SAVINGS"
@@ -1013,17 +1387,20 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="AhorroNumerito" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxahorro"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxGanancia" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Ganancia dia" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "DAY_PROFITS"
@@ -1031,17 +1408,20 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="GananciadiaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxGanancia"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxBono" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Ganancia bono" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "BONUS_PROFITS"
@@ -1049,17 +1429,20 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="GananciabonoNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxBono"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxReciclaje" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="ganancia recilaje" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
 texture_filter = 1
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "RECYCLE_PROFITS"
@@ -1067,16 +1450,19 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="GananciaReciclajeNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxReciclaje"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="HBoxRent" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="renta" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "RENT"
@@ -1084,20 +1470,24 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="RentaNum" type="Label" parent="factura/HBoxContainer/cosas pagadas/HBoxRent"]
 modulate = Color(0.847059, 0.129412, 0.0941176, 1)
+use_parent_material = true
 layout_mode = 2
 text = "-111"
 label_settings = ExtResource("29_odmc8")
 horizontal_alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="factura/HBoxContainer/cosas pagadas"]
+use_parent_material = true
 layout_mode = 2
 theme_override_constants/margin_top = 50
 
 [node name="HBoxTotal" type="HBoxContainer" parent="factura/HBoxContainer/cosas pagadas/MarginContainer"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Total" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "TOTAL"
@@ -1105,6 +1495,7 @@ label_settings = ExtResource("29_odmc8")
 
 [node name="Totalnum" type="Label" parent="factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal"]
 modulate = Color(0.584314, 0.341176, 0.211765, 1)
+use_parent_material = true
 layout_mode = 2
 text = "  111"
 label_settings = ExtResource("29_odmc8")
@@ -1112,6 +1503,7 @@ horizontal_alignment = 2
 
 [node name="signaturepancha" type="Sprite2D" parent="factura"]
 visible = false
+use_parent_material = true
 position = Vector2(416, 318)
 rotation = -0.174533
 scale = Vector2(2.5, 2.5)
@@ -1125,6 +1517,83 @@ libraries = {
 
 [node name="Streamsello" type="AudioStreamPlayer" parent="factura"]
 stream = ExtResource("31_tekkc")
+
+[node name="ADVERTENCIAFINAL" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 191.0
+offset_top = 149.0
+offset_right = 794.0
+offset_bottom = 617.0
+script = ExtResource("38_enfp6")
+
+[node name="PanelContainer" type="PanelContainer" parent="ADVERTENCIAFINAL"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = -14.0
+offset_right = 596.0
+offset_bottom = 322.0
+theme = SubResource("Theme_emm5b")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ph4q5")
+
+[node name="Tituloadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = 593.0
+offset_bottom = 70.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
+text = "WARNING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ADVERTENCIAFINAL"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 201.0
+offset_right = 593.0
+offset_bottom = 277.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="si" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
+modulate = Color(0.4, 0.980392, 0.392157, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme = ExtResource("38_wojpx")
+theme_override_font_sizes/font_size = 20
+text = "Yes"
+
+[node name="no" type="Button" parent="ADVERTENCIAFINAL/HBoxContainer"]
+modulate = Color(1, 0.411765, 0.411765, 1)
+use_parent_material = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme = ExtResource("38_wojpx")
+theme_override_font_sizes/font_size = 20
+text = "No"
+
+[node name="Descadvertencia" type="Label" parent="ADVERTENCIAFINAL"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+texture_filter = 1
+use_parent_material = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_left = 52.0
+offset_top = 86.0
+offset_right = 554.0
+offset_bottom = 180.0
+text = "WARNING_DESC"
+label_settings = ExtResource("29_odmc8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Pausa" type="PanelContainer" parent="."]
 process_mode = 3
@@ -1206,11 +1675,125 @@ position = Vector2(28, 38)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("37_0c7ga")
 
+[node name="alertaFinalizarDia" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="alertaFinalizarDia"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 80.0
+offset_right = 886.0
+offset_bottom = 226.0
+theme = ExtResource("8_qhue7")
+theme_override_font_sizes/font_size = 30
+text = "Queda una hora papu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AP_PANCHALOADING" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Gameover")
+libraries = {
+"": SubResource("AnimationLibrary_ld8u0")
+}
+
+[node name="Panchacorazon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(488, 312)
+scale = Vector2(5, 5)
+texture = ExtResource("43_sdv33")
+
+[node name="OutroAnim" parent="." instance=ExtResource("47_0jhqx")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Sonido boton" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("48_huglt")
+
+[node name="SonidoPausa" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("49_4pl3n")
+
+[node name="celular" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bordenegro1" type="TextureRect" parent="celular"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -160.0
+offset_bottom = 720.0
+texture = ExtResource("46_j4b7w")
+expand_mode = 1
+
+[node name="bordenegro2" type="TextureRect" parent="celular"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 960.0
+offset_right = 1120.0
+offset_bottom = 720.0
+texture = ExtResource("46_j4b7w")
+expand_mode = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="celular"]
+position = Vector2(992, 480)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_bftsd")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="celular"]
+self_modulate = Color(1, 1, 1, 0.945098)
+position = Vector2(1000, 376)
+rotation = 4.71239
+scale = Vector2(5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_bftsd")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="celular"]
+self_modulate = Color(1, 1, 1, 0.945098)
+position = Vector2(-120, 376)
+rotation = 4.71239
+scale = Vector2(5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_bftsd")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="celular"]
+position = Vector2(-24, 480)
+scale = Vector2(-5, 5)
+texture_normal = ExtResource("51_bpxai")
+texture_pressed = ExtResource("52_vcqjp")
+shape = SubResource("RectangleShape2D_0spdu")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
 [connection signal="delegar_orden" from="." to="Ordenes" method="entregarOrden"]
 [connection signal="pressed" from="FinalizarDia/VBoxContainer/CenterContainer/Btn_finalizar_dia" to="FinalizarDia" method="_on_btn_finalizar_dia_pressed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_reintentar" to="Gameover" method="_on_btn_reintentar_pressed"]
 [connection signal="pressed" from="Gameover/VBoxContainer/HBoxContainer/Btn_HOME" to="Gameover" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="factura/Button" to="factura" method="_on_btn_factura_pressed"]
+[connection signal="visibility_changed" from="ADVERTENCIAFINAL" to="ADVERTENCIAFINAL" method="_on_visibility_changed"]
+[connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/si" to="ADVERTENCIAFINAL" method="_on_si_pressed"]
+[connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/no" to="ADVERTENCIAFINAL" method="_on_no_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_BACK" to="." method="_on_btn_back_pressed"]

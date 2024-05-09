@@ -10,7 +10,7 @@ func _ready():
 		GlobalTuto.escalerasToTaladrando.connect(_on_escalera_to_taladrando)
 		GlobalRecursos.actualizar_mineral(0,5)
 		GlobalRecursos.actualizar_mineral(3,5)
-
+	
 		self.visible=true
 		APtutorial.play("pancha_receta")
 	pass # Replace with function body.
@@ -59,7 +59,7 @@ func set_last_state(transicion:String):
 		
 		#"entrega_to_taladrando":
 			
-	print(lastPosition)
+	#print(lastPosition)
 	#print(APtutorial.get_animation("receta_to_entrega").track_get_key_value(3,-1))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3g4nx73lelaj"
+path="res://.godot/imported/Gem Frenzy_SFX_Ladder.mp3-50dd21b8acee4746bc0b08d8a2cb809b.mp3str"
+
+[deps]
+
+source_file="res://Musica/SFX_luisa/Gem Frenzy_SFX_Ladder.mp3"
+dest_files=["res://.godot/imported/Gem Frenzy_SFX_Ladder.mp3-50dd21b8acee4746bc0b08d8a2cb809b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

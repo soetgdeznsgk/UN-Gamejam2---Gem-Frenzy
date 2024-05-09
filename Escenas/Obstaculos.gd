@@ -100,7 +100,7 @@ func empezardia():
 			inicioB=300
 			finalB=500
 			inicioC=600
-			finalC=700	
+			finalC=750	
 		7:
 			cantidadA=range(0,24)
 			cantidadB=range(0,12)
@@ -127,7 +127,7 @@ func empezardia():
 			inicioB=500
 			finalB=1190
 			inicioC=900	
-			finalC=1190	
+			finalC=1200	
 	#primera capa
 	#Tier A coso
 	for i in cantidadA:

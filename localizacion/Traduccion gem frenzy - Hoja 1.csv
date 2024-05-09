@@ -1,6 +1,6 @@
 key,es,en,zh,jp
 PLAY,Jugar,Play,开始,プレイ
-TUTORIAL_FINISHED,¡TUTORIAL FINALIZADO!,TUTORIAL COMPLETE!,完整教程！,チュートリアル終了！
+TUTORIAL_FINISHED,¡TUTORIAL FINALIZADO!,TUTORIAL COMPLETED!,完整教程！,チュートリアル終了！
 INFLATION,inflacion.png,inflation.png,通货膨胀.png,インフレーション 
 PANCHA_MISSION,"Ahora estas listo para 
 ayudar a pancha a enfrentar
@@ -22,7 +22,7 @@ TOP_PLAYER_NAME,Nombre,Name,姓名,名前
 YOUR_NAME,Escribe tu nombre,Write your name,写你的名字,お名前を書いてください。
 RETRY,Reintentar,Retry,再玩一次,再プレイ
 CHEST,Cofre,Chest,箱子,箱
-CHEST_DESC,Permite almacenar más tipos de minerales,Allows you to store more kinds of minerals,允许您存储更多类型的矿物质。,より多くの種類のミネラルを保管できるようになります。
+CHEST_DESC,Permite almacenar minerales mas valiosos y crear nuevas recetas,Allows you to store more valuable minerals and create new recipes,允许您储存更多有价值的矿物质并创造新的配方,より貴重なミネラルを保管し、新しいレシピを作成できるようになります
 MANY_UPGRADES,Muchas Mejoras,Many Upgrades,许多升级,さらなる改善
 MANY_UPGRADES_DESC,¿No son suficientes mejoras? Agrega una más al finalizar el dia,Aren't these upgrades enough? Add one more at the end of the day,这些升级还不够吗？ 在一天结束时再添加一个,改善は足りませんか？日が終わるともう一つ追加されます！
 ZEN_CLIENTS,Clientes Zen,Zen Clients,禅宗客户,禅の顧客
@@ -35,6 +35,12 @@ CATO,Gato,Cat,猫,猫
 CATO_DESC,¡Un gato siempre atrae más clientes!,A cat always attracts more customers!,一只猫总是能吸引更多的顾客！,猫はいつももっと多くの顧客を引き付けます！
 SPEED_UP,Mas rapido,SPEED UP,速度更快,速度を上げる
 SPEED_UP_DESC,Pancha tomó café colombiano,Pancha drank Colombian coffee,Pancha 喝哥伦比亚咖啡,パンチャはコロンビアコーヒーを飲みました
+RECYCLE,"Ganancia
+por reciclaje",Recycle Profit,,
+RECYCLE_DESC,Al final del dia gana mas por minerales no usados,At the end of the day you earn more for unused minerals,,
+CONTRACT,"Escrituras 
+de la tienda",Shop Ownership,店铺所有权,ショップの所有権
+CONTRACT_DESC,Cumple el sueño de Pancha (El juego acabará),Fullfill Pancha's Dream (the game will end),实现Pancha的梦想（游戏即将结束）,パンチャの夢を叶える (ゲームは終了します)
 TUTORIAL,Tutorial,Tutorial,教程,チュートリアル
 PAUSED,PAUSADO,PAUSED,暂停,ポーズ
 CREDITS_DEVELOPED_BY,Desarrollado por,Developed By,游戏开发由  ,開発
@@ -58,3 +64,24 @@ CREDITS,CREDITOS,CREDITS,制作人员,クレジット
 PROGRAMMERS,PROGAMADORES,PROGRAMMERS,程序员,プログラマー
 ARTISTS,ARTISTAS,ARTISTS,艺术家,アーティスト
 MISSION_TEXT,Recoge 20 de Carbon,Collect 20 Coal,收集 20 块煤炭,石炭を 20 個集めます
+CONGRATS,¡FELICIDADES!,CONGRATULATIONS!,恭喜！,おめでとう！
+WARNING,¡ADVERTENCIA!,WARNING!,警告性的！,警告
+WARNING_DESC,"Comprar esta mejora finalizara el juego 
+
+¿Estas seguro?","Buying this upgrade will end the game. 
+
+Are you sure?","购买此升级将结束游戏。
+
+你确定吗？","このアップグレードを購入するとゲームが終了します。
+
+よろしいですか？"
+YES,SI,YES,是的,はい
+NO,NO,NO,不,ノー
+DEVELOPED_BY,Desarrollado por,Developed by,由开发,によって開発されました
+PROGRAMMERS,Programadores,Programmers,程序员,プログラマー
+ARTISTS,Artistas,Artists,艺术家,アーティスト
+MUSIC,Musica,Music,音乐,ミュージック
+SFX,SFX,SFX,音效,効果音
+SUPPORT,Agradecimientos Especiales:,Special Thanks,特别感谢,スペシャルサンクス
+ASSETS,Recursos,Assets,资产,資産
+THANKS_FOR_PLAYING,Gracias por jugar,Thanks for Playing,感谢您玩,遊んでくれてありがとう

@@ -22,14 +22,18 @@ func set_inicioCy(NUEVOVALORFUNCIONAPLS1,NUEVOVALORFUNCIONAPLS2):
 
 func _on_area_entered(area):
 #hacer coso de cambio de posicion aca jija
+	#print("slime veces movido: ",movido," tocandoslimebooleano: ",TocandoSlime)
 	if area is Slime:
 		TocandoSlime=true	
-		if movido<=10:
+		if movido<=15:
 			reposicionar()
+		else:
+			TocandoSlime=true
 		#var xrandom=randi() % 570+20#de 50 a 640
 		#var yrandom
-
+	
 func reposicionar():
+	
 	var xrandom=randi() % 570+20#de 50 a 640
 	var yrandom=randi_range(inicioy,finaly)
 	var modulox=xrandom%16
@@ -44,6 +48,8 @@ func reposicionar():
 	#print("valor yrandom al corregir: ",yrandom)
 	self.position=Vector2(xrandom,yrandom)
 	movido+=1
+	TocandoSlime=false
+	
 func _on_body_entered(body):
 	if body is Player and body.taladrando:
 		body.modolento=true

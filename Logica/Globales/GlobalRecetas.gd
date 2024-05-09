@@ -9,7 +9,15 @@ enum {
 	CristalAgua,
 	CristalTierra
 }
-
+enum recetas {
+	CristalRGB,
+	Allmetal,
+	Acero,
+	CristalFuego,
+	CristalFrio,
+	CristalAgua,
+	CristalTierra
+}
 #}
 func encontrarReceta(ingredientes : Array) -> int: # NO TOCAR ESTA PORQUERIA
 	if ingredientes.has(GlobalRecursos.mineralesSinFondo.Hierro) and ingredientes.has(GlobalRecursos.mineralesSinFondo.Carbon) and ingredientes.size() == 2: # Acero (hierro + carbon)
@@ -34,3 +42,6 @@ func encontrarReceta(ingredientes : Array) -> int: # NO TOCAR ESTA PORQUERIA
 		return CristalTierra
 	return -1 # ésto es ejecutado si la receta no existe, será llamada por el horno
 	
+func print_receta(ingredientes : Array) -> void:
+	var miReceta = encontrarReceta(ingredientes)
+	print( recetas.keys()[miReceta] )

@@ -34,8 +34,8 @@ func actualizar():
 
 func Open() -> void:
 	if visible and not playerRef.receta_en_mano:
-		$AnimationPlayer.play("AbrirCofre")
 		if playerRef.items_en_mano.size() < 3 and cantidad_almacenada > 0: #si hay espacio en las manos de player
+			$AnimationPlayer.play("AbrirCofre")
 			$AudioStreamPlayer.pitch_scale = randf_range(0.985, 1.1)
 			$AudioStreamPlayer.play()
 			if playerRef.items_en_mano.find(material_almacenado) == -1:
@@ -48,18 +48,27 @@ func Open() -> void:
 				playerRef.darUnObjeto(material_almacenado)
 				cantidad_almacenada += 1
 				GlobalRecursos.actualizar_mineral(material_almacenado, 1)
+			return
 				
-		elif playerRef.items_en_mano.size() <= 3:
-			if playerRef.items_en_mano.has(material_almacenado): 
+		if playerRef.items_en_mano.size() <= 3 and \
+			playerRef.items_en_mano.has(material_almacenado): 
+				$AnimationPlayer.play("AbrirCofre")
 				#si el jugador tiene en sus manos el item del cofre
 				playerRef.darUnObjeto(material_almacenado)
 				cantidad_almacenada += 1
 				GlobalRecursos.actualizar_mineral(material_almacenado, 1)
 				$AudioStreamPlayer.pitch_scale = randf_range(1,1.05)
 				$AudioStreamPlayer.play()
-		if cantidad_almacenada == 0:
-			$AudioStreamPlayer.pitch_scale = 0.67
-			$AudioStreamPlayer.play()
+				return
+		# cuando no tiene nada
+		if cantidad_almacenada == 0 and not playerRef.items_en_mano.has(material_almacenado):
+			$AnimationPlayer.play("NoHay")
+			if GlobalTuto.tutorial:
+				cantidad_almacenada+=5
+			$SP_nohay.play()
+			return
+
+				
 
 # Señales
 

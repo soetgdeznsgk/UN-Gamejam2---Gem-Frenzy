@@ -1,64 +1,38 @@
-[gd_scene load_steps=37 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=40 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
+[ext_resource type="Shader" path="res://Escenas/brillo.gdshader" id="3_0v8dk"]
+[ext_resource type="PackedScene" uid="uid://nwim4g0q3if5" path="res://Escenas/MainJuego_copy.tscn" id="3_5j26j"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
 [ext_resource type="Texture2D" uid="uid://bbbosknu7tms7" path="res://Sprites/Menu/gem frenzy logo 4k remaster 1 link hd 710x360.png" id="3_sgxu4"]
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
-[ext_resource type="AudioStream" uid="uid://dvbgoj0grjxq" path="res://Musica/Maple_Meadows_1-_1_.wav" id="4_ued5s"]
 [ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
+[ext_resource type="AudioStream" uid="uid://ciqvu1ck2qpl0" path="res://Musica/Music_LuisManzano/GF_musx_inicio_V2.ogg" id="6_4oy6f"]
 [ext_resource type="Texture2D" uid="uid://n2xx1oqnyhr" path="res://Sprites/UI/sound_mute.png" id="7_ewkdi"]
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="7_kg6s8"]
-[ext_resource type="Texture2D" uid="uid://w20o216cewiy" path="res://Sprites/Menu/buy_1.png" id="8_kncop"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="9_fv52p"]
 [ext_resource type="Theme" uid="uid://cmi06nsvnqse7" path="res://Sprites/Menu/Uifondo.tres" id="11_hyuxc"]
 [ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="12_3d5lx"]
-[ext_resource type="FontFile" uid="uid://fcswwmbdodog" path="res://Sprites/UI/dogicapixelbold.ttf" id="12_agm7l"]
-[ext_resource type="Texture2D" uid="uid://cjuw1xw3wvts2" path="res://Sprites/Menu/RETRY_1_SQUARE.png" id="13_4of3c"]
+[ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="12_vylb7"]
 [ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
-[ext_resource type="Texture2D" uid="uid://ff5eprqul6n7" path="res://Sprites/Menu/RETRY_2_SQUARE.png" id="14_pojyy"]
 [ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="16_ec5un"]
+[ext_resource type="Texture2D" uid="uid://cp5w44xd5lb2x" path="res://Sprites/UI/FULLSCREEN.png" id="18_dytax"]
 [ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
 [ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
 [ext_resource type="Texture2D" uid="uid://cwbb74jtgysns" path="res://Sprites/Menu/Instagram.png" id="21_bea0t"]
+[ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="21_gj7xj"]
+[ext_resource type="AudioStream" uid="uid://bcbhctv37dc4a" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Play.mp3" id="22_83hll"]
 [ext_resource type="Texture2D" uid="uid://c82r2kyo8p1lc" path="res://Sprites/Menu/Twitter.png" id="22_onlig"]
+[ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="23_agblx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0x2dl"]
+shader = ExtResource("3_0v8dk")
+shader_parameter/shine_color = Color(0.768627, 0.94902, 1, 0.294118)
+shader_parameter/shine_speed = 2.2
+shader_parameter/shine_size = 0.002
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3mqr"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgoiw"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-texture = ExtResource("13_4of3c")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbrr"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-texture = ExtResource("13_4of3c")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnmog"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 5.0
-texture = ExtResource("14_pojyy")
-
-[sub_resource type="Theme" id="Theme_s2ne5"]
-default_font = ExtResource("12_agm7l")
-default_font_size = 12
-Button/colors/font_color = Color(0.0235294, 0.0588235, 0.278431, 1)
-Button/colors/font_hover_color = Color(0.0235294, 0.0588235, 0.278431, 1)
-Button/colors/font_pressed_color = Color(0.0117647, 0.0313726, 0.192157, 1)
-Button/fonts/font = ExtResource("12_agm7l")
-Button/styles/focus = SubResource("StyleBoxEmpty_d3mqr")
-Button/styles/hover = SubResource("StyleBoxTexture_wgoiw")
-Button/styles/normal = SubResource("StyleBoxTexture_phbrr")
-Button/styles/pressed = SubResource("StyleBoxTexture_fnmog")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ots8e"]
 content_margin_left = 15.0
@@ -111,12 +85,177 @@ Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
 Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
 Button/styles/pressed = SubResource("StyleBoxTexture_04hec")
 
+[sub_resource type="Animation" id="Animation_jhvq3"]
+resource_name = "Logo_se_mueve"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/shine_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.768627, 0.94902, 1, 0.294118)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/shine_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:material:shader_parameter/shine_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.002]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.38, 0.38), Vector2(0.4, 0.4), Vector2(0.38, 0.38), Vector2(0.4, 0.4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0174533, 0.00872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_akqy7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:material:shader_parameter/shine_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.768627, 0.94902, 1, 0.294118)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:material:shader_parameter/shine_speed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:material:shader_parameter/shine_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.002]
+}
+
+[sub_resource type="Animation" id="Animation_ptyqu"]
+resource_name = "aparece_logo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 1),
+"transitions": PackedFloat32Array(2, 2.92817, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.55, 0.55), Vector2(0.4, 0.4), Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8jtx2"]
+_data = {
+"Logo_se_mueve": SubResource("Animation_jhvq3"),
+"RESET": SubResource("Animation_akqy7"),
+"aparece_logo": SubResource("Animation_ptyqu")
+}
+
 [node name="GameStart" type="Control"]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 160.0
+offset_right = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -124,28 +263,36 @@ size_flags_vertical = 3
 theme = ExtResource("4_ruh65")
 script = ExtResource("1_d1quh")
 
+[node name="MainJuego MENU" parent="." instance=ExtResource("3_5j26j")]
+z_index = -1
+position = Vector2(-510, 620)
+scale = Vector2(3, 3)
+
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_0x2dl")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -280.0
-offset_top = 25.0
-offset_right = 1140.0
-offset_bottom = 745.0
+offset_left = -869.0
+offset_top = -185.0
+offset_right = 551.0
+offset_bottom = 535.0
 grow_horizontal = 2
 scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(710, 360)
 texture = ExtResource("3_sgxu4")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
 z_index = -1
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -480.0
-offset_right = 480.0
+offset_left = -640.0
+offset_right = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_26vto")
@@ -154,13 +301,11 @@ expand_mode = 5
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.428
-anchor_right = 1.0
-anchor_bottom = 0.997
-offset_left = 2.0
-offset_top = 73.84
-offset_right = -2.0
-offset_bottom = -79.84
+offset_left = 485.0
+offset_top = 510.0
+offset_right = 485.0
+offset_bottom = 510.0
+use_top_left = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -173,45 +318,24 @@ theme_override_font_sizes/font_size = 32
 text = "PLAY"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ued5s")
-volume_db = -12.0
+stream = ExtResource("6_4oy6f")
+volume_db = -8.0
 autoplay = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(903, 52)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("7_ewkdi")
 
 [node name="Btn_toggle_sound" type="Button" parent="."]
 layout_mode = 0
-offset_left = 855.0
+offset_left = 846.2
 offset_top = 14.0
-offset_right = 953.0
+offset_right = 944.2
 offset_bottom = 90.0
+pivot_offset = Vector2(49, 38)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ekfl3")
 flat = true
 
-[node name="botontuto" type="Sprite2D" parent="."]
-position = Vector2(858.6, 134.6)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("8_kncop")
-
-[node name="tutorial" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(924, 129)
-scale = Vector2(2, 2)
-texture = ExtResource("7_kg6s8")
-
-[node name="Tutorial" type="Label" parent="."]
-layout_mode = 0
-offset_left = 771.0
-offset_top = 124.0
-offset_right = 916.0
-offset_bottom = 154.0
-theme = ExtResource("9_fv52p")
-theme_override_constants/outline_size = 10
-text = "TUTORIAL"
-horizontal_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="Btn_toggle_sound"]
+position = Vector2(47.9999, 38)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_ewkdi")
 
 [node name="Lenguaje" type="Control" parent="."]
 visible = false
@@ -223,9 +347,12 @@ offset_bottom = 611.0
 theme = ExtResource("11_hyuxc")
 
 [node name="PanelContainer" type="PanelContainer" parent="Lenguaje"]
-layout_mode = 0
-offset_right = 649.0
-offset_bottom = 487.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.054
+anchor_bottom = 0.98
+offset_right = -0.264038
+offset_bottom = -0.0599976
 
 [node name="MarginContainer" type="MarginContainer" parent="Lenguaje/PanelContainer"]
 layout_mode = 2
@@ -250,7 +377,7 @@ text = "LANGUAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="en" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="en" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -258,7 +385,7 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 25
 text = "English"
 
-[node name="es" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="es" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -266,7 +393,7 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 25
 text = "Español"
 
-[node name="zh" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="zh" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -274,7 +401,7 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 25
 text = "中国語（簡体字"
 
-[node name="jp" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="jp" type="Button" parent="Lenguaje/PanelContainer/MarginContainer/VBoxContainer" groups=["buttonHover"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -282,18 +409,14 @@ theme = ExtResource("5_lnpde")
 theme_override_font_sizes/font_size = 30
 text = "日本語"
 
-[node name="Control" type="Control" parent="Lenguaje"]
-anchors_preset = 0
-offset_right = 15.0
-offset_bottom = 20.0
-
-[node name="btn_close_language" type="Button" parent="Lenguaje/Control"]
+[node name="btn_close_language" type="Button" parent="Lenguaje" groups=["buttonHover"]]
 layout_mode = 0
 offset_left = 577.0
 offset_top = 16.0
 offset_right = 619.0
 offset_bottom = 59.0
-theme = SubResource("Theme_s2ne5")
+pivot_offset = Vector2(21, 21)
+theme = ExtResource("12_vylb7")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1
 expand_icon = true
@@ -418,18 +541,13 @@ text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="Credits"]
-anchors_preset = 0
-offset_right = 15.0
-offset_bottom = 20.0
-
-[node name="btn_close_credits" type="Button" parent="Credits/Control"]
+[node name="btn_close_credits" type="Button" parent="Credits" groups=["buttonHover"]]
 layout_mode = 0
 offset_left = 577.0
 offset_top = 16.0
 offset_right = 619.0
 offset_bottom = 59.0
-theme = SubResource("Theme_s2ne5")
+theme = ExtResource("12_vylb7")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1
 expand_icon = true
@@ -480,10 +598,8 @@ autowrap_mode = 2
 
 [node name="Control2" type="Control" parent="Credits"]
 anchors_preset = 0
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 41.0
-offset_bottom = 36.0
+offset_right = 305.0
+offset_bottom = 461.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Credits/Control2"]
 position = Vector2(550, 384)
@@ -496,8 +612,13 @@ offset_left = 765.0
 offset_top = 112.0
 offset_right = 949.0
 offset_bottom = 150.0
+pivot_offset = Vector2(92, 19)
 theme = ExtResource("5_lnpde")
-flat = true
+theme_type_variation = &"ButtonBlanco"
+text = "TUTORIAL"
+icon = ExtResource("7_kg6s8")
+icon_alignment = 2
+expand_icon = true
 
 [node name="Btn_language" type="Button" parent="."]
 custom_minimum_size = Vector2(75, 75)
@@ -506,6 +627,7 @@ offset_left = 21.0
 offset_top = 23.0
 offset_right = 96.0
 offset_bottom = 98.0
+pivot_offset = Vector2(37, 37)
 theme = SubResource("Theme_54y6a")
 icon = ExtResource("19_d4jep")
 icon_alignment = 1
@@ -518,12 +640,26 @@ offset_left = 16.0
 offset_top = 630.0
 offset_right = 91.0
 offset_bottom = 705.0
+pivot_offset = Vector2(37, 37)
 theme = SubResource("Theme_vk4em")
 icon = ExtResource("20_3cvn6")
 icon_alignment = 1
 expand_icon = true
 
-[node name="LinkButton" type="LinkButton" parent="."]
+[node name="Btn_fullscreen" type="Button" parent="."]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 116.0
+offset_right = 96.0
+offset_bottom = 191.0
+pivot_offset = Vector2(37, 37)
+theme = SubResource("Theme_vk4em")
+icon = ExtResource("18_dytax")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Instagram" type="LinkButton" parent="."]
 layout_mode = 0
 offset_left = 871.0
 offset_top = 641.0
@@ -531,12 +667,12 @@ offset_right = 933.0
 offset_bottom = 701.0
 uri = "https://www.instagram.com/theyippiesdev/"
 
-[node name="Sprite2D" type="Sprite2D" parent="LinkButton"]
+[node name="Sprite2D" type="Sprite2D" parent="Instagram"]
 position = Vector2(31.25, 29.25)
 scale = Vector2(2.77083, 2.77083)
 texture = ExtResource("21_bea0t")
 
-[node name="LinkButton2" type="LinkButton" parent="."]
+[node name="Twitter" type="LinkButton" parent="."]
 layout_mode = 0
 offset_left = 788.0
 offset_top = 639.0
@@ -544,15 +680,61 @@ offset_right = 850.0
 offset_bottom = 699.0
 uri = "https://twitter.com/TheYippiesdev"
 
-[node name="Sprite2D" type="Sprite2D" parent="LinkButton2"]
+[node name="Sprite2D" type="Sprite2D" parent="Twitter"]
 position = Vector2(31.25, 29.25)
 scale = Vector2(2.77083, 2.77083)
 texture = ExtResource("22_onlig")
 
+[node name="SonidoBoton" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("21_gj7xj")
+
+[node name="BotonPlay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_83hll")
+
+[node name="bordenegro1" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -160.0
+offset_bottom = 720.0
+texture = ExtResource("23_agblx")
+expand_mode = 1
+
+[node name="bordenegro2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 960.0
+offset_right = 1120.0
+offset_bottom = 720.0
+texture = ExtResource("23_agblx")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8jtx2")
+}
+
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Btn_jugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="mouse_entered" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_mouse_entered"]
+[connection signal="mouse_exited" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_mouse_exited"]
 [connection signal="pressed" from="Btn_toggle_sound" to="." method="_on_btn_toggle_sound_pressed"]
-[connection signal="pressed" from="Lenguaje/Control/btn_close_language" to="." method="_on_btn_close_language_pressed"]
-[connection signal="pressed" from="Credits/Control/btn_close_credits" to="." method="_on_btn_close_credits_pressed"]
+[connection signal="pressed" from="Lenguaje/btn_close_language" to="." method="_on_btn_close_language_pressed"]
+[connection signal="pressed" from="Credits/btn_close_credits" to="." method="_on_btn_close_credits_pressed"]
+[connection signal="mouse_entered" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_mouse_exited"]
 [connection signal="pressed" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_pressed"]
+[connection signal="mouse_entered" from="Btn_language" to="." method="_on_btn_language_mouse_entered"]
+[connection signal="mouse_exited" from="Btn_language" to="." method="_on_btn_language_mouse_exited"]
 [connection signal="pressed" from="Btn_language" to="." method="_on_btn_language_toggle_pressed"]
+[connection signal="mouse_entered" from="Btn_credits" to="." method="_on_btn_credits_mouse_entered"]
+[connection signal="mouse_exited" from="Btn_credits" to="." method="_on_btn_credits_mouse_exited"]
 [connection signal="pressed" from="Btn_credits" to="." method="_on_btn_credits_pressed"]
+[connection signal="pressed" from="Btn_fullscreen" to="." method="_on_btn_fullscreen_pressed"]
+[connection signal="mouse_entered" from="Instagram" to="." method="_on_instagram_mouse_entered"]
+[connection signal="mouse_exited" from="Instagram" to="." method="_on_instagram_mouse_exited"]
+[connection signal="mouse_entered" from="Twitter" to="." method="_on_twitter_mouse_entered"]
+[connection signal="mouse_exited" from="Twitter" to="." method="_on_twitter_mouse_exited"]
+[connection signal="finished" from="BotonPlay" to="." method="_on_boton_play_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

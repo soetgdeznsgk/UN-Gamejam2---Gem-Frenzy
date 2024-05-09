@@ -117,7 +117,7 @@ func pagueme_la_renta():
 			@warning_ignore("integer_division")
 			reciclar += (mitad * (i+1/2))
 		
-		totalreciclado = int(reciclar * 0.036)
+		totalreciclado = int(reciclar * 0.036)+(((GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasReciclaje])*0.10)*reciclar)
 	
 	GlobalRecursos.GananciaReciclaje=totalreciclado
 	actualizar_dinero(totalreciclado)
