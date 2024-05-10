@@ -27,10 +27,10 @@ func _on_finalizar_dia():
 	%"factura/HBoxContainer/cosas pagadas/HBoxReciclaje/GananciaReciclajeNum".text="  "+str(GlobalRecursos.GananciaReciclaje)
 	%"factura/HBoxContainer/cosas pagadas/HBoxRent/RentaNum".text=" -"+str(GlobalRecursos.valorDia)
 	var sumatotal=GlobalRecursos.Ahorro+GlobalRecursos.Gananciadia+GlobalRecursos.Gananciabono+GlobalRecursos.GananciaReciclaje-GlobalRecursos.valorDia
-	%"factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal/Totalnum".text="  "+str(sumatotal)
+	%"factura/HBoxContainer/cosas pagadas/VboxContainer/HBoxTotal/Totalnum".text="  "+str(sumatotal)
 	if sumatotal<0:
 		%Gameover.visible=false
-		%"factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
+		%"factura/HBoxContainer/cosas pagadas/VboxContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
 	
 
 func _on_btn_finalizar_dia_pressed() -> void:

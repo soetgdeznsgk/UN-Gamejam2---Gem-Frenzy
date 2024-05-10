@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bvaa0r36hif4w"]
+[gd_scene load_steps=55 format=3 uid="uid://bvaa0r36hif4w"]
 
 [ext_resource type="Script" path="res://Logica/Player/player.gd" id="1_bfxk7"]
 [ext_resource type="Texture2D" uid="uid://b80hxuknsgbnp" path="res://Sprites/Player/pancha_caminando_espalda_14x20_px.png" id="2_04omg"]
@@ -1069,9 +1069,60 @@ root_node = NodePath(".")
 callback_mode_discrete = 0
 tree_root = SubResource("AnimationNodeStateMachine_14vni")
 anim_player = NodePath("AnimationPlayer")
+parameters/current_length = 0.0
+parameters/current_position = 0.0
+parameters/current_delta = 0.0
+parameters/End/current_length = null
+parameters/End/current_position = null
+parameters/End/current_delta = null
+parameters/Escaleras/current_length = null
+parameters/Escaleras/current_position = null
+parameters/Escaleras/current_delta = null
+parameters/Idle_Superficie/current_length = 0
+parameters/Idle_Superficie/current_position = 0
+parameters/Idle_Superficie/current_delta = 0
 parameters/Idle_Superficie/blend_position = 0.649329
+parameters/Idle_Superficie/0/current_length = null
+parameters/Idle_Superficie/0/current_position = null
+parameters/Idle_Superficie/0/current_delta = null
+parameters/Idle_Superficie/1/current_length = null
+parameters/Idle_Superficie/1/current_position = null
+parameters/Idle_Superficie/1/current_delta = null
+parameters/Start/current_length = 0.0
+parameters/Start/current_position = 0.0
+parameters/Start/current_delta = 0.0
+parameters/Taladrando/current_length = Vector2(0, 0)
+parameters/Taladrando/current_position = Vector2(0, 0)
+parameters/Taladrando/current_delta = Vector2(0, 0)
 parameters/Taladrando/blend_position = Vector2(0, 0)
+parameters/Taladrando/0/current_length = null
+parameters/Taladrando/0/current_position = null
+parameters/Taladrando/0/current_delta = null
+parameters/Taladrando/1/current_length = null
+parameters/Taladrando/1/current_position = null
+parameters/Taladrando/1/current_delta = null
+parameters/Taladrando/2/current_length = null
+parameters/Taladrando/2/current_position = null
+parameters/Taladrando/2/current_delta = null
+parameters/Taladrando/3/current_length = null
+parameters/Taladrando/3/current_position = null
+parameters/Taladrando/3/current_delta = null
+parameters/Taladrando/4/current_length = null
+parameters/Taladrando/4/current_position = null
+parameters/Taladrando/4/current_delta = null
+parameters/Taladrando_Idle/current_length = null
+parameters/Taladrando_Idle/current_position = null
+parameters/Taladrando_Idle/current_delta = null
+parameters/Walking_Superficie/current_length = 0
+parameters/Walking_Superficie/current_position = 0
+parameters/Walking_Superficie/current_delta = 0
 parameters/Walking_Superficie/blend_position = -0.521812
+parameters/Walking_Superficie/0/current_length = null
+parameters/Walking_Superficie/0/current_position = null
+parameters/Walking_Superficie/0/current_delta = null
+parameters/Walking_Superficie/1/current_length = null
+parameters/Walking_Superficie/1/current_position = null
+parameters/Walking_Superficie/1/current_delta = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
 libraries = {
