@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	print("READY MAIN GAME")
+	#print("READY MAIN GAME")
 	if GlobalTuto.tutorial:
 		#gato bonito
 		GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]=1

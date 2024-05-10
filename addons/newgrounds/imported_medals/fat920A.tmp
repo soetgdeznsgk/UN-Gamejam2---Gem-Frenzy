@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MedalResource" load_steps=2 format=3 uid="uid://dq3f2ixml4slu"]
+
+[ext_resource type="Script" path="res://addons/newgrounds/data/medal_resource.gd" id="1_megsp"]
+
+[resource]
+script = ExtResource("1_megsp")
+name = "Fat cat Fest?"
+description = "Adopt a cat"
+icon_url = "//apifiles.ngfiles.com/medals/58000/58087/78739_fatcatfest.webp"
+id = 78739
+secret = false
+unlocked = false
+value = 0
+difficulty = 2

@@ -18,6 +18,8 @@ func _ready() -> void:
 	
 
 func nuevo_gato():
+	if GlobalTiempo.diaActual>1:
+		GlobalLogros.adoptarGato.emit()
 	var gatos = GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]
 	if gatoPower < gatos:
 		visible = true

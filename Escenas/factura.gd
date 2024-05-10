@@ -4,6 +4,9 @@ var gameover:bool
 func _on_btn_factura_pressed():
 	if GlobalRecursos.dinero<0:
 		$AnimationPlayer.play("sello_perder")
+		#Desbloquea mi primera chamba
+		GlobalLogros.primeraChamba.emit()
+		
 		gameover=true
 	else:
 		#print("sello epico")

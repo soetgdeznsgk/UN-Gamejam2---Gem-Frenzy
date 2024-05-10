@@ -72,6 +72,7 @@ func emit_endtaladrando():
 		$Objetivo.text=tr("MISSION_TEXT")
 		
 	if GlobalRecursos.minerales[3]>20:
+		GlobalLogros.tutorialCompleto.emit()
 		GlobalTuto.pausarpancha.emit()
 		$"Pancha Gif".visible=false
 		$"Tutorialfinalizao/Pancha finalizao".play("default")

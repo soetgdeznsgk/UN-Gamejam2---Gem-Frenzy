@@ -5,7 +5,7 @@ extends Node
 # inicia en ceros
 const cantidadTiposMinerales = 11
 var minerales : Array = []
-var dinero : int = 5
+var dinero : int = 500
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -123,7 +123,7 @@ func pagueme_la_renta():
 		
 		
 		totalreciclado = int(reciclar * 0.025)+int(totalbonusreciclaje)
-		print("bonus reciclaje: ",totalbonusreciclaje)
+		#print("bonus reciclaje: ",totalbonusreciclaje)
 	GlobalRecursos.GananciaReciclaje=totalreciclado
 	actualizar_dinero(totalreciclado)
 	# luego de obtener oro por minerales de sobra, se cobra la renta
