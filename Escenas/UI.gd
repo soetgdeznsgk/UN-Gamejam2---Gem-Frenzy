@@ -49,3 +49,7 @@ func ten_minutes_left_flashing():
 	$VbReloj/Control/AnimationPlayer.play("ten_minutes_left_flashing")
 func pausar_flash():
 	$VbReloj/Control/AnimationPlayer.stop()
+
+
+func _on_btn_finalizar_dia_pressed() -> void:
+	pass # Replace with function body.

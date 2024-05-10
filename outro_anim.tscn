@@ -139,7 +139,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_b43ds"]
 resource_name = "atardecer_animacion"
-length = 2.4
+length = 1.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -148,10 +148,10 @@ tracks/0/path = NodePath("atardecer:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("3_ay6qn")]
+"values": [ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu"), ExtResource("3_ay6qn"), ExtResource("4_bbrqj"), ExtResource("5_7veyu")]
 }
 
 [sub_resource type="Animation" id="Animation_12hki"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckwirio1rk4yk"]
+[gd_scene load_steps=13 format=3 uid="uid://ckwirio1rk4yk"]
 
 [ext_resource type="Script" path="res://FinalizarDia/MejoraUI.gd" id="1_1mlls"]
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_j405q"]
@@ -32,13 +32,6 @@ font_color = Color(0.643137, 0.380392, 0.239216, 1)
 base_font = ExtResource("3_t57np")
 spacing_glyph = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e85kf"]
-content_margin_left = 0.0
-content_margin_top = 8.0
-content_margin_right = 0.0
-content_margin_bottom = 8.0
-bg_color = Color(0.913725, 0.878431, 0.65098, 1)
-
 [node name="VBoxContainerMejora" type="VBoxContainer"]
 custom_minimum_size = Vector2(150, 256)
 anchors_preset = -1
@@ -48,12 +41,13 @@ offset_right = 56.24
 offset_bottom = 87.84
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("1_1mlls")
 
 [node name="Lb_nombre" type="Label" parent="."]
 clip_contents = true
-custom_minimum_size = Vector2(150, 18)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -101,11 +95,10 @@ uppercase = true
 
 [node name="Lb_desc" type="Label" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(220, 100)
+custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontVariation_6wqjs")
-theme_override_styles/normal = SubResource("StyleBoxFlat_e85kf")
 text = "DESC: asdfasdfasdf asdfasdfasdfasdfasdfasdfasdfsad fasdf"
 label_settings = ExtResource("5_j5po7")
 horizontal_alignment = 1

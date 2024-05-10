@@ -59,7 +59,7 @@ func llenar_mejoras() -> void:
 	nombre_mejoras.ClientesZen : { # implementada en Order.gd
 		"Key" : nombre_mejoras.ClientesZen,
 		"Nombre" : tr("ZEN_CLIENTS"),
-		"Precio" : 8,
+		"Precio" : 6,
 		"PrecioEscalar" : 3,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/Mejora zen.png',
@@ -87,7 +87,7 @@ func llenar_mejoras() -> void:
 	nombre_mejoras.MasReciclaje : {
 		"Key" : nombre_mejoras.MasReciclaje,
 		"Nombre" : tr("RECYCLE"),
-		"PrecioEscalar" : 10,
+		"PrecioEscalar" : 14,
 		"Precio" : 6,
 		"Maximo" : 2,
 		"Textura" : 'res://Sprites/mejoras/RECYCLE.png',
@@ -150,33 +150,31 @@ func obtener_mejora_random_disponible():
 		if disponible_mejoras[i] > 0:
 			posibles_mejoras.append(i)
 	# Elije las mejoras de la pool
-	if len(posibles_mejoras) > 0:
+	if len(posibles_mejoras) > 3:
 		# selecciona 2 + mejora de mejoras
-		for i in range(mejoras_seleccionadas.size(), 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
+		while mejoras_seleccionadas.size()<2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]:
 			# Busqueda de menor precio
 			var minPrecio = 1000
 			var mejoraSeleccionada
 			for mejora in posibles_mejoras:
 				var precioActual = info_mejoras[mejora]["Precio"] +\
 				 (info_mejoras[mejora]["PrecioEscalar"] * activas_mejoras[mejora])
-				if randf() >=0.6:
+				if randf() >=0.4:
 					if precioActual < minPrecio:
 						minPrecio = precioActual
 						mejoraSeleccionada = mejora
 			
 			posibles_mejoras.pop_at(posibles_mejoras.find(mejoraSeleccionada))
-			
 			if mejoraSeleccionada != null:
 				mejoras_seleccionadas.append(info_mejoras[mejoraSeleccionada])
 		
-		# Forzar contrato
-		if GlobalTiempo.diaActual>=9 and mejoras_seleccionadas.size()<=2:
-			mejoras_seleccionadas.append(mejora_final["ContratoFinal"])
-		return mejoras_seleccionadas
+		# Forzar contra
+	
 	else:
-		var listafinal=[]
+		for i in posibles_mejoras:
+			mejoras_seleccionadas.append(info_mejoras[i])  
 		
-		listafinal.append(mejora_final["ContratoFinal"])
-		
-		# dice que no hay ninguna
-		return listafinal
+	if GlobalTiempo.diaActual>=9:
+		mejoras_seleccionadas.append(mejora_final["ContratoFinal"])
+	return mejoras_seleccionadas
+			

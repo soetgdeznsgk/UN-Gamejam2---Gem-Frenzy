@@ -5,7 +5,7 @@ extends Node
 # inicia en ceros
 const cantidadTiposMinerales = 11
 var minerales : Array = []
-var dinero : int = 5
+var dinero : int = 500
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -90,8 +90,8 @@ func actualizar_renta():
 		valorDia = int(4.85 * GlobalTiempo.diaActual) - 3
 	
 	if dia >= 9:
-		#funcion= 1.5 (x-2)^(2)
-		valorDia = int(1.35*pow(GlobalTiempo.diaActual-2,2))
+		#funcion= 1.2 (x-2)^(2)
+		valorDia = int(1.2*pow(GlobalTiempo.diaActual-2,2))
 		
 	if GlobalTiempo.diaActual == 1:
 		valorDia = 3
@@ -116,9 +116,14 @@ func pagueme_la_renta():
 			actualizar_mineral(i, -mitad)
 			@warning_ignore("integer_division")
 			reciclar += (mitad * (i+1/2))
-		var totalbonusreciclaje=(((GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasReciclaje])*0.015)*reciclar)
+		var numMejorasReciclaje=GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasReciclaje]
+		var totalbonusreciclaje=(((numMejorasReciclaje)*0.02)*reciclar)
+		if	numMejorasReciclaje>=2:
+			totalbonusreciclaje=(((numMejorasReciclaje)*0.025)*reciclar)
+		
+		
 		totalreciclado = int(reciclar * 0.025)+int(totalbonusreciclaje)
-		print("bonus reciclaje: ",totalbonusreciclaje)
+		#print("bonus reciclaje: ",totalbonusreciclaje)
 	GlobalRecursos.GananciaReciclaje=totalreciclado
 	actualizar_dinero(totalreciclado)
 	# luego de obtener oro por minerales de sobra, se cobra la renta

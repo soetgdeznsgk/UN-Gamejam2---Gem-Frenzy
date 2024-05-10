@@ -64,6 +64,8 @@ func call_top_players():
 		print("No sesion iniciada, error al recolectar el puntaje")
 
 func gameover():
+	#sube el record a leaderboard nw
+	NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
 	call_top_players()
 	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
 	$AudioGameover.play(0)
@@ -86,6 +88,7 @@ func winner():
 	$VBoxContainer/HBoxContainer/Btn_reintentar.visible = false
 
 func upload_to_db():
+
 	# Crear nuevo doc con el dia
 	if GlobalFirebaseInfo.isAuth:
 		var nameN = %LineEdit.text if %LineEdit.text != "" else "No Name"  

@@ -124,9 +124,9 @@ func llenar_recetas() -> void:
 			recetas.append([GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Hierro, GlobalRecursos.mineralesSinFondo.Diamante]) # water cri
 			recetas.append([GlobalRecursos.mineralesSinFondo.Rubi, GlobalRecursos.mineralesSinFondo.Zafiro, GlobalRecursos.mineralesSinFondo.Esmeralda]) #  rgb cri
 			numRecetasPuestas+=1
-	for i in range(0,recetas.size()):
-		GlobalRecetas.print_receta(recetas[i])
-		print("\n")
+	#for i in range(0,recetas.size()):
+		#GlobalRecetas.print_receta(recetas[i])
+		#print("\n")
 	
 	
 # Señales

@@ -20,7 +20,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Sprites/UI/reloj loading 245 x 216.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://Sprites/Menu/pancha corazon 19 x 24.png"
+config/icon="res://icon app 512.png"
 
 [autoload]
 
@@ -33,6 +33,10 @@ Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 GlobalFirebaseInfo="*res://Logica/Globales/GlobalFirebaseInfo.gd"
 GlobalTuto="*res://Logica/Globales/GlobalTuto.gd"
 GlobalSettings="*res://Logica/Globales/GlobalSettings.gd"
+NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
+NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
+GlobalLogros="*res://Logica/Globales/GlobalLogros.gd"
+NwHandler="*res://Logica/Logros/NW_handler.gd"
 
 [debug]
 
@@ -47,7 +51,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg")
+enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
 
 [input]
 
@@ -88,6 +92,11 @@ ui_down={
 
 locale/translations=PackedStringArray("res://localizacion/Traduccion gem frenzy - Hoja 1.en.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.es.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.jp.translation", "res://localizacion/Traduccion gem frenzy - Hoja 1.zh.translation")
 locale/locale_filter_mode=0
+
+[newgrounds.io]
+
+app_id="58087:clm13vWi"
+AES-128_key="my1OaIw81JNWknmGdNHJ3A=="
 
 [rendering]
 

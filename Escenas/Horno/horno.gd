@@ -14,6 +14,7 @@ func Cocinar():
 	var temp = playerRef.darObjetos()
 	var receta := GlobalRecetas.encontrarReceta(temp)
 	if receta != -1:
+		GlobalLogros.check_AllRecipes(receta)
 		playerRef.receta_en_mano = receta
 		$AudioStreamPlayer.pitch_scale = 1.01
 		$AudioStreamPlayer.play(0)

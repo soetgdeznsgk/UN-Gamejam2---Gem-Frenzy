@@ -17,6 +17,6 @@ func _on_player_surface_entered():
 		get_child(cofreI).animPlayer.play("AbrirCofre")
 
 func actualizar_cofres():
-	print(GlobalMejoras.activas_mejoras)
+	
 	for i in range(get_child_count()):
 		get_child(i).actualizar()
