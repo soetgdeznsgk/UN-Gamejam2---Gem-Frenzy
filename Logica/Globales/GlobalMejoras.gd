@@ -150,9 +150,9 @@ func obtener_mejora_random_disponible():
 		if disponible_mejoras[i] > 0:
 			posibles_mejoras.append(i)
 	# Elije las mejoras de la pool
-	if len(posibles_mejoras) > 0:
+	if len(posibles_mejoras) > 3:
 		# selecciona 2 + mejora de mejoras
-		for i in range(mejoras_seleccionadas.size(), 2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]):
+		while mejoras_seleccionadas.size()<2 + activas_mejoras[nombre_mejoras.MejoraDeMejoras]:
 			# Busqueda de menor precio
 			var minPrecio = 1000
 			var mejoraSeleccionada
@@ -165,18 +165,16 @@ func obtener_mejora_random_disponible():
 						mejoraSeleccionada = mejora
 			
 			posibles_mejoras.pop_at(posibles_mejoras.find(mejoraSeleccionada))
-			
 			if mejoraSeleccionada != null:
 				mejoras_seleccionadas.append(info_mejoras[mejoraSeleccionada])
 		
-		# Forzar contrato
-		if GlobalTiempo.diaActual>=9 and mejoras_seleccionadas.size()<=2:
-			mejoras_seleccionadas.append(mejora_final["ContratoFinal"])
-		return mejoras_seleccionadas
+		# Forzar contra
+	
 	else:
-		var listafinal=[]
+		for i in posibles_mejoras:
+			mejoras_seleccionadas.append(info_mejoras[i])  
 		
-		listafinal.append(mejora_final["ContratoFinal"])
-		
-		# dice que no hay ninguna
-		return listafinal
+	if GlobalTiempo.diaActual>=9:
+		mejoras_seleccionadas.append(mejora_final["ContratoFinal"])
+	return mejoras_seleccionadas
+			

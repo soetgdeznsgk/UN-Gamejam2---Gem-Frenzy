@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 @onready var grid = $VBoxContainer/HbMejoras
 var mejoraUI = preload("res://FinalizarDia/MejoraUI.tscn")
@@ -13,6 +13,9 @@ func _on_finalizar_dia():
 	if GlobalRecursos.dinero >= 0:
 		infoMejorasDisponibles = GlobalMejoras.obtener_mejora_random_disponible()
 		#if GlobalTiempo=
+		if infoMejorasDisponibles.size()==4:
+			$VBoxContainer.position.x+=5
+			$VBoxContainer/HbMejoras.add_theme_constant_override("separation",0)
 		for i in infoMejorasDisponibles:
 			var temp = mejoraUI.instantiate()
 			temp.info = i
@@ -33,13 +36,16 @@ func _on_finalizar_dia():
 		%"factura/HBoxContainer/cosas pagadas/MarginContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
 	
 
-func _on_btn_finalizar_dia_pressed() -> void:
 
-	for child in grid.get_children():
-		child.queue_free()
-	GlobalTiempo.siguiente_dia()
-	visible = false
 	
 func gameover():
 	await get_tree().create_timer(0.1).timeout
 	visible = false
+
+
+func _on_btn_finalizar_dia_pressed() -> void:
+	for child in grid.get_children():
+		child.queue_free()
+	GlobalTiempo.siguiente_dia()
+	visible = false
+	pass # Replace with function body.

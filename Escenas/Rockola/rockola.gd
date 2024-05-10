@@ -27,7 +27,7 @@ func _ready():
 
 
 func media_hora():
-	$MusicadeFondo.pitch_scale=1.03
+	$MusicadeFondo.pitch_scale=1.01
 
 
 func _process(delta):

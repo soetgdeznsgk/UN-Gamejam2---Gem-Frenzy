@@ -12,6 +12,7 @@ func _on_btn_factura_pressed():
 func pasar_de_pagina():
 	%FinalizarDia.visible=true
 	if gameover:
+		%FinalizarDia.visible=false
 		%Gameover.visible=true
 	self.visible=false
 	$signaturepancha.frame=0

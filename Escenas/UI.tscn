@@ -1098,34 +1098,44 @@ offset_left = 112.0
 offset_top = 136.0
 APtutorial = NodePath("AnimationPlayer")
 
-[node name="FinalizarDia" type="PanelContainer" parent="."]
+[node name="FinalizarDia" type="Control" parent="."]
 unique_name_in_owner = true
 visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_6ps5f")
+
+[node name="panelFinalizarDia" type="PanelContainer" parent="FinalizarDia"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.151
 anchor_top = 0.18
 anchor_right = 0.849
 anchor_bottom = 0.82
-offset_left = -13.96
-offset_top = -45.6
-offset_right = 43.96
-offset_bottom = 11.6
+offset_left = 24.96
+offset_top = 76.8
+offset_right = 896.04
+offset_bottom = 558.2
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("16_cal8s")
-script = ExtResource("6_6ps5f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FinalizarDia"]
 layout_mode = 2
+offset_left = 77.0
+offset_top = 120.0
+offset_right = 958.0
+offset_bottom = 254.0
+scale = Vector2(0.9, 0.9)
 theme = SubResource("Theme_cya63")
-theme_override_constants/separation = 32
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="HbMejoras" type="HBoxContainer" parent="FinalizarDia/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 63
 alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="FinalizarDia/VBoxContainer"]
@@ -1744,7 +1754,7 @@ texture = ExtResource("46_j4b7w")
 expand_mode = 1
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="celular"]
-position = Vector2(992, 480)
+position = Vector2(988, 560)
 scale = Vector2(5, 5)
 texture_normal = ExtResource("51_bpxai")
 texture_pressed = ExtResource("52_vcqjp")
@@ -1755,7 +1765,7 @@ visibility_mode = 1
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="celular"]
 self_modulate = Color(1, 1, 1, 0.945098)
-position = Vector2(1000, 376)
+position = Vector2(1000, 456)
 rotation = 4.71239
 scale = Vector2(5, 5)
 texture_normal = ExtResource("51_bpxai")
@@ -1767,7 +1777,7 @@ visibility_mode = 1
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="celular"]
 self_modulate = Color(1, 1, 1, 0.945098)
-position = Vector2(-120, 376)
+position = Vector2(-120, 456)
 rotation = 4.71239
 scale = Vector2(5, 5)
 texture_normal = ExtResource("51_bpxai")
@@ -1778,7 +1788,7 @@ action = "ui_up"
 visibility_mode = 1
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="celular"]
-position = Vector2(-24, 480)
+position = Vector2(-28, 560)
 scale = Vector2(-5, 5)
 texture_normal = ExtResource("51_bpxai")
 texture_pressed = ExtResource("52_vcqjp")
