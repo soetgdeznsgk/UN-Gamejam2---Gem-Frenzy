@@ -1,13 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://da8vfiq3fv2ud"]
+[gd_scene load_steps=18 format=3 uid="uid://da8vfiq3fv2ud"]
 
 [ext_resource type="Script" path="res://Logica/cliente_body.gd" id="1_8qskh"]
+[ext_resource type="Shader" path="res://Escenas/outline.gdshader" id="2_0i61b"]
 [ext_resource type="Texture2D" uid="uid://dr7ywwyc3d5ad" path="res://Sprites/Mapa/clientes/00_variacion clientes 14x19.png" id="2_lttxv"]
 [ext_resource type="AudioStream" uid="uid://cl4t8v0e6hjma" path="res://Musica/PasosCliente.mp3" id="3_wbext"]
 [ext_resource type="AudioStream" uid="uid://bomduf3rvl8ka" path="res://Musica/Nueva_Orden.wav" id="4_1m48d"]
 [ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="5_j0385"]
+[ext_resource type="Texture2D" uid="uid://bo3upqdlrpv3" path="res://Sprites/UI/monedaParticula.png" id="6_37o23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7178"]
 size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54cd6"]
+resource_local_to_scene = true
+shader = ExtResource("2_0i61b")
+shader_parameter/line_color = Color(0.886275, 0.788235, 0.215686, 1)
+shader_parameter/line_thickness = 0.0
 
 [sub_resource type="Animation" id="Animation_m4oel"]
 length = 0.001
@@ -34,6 +42,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/width")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_6h4n8"]
@@ -133,6 +153,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CPUParticles2D:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:material:shader_parameter/line_thickness")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_pxvtq"]
 resource_name = "exitoso"
@@ -171,6 +215,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.934779, 0.765109, 0.423666, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:material:shader_parameter/line_thickness")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.633333, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.2, 1.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_qdmhf"]
@@ -244,6 +312,10 @@ _data = {
 "fallo": SubResource("Animation_qdmhf")
 }
 
+[sub_resource type="Curve" id="Curve_suukv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.534392, 0.769231), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="ClienteBody" type="CharacterBody2D"]
 script = ExtResource("1_8qskh")
 
@@ -252,6 +324,7 @@ shape = SubResource("RectangleShape2D_o7178")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_54cd6")
 position = Vector2(-2, -1)
 texture = ExtResource("2_lttxv")
 hframes = 4
@@ -293,3 +366,22 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_8w7ky")
 }
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("6_37o23")
+spread = 180.0
+gravity = Vector2(0, 1)
+initial_velocity_min = 90.0
+initial_velocity_max = 90.0
+angular_velocity_min = 400.0
+angular_velocity_max = 700.0
+damping_min = 90.0
+damping_max = 90.0
+scale_amount_min = 0.7
+scale_amount_max = 0.9
+scale_amount_curve = SubResource("Curve_suukv")
