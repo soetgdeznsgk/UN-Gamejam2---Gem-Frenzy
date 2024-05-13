@@ -4,7 +4,7 @@ signal endOutro
 signal endTexto
 signal endHijos
 func _on_button_pressed():
-	endOutro.connect(desbloquearLogro)
+	#endOutro.connect(desbloquearLogro)
 	# Skip animacion, pone todo al final de la animación y quita el botón
 	$Button.visible = false
 	var tweenfinal = get_tree().create_tween()
@@ -12,8 +12,8 @@ func _on_button_pressed():
 	await get_tree().create_timer(3).timeout
 	$finalizardiabien.play()
 	endOutro.emit()
-func desbloquearLogro():
-	GlobalLogros.juegoCompleto.emit()
+#func desbloquearLogro():
+	#GlobalLogros.juegoCompleto.emit()
 func _on_visibility_changed() -> void:
 	if visible:
 		$AnimationPlayer.play("elfinaldepancha")

@@ -17,6 +17,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func check_logros_al_iniciar():
+	#                                verifica que todas las mejoras esten en 0 (le aplica la funcion a cada elemento del array)
 	if GlobalTiempo.diaActual==7 and GlobalMejoras.activas_mejoras.all(equal_to_zero):
 		NoUpgrades.emit()
 	if GlobalTiempo.diaActual==10:
