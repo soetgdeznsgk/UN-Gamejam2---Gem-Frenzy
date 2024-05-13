@@ -38,6 +38,7 @@ func _ready() -> void:
 	textura = load(selec)
 	$Sprite2D.texture = textura
 	GlobalTiempo.finalizarDia.connect(fin_dia)
+	OrderManager.orden_exitosa.connect(se_fue_feliz)
 
 func _physics_process(_delta: float) -> void:
 	if $RayCast2D.is_colliding():
@@ -59,3 +60,17 @@ func _physics_process(_delta: float) -> void:
 
 func fin_dia():
 	esperando = false
+
+func se_fue_bravo():
+	$Lb_money.text = "+0"
+	$AnimMoney.play("fallo")
+	
+func se_fue_feliz(orden : OrderGem):
+	if orden.cliente_asociado == self:
+		@warning_ignore("integer_division")
+		# cada nivel de la mejora de dinero agrega 25% más al precio de cada receta +1
+		var dinerobono=((orden.precio / 4) * GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.RecompensaMejorada])\
+		 + (1 * GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.RecompensaMejorada])
+		
+		$Lb_money.text = "+" + str(orden.precio+dinerobono)
+		$AnimMoney.play("exitoso")

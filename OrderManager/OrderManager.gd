@@ -1,6 +1,7 @@
 extends Node
 
 signal new_order(orden: OrderGem)
+signal orden_exitosa(precio, bono)
 #var materiales := Array() # array de materiales 
 @onready var recetas := Array()
 @onready var currentOrders := Array()

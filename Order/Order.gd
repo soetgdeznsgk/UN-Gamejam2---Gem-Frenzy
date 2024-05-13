@@ -61,6 +61,7 @@ func get_time_left():
 
 func _on_timer_timeout():
 	cliente_asociado.esperando = false
+	cliente_asociado.se_fue_bravo()
 	out_of_time.emit()
 	 # se ejecuta tremendo set
 	#queue_free() se hace free desde la orden_ui

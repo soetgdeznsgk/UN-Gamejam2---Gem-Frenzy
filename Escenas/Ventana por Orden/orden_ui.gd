@@ -17,7 +17,8 @@ func _ready():
 	pb.max_value = orden_logica.get_time_left() # ésto dará error si se instancia antes que la orden
 	
 func _physics_process(_delta):
-	pb.value = orden_logica.get_time_left()
+	if !orden_logica.tmr.is_stopped():
+		pb.value = orden_logica.get_time_left()
 	if pb.value == 20:
 		pb.tint_progress=Color("DAC641")
 		cambiadorDeColor.bg_color = Color("FFFF00")
@@ -58,7 +59,10 @@ func orden_out_of_time():
 	
 	
 func orden_deliver():
+	OrderManager.orden_exitosa.emit(orden_logica)
 	OrderManager._on_order_delivered(orden_logica.precio)
+	orden_logica.tmr.stop()
+	await get_tree().create_timer(0.5).timeout
 	orden_logica.finalizar_orden()
 	queue_free()
 	
