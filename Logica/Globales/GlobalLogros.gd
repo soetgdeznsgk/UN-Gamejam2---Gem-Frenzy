@@ -12,7 +12,7 @@ signal NoUpgrades #falta agregar entrada a nw y conectar a nw_handler ytestear
 var copiaRecetas = GlobalRecetas.recetas.duplicate()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalTiempo.iniciarDia.connect(check_logros_al_iniciar())
+	GlobalTiempo.iniciarDia.connect(check_logros_al_iniciar)
 	print(copiaRecetas)
 	pass # Replace with function body.
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://da8vfiq3fv2ud"]
+[gd_scene load_steps=14 format=3 uid="uid://da8vfiq3fv2ud"]
 
 [ext_resource type="Script" path="res://Logica/cliente_body.gd" id="1_8qskh"]
 [ext_resource type="Texture2D" uid="uid://dr7ywwyc3d5ad" path="res://Sprites/Mapa/clientes/00_variacion clientes 14x19.png" id="2_lttxv"]
 [ext_resource type="AudioStream" uid="uid://cl4t8v0e6hjma" path="res://Musica/PasosCliente.mp3" id="3_wbext"]
 [ext_resource type="AudioStream" uid="uid://bomduf3rvl8ka" path="res://Musica/Nueva_Orden.wav" id="4_1m48d"]
+[ext_resource type="Theme" uid="uid://bftiuvq8fblb7" path="res://Sprites/Menu/label.tres" id="5_j0385"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7178"]
 size = Vector2(16, 16)
@@ -70,6 +71,167 @@ _data = {
 "caminar": SubResource("Animation_6h4n8")
 }
 
+[sub_resource type="Animation" id="Animation_pxvtq"]
+resource_name = "exitoso"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lb_money:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.5661, 0.698867),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lb_money:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-11, -9), Vector2(-11, -22)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lb_money:theme_override_colors/font_outline_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.934779, 0.765109, 0.423666, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qdmhf"]
+resource_name = "fallo"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lb_money:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lb_money:theme_override_colors/font_outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.933333, 0.2, 0.258824, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lb_money:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22, 11)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lb_money:rotation")
+tracks/3/interp = 3
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.153589, 0.153589, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rjly3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lb_money:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lb_money:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11, -9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lb_money:theme_override_colors/font_outline_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.934779, 0.765109, 0.423666, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lb_money:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22, 11)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lb_money:rotation")
+tracks/4/interp = 3
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8w7ky"]
+_data = {
+"RESET": SubResource("Animation_rjly3"),
+"exitoso": SubResource("Animation_pxvtq"),
+"fallo": SubResource("Animation_qdmhf")
+}
+
 [node name="ClienteBody" type="CharacterBody2D"]
 script = ExtResource("1_8qskh")
 
@@ -100,3 +262,22 @@ autoplay = true
 stream = ExtResource("4_1m48d")
 volume_db = -5.0
 pitch_scale = 1.15
+
+[node name="Lb_money" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 11.0
+offset_bottom = 2.0
+theme = ExtResource("5_j0385")
+theme_override_colors/font_outline_color = Color(0.934779, 0.765109, 0.423666, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "+2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimMoney" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8w7ky")
+}
