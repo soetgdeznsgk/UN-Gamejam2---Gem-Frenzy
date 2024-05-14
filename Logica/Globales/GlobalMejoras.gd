@@ -1,6 +1,7 @@
 extends Node
 
 # Este singleton contiene las mejoras activas y las posibles mejoras a ganar
+@warning_ignore("unused_signal")
 signal mejora_cambiada
 var mejora_final_comprada
 enum nombre_mejoras {

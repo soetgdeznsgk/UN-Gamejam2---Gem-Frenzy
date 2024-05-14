@@ -2,6 +2,7 @@ extends Node2D
 signal endOutro
 
 signal endTexto
+@warning_ignore("unused_signal")
 signal endHijos
 func _on_button_pressed():
 	#endOutro.connect(desbloquearLogro)
@@ -65,7 +66,7 @@ func tween_fade_in_and_out(texto:Label,delay):
 	var tween = get_tree().create_tween()
 	tween.tween_property(texto, "modulate", Color("#ffffff"), 1)
 	tween.tween_callback(tween_fade_out.bind(texto)).set_delay(delay)
-func tween_fade_in(texto:Label,delay):
+func tween_fade_in(texto:Label,_delay):
 	var tween = get_tree().create_tween()
 	tween.tween_property(texto, "modulate", Color("#ffffff"), 1)
 	

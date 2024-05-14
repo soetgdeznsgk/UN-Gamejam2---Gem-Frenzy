@@ -1,6 +1,7 @@
 extends Node
 var sound:bool
 var language:String
+@warning_ignore("unused_signal")
 signal sound_changed
 var fullscreen
 # Called when the node enters the scene tree for the first time.

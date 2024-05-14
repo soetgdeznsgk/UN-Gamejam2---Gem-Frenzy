@@ -12,7 +12,6 @@ func _ready() -> void:
 func _on_finalizar_dia():
 	if GlobalRecursos.dinero >= 0:
 		infoMejorasDisponibles = GlobalMejoras.obtener_mejora_random_disponible()
-		#if GlobalTiempo=
 		if infoMejorasDisponibles.size()==4:
 			$VBoxContainer.position.x+=5
 			$VBoxContainer/HbMejoras.add_theme_constant_override("separation",0)
@@ -21,8 +20,9 @@ func _on_finalizar_dia():
 			temp.info = i
 			grid.add_child(temp)
 		$AudioFinDiaBien.play()
-		%FinalizarDia.visible = true
-	%FinalizarDia.visible =false
+
+#region Mostrar  Factura
+	
 	%factura.visible=true
 	%"factura/HBoxContainer/cosas pagadas/HBoxahorro/AhorroNumerito".text="  "+str(GlobalRecursos.Ahorro)
 	%"factura/HBoxContainer/cosas pagadas/HBoxGanancia/GananciadiaNum".text="  "+str(GlobalRecursos.Gananciadia)
@@ -35,6 +35,7 @@ func _on_finalizar_dia():
 		%Gameover.visible=false
 		%"factura/HBoxContainer/cosas pagadas/VboxContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
 	
+#endregion
 
 
 	

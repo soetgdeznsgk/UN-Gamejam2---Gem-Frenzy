@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 signal surface_entered
+@warning_ignore("unused_signal")
 signal mine_entered
 
 var particleMining : PackedScene = load("res://Particulas/minningParticle.tscn")

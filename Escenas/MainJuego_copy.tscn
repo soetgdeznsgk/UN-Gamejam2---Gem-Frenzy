@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://nwim4g0q3if5"]
+[gd_scene load_steps=30 format=3 uid="uid://nwim4g0q3if5"]
 
 [ext_resource type="Script" path="res://Escenas/MainJuego_copy.gd" id="1_sv06r"]
 [ext_resource type="Texture2D" uid="uid://c2dswhcps4kuc" path="res://Sprites/Mapa/Plataforma y escalera.png" id="5_7reuj"]
@@ -8,15 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://x4yefvsyn1rb" path="res://Sprites/Mapa/cielo.png" id="9_i0vnq"]
 [ext_resource type="Texture2D" uid="uid://vyr6pwq5i280" path="res://Sprites/Mapa/tierra y pasto.png" id="10_78cmf"]
 [ext_resource type="Texture2D" uid="uid://th22ntwolepk" path="res://Sprites/Mapa/minerales con fondo.png" id="11_43idp"]
-[ext_resource type="PackedScene" uid="uid://bvaa0r36hif4w" path="res://Logica/Player/player.tscn" id="12_7u6lh"]
 [ext_resource type="Script" path="res://Escenas/GeneradorClientesMENU.gd" id="13_yy347"]
 [ext_resource type="Texture2D" uid="uid://drgfyqjsq7owl" path="res://Sprites/Mapa/cofres.png" id="14_d4wkh"]
 [ext_resource type="Texture2D" uid="uid://xemsjtn0mmoe" path="res://Sprites/flecha arriba.png" id="14_wiw0r"]
 [ext_resource type="Texture2D" uid="uid://bcgo0i8bdjnnc" path="res://Sprites/Mapa/scaleras 16x16.png" id="15_3q7bx"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="15_e8egu"]
-[ext_resource type="Texture2D" uid="uid://bemqir6127j64" path="res://Sprites/flecha abajo.png" id="16_pstel"]
 [ext_resource type="Script" path="res://Escenas/Area2DEscaleraSegundoPiso.gd" id="16_wagk1"]
-[ext_resource type="Texture2D" uid="uid://5d2d31nd7c1d" path="res://Sprites/UI/no.png" id="17_5eq5r"]
 [ext_resource type="PackedScene" uid="uid://c0svli45cjmsm" path="res://Escenas/Horno/horno.tscn" id="23_gh6mb"]
 [ext_resource type="PackedScene" uid="uid://bvl5tdbs4i1ex" path="res://Logica/gato.tscn" id="25_8xie7"]
 [ext_resource type="Texture2D" uid="uid://ds1h02qxfdd56" path="res://Sprites/Mapa/gatito sprites 1.png" id="26_i57hk"]
@@ -150,119 +147,11 @@ size = Vector2(20, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gojq5"]
 size = Vector2(15, 16)
 
-[sub_resource type="Animation" id="Animation_qs0vi"]
-resource_name = "AbrirCofre"
-length = 0.2
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Spr_up_key_ladder:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("16_pstel")]
-}
-
-[sub_resource type="Animation" id="Animation_1frg3"]
-resource_name = "CerrarCofre"
-
-[sub_resource type="Animation" id="Animation_dpopl"]
-resource_name = "NoHay"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Spr_up_key_ladder:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("17_5eq5r"), ExtResource("16_pstel")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Spr_up_key_ladder:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(0.2, -16), Vector2(0, -16)]
-}
-
-[sub_resource type="Animation" id="Animation_1sr1x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Spr_up_key_ladder:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("16_pstel")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ak1nw"]
-_data = {
-"AbrirCofre": SubResource("Animation_qs0vi"),
-"CerrarCofre": SubResource("Animation_1frg3"),
-"NoHay": SubResource("Animation_dpopl"),
-"RESET": SubResource("Animation_1sr1x")
-}
-
 [node name="MainJuego MENU" type="Node2D"]
 texture_filter = 1
 position = Vector2(160, 200)
 script = ExtResource("1_sv06r")
 metadata/_edit_horizontal_guides_ = [1276.0]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Gameplay" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -288,13 +177,6 @@ format = 2
 layer_0/name = "Terrain"
 layer_0/navigation_enabled = false
 layer_0/tile_data = PackedInt32Array(19, 327681, 1, 65555, 327681, 1, 131091, 327681, 1, 20, 327681, 1, 65556, 327681, 1, 131092, 327681, 1, 21, 327681, 1, 65557, 327681, 1, 131093, 327681, 1, 22, 327681, 1, 65558, 327681, 1, 131094, 327681, 1, 23, 327681, 1, 65559, 327681, 1, 131095, 327681, 1, 24, 327681, 1, 65560, 327681, 1, 131096, 327681, 1, 25, 327681, 1, 65561, 327681, 1, 131097, 327681, 1, 26, 327681, 1, 65562, 327681, 1, 131098, 327681, 1, 27, 327681, 1, 65563, 327681, 1, 131099, 327681, 1, 28, 327681, 1, 65564, 327681, 1, 131100, 327681, 1, 29, 327681, 1, 65565, 327681, 1, 131101, 65537, 1, 30, 327681, 1, 65566, 327681, 1, 131102, 327681, 1, 31, 327681, 1, 65567, 327681, 1, 131103, 327681, 1, 32, 327681, 1, 65568, 327681, 1, 131104, 327681, 1, 33, 327681, 1, 65569, 327681, 1, 131105, 327681, 1, 34, 327681, 1, 65570, 327681, 1, 131106, 327681, 1, 35, 327681, 1, 65571, 131073, 0, 131107, 327681, 1, 36, 327681, 1, 65572, 327681, 1, 131108, 327681, 1, 37, 327681, 1, 65573, 327681, 1, 131109, 327681, 1, 38, 327681, 1, 65574, 327681, 1, 131110, 327681, 1, 39, 327681, 1, 65575, 327681, 1, 131111, 327681, 1, 40, 327681, 0, 65576, 327681, 1, 131112, 327681, 1, 41, 327681, 1, 65577, 327681, 1, 131113, 327681, 1, 42, 327681, 1, 65578, 327681, 1, 131114, 327681, 1, 43, 327681, 1, 65579, 327681, 1, 131115, 327681, 1, 44, 327681, 1, 65580, 327681, 1, 131116, 327681, 1, 45, 327681, 1, 65581, 327681, 1, 131117, 327681, 1, 46, 327681, 1, 65582, 327681, 1, 47, 327681, 1, 65583, 327681, 1, 131119, 327681, 1, 48, 327681, 1, 65584, 327681, 1, 131120, 327681, 1, 49, 327681, 1, 65585, 327681, 1, 131121, 327681, 1, 50, 196609, 1, 65586, 327681, 1, 131122, 327681, 1, 51, 327681, 1, 65587, 327681, 1, 131123, 327681, 1, 52, 327681, 1, 65588, 327681, 1, 131124, 327681, 1, 53, 327681, 1, 65589, 327681, 1, 131125, 327681, 1, 54, 327681, 1, 65590, 327681, 1, 131126, 327681, 1, 55, 327681, 1, 65591, 327681, 1, 131127, 327681, 1, 56, 327681, 1, 65592, 327681, 1, 131128, 327681, 1, 57, 327681, 1, 65593, 327681, 1, 131129, 327681, 1, 58, 327681, 1, 65594, 327681, 1, 131130, 327681, 1, 59, 327681, 1, 65595, 327681, 1, 131131, 327681, 1, 60, 327681, 1, 65596, 327681, 1, 131132, 327681, 1, 61, 327681, 1, 65597, 327681, 1, 131133, 327681, 1, 131118, 262145, 1, 196627, 327681, 1, 196628, 327681, 1, 196629, 327681, 1, 196630, 327681, 1, 196631, 327681, 1, 196632, 327681, 1, 196633, 327681, 1, 196634, 327681, 1, 196635, 327681, 1, 196636, 327681, 1, 196637, 327681, 1, 196638, 327681, 1, 196639, 327681, 1, 196640, 327681, 1, 196641, 327681, 1, 196642, 327681, 1, 196643, 327681, 1, 196644, 327681, 1, 196645, 327681, 1, 196646, 327681, 1, 196647, 327681, 1, 196648, 327681, 1, 196649, 327681, 1, 196650, 327681, 1, 196651, 327681, 1, 196652, 327681, 1, 196653, 327681, 1, 196654, 327681, 1, 196655, 327681, 1, 196656, 327681, 1, 196657, 327681, 1, 196658, 327681, 1, 196659, 327681, 1, 196660, 327681, 1, 196661, 327681, 1, 196662, 327681, 1, 196663, 327681, 1, 196664, 327681, 1, 196665, 327681, 1, 196666, 327681, 1, 196667, 327681, 1, 196668, 327681, 1, 196669, 327681, 1)
-
-[node name="Player" parent="Gameplay" instance=ExtResource("12_7u6lh")]
-unique_name_in_owner = true
-visible = false
-z_index = 5
-position = Vector2(397, -17)
-script = null
 
 [node name="Area2DEscalera" type="Area2D" parent="Gameplay"]
 z_index = 1
@@ -413,6 +295,7 @@ texture_filter = 1
 position = Vector2(0, -3.8147e-06)
 texture = ExtResource("14_d4wkh")
 hframes = 2
+frame = 1
 
 [node name="Imagen" type="Sprite2D" parent="CofresManager/Cofre2/Sprite2D"]
 texture_filter = 1
@@ -420,11 +303,6 @@ position = Vector2(0.5, 4.75)
 texture = ExtResource("15_e8egu")
 hframes = 6
 vframes = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CofresManager/Cofre2"]
-libraries = {
-"": SubResource("AnimationLibrary_ak1nw")
-}
 
 [node name="Cofre3" type="Node2D" parent="CofresManager"]
 position = Vector2(284, -17)
@@ -460,11 +338,6 @@ hframes = 6
 vframes = 2
 frame = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CofresManager/Cofre4"]
-libraries = {
-"": SubResource("AnimationLibrary_ak1nw")
-}
-
 [node name="Cofre5" type="Node2D" parent="CofresManager"]
 position = Vector2(336, -17)
 
@@ -473,6 +346,7 @@ texture_filter = 1
 position = Vector2(0, -3.8147e-06)
 texture = ExtResource("14_d4wkh")
 hframes = 2
+frame = 1
 
 [node name="Imagen" type="Sprite2D" parent="CofresManager/Cofre5/Sprite2D"]
 texture_filter = 1
@@ -481,11 +355,6 @@ texture = ExtResource("15_e8egu")
 hframes = 6
 vframes = 2
 frame = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CofresManager/Cofre5"]
-libraries = {
-"": SubResource("AnimationLibrary_ak1nw")
-}
 
 [node name="Cofre6" type="Node2D" parent="CofresManager"]
 position = Vector2(232, -56)
@@ -538,11 +407,6 @@ hframes = 6
 vframes = 2
 frame = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CofresManager/Cofre8"]
-libraries = {
-"": SubResource("AnimationLibrary_ak1nw")
-}
-
 [node name="Cofre9" type="Node2D" parent="CofresManager"]
 position = Vector2(310, -57)
 
@@ -559,11 +423,6 @@ texture = ExtResource("15_e8egu")
 hframes = 6
 vframes = 2
 frame = 8
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CofresManager/Cofre9"]
-libraries = {
-"": SubResource("AnimationLibrary_ak1nw")
-}
 
 [node name="Cofre10" type="Node2D" parent="CofresManager"]
 position = Vector2(336, -57)
@@ -582,11 +441,6 @@ hframes = 6
 vframes = 2
 frame = 6
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CofresManager/Cofre10"]
-libraries = {
-"": SubResource("AnimationLibrary_ak1nw")
-}
-
 [node name="Cofre11" type="Node2D" parent="CofresManager"]
 position = Vector2(362, -57)
 
@@ -603,11 +457,6 @@ texture = ExtResource("15_e8egu")
 hframes = 6
 vframes = 2
 frame = 7
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CofresManager/Cofre11"]
-libraries = {
-"": SubResource("AnimationLibrary_ak1nw")
-}
 
 [node name="Horno" parent="." instance=ExtResource("23_gh6mb")]
 position = Vector2(378, -19)

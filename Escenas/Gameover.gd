@@ -61,7 +61,7 @@ func call_top_players():
 							searchNumber += mapOfDays[i]
 					%LbSelfPos.text = str(searchNumber) + '.'
 	else:
-		print("No sesion iniciada, error al recolectar el puntaje")
+		printerr("No sesion iniciada, error al recolectar el puntaje")
 
 func gameover():
 	#sube el record a leaderboard nw

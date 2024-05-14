@@ -12,6 +12,7 @@ signal iniciarDia
 signal casifinalizardia
 signal quedamediahora
 signal quedandiezminutos
+@warning_ignore("unused_signal")
 signal winner
 @onready var tmr_minuto : Timer
 @onready var tmr_segundos_totales : Timer

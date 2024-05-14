@@ -1,5 +1,6 @@
 extends Area2D
 
+@warning_ignore("unused_signal")
 signal order_delivered(orden)
 
 var isPlayerHere = false

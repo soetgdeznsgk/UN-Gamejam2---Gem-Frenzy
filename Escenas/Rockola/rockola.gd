@@ -30,7 +30,7 @@ func media_hora():
 	$MusicadeFondo.pitch_scale=1.01
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_up") && isPlayerHere:
 		next_song()
 	pass
@@ -74,7 +74,6 @@ func next_song():
 			
 		$MusicadeFondo.stream=siguientecancion
 		currentsong=siguientecancion
-		print(currentsong)
 		
 	$MusicadeFondo.play(0)
 		#repetir la cancion

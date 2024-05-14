@@ -13,7 +13,7 @@ func _on_failed(auth_info):
 	print("error", auth_info)
 
 func _on_succeed(auth_info):
-	print("Correcto: ")
+	#print("Se conectó a firebase correctamente ")
 	isAuth = true
 	token = auth_info["idtoken"]
 

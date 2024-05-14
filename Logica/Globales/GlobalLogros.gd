@@ -1,10 +1,16 @@
 extends Node
 
+@warning_ignore("unused_signal")
 signal primeraChamba
+@warning_ignore("unused_signal")
 signal tutorialCompleto
+@warning_ignore("unused_signal")
 signal adoptarGato
+@warning_ignore("unused_signal")
 signal juegoCompleto
+@warning_ignore("unused_signal")
 signal reachdia10
+@warning_ignore("unused_signal")
 signal reachdia17
 
 signal AllRecipes #falta agregar entrada a nw y conectar a nw_handler
@@ -27,8 +33,7 @@ func check_logros_al_iniciar():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func equal_to_zero(number):
 	return number==0
-func _process(delta: float) -> void:
-	pass
+
 func check_AllRecipes(receta):
 	if !copiaRecetas.is_empty():
 		copiaRecetas.erase(GlobalRecetas.recetas.keys()[receta])

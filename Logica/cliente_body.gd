@@ -73,4 +73,14 @@ func se_fue_feliz(orden : OrderGem):
 		 + (1 * GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.RecompensaMejorada])
 		
 		$Lb_money.text = "+" + str(orden.precio+dinerobono)
+		
+		if orden.precio+dinerobono<5:
+			$CPUParticles2D.amount = 5
+		
+		elif orden.precio+dinerobono>5 and orden.precio+dinerobono<8:
+			$CPUParticles2D.amount = 8
+		
+		elif orden.precio+dinerobono>8:
+			$CPUParticles2D.amount = 10
+		
 		$AnimMoney.play("exitoso")
