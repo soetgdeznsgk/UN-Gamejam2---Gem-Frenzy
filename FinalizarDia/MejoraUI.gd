@@ -17,14 +17,13 @@ func _ready() -> void:
 		$TextureRect.texture = textura
 		
 		# Se deshabilita si no alcanza el dinero
-		if GlobalRecursos.dinero - totalPrecio <0:
-			$Btn_comprar.disabled = true
-		
+		update()
 		GlobalMejoras.mejora_cambiada.connect(update)
 
 func update():
 	if GlobalRecursos.dinero - totalPrecio <0:
 			$Btn_comprar.disabled = true
+			$Btn_comprar/TextureRect2.visible=true
 
 func _on_btn_comprar_pressed() -> void:
 	if not info.is_empty():
@@ -33,6 +32,7 @@ func _on_btn_comprar_pressed() -> void:
 			$AudioDineroAlcanza.play(0)
 			# solo puede comprar una vez hasta el maximo
 			$Btn_comprar.disabled = true
+			GlobalMejoras.mejora_cambiada.disconnect(update)
 			
 			#CONTRATO
 			if $Lb_nombre.text ==tr("CONTRACT"):
@@ -45,7 +45,4 @@ func _on_btn_comprar_pressed() -> void:
 			GlobalMejoras.disponible_mejoras[int(info["Key"])] -= 1
 			GlobalMejoras.mejora_cambiada.emit()
 			
-		else:
-			$AudioDineroNoAlcanza.play(0)
-			$Btn_comprar.disabled = true
 

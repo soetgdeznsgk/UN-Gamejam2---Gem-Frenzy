@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckwirio1rk4yk"]
+[gd_scene load_steps=14 format=3 uid="uid://ckwirio1rk4yk"]
 
 [ext_resource type="Script" path="res://FinalizarDia/MejoraUI.gd" id="1_1mlls"]
 [ext_resource type="Texture2D" uid="uid://dnoayse7gmmac" path="res://icon.svg" id="1_j405q"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b2eoylyx4gc5o" path="res://Musica/DineroNoAlcanza.wav" id="3_xceqa"]
 [ext_resource type="AudioStream" uid="uid://xl1i7khruaha" path="res://Musica/Mejora.wav" id="4_dp677"]
 [ext_resource type="LabelSettings" uid="uid://6nn4rwayajhh" path="res://Sprites/UI/labelcafeconfig.tres" id="5_j5po7"]
+[ext_resource type="Texture2D" uid="uid://bt5bve7bp87vx" path="res://Sprites/UI/xbutonblocked.png" id="8_t4fg0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm2hq"]
 content_margin_left = 8.0
@@ -115,6 +116,16 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
 theme = ExtResource("3_qlxb5")
 text = "BUY"
+
+[node name="TextureRect2" type="TextureRect" parent="Btn_comprar"]
+visible = false
+modulate = Color(1, 1, 1, 0.305882)
+layout_mode = 0
+offset_left = -5.0
+offset_top = 3.0
+offset_right = 155.0
+offset_bottom = 36.0
+texture = ExtResource("8_t4fg0")
 
 [node name="AudioDineroNoAlcanza" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xceqa")
