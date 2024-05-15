@@ -38,6 +38,12 @@ NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
 GlobalLogros="*res://Logica/Globales/GlobalLogros.gd"
 NwHandler="*res://Logica/Logros/NW_handler.gd"
 
+[compression]
+
+formats/zstd/compression_level=9
+formats/zlib/compression_level=9
+formats/gzip/compression_level=9
+
 [debug]
 
 file_logging/enable_file_logging=true
@@ -46,7 +52,6 @@ file_logging/enable_file_logging=true
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/subwindows/embed_subwindows=false
 window/stretch/mode="viewport"
 
 [editor_plugins]

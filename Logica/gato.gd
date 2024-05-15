@@ -10,6 +10,7 @@ enum status {
 	Lamiendo,
 	Durmiendo
 }
+var estaEnCofre = false
 var currentStatus = status.Sentado
 var prevStatus
 func _ready() -> void:
@@ -32,35 +33,43 @@ func _process(_delta: float) -> void:
 		var _coll = move_and_collide(Vector2(dir*0.45,0))
 
 func check_status():
-	prevStatus = currentStatus
-	var ran_num = randf()
-	if ran_num < 0.25:
-		if prevStatus != status.Camina:
-			$Timer.start(2.2)
-			currentStatus = status.Camina
-			anim.play("Camina")
-			if position.x - initialPos.x < 32:
-				dir = 1
-				$Sprite2D.scale.x = 1
-			elif position.x - initialPos.x > 32:
-				dir = -1
-				$Sprite2D.scale.x = -1
-		else:
-			$Timer.start(3)
+	if !estaEnCofre:
+		prevStatus = currentStatus
+		var ran_num = randf()
+		if ran_num < 0.25:
+			if prevStatus != status.Camina:
+				$Timer.start(2.2)
+				currentStatus = status.Camina
+				anim.play("Camina")
+				if position.x - initialPos.x < 32:
+					dir = 1
+					$Sprite2D.scale.x = 1
+				elif position.x - initialPos.x > 32:
+					dir = -1
+					$Sprite2D.scale.x = -1
+			else:
+				$Timer.start(3)
+				currentStatus = status.Sentado
+				anim.play("Sentado")
+		if ran_num > 0.25 and ran_num < 0.5:
+			$Timer.start(8)
+			currentStatus = status.Durmiendo
+			anim.play("Acostado")
+		if ran_num > 0.5 and ran_num < 0.75:
+			$Timer.start(5)
+			currentStatus = status.Lamiendo
+			anim.play("Lamiendo")
+		if ran_num > 0.75:
+			$Timer.start(4)
 			currentStatus = status.Sentado
 			anim.play("Sentado")
-	if ran_num > 0.25 and ran_num < 0.5:
-		$Timer.start(8)
-		currentStatus = status.Durmiendo
-		anim.play("Acostado")
-	if ran_num > 0.5 and ran_num < 0.75:
-		$Timer.start(5)
-		currentStatus = status.Lamiendo
-		anim.play("Lamiendo")
-	if ran_num > 0.75:
-		$Timer.start(4)
-		currentStatus = status.Sentado
-		anim.play("Sentado")
 
 func _on_timer_timeout() -> void:
 	check_status()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	estaEnCofre = true
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	estaEnCofre = false

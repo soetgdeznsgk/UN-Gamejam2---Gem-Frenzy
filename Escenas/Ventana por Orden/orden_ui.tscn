@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://doudmff7sjsk7"]
+[gd_scene load_steps=14 format=3 uid="uid://doudmff7sjsk7"]
 
 [ext_resource type="Script" path="res://Escenas/Ventana por Orden/orden_ui.gd" id="1_0ye5u"]
 [ext_resource type="Texture2D" uid="uid://ban86vq6j2l5p" path="res://Sprites/Recursos/Minerales.png" id="2_gkmif"]
@@ -6,6 +6,57 @@
 [ext_resource type="Texture2D" uid="uid://cfvky3y62uvt0" path="res://Sprites/UI/barra mas bonita debajo.png" id="4_7eyie"]
 [ext_resource type="Texture2D" uid="uid://chg8l2ql7xfgu" path="res://Sprites/UI/barra mas bonita encima.png" id="4_i1h10"]
 [ext_resource type="Texture2D" uid="uid://bx3ii5k72tmrx" path="res://Sprites/UI/barra mas bonita.png" id="4_lasru"]
+
+[sub_resource type="Animation" id="Animation_fixso"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("recetaSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-33, 48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureProgressBar:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 53)]
+}
 
 [sub_resource type="Animation" id="Animation_1f5tu"]
 resource_name = "fadeIn"
@@ -20,21 +71,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_fixso"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_4vhbm"]
@@ -52,15 +88,137 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_mb1fw"]
+resource_name = "slideIn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("recetaSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2664),
+"transitions": PackedFloat32Array(-2.7, 1),
+"update": 0,
+"values": [Vector2(152.25, 48), Vector2(-33, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2664),
+"transitions": PackedFloat32Array(-2.7, 1),
+"update": 0,
+"values": [Vector2(190.25, 0), Vector2(5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureProgressBar:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2664),
+"transitions": PackedFloat32Array(-2.7, 1),
+"update": 0,
+"values": [Vector2(186.25, 53), Vector2(1, 53)]
+}
+
+[sub_resource type="Animation" id="Animation_bebg6"]
+resource_name = "slideOut"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("recetaSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2664),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-33, 48), Vector2(220, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2664),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(220, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureProgressBar:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2664),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 53), Vector2(220, 53)]
+}
+
+[sub_resource type="Animation" id="Animation_1t2j3"]
+resource_name = "arriba"
+length = 0.21
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("recetaSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-33, 48), Vector2(-33, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureProgressBar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 53), Vector2(1, -27)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(5, -80)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ao0u1"]
 _data = {
 "RESET": SubResource("Animation_fixso"),
+"arriba": SubResource("Animation_1t2j3"),
 "fadeIn": SubResource("Animation_1f5tu"),
-"fadeOut": SubResource("Animation_4vhbm")
+"fadeOut": SubResource("Animation_4vhbm"),
+"slideIn": SubResource("Animation_mb1fw"),
+"slideOut": SubResource("Animation_bebg6")
 }
 
 [node name="OrdenUI" type="Control"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchor_right = 0.118
 anchor_bottom = 0.169
@@ -68,6 +226,7 @@ offset_right = -0.0400085
 offset_bottom = 0.319992
 grow_horizontal = 0
 grow_vertical = 0
+pivot_offset = Vector2(100, 0)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_0ye5u")
@@ -120,7 +279,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 offset_left = 1.0
 offset_top = 53.0
-offset_right = 131.0
+offset_right = 131.001
 offset_bottom = 79.0
 max_value = 30.0
 step = 0.01

@@ -15,7 +15,7 @@ func _ready():
 	cambiadorDeColor.bg_color = Color("008000")
 	#pb.add_theme_stylebox_override("fill", cambiadorDeColor)
 	pb.max_value = orden_logica.get_time_left() # ésto dará error si se instancia antes que la orden
-	$AnimationPlayer.play("fadeIn")
+	$AnimationPlayer.play("slideIn")
 
 func _physics_process(_delta):
 	if !orden_logica.tmr.is_stopped():
@@ -65,14 +65,15 @@ func orden_deliver():
 	OrderManager.orden_exitosa.emit(orden_logica)
 	OrderManager._on_order_delivered(orden_logica.precio)
 	orden_logica.tmr.stop()
-	$AnimationPlayer.play("fadeOut")
-	await get_tree().create_timer(0.5).timeout
+	$AnimationPlayer.play("slideOut")
+	await get_tree().create_timer(0.27).timeout
 	orden_logica.finalizar_orden()
-	
+	orden_logica.queue_free()
+	queue_free()
 
 
 func fade_out():
-	$AnimationPlayer.play("fadeOut")
+	$AnimationPlayer.play("slideOut")
 	await $AnimationPlayer.animation_finished
 	orden_logica.queue_free()
 	queue_free()
