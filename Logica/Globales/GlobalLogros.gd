@@ -1,4 +1,5 @@
 extends Node
+signal mostrarNotificacion(tex,titulo)
 
 @warning_ignore("unused_signal")
 signal primeraChamba
@@ -13,10 +14,9 @@ signal reachdia10
 @warning_ignore("unused_signal")
 signal reachdia17
 @warning_ignore("unused_signal")
-signal mostrarNotificacion(tex,titulo)
 
-signal AllRecipes #falta agregar entrada a nw y conectar a nw_handler
-signal NoUpgrades #falta agregar entrada a nw y conectar a nw_handler ytestear
+signal AllRecipes 
+signal NoUpgrades 
 
 var copiaRecetas = GlobalRecetas.recetas.duplicate()
 var APIHandler = "NEWGROUNDS"

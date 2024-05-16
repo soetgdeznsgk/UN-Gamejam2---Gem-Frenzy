@@ -35,8 +35,8 @@ CATO,Gato,Cat,猫,猫
 CATO_DESC,¡Un gato siempre atrae más clientes!,A cat always attracts more customers!,一只猫总是能吸引更多的顾客！,猫はいつももっと多くの顧客を引き付けます！
 SPEED_UP,Mas rapido,SPEED UP,速度更快,速度を上げる
 SPEED_UP_DESC,Pancha tomó café colombiano,Pancha drank Colombian coffee,Pancha 喝哥伦比亚咖啡,パンチャはコロンビアコーヒーを飲みました
-RECYCLE,"Ganancia
-por reciclaje",Recycle Profit,,
+RECYCLE,"Ganancia por
+reciclaje",Recycle Profit,,
 RECYCLE_DESC,Al final del dia gana mas por minerales no usados,At the end of the day you earn more for unused minerals,,
 CONTRACT,"Escrituras 
 de la tienda",Shop Ownership,店铺所有权,ショップの所有権
@@ -85,3 +85,12 @@ SFX,SFX,SFX,音效,効果音
 SUPPORT,Agradecimientos Especiales:,Special Thanks,特别感谢,スペシャルサンクス
 ASSETS,Recursos,Assets,资产,資産
 THANKS_FOR_PLAYING,Gracias por jugar,Thanks for Playing,感谢您玩,遊んでくれてありがとう
+ACHIEVEMENT_UNLOCKED,Logro Desbloqueado,Achievement Unlocked,,
+PRIMERA_CHAMBA,Primera Chamba,Primera Chamba,,
+TUTORIAL_COMPLETO,Listo para la inflacion,Ready to face inflation,,
+ADOPTAR_GATO,Fat cat Fest,Fat cat Fest,,
+JUEGO_COMPLETO,El sueño de Pancha,Pancha's Dream,,
+DIA_10,Dia 10,Day 10,,
+DIA_17,¿Estás bien?,Are you ok?,,
+ALL_RECIPES,Master Gem,Master Gem,,
+NO_UPGRADES,¿Sin mejoras?,No upgrades?,,

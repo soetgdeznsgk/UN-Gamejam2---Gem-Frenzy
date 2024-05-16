@@ -173,7 +173,7 @@ scoreboard_id = 13398
 [node name="ExampleMedalList" parent="." instance=ExtResource("4_lqp0p")]
 offset_left = 885.0
 offset_top = 40.0
-offset_right = 1212.0
+offset_right = 1111.0
 offset_bottom = 405.0
 
 [node name="NewgroundsSessionWatcher" type="Node" parent="."]

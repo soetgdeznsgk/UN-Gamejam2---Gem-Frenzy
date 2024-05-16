@@ -668,7 +668,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_648xy"]
 resource_name = "slideInOut"
-length = 3.5
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1870,8 +1870,10 @@ offset_left = 190.0
 offset_top = 25.0
 offset_right = 496.0
 offset_bottom = 71.0
-text = "LOGRO DESBLOQUEADO:"
+text = "ACHIEVEMENT_UNLOCKED"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Titulo" type="Label" parent="Notificaciones"]
 layout_mode = 0
@@ -1882,6 +1884,7 @@ offset_bottom = 121.0
 text = "TITULO LOGRO"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Notificaciones"]
 libraries = {

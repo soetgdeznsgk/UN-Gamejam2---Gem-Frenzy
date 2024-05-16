@@ -32,6 +32,7 @@ func _on_finalizar_dia():
 	var sumatotal=GlobalRecursos.Ahorro+GlobalRecursos.Gananciadia+GlobalRecursos.Gananciabono+GlobalRecursos.GananciaReciclaje-GlobalRecursos.valorDia
 	%"factura/HBoxContainer/cosas pagadas/VboxContainer/HBoxTotal/Totalnum".text="  "+str(sumatotal)
 	if sumatotal<0:
+		GlobalLogros.primeraChamba.emit()
 		%Gameover.visible=false
 		%"factura/HBoxContainer/cosas pagadas/VboxContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
 	

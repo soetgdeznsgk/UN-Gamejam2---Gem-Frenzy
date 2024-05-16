@@ -58,6 +58,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
 
+[global_group]
+
+CloudSave="Newgrounds Cloudsave"
+
 [input]
 
 ui_left={
@@ -102,6 +106,7 @@ locale/locale_filter_mode=0
 
 app_id="58087:clm13vWi"
 AES-128_key="my1OaIw81JNWknmGdNHJ3A=="
+opened_getting_started_page=true
 
 [rendering]
 
