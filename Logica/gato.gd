@@ -21,12 +21,15 @@ func _ready() -> void:
 func nuevo_gato():
 
 	var gatos = GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]
-	if gatoPower < gatos:
+	if gatoPower == 0 and gatos ==1:
 		GlobalLogros.adoptarGato.emit()
+	if gatoPower < gatos:
 		visible = true
 		currentStatus = status.Sentado
 		anim.play("Sentado")
 		$Timer.start(2)
+		gatoPower+=1
+	
 
 func _process(_delta: float) -> void:
 	if currentStatus == status.Camina:
