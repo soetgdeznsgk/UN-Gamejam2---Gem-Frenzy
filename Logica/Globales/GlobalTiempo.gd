@@ -16,7 +16,7 @@ signal quedandiezminutos
 signal winner
 @onready var tmr_minuto : Timer
 @onready var tmr_segundos_totales : Timer
-
+var horacierre
 
 func _ready() -> void:
 	tmr_minuto = Timer.new()
@@ -46,7 +46,7 @@ func _process(_delta: float) -> void:
 # actualiza el reloj
 func on_tmr_minuto_end():
 	tiempoMinutoDia += 1
-	var horacierre =11 + (GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasTiempo])
+	horacierre =11 + (GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasTiempo])
 	if tiempoMinutoDia == 60:
 		tiempoHoraDia += 1
 		tiempoMinutoDia = 0
@@ -59,6 +59,7 @@ func on_tmr_minuto_end():
 			#print("queda media hora papu")
 		elif tiempoMinutoDia==50:
 			quedandiezminutos.emit()
+			
 			#print("quedan 10 minutos papu y sant esta viendo hooola sant")
 	if tiempoHoraDia >= horacierre:
 		tmr_minuto.stop()

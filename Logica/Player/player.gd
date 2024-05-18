@@ -237,6 +237,11 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: TileMap, _body_shape_in
 			
 			
 		if actualFrame < GlobalRecursos.mineralesConFondo.Tierra:
+			GlobalLogros.cantMineralesRecogidos+=1
+			
+			if GlobalLogros.cantMineralesRecogidos==GlobalLogros.cantMineralesDia:
+				print("Logro de todos los minerales desbloqueao")
+				GlobalLogros.AllMinerals.emit()
 			GlobalRecursos.actualizar_mineral(actualFrame, 1)
 			audioMinado.pitch_scale = randf_range(0.9,1.1)
 			audioMinado.play(0) #sonido de minado

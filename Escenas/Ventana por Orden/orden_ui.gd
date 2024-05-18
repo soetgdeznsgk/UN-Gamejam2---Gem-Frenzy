@@ -62,6 +62,10 @@ func orden_out_of_time():
 	
 	
 func orden_deliver():
+	if $TextureProgressBar.value<1:
+		GlobalLogros.DeliverInTime.emit()
+	if GlobalTiempo.tiempoHoraDia== GlobalTiempo.horacierre-1 and GlobalTiempo.tiempoMinutoDia>=59:
+		GlobalLogros.justOneMore.emit()
 	OrderManager.orden_exitosa.emit(orden_logica)
 	OrderManager._on_order_delivered(orden_logica.precio)
 	orden_logica.tmr.stop()

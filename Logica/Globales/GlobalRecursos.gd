@@ -5,7 +5,7 @@ extends Node
 # inicia en ceros
 const cantidadTiposMinerales = 11
 var minerales : Array = []
-var dinero : int = 5
+var dinero : int = 500
 signal cambioDinero(dinero)
 signal cambioMineral(mineral, cantidad)
 signal bancarota
@@ -75,6 +75,7 @@ func reiniciar_factura():
 	GananciaReciclaje=0
 
 func actualizar_renta():
+	
 	Ahorro=dinero
 	reiniciar_factura()
 	var dia = GlobalTiempo.diaActual 

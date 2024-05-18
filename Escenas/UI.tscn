@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=108 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://b8r5icb25mgxs" path="res://Sprites/UI/TSBFlechaPressed.png" id="52_vcqjp"]
 [ext_resource type="Script" path="res://Escenas/notificaciones.gd" id="53_aus06"]
 [ext_resource type="Texture2D" uid="uid://ctdivsxessfxp" path="res://Sprites/UI/yes.png" id="53_s1qa2"]
+[ext_resource type="Texture2D" uid="uid://b7v06sbiqtdhe" path="res://Sprites/Logros/backgroundlogro.png" id="54_r4idb"]
 
 [sub_resource type="Animation" id="Animation_r4qms"]
 resource_name = "1_hour_left"
@@ -663,7 +664,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(221, -144)]
+"values": [Vector2(221, -164)]
 }
 
 [sub_resource type="Animation" id="Animation_648xy"]
@@ -679,7 +680,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4662, 2.0646, 2.4642),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(221, -144), Vector2(221, 0), Vector2(221, 0), Vector2(221, -144)]
+"values": [Vector2(221, -164), Vector2(221, 20), Vector2(221, 20), Vector2(221, -164)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gtyqt"]
@@ -1841,25 +1842,22 @@ visibility_mode = 1
 z_index = 4096
 anchors_preset = 0
 offset_left = 221.0
-offset_top = -144.0
+offset_top = -164.0
 offset_right = 716.0
-offset_bottom = 36.0
+offset_bottom = 16.0
 theme = ExtResource("8_qhue7")
 script = ExtResource("53_aus06")
 
-[node name="PanelContainer" type="PanelContainer" parent="Notificaciones"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 39.0
-offset_right = 507.0
-offset_bottom = 77.0
-theme = ExtResource("16_cal8s")
+[node name="PanelContainer" type="Sprite2D" parent="Notificaciones"]
+position = Vector2(278.5, 74.5)
+scale = Vector2(1.63824, 1.45588)
+texture = ExtResource("54_r4idb")
 
 [node name="IconoLogro" type="TextureRect" parent="Notificaciones"]
 layout_mode = 2
-offset_left = 51.0
+offset_left = 65.0
 offset_top = 24.0
-offset_right = 143.0
+offset_right = 157.0
 offset_bottom = 116.0
 texture = ExtResource("53_s1qa2")
 expand_mode = 1

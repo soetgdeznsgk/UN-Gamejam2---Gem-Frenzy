@@ -14,19 +14,23 @@ signal reachdia10
 @warning_ignore("unused_signal")
 signal reachdia17
 @warning_ignore("unused_signal")
-
 signal AllRecipes 
 signal NoUpgrades 
+signal DeliverInTime
+signal justOneMore
+signal AllMinerals
+signal Anticapitalist
 
 var copiaRecetas = GlobalRecetas.recetas.duplicate()
 var APIHandler = "NEWGROUNDS"
-
-
+var cantMineralesDia
+var cantMineralesRecogidos=0
 func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(check_logros_al_iniciar)
 	print(copiaRecetas)
 
 func check_logros_al_iniciar():
+	cantMineralesRecogidos=0
 	# verifica que todas las mejoras esten en 0 (le aplica la funcion a cada elemento del array)
 	if GlobalTiempo.diaActual==7 and GlobalMejoras.activas_mejoras.all(equal_to_zero):
 		NoUpgrades.emit()

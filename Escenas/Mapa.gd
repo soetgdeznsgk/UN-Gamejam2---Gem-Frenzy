@@ -7,9 +7,11 @@ func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(regenerar_mapa)
 	GlobalTiempo.tmr_minuto.start()
 	regenerar_mapa()
+	print("Minerales del dia ",GlobalLogros.cantMineralesDia)
 	GlobalRecursos.actualizar_renta()
 
 func regenerar_mapa():
+	GlobalLogros.cantMineralesDia=0
 	# J es profundidad y I es anchura
 	randomize()
 	# Hacer acero o venderlo solo
@@ -22,9 +24,12 @@ func regenerar_mapa():
 					frame = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.935 and porcentaje < 0.975: 
 					frame = GlobalRecursos.mineralesConFondo.Carbon
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.975 and porcentaje < 0.99: 
 					frame = GlobalRecursos.mineralesConFondo.Hierro
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.99 and porcentaje <= 1: 
+					GlobalLogros.cantMineralesDia+=1
 					frame = GlobalRecursos.mineralesConFondo.Plata
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
@@ -41,13 +46,18 @@ func regenerar_mapa():
 				var porcentaje = randf()
 				var frame = 0
 				if porcentaje < 0.955 and porcentaje >= 0:
+					GlobalLogros.cantMineralesDia+=1
 					frame = GlobalRecursos.mineralesConFondo.Tierra
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.955 and porcentaje <= 0.975: 
 					frame = GlobalRecursos.mineralesConFondo.Plata
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.975 and porcentaje <= 0.985: 
 					frame = GlobalRecursos.mineralesConFondo.Hierro
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.985 and porcentaje <= 1: 
 					frame = GlobalRecursos.mineralesConFondo.Cobre
+					GlobalLogros.cantMineralesDia+=1
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
 				var atlasCordsX = frame % 6
@@ -66,8 +76,10 @@ func regenerar_mapa():
 					frame = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.97 and porcentaje <= 0.988: 
 					frame = GlobalRecursos.mineralesConFondo.Cobre
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.988 and porcentaje <= 1: 
 					frame = GlobalRecursos.mineralesConFondo.Oro
+					GlobalLogros.cantMineralesDia+=1
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
 				var atlasCordsX = frame % 6
@@ -84,12 +96,16 @@ func regenerar_mapa():
 				var frame = 0
 				if porcentaje < 0.975 and porcentaje >= 0:
 					frame = GlobalRecursos.mineralesConFondo.Tierra
+					
 				elif porcentaje > 0.975 and porcentaje < 0.985:
 					frame = GlobalRecursos.mineralesConFondo.Rubi
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.985 and porcentaje <= 0.995: 
 					frame = GlobalRecursos.mineralesConFondo.Topacio
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.995 and porcentaje <= 1: 
 					frame = GlobalRecursos.mineralesConFondo.Oro
+					GlobalLogros.cantMineralesDia+=1
 				
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
@@ -109,8 +125,10 @@ func regenerar_mapa():
 					frame = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					frame = GlobalRecursos.mineralesConFondo.Zafiro
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.995 and porcentaje <= 1: 
 					frame = GlobalRecursos.mineralesConFondo.Amatista
+					GlobalLogros.cantMineralesDia+=1
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
 				var atlasCordsX = frame % 6
@@ -130,8 +148,10 @@ func regenerar_mapa():
 					frame = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					frame = GlobalRecursos.mineralesConFondo.Amatista
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.995 and porcentaje <= 1: 
 					frame = GlobalRecursos.mineralesConFondo.Esmeralda
+					GlobalLogros.cantMineralesDia+=1
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
 				var atlasCordsX = frame % 6
@@ -150,8 +170,10 @@ func regenerar_mapa():
 					frame = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.985 and porcentaje < 0.995:
 					frame = GlobalRecursos.mineralesConFondo.Esmeralda
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.995 and porcentaje <= 1: 
 					frame = GlobalRecursos.mineralesConFondo.Diamante
+					GlobalLogros.cantMineralesDia+=1
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
 				var atlasCordsX = frame % 6
@@ -169,8 +191,10 @@ func regenerar_mapa():
 					frame = GlobalRecursos.mineralesConFondo.Tierra
 				elif porcentaje > 0.98 and porcentaje < 0.99:
 					frame = GlobalRecursos.mineralesConFondo.Diamante
+					GlobalLogros.cantMineralesDia+=1
 				elif porcentaje > 0.99 and porcentaje <= 1: 
 					frame = GlobalRecursos.mineralesConFondo.Esmeralda
+					GlobalLogros.cantMineralesDia+=1
 				@warning_ignore("integer_division")
 				var atlasCordsY = floori(frame / 6)
 				var atlasCordsX = frame % 6

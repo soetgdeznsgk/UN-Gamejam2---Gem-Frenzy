@@ -22,7 +22,6 @@ func _on_finalizar_dia():
 		$AudioFinDiaBien.play()
 
 #region Mostrar  Factura
-	
 	%factura.visible=true
 	%"factura/HBoxContainer/cosas pagadas/HBoxahorro/AhorroNumerito".text="  "+str(GlobalRecursos.Ahorro)
 	%"factura/HBoxContainer/cosas pagadas/HBoxGanancia/GananciadiaNum".text="  "+str(GlobalRecursos.Gananciadia)
@@ -35,7 +34,9 @@ func _on_finalizar_dia():
 		GlobalLogros.primeraChamba.emit()
 		%Gameover.visible=false
 		%"factura/HBoxContainer/cosas pagadas/VboxContainer/HBoxTotal/Totalnum".modulate=Color("#d82118")
-	
+	elif GlobalRecursos.Gananciadia==0:
+		GlobalLogros.Anticapitalist.emit()
+		
 #endregion
 
 

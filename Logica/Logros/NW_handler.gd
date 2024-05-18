@@ -15,6 +15,10 @@ func _ready() -> void:
 		GlobalLogros.reachdia17.connect(unlock_dia17)
 		GlobalLogros.AllRecipes.connect(unlock_AllRecipes)
 		GlobalLogros.NoUpgrades.connect(unlock_NoUpgrades)
+		GlobalLogros.DeliverInTime.connect(unlock_DeliverInTime)
+		GlobalLogros.justOneMore.connect(unlock_justonemore)
+		GlobalLogros.AllMinerals.connect(unlock_allminerals)
+		GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
 func unlock_primerachamba():
 	var texture = load("res://Sprites/Logros/primerachamba.png")
 	if !NG.medals[78737].unlocked:
@@ -76,3 +80,31 @@ func unlock_NoUpgrades():
 		GlobalLogros.mostrarNotificacion.emit(texture, tr("NO_UPGRADES"))
 	if NG.offline_mode:
 		GlobalLogros.mostrarNotificacion.emit(texture, tr("NO_UPGRADES"))
+func unlock_DeliverInTime():
+	var texture = load("res://Sprites/Logros/deliverintime.png")
+	if !NG.medals[78860].unlocked:
+		NG.medal_unlock(78860)
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("DELIVER_IN_TIME"))
+	if NG.offline_mode:
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("DELIVER_IN_TIME"))
+func unlock_justonemore():
+	var texture = load("res://Sprites/Logros/justonemore.png")
+	if !NG.medals[78861].unlocked:
+		NG.medal_unlock(78861)
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("JUST_ONE_MORE"))
+	if NG.offline_mode:
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("JUST_ONE_MORE"))
+func unlock_allminerals():
+	var texture = load("res://Sprites/Logros/allminerals.png")
+	if !NG.medals[78862].unlocked:
+		NG.medal_unlock(78862)
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("ALL_MINERALS"))
+	if NG.offline_mode:
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("ALL_MINERALS"))
+func unlock_anticapitalist():
+	var texture = load("res://Sprites/Logros/anticapitalist.png")
+	if !NG.medals[78863].unlocked:
+		NG.medal_unlock(78863)
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("ANTICAPITALIST"))
+	if NG.offline_mode:
+		GlobalLogros.mostrarNotificacion.emit(texture, tr("ANTICAPITALIST"))
