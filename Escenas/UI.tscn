@@ -1650,6 +1650,7 @@ autowrap_mode = 2
 
 [node name="Pausa" type="PanelContainer" parent="."]
 process_mode = 3
+visible = false
 layout_mode = 0
 offset_left = 127.0
 offset_top = 112.0
