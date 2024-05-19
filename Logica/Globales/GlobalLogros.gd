@@ -22,7 +22,7 @@ signal AllMinerals
 signal Anticapitalist
 
 var copiaRecetas = GlobalRecetas.recetas.duplicate()
-var APIHandler = "NEWGROUNDS"
+var APIHandler = ""
 var cantMineralesDia
 var cantMineralesRecogidos=0
 func _ready() -> void:

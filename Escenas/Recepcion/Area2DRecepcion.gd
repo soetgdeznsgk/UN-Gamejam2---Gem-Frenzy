@@ -5,7 +5,7 @@ class_name Recepcion
 signal order_delivered(orden)
 
 var isPlayerHere = false
-var playerRef : Player
+var playerRef : PlayerPancha
 @onready var interactSprite = $Spr_up_key_ladder
 
 
@@ -23,13 +23,13 @@ func Entrega():
 		$AudioNotieneNada.play()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is PlayerPancha:
 		isPlayerHere = true
 		playerRef = body
 		interactSprite.visible = true
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if body is Player:
+	if body is PlayerPancha:
 		isPlayerHere = false
 		interactSprite.visible = false

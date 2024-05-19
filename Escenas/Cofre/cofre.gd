@@ -8,7 +8,7 @@ extends Node2D
 var cantidad_almacenada := 0
 @onready var popup := $Spr_up_key_ladder
 var isPlayerHere := false
-var playerRef : Player
+var playerRef : PlayerPancha
 @onready var animPlayer = $AnimationPlayer
 var activo = false
 
@@ -73,7 +73,7 @@ func Open() -> void:
 # Señales
 
 func _on_body_entered(body : Node2D):
-	if body is Player:
+	if body is PlayerPancha:
 		popup.visible = true
 		playerRef = body
 		isPlayerHere = true
@@ -82,6 +82,6 @@ func _on_body_entered(body : Node2D):
 
 
 func _on_body_exited(body):
-	if body is Player:
+	if body is PlayerPancha:
 		popup.visible = false
 		isPlayerHere = false

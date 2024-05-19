@@ -65,7 +65,8 @@ func call_top_players():
 
 func gameover():
 	#sube el record a leaderboard nw
-	NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
+	#TROOOOOOOOOL
+	#NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
 	call_top_players()
 	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
 	$AudioGameover.play(0)

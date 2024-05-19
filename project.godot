@@ -33,10 +33,16 @@ Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 GlobalFirebaseInfo="*res://Logica/Globales/GlobalFirebaseInfo.gd"
 GlobalTuto="*res://Logica/Globales/GlobalTuto.gd"
 GlobalSettings="*res://Logica/Globales/GlobalSettings.gd"
+GlobalLogros="*res://Logica/Globales/GlobalLogros.gd"
+GodotPlayGameServices="*res://addons/GodotPlayGameServices/autoloads/godot_play_game_services.gd"
+SignInClient="*res://addons/GodotPlayGameServices/autoloads/sign_in_client.gd"
+PlayersClient="*res://addons/GodotPlayGameServices/autoloads/players_client.gd"
+AchievementsClient="*res://addons/GodotPlayGameServices/autoloads/achievements_client.gd"
+LeaderboardsClient="*res://addons/GodotPlayGameServices/autoloads/leaderboards_client.gd"
+SnapshotsClient="*res://addons/GodotPlayGameServices/autoloads/snapshots_client.gd"
+EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
 NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
 NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
-GlobalLogros="*res://Logica/Globales/GlobalLogros.gd"
-NwHandler="*res://Logica/Logros/NW_handler.gd"
 
 [compression]
 
@@ -56,7 +62,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
+enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
 
 [global_group]
 

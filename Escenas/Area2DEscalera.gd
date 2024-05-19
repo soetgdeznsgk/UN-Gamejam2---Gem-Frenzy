@@ -4,7 +4,7 @@ extends Area2D
 signal order_delivered(orden)
 
 var isPlayerHere = false
-var playerRef : Player
+var playerRef : PlayerPancha
 var tween : Tween
 @onready var interactSprite = $Spr_up_key_ladder
 
@@ -47,13 +47,13 @@ func _on_tween_callback():
 		playerRef.recienSalidoEscalera = false
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is PlayerPancha:
 		isPlayerHere = true
 		playerRef = body
 		interactSprite.visible = true
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if body is Player:
+	if body is PlayerPancha:
 		isPlayerHere = false
 		interactSprite.visible = false

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Player
+class_name PlayerPancha
 
 signal surface_entered
 @warning_ignore("unused_signal")
@@ -153,7 +153,7 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body):
 	# cuando vuelve a la casa
-	if body is Player and taladrando and movement and not recienSalidoEscalera:
+	if body is PlayerPancha and taladrando and movement and not recienSalidoEscalera:
 		movement = false
 		AnimState.travel("Escaleras")
 		taladrando=false

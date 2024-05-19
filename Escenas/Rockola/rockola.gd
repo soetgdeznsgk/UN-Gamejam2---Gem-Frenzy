@@ -87,7 +87,7 @@ func stop_song():
 
 
 func _on_area_2d_body_entered(body):
-	if body is Player:
+	if body is PlayerPancha:
 		$Spr_up_key_ladder.visible=true
 		isPlayerHere=true
 		
@@ -99,7 +99,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_body_exited(body):
-	if body is Player:
+	if body is PlayerPancha:
 		isPlayerHere=false
 		$Spr_up_key_ladder.visible=false
 	pass # Replace with function body.
