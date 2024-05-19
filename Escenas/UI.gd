@@ -53,3 +53,13 @@ func pausar_flash():
 
 func _on_btn_finalizar_dia_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_btn_fullscreen_pressed() -> void:
+	if GlobalSettings.fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		GlobalSettings.fullscreen=false
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)	
+		GlobalSettings.fullscreen=true
+	pass # Replace with function body.

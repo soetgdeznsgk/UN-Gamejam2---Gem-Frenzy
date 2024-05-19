@@ -3,6 +3,12 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var timer := Timer.new()
+	timer.autostart=true
+	timer.wait_time=300
+	timer.timeout.connect(ping_a_nw)
+	add_child(timer)
+	timer.start()
 	# Si es NG pero no hay cuenta, igual salen logros pero sin verificar si son replicados
 	print("NG OFFLINE? " ,NG.offline_mode)
 	# Solo hace cosas si es la api que esperamos
@@ -19,6 +25,9 @@ func _ready() -> void:
 		GlobalLogros.justOneMore.connect(unlock_justonemore)
 		GlobalLogros.AllMinerals.connect(unlock_allminerals)
 		GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
+		
+func ping_a_nw():
+	NG.components.ping()
 func unlock_primerachamba():
 	var texture = load("res://Sprites/Logros/primerachamba.png")
 	if !NG.medals[78737].unlocked:
