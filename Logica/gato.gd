@@ -22,7 +22,8 @@ func nuevo_gato():
 
 	var gatos = GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.Gato]
 	if gatoPower == 0 and gatos ==1:
-		GlobalLogros.adoptarGato.emit()
+		if !GlobalTuto.tutorial:
+			GlobalLogros.adoptarGato.emit()
 	if gatoPower < gatos:
 		visible = true
 		currentStatus = status.Sentado

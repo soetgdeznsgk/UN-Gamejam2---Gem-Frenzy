@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=109 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -46,6 +46,7 @@
 [ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="38_wojpx"]
 [ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
+[ext_resource type="Texture2D" uid="uid://cp5w44xd5lb2x" path="res://Sprites/UI/FULLSCREEN.png" id="44_8uhjy"]
 [ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="46_j4b7w"]
 [ext_resource type="PackedScene" uid="uid://c6dpi8j3mv3yn" path="res://outro_anim.tscn" id="47_0jhqx"]
 [ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="48_huglt"]
@@ -1649,11 +1650,10 @@ autowrap_mode = 2
 
 [node name="Pausa" type="PanelContainer" parent="."]
 process_mode = 3
-visible = false
 layout_mode = 0
-offset_left = 163.0
+offset_left = 127.0
 offset_top = 112.0
-offset_right = 821.0
+offset_right = 870.0
 offset_bottom = 561.0
 theme = ExtResource("16_cal8s")
 
@@ -1691,6 +1691,14 @@ custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
 icon = ExtResource("34_jvi5v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_FULLSCREEN" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("44_8uhjy")
 icon_alignment = 1
 expand_icon = true
 
@@ -1898,6 +1906,7 @@ libraries = {
 [connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/si" to="ADVERTENCIAFINAL" method="_on_si_pressed"]
 [connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/no" to="ADVERTENCIAFINAL" method="_on_no_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_FULLSCREEN" to="." method="_on_btn_fullscreen_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_BACK" to="." method="_on_btn_back_pressed"]
 [connection signal="pressed" from="Btn_pause" to="." method="_on_btn_pause_pressed"]
