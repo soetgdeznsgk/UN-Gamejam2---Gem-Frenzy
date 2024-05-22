@@ -3,33 +3,27 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
-	# Si es NG pero no hay cuenta, igual salen logros pero sin verificar si son replicados
-	#print("NG OFFLINE? " ,NG.offline_mode)
-	# Solo hace cosas si es la api que esperamos
-	if GlobalLogros.APIHandler == "NEWGROUNDS":
-		var timer := Timer.new()
-		timer.autostart=true
-		timer.wait_time=60
-		timer.timeout.connect(ping_a_nw)
-		add_child(timer)
-		timer.start()
-		GlobalLogros.primeraChamba.connect(unlock_primerachamba)
-		GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
-		GlobalLogros.adoptarGato.connect(unlock_adoptargato)
-		GlobalLogros.juegoCompleto.connect(unlock_juegocompleto)
-		GlobalLogros.reachdia10.connect(unlock_dia10)
-		GlobalLogros.reachdia17.connect(unlock_dia17)
-		GlobalLogros.AllRecipes.connect(unlock_AllRecipes)
-		GlobalLogros.NoUpgrades.connect(unlock_NoUpgrades)
-		GlobalLogros.DeliverInTime.connect(unlock_DeliverInTime)
-		GlobalLogros.justOneMore.connect(unlock_justonemore)
-		GlobalLogros.AllMinerals.connect(unlock_allminerals)
-		GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
-		
-func ping_a_nw():
-	print("PING A NW")
-	NG.components.ping()
+	iniciar_sesion()
+	GlobalLogros.primeraChamba.connect(unlock_primerachamba)
+	GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
+	GlobalLogros.adoptarGato.connect(unlock_adoptargato)
+	GlobalLogros.juegoCompleto.connect(unlock_juegocompleto)
+	GlobalLogros.reachdia10.connect(unlock_dia10)
+	GlobalLogros.reachdia17.connect(unlock_dia17)
+	GlobalLogros.AllRecipes.connect(unlock_AllRecipes)
+	GlobalLogros.NoUpgrades.connect(unlock_NoUpgrades)
+	GlobalLogros.DeliverInTime.connect(unlock_DeliverInTime)
+	GlobalLogros.justOneMore.connect(unlock_justonemore)
+	GlobalLogros.AllMinerals.connect(unlock_allminerals)
+	GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
+	pass # Replace with function body.
+func iniciar_sesion():
+	SignInClient.user_authenticated.connect(func(is_authenticated: bool): # (1)
+		if not is_authenticated:
+			SignInClient.sign_in()
+		if is_authenticated:
+			$TextureRect.visible = false
+	)
 func unlock_primerachamba():
 	var texture = load("res://Sprites/Logros/primerachamba.png")
 	if !NG.medals[78737].unlocked:
@@ -37,14 +31,16 @@ func unlock_primerachamba():
 		GlobalLogros.mostrarNotificacion.emit(texture, tr("PRIMERA_CHAMBA"))
 	if NG.offline_mode:
 		GlobalLogros.mostrarNotificacion.emit(texture, tr("PRIMERA_CHAMBA"))
-
+		
 func unlock_tutorialcompleto():
-	var texture = load("res://Sprites/Logros/tutorialcompletado.png")
-	if !NG.medals[78738].unlocked:
-		NG.medal_unlock(78738)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("TUTORIAL_COMPLETO"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("TUTORIAL_COMPLETO"))
+	print("logro googleplay desbloqueao")
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQAA")
+	#var texture = load("res://Sprites/Logros/tutorialcompletado.png")
+	#if !NG.medals[78738].unlocked:
+		#NG.medal_unlock(78738)
+	#	GlobalLogros.mostrarNotificacion.emit(texture, tr("TUTORIAL_COMPLETO"))
+	#if NG.offline_mode:
+		#GlobalLogros.mostrarNotificacion.emit(texture, tr("TUTORIAL_COMPLETO"))
 
 func unlock_adoptargato():
 	var texture = load("res://Sprites/Logros/gatoadopatdo.png")
@@ -119,3 +115,6 @@ func unlock_anticapitalist():
 		GlobalLogros.mostrarNotificacion.emit(texture, tr("ANTICAPITALIST"))
 	if NG.offline_mode:
 		GlobalLogros.mostrarNotificacion.emit(texture, tr("ANTICAPITALIST"))
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

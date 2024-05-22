@@ -5,13 +5,6 @@ var textureSnd2 = preload("res://Sprites/UI/sound_on.png")
 var situto = preload("res://Sprites/UI/yes.png")
 var notuto = preload("res://Sprites/UI/no.png")
 func _ready():
-	SignInClient.user_authenticated.connect(func(is_authenticated: bool): # (1)
-		if not is_authenticated:
-			SignInClient.sign_in()
-		if is_authenticated:
-			$TextureRect.visible = false
-	)
-	
 	$AnimationPlayer.play("aparece_logo")
 	var nodo_Btn=$Lenguaje/PanelContainer/MarginContainer/VBoxContainer
 	for i in range(1,nodo_Btn.get_child_count()):
@@ -174,4 +167,9 @@ func _on_btn_fullscreen_pressed():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name=="aparece_logo":
 		$AnimationPlayer.play("Logo_se_mueve")
+	pass # Replace with function body.
+
+
+func _on_btn_logros_pressed() -> void:
+	AchievementsClient.show_achievements()
 	pass # Replace with function body.

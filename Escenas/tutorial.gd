@@ -71,7 +71,7 @@ func emit_endtaladrando():
 		GlobalTuto.FlagendTaladrando=false
 		$Objetivo.text=tr("MISSION_TEXT")
 		
-	if GlobalRecursos.minerales[3]>20:
+	if GlobalRecursos.minerales[3]>=20:
 		GlobalLogros.tutorialCompleto.emit()
 		GlobalTuto.pausarpancha.emit()
 		$"Pancha Gif".visible=false
