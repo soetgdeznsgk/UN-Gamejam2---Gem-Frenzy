@@ -25,15 +25,9 @@ func iniciar_sesion():
 			$TextureRect.visible = false
 	)
 func unlock_primerachamba():
-	var texture = load("res://Sprites/Logros/primerachamba.png")
-	if !NG.medals[78737].unlocked:
-		NG.medal_unlock(78737)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("PRIMERA_CHAMBA"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("PRIMERA_CHAMBA"))
-		
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQBA")
+	
 func unlock_tutorialcompleto():
-	print("logro googleplay desbloqueao")
 	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQAA")
 	#var texture = load("res://Sprites/Logros/tutorialcompletado.png")
 	#if !NG.medals[78738].unlocked:
@@ -43,78 +37,28 @@ func unlock_tutorialcompleto():
 		#GlobalLogros.mostrarNotificacion.emit(texture, tr("TUTORIAL_COMPLETO"))
 
 func unlock_adoptargato():
-	var texture = load("res://Sprites/Logros/gatoadopatdo.png")
-	if !NG.medals[78739].unlocked:
-		NG.medal_unlock(78739)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ADOPTAR_GATO"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ADOPTAR_GATO"))
-
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQBQ")
+#desde aca
 func unlock_juegocompleto():
-	var texture = load("res://Sprites/Logros/ending.png")
-	if !NG.medals[78740].unlocked:
-		NG.medal_unlock(78740)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("JUEGO_COMPLETO"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("JUEGO_COMPLETO"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQCA")
 
 func unlock_dia10():
-	var texture = load("res://Sprites/Logros/day10.png")
-	if !NG.medals[78741].unlocked:
-		NG.medal_unlock(78741)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("DIA_10"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("DIA_10"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQBw")
 
 func unlock_dia17():
-	var texture = load("res://Sprites/Logros/day17.png")
-	if !NG.medals[78742].unlocked:
-		NG.medal_unlock(78742)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("DIA_17"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("DIA_17"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQCQ")
 func unlock_AllRecipes():
-	var texture = load("res://Sprites/Logros/todaslasgemas.png")
-	if !NG.medals[78850].unlocked:
-		NG.medal_unlock(78850)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ALL_RECIPES"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ALL_RECIPES"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQBg")
 func unlock_NoUpgrades():
-	var texture = load("res://Sprites/Logros/noupgrades.png")
-	if !NG.medals[78849].unlocked:
-		NG.medal_unlock(78849)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("NO_UPGRADES"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("NO_UPGRADES"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQCg")
 func unlock_DeliverInTime():
-	var texture = load("res://Sprites/Logros/deliverintime.png")
-	if !NG.medals[78860].unlocked:
-		NG.medal_unlock(78860)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("DELIVER_IN_TIME"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("DELIVER_IN_TIME"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQCw")
 func unlock_justonemore():
-	var texture = load("res://Sprites/Logros/justonemore.png")
-	if !NG.medals[78861].unlocked:
-		NG.medal_unlock(78861)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("JUST_ONE_MORE"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("JUST_ONE_MORE"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQDA")
 func unlock_allminerals():
-	var texture = load("res://Sprites/Logros/allminerals.png")
-	if !NG.medals[78862].unlocked:
-		NG.medal_unlock(78862)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ALL_MINERALS"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ALL_MINERALS"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQDQ")
 func unlock_anticapitalist():
-	var texture = load("res://Sprites/Logros/anticapitalist.png")
-	if !NG.medals[78863].unlocked:
-		NG.medal_unlock(78863)
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ANTICAPITALIST"))
-	if NG.offline_mode:
-		GlobalLogros.mostrarNotificacion.emit(texture, tr("ANTICAPITALIST"))
+	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQDg")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
