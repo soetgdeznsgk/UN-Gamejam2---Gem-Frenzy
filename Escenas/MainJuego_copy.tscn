@@ -295,7 +295,6 @@ texture_filter = 1
 position = Vector2(0, -3.8147e-06)
 texture = ExtResource("14_d4wkh")
 hframes = 2
-frame = 1
 
 [node name="Imagen" type="Sprite2D" parent="CofresManager/Cofre2/Sprite2D"]
 texture_filter = 1
@@ -346,7 +345,6 @@ texture_filter = 1
 position = Vector2(0, -3.8147e-06)
 texture = ExtResource("14_d4wkh")
 hframes = 2
-frame = 1
 
 [node name="Imagen" type="Sprite2D" parent="CofresManager/Cofre5/Sprite2D"]
 texture_filter = 1

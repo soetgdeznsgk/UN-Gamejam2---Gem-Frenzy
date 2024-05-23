@@ -173,3 +173,8 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_btn_logros_pressed() -> void:
 	AchievementsClient.show_achievements()
 	pass # Replace with function body.
+
+
+func _on_btn_leaderboard_pressed() -> void:
+	LeaderboardsClient.show_leaderboard("CgkIrs_-8_kCEAIQDw")
+	pass # Replace with function body.

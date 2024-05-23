@@ -67,6 +67,7 @@ func gameover():
 	#sube el record a leaderboard nw
 	#TROOOOOOOOOL
 	#NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
+	LeaderboardsClient.submit_score("CgkIrs_-8_kCEAIQDw",GlobalTiempo.diaActual)
 	call_top_players()
 	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
 	$AudioGameover.play(0)
