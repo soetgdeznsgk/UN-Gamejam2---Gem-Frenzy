@@ -20,7 +20,6 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Sprites/UI/reloj loading 245 x 216.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon app 512.png"
 
 [autoload]
 

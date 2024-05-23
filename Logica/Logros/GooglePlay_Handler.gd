@@ -1,8 +1,9 @@
 extends Node
-
+var nombreusuario
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayersClient.current_player_loaded.connect(guardar_nombre_jugador)
 	iniciar_sesion()
 	GlobalLogros.primeraChamba.connect(unlock_primerachamba)
 	GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
@@ -17,13 +18,17 @@ func _ready() -> void:
 	GlobalLogros.AllMinerals.connect(unlock_allminerals)
 	GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
 	pass # Replace with function body.
+func guardar_nombre_jugador(player: PlayersClient):
+	nombreusuario=player.display_name
 func iniciar_sesion():
 	SignInClient.user_authenticated.connect(func(is_authenticated: bool): # (1)
 		if not is_authenticated:
 			SignInClient.sign_in()
 		if is_authenticated:
+			PlayersClient.load_current_player(true)
 			$TextureRect.visible = false
 	)
+	
 func unlock_primerachamba():
 	AchievementsClient.unlock_achievement("CgkIrs_-8_kCEAIQBA")
 	

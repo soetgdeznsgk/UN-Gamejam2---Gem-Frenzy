@@ -67,6 +67,10 @@ func gameover():
 	#sube el record a leaderboard nw
 	#TROOOOOOOOOL
 	#NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
+	%LineEdit.text=GooglePlayHandler.nombreusuario
+	%LineEdit.editable=false
+	EventsClient.increment_event("CgkIrs_-8_kCEAIEA",GlobalTiempo.tiempoJuegoTotal/60)
+	#PlayersClient.display_name
 	LeaderboardsClient.submit_score("CgkIrs_-8_kCEAIQDw",GlobalTiempo.diaActual)
 	call_top_players()
 	%LbSelfDia.text = tr("DAY") + " " + str(GlobalTiempo.diaActual)
