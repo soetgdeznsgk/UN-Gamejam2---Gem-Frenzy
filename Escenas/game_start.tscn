@@ -20,10 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://cp5w44xd5lb2x" path="res://Sprites/UI/FULLSCREEN.png" id="18_dytax"]
 [ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
 [ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
-[ext_resource type="Texture2D" uid="uid://jhfxbu7ojw4i" path="res://Sprites/Logros/anticapitalist.png" id="21_6urq7"]
+[ext_resource type="Texture2D" uid="uid://cvmfwp1c6ewp0" path="res://Sprites/Logros/logroicon.png" id="21_38yrc"]
 [ext_resource type="Texture2D" uid="uid://cwbb74jtgysns" path="res://Sprites/Menu/Instagram.png" id="21_bea0t"]
 [ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="21_gj7xj"]
-[ext_resource type="Texture2D" uid="uid://nnn27xm74sud" path="res://Sprites/Menu/language icon.png" id="22_34c6g"]
+[ext_resource type="Texture2D" uid="uid://cdggty8ytxgd" path="res://Sprites/Logros/leaderboardicon.png" id="22_8k50r"]
 [ext_resource type="AudioStream" uid="uid://bcbhctv37dc4a" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Play.mp3" id="22_83hll"]
 [ext_resource type="Texture2D" uid="uid://c82r2kyo8p1lc" path="res://Sprites/Menu/Twitter.png" id="22_onlig"]
 [ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="23_agblx"]
@@ -617,6 +617,7 @@ offset_bottom = 150.0
 pivot_offset = Vector2(92, 19)
 theme = ExtResource("5_lnpde")
 theme_type_variation = &"ButtonBlanco"
+theme_override_colors/font_outline_color = Color(0.254902, 0.133333, 0.12549, 1)
 text = "TUTORIAL"
 icon = ExtResource("7_kg6s8")
 icon_alignment = 2
@@ -671,7 +672,7 @@ offset_right = 97.0
 offset_bottom = 193.0
 pivot_offset = Vector2(37, 37)
 theme = SubResource("Theme_vk4em")
-icon = ExtResource("21_6urq7")
+icon = ExtResource("21_38yrc")
 icon_alignment = 1
 expand_icon = true
 
@@ -684,7 +685,7 @@ offset_right = 97.0
 offset_bottom = 280.0
 pivot_offset = Vector2(37, 37)
 theme = SubResource("Theme_vk4em")
-icon = ExtResource("22_34c6g")
+icon = ExtResource("22_8k50r")
 icon_alignment = 1
 expand_icon = true
 

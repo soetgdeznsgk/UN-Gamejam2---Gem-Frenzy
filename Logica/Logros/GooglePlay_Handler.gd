@@ -3,8 +3,9 @@ var nombreusuario
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await iniciar_sesion()
+	GlobalLogros.sendScore.connect(leaderboard_submit)
 	PlayersClient.current_player_loaded.connect(guardar_nombre_jugador)
-	iniciar_sesion()
 	GlobalLogros.primeraChamba.connect(unlock_primerachamba)
 	GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
 	GlobalLogros.adoptarGato.connect(unlock_adoptargato)
@@ -18,6 +19,8 @@ func _ready() -> void:
 	GlobalLogros.AllMinerals.connect(unlock_allminerals)
 	GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
 	pass # Replace with function body.
+func leaderboard_submit():
+	LeaderboardsClient.submit_score("CgkIrs_-8_kCEAIQDw",GlobalTiempo.diaActual)
 func guardar_nombre_jugador(player: PlayersClient):
 	nombreusuario=player.display_name
 func iniciar_sesion():

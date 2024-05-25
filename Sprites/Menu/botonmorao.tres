@@ -31,7 +31,7 @@ expand_margin_bottom = 5.0
 
 [resource]
 default_font = ExtResource("1_vyldk")
-default_font_size = 12
+default_font_size = 16
 Button/colors/font_color = Color(0.0235294, 0.0588235, 0.278431, 1)
 Button/colors/font_hover_color = Color(0.0235294, 0.0588235, 0.278431, 1)
 Button/colors/font_pressed_color = Color(0.0117647, 0.0313726, 0.192157, 1)

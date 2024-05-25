@@ -8,12 +8,14 @@ func _ready() -> void:
 	#print("NG OFFLINE? " ,NG.offline_mode)
 	# Solo hace cosas si es la api que esperamos
 	if GlobalLogros.APIHandler == "NEWGROUNDS":
+		
 		var timer := Timer.new()
 		timer.autostart=true
 		timer.wait_time=60
 		timer.timeout.connect(ping_a_nw)
 		add_child(timer)
 		timer.start()
+		GlobalLogros.sendScore.connect(leaderboard_submit)
 		GlobalLogros.primeraChamba.connect(unlock_primerachamba)
 		GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
 		GlobalLogros.adoptarGato.connect(unlock_adoptargato)
@@ -26,7 +28,8 @@ func _ready() -> void:
 		GlobalLogros.justOneMore.connect(unlock_justonemore)
 		GlobalLogros.AllMinerals.connect(unlock_allminerals)
 		GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
-		
+func leaderboard_submit():
+	NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
 func ping_a_nw():
 	print("PING A NW")
 	NG.components.ping()

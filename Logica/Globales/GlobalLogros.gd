@@ -15,12 +15,19 @@ signal reachdia10
 signal reachdia17
 @warning_ignore("unused_signal")
 signal AllRecipes 
+@warning_ignore("unused_signal")
 signal NoUpgrades 
+@warning_ignore("unused_signal")
 signal DeliverInTime
+@warning_ignore("unused_signal")
 signal justOneMore
+@warning_ignore("unused_signal")
 signal AllMinerals
+@warning_ignore("unused_signal")
 signal Anticapitalist
-
+@warning_ignore("unused_signal")
+#señal que se emite cuando se necesiten enviar datos al leaderboard dependiendo de la api
+signal sendScore 
 var copiaRecetas = GlobalRecetas.recetas.duplicate()
 var APIHandler = ""
 var cantMineralesDia
@@ -28,7 +35,6 @@ var cantMineralesRecogidos=0
 func _ready() -> void:
 	GlobalTiempo.iniciarDia.connect(check_logros_al_iniciar)
 	print(copiaRecetas)
-
 func check_logros_al_iniciar():
 	cantMineralesRecogidos=0
 	# verifica que todas las mejoras esten en 0 (le aplica la funcion a cada elemento del array)
