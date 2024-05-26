@@ -66,8 +66,8 @@ func call_top_players():
 func gameover():
 	#sube el record a leaderboard nw
 	#TROOOOOOOOOL
-	if GooglePlayHandler.nombreusuario!=null:
-		%LineEdit.text=GooglePlayHandler.nombreusuario
+	#if GooglePlayHandler.nombreusuario!=null:
+	#	%LineEdit.text=GooglePlayHandler.nombreusuario
 	
 	#EventsClient.increment_event("CgkIrs_-8_kCEAIEA",GlobalTiempo.tiempoJuegoTotal/60)
 	#PlayersClient.display_name

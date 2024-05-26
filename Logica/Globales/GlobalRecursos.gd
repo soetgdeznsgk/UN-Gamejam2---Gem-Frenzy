@@ -118,7 +118,7 @@ func pagueme_la_renta():
 			@warning_ignore("integer_division")
 			reciclar += (mitad * (i+1/2))
 		var numMejorasReciclaje=GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasReciclaje]
-		var totalbonusreciclaje=(((numMejorasReciclaje)*0.02)*reciclar)
+		var totalbonusreciclaje=(((numMejorasReciclaje)*0.021)*reciclar)
 		if	numMejorasReciclaje>=2:
 			totalbonusreciclaje=(((numMejorasReciclaje)*0.025)*reciclar)
 		

@@ -40,10 +40,10 @@ AchievementsClient="*res://addons/GodotPlayGameServices/autoloads/achievements_c
 LeaderboardsClient="*res://addons/GodotPlayGameServices/autoloads/leaderboards_client.gd"
 SnapshotsClient="*res://addons/GodotPlayGameServices/autoloads/snapshots_client.gd"
 EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
-NwHandler="res://Logica/Logros/NW_handler.gd"
+NwHandler="*res://Logica/Logros/NW_handler.gd"
 NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
 NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
-GooglePlayHandler="*res://Logica/Logros/GooglePlay_Handler.gd"
+GooglePlayHandler="res://Logica/Logros/GooglePlay_Handler.gd"
 
 [compression]
 

@@ -97,7 +97,7 @@ func llenar_mejoras() -> void:
 		nombre_mejoras.RecompensaMejorada : { # implementada en OrderManager.gd
 		"Key" : nombre_mejoras.RecompensaMejorada,
 		"Nombre" : tr("MORE_PROFITS"),
-		"Precio" : 11,
+		"Precio" : 9,
 		"PrecioEscalar" : 11,
 		"Maximo" : 3,
 		"Textura" : 'res://Sprites/mejoras/monedaMejorada.png',
@@ -157,10 +157,16 @@ func obtener_mejora_random_disponible():
 			# Busqueda de menor precio
 			var minPrecio = 1000
 			var mejoraSeleccionada
+			var chanceComplemento=0.35
+			#deja el progreso del dia 1 al 3 casi siempre el mismo
+			if GlobalTiempo.diaActual<=3:
+				chanceComplemento=0.15
 			for mejora in posibles_mejoras:
 				var precioActual = info_mejoras[mejora]["Precio"] +\
 				 (info_mejoras[mejora]["PrecioEscalar"] * activas_mejoras[mejora])
-				if randf() >=0.4:
+				
+				if randf() >=chanceComplemento:
+					print("aloa")
 					if precioActual < minPrecio:
 						minPrecio = precioActual
 						mejoraSeleccionada = mejora
