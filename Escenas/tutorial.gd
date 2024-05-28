@@ -10,7 +10,12 @@ func _ready():
 		GlobalTuto.escalerasToTaladrando.connect(_on_escalera_to_taladrando)
 		GlobalRecursos.actualizar_mineral(0,5)
 		GlobalRecursos.actualizar_mineral(3,5)
-	
+		Taladrandoreproducido=false
+		GlobalTuto.FlagRecetaOrden=true
+		GlobalTuto.FlagOrdenEscalera=true
+		GlobalTuto.FlagEscaleraTaladrando=true
+
+		GlobalTuto.FlagendTaladrando=true
 		self.visible=true
 		APtutorial.play("pancha_receta")
 	pass # Replace with function body.

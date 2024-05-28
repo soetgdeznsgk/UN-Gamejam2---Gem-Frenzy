@@ -41,3 +41,8 @@ func _on_btn_home_pressed():
 	#await get_tree().create_timer(0.005).timeout
 	get_tree().call_deferred("change_scene_to_file","res://Escenas/game_start.tscn")
 	
+
+
+func _on_btn_logros_pressed() -> void:
+	AchievementsClient.show_achievements()
+	pass # Replace with function body.

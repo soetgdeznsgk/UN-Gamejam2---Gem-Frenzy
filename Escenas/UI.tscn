@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=110 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://dauxg6jd45us0" path="res://Musica/Pickup_02 (alertend).mp3" id="41_f0gvx"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="43_sdv33"]
 [ext_resource type="Texture2D" uid="uid://cp5w44xd5lb2x" path="res://Sprites/UI/FULLSCREEN.png" id="44_8uhjy"]
+[ext_resource type="Texture2D" uid="uid://cvmfwp1c6ewp0" path="res://Sprites/Logros/logroicon.png" id="45_nstra"]
 [ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="46_j4b7w"]
 [ext_resource type="PackedScene" uid="uid://c6dpi8j3mv3yn" path="res://outro_anim.tscn" id="47_0jhqx"]
 [ext_resource type="AudioStream" uid="uid://c5egvujexqme5" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Botones.mp3" id="48_huglt"]
@@ -1157,7 +1158,7 @@ anchor_bottom = 0.82
 offset_left = 24.96
 offset_top = 76.8
 offset_right = 896.04
-offset_bottom = 558.2
+offset_bottom = 586.2
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -1166,9 +1167,9 @@ theme = ExtResource("16_cal8s")
 [node name="VBoxContainer" type="VBoxContainer" parent="FinalizarDia"]
 layout_mode = 2
 offset_left = 77.0
-offset_top = 120.0
+offset_top = 114.0
 offset_right = 958.0
-offset_bottom = 254.0
+offset_bottom = 228.0
 scale = Vector2(0.9, 0.9)
 theme = SubResource("Theme_cya63")
 theme_override_constants/separation = 50
@@ -1696,10 +1697,19 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_FULLSCREEN" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
 icon = ExtResource("44_8uhjy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Btn_LOGROS" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("26_46bwo")
+icon = ExtResource("45_nstra")
 icon_alignment = 1
 expand_icon = true
 
@@ -1908,6 +1918,7 @@ libraries = {
 [connection signal="pressed" from="ADVERTENCIAFINAL/HBoxContainer/no" to="ADVERTENCIAFINAL" method="_on_no_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_toggle_sound" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_toggle_sound_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_FULLSCREEN" to="." method="_on_btn_fullscreen_pressed"]
+[connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_LOGROS" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_logros_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_HOME" to="Pausa/VBoxContainer/MarginContainer/HBoxContainer" method="_on_btn_home_pressed"]
 [connection signal="pressed" from="Pausa/VBoxContainer/MarginContainer/HBoxContainer/Btn_BACK" to="." method="_on_btn_back_pressed"]
 [connection signal="pressed" from="Btn_pause" to="." method="_on_btn_pause_pressed"]

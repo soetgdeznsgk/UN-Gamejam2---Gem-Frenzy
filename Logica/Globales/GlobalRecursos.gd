@@ -120,7 +120,7 @@ func pagueme_la_renta():
 		var numMejorasReciclaje=GlobalMejoras.activas_mejoras[GlobalMejoras.nombre_mejoras.MasReciclaje]
 		var totalbonusreciclaje=(((numMejorasReciclaje)*0.021)*reciclar)
 		if	numMejorasReciclaje>=2:
-			totalbonusreciclaje=(((numMejorasReciclaje)*0.025)*reciclar)
+			totalbonusreciclaje=(((numMejorasReciclaje)*0.030)*reciclar)
 		
 		
 		totalreciclado = int(reciclar * 0.025)+int(totalbonusreciclaje)

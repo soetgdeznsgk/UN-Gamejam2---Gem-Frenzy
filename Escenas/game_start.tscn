@@ -650,6 +650,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_fullscreen" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 21.0
@@ -663,7 +664,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_Logros" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 22.0
@@ -677,7 +677,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_Leaderboard" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 22.0

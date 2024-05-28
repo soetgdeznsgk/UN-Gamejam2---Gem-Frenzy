@@ -23,7 +23,6 @@ border_width_bottom = 1
 border_color = Color(0.329412, 0.207843, 0.172549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6oy3h"]
-font_size = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_ye2lu"]
 font_size = 20
@@ -100,7 +99,7 @@ custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontVariation_6wqjs")
-text = "DESC: asdfasdfasdf asdfasdfasdfasdfasdfasdfasdfsad fasdf"
+text = "DESC: asdfasdfasf asdfasdfasdfasdfasdfasdfasdfsad fasdf"
 label_settings = ExtResource("5_j5po7")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -109,12 +108,13 @@ justification_flags = 0
 uppercase = true
 
 [node name="Btn_comprar" type="Button" parent="."]
-custom_minimum_size = Vector2(150, 32)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
 theme = ExtResource("3_qlxb5")
+theme_override_font_sizes/font_size = 20
 text = "BUY"
 
 [node name="TextureRect2" type="TextureRect" parent="Btn_comprar"]

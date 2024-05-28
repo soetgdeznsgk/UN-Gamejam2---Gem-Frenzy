@@ -1,6 +1,9 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://6nn4rwayajhh"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://6nn4rwayajhh"]
+
+[ext_resource type="FontFile" uid="uid://dyauu2t0nogvm" path="res://Sprites/UI/Minecraft.ttf" id="1_fp0vm"]
 
 [resource]
-line_spacing = 5.0
-font_size = 15
+font = ExtResource("1_fp0vm")
+font_size = 24
 font_color = Color(0.643137, 0.380392, 0.239216, 1)
+outline_color = Color(0.278431, 0.14902, 0.0235294, 1)
