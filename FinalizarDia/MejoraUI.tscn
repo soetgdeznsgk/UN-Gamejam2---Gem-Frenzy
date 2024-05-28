@@ -95,7 +95,7 @@ uppercase = true
 
 [node name="Lb_desc" type="Label" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(220, 110)
+custom_minimum_size = Vector2(220, 170)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontVariation_6wqjs")
