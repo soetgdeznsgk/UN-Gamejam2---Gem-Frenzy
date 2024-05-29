@@ -42,8 +42,8 @@ SnapshotsClient="*res://addons/GodotPlayGameServices/autoloads/snapshots_client.
 EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
 NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
 NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
-NwHandler="res://Logica/Logros/NW_handler.gd"
-GooglePlayHandler="*res://Logica/Logros/GooglePlay_Handler.gd"
+NwHandler="*res://Logica/Logros/NW_handler.gd"
+GooglePlayHandler="res://Logica/Logros/GooglePlay_Handler.gd"
 
 [compression]
 

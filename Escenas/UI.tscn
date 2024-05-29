@@ -1697,7 +1697,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_FULLSCREEN" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
@@ -1706,6 +1705,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_LOGROS" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
