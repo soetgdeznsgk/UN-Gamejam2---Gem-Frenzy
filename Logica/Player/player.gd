@@ -243,7 +243,7 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: TileMap, _body_shape_in
 				print("Logro de todos los minerales desbloqueao")
 				GlobalLogros.AllMinerals.emit()
 			GlobalRecursos.actualizar_mineral(actualFrame, 1)
-			audioMinado.pitch_scale = randf_range(0.9,1.1)
+			audioMinado.pitch_scale = randf_range(0.8,1.15)
 			audioMinado.play(0) #sonido de minado
 		else:
 			if canSound:
@@ -262,4 +262,9 @@ func _on_tmr_particle_timeout() -> void:
 func _on_tmr_sonido_tierra_timeout() -> void:
 	canSound = true
 func play_stair_audio()-> void:
+	$AudioEscalera.pitch_scale = randf_range(0.9,1.1)
 	$AudioEscalera.play()
+
+func play_caminar_audio():
+	$AudioPaso.pitch_scale = randf_range(0.85,1.25)
+	$AudioPaso.play()
