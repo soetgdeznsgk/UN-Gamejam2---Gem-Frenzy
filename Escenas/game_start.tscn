@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=46 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Shader" path="res://Escenas/brillo.gdshader" id="3_0v8dk"]
 [ext_resource type="PackedScene" uid="uid://nwim4g0q3if5" path="res://Escenas/MainJuego_copy.tscn" id="3_5j26j"]
 [ext_resource type="Texture2D" uid="uid://dli826d166f58" path="res://Sprites/Menu/country-platform-preview.png" id="3_26vto"]
 [ext_resource type="Texture2D" uid="uid://bbbosknu7tms7" path="res://Sprites/Menu/gem frenzy logo 4k remaster 1 link hd 710x360.png" id="3_sgxu4"]
+[ext_resource type="Shader" path="res://Escenas/brillo_2.gdshader" id="4_4vywr"]
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="4_ruh65"]
 [ext_resource type="Theme" uid="uid://cnu3j8gs2xq6a" path="res://Sprites/Menu/botonamarillo.tres" id="5_lnpde"]
 [ext_resource type="AudioStream" uid="uid://ciqvu1ck2qpl0" path="res://Musica/Music_LuisManzano/GF_musx_inicio_V2.ogg" id="6_4oy6f"]
@@ -27,9 +28,11 @@
 [ext_resource type="AudioStream" uid="uid://bcbhctv37dc4a" path="res://Musica/SFX_luisa/Gem Frenzy_SFX_Play.mp3" id="22_83hll"]
 [ext_resource type="Texture2D" uid="uid://c82r2kyo8p1lc" path="res://Sprites/Menu/Twitter.png" id="22_onlig"]
 [ext_resource type="Texture2D" uid="uid://c1q7ra2erxwhd" path="res://Sprites/Outro/contrato (2).png" id="23_agblx"]
+[ext_resource type="Texture2D" uid="uid://c5wnurdq04jsh" path="res://Sprites/Menu/Ko Fi.png" id="25_fxehl"]
+[ext_resource type="Texture2D" uid="uid://ooujc1mkaf3" path="res://Sprites/Menu/Google Playstore.png" id="26_rmecx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0x2dl"]
-shader = ExtResource("3_0v8dk")
+shader = ExtResource("4_4vywr")
 shader_parameter/shine_color = Color(0.768627, 0.94902, 1, 0.294118)
 shader_parameter/shine_speed = 2.2
 shader_parameter/shine_size = 0.002
@@ -86,6 +89,13 @@ Button/styles/focus = SubResource("StyleBoxEmpty_1golx")
 Button/styles/hover = SubResource("StyleBoxTexture_ead3k")
 Button/styles/normal = SubResource("StyleBoxTexture_0hlxw")
 Button/styles/pressed = SubResource("StyleBoxTexture_04hec")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fntgk"]
+shader = ExtResource("3_0v8dk")
+shader_parameter/shine_color = Color(0.594, 0.8592, 0.9, 0.2)
+shader_parameter/shine_speed = 3.9
+shader_parameter/shine_size = 0.048
+shader_parameter/direccion = 0.3
 
 [sub_resource type="Animation" id="Animation_jhvq3"]
 resource_name = "Logo_se_mueve"
@@ -256,8 +266,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 160.0
-offset_right = 160.0
+offset_left = 158.0
+offset_right = 158.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -426,102 +436,132 @@ expand_icon = true
 [node name="Credits" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_left = 175.0
-offset_top = 114.0
-offset_right = 791.0
-offset_bottom = 611.0
+offset_left = 163.0
+offset_top = 120.0
+offset_right = 779.0
+offset_bottom = 617.0
 theme = ExtResource("11_hyuxc")
 
 [node name="PanelContainer" type="PanelContainer" parent="Credits"]
 layout_mode = 0
-offset_right = 649.0
-offset_bottom = 487.0
+offset_left = -45.0
+offset_top = -9.0
+offset_right = 704.0
+offset_bottom = 495.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
 layout_mode = 0
-offset_left = 33.0
+offset_left = -7.0
 offset_top = 114.0
-offset_right = 643.0
-offset_bottom = 222.0
+offset_right = 913.0
+offset_bottom = 231.0
 theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
 
 [node name="Label2" type="Label" parent="Credits/VBoxContainer/HBoxContainer"]
 self_modulate = Color(0.34902, 0.160784, 0.0588235, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 19
 text = "PROGRAMMERS"
+horizontal_alignment = 1
+
+[node name="music" type="Label" parent="Credits/VBoxContainer/HBoxContainer"]
+self_modulate = Color(0.34902, 0.160784, 0.0588235, 1)
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "MUSIC"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Credits/VBoxContainer/HBoxContainer"]
 modulate = Color(0.34902, 0.160784, 0.0588235, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 19
 text = "ARTISTS"
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
 
 [node name="programmer0" type="Label" parent="Credits/VBoxContainer/HBoxContainer2"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Matseuu"
+horizontal_alignment = 1
+
+[node name="lucas" type="Label" parent="Credits/VBoxContainer/HBoxContainer2"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Lucasarizamanzano"
 horizontal_alignment = 1
 
 [node name="artist1" type="Label" parent="Credits/VBoxContainer/HBoxContainer2"]
 modulate = Color(0.584314, 0.341176, 0.211765, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Raccoyaki"
 horizontal_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
 
 [node name="programmer0" type="Label" parent="Credits/VBoxContainer/HBoxContainer3"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Pabten"
+horizontal_alignment = 1
+
+[node name="SFX" type="Label" parent="Credits/VBoxContainer/HBoxContainer3"]
+self_modulate = Color(0.34902, 0.160784, 0.0588235, 1)
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "SFX"
 horizontal_alignment = 1
 
 [node name="artist1" type="Label" parent="Credits/VBoxContainer/HBoxContainer3"]
 modulate = Color(0.584314, 0.341176, 0.211765, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Yukki"
 horizontal_alignment = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
 
 [node name="programmer0" type="Label" parent="Credits/VBoxContainer/HBoxContainer4"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Gugulplex"
+horizontal_alignment = 1
+
+[node name="lucas" type="Label" parent="Credits/VBoxContainer/HBoxContainer4"]
+self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Luisa Zarama"
 horizontal_alignment = 1
 
 [node name="artist1" type="Label" parent="Credits/VBoxContainer/HBoxContainer4"]
 modulate = Color(0.584314, 0.341176, 0.211765, 1)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "DarkyBLG"
 horizontal_alignment = 1
 
@@ -545,10 +585,10 @@ vertical_alignment = 1
 
 [node name="btn_close_credits" type="Button" parent="Credits" groups=["buttonHover"]]
 layout_mode = 0
-offset_left = 577.0
-offset_top = 16.0
-offset_right = 619.0
-offset_bottom = 59.0
+offset_left = 609.0
+offset_top = 17.0
+offset_right = 651.0
+offset_bottom = 60.0
 theme = ExtResource("12_vylb7")
 icon = ExtResource("15_bln3m")
 icon_alignment = 1
@@ -563,11 +603,11 @@ offset_bottom = -16.0
 
 [node name="likeourgame" type="Label" parent="Credits/controlrateus"]
 self_modulate = Color(0.34902, 0.160784, 0.0588235, 1)
-custom_minimum_size = Vector2(400, 25)
+custom_minimum_size = Vector2(475, 0)
 layout_mode = 0
-offset_left = 34.0
+offset_left = -10.0
 offset_top = 317.0
-offset_right = 472.0
+offset_right = 428.0
 offset_bottom = 342.0
 theme_override_font_sizes/font_size = 20
 text = "LIKE_GAME?"
@@ -576,10 +616,11 @@ vertical_alignment = 1
 
 [node name="LabelRATEUS" type="Label" parent="Credits/controlrateus"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(475, 0)
 layout_mode = 0
-offset_left = 45.0
+offset_left = 1.0
 offset_top = 346.0
-offset_right = 463.0
+offset_right = 419.0
 offset_bottom = 456.0
 theme_override_font_sizes/font_size = 16
 text = "RATE_US"
@@ -588,10 +629,11 @@ autowrap_mode = 2
 
 [node name="LabelSocialmedia" type="Label" parent="Credits/controlrateus"]
 self_modulate = Color(0.584314, 0.341176, 0.211765, 1)
+custom_minimum_size = Vector2(475, 0)
 layout_mode = 0
-offset_left = 45.0
+offset_left = 1.0
 offset_top = 448.0
-offset_right = 463.0
+offset_right = 419.0
 offset_bottom = 532.0
 theme_override_font_sizes/font_size = 16
 text = "SOCIAL_MEDIA"
@@ -600,15 +642,14 @@ autowrap_mode = 2
 
 [node name="Control2" type="Control" parent="Credits"]
 anchors_preset = 0
-offset_right = 305.0
-offset_bottom = 461.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Credits/Control2"]
-position = Vector2(550, 384)
+position = Vector2(574, 376)
 scale = Vector2(5.81579, 5.81579)
 texture = ExtResource("16_ec5un")
 
 [node name="Btn_toggle_Tutorial" type="Button" parent="."]
+z_index = -1
 layout_mode = 0
 offset_left = 765.0
 offset_top = 112.0
@@ -640,9 +681,9 @@ expand_icon = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 16.0
-offset_top = 630.0
+offset_top = 613.0
 offset_right = 91.0
-offset_bottom = 705.0
+offset_bottom = 688.0
 pivot_offset = Vector2(37, 37)
 theme = SubResource("Theme_vk4em")
 icon = ExtResource("20_3cvn6")
@@ -690,12 +731,12 @@ icon = ExtResource("22_8k50r")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Instagram" type="LinkButton" parent="."]
+[node name="Instagram" type="LinkButton" parent="." groups=["buttonHover"]]
 layout_mode = 0
-offset_left = 871.0
-offset_top = 641.0
-offset_right = 933.0
-offset_bottom = 701.0
+offset_left = 886.0
+offset_top = 552.0
+offset_right = 948.0
+offset_bottom = 612.0
 uri = "https://www.instagram.com/theyippiesdev/"
 
 [node name="Sprite2D" type="Sprite2D" parent="Instagram"]
@@ -703,18 +744,45 @@ position = Vector2(31.25, 29.25)
 scale = Vector2(2.77083, 2.77083)
 texture = ExtResource("21_bea0t")
 
-[node name="Twitter" type="LinkButton" parent="."]
+[node name="Twitter" type="LinkButton" parent="." groups=["buttonHover"]]
 layout_mode = 0
-offset_left = 788.0
-offset_top = 639.0
-offset_right = 850.0
-offset_bottom = 699.0
+offset_left = 887.0
+offset_top = 626.0
+offset_right = 949.0
+offset_bottom = 686.0
 uri = "https://twitter.com/TheYippiesdev"
 
 [node name="Sprite2D" type="Sprite2D" parent="Twitter"]
 position = Vector2(31.25, 29.25)
 scale = Vector2(2.77083, 2.77083)
 texture = ExtResource("22_onlig")
+
+[node name="KOFI" type="LinkButton" parent="." groups=["buttonHover"]]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 467.0
+offset_right = 951.0
+offset_bottom = 531.0
+uri = "https://ko-fi.com/theyippiesdev"
+
+[node name="Sprite2D" type="Sprite2D" parent="KOFI"]
+material = SubResource("ShaderMaterial_fntgk")
+position = Vector2(32.6056, 31.9118)
+scale = Vector2(2.69953, 2.69953)
+texture = ExtResource("25_fxehl")
+
+[node name="Play Store" type="LinkButton" parent="." groups=["buttonHover"]]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 381.0
+offset_right = 950.0
+offset_bottom = 445.0
+uri = "https://ko-fi.com/theyippiesdev"
+
+[node name="Sprite2D" type="Sprite2D" parent="Play Store"]
+position = Vector2(33.6056, 35.9118)
+scale = Vector2(2.69953, 2.69953)
+texture = ExtResource("26_rmecx")
 
 [node name="SonidoBoton" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -765,9 +833,5 @@ libraries = {
 [connection signal="pressed" from="Btn_fullscreen" to="." method="_on_btn_fullscreen_pressed"]
 [connection signal="pressed" from="Btn_Logros" to="." method="_on_btn_logros_pressed"]
 [connection signal="pressed" from="Btn_Leaderboard" to="." method="_on_btn_leaderboard_pressed"]
-[connection signal="mouse_entered" from="Instagram" to="." method="_on_instagram_mouse_entered"]
-[connection signal="mouse_exited" from="Instagram" to="." method="_on_instagram_mouse_exited"]
-[connection signal="mouse_entered" from="Twitter" to="." method="_on_twitter_mouse_entered"]
-[connection signal="mouse_exited" from="Twitter" to="." method="_on_twitter_mouse_exited"]
 [connection signal="finished" from="BotonPlay" to="." method="_on_boton_play_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
