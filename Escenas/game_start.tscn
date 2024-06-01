@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c3l11pl8gnxo6"]
+[gd_scene load_steps=52 format=3 uid="uid://c3l11pl8gnxo6"]
 
 [ext_resource type="Script" path="res://Logica/game_start.gd" id="1_d1quh"]
 [ext_resource type="Shader" path="res://Escenas/brillo.gdshader" id="3_0v8dk"]
@@ -16,9 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="12_3d5lx"]
 [ext_resource type="Theme" uid="uid://12h553thtaor" path="res://Sprites/UI/moradocuadrao.tres" id="12_vylb7"]
 [ext_resource type="Texture2D" uid="uid://by8evyqasdsse" path="res://Sprites/Menu/BUY_2_SQUARE.png" id="13_6fifa"]
+[ext_resource type="Texture2D" uid="uid://fw5lyigt0gu1" path="res://addons/gamejolt/icon.png" id="15_1w00v"]
 [ext_resource type="Texture2D" uid="uid://cxgxveseods7l" path="res://Sprites/Menu/no en azul.png" id="15_bln3m"]
+[ext_resource type="FontFile" uid="uid://crkuv1hce61oh" path="res://Sprites/UI/dogicapixel.ttf" id="15_wkf8s"]
+[ext_resource type="Script" path="res://Escenas/logingamejolt.gd" id="16_2mnax"]
 [ext_resource type="Texture2D" uid="uid://pcc8tv2dsqob" path="res://Sprites/Menu/pancha corazon 19 x 24.png" id="16_ec5un"]
+[ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="18_31ksr"]
 [ext_resource type="Texture2D" uid="uid://cp5w44xd5lb2x" path="res://Sprites/UI/FULLSCREEN.png" id="18_dytax"]
+[ext_resource type="Texture2D" uid="uid://5d2d31nd7c1d" path="res://Sprites/UI/no.png" id="18_v4fph"]
 [ext_resource type="Texture2D" uid="uid://lty3ujasrjph" path="res://Sprites/UI/language.png" id="19_d4jep"]
 [ext_resource type="Texture2D" uid="uid://cmnyr10hdpn2e" path="res://Sprites/UI/info.png" id="20_3cvn6"]
 [ext_resource type="Texture2D" uid="uid://cvmfwp1c6ewp0" path="res://Sprites/Logros/logroicon.png" id="21_38yrc"]
@@ -38,6 +43,23 @@ shader_parameter/shine_speed = 2.2
 shader_parameter/shine_size = 0.002
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekfl3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ied0"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.59, 0.417425, 0.3245, 0.501961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.643137, 0.380392, 0.239216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ots8e"]
 content_margin_left = 15.0
@@ -664,6 +686,144 @@ icon = ExtResource("7_kg6s8")
 icon_alignment = 2
 expand_icon = true
 
+[node name="LOGINGAMEJOLT" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 135.0
+offset_top = 107.0
+offset_right = 849.0
+offset_bottom = 638.0
+theme = ExtResource("11_hyuxc")
+script = ExtResource("16_2mnax")
+
+[node name="PanelContainer" type="PanelContainer" parent="LOGINGAMEJOLT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.054
+anchor_bottom = 0.98
+offset_left = 19.0
+offset_top = 1.0
+offset_right = -48.556
+offset_bottom = -0.380005
+
+[node name="MarginContainer" type="MarginContainer" parent="LOGINGAMEJOLT/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="Label" type="Label" parent="LOGINGAMEJOLT"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+offset_left = 117.0
+offset_top = 37.0
+offset_right = 607.0
+offset_bottom = 107.0
+theme = ExtResource("9_fv52p")
+theme_override_font_sizes/font_size = 36
+text = "LOGIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LOGINGAMEJOLT"]
+layout_mode = 2
+offset_left = 155.0
+offset_top = 103.0
+offset_right = 564.0
+offset_bottom = 409.0
+theme_override_constants/separation = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="LOGINGAMEJOLT/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="username_title" type="Label" parent="LOGINGAMEJOLT/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.643137, 0.380392, 0.239216, 1)
+theme_override_font_sizes/font_size = 24
+text = "USERNAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="username" type="LineEdit" parent="LOGINGAMEJOLT/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ruh65")
+theme_override_colors/font_placeholder_color = Color(0.77, 0.77, 0.77, 1)
+theme_override_fonts/font = ExtResource("15_wkf8s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ied0")
+placeholder_text = "ENTER YOUR USER NAME"
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="LOGINGAMEJOLT/VBoxContainer"]
+layout_mode = 2
+
+[node name="gametoken_title" type="Label" parent="LOGINGAMEJOLT/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.643137, 0.380392, 0.239216, 1)
+theme_override_font_sizes/font_size = 24
+text = "GAMETOKEN
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="LOGINGAMEJOLT/VBoxContainer/gametoken_title"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 1.0
+offset_right = 315.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.2368, 0.64, 0.4048, 1)
+theme_override_font_sizes/font_size = 24
+text = "(?)"
+uri = "https://youtu.be/T5-x7kAGGnE?si=aZ40v3O57IwaR3tX"
+
+[node name="gametoken" type="LineEdit" parent="LOGINGAMEJOLT/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ruh65")
+theme_override_colors/font_placeholder_color = Color(0.77, 0.77, 0.77, 1)
+theme_override_fonts/font = ExtResource("15_wkf8s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ied0")
+placeholder_text = "YOUR GAME TOKEN"
+alignment = 1
+
+[node name="login_error" type="Sprite2D" parent="LOGINGAMEJOLT"]
+visible = false
+position = Vector2(526, 454)
+scale = Vector2(3, 3)
+texture = ExtResource("18_v4fph")
+
+[node name="login_bien" type="Sprite2D" parent="LOGINGAMEJOLT"]
+visible = false
+position = Vector2(526, 454)
+scale = Vector2(3, 3)
+texture = ExtResource("7_kg6s8")
+
+[node name="btn_close_login" type="Button" parent="LOGINGAMEJOLT" groups=["buttonHover"]]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 16.0
+offset_right = 672.0
+offset_bottom = 59.0
+pivot_offset = Vector2(21, 21)
+theme = ExtResource("12_vylb7")
+icon = ExtResource("15_bln3m")
+icon_alignment = 1
+expand_icon = true
+
+[node name="gamejolt_icon" type="Sprite2D" parent="LOGINGAMEJOLT"]
+position = Vector2(101, 74)
+scale = Vector2(0.287109, 0.287109)
+texture = ExtResource("15_1w00v")
+
+[node name="LOGEARSE" type="Button" parent="LOGINGAMEJOLT" groups=["buttonHover"]]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 423.0
+offset_right = 470.0
+offset_bottom = 494.0
+theme = ExtResource("18_31ksr")
+text = "INICIA SESION"
+
 [node name="Btn_language" type="Button" parent="."]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
@@ -824,6 +984,8 @@ libraries = {
 [connection signal="mouse_entered" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_mouse_entered"]
 [connection signal="mouse_exited" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_mouse_exited"]
 [connection signal="pressed" from="Btn_toggle_Tutorial" to="." method="_on_btn_toggle_tutorial_pressed"]
+[connection signal="pressed" from="LOGINGAMEJOLT/btn_close_login" to="LOGINGAMEJOLT" method="_on_btn_close_login_pressed"]
+[connection signal="pressed" from="LOGINGAMEJOLT/LOGEARSE" to="LOGINGAMEJOLT" method="_on_logearse_pressed"]
 [connection signal="mouse_entered" from="Btn_language" to="." method="_on_btn_language_mouse_entered"]
 [connection signal="mouse_exited" from="Btn_language" to="." method="_on_btn_language_mouse_exited"]
 [connection signal="pressed" from="Btn_language" to="." method="_on_btn_language_toggle_pressed"]

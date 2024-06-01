@@ -44,6 +44,8 @@ NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
 NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
 NwHandler="*res://Logica/Logros/NW_handler.gd"
 GooglePlayHandler="res://Logica/Logros/GooglePlay_Handler.gd"
+GameJolt="*res://addons/gamejolt/gamejolt.gd"
+GameJoltHandler="*res://Logica/Logros/GameJolt_handler.gd"
 
 [compression]
 
@@ -63,7 +65,15 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
+enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg", "res://addons/gamejolt/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
+
+[game_jolt]
+
+config/global/game_id="889532"
+config/global/private_key="3b5afb77efbe4ab44012a0b112a567ae"
+config/debug/enabled=false
+config/debug/user_name=""
+config/debug/user_token=""
 
 [global_group]
 

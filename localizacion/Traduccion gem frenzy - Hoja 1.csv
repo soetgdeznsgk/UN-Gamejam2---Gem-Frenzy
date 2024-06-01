@@ -46,7 +46,8 @@ PAUSED,PAUSADO,PAUSED,暂停,ポーズ
 CREDITS_DEVELOPED_BY,Desarrollado por,Developed By,游戏开发由  ,開発
 LANGUAGE,Lenguaje,Language,语言,言語
 LIKE_GAME?,¿Te gusta nuestro juego?,Do you like our game?,你喜欢我们的游戏吗？,私たちのゲームはお好きですか？
-RATE_US,"Si deseas apoyarnos puedes comprarnos un cafe al donarnos 
+RATE_US,"Si deseas apoyarnos puedes comprarnos un cafe al donarnos
+ 
 O Tambien puedes calificar o comentar nuestros juegos. ","If you want to support us, you can buy us a coffee through donations.
 Or you could also rate or comment our games.","如果您想支持我们， 可以通过捐款给我们买一杯咖啡。 
 或者您也可以评价或评论我们的游戏。","私たちをサポートしたい場合は、 寄付を通じて私たちにコーヒーを買うことができます。
@@ -87,14 +88,28 @@ ASSETS,Recursos,Assets,资产,資産
 THANKS_FOR_PLAYING,Gracias por jugar,Thanks for Playing,感谢您玩,遊んでくれてありがとう
 ACHIEVEMENT_UNLOCKED,Logro Desbloqueado,Achievement Unlocked,成就已解锁,実績がロック解除されました
 PRIMERA_CHAMBA,Primera Chamba,Primera Chamba,Primera Chamba,Primera Chamba
+PRIMERA_CHAMBA_DESC,Completa el tutorial,Complete the tutorial,,チュートリアルを完了する
 TUTORIAL_COMPLETO,Listo para la inflacion,Ready to face inflation,我已准备好面对通货膨胀,インフレに直面する準備ができている
-ADOPTAR_GATO,Fat cat Fest,Fat cat Fest,Fat Cat Fest,Fat Cat Fest
+ADOPTAR_GATO,Fat Cat Fest,Fat Cat Fest,Fat Cat Fest,Fat Cat Fest
 JUEGO_COMPLETO,El sueño de Pancha,Pancha's Dream,潘查的梦想,パンチャの夢
 DIA_10,Dia 10,Day 10,第 10 天,10日目
 DIA_17,¿Estás bien?,Are you ok?,你好吗？,大丈夫?
-ALL_RECIPES,Master Gem,Master Gem,宝石大师,マスタージェム
+ALL_RECIPES,Maestro de gemas,Gem Master,宝石大师,マスタージェム
 NO_UPGRADES,Contra el sistema,Against the system,对抗系统,システムに反対
 DELIVER_IN_TIME,Por favor no te vayas,Please Don't Go,请不要走,行かないでください
 JUST_ONE_MORE,Solo uno mas,Just one more,只需要再送一单,あと 1 つだけ配信
 ALL_MINERALS,Campeon del taladro,Drilling Champion,钻井冠军,ドリリングチャンピオン
 ANTICAPITALIST,Anticapitalista,Anticapitalist,反资本家,反資本主義者
+TUTORIAL_COMPLETO_DESC,Pierde por primera vez :(,Lose for the first time :(,第一次输:(,最初输:(
+ADOPTAR_GATO_DESC,Adopta un gato,Adopt a cat,领养一只猫,领养一只猫
+JUEGO_COMPLETO_DESC,Completa el juego,Complete the game,完成游戏,完了游戏
+DIA_10_DESC,Sobrevive hasta el dia 10,Survive Until Day 10,生存到第 10 天,生存まで第10天
+DIA_17_DESC,Sobrevive hasta el dia 17,Survive  until day 17,存活到第 17 天,第17天まで生存
+ALL_RECIPES_DESC,Has todas las recetas del juego,Make all the recipes in the game,制作游戏中的所有食谱,制作中のすべての食谱
+NO_UPGRADES_DESC,Llega al dia 7 sin ninguna mejora,Reach day 7 without any upgrade,在没有任何升级的情况下到达第 7 天,いかなる升級も無い状況下で达第7天まで
+DELIVER_IN_TIME_:DESC,Entrega una receta justo a tiempo,Deliver a recipe just in time,及时提供食谱,及び時間提供食谱
+JUST_ONE_MORE_:DESC,Entrega una receta un minuto antes de que cierre la tienda,Deliver a recipe oneminute before the shop closes,商店关门前一分钟提供食谱,商店关门前一分钟提供食谱
+ALL_MINERALS_DESC,Recolecta todos lo minerales del día,Collect al the minerals of the day,收集当天的所有矿物质,当天のすべての物品を収集
+ANTICAPITALIST_DESC,Completa un dia con exito sin vender ninguna receta,Successfully complete a day without selling any recipe,成功完成一天而不出售任何食谱,いかなる食谱も出さずに一日間成功する
+LOGIN,Inicia sesion,Log in,登录,登录
+USERNAME,Nombre de usuario,Username,用户名,用户名

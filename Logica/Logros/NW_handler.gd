@@ -5,29 +5,29 @@ extends Node
 func _ready() -> void:
 
 	# Si es NG pero no hay cuenta, igual salen logros pero sin verificar si son replicados
-	#print("NG OFFLINE? " ,NG.offline_mode)
+	print("NG OFFLINE? " ,NG.offline_mode)
 	# Solo hace cosas si es la api que esperamos
 	#if GlobalLogros.APIHandler == "NEWGROUNDS":
-		
-	var timer := Timer.new()
-	timer.autostart=true
-	timer.wait_time=60
-	timer.timeout.connect(ping_a_nw)
-	add_child(timer)
-	timer.start()
-	GlobalLogros.sendScore.connect(leaderboard_submit)
-	GlobalLogros.primeraChamba.connect(unlock_primerachamba)
-	GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
-	GlobalLogros.adoptarGato.connect(unlock_adoptargato)
-	GlobalLogros.juegoCompleto.connect(unlock_juegocompleto)
-	GlobalLogros.reachdia10.connect(unlock_dia10)
-	GlobalLogros.reachdia17.connect(unlock_dia17)
-	GlobalLogros.AllRecipes.connect(unlock_AllRecipes)
-	GlobalLogros.NoUpgrades.connect(unlock_NoUpgrades)
-	GlobalLogros.DeliverInTime.connect(unlock_DeliverInTime)
-	GlobalLogros.justOneMore.connect(unlock_justonemore)
-	GlobalLogros.AllMinerals.connect(unlock_allminerals)
-	GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
+	if !NG.offline_mode:
+		var timer := Timer.new()
+		timer.autostart=true
+		timer.wait_time=60
+		timer.timeout.connect(ping_a_nw)
+		add_child(timer)
+		timer.start()
+		GlobalLogros.sendScore.connect(leaderboard_submit)
+		GlobalLogros.primeraChamba.connect(unlock_primerachamba)
+		GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
+		GlobalLogros.adoptarGato.connect(unlock_adoptargato)
+		GlobalLogros.juegoCompleto.connect(unlock_juegocompleto)
+		GlobalLogros.reachdia10.connect(unlock_dia10)
+		GlobalLogros.reachdia17.connect(unlock_dia17)
+		GlobalLogros.AllRecipes.connect(unlock_AllRecipes)
+		GlobalLogros.NoUpgrades.connect(unlock_NoUpgrades)
+		GlobalLogros.DeliverInTime.connect(unlock_DeliverInTime)
+		GlobalLogros.justOneMore.connect(unlock_justonemore)
+		GlobalLogros.AllMinerals.connect(unlock_allminerals)
+		GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
 func leaderboard_submit():
 	NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
 func ping_a_nw():

@@ -166,7 +166,7 @@ func obtener_mejora_random_disponible():
 				 (info_mejoras[mejora]["PrecioEscalar"] * activas_mejoras[mejora])
 				
 				if randf() >=chanceComplemento:
-					print("aloa")
+					#print("aloa")
 					if precioActual < minPrecio:
 						minPrecio = precioActual
 						mejoraSeleccionada = mejora
