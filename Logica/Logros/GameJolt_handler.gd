@@ -6,9 +6,11 @@ var idlogros= [233328,2333330]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameJolt.users_auth_completed.connect(auth_completed)
-	GlobalLogros.sendScore.connect(leaderboard_submit)
 	GameJolt.trophies_fetch_completed.connect(update_listalogros)
 	#PlayersClient.current_player_loaded.connect(guardar_nombre_jugador)
+
+func conectar_señales():
+	GlobalLogros.sendScore.connect(leaderboard_submit)
 	GlobalLogros.primeraChamba.connect(unlock_primerachamba)
 	GlobalLogros.tutorialCompleto.connect(unlock_tutorialcompleto)
 	GlobalLogros.adoptarGato.connect(unlock_adoptargato)
@@ -20,8 +22,7 @@ func _ready() -> void:
 	GlobalLogros.DeliverInTime.connect(unlock_DeliverInTime)
 	GlobalLogros.justOneMore.connect(unlock_justonemore)
 	GlobalLogros.AllMinerals.connect(unlock_allminerals)
-	GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
-	
+	GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)	
 	pass # Replace with function body.
 func leaderboard_submit():
 	var diastring= "Day "+str(GlobalTiempo.diaActual)

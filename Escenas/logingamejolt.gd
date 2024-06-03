@@ -34,6 +34,7 @@ func auth_completed(response):
 		$login_bien.visible=true
 		await get_tree().create_timer(1).timeout
 		visible=false
+		GameJoltHandler.conectar_señales()
 		#GameJoltHandler.check_achievement_unlocked("233328")
 	else:
 		GameJoltHandler.logeadogamejolt=false

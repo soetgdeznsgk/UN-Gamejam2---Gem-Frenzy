@@ -687,6 +687,7 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="LOGINGAMEJOLT" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 135.0
 offset_top = 107.0
@@ -851,6 +852,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_fullscreen" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 21.0
@@ -864,7 +866,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_Logros" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 22.0
@@ -878,7 +879,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_Leaderboard" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 22.0
@@ -932,6 +932,7 @@ scale = Vector2(2.69953, 2.69953)
 texture = ExtResource("25_fxehl")
 
 [node name="Play Store" type="LinkButton" parent="." groups=["buttonHover"]]
+visible = false
 layout_mode = 0
 offset_left = 884.0
 offset_top = 381.0
