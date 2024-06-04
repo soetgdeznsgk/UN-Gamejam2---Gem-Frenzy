@@ -47,8 +47,10 @@ func gameover():
 
 
 func _on_btn_finalizar_dia_pressed() -> void:
+	
 	for child in grid.get_children():
 		child.queue_free()
+	$Musicatienda.stop()
 	GlobalTiempo.siguiente_dia()
 	visible = false
 	pass # Replace with function body.

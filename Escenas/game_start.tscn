@@ -288,8 +288,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 158.0
-offset_right = 158.0
+offset_left = 160.0
+offset_right = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -852,7 +852,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_fullscreen" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 21.0
@@ -866,6 +865,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_Logros" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 22.0
@@ -879,6 +879,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_Leaderboard" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 22.0
@@ -932,13 +933,12 @@ scale = Vector2(2.69953, 2.69953)
 texture = ExtResource("25_fxehl")
 
 [node name="Play Store" type="LinkButton" parent="." groups=["buttonHover"]]
-visible = false
 layout_mode = 0
 offset_left = 884.0
 offset_top = 381.0
 offset_right = 950.0
 offset_bottom = 445.0
-uri = "https://ko-fi.com/theyippiesdev"
+uri = "https://play.google.com/store/apps/details?id=yippies.GemFrenzy&pcampaignid=web_share"
 
 [node name="Sprite2D" type="Sprite2D" parent="Play Store"]
 position = Vector2(33.6056, 35.9118)

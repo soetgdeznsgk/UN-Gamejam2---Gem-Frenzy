@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://btm0ei5fs0m10"]
+[gd_scene load_steps=111 format=3 uid="uid://btm0ei5fs0m10"]
 
 [ext_resource type="Theme" uid="uid://oxc82qrj3ssc" path="res://Escenas/UI.tres" id="1_4vip0"]
 [ext_resource type="Script" path="res://Escenas/Ordenes.gd" id="1_qy5sv"]
@@ -26,6 +26,7 @@
 [ext_resource type="Theme" uid="uid://cgape0strpjef" path="res://Sprites/Menu/botonmorao.tres" id="17_1my18"]
 [ext_resource type="PackedScene" uid="uid://bktgwkq7n141g" path="res://Logica/UI/h_box_name_and_day.tscn" id="18_pqh3v"]
 [ext_resource type="Texture2D" uid="uid://bwfp6hyvatb5n" path="res://Sprites/Menu/UIbackground.png" id="20_v1ys7"]
+[ext_resource type="AudioStream" uid="uid://bf88xp8eklujv" path="res://Musica/Music_LuisManzano/GF_tienda_v1.ogg" id="24_rojtb"]
 [ext_resource type="Theme" uid="uid://pnhutxwsymll" path="res://Sprites/Menu/botoncuadraoamarillo.tres" id="26_46bwo"]
 [ext_resource type="Script" path="res://Escenas/pausa.gd" id="26_mis2i"]
 [ext_resource type="Texture2D" uid="uid://fxlvkfxagl0v" path="res://Sprites/Menu/BUY_1_SQUARE.png" id="26_n0smv"]
@@ -1195,6 +1196,10 @@ stream = ExtResource("14_bi36g")
 volume_db = -5.0
 pitch_scale = 1.01
 
+[node name="Musicatienda" type="AudioStreamPlayer" parent="FinalizarDia"]
+stream = ExtResource("24_rojtb")
+volume_db = -4.965
+
 [node name="Gameover" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -1697,7 +1702,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_FULLSCREEN" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")
@@ -1706,6 +1710,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Btn_LOGROS" type="Button" parent="Pausa/VBoxContainer/MarginContainer/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("26_46bwo")

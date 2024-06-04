@@ -217,8 +217,7 @@ func _on_area_2d_casa_body_exited(_body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	recienSalidoEscalera = false
-
-
+	
 func _on_area_2d_body_shape_entered(body_rid: RID, body: TileMap, _body_shape_index: int, _local_shape_index: int) -> void:
 	var layer = body.get_layer_for_body_rid(body_rid)
 	var cords = body.get_coords_for_body_rid(body_rid)
