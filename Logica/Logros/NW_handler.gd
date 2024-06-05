@@ -1,14 +1,15 @@
 extends Node
-
+var signals_connected=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	NG.on_session_change.connect(connect_signals)
 	# Si es NG pero no hay cuenta, igual salen logros pero sin verificar si son replicados
-	print("NG OFFLINE? " ,NG.offline_mode)
+	
 	# Solo hace cosas si es la api que esperamos
 	#if GlobalLogros.APIHandler == "NEWGROUNDS":
-	if !NG.offline_mode:
+func connect_signals(s : NewgroundsSession):
+	if s.is_signed_in() and !signals_connected:
 		var timer := Timer.new()
 		timer.autostart=true
 		timer.wait_time=60
@@ -28,6 +29,11 @@ func _ready() -> void:
 		GlobalLogros.justOneMore.connect(unlock_justonemore)
 		GlobalLogros.AllMinerals.connect(unlock_allminerals)
 		GlobalLogros.Anticapitalist.connect(unlock_anticapitalist)
+		
+	else:
+		pass
+	print("NG OFFLINE? " ,NG.offline_mode)
+
 func leaderboard_submit():
 	NG.scoreboard_submit(13709,GlobalTiempo.diaActual)
 func ping_a_nw():
