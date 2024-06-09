@@ -687,7 +687,6 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="LOGINGAMEJOLT" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = 135.0
 offset_top = 107.0
@@ -761,20 +760,20 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.643137, 0.380392, 0.239216, 1)
 theme_override_font_sizes/font_size = 24
-text = "GAMETOKEN
+text = "
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="LOGINGAMEJOLT/VBoxContainer/gametoken_title"]
 layout_mode = 0
-offset_left = 30.0
+offset_left = 62.0
 offset_top = 1.0
-offset_right = 315.0
+offset_right = 347.0
 offset_bottom = 27.0
-theme_override_colors/font_color = Color(0.2368, 0.64, 0.4048, 1)
+theme_override_colors/font_color = Color(0.643137, 0.380392, 0.239216, 1)
 theme_override_font_sizes/font_size = 24
-text = "(?)"
+text = "GAMETOKEN (?)"
 uri = "https://youtu.be/T5-x7kAGGnE?si=aZ40v3O57IwaR3tX"
 
 [node name="gametoken" type="LineEdit" parent="LOGINGAMEJOLT/VBoxContainer"]
@@ -823,7 +822,9 @@ offset_top = 423.0
 offset_right = 470.0
 offset_bottom = 494.0
 theme = ExtResource("18_31ksr")
-text = "INICIA SESION"
+theme_override_font_sizes/font_size = 24
+text = "LOGIN
+"
 
 [node name="Btn_language" type="Button" parent="."]
 custom_minimum_size = Vector2(75, 75)
