@@ -12,6 +12,7 @@ func _on_no_pressed():
 
 func _on_si_pressed():
 	#outro
+	%FinalizarDia/Musicatienda.stop()
 	GlobalLogros.juegoCompleto.emit()
 	GlobalTiempo.winner.emit()
 	outro.visible = true
