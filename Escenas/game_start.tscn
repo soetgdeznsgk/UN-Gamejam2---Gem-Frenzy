@@ -687,6 +687,7 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="LOGINGAMEJOLT" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 135.0
 offset_top = 107.0
